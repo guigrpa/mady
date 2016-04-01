@@ -1,0 +1,26 @@
+{
+  "name": "abroad",
+  "version": "0.1.0",
+  "description": "Easy-to-use MessageFormat translator tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/guigrpa/abroad.git"
+  },
+  "keywords": [
+    "i18n",
+    "MessageFormat",
+    "translation",
+    "locales",
+    "translator"
+  ],
+  "author": "Guillermo Grau Panea",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guigrpa/abroad/issues"
+  },
+  "homepage": "https://github.com/guigrpa/abroad#readme"
+}
