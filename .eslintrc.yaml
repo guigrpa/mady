@@ -14,3 +14,4 @@ rules:
     - exceptions:
         VariableDeclarator: true
         ImportDeclaration: true
+  strict: off
