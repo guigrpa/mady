@@ -1,9 +1,9 @@
 {
-  "name": "abroad",
+  "name": "mady",
   "version": "0.1.0",
   "description": "Easy-to-use MessageFormat translator tool",
   "bin": {
-    "abroad": "lib/es5/index.js"
+    "mady": "lib/es5/index.js"
   },
   "engines": {
     "node": ">=4"
@@ -17,13 +17,13 @@
     "locales",
     "translator"
   ],
-  "homepage": "https://github.com/guigrpa/abroad#readme",
+  "homepage": "https://github.com/guigrpa/mady#readme",
   "bugs": {
-    "url": "https://github.com/guigrpa/abroad/issues"
+    "url": "https://github.com/guigrpa/mady/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/guigrpa/abroad.git"
+    "url": "git+https://github.com/guigrpa/mady.git"
   },
   "scripts": {
     "start": "babel-node src/index.js",
@@ -50,7 +50,8 @@
     "commander": "^2.9.0",
     "fs-extra": "^0.26.7",
     "inquirer": "^0.12.0",
-    "storyboard-core": "^1.0.0"
+    "storyboard-core": "^1.0.0",
+    "timm": "^0.6.0"
   },
   "devDependencies": {
     "ava": "^0.13.0",

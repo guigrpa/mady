@@ -15,3 +15,6 @@ rules:
         VariableDeclarator: true
         ImportDeclaration: true
   strict: off
+  no-use-before-define:
+    - error
+    - functions: false

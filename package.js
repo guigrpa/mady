@@ -3,7 +3,7 @@
 // ===============================================
 // Basic config
 // ===============================================
-const NAME = 'abroad';
+const NAME = 'mady';
 const VERSION = '0.1.0';
 const DESCRIPTION = 'Easy-to-use MessageFormat translator tool';
 const KEYWORDS = ['i18n', 'MessageFormat', 'translation', 'locales', 'translator'];
@@ -32,7 +32,7 @@ const specs = {
   version: VERSION,
   description: DESCRIPTION,
   bin: {
-    'abroad': 'lib/es5/index.js',
+    'mady': 'lib/es5/index.js',
   },
   engines: {
     node: '>=4',
@@ -122,6 +122,7 @@ const specs = {
   // Deps
   // -----------------------------------------------
   dependencies: {
+    timm: '^0.6.0',
     'storyboard-core': '^1.0.0',
     inquirer: '^0.12.0',
     commander: '^2.9.0',

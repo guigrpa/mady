@@ -1,4 +1,4 @@
-# abroad
+# mady
 
 ## Functionalities
 
@@ -15,7 +15,7 @@
 
 * Team-oriented!
 * Ease of use: 
-    - Just run `abroad`
+    - Just run `mady`
     - First time round, it asks you for a path and port (unless specified in the command line)
 
 ## Implementation
