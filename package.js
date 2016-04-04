@@ -128,14 +128,38 @@ const specs = {
     commander: '^2.9.0',
     bluebird: '^3.3.4',
     'fs-extra': '^0.26.7',
+
+    // Express + plugins
+    'express': '4.13.4',
   },
 
   devDependencies: {
-    'extract-docs': '^1.0.0',
-    'cross-env': '^1.0.7',
-    'flow-bin': '^0.22.1',
 
-    // Babel (except babel-eslint)
+    // Packaged in the client app
+    // --------------------------
+    'babel-polyfill':       '6.6.1',
+
+    // React
+    react:                            '15.0.0-rc.1',
+    'react-dom':                      '15.0.0-rc.1',
+    'react-addons-pure-render-mixin': '15.0.0-rc.1',
+    'react-addons-perf':              '15.0.0-rc.1',
+
+    // Relay
+    'react-relay':        '0.7.3',
+    'babel-relay-plugin': '0.7.3',
+    graphql:              '0.4.17',
+    'graphql-relay':      '0.3.6',
+    'express-graphql':    '0.4.9',
+
+    // Miscellaneous
+    'font-awesome': '4.5.0',
+    moment: '^2.11.2',
+    tinycolor2: '1.3.0',
+
+    // Pure dev dependencies
+    // ---------------------
+    // Babel + plugins (except babel-eslint)
     'babel-cli': '^6.6.5',
     'babel-core': '^6.7.2',
     'babel-plugin-transform-flow-strip-types': '^6.7.0',
@@ -143,16 +167,33 @@ const specs = {
     'babel-preset-stage-2': '^6.5.0',
     'babel-preset-react': '^6.5.0',
 
+    // Webpack + loaders (+ related stuff)
+    webpack: '1.12.13',
+    'webpack-dev-middleware': '1.5.1',
+    'webpack-hot-middleware': '2.6.4',
+    'babel-loader': '6.2.4',
+    'file-loader': '0.8.5',
+    'css-loader': '0.23.1',
+    'style-loader': '0.13.0',
+    'sass-loader': '3.1.2',
+    'node-sass': '3.4.2',
+
     // Linting
-    'eslint': '^2.4.0',
+    eslint: '^2.4.0',
     'eslint-config-airbnb': '^6.2.0',
     'eslint-plugin-flowtype': '^2.2.2',
     'eslint-plugin-react': '^4.2.3',
     'babel-eslint': '^6.0.0',
 
     // Testing
-    'ava': '^0.13.0',
-    'nyc': '^6.1.1',
+    ava: '^0.13.0',
+    nyc: '^6.1.1',
+    coveralls: '2.11.6',
+
+    // Other tools
+    'extract-docs': '^1.0.0',
+    'cross-env': '^1.0.7',
+    'flow-bin': '^0.22.1',
   },
 
   // -----------------------------------------------

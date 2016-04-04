@@ -5,8 +5,8 @@ import fs                   from 'fs-extra';
 import { mainStory, chalk } from 'storyboard-core';
 
 let _localeDir = null;
-let _keyPath = null;
 let _configPath = null;
+let _keyPath = null;
 let _config = null;
 let _keys = null;
 
@@ -19,14 +19,14 @@ const DEFAULT_CONFIG = {
 // ==============================================
 // Public API
 // ==============================================
-export function init(config: Object) {
-  _initLocaleDir();
+export function init(options: Object) {
+  _initLocaleDir(options);
   _initConfig();
   _initKeys();
 }
 
-export function saveConfig(config: Object) { saveJson(_configPath, _config); }
-export function saveKeys(keys: Object) { saveJson(_keyPath, _keys); }
+export function saveConfig() { saveJson(_configPath, _config); }
+export function saveKeys() { saveJson(_keyPath, _keys); }
 
 export function saveJson(filePath: string, obj: Object) {
   fs.writeFileSync(filePath, JSON.stringify(obj, null, '  '));
@@ -35,8 +35,8 @@ export function saveJson(filePath: string, obj: Object) {
 // ==============================================
 // Helpers
 // ==============================================
-function _initLocaleDir() {
-  _localeDir = config.localeDir;
+function _initLocaleDir(options: Object) {
+  _localeDir = options.localeDir;
   try {
     fs.statSync(_localeDir);
   } catch (err) {
