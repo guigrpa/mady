@@ -2,6 +2,7 @@
 
 Easy-to-use MessageFormat translator tool
 
+**THIS IS STILL VERY MUCH A WORK IN PROGRESS**
 
 ## Installation
 

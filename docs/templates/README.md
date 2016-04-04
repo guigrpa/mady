@@ -2,6 +2,7 @@
 
 Easy-to-use MessageFormat translator tool
 
+**THIS IS STILL VERY MUCH A WORK IN PROGRESS**
 
 ## Installation
 
@@ -12,7 +13,7 @@ $ npm install --save-dev mady
 
 ## Usage
 
-[[[./src/server/index.js]]]
+[[[./src/server/startup.js]]]
 
 
 ## MIT license
