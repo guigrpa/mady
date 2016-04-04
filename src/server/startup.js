@@ -10,6 +10,7 @@ import Promise              from 'bluebird';
 Promise.longStackTraces();
 const pkg                   = require('../../../package.json');  // from lib/es5/server
 import * as db              from './db';
+import * as httpServer      from './httpServer';
 
 let _launchPars = null;
 
@@ -30,9 +31,9 @@ program
 _readLaunchPars()
 .then(() => {
   mainStory.info('main', 'Launch parameters:', { attach: _launchPars });
-  const { localeDir } = _launchPars;
-  db.init({ localeDir });
-});
+  db.init({ localeDir: _launchPars.localeDir });
+})
+.then(() => { httpServer.init({ port: _launchPars.port }); });
 
 
 // ==============================================

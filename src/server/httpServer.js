@@ -51,6 +51,7 @@ export function init(options: Object) {
       mainStory.error('http', 'Cannot open port (tried 20 times)');
       return;
     }
+    mainStory.warn('http', `Port ${port} busy`);
     port++;
     httpServer.listen(port);
   });

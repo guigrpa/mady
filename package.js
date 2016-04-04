@@ -32,7 +32,7 @@ const specs = {
   version: VERSION,
   description: DESCRIPTION,
   bin: {
-    'mady': 'lib/es5/index.js',
+    mady: 'lib/es5/server/startup.js',
   },
   engines: {
     node: '>=4',
@@ -166,6 +166,7 @@ const specs = {
     'babel-preset-es2015': '^6.6.0',
     'babel-preset-stage-2': '^6.5.0',
     'babel-preset-react': '^6.5.0',
+    'babel-preset-react-hmre': '1.1.1', // to use Hot Module Replacement
 
     // Webpack + loaders (+ related stuff)
     webpack: '1.12.13',
