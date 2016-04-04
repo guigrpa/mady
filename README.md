@@ -1,4 +1,4 @@
-# abroad [![Build Status](https://travis-ci.org/guigrpa/abroad.svg)](https://travis-ci.org/guigrpa/abroad) [![npm version](https://img.shields.io/npm/v/abroad.svg)](https://www.npmjs.com/package/abroad)
+# mady [![Build Status](https://travis-ci.org/guigrpa/mady.svg)](https://travis-ci.org/guigrpa/mady) [![Coverage Status](https://coveralls.io/repos/github/guigrpa/mady/badge.svg?branch=master)](https://coveralls.io/github/guigrpa/mady?branch=master) [![npm version](https://img.shields.io/npm/v/mady.svg)](https://www.npmjs.com/package/mady)
 
 Easy-to-use MessageFormat translator tool
 
@@ -6,13 +6,13 @@ Easy-to-use MessageFormat translator tool
 ## Installation
 
 ```
-$ npm install --save-dev extract-docs
+$ npm install --save-dev mady
 ```
 
 
 ## Usage
 
-*Coming up soon!*
+
 
 
 ## MIT license

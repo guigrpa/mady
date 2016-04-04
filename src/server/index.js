@@ -9,7 +9,7 @@ import inquirer             from 'inquirer';
 import Promise              from 'bluebird';
 Promise.longStackTraces();
 const pkg                   = require('../../../package.json');  // from lib/es5/server
-import * as files           from './files';
+import * as db              from './db';
 
 let _launchPars = null;
 
@@ -31,7 +31,7 @@ _readLaunchPars()
 .then(() => {
   mainStory.info('main', 'Launch parameters:', { attach: _launchPars });
   const { localeDir } = _launchPars;
-  files.init({ localeDir });
+  db.init({ localeDir });
 });
 
 
@@ -39,23 +39,23 @@ _readLaunchPars()
 // Helpers
 // ==============================================
 function _readLaunchPars() {
-  const configPath = path.join(process.cwd(), '.madyrc');
-  let config = {};
+  const launchParsPath = path.join(process.cwd(), '.madyrc');
+  let launchPars = {};
   let fModified = false;
 
   // Config provided by `.madyrc` file
   try {
-    config = JSON.parse(fs.readFileSync(configPath));
+    launchPars = JSON.parse(fs.readFileSync(launchParsPath));
   } catch (err) { /* Ignore exception */ }
 
   // Config updated by CLI arguments
-  const config2 = timm.merge(config, {
+  const launchPars2 = timm.merge(launchPars, {
     localeDir: program.dir,
     port: program.port,
   });
-  if (config2 !== config) {
+  if (launchPars2 !== launchPars) {
     fModified = true;
-    config = config2;
+    launchPars = launchPars2;
   }
 
   // Config complemented by questions to the user
@@ -64,13 +64,13 @@ function _readLaunchPars() {
       name: 'localeDir',
       message: 'Please specify a folder for your locales and config',
       default: DEFAULT_LOCALE_PATH,
-      when: () => (config.localeDir == null),
+      when: () => (launchPars.localeDir == null),
     },
     {
       name: 'port',
       message: 'Please specify an initial port',
       default: DEFAULT_PORT,
-      when: () => (config.port == null),
+      when: () => (launchPars.port == null),
     },
   ];
   return new Promise((resolve) => {
@@ -78,7 +78,7 @@ function _readLaunchPars() {
   })
   .then(answers => {
     fModified = fModified || !!Object.keys(answers).length;
-    _launchPars = timm.merge(config, answers);
-    if (fModified) files.saveJson(configPath, _launchPars);
+    _launchPars = timm.merge(launchPars, answers);
+    if (fModified) db.saveJson(launchParsPath, _launchPars);
   });
 }

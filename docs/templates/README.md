@@ -12,7 +12,7 @@ $ npm install --save-dev mady
 
 ## Usage
 
-[[[./src/index.js]]]
+[[[./src/server/index.js]]]
 
 
 ## MIT license
