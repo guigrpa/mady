@@ -1,5 +1,5 @@
 import path                 from 'path';
-import { mainStory }        from 'storyboard-core';
+import { mainStory }        from 'storyboard';
 import webpack              from 'webpack';
 const pkg                   = require('../../../package.json');  // from lib/es5/server
 
@@ -19,7 +19,7 @@ export default {
   // Input (entry point)
   // -------------------------------------------------
   entry: {
-    app: _entry('../client/startup.js'),
+    app: _entry('./src/client/startup.js'),
   },
 
   // -------------------------------------------------
@@ -29,7 +29,7 @@ export default {
     filename: '[name].bundle.js',
 
     // Where PRODUCTION bundles will be stored
-    path: path.resolve(process.cwd(), 'clientProd'),
+    path: path.resolve(process.cwd(), 'public'),
 
     publicPath: '/',
   },
@@ -46,8 +46,12 @@ export default {
 
   plugins: (() => {
     let ret = [
-      () => this.plugin('compile', () => mainStory.info('webpack', 'Bundling...')),
-      () => this.plugin('done', () => mainStory.info('webpack', 'Finished bundling!')),
+      function pluginCompile() {
+        this.plugin('compile', () => mainStory.debug('webpack', 'Bundling...'));
+      },
+      function pluginDone() {
+        this.plugin('done', () => mainStory.debug('webpack', 'Finished bundling!'));
+      },
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify(fProduction ? 'production' : 'development'),
       }),

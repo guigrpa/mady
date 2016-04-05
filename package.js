@@ -123,21 +123,24 @@ const specs = {
   // -----------------------------------------------
   dependencies: {
     timm: '^0.6.0',
-    'storyboard-core': '^1.0.0',
+    storyboard: '^1.0.0',
     inquirer: '^0.12.0',
     commander: '^2.9.0',
     bluebird: '^3.3.4',
     'fs-extra': '^0.26.7',
+    'diveSync': '0.3.0',
+    'messageformat': '0.3.0',
+    'uglify-js': '2.6.1',
 
     // Express + plugins
-    'express': '4.13.4',
+    express: '4.13.4',
   },
 
   devDependencies: {
 
     // Packaged in the client app
     // --------------------------
-    'babel-polyfill':       '6.6.1',
+    'babel-polyfill': '6.6.1',
 
     // React
     react:                            '15.0.0-rc.1',

@@ -2,7 +2,7 @@
 
 import path                 from 'path';
 import timm                 from 'timm';
-import { mainStory }        from 'storyboard-core';
+import { mainStory }        from 'storyboard';
 import fs                   from 'fs-extra';
 import program              from 'commander';
 import inquirer             from 'inquirer';
@@ -10,6 +10,7 @@ import Promise              from 'bluebird';
 Promise.longStackTraces();
 const pkg                   = require('../../../package.json');  // from lib/es5/server
 import * as db              from './db';
+import * as gqlServer       from './gqlServer';
 import * as httpServer      from './httpServer';
 
 let _launchPars = null;
@@ -27,13 +28,17 @@ program
     '(if unavailable, the next available one will be used)')
   .parse(process.argv);
 
-
 _readLaunchPars()
 .then(() => {
-  mainStory.info('main', 'Launch parameters:', { attach: _launchPars });
+  mainStory.info('startup', 'Launch parameters:', { attach: _launchPars });
   db.init({ localeDir: _launchPars.localeDir });
 })
-.then(() => { httpServer.init({ port: _launchPars.port }); });
+.then(() => {
+  gqlServer.init();
+  httpServer.init({ port: _launchPars.port });
+
+  db.updateKeys();
+});
 
 
 // ==============================================
