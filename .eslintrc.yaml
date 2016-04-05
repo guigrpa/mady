@@ -9,12 +9,18 @@ rules:
   no-unused-expressions:
     - error
     - allowShortCircuit: true
-  no-multi-spaces:
-    - error
-    - exceptions:
-        VariableDeclarator: true
-        ImportDeclaration: true
   strict: off
   no-use-before-define:
     - error
     - functions: false
+  no-multi-spaces:
+    - warn
+    - exceptions:
+        VariableDeclarator: true
+        ImportDeclaration: true
+  key-spacing:
+    - warn
+    - 
+      beforeColon: false
+      afterColon: true
+      mode: 'minimum'

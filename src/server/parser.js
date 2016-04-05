@@ -1,6 +1,6 @@
 import fs                   from 'fs';
 import path                 from 'path';
-import { mainStory, chalk } from 'storyboard';
+import { chalk }            from 'storyboard';
 import diveSync             from 'diveSync';
 
 const REGEXP_TRANSLATE_CMDS = [
@@ -8,7 +8,7 @@ const REGEXP_TRANSLATE_CMDS = [
   /_t\s*\(\s*'(.*?)'/g,
 ];
 
-export default function parse({ srcPaths, srcExtensions }) {
+export default function parse({ srcPaths, srcExtensions, story }) {
   const keys = {};
   const diveOptions = { filter: (filePath, fDir) => {
     if (fDir) return true;
@@ -16,7 +16,7 @@ export default function parse({ srcPaths, srcExtensions }) {
   } };
   const diveProcess = (err, filePath) => {
     const finalFilePath = path.normalize(filePath);
-    mainStory.info('parser', `Processing ${chalk.cyan.bold(finalFilePath)}...`);
+    story.info('parser', `Processing ${chalk.cyan.bold(finalFilePath)}...`);
     const fileContents = fs.readFileSync(finalFilePath);
     for (const re of REGEXP_TRANSLATE_CMDS) {
       let match;

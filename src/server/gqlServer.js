@@ -3,17 +3,19 @@ import timm                 from 'timm';
 import {
   GraphQLID,
   GraphQLString,
-  GraphQLBoolean,
-  GraphQLInt,
-  GraphQLFloat,
+  // GraphQLBoolean,
+  // GraphQLInt,
+  // GraphQLFloat,
   GraphQLObjectType,
-  GraphQLInputObjectType,
+  // GraphQLInputObjectType,
   GraphQLList,
   GraphQLNonNull,
   GraphQLSchema,
 }                           from 'graphql';
 import * as gqlRelay        from 'graphql-relay';
-import Promise              from 'bluebird';
+import {
+  pick,
+}                           from 'lodash';
 import * as db              from './db';
 
 // ==============================================
@@ -22,7 +24,7 @@ import * as db              from './db';
 const gqlInterfaces   = {};
 const gqlTypes        = {};
 const gqlMutations    = {};
-let gqlSchema        = null;
+let gqlSchema         = null;
 const viewer          = { _type: 'Viewer', id: 'me' };
 
 // ==============================================
@@ -47,6 +49,30 @@ export function init() {
   // ==============================================
   mainStory.debug('gql', 'Creating types...');
 
+  let configBaseField            = null;
+  let keysBaseConnection         = null;
+  let translationsBaseConnection = null;
+
+  // ----------------------------------------------
+  // Viewer
+  // ----------------------------------------------
+  gqlTypes.Viewer = new GraphQLObjectType({
+    name: 'Viewer',
+    interfaces: [gqlInterfaces.Node],
+    isTypeOf: node => node._type === 'Viewer',
+    fields: () => ({
+      id: gqlRelay.globalIdField('Viewer'),
+      config: configBaseField,
+      keys: keysBaseConnection,
+      translations: translationsBaseConnection,
+    }),
+  });
+
+  const viewerRootField = {
+    type: gqlTypes.Viewer,
+    resolve: () => viewer,
+  };
+
   // ----------------------------------------------
   // Config
   // ----------------------------------------------
@@ -65,10 +91,12 @@ export function init() {
     }),
   });
 
-  const configBaseField = {
+  configBaseField = {
     type: gqlTypes.Config,
     resolve: () => db.getConfig(),
   };
+
+  addUpdateMutation('Config');
 
   // ----------------------------------------------
   // Keys
@@ -92,11 +120,27 @@ export function init() {
 
   addConnectionType('Key');
 
-  const keysBaseConnection = {
+  keysBaseConnection = {
     type: gqlTypes.KeyConnection,
     args: gqlRelay.connectionArgs,
     resolve: (base, args) => gqlRelay.connectionFromArray(db.getKeys(), args),
   };
+
+  addCreateMutation('Key');
+  addUpdateMutation('Key');
+  addDeleteMutation('Key');
+  gqlMutations.updateKeys = gqlRelay.mutationWithClientMutationId({
+    name: 'updateKeys',
+    inputFields: {},
+    mutateAndGetPayload: () => {
+      db.updateKeys();
+      return {};
+    },
+    outputFields: {
+      keys: keysBaseConnection,
+      viewer: viewerRootField,
+    },
+  });
 
   // ----------------------------------------------
   // Translations
@@ -121,34 +165,17 @@ export function init() {
 
   addConnectionType('Translation');
 
-  const translationsBaseConnection = {
+  translationsBaseConnection = {
     type: gqlTypes.TranslationConnection,
     args: timm.merge(gqlRelay.connectionArgs, {
-      lang: { type: GraphQLString },
+      lang: { type: new GraphQLNonNull(GraphQLString) },
     }),
-    resolve: (base, args) => gqlRelay.connectionFromArray(db.getTranslations(args), args),
+    resolve: (base, args) => gqlRelay.connectionFromArray(db.getTranslations(args.lang), args),
   };
 
-
-  // ----------------------------------------------
-  // Viewer
-  // ----------------------------------------------
-  gqlTypes.Viewer = new GraphQLObjectType({
-    name: 'Viewer',
-    interfaces: [gqlInterfaces.Node],
-    isTypeOf: node => node._type === 'Viewer',
-    fields: () => ({
-      id: gqlRelay.globalIdField('Viewer'),
-      config: configBaseField,
-      keys: keysBaseConnection,
-      translations: translationsBaseConnection,
-    }),
-  });
-
-  const viewerRootField = {
-    type: gqlTypes.Viewer,
-    resolve: () => viewer,
-  };
+  addCreateMutation('Translation', { globalIds: ['keyId'] });
+  addUpdateMutation('Translation', { globalIds: ['keyId'] });
+  addDeleteMutation('Translation');
 
   // ==============================================
   // Schema
@@ -163,19 +190,29 @@ export function init() {
       }),
     }),
 
-    /*
     mutation: new GraphQLObjectType({
       name: 'Mutation',
-      fields: () => {},
+      fields: () => pick(gqlMutations, [
+        // 'updateConfig',
+        // 'createKey',
+        // 'updateKey',
+        // 'deleteKey',
+        'updateKeys',
+        // 'createTranslation',
+        // 'updateTranslation',
+        // 'deleteTranslation',
+      ]),
     }),
-    */
   });
 }
 
 // ==============================================
 // Relay-related helpers
 // ==============================================
-function getNodeType(node) { return gqlTypes[node._type]; }
+function getNodeType(node) {
+  if (!node) return null;
+  return gqlTypes[node._type];
+}
 
 function getNode(globalId) {
   const { type, id } = gqlRelay.fromGlobalId(globalId);
@@ -187,9 +224,21 @@ function getNode(globalId) {
       break;
     case 'Config':
       out = db.getConfig();
+      if (out) {
+        out = timm.set(out, '_type', 'Config');
+      }
       break;
     case 'Key':
       out = db.getKey(id);
+      if (out) {
+        out = timm.set(out, '_type', 'Key');
+      }
+      break;
+    case 'Translation':
+      out = db.getTranslation(id);
+      if (out) {
+        out = timm.set(out, '_type', 'Translation');
+      }
       break;
     default:
       out = null;
@@ -206,3 +255,7 @@ function addConnectionType(name) {
   gqlTypes[`${name}Connection`] = connectionType;
   gqlTypes[`${name}Edge`] = edgeType;
 }
+
+function addCreateMutation() {}
+function addUpdateMutation() {}
+function addDeleteMutation() {}

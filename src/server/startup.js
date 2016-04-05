@@ -36,8 +36,6 @@ _readLaunchPars()
 .then(() => {
   gqlServer.init();
   httpServer.init({ port: _launchPars.port });
-
-  db.updateKeys();
 });
 
 

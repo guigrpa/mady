@@ -1,5 +1,6 @@
 import path                 from 'path';
 import fs                   from 'fs-extra';
+import timm                 from 'timm';
 import { mainStory, chalk } from 'storyboard';
 import parse                from './parser';
 
@@ -16,6 +17,7 @@ export function init(options: Object) {
   _initLocaleDir(options);
   _initConfig();
   _initKeys();
+  _initTranslations();
 }
 
 
@@ -29,7 +31,7 @@ function _initLocaleDir(options: Object) {
   try {
     fs.statSync(_localeDir);
   } catch (err) {
-    mainStory.info('db', `Creating folder ${chalk.cyan.bold(_localeDir)}...`);
+    mainStory.debug('db', `Creating folder ${chalk.cyan.bold(_localeDir)}...`);
     fs.mkdirSync(_localeDir);
   }
 }
@@ -46,10 +48,13 @@ function _initConfig() {
   try {
     fs.statSync(_configPath);
   } catch (err) {
-    mainStory.info('db', `Creating file ${chalk.cyan.bold(_configPath)}...`);
+    mainStory.debug('db', `Creating file ${chalk.cyan.bold(_configPath)}...`);
     _config = DEFAULT_CONFIG;
     saveConfig();
-  } finally { readConfig(); }
+  } finally {
+    mainStory.info('db', `Reading file ${chalk.cyan.bold(_configPath)}...`);
+    readConfig();
+  }
 }
 
 export function getConfig() { return _config; }
@@ -68,47 +73,94 @@ function _initKeys() {
   try {
     fs.statSync(_keyPath);
   } catch (err) {
-    mainStory.info('db', `Creating file ${chalk.cyan.bold(_keyPath)}...`);
-    _keys = [];
+    mainStory.debug('db', `Creating file ${chalk.cyan.bold(_keyPath)}...`);
+    _keys = {};
     saveKeys();
-  } finally { readKeys(); }
+  } finally {
+    mainStory.info('db', `Reading file ${chalk.cyan.bold(_keyPath)}...`);
+    readKeys();
+  }
 }
 
-export function getKeys() { return _keys; }
-export function getKey(id) { return _keys.find(o => o.id === id); }
+export function getKeys() { return Object.keys(_keys).map(id => _keys[id]); }
+export function getKey(id) { return _keys[id]; }
 export function readKeys() { _keys = readJson(_keyPath); }
 export function saveKeys() { saveJson(_keyPath, _keys); }
 
 export function updateKeys() {
   const { srcPaths, srcExtensions } = _config;
-  const curKeys = parse({ srcPaths, srcExtensions });
+  const story = mainStory.child({ src: 'db', title: 'Update keys' });
+  const curKeys = parse({ srcPaths, srcExtensions, story });
   const now = new Date().toISOString();
 
   let numUnused = 0;
-  for (const key of _keys) {
-    const id = key.id;
+  Object.keys(_keys).forEach(id => {
+    const key = _keys[id];
     if (curKeys[id]) {
       curKeys[id].firstUsed = key.firstUsed;
     } else {
-      mainStory.debug('db', `Unused key: ${id}`);
+      story.debug('db', `${chalk.magenta.bold('Unused')} key: ${id}`);
       curKeys[id] = key;
       key.unusedSince = key.unusedSince || now;
       key.sources = [];
       numUnused++;
     }
-  }
+  });
 
-  _keys = Object.keys(curKeys).map((id) => {
+  Object.keys(curKeys).forEach(id => {
     const key = curKeys[id];
     if (!key.firstUsed) {
-      mainStory.debug('db', `New key: ${id}`);
+      story.debug('db', `${chalk.green.bold('New')} key: ${id}`);
       key.firstUsed = now;
     }
-    return key;
+    _keys[id] = key;
   });
 
   saveKeys();
+  story.close();
+  return _keys;
 }
+
+
+// ==============================================
+// Translations
+// ==============================================
+const getLangPath = (lang) => path.join(_localeDir, `${lang}.json`);
+let _translations = {};
+
+function _initTranslations() {
+  for (const lang of _config.langs) {
+    const langPath = getLangPath(lang);
+    try {
+      fs.statSync(langPath);
+    } catch (err) {
+      mainStory.debug('db', `Creating file ${chalk.cyan.bold(langPath)}...`);
+      saveJson(langPath, {});
+    } finally {
+      mainStory.info('db', `Reading file ${chalk.cyan.bold(langPath)}...`);
+      readTranslations(lang);
+    }
+  }
+}
+
+export function getTranslations(lang) {
+  const out = [];
+  Object.keys(_translations).forEach((translationId) => {
+    const translation = _translations[translationId];
+    if (translation.lang === lang) {
+      out.push(translation);
+    }
+  });
+  return out;
+}
+export function getTranslation(id) { return _translations[id]; }
+export function readTranslations(lang) {
+  const translations = readJson(getLangPath(lang));
+  if (translations) {
+    _translations = timm.merge(_translations, translations);
+  }
+}
+export function saveTranslations(lang) { saveJson(getLangPath(lang), getTranslations(lang)); }
 
 
 // ==============================================

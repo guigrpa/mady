@@ -11,4 +11,4 @@ import Relay                from 'react-relay';
 mainStory.info('startup', 'Launching...');
 
 // _t("exampleContext_Example string");
-// _t("exampleContext_Number of items: {NUM}", NUM);
+// _t("exampleContext_Number of records: {NUM}", NUM);

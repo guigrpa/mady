@@ -124,6 +124,7 @@ const specs = {
   dependencies: {
     timm: '^0.6.0',
     storyboard: '^1.0.0',
+    lodash: '^4.8.2',
     inquirer: '^0.12.0',
     commander: '^2.9.0',
     bluebird: '^3.3.4',
