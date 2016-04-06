@@ -57,9 +57,14 @@ function _initConfig() {
   }
 }
 
+function readConfig() { _config = readJson(_configPath); }
+function saveConfig() { saveJson(_configPath, _config); }
+
 export function getConfig() { return _config; }
-export function readConfig() { _config = readJson(_configPath); }
-export function saveConfig() { saveJson(_configPath, _config); }
+export function updateConfig(newAttrs) {
+  _config = timm.merge(_config, newAttrs);
+  saveConfig();
+}
 
 
 // ==============================================
@@ -82,14 +87,37 @@ function _initKeys() {
   }
 }
 
+function readKeys() { _keys = readJson(_keyPath); }
+function saveKeys() { saveJson(_keyPath, _keys); }
+
 export function getKeys() { return Object.keys(_keys).map(id => _keys[id]); }
 export function getKey(id) { return _keys[id]; }
-export function readKeys() { _keys = readJson(_keyPath); }
-export function saveKeys() { saveJson(_keyPath, _keys); }
-
-export function updateKeys() {
+export function createKey(newAttrs) {
+  const id = newAttrs.context != null
+    ? `${newAttrs.context}_${newAttrs.text}`
+    : newAttrs.text;
+  _keys[id] = {
+    id,
+    context: newAttrs.context || null,
+    text: newAttrs.text,
+    firstUsed: newAttrs.firstUsed,
+    unusedSince: newAttrs.unusedSince || null,
+    sources: [],
+  };
+  saveKeys();
+  return id;
+}
+export function updateKey(id, newAttrs) {
+  _keys[id] = timm.merge(_keys[id], newAttrs);
+  saveKeys();
+}
+export function deleteKey(id) {
+  _keys[id] = undefined;
+  saveKeys();
+}
+export function parseSrcFiles() {
   const { srcPaths, srcExtensions } = _config;
-  const story = mainStory.child({ src: 'db', title: 'Update keys' });
+  const story = mainStory.child({ src: 'db', title: 'Parse source files' });
   const curKeys = parse({ srcPaths, srcExtensions, story });
   const now = new Date().toISOString();
 
@@ -143,6 +171,14 @@ function _initTranslations() {
   }
 }
 
+function readTranslations(lang) {
+  const translations = readJson(getLangPath(lang));
+  if (translations) {
+    _translations = timm.merge(_translations, translations);
+  }
+}
+function saveTranslations(lang) { saveJson(getLangPath(lang), getTranslations(lang)); }
+
 export function getTranslations(lang) {
   const out = [];
   Object.keys(_translations).forEach((translationId) => {
@@ -154,13 +190,6 @@ export function getTranslations(lang) {
   return out;
 }
 export function getTranslation(id) { return _translations[id]; }
-export function readTranslations(lang) {
-  const translations = readJson(getLangPath(lang));
-  if (translations) {
-    _translations = timm.merge(_translations, translations);
-  }
-}
-export function saveTranslations(lang) { saveJson(getLangPath(lang), getTranslations(lang)); }
 
 
 // ==============================================

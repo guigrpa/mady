@@ -7,13 +7,27 @@ import {
   // GraphQLInt,
   // GraphQLFloat,
   GraphQLObjectType,
-  // GraphQLInputObjectType,
+  GraphQLInputObjectType,
   GraphQLList,
   GraphQLNonNull,
   GraphQLSchema,
 }                           from 'graphql';
-import * as gqlRelay        from 'graphql-relay';
 import {
+  nodeDefinitions,
+  globalIdField,
+  toGlobalId,
+  fromGlobalId,
+  connectionArgs,
+  connectionDefinitions,
+  connectionFromArray,
+  cursorForObjectInConnection,
+  mutationWithClientMutationId,
+}                           from 'graphql-relay';
+import {
+  capitalize,
+  lowerFirst,
+  omitBy,
+  isUndefined,
   pick,
 }                           from 'lodash';
 import * as db              from './db';
@@ -26,6 +40,7 @@ const gqlTypes        = {};
 const gqlMutations    = {};
 let gqlSchema         = null;
 const viewer          = { _type: 'Viewer', id: 'me' };
+let viewerRootField   = null;
 
 // ==============================================
 // Public API
@@ -40,7 +55,7 @@ export function init() {
   const {
     nodeInterface,
     nodeField,
-  } = gqlRelay.nodeDefinitions(getNode, getNodeType);
+  } = nodeDefinitions(getNodeFromGlobalId, getNodeType);
   gqlInterfaces.Node = nodeInterface;
   const nodeRootField = nodeField;
 
@@ -61,14 +76,14 @@ export function init() {
     interfaces: [gqlInterfaces.Node],
     isTypeOf: node => node._type === 'Viewer',
     fields: () => ({
-      id: gqlRelay.globalIdField('Viewer'),
+      id: globalIdField('Viewer'),
       config: configBaseField,
       keys: keysBaseConnection,
       translations: translationsBaseConnection,
     }),
   });
 
-  const viewerRootField = {
+  viewerRootField = {
     type: gqlTypes.Viewer,
     resolve: () => viewer,
   };
@@ -87,8 +102,13 @@ export function init() {
     interfaces: [gqlInterfaces.Node],
     isTypeOf: () => true,
     fields: () => timm.merge(configFields(), {
-      id: gqlRelay.globalIdField('Config'),
+      id: globalIdField('Config'),
     }),
+  });
+
+  gqlTypes.ConfigUpdate = new GraphQLInputObjectType({
+    name: 'ConfigUpdate',
+    fields: () => configFields(),
   });
 
   configBaseField = {
@@ -96,25 +116,42 @@ export function init() {
     resolve: () => db.getConfig(),
   };
 
-  addUpdateMutation('Config');
+  addMutation('Config', 'UPDATE', { fSingleton: true });
 
   // ----------------------------------------------
   // Keys
   // ----------------------------------------------
-  const keyFields = () => ({
-    context:        { type: GraphQLString },
-    text:           { type: GraphQLString },
-    firstUsed:      { type: GraphQLString },
-    unusedSince:    { type: GraphQLString },
-    sources:        { type: new GraphQLList(GraphQLString) },
-  });
-
   gqlTypes.Key = new GraphQLObjectType({
     name: 'Key',
     interfaces: [gqlInterfaces.Node],
     isTypeOf: () => true,
-    fields: () => timm.merge(keyFields(), {
-      id: gqlRelay.globalIdField('Key'),
+    fields: () => ({
+      id:             globalIdField('Key'),
+      context:        { type: GraphQLString },
+      text:           { type: GraphQLString },
+      firstUsed:      { type: GraphQLString },
+      unusedSince:    { type: GraphQLString },
+      sources:        { type: new GraphQLList(GraphQLString) },
+    }),
+  });
+
+  gqlTypes.KeyCreate = new GraphQLInputObjectType({
+    name: 'KeyCreate',
+    fields: () => ({
+      context:        { type: GraphQLString },
+      text:           { type: GraphQLString },
+      firstUsed:      { type: GraphQLString },
+      unusedSince:    { type: GraphQLString },
+    }),
+  });
+
+  gqlTypes.KeyUpdate = new GraphQLInputObjectType({
+    name: 'KeyUpdate',
+    fields: () => ({
+      context:        { type: GraphQLString },
+      text:           { type: GraphQLString },
+      firstUsed:      { type: GraphQLString },
+      unusedSince:    { type: GraphQLString },
     }),
   });
 
@@ -122,18 +159,18 @@ export function init() {
 
   keysBaseConnection = {
     type: gqlTypes.KeyConnection,
-    args: gqlRelay.connectionArgs,
-    resolve: (base, args) => gqlRelay.connectionFromArray(db.getKeys(), args),
+    args: connectionArgs,
+    resolve: (base, args) => connectionFromArray(db.getKeys(), args),
   };
 
-  addCreateMutation('Key');
-  addUpdateMutation('Key');
-  addDeleteMutation('Key');
-  gqlMutations.updateKeys = gqlRelay.mutationWithClientMutationId({
-    name: 'updateKeys',
+  addMutation('Key', 'CREATE');
+  addMutation('Key', 'UPDATE');
+  addMutation('Key', 'DELETE');
+  gqlMutations.parseSrcFiles = mutationWithClientMutationId({
+    name: 'parseSrcFiles',
     inputFields: {},
     mutateAndGetPayload: () => {
-      db.updateKeys();
+      db.parseSrcFiles();
       return {};
     },
     outputFields: {
@@ -145,21 +182,31 @@ export function init() {
   // ----------------------------------------------
   // Translations
   // ----------------------------------------------
-  const translationFields = () => ({
-    lang:           { type: GraphQLString },
-    translation:    { type: GraphQLString },
-    keyId: {
-      type: GraphQLID,
-      resolve: (o) => gqlRelay.toGlobalId('Key', o.keyId),
-    },
-  });
-
   gqlTypes.Translation = new GraphQLObjectType({
     name: 'Translation',
     interfaces: [gqlInterfaces.Node],
     isTypeOf: () => true,
-    fields: () => timm.merge(translationFields(), {
-      id: gqlRelay.globalIdField('Translation'),
+    fields: () => ({
+      id:             globalIdField('Translation'),
+      lang:           { type: GraphQLString },
+      translation:    { type: GraphQLString },
+      keyId:          { type: GraphQLID, resolve: (o) => toGlobalId('Key', o.keyId) },
+    }),
+  });
+
+  gqlTypes.TranslationCreate = new GraphQLInputObjectType({
+    name: 'TranslationCreate',
+    fields: () => ({
+      lang:           { type: GraphQLString },
+      translation:    { type: GraphQLString },
+      keyId:          { type: GraphQLID },
+    }),
+  });
+
+  gqlTypes.TranslationUpdate = new GraphQLInputObjectType({
+    name: 'TranslationUpdate',
+    fields: () => ({
+      translation:    { type: GraphQLString },
     }),
   });
 
@@ -167,15 +214,15 @@ export function init() {
 
   translationsBaseConnection = {
     type: gqlTypes.TranslationConnection,
-    args: timm.merge(gqlRelay.connectionArgs, {
+    args: timm.merge(connectionArgs, {
       lang: { type: new GraphQLNonNull(GraphQLString) },
     }),
-    resolve: (base, args) => gqlRelay.connectionFromArray(db.getTranslations(args.lang), args),
+    resolve: (base, args) => connectionFromArray(db.getTranslations(args.lang), args),
   };
 
-  addCreateMutation('Translation', { globalIds: ['keyId'] });
-  addUpdateMutation('Translation', { globalIds: ['keyId'] });
-  addDeleteMutation('Translation');
+  addMutation('Translation', 'CREATE', { globalIds: ['keyId'] });
+  addMutation('Translation', 'UPDATE', { globalIds: ['keyId'] });
+  addMutation('Translation', 'DELETE');
 
   // ==============================================
   // Schema
@@ -193,14 +240,14 @@ export function init() {
     mutation: new GraphQLObjectType({
       name: 'Mutation',
       fields: () => pick(gqlMutations, [
-        // 'updateConfig',
-        // 'createKey',
-        // 'updateKey',
-        // 'deleteKey',
-        'updateKeys',
-        // 'createTranslation',
-        // 'updateTranslation',
-        // 'deleteTranslation',
+        'updateConfig',
+        'createKey',
+        'updateKey',
+        'deleteKey',
+        'parseSrcFiles',
+        'createTranslation',
+        'updateTranslation',
+        'deleteTranslation',
       ]),
     }),
   });
@@ -214,9 +261,12 @@ function getNodeType(node) {
   return gqlTypes[node._type];
 }
 
-function getNode(globalId) {
-  const { type, id } = gqlRelay.fromGlobalId(globalId);
-  mainStory.debug('gql', `Resolving node: type=${type}, id=${id}...`);
+function getNodeFromGlobalId(globalId) {
+  const { type, id } = fromGlobalId(globalId);
+  return getNodeFromTypeAndLocalId(type, id);
+}
+
+function getNodeFromTypeAndLocalId(type, localId) {
   let out;
   switch (type) {
     case 'Viewer':
@@ -229,13 +279,13 @@ function getNode(globalId) {
       }
       break;
     case 'Key':
-      out = db.getKey(id);
+      out = db.getKey(localId);
       if (out) {
         out = timm.set(out, '_type', 'Key');
       }
       break;
     case 'Translation':
-      out = db.getTranslation(id);
+      out = db.getTranslation(localId);
       if (out) {
         out = timm.set(out, '_type', 'Translation');
       }
@@ -248,7 +298,7 @@ function getNode(globalId) {
 }
 
 function addConnectionType(name) {
-  const { connectionType, edgeType } = gqlRelay.connectionDefinitions({
+  const { connectionType, edgeType } = connectionDefinitions({
     name,
     nodeType: gqlTypes[name],
   });
@@ -256,6 +306,112 @@ function addConnectionType(name) {
   gqlTypes[`${name}Edge`] = edgeType;
 }
 
-function addCreateMutation() {}
-function addUpdateMutation() {}
-function addDeleteMutation() {}
+function addMutation(type, op, options = {}) {
+  const name = `${capitalize(op)}${type}`;
+
+  // Input fields
+  const inputFields = {};
+  if (op !== 'CREATE' && !options.fSingleton) {
+    inputFields.id = { type: new GraphQLNonNull(GraphQLID) };
+  }
+  if (op !== 'DELETE') {
+    inputFields.set = { type: gqlTypes[`${type}${capitalize(op)}`] };
+    inputFields.unset = { type: new GraphQLList(GraphQLString) };
+  }
+
+  // The operation
+  const mutateAndGetPayload = ({ id: globalId, set, unset }) => {
+    return mutate(type, op, globalId, set, unset, options);
+  }
+
+  // Output fields
+  const outputFields = { viewer: viewerRootField };
+  if (op === 'DELETE') {
+    outputFields[`deleted${type}Id`] = {
+      type: GraphQLID,
+      resolve: ({ globalId }) => globalId,
+    };
+  } else {
+    outputFields[lowerFirst(type)] = {
+      type: gqlTypes[type],
+      resolve: ({ localId }) => getNodeFromTypeAndLocalId(type, localId),
+    };
+  }
+  if (op === 'CREATE') {
+    outputFields[`${lowerFirst(type)}Edge`] = {
+      type: gqlTypes[`${type}Edge`],
+      resolve: ({ localId }) => {
+        const allNodes = db[`get${getTypePlural(type)}`]();
+        const newNode = allNodes.find(o => o.id === localId);
+        return {
+          cursor: cursorForObjectInConnection(allNodes, newNode),
+          node: newNode,
+        };
+      },
+    };
+  }
+
+  // Save mutation
+  gqlMutations[`${op.toLowerCase()}${type}`] = mutationWithClientMutationId({
+    name,
+    inputFields,
+    mutateAndGetPayload,
+    outputFields,
+  });
+}
+
+function mutate(type, op, globalId, set = {}, unset = [], options = {}) {
+  let localId = (op !== 'CREATE' && !options.fSingleton)
+    ? fromGlobalId(globalId).id
+    : null;
+  if (op === 'DELETE') {
+    db[`delete${type}`](localId);
+  } else {
+    let newAttrs = mergeSetUnset(set, unset);
+    newAttrs = resolveGlobalIds(newAttrs, options.globalIds);
+    if (op === 'CREATE') {
+      localId = db[`create${type}`](newAttrs);
+    } else {
+      if (options.fSingleton) {
+        db[`update${type}`](newAttrs);
+      } else {
+        db[`update${type}`](localId, newAttrs);
+      }
+    }
+  }
+  return { localId, globalId };
+}
+
+function mergeSetUnset(set, unset) {
+  const attrs = omitBy(set, isUndefined);
+  for (const attr of unset) {
+    attrs[attr] = null;
+  }
+  return attrs;
+}
+
+function resolveGlobalIds(prevAttrs, globalIds = []) {
+  let attrs = prevAttrs;
+  if (attrs == null || !globalIds.length) return attrs;
+  for (const locatorPath of globalIds) {
+    const tokens = locatorPath.split('.');
+    const curToken = tokens[0];
+    if (tokens.length === 1) {
+      const globalId = attrs[curToken];
+      if (globalId == null) continue;
+      attrs = timm.set(attrs, curToken, fromGlobalId(globalId).id);
+    } else {
+      const subLocatorPath = tokens.slice(1).join('.');
+      if (curToken === '*') {
+        for (let idx = 0; idx < attrs.length; idx++) {
+          attrs = timm.set(attrs, idx, resolveGlobalIds(attrs[idx], [subLocatorPath]));
+        }
+      } else {
+        attrs = timm.set(attrs, curToken, resolveGlobalIds(attrs[curToken], [subLocatorPath]));
+      }
+    }
+  }
+  return attrs;
+}
+
+function getTypePlural(type) { return `${type}s`; } // obviously, a stub
