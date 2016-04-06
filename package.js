@@ -63,6 +63,7 @@ const specs = {
                                   'babel --no-babelrc --plugins transform-flow-strip-types -d lib/es6 src',
                                   'cp -r src lib/es6_flow',
                                 ]),
+    updateSchemaJson:           'node src/server/gqlUpdateSchemaJson',
     docs:                       'extract-docs --template docs/templates/README.md --output README.md',
     build:                      runMultiple([
                                   'npm run lint',
