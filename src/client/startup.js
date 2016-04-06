@@ -15,9 +15,12 @@ mainStory.info('startup', 'Launching...');
 // _t("exampleContext_Example string");
 // _t("exampleContext_Number of items: {NUM}", NUM);
 
-const ViewerQuery = {
-  viewer: () => Relay.QL`query {viewer}`,
-};
+class ViewerQuery extends Relay.Route {
+  static queries = {
+    viewer: () => Relay.QL`query {viewer}`,
+  };
+  static routeName = 'ViewerQuery';
+}
 
 ReactDOM.render(
   <Relay.RootContainer

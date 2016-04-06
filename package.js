@@ -55,15 +55,15 @@ const specs = {
   scripts: {
 
     // Top-level
-    start:                      'babel-node src/index.js',
+    start:                      'node lib/es5/server/startup',
     compile:                    runMultiple([
                                   'rm -rf ./lib',
                                   'mkdir lib',
                                   'babel -d lib/es5 src',
-                                  'babel --no-babelrc --plugins transform-flow-strip-types -d lib/es6 src',
-                                  'cp -r src lib/es6_flow',
+                                  // 'babel --no-babelrc --presets react --plugins transform-flow-strip-types -d lib/es6 src',
+                                  // 'cp -r src lib/es6_flow',
                                 ]),
-    updateSchemaJson:           'node src/server/gqlUpdateSchemaJson',
+    updateSchemaJson:           'babel-node src/server/gqlUpdateSchema',
     docs:                       'extract-docs --template docs/templates/README.md --output README.md',
     build:                      runMultiple([
                                   'npm run lint',
@@ -169,7 +169,7 @@ const specs = {
     'babel-core': '^6.7.2',
     'babel-plugin-transform-flow-strip-types': '^6.7.0',
     'babel-preset-es2015': '^6.6.0',
-    'babel-preset-stage-2': '^6.5.0',
+    'babel-preset-stage-0': '^6.5.0',
     'babel-preset-react': '^6.5.0',
     'babel-preset-react-hmre': '1.1.1', // to use Hot Module Replacement
 

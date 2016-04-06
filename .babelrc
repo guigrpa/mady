@@ -1,7 +1,7 @@
 {
-  "presets": ["es2015", "stage-2", "react"],
+  "presets": ["es2015", "stage-0", "react"],
   "plugins": [
-    ["./server/babelRelayPlugin", {}],
+    ["./src/server/babelRelayPlugin", {}],
     "transform-flow-strip-types"
   ],
   "env": {

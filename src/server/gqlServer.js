@@ -1,5 +1,6 @@
 import { mainStory }        from 'storyboard';
 import timm                 from 'timm';
+import Promise              from 'bluebird';
 import {
   GraphQLID,
   GraphQLString,
@@ -11,7 +12,12 @@ import {
   GraphQLList,
   GraphQLNonNull,
   GraphQLSchema,
+  graphql,
 }                           from 'graphql';
+import {
+  introspectionQuery,
+  printSchema,
+}                           from 'graphql/utilities';
 import {
   nodeDefinitions,
   globalIdField,
@@ -46,6 +52,22 @@ let viewerRootField   = null;
 // Public API
 // ==============================================
 export function getSchema() { return gqlSchema; }
+export function getSchemaShorthand() { return printSchema(gqlSchema); }
+export function runQuery(query, operation, rootValue, variables) {
+  return graphql(gqlSchema, query, rootValue, variables, operation);
+}
+export function runIntrospect() {
+  return Promise.resolve()
+  .then(() => graphql(gqlSchema, introspectionQuery))
+  .then((result) => {
+    if (result.errors) {
+      for (const error of result.errors) {
+        mainStory.error('gql', 'Error introspecting schema:', { attach: error });
+      }
+    }
+    return result;
+  });
+}
 
 export function init() {
   // ==============================================
