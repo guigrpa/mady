@@ -8,7 +8,7 @@ import program              from 'commander';
 import inquirer             from 'inquirer';
 import Promise              from 'bluebird';
 Promise.longStackTraces();
-const pkg                   = require('../../../package.json');  // from lib/es5/server
+const pkg                   = require('../../package.json');
 import * as db              from './db';
 import * as gqlServer       from './gqlServer';
 import * as httpServer      from './httpServer';

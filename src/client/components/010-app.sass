@@ -1,0 +1,83 @@
+// ==============================================
+// General mixins
+// ==============================================
+=noUserSelect
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+=allowUserSelect
+  -webkit-user-select: all
+  -khtml-user-select: all
+  -moz-user-select: all
+  -ms-user-select: all
+  user-select: all
+
+=boxSizing($value)
+  -moz-box-sizing: #{$value}
+  -webkit-box-sizing: #{$value}
+  box-sizing: #{$value}
+
+// ==============================================
+// Fonts
+// ==============================================
+=systemFont
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+
+// ==============================================
+// Animations
+// ==============================================
+=animation($value)
+  -webkit-animation: #{$value}
+  -moz-animation: #{$value}
+  -ms-animation: #{$value}
+  -o-animation: #{$value}
+  animation: #{$value}
+
+=keyframes($value)
+  @-webkit-keyframes #{$value}
+  @-moz-keyframes #{$value}
+  @-ms-keyframes #{$value}
+  @-o-keyframes #{$value}
+  @keyframes #{$value}
+
++keyframes('fadein {from {opacity: 0;} to {opacity: 1;}}')
+
+.fadeIn
+  +animation(fadein 0.4s)
+
+// ==============================================
+// Big things
+// ==============================================
+*, 
+*:before, 
+*:after
+  +boxSizing(border-box)
+
+html
+  height: 100%
+body
+  padding: 0
+  margin: 0
+  height: 100%
+  cursor: default
+  +noUserSelect
+#app
+  +systemFont
+  font-size: 12px
+  height: 100%
+
+// ==============================================
+// Small things
+// ==============================================
+.scrollbarMeasure
+  position: fixed
+  top: 0px
+  left: 0px
+  width: 100px
+  height: 100px
+  overflow: scroll
+  opacity: 0.001
+  top: -9999

@@ -1,7 +1,7 @@
 import path                 from 'path';
 import { mainStory }        from 'storyboard';
 import webpack              from 'webpack';
-const pkg                   = require('../../../package.json');  // from lib/es5/server
+const pkg                   = require('../../package.json');
 
 const fProduction = (process.env.NODE_ENV === 'production');
 

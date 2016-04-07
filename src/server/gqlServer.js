@@ -23,10 +23,10 @@ import {
   globalIdField,
   toGlobalId,
   fromGlobalId,
-  connectionArgs,
-  connectionDefinitions,
-  connectionFromArray,
-  cursorForObjectInConnection,
+  // connectionArgs,
+  // connectionDefinitions,
+  // connectionFromArray,
+  // cursorForObjectInConnection,
   mutationWithClientMutationId,
 }                           from 'graphql-relay';
 import {
@@ -86,9 +86,9 @@ export function init() {
   // ==============================================
   mainStory.debug('gql', 'Creating types...');
 
-  let configBaseField            = null;
-  let keysBaseConnection         = null;
-  let translationsBaseConnection = null;
+  let configBaseField       = null;
+  let keysBaseField         = null;
+  let translationsBaseField = null;
 
   // ----------------------------------------------
   // Viewer
@@ -100,8 +100,8 @@ export function init() {
     fields: () => ({
       id: globalIdField('Viewer'),
       config: configBaseField,
-      keys: keysBaseConnection,
-      translations: translationsBaseConnection,
+      keys: keysBaseField,
+      translations: translationsBaseField,
     }),
   });
 
@@ -177,26 +177,23 @@ export function init() {
     }),
   });
 
-  addConnectionType('Key');
-
-  keysBaseConnection = {
-    type: gqlTypes.KeyConnection,
-    args: connectionArgs,
-    resolve: (base, args) => connectionFromArray(db.getKeys(), args),
+  keysBaseField = {
+    type: new GraphQLList(gqlTypes.Key),
+    resolve: (base, args) => db.getKeys(),
   };
 
   addMutation('Key', 'CREATE');
   addMutation('Key', 'UPDATE');
   addMutation('Key', 'DELETE');
   gqlMutations.parseSrcFiles = mutationWithClientMutationId({
-    name: 'parseSrcFiles',
+    name: 'ParseSrcFiles',
     inputFields: {},
     mutateAndGetPayload: () => {
       db.parseSrcFiles();
       return {};
     },
     outputFields: {
-      keys: keysBaseConnection,
+      keys: keysBaseField,
       viewer: viewerRootField,
     },
   });
@@ -232,14 +229,12 @@ export function init() {
     }),
   });
 
-  addConnectionType('Translation');
-
-  translationsBaseConnection = {
-    type: gqlTypes.TranslationConnection,
-    args: timm.merge(connectionArgs, {
-      lang: { type: new GraphQLNonNull(GraphQLString) },
-    }),
-    resolve: (base, args) => connectionFromArray(db.getTranslations(args.lang), args),
+  translationsBaseField = {
+    type: new GraphQLList(gqlTypes.Translation),
+    args: {
+      lang:           { type: GraphQLString },
+    },
+    resolve: (base, args) => db.getTranslations(args.lang),
   };
 
   addMutation('Translation', 'CREATE', { globalIds: ['keyId'] });
@@ -319,6 +314,7 @@ function getNodeFromTypeAndLocalId(type, localId) {
   return out;
 }
 
+/*
 function addConnectionType(name) {
   const { connectionType, edgeType } = connectionDefinitions({
     name,
@@ -327,6 +323,7 @@ function addConnectionType(name) {
   gqlTypes[`${name}Connection`] = connectionType;
   gqlTypes[`${name}Edge`] = edgeType;
 }
+*/
 
 function addMutation(type, op, options = {}) {
   const name = `${capitalize(op)}${type}`;
@@ -359,6 +356,7 @@ function addMutation(type, op, options = {}) {
       resolve: ({ localId }) => getNodeFromTypeAndLocalId(type, localId),
     };
   }
+  /*
   if (op === 'CREATE') {
     outputFields[`${lowerFirst(type)}Edge`] = {
       type: gqlTypes[`${type}Edge`],
@@ -372,6 +370,7 @@ function addMutation(type, op, options = {}) {
       },
     };
   }
+  */
 
   // Save mutation
   gqlMutations[`${op.toLowerCase()}${type}`] = mutationWithClientMutationId({

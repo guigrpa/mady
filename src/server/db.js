@@ -183,7 +183,7 @@ export function getTranslations(lang) {
   const out = [];
   Object.keys(_translations).forEach((translationId) => {
     const translation = _translations[translationId];
-    if (translation.lang === lang) {
+    if (lang == null || translation.lang === lang) {
       out.push(translation);
     }
   });

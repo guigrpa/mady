@@ -1,1 +1,2 @@
-- [ ] Add signal to en_US that a given key has been "translated" (by default, no change)
+- [ ] Add compress Express middleware
+- [ ] 

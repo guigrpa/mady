@@ -55,13 +55,13 @@ const specs = {
   scripts: {
 
     // Top-level
-    start:                      'node lib/es5/server/startup',
+    start:                      'babel-node src/server/startup',
     compile:                    runMultiple([
                                   'rm -rf ./lib',
                                   'mkdir lib',
-                                  'babel -d lib/es5 src',
-                                  // 'babel --no-babelrc --presets react --plugins transform-flow-strip-types -d lib/es6 src',
-                                  // 'cp -r src lib/es6_flow',
+                                  'babel -d lib src',
+                                  // 'babel --no-babelrc --presets react --plugins transform-flow-strip-types -d libEs6 src',
+                                  // 'cp -r src libEs6_flow',
                                 ]),
     updateSchemaJson:           'babel-node src/server/gqlUpdateSchema',
     docs:                       'extract-docs --template docs/templates/README.md --output README.md',

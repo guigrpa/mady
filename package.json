@@ -26,8 +26,8 @@
     "url": "git+https://github.com/guigrpa/mady.git"
   },
   "scripts": {
-    "start": "babel-node src/server/startup.js",
-    "compile": "rm -rf ./lib && mkdir lib && babel -d lib/es5 src",
+    "start": "babel-node src/server/startup",
+    "compile": "rm -rf ./lib && mkdir lib && babel -d lib src",
     "updateSchemaJson": "babel-node src/server/gqlUpdateSchema",
     "docs": "extract-docs --template docs/templates/README.md --output README.md",
     "build": "npm run lint && npm run flow && npm run compile && npm run test && npm run docs",

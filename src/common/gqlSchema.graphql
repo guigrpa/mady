@@ -20,7 +20,6 @@ input CreateKeyInput {
 type CreateKeyPayload {
   viewer: Viewer
   key: Key
-  keyEdge: KeyEdge
   clientMutationId: String!
 }
 
@@ -33,7 +32,6 @@ input CreateTranslationInput {
 type CreateTranslationPayload {
   viewer: Viewer
   translation: Translation
-  translationEdge: TranslationEdge
   clientMutationId: String!
 }
 
@@ -68,21 +66,11 @@ type Key implements Node {
   sources: [String]
 }
 
-type KeyConnection {
-  pageInfo: PageInfo!
-  edges: [KeyEdge]
-}
-
 input KeyCreate {
   context: String
   text: String
   firstUsed: String
   unusedSince: String
-}
-
-type KeyEdge {
-  node: Key
-  cursor: String!
 }
 
 input KeyUpdate {
@@ -97,7 +85,7 @@ type Mutation {
   createKey(input: CreateKeyInput!): CreateKeyPayload
   updateKey(input: UpdateKeyInput!): UpdateKeyPayload
   deleteKey(input: DeleteKeyInput!): DeleteKeyPayload
-  parseSrcFiles(input: parseSrcFilesInput!): parseSrcFilesPayload
+  parseSrcFiles(input: ParseSrcFilesInput!): ParseSrcFilesPayload
   createTranslation(input: CreateTranslationInput!): CreateTranslationPayload
   updateTranslation(input: UpdateTranslationInput!): UpdateTranslationPayload
   deleteTranslation(input: DeleteTranslationInput!): DeleteTranslationPayload
@@ -107,19 +95,12 @@ interface Node {
   id: ID!
 }
 
-type PageInfo {
-  hasNextPage: Boolean!
-  hasPreviousPage: Boolean!
-  startCursor: String
-  endCursor: String
-}
-
-input parseSrcFilesInput {
+input ParseSrcFilesInput {
   clientMutationId: String!
 }
 
-type parseSrcFilesPayload {
-  keys(after: String, first: Int, before: String, last: Int): KeyConnection
+type ParseSrcFilesPayload {
+  keys: [Key]
   viewer: Viewer
   clientMutationId: String!
 }
@@ -136,20 +117,10 @@ type Translation implements Node {
   keyId: ID
 }
 
-type TranslationConnection {
-  pageInfo: PageInfo!
-  edges: [TranslationEdge]
-}
-
 input TranslationCreate {
   lang: String
   translation: String
   keyId: ID
-}
-
-type TranslationEdge {
-  node: Translation
-  cursor: String!
 }
 
 input TranslationUpdate {
@@ -197,6 +168,6 @@ type UpdateTranslationPayload {
 type Viewer implements Node {
   id: ID!
   config: Config
-  keys(after: String, first: Int, before: String, last: Int): KeyConnection
-  translations(after: String, first: Int, before: String, last: Int, lang: String!): TranslationConnection
+  keys: [Key]
+  translations(lang: String): [Translation]
 }
