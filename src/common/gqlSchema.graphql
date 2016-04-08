@@ -107,7 +107,6 @@ type ParseSrcFilesPayload {
 
 type Query {
   node(id: ID!): Node
-  nodeOrNull(id: ID): Node
   viewer: Viewer
 }
 
@@ -171,4 +170,5 @@ type Viewer implements Node {
   config: Config
   keys: [Key]
   translations(lang: String): [Translation]
+  anyNode(id: ID): Node
 }

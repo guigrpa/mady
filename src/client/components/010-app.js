@@ -15,13 +15,16 @@ require('./010-app.sass');
 const fragments = {
   viewer: () => Relay.QL`
     fragment on Viewer {
-      keys {
-        id
-      }
       ${Translator.getFragment('viewer')}
       ${Settings.getFragment('viewer')}
+      anyNode(id: $selId) {
+        ${Details.getFragment('anyNode')}
+      }
     }
   `,
+};
+const initialVariables = {
+  selId: null,
 };
 
 // ==========================================
@@ -64,11 +67,9 @@ class App extends React.Component {
   }
 
   renderDetails() {
-    if (!this.state.selectedKeyId) return null;
     return (
-      <Relay.RootContainer
-        Component={Details}
-        route={new NodeQuery({ id: this.state.selectedKeyId })}
+      <Details
+        anyNode={this.props.viewer.anyNode}
       />
     );
   }
@@ -86,7 +87,10 @@ class App extends React.Component {
   }
 
   // ------------------------------------------
-  changeSelectedKey(selectedKeyId) { this.setState({ selectedKeyId }); }
+  changeSelectedKey(selectedKeyId) {
+    this.setState({ selectedKeyId });
+    this.props.relay.setVariables({ selId: selectedKeyId });
+  }
   showSettings() { this.setState({ fSettingsShown: true }); }
   hideSettings() { this.setState({ fSettingsShown: false }); }
 }
@@ -107,4 +111,4 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-export default Relay.createContainer(App, { fragments });
+export default Relay.createContainer(App, { fragments, initialVariables });

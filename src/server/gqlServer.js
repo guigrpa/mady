@@ -102,6 +102,11 @@ export function init() {
       config: configBaseField,
       keys: keysBaseField,
       translations: translationsBaseField,
+      anyNode: {
+        type: gqlInterfaces.Node,
+        args: { id: { type: GraphQLID } },
+        resolve: (base, args) => getNodeFromGlobalId(args.id),
+      },
     }),
   });
 
@@ -250,13 +255,6 @@ export function init() {
       name: 'Query',
       fields: () => ({
         node: nodeRootField,
-        nodeOrNull: {
-          type: gqlInterfaces.Node,
-          args: {
-            id: { type: GraphQLID },
-          },
-          resolve: (base, args) => getNodeFromGlobalId(args.id),
-        },
         viewer: viewerRootField,
       }),
     }),

@@ -9,7 +9,7 @@ import {
 // Relay fragments
 // ==========================================
 const fragments = {
-  node: () => Relay.QL`
+  anyNode: () => Relay.QL`
     fragment on Key {
       context text
       firstUsed unusedSince
@@ -23,7 +23,7 @@ const fragments = {
 // ==========================================
 class Details extends React.Component {
   static propTypes = {
-    node:                   React.PropTypes.object,
+    anyNode:                React.PropTypes.object,
   };
 
   render() {
@@ -35,7 +35,7 @@ class Details extends React.Component {
   }
 
   renderContents() {
-    const key = this.props.node;
+    const key = this.props.anyNode;
     if (!key) return null;
     const { text, firstUsed } = key;
     return (
@@ -47,7 +47,7 @@ class Details extends React.Component {
   }
 
   renderSources() {
-    const { sources, firstUsed, unusedSince } = this.props.node;
+    const { sources, firstUsed, unusedSince } = this.props.anyNode;
     let out;
     if (sources.length) {
       out = (
