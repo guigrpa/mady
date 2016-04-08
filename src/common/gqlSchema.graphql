@@ -66,11 +66,21 @@ type Key implements Node {
   sources: [String]
 }
 
+type KeyConnection {
+  pageInfo: PageInfo!
+  edges: [KeyEdge]
+}
+
 input KeyCreate {
   context: String
   text: String
   firstUsed: String
   unusedSince: String
+}
+
+type KeyEdge {
+  node: Key
+  cursor: String!
 }
 
 input KeyUpdate {
@@ -95,19 +105,25 @@ interface Node {
   id: ID!
 }
 
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
 input ParseSrcFilesInput {
   clientMutationId: String!
 }
 
 type ParseSrcFilesPayload {
-  keys: [Key]
+  keys(after: String, first: Int, before: String, last: Int): KeyConnection
   viewer: Viewer
   clientMutationId: String!
 }
 
 type Query {
   node(id: ID!): Node
-  nodeOrNull(id: ID): Node
   viewer: Viewer
 }
 
@@ -169,6 +185,7 @@ type UpdateTranslationPayload {
 type Viewer implements Node {
   id: ID!
   config: Config
-  keys: [Key]
+  keys(after: String, first: Int, before: String, last: Int): KeyConnection
   translations(lang: String): [Translation]
+  anyNode(id: ID): Node
 }

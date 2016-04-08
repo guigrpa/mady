@@ -23,10 +23,10 @@ import {
   globalIdField,
   toGlobalId,
   fromGlobalId,
-  // connectionArgs,
-  // connectionDefinitions,
-  // connectionFromArray,
-  // cursorForObjectInConnection,
+  connectionArgs,
+  connectionDefinitions,
+  connectionFromArray,
+  cursorForObjectInConnection,
   mutationWithClientMutationId,
 }                           from 'graphql-relay';
 import {
@@ -102,6 +102,11 @@ export function init() {
       config: configBaseField,
       keys: keysBaseField,
       translations: translationsBaseField,
+      anyNode: {
+        type: gqlInterfaces.Node,
+        args: { id: { type: GraphQLID } },
+        resolve: (base, args) => getNodeFromGlobalId(args.id),
+      },
     }),
   });
 
@@ -177,9 +182,14 @@ export function init() {
     }),
   });
 
+  addConnectionType('Key');
+
   keysBaseField = {
-    type: new GraphQLList(gqlTypes.Key),
-    resolve: (base, args) => db.getKeys(),
+    //type: new GraphQLList(gqlTypes.Key),
+    //resolve: (base, args) => db.getKeys(),
+    type: gqlTypes.KeyConnection,
+    args: connectionArgs,
+    resolve: (base, args) => connectionFromArray(db.getKeys(), args),
   };
 
   addMutation('Key', 'CREATE');
@@ -250,13 +260,6 @@ export function init() {
       name: 'Query',
       fields: () => ({
         node: nodeRootField,
-        nodeOrNull: {
-          type: gqlInterfaces.Node,
-          args: {
-            id: { type: GraphQLID },
-          },
-          resolve: (base, args) => getNodeFromGlobalId(args.id),
-        },
         viewer: viewerRootField,
       }),
     }),
@@ -322,7 +325,6 @@ function getNodeFromTypeAndLocalId(type, localId) {
   return out;
 }
 
-/*
 function addConnectionType(name) {
   const { connectionType, edgeType } = connectionDefinitions({
     name,
@@ -331,7 +333,6 @@ function addConnectionType(name) {
   gqlTypes[`${name}Connection`] = connectionType;
   gqlTypes[`${name}Edge`] = edgeType;
 }
-*/
 
 function addMutation(type, op, options = {}) {
   const name = `${capitalize(op)}${type}`;
@@ -443,4 +444,4 @@ function resolveGlobalIds(prevAttrs, globalIds = []) {
   return attrs;
 }
 
-function getTypePlural(type) { return `${type}s`; } // obviously, a stub
+// function getTypePlural(type) { return `${type}s`; } // obviously, a stub

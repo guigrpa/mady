@@ -22,11 +22,11 @@ const fragments = {
   viewer: () => Relay.QL`
     fragment on Viewer {
       config { langs }
-      keys {
+      keys(first: 100000) { edges { node {
         id
         context text
         unusedSince
-      }
+      }}}
       ${ParseSrcFilesMutation.getFragment('viewer')}
     }
   `,
@@ -80,7 +80,7 @@ class Translator extends React.Component {
         style={timm.merge(style.row, style.headerRow)}
       >
         <div style={timm.merge(style.headerCell, style.keysCol)}>
-          Keys [{keys.length}]
+          Keys [{keys.edges.length}]
           {' '}
           <Icon icon="refresh" onClick={this.onParseSrcFiles} />
         </div>
@@ -112,13 +112,13 @@ class Translator extends React.Component {
         className="tableBody"
         style={style.body}
       >
-        { this.props.viewer.keys.map(this.renderKeyRow) }
+        { this.props.viewer.keys.edges.map(this.renderKeyRow) }
         { this.renderFillerRow() }
       </div>
     );
   }
 
-  renderKeyRow(key) {
+  renderKeyRow({ node: key }) {
     return (
       <div key={key.id}
         className="tableBodyRow"
