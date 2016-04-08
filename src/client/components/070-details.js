@@ -40,9 +40,40 @@ class Details extends React.Component {
     const { text, firstUsed } = key;
     return (
       <div>
-        <div><b>{text}</b></div>
-        <div>First used: {moment(firstUsed).format('LLLL')}</div>
+        <div style={style.text}>{text}</div>
+        {this.renderSources()}
       </div>
+    );
+  }
+
+  renderSources() {
+    const { sources, firstUsed, unusedSince } = this.props.node;
+    let out;
+    if (sources.length) {
+      out = (
+        <div>
+          First used <i>{this.renderDate(firstUsed)}</i>. Currently used in:
+          <ul style={style.srcList}>
+            {sources.map((src, idx) => <li key={idx}>{src}</li>)}
+          </ul>
+        </div>
+      );
+    } else {
+      out = (
+        <div>
+          First used {this.renderDate(firstUsed)}.
+          Unused since {this.renderDate(unusedSince)}.
+        </div>
+      );
+    }
+    return out;
+  }
+
+  renderDate(d) {
+    return (
+      <span title={moment(d).format('LLLL')} style={style.date}>
+        {moment(d).fromNow()}
+      </span>
     );
   }
 }
@@ -52,11 +83,22 @@ class Details extends React.Component {
 // ==========================================
 const style = {
   outer: flexItem('none', {
-    minHeight: 70,
+    minHeight: 100,
     backgroundColor: '#ccc',
     padding: 5,
     marginTop: 5,
   }),
+  text: {
+    marginBottom: 5,
+    fontWeight: 'bold',
+  },
+  date: {
+    fontWeight: 'bold',
+    color: '#444',
+  },
+  srcList: {
+    marginTop: 0,
+  },
 };
 
 // ==========================================

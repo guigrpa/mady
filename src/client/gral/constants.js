@@ -1,7 +1,5 @@
 let scrollbarWidth = null;
 
-export default {};
-
 export function getScrollbarWidth() {
   if (scrollbarWidth == null) {
     const scrollDiv = document.createElement('div');

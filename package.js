@@ -145,10 +145,10 @@ const specs = {
     'babel-polyfill': '6.6.1',
 
     // React
-    react:                            '15.0.0-rc.1',
-    'react-dom':                      '15.0.0-rc.1',
-    'react-addons-pure-render-mixin': '15.0.0-rc.1',
-    'react-addons-perf':              '15.0.0-rc.1',
+    react:                            '15.0.0',
+    'react-dom':                      '15.0.0',
+    'react-addons-pure-render-mixin': '15.0.0',
+    'react-addons-perf':              '15.0.0',
 
     // Relay
     'react-relay':        '0.7.3',

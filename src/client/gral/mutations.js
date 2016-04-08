@@ -1,5 +1,7 @@
-import React                from 'react';
 import Relay                from 'react-relay';
+import {
+  pick,
+}                           from 'lodash';
 
 export class ParseSrcFilesMutation extends Relay.Mutation {
   static fragments = {
@@ -9,8 +11,6 @@ export class ParseSrcFilesMutation extends Relay.Mutation {
     return Relay.QL`mutation {parseSrcFiles}`;
   }
   getVariables() { return {}; }
-
-  // REVIEW!!
   getFatQuery() {
     return Relay.QL`
       fragment on ParseSrcFilesPayload {
@@ -20,14 +20,41 @@ export class ParseSrcFilesMutation extends Relay.Mutation {
       }
     `;
   }
-  
-  // REVIEW!!
   getConfigs() {
     return [{
       type: 'FIELDS_CHANGE',
-      fieldIds: {
+      fieldIDs: {
         viewer: this.props.viewer.id,
       },
-    }]
+    }];
+  }
+}
+
+export class UpdateConfigMutation extends Relay.Mutation {
+  static fragments = {
+    viewer: () => Relay.QL`fragment on Viewer {id}`,
+  };
+  getMutation() {
+    return Relay.QL`mutation {updateConfig}`;
+  }
+  getVariables() {
+    return pick(this.props, ['set', 'unset']);
+  }
+  getFatQuery() {
+    return Relay.QL`
+      fragment on UpdateConfigPayload {
+        viewer {
+          config
+        }
+      }
+    `;
+  }
+  getConfigs() {
+    return [{
+      type: 'FIELDS_CHANGE',
+      fieldIDs: {
+        viewer: this.props.viewer.id,
+      },
+    }];
   }
 }

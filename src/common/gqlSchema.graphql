@@ -107,6 +107,7 @@ type ParseSrcFilesPayload {
 
 type Query {
   node(id: ID!): Node
+  nodeOrNull(id: ID): Node
   viewer: Viewer
 }
 

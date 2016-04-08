@@ -1,16 +1,19 @@
 import timm                 from 'timm';
-import { mainStory }        from 'storyboard';
 import React                from 'react';
 import Relay                from 'react-relay';
 import {
   ParseSrcFilesMutation,
 }                           from '../gral/mutations';
-import { getScrollbarWidth } from '../gral/constants';
 import {
+  getScrollbarWidth,
+}                           from '../gral/constants';
+import {
+  bindAll,
   flexItem,
   flexContainer,
 }                           from './helpers';
-import LangSelector         from './600-langSelector';
+import Select               from './900-select';
+import Icon                 from './905-icon';
 
 // ==========================================
 // Relay fragments
@@ -18,6 +21,7 @@ import LangSelector         from './600-langSelector';
 const fragments = {
   viewer: () => Relay.QL`
     fragment on Viewer {
+      config { langs }
       keys {
         id
         context text
@@ -40,21 +44,23 @@ class Translator extends React.Component {
 
   constructor(props) {
     super(props);
-    let langs = ['en_US'];
-    try {
-      langs = JSON.parse(localStorage.madyLangs);
-    } catch (err) {
-      // Ignore error
-    }
     this.state = {
-      langs,
+      langs: this.readLangs(),
     };
-    this.parseSrcFiles = this.parseSrcFiles.bind(this);
-    this.forceFetch    = this.forceFetch.bind(this);
-    this.renderKeyRow  = this.renderKeyRow.bind(this);
-    this.clickKeyRow   = this.clickKeyRow.bind(this);
+    bindAll(this, [
+      'renderKeyRow',
+
+      'onAddLang',
+      'onRemoveLang',
+      'changeLang',
+
+      'onParseSrcFiles',
+      'onClickKeyRow',
+    ]);
   }
 
+  // ==========================================
+  // Render
   // ==========================================
   render() {
     return (
@@ -66,27 +72,35 @@ class Translator extends React.Component {
   }
 
   renderHeader() {
+    const { keys, config } = this.props.viewer;
+    const langOptions = config.langs.map(lang => ({ value: lang, label: lang }));
     return (
       <div 
         className="tableHeaderRow"
         style={timm.merge(style.row, style.headerRow)}
       >
         <div style={timm.merge(style.headerCell, style.keysCol)}>
-          Keys [{this.props.viewer.keys.length}]
+          Keys [{keys.length}]
           {' '}
-          <span onClick={this.parseSrcFiles}>Parse files</span>
+          <Icon icon="refresh" onClick={this.onParseSrcFiles} />
         </div>
         {this.state.langs.map((lang, idx) => (
           <div key={lang}
             style={timm.merge(style.headerCell, style.langCol)}
           >
-            <LangSelector 
+            <Select
+              id={idx}
               value={lang} 
-              onChange={lang => this.changeLang(idx, lang)}
+              onChange={this.changeLang}
+              options={langOptions}
             />
+            {' '}
+            <Icon id={idx} icon="remove" onClick={this.onRemoveLang} />
           </div>)
         )}
-        <div style={timm.merge(style.headerCell, style.addCol())}>+</div>
+        <div style={timm.merge(style.headerCell, style.addCol())}>
+          <Icon icon="plus" onClick={this.onAddLang}/>
+        </div>
         <div style={style.scrollbarSpacer()}/>
       </div>
     );
@@ -109,7 +123,7 @@ class Translator extends React.Component {
       <div key={key.id}
         className="tableBodyRow"
         id={key.id}
-        onClick={this.clickKeyRow}
+        onClick={this.onClickKeyRow}
         style={timm.merge(style.row, style.bodyRow)}
       >
         <div style={timm.merge(style.bodyCell, style.keysCol)}>
@@ -145,25 +159,64 @@ class Translator extends React.Component {
   }
 
   // ==========================================
-  clickKeyRow(ev) { 
-    this.props.onChangeSelection(ev.currentTarget.id); 
+  // Langs
+  // ==========================================
+  readLangs() {
+    let langs;
+    try {
+      langs = JSON.parse(localStorage.madyLangs);
+    } catch (err) {
+      langs = [];
+      const availableLangs = this.props.viewer.config.langs;
+      if (availableLangs.length) langs.push(availableLangs[0]);
+      this.writeLangs(langs);
+    }
+    return langs;
   }
 
-  parseSrcFiles() {
-    mainStory.info('translator', 'Parse files');
-    const mutation = new ParseSrcFilesMutation({ viewer: this.props.viewer });
-    // FIXME: should not need to force fetch afterwards!!!
-    Relay.Store.commitUpdate(mutation, { onSuccess: this.forceFetch });
+  writeLangs(langs) {
+    try {
+      localStorage.madyLangs = JSON.stringify(langs);
+    } catch (err) {
+      // Ignore error
+    }
   }
 
-  changeLang(idx, lang) {
-    const { langs } = this.state;
-    langs[idx] = lang;
+  onAddLang() {
+    const prevLangs = this.state.langs;
+    const availableLangs = this.props.viewer.config.langs;
+    const newLang = availableLangs.find(o => prevLangs.indexOf(o) < 0);
+    if (newLang == null) return;
+    const nextLangs = timm.addLast(prevLangs, newLang);
+    this.updateLangs(nextLangs);
+  }
+
+  onRemoveLang(ev) {
+    const idx = Number(ev.currentTarget.id);
+    const nextLangs = timm.removeAt(this.state.langs, idx);
+    this.updateLangs(nextLangs);
+  }
+
+  changeLang(lang, idx) {
+    const nextLangs = timm.replaceAt(this.state.langs, idx, lang);
+    this.updateLangs(nextLangs);
+  }
+
+  updateLangs(langs) {
+    this.writeLangs(langs);
     this.setState({ langs });
   }
 
   // ==========================================
-  forceFetch() { this.props.relay.forceFetch(); }
+  // Other handlers
+  // ==========================================
+  onParseSrcFiles() {
+    Relay.Store.commitUpdate(new ParseSrcFilesMutation({ viewer: this.props.viewer }));
+  }
+
+  onClickKeyRow(ev) {
+    this.props.onChangeSelection(ev.currentTarget.id);
+  }
 }
 
 // ==========================================
@@ -206,7 +259,7 @@ const style = {
   addCol: () => flexItem('0 0 2em', {
     backgroundColor: '#ccc',
     marginRight: getScrollbarWidth() ? 5 : 0,
-    borderBottom: '0px'
+    borderBottom: '0px',
   }),
 
   scrollbarSpacer: () => flexItem(`0 0 ${getScrollbarWidth()}px`),

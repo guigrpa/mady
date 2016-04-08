@@ -1,13 +1,24 @@
 import React                from 'react';
+import {
+  flexContainer,
+  flexItem,
+}                           from './helpers';
+import Icon                 from './905-icon';
 
 // ==========================================
 // Component
 // ==========================================
 class Header extends React.Component {
+  static propTypes = {
+    onShowSettings:         React.PropTypes.func.isRequired,
+  };
+
   render() {
     return (
       <div style={style.outer}>
-        A
+        <div>A</div>
+        <div style={style.spacer} />
+        <Icon icon='cog' onClick={this.props.onShowSettings} />
       </div>
     );
   }
@@ -17,12 +28,11 @@ class Header extends React.Component {
 // Styles
 // ==========================================
 const style = {
-  outer: {
-    flex: '0 0 2em',
-    WebkitFlex: '0 0 2em',
+  outer: flexItem('0 0 2em', flexContainer('row', {
     backgroundColor: '#ccc',
     padding: 5,
-  },
+  })),
+  spacer: flexItem('1'),
 };
 
 // ==========================================

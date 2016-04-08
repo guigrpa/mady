@@ -7,7 +7,7 @@ import parse                from './parser';
 const DEFAULT_CONFIG = {
   srcPaths: ['src'],
   srcExtensions: ['.js', '.jsx', '.coffee', '.cjsx'],
-  langs: ['en_US'],
+  langs: ['en-US'],
 };
 
 // ==============================================

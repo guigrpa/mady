@@ -250,6 +250,13 @@ export function init() {
       name: 'Query',
       fields: () => ({
         node: nodeRootField,
+        nodeOrNull: {
+          type: gqlInterfaces.Node,
+          args: {
+            id: { type: GraphQLID },
+          },
+          resolve: (base, args) => getNodeFromGlobalId(args.id),
+        },
         viewer: viewerRootField,
       }),
     }),
@@ -279,6 +286,7 @@ function getNodeType(node) {
 }
 
 function getNodeFromGlobalId(globalId) {
+  if (globalId == null) return null;
   const { type, id } = fromGlobalId(globalId);
   return getNodeFromTypeAndLocalId(type, id);
 }

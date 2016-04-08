@@ -1,9 +1,12 @@
 import React                from 'react';
 import Relay                from 'react-relay';
+import { NodeQuery }        from '../gral/rootQueries';
 import Header               from './050-header';
 import Translator           from './060-translator';
 import Details              from './070-details';
-import { NodeQuery }        from '../gral/rootQueries';
+import Settings             from './080-settings';
+import Modal                from './910-modal';
+import { bindAll }          from './helpers';
 require('./010-app.sass');
 
 // ==========================================
@@ -16,6 +19,7 @@ const fragments = {
         id
       }
       ${Translator.getFragment('viewer')}
+      ${Settings.getFragment('viewer')}
     }
   `,
 };
@@ -31,21 +35,30 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedKeyId: null, // props.viewer.keys[0].id
+      selectedKeyId: null,
+      fSettingsShown: false,
     };
-    this.changeSelectedKey = this.changeSelectedKey.bind(this);
+    bindAll(this, [
+      'changeSelectedKey',
+      'showSettings',
+      'hideSettings',
+    ]);
   }
 
+  // ------------------------------------------
   render() {
     return (
       <div style={style.outer}>
-        <Header/>
+        <Header
+          onShowSettings={this.showSettings}
+        />
         <Translator
           viewer={this.props.viewer}
           selectedKeyId={this.state.selectedKeyId}
           onChangeSelection={this.changeSelectedKey}
         />
         {this.renderDetails()}
+        {this.renderSettings()}
       </div>
     );
   }
@@ -60,7 +73,22 @@ class App extends React.Component {
     );
   }
 
+  renderSettings() {
+    if (!this.state.fSettingsShown) return null;
+    return (
+      <Modal>
+        <Settings
+          viewer={this.props.viewer}
+          onClose={this.hideSettings}
+        />
+      </Modal>
+    );
+  }
+
+  // ------------------------------------------
   changeSelectedKey(selectedKeyId) { this.setState({ selectedKeyId }); }
+  showSettings() { this.setState({ fSettingsShown: true }); }
+  hideSettings() { this.setState({ fSettingsShown: false }); }
 }
 
 // ==========================================
