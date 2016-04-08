@@ -199,8 +199,15 @@ class Translator extends React.Component {
 
   changeLang(lang, idx) {
     const prevLangs = this.state.langs;
-    const tempIdx = prevLangs.indexOf(lang);
-    if (tempIdx >= 0 && tempIdx < idx) {
+    let fFound = false;
+    for (let i = 0; i < prevLangs.length; i++) {
+      if (i === idx) continue;
+      if (prevLangs[i] === lang) {
+        fFound = true;
+        break;
+      }
+    }
+    if (fFound) {
       this.removeLang(idx);
       return;
     }
