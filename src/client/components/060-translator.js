@@ -191,13 +191,19 @@ class Translator extends React.Component {
     this.updateLangs(nextLangs);
   }
 
-  onRemoveLang(ev) {
-    const idx = Number(ev.currentTarget.id);
+  onRemoveLang(ev) { this.removeLang(Number(ev.currentTarget.id)); }
+  removeLang(idx) {
     const nextLangs = timm.removeAt(this.state.langs, idx);
     this.updateLangs(nextLangs);
   }
 
   changeLang(lang, idx) {
+    const prevLangs = this.state.langs;
+    const tempIdx = prevLangs.indexOf(lang);
+    if (tempIdx >= 0 && tempIdx < idx) {
+      this.removeLang(idx);
+      return;
+    }
     const nextLangs = timm.replaceAt(this.state.langs, idx, lang);
     this.updateLangs(nextLangs);
   }
