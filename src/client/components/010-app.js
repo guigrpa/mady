@@ -1,6 +1,5 @@
 import React                from 'react';
 import Relay                from 'react-relay';
-import { NodeQuery }        from '../gral/rootQueries';
 import Header               from './050-header';
 import Translator           from './060-translator';
 import Details              from './070-details';
@@ -17,14 +16,14 @@ const fragments = {
     fragment on Viewer {
       ${Translator.getFragment('viewer')}
       ${Settings.getFragment('viewer')}
-      anyNode(id: $selId) {
-        ${Details.getFragment('anyNode')}
+      detailedKey: anyNode(id: $selectedKeyId) {
+        ${Details.getFragment('detailedKey')}
       }
     }
   `,
 };
 const initialVariables = {
-  selId: null,
+  selectedKeyId: null,
 };
 
 // ==========================================
@@ -69,7 +68,7 @@ class App extends React.Component {
   renderDetails() {
     return (
       <Details
-        anyNode={this.props.viewer.anyNode}
+        detailedKey={this.props.viewer.detailedKey}
       />
     );
   }
@@ -89,7 +88,7 @@ class App extends React.Component {
   // ------------------------------------------
   changeSelectedKey(selectedKeyId) {
     this.setState({ selectedKeyId });
-    this.props.relay.setVariables({ selId: selectedKeyId });
+    this.props.relay.setVariables({ selectedKeyId: selectedKeyId });
   }
   showSettings() { this.setState({ fSettingsShown: true }); }
   hideSettings() { this.setState({ fSettingsShown: false }); }
