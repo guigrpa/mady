@@ -14,9 +14,7 @@ export class ParseSrcFilesMutation extends Relay.Mutation {
   getFatQuery() {
     return Relay.QL`
       fragment on ParseSrcFilesPayload {
-        viewer {
-          keys
-        }
+        viewer
       }
     `;
   }
