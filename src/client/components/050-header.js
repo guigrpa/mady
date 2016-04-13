@@ -1,4 +1,5 @@
 import React                from 'react';
+import { COLORS }           from '../gral/constants';
 import {
   flexContainer,
   flexItem,
@@ -16,9 +17,16 @@ class Header extends React.Component {
   render() {
     return (
       <div style={style.outer}>
-        <div>A</div>
         <div style={style.spacer} />
-        <Icon icon='cog' onClick={this.props.onShowSettings} />
+        <div style={style.title}>
+          MADY
+          <Icon 
+            icon='cog' 
+            onClick={this.props.onShowSettings}
+            style={style.settingsIcon}
+          />
+        </div>
+        <div style={style.spacer} />
       </div>
     );
   }
@@ -28,11 +36,20 @@ class Header extends React.Component {
 // Styles
 // ==========================================
 const style = {
-  outer: flexItem('0 0 2em', flexContainer('row', {
-    backgroundColor: '#ccc',
-    padding: 5,
+  outer: flexItem('0 0 2.5em', flexContainer('row', {
+    backgroundColor: COLORS.mediumBlue,
+    padding: '5px 8px',
+    alignItems: 'center',
   })),
+  title: {
+    fontWeight: 900,
+    letterSpacing: 3,
+    fontSize: '1.3em',
+  },
   spacer: flexItem('1'),
+  settingsIcon: {
+    marginLeft: 10,
+  },
 };
 
 // ==========================================

@@ -58,12 +58,13 @@ function _initConfig() {
 }
 
 function readConfig() { _config = readJson(_configPath); }
-function saveConfig() { saveJson(_configPath, _config); }
+function saveConfig(options) { saveJson(_configPath, _config, options); }
 
 export function getConfig() { return _config; }
-export function updateConfig(newAttrs) {
+export function updateConfig(newAttrs, { story }) {
   _config = timm.merge(_config, newAttrs);
-  saveConfig();
+  story.debug('db', 'New config:', { attach: _config });
+  saveConfig({ story });
   return _config;
 }
 
@@ -117,9 +118,8 @@ export function deleteKey(id) {
   saveKeys();
   return item;
 }
-export function parseSrcFiles() {
+export function parseSrcFiles({ story }) {
   const { srcPaths, srcExtensions } = _config;
-  const story = mainStory.child({ src: 'db', title: 'Parse source files' });
   const curKeys = parse({ srcPaths, srcExtensions, story });
   const now = new Date().toISOString();
 
@@ -157,7 +157,6 @@ export function parseSrcFiles() {
   }
 
   saveKeys({ story });
-  story.close();
   return _keys;
 }
 
@@ -188,7 +187,7 @@ function readTranslations(lang) {
     _translations = timm.merge(_translations, translations);
   }
 }
-function saveTranslations(lang) {
+function saveTranslations(lang, options) {
   const langTranslations = {};
   Object.keys(_translations).forEach((translationId) => {
     const translation = _translations[translationId];
@@ -196,7 +195,7 @@ function saveTranslations(lang) {
       langTranslations[translation.id] = translation;
     }
   });
-  saveJson(getLangPath(lang), langTranslations);
+  saveJson(getLangPath(lang), langTranslations, options);
 }
 
 export function getTranslations() {
@@ -223,25 +222,25 @@ export function getKeyTranslations(keyId) {
   return out;
 }
 export function getTranslation(id) { return _translations[id]; }
-export function createTranslation(newAttrs) {
+export function createTranslation(newAttrs, { story }) {
   const { lang, translation, keyId } = newAttrs;
   if (!lang) throw new Error("Translation language must be specified");
   if (keyId == null) throw new Error("Translation key must be specified");
   const id = uuid.v4();
   _translations[id] = { id, lang, translation, keyId };
-  saveTranslations(lang);
+  saveTranslations(lang, { story });
   return _translations[id];
 }
-export function updateTranslation(id, newAttrs) {
+export function updateTranslation(id, newAttrs, { story }) {
   _translations[id] = timm.merge(_translations[id], newAttrs);
-  saveTranslations(_translations[id].lang);
+  saveTranslations(_translations[id].lang, { story });
   return _translations[id];
 }
-export function deleteTranslation(id) {
+export function deleteTranslation(id, { story }) {
   const item = _translations[id];
   const { lang } = _translations[id];
   delete _translations[id];
-  saveTranslations(lang);
+  saveTranslations(lang, { story });
   return item;
 }
 

@@ -1,7 +1,4 @@
 import Relay                from 'react-relay';
-import {
-  pick,
-}                           from 'lodash';
 
 // =======================================================
 // ParseSrcFilesMutation
@@ -13,12 +10,17 @@ export class ParseSrcFilesMutation extends Relay.Mutation {
   getMutation() {
     return Relay.QL`mutation { parseSrcFiles }`;
   }
-  getVariables() { return {}; }
+  getVariables() {
+    return {
+      storyId: this.props.storyId,
+    };
+  }
   getFatQuery() {
     return Relay.QL`
       fragment on ParseSrcFilesPayload {
         viewer {
           keys
+          anyNode
         }
       }
     `;
@@ -44,7 +46,11 @@ export class UpdateConfigMutation extends Relay.Mutation {
     return Relay.QL`mutation { updateConfig }`;
   }
   getVariables() {
-    return pick(this.props, ['set', 'unset']);
+    return {
+      set: this.props.set,
+      unset: this.props.unset,
+      storyId: this.props.storyId,
+    };
   }
   getFatQuery() {
     return Relay.QL`
@@ -77,6 +83,7 @@ export class CreateTranslationMutation extends Relay.Mutation {
     return {
       set: this.props.set,
       unset: this.props.unset,
+      storyId: this.props.storyId,
     };
   }
   getFatQuery() {
@@ -112,6 +119,7 @@ export class UpdateTranslationMutation extends Relay.Mutation {
       id: this.props.id,
       set: this.props.set,
       unset: this.props.unset,
+      storyId: this.props.storyId,
     };
   }
   getFatQuery() {
@@ -143,7 +151,10 @@ export class DeleteTranslationMutation extends Relay.Mutation {
     return Relay.QL`mutation {deleteTranslation}`;
   }
   getVariables() {
-    return { id: this.props.id };
+    return {
+      id: this.props.id,
+      storyId: this.props.storyId,
+    };
   }
   getFatQuery() {
     return Relay.QL`

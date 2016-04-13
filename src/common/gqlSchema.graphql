@@ -17,6 +17,7 @@ input ConfigUpdate {
 }
 
 input CreateKeyInput {
+  storyId: String
   set: KeyCreate
   unset: [String]
   clientMutationId: String!
@@ -29,6 +30,7 @@ type CreateKeyPayload {
 }
 
 input CreateTranslationInput {
+  storyId: String
   set: TranslationCreate
   unset: [String]
   clientMutationId: String!
@@ -42,24 +44,24 @@ type CreateTranslationPayload {
 }
 
 input DeleteKeyInput {
+  storyId: String
   id: ID!
   clientMutationId: String!
 }
 
 type DeleteKeyPayload {
   viewer: Viewer
-  deletedKeyId: ID
   clientMutationId: String!
 }
 
 input DeleteTranslationInput {
+  storyId: String
   id: ID!
   clientMutationId: String!
 }
 
 type DeleteTranslationPayload {
   viewer: Viewer
-  deletedTranslationId: ID
   key: Key
   clientMutationId: String!
 }
@@ -121,6 +123,7 @@ type PageInfo {
 }
 
 input ParseSrcFilesInput {
+  storyId: String
   clientMutationId: String!
 }
 
@@ -163,6 +166,7 @@ input TranslationUpdate {
 }
 
 input UpdateConfigInput {
+  storyId: String
   set: ConfigUpdate
   unset: [String]
   clientMutationId: String!
@@ -175,6 +179,7 @@ type UpdateConfigPayload {
 }
 
 input UpdateKeyInput {
+  storyId: String
   id: ID!
   set: KeyUpdate
   unset: [String]
@@ -188,6 +193,7 @@ type UpdateKeyPayload {
 }
 
 input UpdateTranslationInput {
+  storyId: String
   id: ID!
   set: TranslationUpdate
   unset: [String]

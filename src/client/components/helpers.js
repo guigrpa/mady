@@ -1,4 +1,6 @@
 import timm                 from 'timm';
+import Relay                from 'react-relay';
+import { mainStory }        from 'storyboard';
 
 export function bindAll(_this, fnNames) {
   for (const name of fnNames) {
@@ -24,3 +26,33 @@ export function cancelEvent(ev) {
   ev.preventDefault();
   ev.stopPropagation();
 };
+
+// Runs a Relay mutation inside a Storyboard story
+export function mutate(options) {
+  const {
+    description,
+    Mutation,
+    props,
+    onFailure,
+    onSuccess,
+  } = options;
+  const story = mainStory.child({
+    src: 'views',
+    title: description,
+  });
+  const finalProps = timm.set(props, 'storyId', story.storyId);
+  const mutation = new Mutation(finalProps);
+  Relay.Store.commitUpdate(mutation, {
+    onFailure: transaction => {
+      const error = transaction.getError() || new Error('Mutation failed');
+      story.error('views', 'Transaction error:', { attach: error });
+      story.close();
+      if (onFailure) onFailure(transaction);
+    },
+    onSuccess: response => {
+      story.debug('views', 'Transaction result:', { attach: response });
+      story.close();
+      if (onSuccess) onSuccess(response);
+    }
+  });
+}

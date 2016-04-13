@@ -1086,6 +1086,16 @@
           "fields": null,
           "inputFields": [
             {
+              "name": "storyId",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "set",
               "description": null,
               "type": {
@@ -1239,6 +1249,16 @@
           "fields": null,
           "inputFields": [
             {
+              "name": "storyId",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "set",
               "description": null,
               "type": {
@@ -1389,6 +1409,16 @@
           "description": null,
           "fields": null,
           "inputFields": [
+            {
+              "name": "storyId",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
             {
               "name": "id",
               "description": null,
@@ -1555,6 +1585,16 @@
           "fields": null,
           "inputFields": [
             {
+              "name": "storyId",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "id",
               "description": null,
               "type": {
@@ -1605,18 +1645,6 @@
               "deprecationReason": null
             },
             {
-              "name": "deletedKeyId",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "ID",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "clientMutationId",
               "description": null,
               "args": [],
@@ -1644,6 +1672,16 @@
           "description": null,
           "fields": null,
           "inputFields": [
+            {
+              "name": "storyId",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
             {
               "name": "clientMutationId",
               "description": null,
@@ -1761,6 +1799,16 @@
           "description": null,
           "fields": null,
           "inputFields": [
+            {
+              "name": "storyId",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
             {
               "name": "set",
               "description": null,
@@ -1915,6 +1963,16 @@
           "fields": null,
           "inputFields": [
             {
+              "name": "storyId",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "id",
               "description": null,
               "type": {
@@ -2050,6 +2108,16 @@
           "fields": null,
           "inputFields": [
             {
+              "name": "storyId",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "id",
               "description": null,
               "type": {
@@ -2094,18 +2162,6 @@
               "type": {
                 "kind": "OBJECT",
                 "name": "Viewer",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "deletedTranslationId",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "ID",
                 "ofType": null
               },
               "isDeprecated": false,

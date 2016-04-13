@@ -7,6 +7,7 @@ export class ViewerQuery extends Relay.Route {
   };
 }
 
+/*
 export class NodeQuery extends Relay.Route {
   static routeName = 'NodeQuery';
   static queries = {
@@ -16,3 +17,4 @@ export class NodeQuery extends Relay.Route {
     id: { required: true },
   };
 }
+*/

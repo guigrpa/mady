@@ -1,6 +1,7 @@
 import React                from 'react';
 import Relay                from 'react-relay';
 import moment               from 'moment';
+import { COLORS }           from '../gral/constants';
 import {
   flexItem,
 }                           from './helpers';
@@ -9,11 +10,15 @@ import {
 // Relay fragments
 // ==========================================
 const fragments = {
-  detailedKey: () => Relay.QL`
-    fragment on Key {
-      context text
-      firstUsed unusedSince
-      sources
+  viewer: () => Relay.QL`
+    fragment on Viewer {
+      anyNode(id: $selectedKeyId) {
+        ... on Key {
+          context text
+          firstUsed unusedSince
+          sources
+        }
+      }
     }
   `,
 };
@@ -23,21 +28,28 @@ const fragments = {
 // ==========================================
 class Details extends React.Component {
   static propTypes = {
-    detailedKey:                React.PropTypes.object,
+    viewer:                 React.PropTypes.object.isRequired,
+    selectedKeyId:          React.PropTypes.string,
   };
 
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps.selectedKeyId);
+    this.props.relay.setVariables({ selectedKeyId: nextProps.selectedKeyId });
+  }
+
   render() {
+    this._theKey = this.props.viewer.anyNode;
     return (
       <div style={style.outer}>
+        <div style={style.title}>DETAILS</div>
         {this.renderContents()}
       </div>
     );
   }
 
   renderContents() {
-    const key = this.props.detailedKey;
-    if (!key) return <i>Details for the selected key will be shown here</i>;
-    const { text } = key;
+    if (!this._theKey) return <i>Details for the selected key will be shown here</i>;
+    const { text } = this._theKey;
     return (
       <div>
         <div style={style.text}>{text}</div>
@@ -47,7 +59,7 @@ class Details extends React.Component {
   }
 
   renderSources() {
-    const { sources, firstUsed, unusedSince } = this.props.detailedKey;
+    const { sources, firstUsed, unusedSince } = this._theKey;
     const since = this.renderDate(firstUsed);
     const until = unusedSince 
       ? <span> until {this.renderDate(unusedSince)}</span>
@@ -79,11 +91,17 @@ class Details extends React.Component {
 // ==========================================
 const style = {
   outer: flexItem('none', {
-    minHeight: 100,
-    backgroundColor: '#ccc',
+    minHeight: 130,
+    backgroundColor: COLORS.mediumBlue,
     padding: 5,
     marginTop: 5,
   }),
+  title: {
+    fontWeight: 900,
+    letterSpacing: 3,
+    textAlign: 'center',
+    marginBottom: 10,
+  },
   text: {
     marginBottom: 5,
     fontWeight: 'bold',
@@ -100,4 +118,7 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-export default Relay.createContainer(Details, { fragments });
+export default Relay.createContainer(Details, { 
+  fragments,
+  initialVariables: { selectedKeyId: null },
+});

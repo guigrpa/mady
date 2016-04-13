@@ -1,4 +1,13 @@
+import tinycolor from 'tinycolor2';
+
 let scrollbarWidth = null;
+
+export const COLORS = {
+  lightBlue: 'aliceblue',
+  mediumBlue: tinycolor('aliceblue').darken(5).toHexString(),
+  darkBlue: tinycolor('aliceblue').darken(10).toHexString(),
+  darkestBlue: tinycolor('aliceblue').darken(65).toHexString(),
+};
 
 export function getScrollbarWidth() {
   if (scrollbarWidth == null) {

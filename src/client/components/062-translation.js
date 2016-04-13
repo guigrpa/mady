@@ -8,6 +8,7 @@ import {
 }                           from '../gral/mutations';
 import {
   bindAll,
+  mutate,
   flexItem,
   flexContainer,
 }                           from './helpers';
@@ -141,24 +142,28 @@ class Translation extends React.Component {
   copyKey(ev) { this.setState({ text: this.props.theKey.text }); }
   editStart() { this.setState({ fEditing: true }); }
   editCommit() {
-    let mutation = null;
+    let description = 'Click on Save translation';
+    let Mutation;
+    let props;
     if (this.props.translation) {
-      mutation = new UpdateTranslationMutation({
+      Mutation = UpdateTranslationMutation;
+      props = {
         id: this.props.translation.id,
         set: {
           translation: this.state.text,
         },
-      });
+      };
     } else {
-      mutation = new CreateTranslationMutation({
+      Mutation = CreateTranslationMutation;
+      props = {
         set: {
           lang: this.props.lang,
           keyId: this.props.theKey.id,
           translation: this.state.text,
         },
-      });
+      };
     }
-    Relay.Store.commitUpdate(mutation);
+    mutate({ description, Mutation, props });
     this.setState({ fEditing: false });
     this._input.blur();
   }
@@ -177,11 +182,14 @@ class Translation extends React.Component {
   }
   deleteTranslation() {
     this.editRevert();
-    const mutation = new DeleteTranslationMutation({
-      id: this.props.translation.id,
-      keyId: this.props.theKey.id,
+    mutate({
+      description: 'Click on Delete translation',
+      Mutation: DeleteTranslationMutation,
+      props: {
+        id: this.props.translation.id,
+        keyId: this.props.theKey.id,
+      },
     });
-    Relay.Store.commitUpdate(mutation);
   }
 
   // ==========================================

@@ -200,9 +200,18 @@ export function init() {
   addMutation('Key', 'DELETE');
   gqlMutations.parseSrcFiles = mutationWithClientMutationId({
     name: 'ParseSrcFiles',
-    inputFields: {},
-    mutateAndGetPayload: () => {
-      db.parseSrcFiles();
+    inputFields: {
+      storyId:        { type: GraphQLString },
+    },
+    mutateAndGetPayload: ({ storyId }) => {
+      const story = mainStory.child({
+        src: 'gql',
+        title: 'Mutation: parse source files',
+        extraParents: [storyId]
+      });
+      try { db.parseSrcFiles({ story }); }
+      catch (err) { throw err; }
+      finally { story.close(); }
       return {};
     },
     outputFields: {
@@ -358,8 +367,17 @@ function addMutation(type, op, options = {}) {
   }
 
   // The operation
-  const mutateAndGetPayload = ({ id: globalId, set, unset }) => {
-    return mutate(type, op, globalId, set, unset, options);
+  const mutateAndGetPayload = ({ id: globalId, set, unset, storyId }) => {
+    const story = mainStory.child({
+      src: 'gql',
+      title: `Mutation: ${op} on ${type} ${globalId ? globalId : ''}`,
+      extraParents: [storyId]
+    });
+    let out;
+    try { out = mutate(type, op, globalId, set, unset, options, story); }
+    catch (err) { throw err; }
+    finally { story.close(); }
+    return out;
   }
 
   // Output fields
@@ -395,25 +413,24 @@ function addMutation(type, op, options = {}) {
   });
 }
 
-function mutate(type, op, globalId, set = {}, unset = [], options = {}) {
+function mutate(type, op, globalId, set = {}, unset = [], options = {}, story) {
   const localId = (op !== 'CREATE' && !options.fSingleton)
     ? fromGlobalId(globalId).id
     : null;
   const out = { globalId, localId };
   if (op === 'DELETE') {
-    console.log(`Deleting ${type}: ${localId}...`)
-    out.node = db[`delete${type}`](localId);
+    out.node = db[`delete${type}`](localId, { story });
   } else {
     let newAttrs = mergeSetUnset(set, unset);
     newAttrs = resolveGlobalIds(newAttrs, options.globalIds);
     if (op === 'CREATE') {
-      out.node = db[`create${type}`](newAttrs);
+      out.node = db[`create${type}`](newAttrs, { story });
       out.localId = out.node.id;
     } else {
       if (options.fSingleton) {
-        out.node = db[`update${type}`](newAttrs);
+        out.node = db[`update${type}`](newAttrs, { story });
       } else {
-        out.node = db[`update${type}`](localId, newAttrs);
+        out.node = db[`update${type}`](localId, newAttrs, { story });
       }
     }
   }

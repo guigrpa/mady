@@ -16,9 +16,7 @@ const fragments = {
     fragment on Viewer {
       ${Translator.getFragment('viewer')}
       ${Settings.getFragment('viewer')}
-      detailedKey: anyNode(id: $selectedKeyId) {
-        ${Details.getFragment('detailedKey')}
-      }
+      ${Details.getFragment('viewer')}
     }
   `,
 };
@@ -68,7 +66,8 @@ class App extends React.Component {
   renderDetails() {
     return (
       <Details
-        detailedKey={this.props.viewer.detailedKey}
+        viewer={this.props.viewer}
+        selectedKeyId={this.state.selectedKeyId}
       />
     );
   }
@@ -88,7 +87,6 @@ class App extends React.Component {
   // ------------------------------------------
   changeSelectedKey(selectedKeyId) {
     this.setState({ selectedKeyId });
-    this.props.relay.setVariables({ selectedKeyId: selectedKeyId });
   }
   showSettings() { this.setState({ fSettingsShown: true }); }
   hideSettings() { this.setState({ fSettingsShown: false }); }

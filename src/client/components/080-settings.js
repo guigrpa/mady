@@ -11,6 +11,7 @@ import Select               from './900-select';
 import Icon                 from './905-icon';
 import {
   bindAll,
+  mutate,
 }                           from './helpers';
 
 // ==========================================
@@ -176,8 +177,11 @@ class Settings extends React.Component {
   onSave() {
     const { viewer } = this.props;
     const set = this.state.config;
-    const mutation = new UpdateConfigMutation({ viewer, set, unset: [] });
-    Relay.Store.commitUpdate(mutation, { onSuccess: this.props.onClose });
+    mutate({
+      description: 'Click on Save settings',
+      Mutation: UpdateConfigMutation,
+      props: { viewer, set, unset: [] },
+    });
   }
 }
 

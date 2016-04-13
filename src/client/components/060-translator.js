@@ -5,10 +5,12 @@ import {
   ParseSrcFilesMutation,
 }                           from '../gral/mutations';
 import {
+  COLORS,
   getScrollbarWidth,
 }                           from '../gral/constants';
 import {
   bindAll,
+  mutate,
   flexItem,
   flexContainer,
 }                           from './helpers';
@@ -86,7 +88,7 @@ class Translator extends React.Component {
         style={timm.merge(style.row, style.headerRow)}
       >
         <div style={timm.merge(style.headerCell, style.keysCol)}>
-          Keys [{keys.edges.length}]
+          KEYS <span style={style.numItems}>[{keys.edges.length}]</span>
           {' '}
           <Icon icon="refresh" onClick={this.onParseSrcFiles} />
         </div>
@@ -240,7 +242,11 @@ class Translator extends React.Component {
   // Other handlers
   // ==========================================
   onParseSrcFiles() {
-    Relay.Store.commitUpdate(new ParseSrcFilesMutation({ viewer: this.props.viewer }));
+    mutate({
+      description: 'Click on Parse source files',
+      Mutation: ParseSrcFilesMutation,
+      props: { viewer: this.props.viewer },
+    });
   }
 
   onClickKeyRow(ev) {
@@ -266,27 +272,33 @@ const style = {
   headerCell: {
     paddingTop: 3,
     paddingBottom: 3,
-    borderBottom: '1px solid black',
+    borderBottom: `1px solid ${COLORS.darkestBlue}`,
+    textAlign: 'center',
+    fontWeight: 900,
+    letterSpacing: 3,
   },
   bodyCell: {
     paddingTop: 1,
     paddingBottom: 1,
-    borderBottom: '1px solid #ccc',
+    borderBottom: `1px solid ${COLORS.darkBlue}`,
+  },
+  numItems: {
+    color: 'darkgrey',
   },
   keysCol: flexItem('1 1 0px', {
-    backgroundColor: '#eee',
+    backgroundColor: COLORS.lightBlue,
     marginRight: 5,
     paddingLeft: 5,
     paddingRight: 5,
   }),
   langCol: flexItem('1 1 0px', {
-    backgroundColor: '#eee',
+    backgroundColor: COLORS.lightBlue,
     marginRight: 5,
     paddingLeft: 5,
     paddingRight: 5,
   }),
   addCol: () => flexItem('0 0 2em', {
-    backgroundColor: '#ccc',
+    backgroundColor: COLORS.mediumBlue,
     marginRight: getScrollbarWidth() ? 5 : 0,
     borderBottom: '0px',
   }),
