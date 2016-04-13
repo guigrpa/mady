@@ -12,6 +12,7 @@ import {
   flexItem,
   flexContainer,
 }                           from './helpers';
+import Translation          from './062-translation';
 import Select               from './900-select';
 import Icon                 from './905-icon';
 
@@ -25,7 +26,12 @@ const fragments = {
       keys(first: 100000) { edges { node {
         id
         context text
-        unusedSince
+        ${Translation.getFragment('theKey')}
+        translations(first: 100000) { edges { node {
+          id
+          lang
+          ${Translation.getFragment('translation')}
+        }}}
       }}}
       ${ParseSrcFilesMutation.getFragment('viewer')}
     }
@@ -129,14 +135,24 @@ class Translator extends React.Component {
         <div style={timm.merge(style.bodyCell, style.keysCol)}>
           {key.text}
         </div>
-        {this.state.langs.map(lang => (
-          <div key={lang}
-            style={timm.merge(style.bodyCell, style.langCol)}
-          >
-            {lang}
-          </div>)
-        )}
+        {this.state.langs.map(lang => this.renderTranslation(key, lang))}
         <div style={timm.merge(style.bodyCell, style.addCol())} />
+      </div>
+    );
+  }
+
+  renderTranslation(key, lang) {
+    const edge = key.translations.edges.find(({ node }) => node.lang === lang);
+    const translation = edge ? edge.node : null
+    return (
+      <div key={lang}
+        style={timm.merge(style.bodyCell, style.langCol)}
+      >
+        <Translation
+          theKey={key}
+          lang={lang}
+          translation={translation}
+        />
       </div>
     );
   }

@@ -34,17 +34,6 @@ export function init(options: Object) {
     graphiql: true,
   }));
 
-  // DELETE
-  /*
-  expressApp.use('/', (req, res, next) => {
-    if (req.path === '/') {
-      next();
-    } else {
-      res.send('index.html');
-    }
-  });
-  */
-
   // Static assets
   expressApp.use(express.static(path.join(process.cwd(), ASSET_PATH)));
 
@@ -52,10 +41,7 @@ export function init(options: Object) {
   const httpServer = http.createServer(expressApp);
 
   // Storyboard
-  storyboard.addListener(storyboardWsServer, {
-    httpServer,
-    authenticate: () => true,
-  });
+  storyboard.addListener(storyboardWsServer, { httpServer });
 
   // Look for a suitable port and start listening
   let port = options.port;

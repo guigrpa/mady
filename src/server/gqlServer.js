@@ -54,7 +54,7 @@ let viewerRootField   = null;
 export function getSchema() { return gqlSchema; }
 export function getSchemaShorthand() { return printSchema(gqlSchema); }
 export function runQuery(query, operation, rootValue, variables) {
-  return graphql(gqlSchema, query, rootValue, variables, operation);
+  return graphql(gqlSchema, query, rootValue, null, variables, operation);
 }
 export function runIntrospect() {
   return Promise.resolve()
@@ -159,6 +159,11 @@ export function init() {
       firstUsed:      { type: GraphQLString },
       unusedSince:    { type: GraphQLString },
       sources:        { type: new GraphQLList(GraphQLString) },
+      translations: {
+        type: gqlTypes.TranslationConnection,
+        args: connectionArgs,
+        resolve: (base, args) => connectionFromArray(db.getKeyTranslations(base.id), args),
+      },
     }),
   });
 
@@ -185,8 +190,6 @@ export function init() {
   addConnectionType('Key');
 
   keysBaseField = {
-    //type: new GraphQLList(gqlTypes.Key),
-    //resolve: (base, args) => db.getKeys(),
     type: gqlTypes.KeyConnection,
     args: connectionArgs,
     resolve: (base, args) => connectionFromArray(db.getKeys(), args),
@@ -239,17 +242,25 @@ export function init() {
     }),
   });
 
+  addConnectionType('Translation');
+
   translationsBaseField = {
-    type: new GraphQLList(gqlTypes.Translation),
-    args: {
-      lang:           { type: GraphQLString },
-    },
-    resolve: (base, args) => db.getTranslations(args.lang),
+    type: gqlTypes.TranslationConnection,
+    args: connectionArgs,
+    resolve: (base, args) => connectionFromArray(db.getTranslations(), args),
   };
 
-  addMutation('Translation', 'CREATE', { globalIds: ['keyId'] });
-  addMutation('Translation', 'UPDATE', { globalIds: ['keyId'] });
-  addMutation('Translation', 'DELETE');
+  const globalIds = ['keyId'];
+  const relations = [
+    {
+      name: 'key',
+      type: 'Key',
+      resolve: translation => db.getKey(translation.keyId),
+    },
+  ];
+  addMutation('Translation', 'CREATE', { globalIds, relations });
+  addMutation('Translation', 'UPDATE', { globalIds });
+  addMutation('Translation', 'DELETE', { globalIds, relations });
 
   // ==============================================
   // Schema
@@ -302,27 +313,24 @@ function getNodeFromTypeAndLocalId(type, localId) {
       break;
     case 'Config':
       out = db.getConfig();
-      if (out) {
-        out = timm.set(out, '_type', 'Config');
-      }
       break;
     case 'Key':
       out = db.getKey(localId);
-      if (out) {
-        out = timm.set(out, '_type', 'Key');
-      }
       break;
     case 'Translation':
       out = db.getTranslation(localId);
-      if (out) {
-        out = timm.set(out, '_type', 'Translation');
-      }
       break;
     default:
       out = null;
       break;
   }
-  return out;
+  return addTypeAttr(out, type);
+}
+
+function addTypeAttr(obj, type) {
+  return obj
+    ? timm.set(obj, '_type', type)
+    : obj;
 }
 
 function addConnectionType(name) {
@@ -338,7 +346,9 @@ function addMutation(type, op, options = {}) {
   const name = `${capitalize(op)}${type}`;
 
   // Input fields
-  const inputFields = {};
+  const inputFields = {
+    storyId: { type: GraphQLString },
+  };
   if (op !== 'CREATE' && !options.fSingleton) {
     inputFields.id = { type: new GraphQLNonNull(GraphQLID) };
   }
@@ -354,32 +364,27 @@ function addMutation(type, op, options = {}) {
 
   // Output fields
   const outputFields = { viewer: viewerRootField };
+  /*
   if (op === 'DELETE') {
     outputFields[`deleted${type}Id`] = {
       type: GraphQLID,
       resolve: ({ globalId }) => globalId,
     };
   } else {
+  */
+  if (op !== 'DELETE' ) {
     outputFields[lowerFirst(type)] = {
       type: gqlTypes[type],
-      resolve: ({ localId }) => getNodeFromTypeAndLocalId(type, localId),
+      resolve: ({ node }) => node,
     };
   }
-  /*
-  if (op === 'CREATE') {
-    outputFields[`${lowerFirst(type)}Edge`] = {
-      type: gqlTypes[`${type}Edge`],
-      resolve: ({ localId }) => {
-        const allNodes = db[`get${getTypePlural(type)}`]();
-        const newNode = allNodes.find(o => o.id === localId);
-        return {
-          cursor: cursorForObjectInConnection(allNodes, newNode),
-          node: newNode,
-        };
-      },
+  const relations = options.relations != null ? options.relations : [];
+  for (const relation of relations) {
+    outputFields[relation.name] = {
+      type: gqlTypes[relation.type],
+      resolve: ({ node }) => relation.resolve(node),
     };
   }
-  */
 
   // Save mutation
   gqlMutations[`${op.toLowerCase()}${type}`] = mutationWithClientMutationId({
@@ -391,25 +396,29 @@ function addMutation(type, op, options = {}) {
 }
 
 function mutate(type, op, globalId, set = {}, unset = [], options = {}) {
-  let localId = (op !== 'CREATE' && !options.fSingleton)
+  const localId = (op !== 'CREATE' && !options.fSingleton)
     ? fromGlobalId(globalId).id
     : null;
+  const out = { globalId, localId };
   if (op === 'DELETE') {
-    db[`delete${type}`](localId);
+    console.log(`Deleting ${type}: ${localId}...`)
+    out.node = db[`delete${type}`](localId);
   } else {
     let newAttrs = mergeSetUnset(set, unset);
     newAttrs = resolveGlobalIds(newAttrs, options.globalIds);
     if (op === 'CREATE') {
-      localId = db[`create${type}`](newAttrs);
+      out.node = db[`create${type}`](newAttrs);
+      out.localId = out.node.id;
     } else {
       if (options.fSingleton) {
-        db[`update${type}`](newAttrs);
+        out.node = db[`update${type}`](newAttrs);
       } else {
-        db[`update${type}`](localId, newAttrs);
+        out.node = db[`update${type}`](localId, newAttrs);
       }
     }
   }
-  return { localId, globalId };
+  out.node = addTypeAttr(out.node, type);
+  return out;
 }
 
 function mergeSetUnset(set, unset) {

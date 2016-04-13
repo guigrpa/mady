@@ -36,7 +36,7 @@ class Details extends React.Component {
 
   renderContents() {
     const key = this.props.detailedKey;
-    if (!key) return null;
+    if (!key) return <i>Details for the selected key will be shown here</i>;
     const { text } = key;
     return (
       <div>
@@ -48,25 +48,21 @@ class Details extends React.Component {
 
   renderSources() {
     const { sources, firstUsed, unusedSince } = this.props.detailedKey;
-    let out;
-    if (sources.length) {
-      out = (
-        <div>
-          First used <i>{this.renderDate(firstUsed)}</i>. Currently used in:
-          <ul style={style.srcList}>
-            {sources.map((src, idx) => <li key={idx}>{src}</li>)}
-          </ul>
-        </div>
-      );
-    } else {
-      out = (
-        <div>
-          First used {this.renderDate(firstUsed)}.
-          Unused since {this.renderDate(unusedSince)}.
-        </div>
-      );
-    }
-    return out;
+    const since = this.renderDate(firstUsed);
+    const until = unusedSince 
+      ? <span> until {this.renderDate(unusedSince)}</span>
+      : ':';
+    const elSources = sources.length
+      ? <ul style={style.srcList}>
+          {sources.map((src, idx) => <li key={idx}>{src}</li>)}
+        </ul>
+      : null;
+    return (
+      <div>
+        Used since {since}{until}
+        {elSources}
+      </div>
+    );
   }
 
   renderDate(d) {

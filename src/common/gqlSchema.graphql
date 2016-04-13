@@ -1,3 +1,8 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
 type Config implements Node {
   srcPaths: [String]
   srcExtensions: [String]
@@ -32,6 +37,7 @@ input CreateTranslationInput {
 type CreateTranslationPayload {
   viewer: Viewer
   translation: Translation
+  key: Key
   clientMutationId: String!
 }
 
@@ -54,6 +60,7 @@ input DeleteTranslationInput {
 type DeleteTranslationPayload {
   viewer: Viewer
   deletedTranslationId: ID
+  key: Key
   clientMutationId: String!
 }
 
@@ -64,6 +71,7 @@ type Key implements Node {
   firstUsed: String
   unusedSince: String
   sources: [String]
+  translations(after: String, first: Int, before: String, last: Int): TranslationConnection
 }
 
 type KeyConnection {
@@ -134,10 +142,20 @@ type Translation implements Node {
   keyId: ID
 }
 
+type TranslationConnection {
+  pageInfo: PageInfo!
+  edges: [TranslationEdge]
+}
+
 input TranslationCreate {
   lang: String
   translation: String
   keyId: ID
+}
+
+type TranslationEdge {
+  node: Translation
+  cursor: String!
 }
 
 input TranslationUpdate {
@@ -186,6 +204,6 @@ type Viewer implements Node {
   id: ID!
   config: Config
   keys(after: String, first: Int, before: String, last: Int): KeyConnection
-  translations(lang: String): [Translation]
+  translations(after: String, first: Int, before: String, last: Int): TranslationConnection
   anyNode(id: ID): Node
 }

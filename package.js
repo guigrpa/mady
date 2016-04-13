@@ -126,13 +126,14 @@ const specs = {
     timm: '^0.6.0',
     storyboard: '^1.0.0',
     lodash: '^4.8.2',
-    inquirer: '^0.12.0',
+    inquirer: '^1.0.0',
     commander: '^2.9.0',
+    "node-uuid": "1.4.7",
     bluebird: '^3.3.4',
     'fs-extra': '^0.26.7',
     'diveSync': '0.3.0',
     'messageformat': '0.3.0',
-    'uglify-js': '2.6.1',
+    'uglify-js': '2.6.2',
 
     // Express + plugins
     express: '4.13.4',
@@ -142,20 +143,20 @@ const specs = {
 
     // Packaged in the client app
     // --------------------------
-    'babel-polyfill': '6.6.1',
+    'babel-polyfill': '6.7.4',
 
     // React
-    react:                            '15.0.0',
-    'react-dom':                      '15.0.0',
-    'react-addons-pure-render-mixin': '15.0.0',
-    'react-addons-perf':              '15.0.0',
+    react:                            '15.0.1',
+    'react-dom':                      '15.0.1',
+    'react-addons-pure-render-mixin': '15.0.1',
+    'react-addons-perf':              '15.0.1',
 
     // Relay
-    'react-relay':        '0.7.3',
-    'babel-relay-plugin': '0.7.3',
-    graphql:              '0.4.17',
+    'react-relay':        '0.8.0',
+    'babel-relay-plugin': '0.8.0',
+    graphql:              '0.5.0',
     'graphql-relay':      '0.3.6',
-    'express-graphql':    '0.4.9',
+    'express-graphql':    '0.5.1',
 
     // Miscellaneous
     'font-awesome': '4.5.0',
@@ -174,27 +175,27 @@ const specs = {
     'babel-preset-react-hmre': '1.1.1', // to use Hot Module Replacement
 
     // Webpack + loaders (+ related stuff)
-    webpack: '1.12.13',
-    'webpack-dev-middleware': '1.5.1',
-    'webpack-hot-middleware': '2.6.4',
+    webpack: '1.12.15',
+    'webpack-dev-middleware': '1.6.1',
+    'webpack-hot-middleware': '2.10.0',
     'babel-loader': '6.2.4',
     'file-loader': '0.8.5',
     'css-loader': '0.23.1',
-    'style-loader': '0.13.0',
-    'sass-loader': '3.1.2',
+    'style-loader': '0.13.1',
+    'sass-loader': '3.2.0',
     'node-sass': '3.4.2',
 
     // Linting
     eslint: '^2.4.0',
-    'eslint-config-airbnb': '^6.2.0',
+    'eslint-config-airbnb': '^7.0.0',
     'eslint-plugin-flowtype': '^2.2.2',
     'eslint-plugin-react': '^4.2.3',
     'babel-eslint': '^6.0.0',
 
     // Testing
-    ava: '^0.13.0',
+    ava: '^0.14.0',
     nyc: '^6.1.1',
-    coveralls: '2.11.6',
+    coveralls: '^2.11.6',
 
     // Other tools
     'extract-docs': '^1.0.0',

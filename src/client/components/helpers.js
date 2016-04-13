@@ -19,3 +19,8 @@ export function flexContainer(flexDirection, style) {
     flexDirection,
   }, style);
 }
+
+export function cancelEvent(ev) {
+  ev.preventDefault();
+  ev.stopPropagation();
+};

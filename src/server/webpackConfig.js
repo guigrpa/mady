@@ -5,10 +5,13 @@ const pkg                   = require('../../package.json');
 
 const fProduction = (process.env.NODE_ENV === 'production');
 
-mainStory.info('webpack', 'Webpack configuration:');
-mainStory.info('webpack', `- Environment: ${fProduction ? 'PRODUCTION' : 'DEVELOPMENT'}`);
-mainStory.info('webpack', `- Version: ${pkg.version}`);
-if (fProduction) mainStory.info('webpack', 'This might take a little while... :)');
+mainStory.info('webpack', 'Webpack configuration:', {
+  attach: {
+    environment: fProduction ? 'PRODUCTION' : 'DEVELOPMENT',
+    version: pkg.version,
+  },
+});
+if (fProduction) mainStory.warn('webpack', 'This might take a little while... :)');
 
 const _entry = file =>
   (fProduction ? [file] : ['webpack-hot-middleware/client?reload=true', file]);
