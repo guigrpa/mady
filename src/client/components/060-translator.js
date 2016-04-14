@@ -1,8 +1,10 @@
 import timm                 from 'timm';
 import React                from 'react';
 import Relay                from 'react-relay';
+import { throttle }         from 'lodash';
 import {
   ParseSrcFilesMutation,
+  CompileTranslationsMutation,
 }                           from '../gral/mutations';
 import {
   COLORS,
@@ -17,6 +19,7 @@ import {
 import Translation          from './062-translation';
 import Select               from './900-select';
 import Icon                 from './905-icon';
+import hoverable            from './hocs/hoverable';
 
 // ==========================================
 // Relay fragments
@@ -48,6 +51,10 @@ class Translator extends React.Component {
     viewer:                 React.PropTypes.object.isRequired,
     selectedKeyId:          React.PropTypes.string,
     onChangeSelection:      React.PropTypes.func.isRequired,
+    // From Hoverable
+    hovering:               React.PropTypes.string,
+    onHoverStart:           React.PropTypes.func.isRequired,
+    onHoverStop:            React.PropTypes.func.isRequired,
   };
 
   constructor(props) {
@@ -63,9 +70,15 @@ class Translator extends React.Component {
       'changeLang',
 
       'onParseSrcFiles',
+      'onCompileTranslations',
       'onClickKeyRow',
     ]);
+    this.forceRender = throttle(this.forceRender.bind(this), 200);
   }
+
+  componentWillMount() { window.addEventListener('resize', this.forceRender); }
+  componentWillUnmount() { window.removeEventListener('resize', this.forceRender); }
+  forceRender() { this.forceUpdate(); }
 
   // ==========================================
   // Render
@@ -83,33 +96,60 @@ class Translator extends React.Component {
     const { keys, config } = this.props.viewer;
     const langOptions = config.langs.map(lang => ({ value: lang, label: lang }));
     return (
-      <div 
+      <div
         className="tableHeaderRow"
         style={timm.merge(style.row, style.headerRow)}
       >
         <div style={timm.merge(style.headerCell, style.keysCol)}>
           KEYS <span style={style.numItems}>[{keys.edges.length}]</span>
           {' '}
-          <Icon icon="refresh" onClick={this.onParseSrcFiles} />
+          <Icon
+            icon="refresh"
+            title="Parse source files to update this list"
+            onClick={this.onParseSrcFiles}
+          />
+          {' '}
+          <Icon
+            icon="save"
+            title="Convert translations to JavaScript files"
+            onClick={this.onCompileTranslations}
+          />
         </div>
-        {this.state.langs.map((lang, idx) => (
-          <div key={lang}
-            style={timm.merge(style.headerCell, style.langCol)}
-          >
-            <Select
-              id={idx}
-              value={lang} 
-              onChange={this.changeLang}
-              options={langOptions}
-            />
-            {' '}
-            <Icon id={idx} icon="remove" onClick={this.onRemoveLang} />
-          </div>)
+        {this.state.langs.map((lang, idx) => 
+          this.renderLangHeader(lang, idx, langOptions)
         )}
-        <div style={timm.merge(style.headerCell, style.addCol())}>
-          <Icon icon="plus" onClick={this.onAddLang}/>
+        {this.renderAddCol(style.headerCell, true)}
+        <div style={style.scrollbarSpacer()} />
+      </div>
+    );
+  }
+
+  renderLangHeader(lang, idx, langOptions) {
+    return (
+      <div key={lang}
+        style={timm.merge(style.headerCell, style.langCol)}
+      >
+        <div
+          title="Change language"
+          style={style.langSelectorOuter}
+        >
+          <Icon icon="caret-down" style={style.langSelectorCaret} />
+          {lang}
+          <Select
+            id={idx}
+            value={lang}
+            onChange={this.changeLang}
+            options={langOptions}
+            style={style.langSelector}
+          />
         </div>
-        <div style={style.scrollbarSpacer()}/>
+        {' '}
+        <Icon
+          id={idx}
+          icon="remove"
+          title="Remove column"
+          onClick={this.onRemoveLang}
+        />
       </div>
     );
   }
@@ -138,14 +178,14 @@ class Translator extends React.Component {
           {key.text}
         </div>
         {this.state.langs.map(lang => this.renderTranslation(key, lang))}
-        <div style={timm.merge(style.bodyCell, style.addCol())} />
+        {this.renderAddCol(style.bodyCell)}
       </div>
     );
   }
 
   renderTranslation(key, lang) {
     const edge = key.translations.edges.find(({ node }) => node.lang === lang);
-    const translation = edge ? edge.node : null
+    const translation = edge ? edge.node : null;
     return (
       <div key={lang}
         style={timm.merge(style.bodyCell, style.langCol)}
@@ -171,7 +211,27 @@ class Translator extends React.Component {
             style={style.langCol}
           />
         ))}
-        <div style={style.addCol()} />
+        {this.renderAddCol()}
+      </div>
+    );
+  }
+
+  renderAddCol(baseStyle = {}, fIcon = false) {
+    let icon;
+    const fDisabled = this.state.langs.length === this.props.viewer.config.langs.length;
+    if (fIcon) {
+      icon = <Icon icon="plus" fDisabled={fDisabled} />;
+    }
+    return (
+      <div
+        id="addCol"
+        onMouseEnter={this.props.onHoverStart}
+        onMouseLeave={this.props.onHoverStop}
+        onClick={fDisabled ? undefined : this.onAddLang}
+        title="Add column"
+        style={timm.merge(baseStyle, style.addCol(this.props.hovering, fDisabled))}
+      >
+        {icon}
       </div>
     );
   }
@@ -195,9 +255,7 @@ class Translator extends React.Component {
   writeLangs(langs) {
     try {
       localStorage.madyLangs = JSON.stringify(langs);
-    } catch (err) {
-      // Ignore error
-    }
+    } catch (err) { /* Ignore */ }
   }
 
   onAddLang() {
@@ -249,6 +307,14 @@ class Translator extends React.Component {
     });
   }
 
+  onCompileTranslations() {
+    mutate({
+      description: 'Click on Compile translations',
+      Mutation: CompileTranslationsMutation,
+      props: {},
+    });
+  }
+
   onClickKeyRow(ev) {
     this.props.onChangeSelection(ev.currentTarget.id);
   }
@@ -297,10 +363,28 @@ const style = {
     paddingLeft: 5,
     paddingRight: 5,
   }),
-  addCol: () => flexItem('0 0 2em', {
-    backgroundColor: COLORS.mediumBlue,
+  langSelectorOuter: {
+    position: 'relative',
+    display: 'inline-block',
+    paddingRight: 5,
+  },
+  langSelectorCaret: {
+    marginRight: 5,
+
+  },
+  langSelector: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    opacity: 0,
+    cursor: 'pointer',
+  },
+  addCol: (hovering, fDisabled) => flexItem('0 0 2em', {
+    backgroundColor: hovering && !fDisabled ? COLORS.darkBlue : COLORS.mediumBlue,
     marginRight: getScrollbarWidth() ? 5 : 0,
     borderBottom: '0px',
+    cursor: fDisabled ? undefined : 'pointer',
   }),
 
   scrollbarSpacer: () => flexItem(`0 0 ${getScrollbarWidth()}px`),
@@ -309,4 +393,4 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-export default Relay.createContainer(Translator, { fragments });
+export default Relay.createContainer(hoverable(Translator), { fragments });

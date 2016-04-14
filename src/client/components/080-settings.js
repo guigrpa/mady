@@ -7,7 +7,6 @@ import {
 import {
   UpdateConfigMutation,
 }                           from '../gral/mutations';
-import Select               from './900-select';
 import Icon                 from './905-icon';
 import {
   bindAll,
@@ -43,7 +42,7 @@ class Settings extends React.Component {
     super(props);
     this.state = {
       config: pick(props.viewer.config, [
-        'langs', 'srcPaths', 'srcExtensions'
+        'langs', 'srcPaths', 'srcExtensions',
       ]),
     };
     bindAll(this, [

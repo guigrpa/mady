@@ -3,6 +3,16 @@ schema {
   mutation: Mutation
 }
 
+input CompileTranslationsInput {
+  storyId: String
+  clientMutationId: String!
+}
+
+type CompileTranslationsPayload {
+  viewer: Viewer
+  clientMutationId: String!
+}
+
 type Config implements Node {
   srcPaths: [String]
   srcExtensions: [String]
@@ -109,6 +119,7 @@ type Mutation {
   createTranslation(input: CreateTranslationInput!): CreateTranslationPayload
   updateTranslation(input: UpdateTranslationInput!): UpdateTranslationPayload
   deleteTranslation(input: DeleteTranslationInput!): DeleteTranslationPayload
+  compileTranslations(input: CompileTranslationsInput!): CompileTranslationsPayload
 }
 
 interface Node {

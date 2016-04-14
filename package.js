@@ -189,7 +189,8 @@ const specs = {
     eslint: '^2.4.0',
     'eslint-config-airbnb': '^7.0.0',
     'eslint-plugin-flowtype': '^2.2.2',
-    'eslint-plugin-react': '^4.2.3',
+    'eslint-plugin-react': '^4.3.0',
+    'eslint-plugin-jsx-a11y': '^0.6.2',
     'babel-eslint': '^6.0.0',
 
     // Testing

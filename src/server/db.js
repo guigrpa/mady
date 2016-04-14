@@ -3,7 +3,8 @@ import fs                   from 'fs-extra';
 import timm                 from 'timm';
 import { mainStory, chalk } from 'storyboard';
 import uuid                 from 'node-uuid';
-import parse                from './parser';
+import parse                from './parseSources';
+import compile              from './compileTranslations';
 
 const DEFAULT_CONFIG = {
   srcPaths: ['src'],
@@ -165,6 +166,7 @@ export function parseSrcFiles({ story }) {
 // Translations
 // ==============================================
 const getLangPath = (lang) => path.join(_localeDir, `${lang}.json`);
+const getCompiledLangPath = (lang) => path.join(_localeDir, `${lang}.js`);
 let _translations = {};
 
 function _initTranslations() {
@@ -224,8 +226,8 @@ export function getKeyTranslations(keyId) {
 export function getTranslation(id) { return _translations[id]; }
 export function createTranslation(newAttrs, { story }) {
   const { lang, translation, keyId } = newAttrs;
-  if (!lang) throw new Error("Translation language must be specified");
-  if (keyId == null) throw new Error("Translation key must be specified");
+  if (!lang) throw new Error('Translation language must be specified');
+  if (keyId == null) throw new Error('Translation key must be specified');
   const id = uuid.v4();
   _translations[id] = { id, lang, translation, keyId };
   saveTranslations(lang, { story });
@@ -244,6 +246,15 @@ export function deleteTranslation(id, { story }) {
   return item;
 }
 
+export function compileTranslations({ story }) {
+  for (const lang of _config.langs) {
+    const compiledLangPath = getCompiledLangPath(lang);
+    const translations = getLangTranslations(lang);
+    const fnTranslate = compile({ lang, translations, story });
+    story.debug('db', `Writing file ${chalk.cyan.bold(compiledLangPath)}...`);
+    fs.writeFileSync(compiledLangPath, fnTranslate, 'utf8');
+  }
+}
 
 // ==============================================
 // Helpers
@@ -252,8 +263,8 @@ function readJson(filePath: string): Object {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
 export function saveJson(
-  filePath: string, 
-  obj: Object, 
+  filePath: string,
+  obj: Object,
   { story = mainStory } = {}: Object
 ) {
   story.debug('db', `Writing file ${chalk.cyan.bold(filePath)}...`);

@@ -1,11 +1,7 @@
 import React                from 'react';
-import PureRenderMixin      from 'react-addons-pure-render-mixin'
-import {
-  omit,
-}                           from 'lodash';
-import {
-  cancelEvent,
-}                           from './helpers';
+import PureRenderMixin      from 'react-addons-pure-render-mixin';
+import { omit }             from 'lodash';
+import { cancelEvent }      from './helpers';
 
 // ==========================================
 // Component
@@ -22,13 +18,14 @@ class Button extends React.Component {
     fText:              true,
   };
 
-  render() { 
+  render() {
     const { fText, onClick, fCancelMouseDown } = this.props;
     const otherProps = omit(this.props, ['fText', 'onClick']);
     if (fCancelMouseDown) otherProps.onMouseDown = cancelEvent;
+    let out;
     if (fText) {
-      return (
-        <span 
+      out = (
+        <span
           onClick={onClick}
           {...otherProps}
           style={style.outer}
@@ -37,7 +34,7 @@ class Button extends React.Component {
         </span>
       );
     } else {
-      return (
+      out = (
         <button
           onClick={onClick}
           {...otherProps}
@@ -47,6 +44,7 @@ class Button extends React.Component {
         </button>
       );
     }
+    return out;
   }
 }
 
@@ -54,7 +52,9 @@ class Button extends React.Component {
 // Styles
 // ==========================================
 const style = {
-  outer: {},
+  outer: {
+    cursor: 'pointer',
+  },
 };
 
 export default Button;

@@ -1,5 +1,6 @@
 import timm                 from 'timm';
 import React                from 'react';
+import { omit }             from 'lodash';
 import { bindAll }          from './helpers';
 
 // ==========================================
@@ -7,11 +8,11 @@ import { bindAll }          from './helpers';
 // ==========================================
 class Select extends React.Component {
   static propTypes = {
-    id:                     React.PropTypes.any,
     fAllowNull:             React.PropTypes.bool,
     options:                React.PropTypes.array.isRequired,
     value:                  React.PropTypes.string,
     onChange:               React.PropTypes.func.isRequired,
+    // All other props are passed through
   };
 
   constructor(props) {
@@ -20,15 +21,18 @@ class Select extends React.Component {
   }
 
   render() {
-    const { id, fAllowNull, onChange, value, options } = this.props;
+    const { fAllowNull, onChange, value, options } = this.props;
     const finalOptions = fAllowNull 
       ? timm.addFirst(options, { value: '_NULL_', label: '' })
       : options;
+    const otherProps = omit(this.props, [
+      'fAllowNull', 'onChange', 'value', 'options',
+    ]);
     return (
       <select
-        id={id}
         value={this.toInternalValue(value)}
         onChange={this.onChange}
+        {...otherProps}
       >
         {finalOptions.map(o => (
           <option key={o.value} id={String(o.value)} value={o.value}>{o.label}</option>

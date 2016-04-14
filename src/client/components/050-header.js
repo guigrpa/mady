@@ -20,8 +20,9 @@ class Header extends React.Component {
         <div style={style.spacer} />
         <div style={style.title}>
           MADY
-          <Icon 
-            icon='cog' 
+          <Icon
+            icon="cog"
+            title="Settings"
             onClick={this.props.onShowSettings}
             style={style.settingsIcon}
           />

@@ -33,7 +33,6 @@ class Details extends React.Component {
   };
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps.selectedKeyId);
     this.props.relay.setVariables({ selectedKeyId: nextProps.selectedKeyId });
   }
 

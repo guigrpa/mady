@@ -25,7 +25,7 @@ export function flexContainer(flexDirection, style) {
 export function cancelEvent(ev) {
   ev.preventDefault();
   ev.stopPropagation();
-};
+}
 
 // Runs a Relay mutation inside a Storyboard story
 export function mutate(options) {
@@ -53,6 +53,6 @@ export function mutate(options) {
       story.debug('views', 'Transaction result:', { attach: response });
       story.close();
       if (onSuccess) onSuccess(response);
-    }
+    },
   });
 }

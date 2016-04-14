@@ -19,3 +19,10 @@ export function getScrollbarWidth() {
   }
   return scrollbarWidth;
 }
+
+try {
+  window.addEventListener('resize', () => {
+    scrollbarWidth = null;
+    getScrollbarWidth();
+  });
+} catch (err) { /* ignore */ }

@@ -26,7 +26,7 @@ import {
   connectionArgs,
   connectionDefinitions,
   connectionFromArray,
-  cursorForObjectInConnection,
+  // cursorForObjectInConnection,
   mutationWithClientMutationId,
 }                           from 'graphql-relay';
 import {
@@ -207,11 +207,15 @@ export function init() {
       const story = mainStory.child({
         src: 'gql',
         title: 'Mutation: parse source files',
-        extraParents: [storyId]
+        extraParents: storyId,
       });
-      try { db.parseSrcFiles({ story }); }
-      catch (err) { throw err; }
-      finally { story.close(); }
+      try {
+        db.parseSrcFiles({ story });
+      } catch (err) {
+        throw err;
+      } finally {
+        story.close();
+      }
       return {};
     },
     outputFields: {
@@ -270,6 +274,30 @@ export function init() {
   addMutation('Translation', 'CREATE', { globalIds, relations });
   addMutation('Translation', 'UPDATE', { globalIds });
   addMutation('Translation', 'DELETE', { globalIds, relations });
+  gqlMutations.compileTranslations = mutationWithClientMutationId({
+    name: 'CompileTranslations',
+    inputFields: {
+      storyId:        { type: GraphQLString },
+    },
+    mutateAndGetPayload: ({ storyId }) => {
+      const story = mainStory.child({
+        src: 'gql',
+        title: 'Mutation: compile translations',
+        extraParents: storyId,
+      });
+      try {
+        db.compileTranslations({ story });
+      } catch (err) {
+        throw err;
+      } finally {
+        story.close();
+      }
+      return {};
+    },
+    outputFields: {
+      viewer: viewerRootField,
+    },
+  });
 
   // ==============================================
   // Schema
@@ -295,6 +323,7 @@ export function init() {
         'createTranslation',
         'updateTranslation',
         'deleteTranslation',
+        'compileTranslations',
       ]),
     }),
   });
@@ -370,26 +399,22 @@ function addMutation(type, op, options = {}) {
   const mutateAndGetPayload = ({ id: globalId, set, unset, storyId }) => {
     const story = mainStory.child({
       src: 'gql',
-      title: `Mutation: ${op} on ${type} ${globalId ? globalId : ''}`,
-      extraParents: [storyId]
+      title: `Mutation: ${op} on ${type} ${globalId || ''}`,
+      extraParents: storyId,
     });
     let out;
-    try { out = mutate(type, op, globalId, set, unset, options, story); }
-    catch (err) { throw err; }
-    finally { story.close(); }
+    try {
+      out = mutate(type, op, globalId, set, unset, options, story);
+    } catch (err) {
+      throw err;
+    } finally {
+      story.close();
+    }
     return out;
-  }
+  };
 
   // Output fields
   const outputFields = { viewer: viewerRootField };
-  /*
-  if (op === 'DELETE') {
-    outputFields[`deleted${type}Id`] = {
-      type: GraphQLID,
-      resolve: ({ globalId }) => globalId,
-    };
-  } else {
-  */
   if (op !== 'DELETE' ) {
     outputFields[lowerFirst(type)] = {
       type: gqlTypes[type],

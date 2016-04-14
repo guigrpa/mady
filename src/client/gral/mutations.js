@@ -36,6 +36,29 @@ export class ParseSrcFilesMutation extends Relay.Mutation {
 }
 
 // =======================================================
+// CompileTranslationsMutation
+// =======================================================
+export class CompileTranslationsMutation extends Relay.Mutation {
+  static fragments = {};
+  getMutation() {
+    return Relay.QL`mutation { compileTranslations }`;
+  }
+  getVariables() {
+    return {
+      storyId: this.props.storyId,
+    };
+  }
+  getFatQuery() {
+    return Relay.QL`
+      fragment on CompileTranslationsPayload {
+        viewer
+      }
+    `;
+  }
+  getConfigs() { return []; }
+}
+
+// =======================================================
 // UpdateConfigMutation
 // =======================================================
 export class UpdateConfigMutation extends Relay.Mutation {
