@@ -180,6 +180,8 @@ class Settings extends React.Component {
       description: 'Click on Save settings',
       Mutation: UpdateConfigMutation,
       props: { viewer, set, unset: [] },
+      onSuccess: () => this.props.onClose(),
+      onFailure: () => alert('Configuration could not be saved'),
     });
   }
 }

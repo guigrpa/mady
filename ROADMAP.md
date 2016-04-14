@@ -1,2 +1,5 @@
 - [ ] Add compress Express middleware
 - [ ] Compile Translation mutation: needs fat query?
+- [ ] Selected row
+- [ ] Sort keys by context + text
+- [ ] 

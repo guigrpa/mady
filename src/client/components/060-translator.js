@@ -167,6 +167,9 @@ class Translator extends React.Component {
   }
 
   renderKeyRow({ node: key }) {
+    const elContext = key.context
+      ? <span style={style.context}>{key.context}</span>
+      : undefined;
     return (
       <div key={key.id}
         className="tableBodyRow"
@@ -175,7 +178,7 @@ class Translator extends React.Component {
         style={timm.merge(style.row, style.bodyRow)}
       >
         <div style={timm.merge(style.bodyCell, style.keysCol)}>
-          {key.text}
+          {elContext}{key.text}
         </div>
         {this.state.langs.map(lang => this.renderTranslation(key, lang))}
         {this.renderAddCol(style.bodyCell)}
@@ -379,6 +382,10 @@ const style = {
     width: '100%',
     opacity: 0,
     cursor: 'pointer',
+  },
+  context: {
+    fontWeight: 900,
+    marginRight: 10,
   },
   addCol: (hovering, fDisabled) => flexItem('0 0 2em', {
     backgroundColor: hovering && !fDisabled ? COLORS.darkBlue : COLORS.mediumBlue,
