@@ -1,6 +1,6 @@
 {
   "name": "mady",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Easy-to-use tool to manage and translate ICU MessageFormat messages",
   "bin": {
     "mady": "lib/mady.js"
