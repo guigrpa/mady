@@ -15,7 +15,7 @@ class Button extends React.Component {
     // all other props are passed through
   };
   static defaultProps = {
-    fText:              true,
+    fText:              false,
   };
 
   render() {
