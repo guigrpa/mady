@@ -409,7 +409,7 @@ function addMutation(type, op, options = {}) {
     } finally {
       story.close();
     }
-    return Promise.resolve(out).delay(1500);
+    return out;
   };
 
   // Output fields

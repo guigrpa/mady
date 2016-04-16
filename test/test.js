@@ -1,5 +1,5 @@
 import test from 'ava';
-import * as m from '../lib/es5/server/startup';
+import * as m from '../lib/server/startup';
 
 test('foo', t => {
   t.true(true);

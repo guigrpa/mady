@@ -1,6 +1,6 @@
 {
   "name": "mady",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Easy-to-use MessageFormat translator tool",
   "bin": {
     "mady": "lib/server/startup.js"
@@ -31,9 +31,9 @@
     "compile": "rm -rf ./lib && mkdir lib && babel -d lib src",
     "updateSchemaJson": "babel-node src/server/gqlUpdateSchema",
     "docs": "extract-docs --template docs/templates/README.md --output README.md",
-    "buildSsrWatch": "rm -rf ./lib/server/ssr && cross-env NODE_ENV=production SERVER_SIDE_RENDERING=true webpack --config ./src/server/webpackConfigCommonJS --progress --display-chunks --watch",
-    "buildSsr": "rm -rf ./lib/server/ssr && cross-env NODE_ENV=production SERVER_SIDE_RENDERING=true webpack --config ./src/server/webpackConfigCommonJS --progress --display-chunks",
-    "build": "npm run lint && npm run flow && npm run compile && npm run test && npm run docs",
+    "buildSsrWatch": "rm -rf ./lib/server/ssr && cross-env SERVER_SIDE_RENDERING=true webpack --config ./src/server/webpackConfigCommonJS --progress --display-chunks --watch",
+    "buildSsr": "rm -rf ./lib/server/ssr && cross-env SERVER_SIDE_RENDERING=true webpack --config ./src/server/webpackConfigCommonJS --progress --display-chunks",
+    "build": "npm run compile && npm run test && npm run docs",
     "travis": "npm run compile && npm run testCovFullExceptMin",
     "lint": "eslint src",
     "flow": "flow && test $? -eq 0 -o $? -eq 2",

@@ -14,7 +14,7 @@
 - [x] Compile translations: even when there is no translation, compile a default function for those keys with braces
 - [x] Add compress Express middleware
 - [x] Delete key
-- [ ] Optimistic mutations
+- [-] Optimistic mutations
 - [-] SSR
 - [-] Save langs in cookies, not in localStorage (use in SSR)
 - [ ] Use draft.js for text inputs?

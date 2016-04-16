@@ -23,9 +23,7 @@ export class ParseSrcFilesMutation extends Relay.Mutation {
     return Relay.QL`mutation { parseSrcFiles }`;
   }
   getVariables() {
-    return {
-      storyId: this.props.storyId,
-    };
+    return { storyId: this.props.storyId };
   }
   getFatQuery() {
     return Relay.QL`
@@ -45,6 +43,26 @@ export class ParseSrcFilesMutation extends Relay.Mutation {
       },
     }];
   }
+}
+
+// -------------------------------------------------------
+export class CompileTranslationsMutation extends Relay.Mutation {
+  static fragments = {};
+  getMutation() {
+    return Relay.QL`mutation { compileTranslations }`;
+  }
+  getVariables() {
+    return { storyId: this.props.storyId };
+  }
+  getFatQuery() {
+    return Relay.QL`
+      fragment on CompileTranslationsPayload {
+        clientMutationId
+      }
+    `;
+  }
+  getConfigs() { return []; }
+  getCollisionKey() { return 'compileTranslations'; }
 }
 
 // =======================================================
@@ -67,9 +85,7 @@ export class UpdateConfigMutation extends Relay.Mutation {
   getFatQuery() {
     return Relay.QL`
       fragment on UpdateConfigPayload {
-        viewer {
-          config
-        }
+        viewer { config }
       }
     `;
   }
@@ -128,6 +144,7 @@ export class DeleteKeyMutation extends Relay.Mutation {
       },
     ];
   }
+  /*
   getOptimisticResponse() {
     const prevEdges = this.props.viewer.keys.edges;
     const edges = filter(prevEdges, ({ node }) => node.id !== this.props.id);
@@ -141,6 +158,7 @@ export class DeleteKeyMutation extends Relay.Mutation {
       },
     };
   }
+  */
   getCollisionKey() { return this.props.id; }
 }
 
@@ -278,24 +296,3 @@ export class DeleteTranslationMutation extends Relay.Mutation {
   getCollisionKey() { return this.props.id; }
 }
 
-// -------------------------------------------------------
-export class CompileTranslationsMutation extends Relay.Mutation {
-  static fragments = {};
-  getMutation() {
-    return Relay.QL`mutation { compileTranslations }`;
-  }
-  getVariables() {
-    return {
-      storyId: this.props.storyId,
-    };
-  }
-  getFatQuery() {
-    return Relay.QL`
-      fragment on CompileTranslationsPayload {
-        clientMutationId
-      }
-    `;
-  }
-  getConfigs() { return []; }
-  getCollisionKey() { return 'compileTranslations'; }
-}

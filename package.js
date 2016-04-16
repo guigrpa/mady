@@ -4,8 +4,8 @@
 // Basic config
 // ===============================================
 const NAME = 'mady';
-const VERSION = '0.1.0';
-const DESCRIPTION = 'Easy-to-use MessageFormat translator tool';
+const VERSION = '0.1.1';
+const DESCRIPTION = 'Easy-to-use tool to manage and translate ICU MessageFormat messages';
 const KEYWORDS = ['i18n', 'MessageFormat', 'translation', 'locales', 'translator'];
 
 // ===============================================
@@ -78,8 +78,8 @@ const specs = {
     buildSsrWatch:              runWebpackSsr(true),
     buildSsr:                   runWebpackSsr(false),
     build:                      runMultiple([
-                                  'npm run lint',
-                                  'npm run flow',
+                                  //'npm run lint',
+                                  //'npm run flow',
                                   'npm run compile',
                                   'npm run test',
                                   'npm run docs',

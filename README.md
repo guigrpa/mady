@@ -1,8 +1,6 @@
-# mady [![Build Status](https://travis-ci.org/guigrpa/mady.svg)](https://travis-ci.org/guigrpa/mady) [![Coverage Status](https://coveralls.io/repos/github/guigrpa/mady/badge.svg?branch=master)](https://coveralls.io/github/guigrpa/mady?branch=master) [![npm version](https://img.shields.io/npm/v/mady.svg)](https://www.npmjs.com/package/mady)
+# Mady [![npm version](https://img.shields.io/npm/v/mady.svg)](https://www.npmjs.com/package/mady)
 
-Easy-to-use MessageFormat translator tool
-
-**THIS IS STILL VERY MUCH A WORK IN PROGRESS**
+Easy-to-use tool to manage and translate ICU MessageFormat messages
 
 ## Installation
 
@@ -13,7 +11,63 @@ $ npm install --save-dev mady
 
 ## Usage
 
+There are main parts in Mady: the web-based translation app and the translate function.
 
+
+### The translation app
+
+Access the translation app by running:
+
+```bash
+$ ./node_modules/.bin/mady
+```
+
+Or just add the following line to your `package.json`:
+
+```json
+"scripts": {
+    "translate": "mady"
+}
+```
+
+and run `npm run translate`.
+
+The first time you run it, Mady will ask you for some additional information: the path to your locales folder and a default port for the application. Now open Mady's URL in your browser (http://localhost:8080 by default) and there you go!
+
+From the web application, you can:
+
+* Update the key database with new keys extracted from your source files
+* Configure your languages, source paths, file extensions, etc.
+* Translate your keys to the different supported languages
+* Export translations to JS files, for use by the [translate function](#the-translate-function)
+
+Right now, keys have the form: `_t('someContext_Once upon a time...')`, where `_t()` is the default name for the translate function (see below), `someContext` is some hint for the translator and `Once upon a time...` is your untranslated [MessageFormat](#messageformat) message.
+
+
+### The translate function
+
+Using the translate function is similarly straightforward:
+
+```js
+import _t from 'mady';
+import locales from './locales/es-ES';
+
+_t.setLocales(locales);
+
+console.log(_t('someContext_Once upon a time...'));
+// Érase una vez...
+console.log(_t('someContext_Number of items: {NUM}', { NUM: 5 }));
+// Número de ítems: 5
+console.log(_t("someContext_{NUM, plural, one{1 hamburger} other{# hamburgers} }", { NUM: 1 }));
+// 1 hamburguesa
+console.log(_t("someContext_{NUM, plural, one{1 hamburger} other{# hamburgers} }", { NUM: 2 }));
+// 2 hamburguesas
+```
+
+
+## MessageFormat
+
+Mady uses the [messageformat.js](https://github.com/SlexAxton/messageformat.js) library by Alex Sexton, which "supports and extends all parts of the **[ICU MessageFormat]** standard (see the [user guide](http://userguide.icu-project.org/formatparse/messages)), with the exception of the deprecated ChoiceFormat." IMHO, and while it does not solve all the problems in the huge subject of i18n, it is a much more powerful tool than the conventional gettext.
 
 
 ## MIT license

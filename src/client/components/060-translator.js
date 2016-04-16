@@ -24,10 +24,11 @@ import Icon                 from './905-icon';
 // Translator
 // ==========================================
 const comparator = (a, b) => a < b ? -1 : (a > b ? 1 : 0);
-const keyComparator = (a, b) => 
-  comparator(a.context.toLowerCase(), b.context.toLowerCase()) ||
-  comparator(a.text.toLowerCase(), b.text.toLowerCase()) ||
-  comparator(a.id, b.id);
+const keyComparator = (a, b) => {
+  const aStr = `${a.context || ''}${a.text}${a.id}`;
+  const bStr = `${b.context || ''}${b.text}${b.id}`;
+  return comparator(aStr, bStr);
+}
 
 // ------------------------------------------
 // Relay fragments
@@ -100,7 +101,7 @@ class Translator extends React.Component {
         style={timm.merge(style.row, style.headerRow)}
       >
         <div style={timm.merge(style.headerCell, style.keyCol)}>
-          KEYS <span style={style.numItems}>[{keys.edges.length}]</span>
+          MESSAGES <span style={style.numItems}>[{keys.edges.length}]</span>
           {' '}
           <Icon
             icon="refresh"
