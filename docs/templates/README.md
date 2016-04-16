@@ -11,7 +11,7 @@ $ npm install --save-dev mady
 
 ## Usage
 
-There are main parts in Mady: the web-based translation app and the translate function.
+There are two main parts in Mady: the web-based translation app and the translate function.
 
 
 ### The translation app
@@ -41,7 +41,7 @@ From the web application, you can:
 * Translate your keys to the different supported languages
 * Export translations to JS files, for use by the [translate function](#the-translate-function)
 
-Right now, keys have the form: `_t('someContext_Once upon a time...')`, where `_t()` is the default name for the translate function (see below), `someContext` is some hint for the translator and `Once upon a time...` is your untranslated [MessageFormat](#messageformat) message.
+Messages in your source files should have the form: `_t('someContext_Once upon a time...')`, where `_t()` is the default name for the translate function (see below), `someContext` is some hint for the translator and `Once upon a time...` is your untranslated [MessageFormat](#messageformat) message.
 
 
 ### The translate function

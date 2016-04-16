@@ -1,7 +1,7 @@
 {
   "name": "mady",
   "version": "0.1.1",
-  "description": "Easy-to-use MessageFormat translator tool",
+  "description": "Easy-to-use tool to manage and translate ICU MessageFormat messages",
   "bin": {
     "mady": "lib/server/startup.js"
   },
@@ -28,12 +28,14 @@
   },
   "scripts": {
     "start": "babel-node src/server/startup",
+    "startProd": "cross-env NODE_ENV=production node lib/server/startup",
     "compile": "rm -rf ./lib && mkdir lib && babel -d lib src",
     "updateSchemaJson": "babel-node src/server/gqlUpdateSchema",
     "docs": "extract-docs --template docs/templates/README.md --output README.md",
     "buildSsrWatch": "rm -rf ./lib/server/ssr && cross-env SERVER_SIDE_RENDERING=true webpack --config ./src/server/webpackConfigCommonJS --progress --display-chunks --watch",
     "buildSsr": "rm -rf ./lib/server/ssr && cross-env SERVER_SIDE_RENDERING=true webpack --config ./src/server/webpackConfigCommonJS --progress --display-chunks",
-    "build": "npm run compile && npm run test && npm run docs",
+    "buildClient": "cross-env NODE_ENV=production webpack --config ./src/server/webpackConfigCommonJS --progress --display-chunks",
+    "build": "npm run compile && npm run buildClient && npm run test && npm run docs",
     "travis": "npm run compile && npm run testCovFullExceptMin",
     "lint": "eslint src",
     "flow": "flow && test $? -eq 0 -o $? -eq 2",

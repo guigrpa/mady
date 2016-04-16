@@ -28,6 +28,7 @@ const runWebpackSsr = fWatch => runMultiple([
   'rm -rf ./lib/server/ssr',
   `cross-env SERVER_SIDE_RENDERING=true webpack ${WEBPACK_OPTIONS}${fWatch ? ' --watch' : ''}`,
 ]);
+const WEBPACK_CLIENT = `cross-env NODE_ENV=production webpack ${WEBPACK_OPTIONS}`;
 
 // ===============================================
 // Specs
@@ -66,6 +67,7 @@ const specs = {
 
     // Top-level
     start:                      'babel-node src/server/startup',
+    startProd:                  'cross-env NODE_ENV=production node lib/server/startup',
     compile:                    runMultiple([
                                   'rm -rf ./lib',
                                   'mkdir lib',
@@ -77,10 +79,12 @@ const specs = {
     docs:                       'extract-docs --template docs/templates/README.md --output README.md',
     buildSsrWatch:              runWebpackSsr(true),
     buildSsr:                   runWebpackSsr(false),
+    buildClient:                WEBPACK_CLIENT,
     build:                      runMultiple([
                                   //'npm run lint',
                                   //'npm run flow',
                                   'npm run compile',
+                                  'npm run buildClient',
                                   'npm run test',
                                   'npm run docs',
                                 ]),
