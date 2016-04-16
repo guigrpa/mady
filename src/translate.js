@@ -9,7 +9,7 @@ function translate(locales, key, data) {
     out = key;
     const contextSeparatorIndex = out.indexOf('_');
     if (contextSeparatorIndex >= 0) {
-      out = out.substring(contextSeparatorIndex+1, out.length);
+      out = out.substring(contextSeparatorIndex + 1, out.length);
     }
   }
   out = out.trim();
@@ -18,6 +18,6 @@ function translate(locales, key, data) {
 
 function _t(key, data) { return translate(_locales, key, data); }
 
-_t.setLocales = function(locales) { _locales = locales; }
+_t.setLocales = function setLocales(locales) { _locales = locales; };
 
-export default _t;
+module.exports = _t;
