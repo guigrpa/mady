@@ -23,7 +23,7 @@ try {
   mainStory.warn('http', 'No SSR module available');
 }
 
-const ASSET_PATH = 'public';
+const ASSET_PATH = '../../public';
 const DEFAULT_BOOTSTRAP = {
   ssrHtml: '',
   ssrCss: '',
@@ -59,7 +59,7 @@ export function init(options: Object) {
 
   // Templating and other middleware
   expressApp.engine('html', ejs.renderFile);
-  expressApp.set('views', path.join(process.cwd(), ASSET_PATH));
+  expressApp.set('views', path.join(__dirname, ASSET_PATH));
   expressApp.use(compression());
   expressApp.use(cookieParser());
 
@@ -79,7 +79,7 @@ export function init(options: Object) {
   });
 
   // Static assets
-  expressApp.use(express.static(path.join(process.cwd(), ASSET_PATH)));
+  expressApp.use(express.static(path.join(__dirname, ASSET_PATH)));
 
   // Create HTTP server
   const httpServer = http.createServer(expressApp);
