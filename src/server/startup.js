@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 // @flow
 
 import Promise              from 'bluebird';
