@@ -1,5 +1,26 @@
-- [ ] Add compress Express middleware
-- [ ] Compile Translation mutation: needs fat query?
-- [ ] Selected row
-- [ ] Sort keys by context + text
-- [ ] 
+- [x] Remove fat query from compileTranslations mutation
+- [x] Highlight selected row
+- [x] Sort keys by context + text
+- [x] Change base color
+- [x] Settings comp
+- [x] Select row upon focus
+- [x] Make uglify configurable
+- [x] IMPORT from older
+- [x] "Add language" button, not column
+- [x] Different color for unused keys
+- [x] Different color for untranslated keys
+- [x] Performance!
+- [x] _t implementation
+- [x] Compile translations: even when there is no translation, compile a default function for those keys with braces
+- [x] Add compress Express middleware
+- [x] Delete key
+- [ ] Optimistic mutations
+- [-] SSR
+- [-] Save langs in cookies, not in localStorage (use in SSR)
+- [ ] Use draft.js for text inputs?
+- [ ] Details in various areas:
+    + Key: # total, # unused, + details for selected key
+    + Per language: # missing translations
+- [ ] Key shortcuts, blur/focus shortcuts
+- [ ] eslint everything
+- [ ] Create/update key?
