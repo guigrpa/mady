@@ -11,6 +11,11 @@ const KEYWORDS = ['i18n', 'MessageFormat', 'translation', 'locales', 'translator
 // ===============================================
 // Helpers
 // ===============================================
+const WEBPACK_OPTIONS = '--config ./src/server/webpackConfigCommonJS ' +
+  '--progress ' +
+  // '--display-modules ' +
+  '--display-chunks';
+
 const runMultiple = arr => arr.join(' && ');
 const runTestCov = env => {
   const envStr = env != null ? `${env} ` : '';
@@ -19,6 +24,10 @@ const runTestCov = env => {
     'mv .nyc_output/* .nyc_tmp/',
   ]);
 };
+const runWebpackSsr = fWatch => runMultiple([
+  'rm -rf ./lib/server/ssr',
+  `cross-env SERVER_SIDE_RENDERING=true webpack ${WEBPACK_OPTIONS}${fWatch ? ' --watch' : ''}`,
+]);
 
 // ===============================================
 // Specs
@@ -32,8 +41,9 @@ const specs = {
   version: VERSION,
   description: DESCRIPTION,
   bin: {
-    mady: 'lib/es5/server/startup.js',
+    mady: 'lib/server/startup.js',
   },
+  main: 'lib/translate.js',
   engines: {
     node: '>=4',
   },
@@ -65,6 +75,8 @@ const specs = {
                                 ]),
     updateSchemaJson:           'babel-node src/server/gqlUpdateSchema',
     docs:                       'extract-docs --template docs/templates/README.md --output README.md',
+    buildSsrWatch:              runWebpackSsr(true),
+    buildSsr:                   runWebpackSsr(false),
     build:                      runMultiple([
                                   'npm run lint',
                                   'npm run flow',
@@ -137,6 +149,9 @@ const specs = {
 
     // Express + plugins
     express: '4.13.4',
+    ejs: '2.4.1',
+    'cookie-parser': '1.4.1',
+    compression: '1.6.1',
   },
 
   devDependencies: {
@@ -182,8 +197,10 @@ const specs = {
     'file-loader': '0.8.5',
     'css-loader': '0.23.1',
     'style-loader': '0.13.1',
+    'json-loader': '0.5.4',
     'sass-loader': '3.2.0',
     'node-sass': '3.4.2',
+    'extract-text-webpack-plugin': '1.0.1',
 
     // Linting
     eslint: '^2.4.0',
