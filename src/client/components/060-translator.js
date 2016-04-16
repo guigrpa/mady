@@ -1,10 +1,10 @@
 import timm                 from 'timm';
 import React                from 'react';
 import Relay                from 'react-relay';
+import PureRenderMixin      from 'react-addons-pure-render-mixin';
 import { throttle }         from 'lodash';
 import {
   ParseSrcFilesMutation,
-  CompileTranslationsMutation,
 }                           from '../gral/mutations';
 import {
   COLORS,
@@ -16,49 +16,50 @@ import {
   flexItem,
   flexContainer,
 }                           from './helpers';
-import Translation          from './062-translation';
+import TranslatorRow        from './061-translatorRow';
 import Select               from './900-select';
 import Icon                 from './905-icon';
-import hoverable            from './hocs/hoverable';
 
 // ==========================================
-// Relay fragments
+// Translator
 // ==========================================
+const comparator = (a, b) => a < b ? -1 : (a > b ? 1 : 0);
+const keyComparator = (a, b) => 
+  comparator(a.context.toLowerCase(), b.context.toLowerCase()) ||
+  comparator(a.text.toLowerCase(), b.text.toLowerCase()) ||
+  comparator(a.id, b.id);
+
+// ------------------------------------------
+// Relay fragments
+// ------------------------------------------
 const fragments = {
   viewer: () => Relay.QL`
     fragment on Viewer {
       config { langs }
       keys(first: 100000) { edges { node {
         id
-        context text
-        ${Translation.getFragment('theKey')}
-        translations(first: 100000) { edges { node {
-          id
-          lang
-          ${Translation.getFragment('translation')}
-        }}}
+        context text     # for sorting
+        ${TranslatorRow.getFragment('theKey')}
       }}}
       ${ParseSrcFilesMutation.getFragment('viewer')}
+      ${TranslatorRow.getFragment('viewer')}
     }
   `,
 };
 
-// ==========================================
+// ------------------------------------------
 // Component
-// ==========================================
+// ------------------------------------------
 class Translator extends React.Component {
   static propTypes = {
     viewer:                 React.PropTypes.object.isRequired,
     selectedKeyId:          React.PropTypes.string,
-    onChangeSelection:      React.PropTypes.func.isRequired,
-    // From Hoverable
-    hovering:               React.PropTypes.string,
-    onHoverStart:           React.PropTypes.func.isRequired,
-    onHoverStop:            React.PropTypes.func.isRequired,
+    changeSelectedKey:      React.PropTypes.func.isRequired,
   };
 
   constructor(props) {
     super(props);
+    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     this.state = {
       langs: this.readLangs(),
     };
@@ -70,8 +71,6 @@ class Translator extends React.Component {
       'changeLang',
 
       'onParseSrcFiles',
-      'onCompileTranslations',
-      'onClickKeyRow',
     ]);
     this.forceRender = throttle(this.forceRender.bind(this), 200);
   }
@@ -80,9 +79,9 @@ class Translator extends React.Component {
   componentWillUnmount() { window.removeEventListener('resize', this.forceRender); }
   forceRender() { this.forceUpdate(); }
 
-  // ==========================================
+  // ------------------------------------------
   // Render
-  // ==========================================
+  // ------------------------------------------
   render() {
     return (
       <div style={style.outer}>
@@ -100,7 +99,7 @@ class Translator extends React.Component {
         className="tableHeaderRow"
         style={timm.merge(style.row, style.headerRow)}
       >
-        <div style={timm.merge(style.headerCell, style.keysCol)}>
+        <div style={timm.merge(style.headerCell, style.keyCol)}>
           KEYS <span style={style.numItems}>[{keys.edges.length}]</span>
           {' '}
           <Icon
@@ -108,17 +107,11 @@ class Translator extends React.Component {
             title="Parse source files to update this list"
             onClick={this.onParseSrcFiles}
           />
-          {' '}
-          <Icon
-            icon="save"
-            title="Convert translations to JavaScript files"
-            onClick={this.onCompileTranslations}
-          />
         </div>
         {this.state.langs.map((lang, idx) => 
           this.renderLangHeader(lang, idx, langOptions)
         )}
-        {this.renderAddCol(style.headerCell, true)}
+        {this.renderAdd()}
         <div style={style.scrollbarSpacer()} />
       </div>
     );
@@ -155,50 +148,31 @@ class Translator extends React.Component {
   }
 
   renderBody() {
+    let keys = this.props.viewer.keys.edges.map(o => o.node);
+    keys = keys.sort(keyComparator);
     return (
       <div
         className="tableBody"
         style={style.body}
       >
-        { this.props.viewer.keys.edges.map(this.renderKeyRow) }
-        { this.renderFillerRow() }
+        {keys.map(this.renderKeyRow)}
+        {this.renderFillerRow()}
       </div>
     );
   }
 
-  renderKeyRow({ node: key }) {
-    const elContext = key.context
-      ? <span style={style.context}>{key.context}</span>
-      : undefined;
+  renderKeyRow(key) {
+    const fSelected = this.props.selectedKeyId === key.id;
     return (
-      <div key={key.id}
-        className="tableBodyRow"
-        id={key.id}
-        onClick={this.onClickKeyRow}
-        style={timm.merge(style.row, style.bodyRow)}
-      >
-        <div style={timm.merge(style.bodyCell, style.keysCol)}>
-          {elContext}{key.text}
-        </div>
-        {this.state.langs.map(lang => this.renderTranslation(key, lang))}
-        {this.renderAddCol(style.bodyCell)}
-      </div>
-    );
-  }
-
-  renderTranslation(key, lang) {
-    const edge = key.translations.edges.find(({ node }) => node.lang === lang);
-    const translation = edge ? edge.node : null;
-    return (
-      <div key={lang}
-        style={timm.merge(style.bodyCell, style.langCol)}
-      >
-        <Translation
-          theKey={key}
-          lang={lang}
-          translation={translation}
-        />
-      </div>
+      <TranslatorRow key={key.id}
+        theKey={key}
+        viewer={this.props.viewer}
+        langs={this.state.langs}
+        fSelected={fSelected}
+        changeSelectedKey={this.props.changeSelectedKey}
+        styleKeyCol={style.keyCol}
+        styleLangCol={style.langCol}
+      />
     );
   }
 
@@ -208,40 +182,33 @@ class Translator extends React.Component {
         className="tableFillerRow"
         style={style.fillerRow}
       >
-        <div style={style.keysCol} />
+        <div style={style.keyCol} />
         {this.state.langs.map(lang => (
           <div key={lang}
             style={style.langCol}
           />
         ))}
-        {this.renderAddCol()}
       </div>
     );
   }
 
-  renderAddCol(baseStyle = {}, fIcon = false) {
-    let icon;
+  renderAdd() {
     const fDisabled = this.state.langs.length === this.props.viewer.config.langs.length;
-    if (fIcon) {
-      icon = <Icon icon="plus" fDisabled={fDisabled} />;
-    }
     return (
       <div
-        id="addCol"
-        onMouseEnter={this.props.onHoverStart}
-        onMouseLeave={this.props.onHoverStop}
+        id="addLang"
         onClick={fDisabled ? undefined : this.onAddLang}
         title="Add column"
-        style={timm.merge(baseStyle, style.addCol(this.props.hovering, fDisabled))}
+        style={style.addLang(fDisabled)}
       >
-        {icon}
+        <Icon icon="plus" fDisabled={fDisabled} />
       </div>
     );
   }
 
-  // ==========================================
+  // ------------------------------------------
   // Langs
-  // ==========================================
+  // ------------------------------------------
   readLangs() {
     let langs;
     try {
@@ -299,9 +266,9 @@ class Translator extends React.Component {
     this.setState({ langs });
   }
 
-  // ==========================================
+  // ------------------------------------------
   // Other handlers
-  // ==========================================
+  // ------------------------------------------
   onParseSrcFiles() {
     mutate({
       description: 'Click on Parse source files',
@@ -309,23 +276,11 @@ class Translator extends React.Component {
       props: { viewer: this.props.viewer },
     });
   }
-
-  onCompileTranslations() {
-    mutate({
-      description: 'Click on Compile translations',
-      Mutation: CompileTranslationsMutation,
-      props: {},
-    });
-  }
-
-  onClickKeyRow(ev) {
-    this.props.onChangeSelection(ev.currentTarget.id);
-  }
 }
 
-// ==========================================
+// ------------------------------------------
 // Styles
-// ==========================================
+// ------------------------------------------
 const style = {
   outer: flexItem('1 0 10em', flexContainer('column', {
     marginTop: 5,
@@ -334,34 +289,31 @@ const style = {
   body: flexItem(1, flexContainer('column', { overflowY: 'scroll' })),
 
   row: flexItem('none', flexContainer('row')),
-  headerRow: { fontWeight: 'bold' },
-  bodyRow: {},
+  headerRow: {
+    position: 'relative',
+    fontWeight: 'bold',
+  },
   fillerRow: flexItem('1 1 0px', flexContainer('row')),
 
   headerCell: {
     paddingTop: 3,
     paddingBottom: 3,
-    borderBottom: `1px solid ${COLORS.darkestBlue}`,
+    borderBottom: `1px solid ${COLORS.darkest}`,
     textAlign: 'center',
     fontWeight: 900,
     letterSpacing: 3,
   },
-  bodyCell: {
-    paddingTop: 1,
-    paddingBottom: 1,
-    borderBottom: `1px solid ${COLORS.darkBlue}`,
-  },
   numItems: {
     color: 'darkgrey',
   },
-  keysCol: flexItem('1 1 0px', {
-    backgroundColor: COLORS.lightBlue,
+  keyCol: flexItem('1 1 0px', {
+    backgroundColor: COLORS.light,
     marginRight: 5,
     paddingLeft: 5,
     paddingRight: 5,
   }),
   langCol: flexItem('1 1 0px', {
-    backgroundColor: COLORS.lightBlue,
+    backgroundColor: COLORS.light,
     marginRight: 5,
     paddingLeft: 5,
     paddingRight: 5,
@@ -373,7 +325,6 @@ const style = {
   },
   langSelectorCaret: {
     marginRight: 5,
-
   },
   langSelector: {
     position: 'absolute',
@@ -383,21 +334,31 @@ const style = {
     opacity: 0,
     cursor: 'pointer',
   },
-  context: {
-    fontWeight: 900,
-    marginRight: 10,
+  addLang: (fDisabled) => {
+    const scrollbarWidth = getScrollbarWidth();
+    return {
+      position: 'absolute',
+      top: 0,
+      right: scrollbarWidth ? scrollbarWidth + 5 : 0,
+      cursor: fDisabled ? undefined : 'pointer',
+      padding: '3px 6px',
+      fontWeight: 900,
+      letterSpacing: 3,
+    };
   },
-  addCol: (hovering, fDisabled) => flexItem('0 0 2em', {
-    backgroundColor: hovering && !fDisabled ? COLORS.darkBlue : COLORS.mediumBlue,
-    marginRight: getScrollbarWidth() ? 5 : 0,
-    borderBottom: '0px',
-    cursor: fDisabled ? undefined : 'pointer',
-  }),
 
   scrollbarSpacer: () => flexItem(`0 0 ${getScrollbarWidth()}px`),
 };
 
+// ------------------------------------------
+// Build container
+// ------------------------------------------
+const TranslatorContainer = Relay.createContainer(Translator, {
+  fragments,
+});
+
+
 // ==========================================
 // Public API
 // ==========================================
-export default Relay.createContainer(hoverable(Translator), { fragments });
+export default TranslatorContainer;
