@@ -1,13 +1,13 @@
 // @flow
 
+import Promise              from 'bluebird';
+Promise.longStackTraces();
 import path                 from 'path';
 import timm                 from 'timm';
 import { mainStory }        from 'storyboard';
 import fs                   from 'fs-extra';
 import program              from 'commander';
 import inquirer             from 'inquirer';
-import Promise              from 'bluebird';
-Promise.longStackTraces();
 const pkg                   = require('../../package.json');
 import * as db              from './db';
 import * as gqlServer       from './gqlServer';
@@ -26,16 +26,22 @@ program
   .option('-d, --dir [dir]', 'Relative path to locale folder')
   .option('-p, --port [port]', 'Initial port number to use ' +
     '(if unavailable, the next available one will be used)')
+  .option('--importV0 [dir]', 'Import a "v0" (old) locale folder')
   .parse(process.argv);
 
-_readLaunchPars()
+Promise.resolve()
+  .then(() => _readLaunchPars())
   .then(() => {
     mainStory.info('startup', 'Launch parameters:', { attach: _launchPars });
     db.init({ localeDir: _launchPars.localeDir });
   })
   .then(() => {
-    gqlServer.init();
-    httpServer.init({ port: _launchPars.port });
+    if (program.importV0) {
+      db.importV0(program.importV0);
+    } else {
+      gqlServer.init();
+      httpServer.init({ port: _launchPars.port });
+    }
   });
 
 

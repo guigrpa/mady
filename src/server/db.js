@@ -5,21 +5,23 @@ import { mainStory, chalk } from 'storyboard';
 import uuid                 from 'node-uuid';
 import parse                from './parseSources';
 import compile              from './compileTranslations';
+import * as importers       from './importData';
 
 const DEFAULT_CONFIG = {
   srcPaths: ['src'],
   srcExtensions: ['.js', '.jsx', '.coffee', '.cjsx'],
   langs: ['en-US'],
+  fMinify: false,
 };
 
 // ==============================================
 // Main API
 // ==============================================
 export function init(options: Object) {
-  _initLocaleDir(options);
-  _initConfig();
-  _initKeys();
-  _initTranslations();
+  initLocaleDir(options);
+  initConfig();
+  initKeys();
+  initTranslations();
 }
 
 
@@ -28,7 +30,7 @@ export function init(options: Object) {
 // ==============================================
 let _localeDir = null;
 
-function _initLocaleDir(options: Object) {
+function initLocaleDir(options: Object) {
   _localeDir = options.localeDir;
   try {
     fs.statSync(_localeDir);
@@ -38,14 +40,13 @@ function _initLocaleDir(options: Object) {
   }
 }
 
-
 // ==============================================
 // Config
 // ==============================================
 let _configPath = null;
 let _config = null;
 
-function _initConfig() {
+function initConfig() {
   _configPath = path.join(_localeDir, 'config.json');
   try {
     fs.statSync(_configPath);
@@ -58,7 +59,9 @@ function _initConfig() {
   }
 }
 
-function readConfig() { _config = readJson(_configPath); }
+function readConfig() {
+  _config = timm.addDefaults(readJson(_configPath), DEFAULT_CONFIG);
+}
 function saveConfig(options) { saveJson(_configPath, _config, options); }
 
 export function getConfig() { return _config; }
@@ -76,7 +79,7 @@ export function updateConfig(newAttrs, { story }) {
 let _keyPath = null;
 let _keys = {};
 
-function _initKeys() {
+function initKeys() {
   _keyPath = path.join(_localeDir, 'keys.json');
   try {
     fs.statSync(_keyPath);
@@ -169,7 +172,7 @@ const getLangPath = (lang) => path.join(_localeDir, `${lang}.json`);
 const getCompiledLangPath = (lang) => path.join(_localeDir, `${lang}.js`);
 let _translations = {};
 
-function _initTranslations() {
+function initTranslations() {
   for (const lang of _config.langs) {
     const langPath = getLangPath(lang);
     try {
@@ -250,10 +253,39 @@ export function compileTranslations({ story }) {
   for (const lang of _config.langs) {
     const compiledLangPath = getCompiledLangPath(lang);
     const translations = getLangTranslations(lang);
-    const fnTranslate = compile({ lang, translations, story });
+    const { fMinify } = _config;
+    const fnTranslate = compile({ lang, keys: _keys, translations, fMinify, story });
     story.debug('db', `Writing file ${chalk.cyan.bold(compiledLangPath)}...`);
     fs.writeFileSync(compiledLangPath, fnTranslate, 'utf8');
   }
+}
+
+// ==============================================
+// Merge keys and translations from old stores
+// ==============================================
+export function importV0(dir: string) {
+  const story = mainStory.child({
+    src: 'db',
+    title: 'Import v0',
+  });
+  const { langs, keys, translations } = importers.importV0({
+    langs: _config.langs,
+    keys: _keys,
+    translations: _translations, 
+    dir, story,
+  });
+  if (langs !== _config.langs) updateConfig({ langs }, { story });
+  if (keys !== _keys) {
+    _keys = keys;
+    saveKeys({ story });
+  }
+  if (translations !== _translations) {
+    _translations = translations;
+    for (const lang of _config.langs) {
+      saveTranslations(lang, { story });
+    }
+  }
+  story.close();
 }
 
 // ==============================================
