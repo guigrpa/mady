@@ -3,9 +3,12 @@
   <head>
     <title>Mady</title>
     <link rel='icon' type='image/ico' href='/favicon.ico'>
+    <style id='preRenderedStyles'>
+      <%- ssrCss %>
+    </style>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app"><%- ssrHtml %></div>
     <script src='/app.bundle.js'></script>
   </body>
 </html>
