@@ -4,7 +4,7 @@ import Promise              from 'bluebird';
 import {
   GraphQLID,
   GraphQLString,
-  // GraphQLBoolean,
+  GraphQLBoolean,
   // GraphQLInt,
   // GraphQLFloat,
   GraphQLObjectType,
@@ -122,6 +122,7 @@ export function init() {
     srcPaths:       { type: new GraphQLList(GraphQLString) },
     srcExtensions:  { type: new GraphQLList(GraphQLString) },
     langs:          { type: new GraphQLList(GraphQLString) },
+    fMinify:        { type: GraphQLBoolean },
   });
 
   gqlTypes.Config = new GraphQLObjectType({
@@ -294,9 +295,7 @@ export function init() {
       }
       return {};
     },
-    outputFields: {
-      viewer: viewerRootField,
-    },
+    outputFields: {},
   });
 
   // ==============================================
@@ -410,12 +409,12 @@ function addMutation(type, op, options = {}) {
     } finally {
       story.close();
     }
-    return out;
+    return Promise.resolve(out).delay(1500);
   };
 
   // Output fields
   const outputFields = { viewer: viewerRootField };
-  if (op !== 'DELETE' ) {
+  if (op !== 'DELETE') {
     outputFields[lowerFirst(type)] = {
       type: gqlTypes[type],
       resolve: ({ node }) => node,

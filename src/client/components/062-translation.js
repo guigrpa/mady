@@ -6,11 +6,10 @@ import {
   UpdateTranslationMutation,
   DeleteTranslationMutation,
 }                           from '../gral/mutations';
+import { COLORS }           from '../gral/constants';
 import {
   bindAll,
   mutate,
-  flexItem,
-  flexContainer,
 }                           from './helpers';
 import Icon                 from './905-icon';
 import Button               from './915-button';
@@ -23,12 +22,14 @@ const fragments = {
     fragment on Key {
       id
       text
+      ${DeleteTranslationMutation.getFragment('theKey')}
     }
   `,
   translation: () => Relay.QL`
     fragment on Translation {
       id
       lang, translation
+      ${UpdateTranslationMutation.getFragment('translation')}
     }
   `,
 };
@@ -41,6 +42,8 @@ class Translation extends React.Component {
     theKey:                 React.PropTypes.object.isRequired,
     lang:                   React.PropTypes.string.isRequired,
     translation:            React.PropTypes.object,
+    changeSelectedKey:      React.PropTypes.func.isRequired,
+    fUnused:                React.PropTypes.bool.isRequired,
   };
 
   constructor(props) {
@@ -61,8 +64,10 @@ class Translation extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (!nextProps.translation && this.props.translation) {
-      this.setState({ text: '' });
+    if (nextProps.translation !== this.props.translation) {
+      this.setState({
+        text: this.getInitialTranslation(nextProps),
+      });
     }
   }
 
@@ -82,6 +87,8 @@ class Translation extends React.Component {
   }
 
   renderTranslation() {
+    const { translation, relay, fUnused } = this.props;
+    const fUpdating = translation && relay.hasOptimisticUpdate(translation);
     return (
       <div>
         <input ref={(c) => this._input = c}
@@ -89,7 +96,7 @@ class Translation extends React.Component {
           value={this.state.text}
           onChange={this.onChange}
           onClick={this.editStart}
-          style={style.input(this.state)}
+          style={style.input(this.state, { fUnused, fUpdating })}
         />
       </div>
     )
@@ -97,12 +104,14 @@ class Translation extends React.Component {
 
   renderButtons() {
     if (!this.state.fEditing) return null;
-    const elDelete = this.props.translation 
+    const translation = this.props.translation;
+    const elDelete = translation
       ? <span>
           {' | '}
           <Button
             onClick={this.deleteTranslation}
             fCancelMouseDown
+            fText
           >
             Delete
           </Button>
@@ -110,16 +119,18 @@ class Translation extends React.Component {
       : null;
     return (
       <div>
-        <Button 
+        <Button
           onClick={this.copyKey}
           fCancelMouseDown
+          fText
         >
           Copy key
         </Button>
         {' | '}
-        <Button 
+        <Button
           onClick={this.editCommit}
           fCancelMouseDown
+          fText
         >
           Save
         </Button>
@@ -127,6 +138,7 @@ class Translation extends React.Component {
         <Button
           onClick={this.editRevert}
           fCancelMouseDown
+          fText
         >
           Revert
         </Button>
@@ -140,7 +152,10 @@ class Translation extends React.Component {
   // ==========================================
   onChange(ev) { this.setState({ text: ev.currentTarget.value }); }
   copyKey(ev) { this.setState({ text: this.props.theKey.text }); }
-  editStart() { this.setState({ fEditing: true }); }
+  editStart() {
+    this.setState({ fEditing: true });
+    this.props.changeSelectedKey(this.props.theKey.id);
+  }
   editCommit() {
     let description = 'Click on Save translation';
     let Mutation;
@@ -148,7 +163,7 @@ class Translation extends React.Component {
     if (this.props.translation) {
       Mutation = UpdateTranslationMutation;
       props = {
-        id: this.props.translation.id,
+        translation: this.props.translation,
         set: {
           translation: this.state.text,
         },
@@ -164,7 +179,10 @@ class Translation extends React.Component {
       };
     }
     mutate({ description, Mutation, props });
-    this.setState({ fEditing: false });
+    this.setState({
+      fEditing: false,
+      text: this.getInitialTranslation(),
+    });
     this._input.blur();
   }
   editRevert() {
@@ -187,7 +205,7 @@ class Translation extends React.Component {
       Mutation: DeleteTranslationMutation,
       props: {
         id: this.props.translation.id,
-        keyId: this.props.theKey.id,
+        theKey: this.props.theKey,
       },
     });
   }
@@ -195,8 +213,8 @@ class Translation extends React.Component {
   // ==========================================
   // Helpers
   // ==========================================
-  getInitialTranslation() {
-    return this.props.translation ? this.props.translation.translation : '';
+  getInitialTranslation(props = this.props) {
+    return props.translation ? props.translation.translation : '';
   }
 }
 
@@ -204,9 +222,10 @@ class Translation extends React.Component {
 // Styles
 // ==========================================
 const style = {
-  input: ({ fEditing }) => ({
+  input: ({ fEditing }, { fUnused, fUpdating }) => ({
     background: fEditing ? undefined : 'transparent',
     border: fEditing ? undefined : '0px solid transparent',
+    color: fUpdating ? 'red' : (fUnused ? COLORS.dim : undefined),
     width: '100%',
     cursor: 'beam',
   }),

@@ -55,7 +55,7 @@ class App extends React.Component {
         <Translator
           viewer={this.props.viewer}
           selectedKeyId={this.state.selectedKeyId}
-          onChangeSelection={this.changeSelectedKey}
+          changeSelectedKey={this.changeSelectedKey}
         />
         {this.renderDetails()}
         {this.renderSettings()}

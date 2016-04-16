@@ -50,7 +50,10 @@ export function mutate(options) {
       if (onFailure) onFailure(transaction);
     },
     onSuccess: response => {
-      story.debug('views', 'Transaction result:', { attach: response });
+      story.debug('views', 'Transaction result:', {
+        attach: response,
+        attachLevel: 'trace',
+      });
       story.close();
       if (onSuccess) onSuccess(response);
     },

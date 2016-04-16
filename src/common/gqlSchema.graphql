@@ -9,7 +9,6 @@ input CompileTranslationsInput {
 }
 
 type CompileTranslationsPayload {
-  viewer: Viewer
   clientMutationId: String!
 }
 
@@ -17,6 +16,7 @@ type Config implements Node {
   srcPaths: [String]
   srcExtensions: [String]
   langs: [String]
+  fMinify: Boolean
   id: ID!
 }
 
@@ -24,6 +24,7 @@ input ConfigUpdate {
   srcPaths: [String]
   srcExtensions: [String]
   langs: [String]
+  fMinify: Boolean
 }
 
 input CreateKeyInput {

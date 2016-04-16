@@ -14,7 +14,6 @@ const fragments = {
     fragment on Viewer {
       anyNode(id: $selectedKeyId) {
         ... on Key {
-          context text
           firstUsed unusedSince
           sources
         }
@@ -48,10 +47,8 @@ class Details extends React.Component {
 
   renderContents() {
     if (!this._theKey) return <i>Details for the selected key will be shown here</i>;
-    const { text } = this._theKey;
     return (
       <div>
-        <div style={style.text}>{text}</div>
         {this.renderSources()}
       </div>
     );
@@ -90,8 +87,8 @@ class Details extends React.Component {
 // ==========================================
 const style = {
   outer: flexItem('none', {
-    minHeight: 130,
-    backgroundColor: COLORS.mediumBlue,
+    minHeight: 110,
+    backgroundColor: COLORS.medium,
     padding: 5,
     marginTop: 5,
   }),
@@ -100,10 +97,6 @@ const style = {
     letterSpacing: 3,
     textAlign: 'center',
     marginBottom: 10,
-  },
-  text: {
-    marginBottom: 5,
-    fontWeight: 'bold',
   },
   date: {
     fontWeight: 'bold',

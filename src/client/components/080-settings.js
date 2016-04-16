@@ -1,17 +1,18 @@
 import timm                 from 'timm';
 import React                from 'react';
 import Relay                from 'react-relay';
-import {
-  pick,
-}                           from 'lodash';
+import { pick }             from 'lodash';
 import {
   UpdateConfigMutation,
 }                           from '../gral/mutations';
-import Icon                 from './905-icon';
 import {
   bindAll,
   mutate,
+  flexContainer,
 }                           from './helpers';
+import Icon                 from './905-icon';
+import Button               from './915-button';
+
 
 // ==========================================
 // Relay fragments
@@ -23,6 +24,7 @@ const fragments = {
         langs
         srcPaths
         srcExtensions
+        fMinify
       }
       ${UpdateConfigMutation.getFragment('viewer')}
     }
@@ -42,13 +44,14 @@ class Settings extends React.Component {
     super(props);
     this.state = {
       config: pick(props.viewer.config, [
-        'langs', 'srcPaths', 'srcExtensions',
+        'langs', 'srcPaths', 'srcExtensions', 'fMinify',
       ]),
     };
     bindAll(this, [
       'onCreateListItem',
       'onRemoveListItem',
       'onUpdateListItem',
+      'onChangeCheckbox',
       'onCancel',
       'onSave',
     ]);
@@ -72,6 +75,7 @@ class Settings extends React.Component {
         </div>
         {this.renderList({
           id: 'langs',
+          dir: 'row',
           type: 'textInput',
           placeholder: 'e.g. es-ES',
           width: 80,
@@ -79,6 +83,7 @@ class Settings extends React.Component {
         <div style={style.listLabel}>Source paths:</div>
         {this.renderList({
           id: 'srcPaths',
+          dir: 'column',
           type: 'textInput',
           placeholder: 'e.g. src/client',
           width: 200,
@@ -86,19 +91,29 @@ class Settings extends React.Component {
         <div style={style.listLabel}>Source extensions:</div>
         {this.renderList({
           id: 'srcExtensions',
+          dir: 'row',
           type: 'textInput',
           placeholder: 'e.g. .js',
-          width: 80,
+          width: 60,
         })}
+        <div style={style.configLine}>
+          <input
+            id="fMinify"
+            type="checkbox"
+            checked={this.state.config.fMinify}
+            onChange={this.onChangeCheckbox}
+          />
+          <label htmlFor="fMinify">Minify output JavaScript</label>
+        </div>
       </div>
     )
   }
 
-  renderList({ id, label, type, placeholder, width }) {
+  renderList({ id, dir, label, type, placeholder, width }) {
     const values = this.state.config[id];
     return (
       <div>
-        <div style={style.list}>
+        <div style={style.list(dir)}>
           {values.map((value, idx) => {
             let input;
             switch (type) {
@@ -117,7 +132,7 @@ class Settings extends React.Component {
                 break;
             }
             return (
-              <div key={idx} style={style.listItem}>
+              <div key={idx} style={style.listItem(dir)}>
                 {input}
                 {' '}
                 <Icon 
@@ -142,9 +157,9 @@ class Settings extends React.Component {
   renderButtons() {
     return (
       <div style={style.buttons}>
-        <span onClick={this.onCancel}>Cancel</span>
+        <Button onClick={this.onCancel}>Cancel</Button>
         {' '}
-        <span onClick={this.onSave}>Save</span>
+        <Button onClick={this.onSave}>Save</Button>
       </div>
     );
   }
@@ -172,6 +187,12 @@ class Settings extends React.Component {
     this.setState({ config });
   }
 
+  onChangeCheckbox(ev) {
+    const { id, checked } = ev.currentTarget;
+    const config = timm.set(this.state.config, id, checked);
+    this.setState({ config });
+  }
+
   onCancel() { this.props.onClose(); }
   onSave() {
     const { viewer } = this.props;
@@ -190,26 +211,30 @@ class Settings extends React.Component {
 // Styles
 // ==========================================
 const style = {
-  list: {
-    marginLeft: 15,
-  },
   listLabel: {
     marginTop: 7,
     marginBottom: 3,
   },
-  listItem: {
+  list: dir => flexContainer(dir, {
+    marginLeft: 15,
+  }),
+  listItem: dir => ({
     padding: '0px 2px',
-    marginTop: 1,
-  },
+    marginTop: dir === 'column' ? 1 : undefined,
+    marginRight: 10,
+  }),
   input: width => ({ width }),
   add: {
-    display: 'block',
+    display: 'inline-block',
     marginTop: 5,
   },
   buttons: {
     marginTop: 15,
     borderTop: '1px solid #ccc',
     paddingTop: 10,
+  },
+  configLine: {
+    marginTop: 7,
   },
 };
 

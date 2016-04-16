@@ -1,6 +1,10 @@
 import React                from 'react';
 import { COLORS }           from '../gral/constants';
 import {
+  CompileTranslationsMutation,
+}                           from '../gral/mutations';
+import {
+  mutate,
   flexContainer,
   flexItem,
 }                           from './helpers';
@@ -24,12 +28,27 @@ class Header extends React.Component {
             icon="cog"
             title="Settings"
             onClick={this.props.onShowSettings}
-            style={style.settingsIcon}
+            style={style.icon}
+          />
+          <Icon
+            icon="save"
+            title="Convert translations to JavaScript files"
+            onClick={this.onCompileTranslations}
+            style={style.icon}
           />
         </div>
         <div style={style.spacer} />
       </div>
     );
+  }
+
+  // ==========================================
+  onCompileTranslations() {
+    mutate({
+      description: 'Click on Compile translations',
+      Mutation: CompileTranslationsMutation,
+      props: {},
+    });
   }
 }
 
@@ -38,7 +57,7 @@ class Header extends React.Component {
 // ==========================================
 const style = {
   outer: flexItem('0 0 2.5em', flexContainer('row', {
-    backgroundColor: COLORS.mediumBlue,
+    backgroundColor: COLORS.medium,
     padding: '5px 8px',
     alignItems: 'center',
   })),
@@ -48,7 +67,7 @@ const style = {
     fontSize: '1.3em',
   },
   spacer: flexItem('1'),
-  settingsIcon: {
+  icon: {
     marginLeft: 10,
   },
 };
