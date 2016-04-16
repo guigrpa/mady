@@ -1,9 +1,9 @@
 {
   "name": "mady",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Easy-to-use tool to manage and translate ICU MessageFormat messages",
   "bin": {
-    "mady": "lib/server/startup.js"
+    "mady": "lib/mady.js"
   },
   "main": "lib/translate.js",
   "engines": {
@@ -35,7 +35,7 @@
     "buildSsrWatch": "rm -rf ./lib/server/ssr && cross-env SERVER_SIDE_RENDERING=true webpack --config ./src/server/webpackConfigCommonJS --progress --display-chunks --watch",
     "buildSsr": "rm -rf ./lib/server/ssr && cross-env SERVER_SIDE_RENDERING=true webpack --config ./src/server/webpackConfigCommonJS --progress --display-chunks",
     "buildClient": "cross-env NODE_ENV=production webpack --config ./src/server/webpackConfigCommonJS --progress --display-chunks",
-    "build": "npm run compile && npm run buildClient && npm run test && npm run docs",
+    "build": "node package && npm run compile && npm run buildClient && npm run test && npm run docs",
     "travis": "npm run compile && npm run testCovFullExceptMin",
     "lint": "eslint src",
     "flow": "flow && test $? -eq 0 -o $? -eq 2",
