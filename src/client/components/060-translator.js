@@ -349,7 +349,7 @@ const style = {
     return {
       position: 'absolute',
       top: 0,
-      right: scrollbarWidth ? scrollbarWidth + 5 : 0,
+      right: 5 + scrollbarWidth,
       cursor: fDisabled ? undefined : 'pointer',
       padding: '3px 6px',
       fontWeight: 900,

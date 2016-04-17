@@ -87,7 +87,7 @@ class TranslatorRow extends React.Component {
           style={style.removeIcon}
         />
       : undefined;
-    let cellStyle = timm.merge(style.bodyCell, styleKeyCol);
+    let cellStyle = timm.merge(style.bodyCell, styleKeyCol, style.keyCell);
     if (fSelected) cellStyle = style.selected(cellStyle);
     if (fUnused) cellStyle = style.unused(cellStyle);
     return (
@@ -95,11 +95,13 @@ class TranslatorRow extends React.Component {
         className="tableBodyRow"
         id={key.id}
         onClick={this.onClickKeyRow}
-        onMouseEnter={onHoverStart}
-        onMouseLeave={onHoverStop}
         style={style.row}
       >
-        <div style={cellStyle}>
+        <div
+          onMouseEnter={onHoverStart}
+          onMouseLeave={onHoverStop}
+          style={cellStyle}
+        >
           {elContext}{key.text}{elDeleteKey}
         </div>
         {this.props.langs.map(this.renderTranslation)}
@@ -152,9 +154,13 @@ class TranslatorRow extends React.Component {
 const style = {
   row: flexItem('none', flexContainer('row')),
   bodyCell: {
+    position: 'relative',
     paddingTop: 1,
     paddingBottom: 1,
     borderBottom: `1px solid ${COLORS.dark}`,
+  },
+  keyCell: {
+    paddingRight: 17,
   },
   selected: (base) => timm.merge(base, {
     backgroundColor: COLORS.medium,
@@ -170,7 +176,9 @@ const style = {
     marginRight: 10,
   },
   removeIcon: {
-    marginLeft: 10,
+    position: 'absolute',
+    top: 3,
+    right: 5,
     color: 'black',
   },
 };

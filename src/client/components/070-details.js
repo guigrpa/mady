@@ -47,7 +47,12 @@ class Details extends React.Component {
   }
 
   renderContents() {
-    if (!this._theKey) return <LargeMessage>No message selected</LargeMessage>;
+    if (this.props.selectedKeyId == null) {
+      return <LargeMessage>No message selected</LargeMessage>;
+    }
+    if (!this._theKey) {
+      return <LargeMessage><Icon icon="circle-o-notch" /></LargeMessage>;
+    }
     return (
       <div>
         {this.renderSources()}
