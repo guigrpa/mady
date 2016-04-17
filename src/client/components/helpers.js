@@ -35,6 +35,7 @@ export function mutate(options) {
     props,
     onFailure,
     onSuccess,
+    onFinish,
   } = options;
   const story = mainStory.child({
     src: 'views',
@@ -48,6 +49,7 @@ export function mutate(options) {
       story.error('views', 'Transaction error:', { attach: error });
       story.close();
       if (onFailure) onFailure(transaction);
+      if (onFinish) onFinish();
     },
     onSuccess: response => {
       story.debug('views', 'Transaction result:', {
@@ -56,6 +58,7 @@ export function mutate(options) {
       });
       story.close();
       if (onSuccess) onSuccess(response);
+      if (onFinish) onFinish();
     },
   });
 }

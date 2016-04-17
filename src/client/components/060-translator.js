@@ -19,6 +19,7 @@ import {
 import TranslatorRow        from './061-translatorRow';
 import Select               from './900-select';
 import Icon                 from './905-icon';
+import LargeMessage         from './920-largeMessage';
 
 // ==========================================
 // Translator
@@ -63,6 +64,7 @@ class Translator extends React.Component {
     this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     this.state = {
       langs: this.readLangs(),
+      fParsing: false,
     };
     bindAll(this, [
       'renderKeyRow',
@@ -107,6 +109,7 @@ class Translator extends React.Component {
             icon="refresh"
             title="Parse source files to update this list"
             onClick={this.onParseSrcFiles}
+            fSpin={this.state.fParsing}
           />
         </div>
         {this.state.langs.map((lang, idx) => 
@@ -178,12 +181,16 @@ class Translator extends React.Component {
   }
 
   renderFillerRow() {
+    const noKeys = this.props.viewer.keys.edges.length > 0 ? '' :
+      <LargeMessage>
+        No messages. Click on <Icon icon="refresh" fDisabled /> to refresh
+      </LargeMessage>;
     return (
       <div
         className="tableFillerRow"
         style={style.fillerRow}
       >
-        <div style={style.keyCol} />
+        <div style={style.keyCol}>{noKeys}</div>
         {this.state.langs.map(lang => (
           <div key={lang}
             style={style.langCol}
@@ -271,10 +278,12 @@ class Translator extends React.Component {
   // Other handlers
   // ------------------------------------------
   onParseSrcFiles() {
+    this.setState({ fParsing: true });
     mutate({
       description: 'Click on Parse source files',
       Mutation: ParseSrcFilesMutation,
       props: { viewer: this.props.viewer },
+      onFinish: () => this.setState({ fParsing: false }),
     });
   }
 }

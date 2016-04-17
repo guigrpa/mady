@@ -4,8 +4,7 @@
 - [-] Optimistic mutations
 - [-] SSR
 - [-] Save langs in cookies, not in localStorage (use in SSR)
-- [ ] Show spinner while doing lengthy things: parsing files, etc.
-- [ ] Fix _t for non-ES6 users (maybe implement as CommonJS)
+- [x] Show spinner while doing lengthy things: parsing files, etc.
 - [ ] Use draft.js for text inputs?
 - [ ] Details in various areas:
     + Key: # total, # unused, + details for selected key

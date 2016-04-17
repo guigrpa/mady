@@ -5,6 +5,7 @@ import { COLORS }           from '../gral/constants';
 import {
   flexItem,
 }                           from './helpers';
+import LargeMessage         from './920-largeMessage';
 
 // ==========================================
 // Relay fragments
@@ -46,7 +47,7 @@ class Details extends React.Component {
   }
 
   renderContents() {
-    if (!this._theKey) return <i>Details for the selected key will be shown here</i>;
+    if (!this._theKey) return <LargeMessage>No message selected</LargeMessage>;
     return (
       <div>
         {this.renderSources()}
