@@ -5,7 +5,6 @@ import React                from 'react';
 import Relay                from 'react-relay';
 import ReactDOMServer       from 'react-dom/server';
 import App                  from '../client/components/010-app';
-import Modal                from '../client/components/910-modal';
 import { ViewerQuery }      from '../client/gral/rootQueries';
 
 let gqlServer;
@@ -55,7 +54,7 @@ export function init(options = {}) {
   mainStory.info('ssr', 'Initialised');
 }
 
-export function render(req) {
+export function render(/* req */) {
   mainStory.info('ssr', 'Rendering...');
   const el = (
     <Relay.RootContainer

@@ -1,4 +1,3 @@
-import timm                 from 'timm';
 import React                from 'react';
 import Relay                from 'react-relay';
 import {
@@ -11,7 +10,6 @@ import {
   bindAll,
   mutate,
 }                           from './helpers';
-import Icon                 from './905-icon';
 import Button               from './915-button';
 
 // ==========================================
@@ -39,6 +37,7 @@ const fragments = {
 // ==========================================
 class Translation extends React.Component {
   static propTypes = {
+    relay:                  React.PropTypes.object.isRequired,
     theKey:                 React.PropTypes.object.isRequired,
     lang:                   React.PropTypes.string.isRequired,
     translation:            React.PropTypes.object,
@@ -91,15 +90,15 @@ class Translation extends React.Component {
     const fUpdating = translation && relay.hasOptimisticUpdate(translation);
     return (
       <div>
-        <input ref={(c) => this._input = c}
-          type="text" 
+        <input ref={c => { this._input = c; }}
+          type="text"
           value={this.state.text}
           onChange={this.onChange}
           onClick={this.editStart}
           style={style.input(this.state, { fUnused, fUpdating })}
         />
       </div>
-    )
+    );
   }
 
   renderButtons() {
@@ -151,13 +150,13 @@ class Translation extends React.Component {
   // Handlers
   // ==========================================
   onChange(ev) { this.setState({ text: ev.currentTarget.value }); }
-  copyKey(ev) { this.setState({ text: this.props.theKey.text }); }
+  copyKey() { this.setState({ text: this.props.theKey.text }); }
   editStart() {
     this.setState({ fEditing: true });
     this.props.changeSelectedKey(this.props.theKey.id);
   }
   editCommit() {
-    let description = 'Click on Save translation';
+    const description = 'Click on Save translation';
     let Mutation;
     let props;
     if (this.props.translation) {

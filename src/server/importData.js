@@ -42,7 +42,7 @@ export function importV0({ langs, keys, translations, dir, story }) {
       const {
         fTranslated,
         context, original: text, translation,
-        firstUsed, unusedSince, sources
+        firstUsed, unusedSince, sources,
       } = newTranslation;
 
       // Add key if new
@@ -55,7 +55,7 @@ export function importV0({ langs, keys, translations, dir, story }) {
         });
         numNewK++;
         totNewK++;
-      };
+      }
 
       // Add translation if translated
       if (fTranslated) {
@@ -72,7 +72,8 @@ export function importV0({ langs, keys, translations, dir, story }) {
         }
       }
     });
-    story.info('importV0', `Lang ${chalk.magenta.bold(lang)}: new keys ${numNewK}, new translations ${numNewT}`);
+    story.info('importV0',
+      `Lang ${chalk.magenta.bold(lang)}: new keys ${numNewK}, new translations ${numNewT}`);
   };
   diveSync(dir, diveOptions, diveProcess);
   story.info('importV0', `Total: new keys ${totNewK}, new translations ${totNewT}`);

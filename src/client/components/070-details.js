@@ -5,6 +5,7 @@ import { COLORS }           from '../gral/constants';
 import {
   flexItem,
 }                           from './helpers';
+import Icon                 from './905-icon';
 import LargeMessage         from './920-largeMessage';
 
 // ==========================================
@@ -28,6 +29,7 @@ const fragments = {
 // ==========================================
 class Details extends React.Component {
   static propTypes = {
+    relay:                  React.PropTypes.object.isRequired,
     viewer:                 React.PropTypes.object.isRequired,
     selectedKeyId:          React.PropTypes.string,
   };
@@ -63,7 +65,7 @@ class Details extends React.Component {
   renderSources() {
     const { sources, firstUsed, unusedSince } = this._theKey;
     const since = this.renderDate(firstUsed);
-    const until = unusedSince 
+    const until = unusedSince
       ? <span> until {this.renderDate(unusedSince)}</span>
       : ':';
     const elSources = sources.length
@@ -116,7 +118,7 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-export default Relay.createContainer(Details, { 
+export default Relay.createContainer(Details, {
   fragments,
   initialVariables: { selectedKeyId: null },
 });

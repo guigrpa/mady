@@ -61,7 +61,7 @@ export default {
   },
 
   plugins: (() => {
-    let ret = [
+    const ret = [
       function pluginCompile() {
         this.plugin('compile', () => mainStory.debug('webpack', 'Bundling...'));
       },

@@ -1,6 +1,5 @@
 import Relay                from 'react-relay';
 import timm                 from 'timm';
-import { filter }           from 'lodash';
 
 function applySetUnset(item, set, unset = []) {
   let out;

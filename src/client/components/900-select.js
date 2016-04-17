@@ -8,6 +8,7 @@ import { bindAll }          from './helpers';
 // ==========================================
 class Select extends React.Component {
   static propTypes = {
+    id:                     React.PropTypes.string,
     fAllowNull:             React.PropTypes.bool,
     options:                React.PropTypes.array.isRequired,
     value:                  React.PropTypes.string,
@@ -21,8 +22,8 @@ class Select extends React.Component {
   }
 
   render() {
-    const { fAllowNull, onChange, value, options } = this.props;
-    const finalOptions = fAllowNull 
+    const { fAllowNull, value, options } = this.props;
+    const finalOptions = fAllowNull
       ? timm.addFirst(options, { value: '_NULL_', label: '' })
       : options;
     const otherProps = omit(this.props, [
@@ -48,8 +49,8 @@ class Select extends React.Component {
     onChange(this.toExternalValue(value), id);
   }
 
-  toInternalValue(val) { return val != null ? val : '_NULL_' }
-  toExternalValue(val) { return val != '_NULL_' ? val : null }
+  toInternalValue(val) { return val != null ? val : '_NULL_'; }
+  toExternalValue(val) { return val !== '_NULL_' ? val : null; }
 }
 
 // ==========================================

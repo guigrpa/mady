@@ -23,6 +23,7 @@ node_modules
 # ------------
 # All projects
 /.eslintrc.yaml
+/.eslintrc.json
 /.flowconfig
 /.travis.yml
 /.gitignore

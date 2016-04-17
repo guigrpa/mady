@@ -82,7 +82,7 @@ const specs = {
     buildClient:                WEBPACK_CLIENT,
     build:                      runMultiple([
                                   'node package',
-                                  //'npm run lint',
+                                  'npm run lint',
                                   //'npm run flow',
                                   'npm run compile',
                                   'npm run buildClient',

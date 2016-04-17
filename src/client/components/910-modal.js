@@ -1,9 +1,19 @@
 import React                from 'react';
+import PureRenderMixin      from 'react-addons-pure-render-mixin';
 
 // ==========================================
 // Component
 // ==========================================
 class Modal extends React.Component {
+  static propTypes = {
+    children:               React.PropTypes.object.isRequired,
+  };
+
+  constructor(props) {
+    super(props);
+    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+  }
+
   render() {
     return (
       <div style={style.outer}>
@@ -46,7 +56,7 @@ const style = {
     zIndex: 1000,
     backgroundColor: 'white',
     padding: 20,
-    boxShadow: "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)",
+    boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
     borderRadius: 2,
   },
 };

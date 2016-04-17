@@ -106,10 +106,10 @@ class Settings extends React.Component {
           <label htmlFor="fMinify">Minify output JavaScript</label>
         </div>
       </div>
-    )
+    );
   }
 
-  renderList({ id, dir, label, type, placeholder, width }) {
+  renderList({ id, dir, type, placeholder, width }) {
     const values = this.state.config[id];
     return (
       <div>
@@ -118,14 +118,16 @@ class Settings extends React.Component {
             let input;
             switch (type) {
               case 'textInput':
-                input = <input
-                  id={`${id}.${idx}`}
-                  type="text"
-                  value={value}
-                  onChange={this.onUpdateListItem}
-                  placeholder={placeholder}
-                  style={style.input(width)}
-                />;
+                input = (
+                  <input
+                    id={`${id}.${idx}`}
+                    type="text"
+                    value={value}
+                    onChange={this.onUpdateListItem}
+                    placeholder={placeholder}
+                    style={style.input(width)}
+                  />
+                );
                 break;
               default:
                 input = null;
@@ -135,7 +137,7 @@ class Settings extends React.Component {
               <div key={idx} style={style.listItem(dir)}>
                 {input}
                 {' '}
-                <Icon 
+                <Icon
                   id={`${id}.${idx}`}
                   icon="remove"
                   onClick={this.onRemoveListItem}
@@ -143,7 +145,7 @@ class Settings extends React.Component {
               </div>
             );
           })}
-          <Icon 
+          <Icon
             id={id}
             icon="plus"
             style={style.add}
@@ -151,7 +153,7 @@ class Settings extends React.Component {
           />
         </div>
       </div>
-    )
+    );
   }
 
   renderButtons() {

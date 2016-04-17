@@ -20,7 +20,7 @@ export default function parse({ srcPaths, srcExtensions, story }) {
     const fileContents = fs.readFileSync(finalFilePath);
     for (const re of REGEXP_TRANSLATE_CMDS) {
       let match;
-      while (match = re.exec(fileContents)) {
+      while ((match = re.exec(fileContents))) {
         const key = match[1];
         const tokens = key.split('_');
         let context;

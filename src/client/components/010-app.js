@@ -85,9 +85,7 @@ class App extends React.Component {
   }
 
   // ------------------------------------------
-  changeSelectedKey(selectedKeyId) {
-    this.setState({ selectedKeyId });
-  }
+  changeSelectedKey(selectedKeyId) { this.setState({ selectedKeyId }); }
   showSettings() { this.setState({ fSettingsShown: true }); }
   hideSettings() { this.setState({ fSettingsShown: false }); }
 }

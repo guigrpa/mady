@@ -271,7 +271,7 @@ export function importV0(dir: string) {
   const { langs, keys, translations } = importers.importV0({
     langs: _config.langs,
     keys: _keys,
-    translations: _translations, 
+    translations: _translations,
     dir, story,
   });
   if (langs !== _config.langs) updateConfig({ langs }, { story });

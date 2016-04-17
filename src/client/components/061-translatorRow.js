@@ -81,11 +81,13 @@ class TranslatorRow extends React.Component {
       ? <span style={style.context}>{key.context}</span>
       : undefined;
     const elDeleteKey = hovering
-      ? <Icon
+      ? (
+        <Icon
           icon="remove"
           onClick={this.onClickDeleteKey}
           style={style.removeIcon}
         />
+      )
       : undefined;
     let cellStyle = timm.merge(style.bodyCell, styleKeyCol, style.keyCell);
     if (fSelected) cellStyle = style.selected(cellStyle);
@@ -134,9 +136,7 @@ class TranslatorRow extends React.Component {
   // ------------------------------------------
   // Handlers
   // ------------------------------------------
-  onClickKeyRow(ev) {
-    this.props.changeSelectedKey(this.props.theKey.id);
-  }
+  onClickKeyRow() { this.props.changeSelectedKey(this.props.theKey.id); }
 
   onClickDeleteKey() {
     const { viewer } = this.props;
@@ -186,4 +186,4 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-export default Relay.createContainer(hoverable(TranslatorRow), { fragments });;
+export default Relay.createContainer(hoverable(TranslatorRow), { fragments });

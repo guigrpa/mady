@@ -7,16 +7,21 @@ import { cancelEvent }      from './helpers';
 // Component
 // ==========================================
 class Button extends React.Component {
-  static mixins = [PureRenderMixin];
   static propTypes = {
-    fText:              React.PropTypes.bool,
-    onClick:            React.PropTypes.func,
-    fCancelMouseDown:   React.PropTypes.bool,
+    fText:                  React.PropTypes.bool,
+    onClick:                React.PropTypes.func,
+    fCancelMouseDown:       React.PropTypes.bool,
+    children:               React.PropTypes.object.isRequired,
     // all other props are passed through
   };
   static defaultProps = {
     fText:              false,
   };
+
+  constructor(props) {
+    super(props);
+    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+  }
 
   render() {
     const { fText, onClick, fCancelMouseDown } = this.props;

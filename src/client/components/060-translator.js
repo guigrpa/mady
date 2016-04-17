@@ -24,12 +24,12 @@ import LargeMessage         from './920-largeMessage';
 // ==========================================
 // Translator
 // ==========================================
-const comparator = (a, b) => a < b ? -1 : (a > b ? 1 : 0);
+const comparator = (a, b) => (a < b ? -1 : (a > b ? 1 : 0));
 const keyComparator = (a, b) => {
   const aStr = `${a.context || ''}${a.text}${a.id}`;
   const bStr = `${b.context || ''}${b.text}${b.id}`;
   return comparator(aStr, bStr);
-}
+};
 
 // ------------------------------------------
 // Relay fragments
@@ -112,7 +112,7 @@ class Translator extends React.Component {
             fSpin={this.state.fParsing}
           />
         </div>
-        {this.state.langs.map((lang, idx) => 
+        {this.state.langs.map((lang, idx) =>
           this.renderLangHeader(lang, idx, langOptions)
         )}
         {this.renderAdd()}
