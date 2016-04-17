@@ -10,5 +10,4 @@
     + Key: # total, # unused, + details for selected key
     + Per language: # missing translations
 - [ ] Key shortcuts, blur/focus shortcuts
-- [ ] eslint everything
 - [ ] Create/update key?
