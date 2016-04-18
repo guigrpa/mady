@@ -1,20 +1,34 @@
 # Mady [![npm version](https://img.shields.io/npm/v/mady.svg)](https://www.npmjs.com/package/mady)
 
-Easy-to-use tool to manage and translate ICU MessageFormat messages
+## What?
 
-## Installation
+An easy-to-use tool to manage and translate ICU MessageFormat messages.
+
+![Mady UI](https://raw.githubusercontent.com/guigrpa/storyboard/master/docs/01-ui.png)
+
+*Yes, it's Mady's view of itself!* :open_mouth:
+
+## Why?
+
+* **MessageFormat messages**: while it does not solve all the problems in the huge field of i18n, it is a much more powerful tool than the conventional gettext (IMHO).
+* Use it as a development tool in your project: an **easy-to-use UI** that allows **parsing source files, adding languages and translations, comparing translations side-by-side, and compiling to (optionally minified) JavaScript modules**.
+* Use it as a library: no-frills translate function to run the compiled language modules.
+
+## How?
+
+### Installation
 
 ```
 $ npm install --save-dev mady
 ```
 
 
-## Usage
+### Usage
 
 There are two main parts in Mady: the web-based translation app and the translate function.
 
 
-### The translation app
+#### The translation app
 
 Access the translation app by running:
 
@@ -41,10 +55,16 @@ From the web application, you can:
 * Translate your keys to the different supported languages
 * Export translations to JS files, for use by the [translate function](#the-translate-function)
 
-Messages in your source files should have the form: `_t('someContext_Once upon a time...')`, where `_t()` is the default name for the translate function (see below), `someContext` is some hint for the translator and `Once upon a time...` is your untranslated [MessageFormat](#messageformat) message.
+Messages in your source files should have the form: `_t('someContext_Once upon a time...')` (single or double quotes are supported), where `_t()` is the default name for the translate function (see below), `someContext` is some hint for the translator and `Once upon a time...` is your untranslated [MessageFormat](#messageformat) message.
+
+Configuration looks like this:
+
+![Mady config](https://raw.githubusercontent.com/guigrpa/storyboard/master/docs/02-config.png)
+
+You can see the UI in English, Spanish and Catalan at the moment. Mady *eats its own dog food*.
 
 
-### The translate function
+#### The translate function
 
 Using the translate function is similarly straightforward:
 
@@ -67,7 +87,9 @@ console.log(_t("someContext_{NUM, plural, one{1 hamburger} other{# hamburgers} }
 
 ## MessageFormat
 
-Mady uses the [messageformat.js](https://github.com/SlexAxton/messageformat.js) library by Alex Sexton, which "supports and extends all parts of the **[ICU MessageFormat]** standard (see the [user guide](http://userguide.icu-project.org/formatparse/messages)), with the exception of the deprecated ChoiceFormat." IMHO, and while it does not solve all the problems in the huge subject of i18n, it is a much more powerful tool than the conventional gettext.
+Mady uses the [messageformat.js](https://github.com/SlexAxton/messageformat.js) library by Alex Sexton, which "supports and extends all parts of the **[ICU MessageFormat]** standard (see the [user guide](http://userguide.icu-project.org/formatparse/messages)), with the exception of the deprecated ChoiceFormat." IMHO, and while it does not solve all the problems in the huge field of i18n, it is a much more powerful tool than the conventional gettext.
+
+Some examples of MessageFormat messages are given above, but this does not even scratch the surface of what is enabled by this standard.
 
 
 ## MIT license
