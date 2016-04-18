@@ -1,0 +1,134 @@
+{
+  "47362ba9-6518-4f87-823d-8f4d42560892": {
+    "id": "47362ba9-6518-4f87-823d-8f4d42560892",
+    "lang": "ca-CA",
+    "translation": "Convertir traduccions a fitxers javaScript",
+    "keyId": "tooltip_Convert translations to JavaScript files"
+  },
+  "ede1b358-92a9-47cc-be40-022bad306252": {
+    "id": "ede1b358-92a9-47cc-be40-022bad306252",
+    "lang": "ca-CA",
+    "translation": "Ajustos",
+    "keyId": "tooltip_Settings"
+  },
+  "37aea2df-a739-440e-b42b-1f2d3cd98054": {
+    "id": "37aea2df-a739-440e-b42b-1f2d3cd98054",
+    "lang": "ca-CA",
+    "translation": "Copiar missatge",
+    "keyId": "button_Copy message"
+  },
+  "c6c83d0b-114a-4b7f-a60e-27c11ddc9bc4": {
+    "id": "c6c83d0b-114a-4b7f-a60e-27c11ddc9bc4",
+    "lang": "ca-CA",
+    "translation": "Esborrar",
+    "keyId": "button_Delete"
+  },
+  "568e781e-9e48-4df9-9332-843182299469": {
+    "id": "568e781e-9e48-4df9-9332-843182299469",
+    "lang": "ca-CA",
+    "translation": "Cancel·lar canvis",
+    "keyId": "button_Revert"
+  },
+  "f661d2d7-e7be-45b6-ab82-e3377c04cc23": {
+    "id": "f661d2d7-e7be-45b6-ab82-e3377c04cc23",
+    "lang": "ca-CA",
+    "translation": "Guardar",
+    "keyId": "button_Save"
+  },
+  "58d6ed4d-3302-4cf0-a8a9-40a6161c2b1e": {
+    "id": "58d6ed4d-3302-4cf0-a8a9-40a6161c2b1e",
+    "lang": "ca-CA",
+    "translation": "Afegir columna",
+    "keyId": "tooltip_Add column"
+  },
+  "5478b270-4b64-474b-acd4-00093c482dff": {
+    "id": "5478b270-4b64-474b-acd4-00093c482dff",
+    "lang": "ca-CA",
+    "translation": "Canviar idioma",
+    "keyId": "tooltip_Change language"
+  },
+  "b65dd268-dfd0-4782-a714-2be834737fb3": {
+    "id": "b65dd268-dfd0-4782-a714-2be834737fb3",
+    "lang": "ca-CA",
+    "translation": "Esborrar missatge (NO esborra cap traducció)",
+    "keyId": "tooltip_Delete message (does NOT delete any translations)"
+  },
+  "ca1e9119-70ec-4355-b26e-dca5dd6860bb": {
+    "id": "ca1e9119-70ec-4355-b26e-dca5dd6860bb",
+    "lang": "ca-CA",
+    "translation": "Analitzar els fitxers de codi per actualitzar la llista de missatges",
+    "keyId": "tooltip_Parse source files to update the message list"
+  },
+  "7cf2de63-ed0a-441d-9a21-b04534f6d80e": {
+    "id": "7cf2de63-ed0a-441d-9a21-b04534f6d80e",
+    "lang": "ca-CA",
+    "translation": "Treure columna (NO esborra cap traducció)",
+    "keyId": "tooltip_Remove column (does NOT delete any translations)"
+  },
+  "7dc783e7-41c2-4252-a513-17264fd1df10": {
+    "id": "7dc783e7-41c2-4252-a513-17264fd1df10",
+    "lang": "ca-CA",
+    "translation": "Missatges",
+    "keyId": "columnTitle_Messages"
+  },
+  "1f94ee41-08c0-41d8-ad6d-c3cbd1a92b94": {
+    "id": "1f94ee41-08c0-41d8-ad6d-c3cbd1a92b94",
+    "lang": "ca-CA",
+    "translation": "Detalls",
+    "keyId": "msgDetailsView_Details"
+  },
+  "be69e318-01f4-43a8-8581-1d03c80164d6": {
+    "id": "be69e318-01f4-43a8-8581-1d03c80164d6",
+    "lang": "ca-CA",
+    "translation": "Cap missatge seleccionat",
+    "keyId": "msgDetailsView_No message selected"
+  },
+  "733fb846-b2ab-46e3-9d5c-073e96f5f59f": {
+    "id": "733fb846-b2ab-46e3-9d5c-073e96f5f59f",
+    "lang": "ca-CA",
+    "translation": "En ús des de",
+    "keyId": "msgDetailsView_Used since"
+  },
+  "14c7c94c-26c2-4b54-9e8e-b2bb6c17317f": {
+    "id": "14c7c94c-26c2-4b54-9e8e-b2bb6c17317f",
+    "lang": "ca-CA",
+    "translation": "fins a",
+    "keyId": "msgDetailsView_until"
+  },
+  "2401070b-65cb-4d9b-bc09-40e70fee49af": {
+    "id": "2401070b-65cb-4d9b-bc09-40e70fee49af",
+    "lang": "ca-CA",
+    "translation": "Cancel·lar",
+    "keyId": "button_Cancel"
+  },
+  "8453b672-2372-4b82-b1a8-2c36d09b1b67": {
+    "id": "8453b672-2372-4b82-b1a8-2c36d09b1b67",
+    "lang": "ca-CA",
+    "translation": "Idiomes (codis BCP47):",
+    "keyId": "settingsForm_Languages (BCP47 codes):"
+  },
+  "24d9fbfa-b97b-4ba8-9ab6-882bd5ca509f": {
+    "id": "24d9fbfa-b97b-4ba8-9ab6-882bd5ca509f",
+    "lang": "ca-CA",
+    "translation": "Idioma de Mady:",
+    "keyId": "settingsForm_Mady language:"
+  },
+  "dac5114c-ff53-4ec3-874c-729f6adb75d4": {
+    "id": "dac5114c-ff53-4ec3-874c-729f6adb75d4",
+    "lang": "ca-CA",
+    "translation": "Minificar el JavaScript de sortida",
+    "keyId": "settingsForm_Minify output JavaScript"
+  },
+  "97325cc5-0b0d-4a71-b058-ef65d5a68b8e": {
+    "id": "97325cc5-0b0d-4a71-b058-ef65d5a68b8e",
+    "lang": "ca-CA",
+    "translation": "Extensions de fitxer a buscar:",
+    "keyId": "settingsForm_Source extensions:"
+  },
+  "3f8c5121-e4bf-42a0-9216-398f9af8365c": {
+    "id": "3f8c5121-e4bf-42a0-9216-398f9af8365c",
+    "lang": "ca-CA",
+    "translation": "Carpetes a buscar:",
+    "keyId": "settingsForm_Source paths:"
+  }
+}

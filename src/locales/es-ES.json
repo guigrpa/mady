@@ -1,0 +1,140 @@
+{
+  "63b74a62-582e-42bc-8f22-4f99bb56b909": {
+    "id": "63b74a62-582e-42bc-8f22-4f99bb56b909",
+    "lang": "es-ES",
+    "translation": "Convertir traducciones a ficheros JavaScript",
+    "keyId": "tooltip_Convert translations to JavaScript files"
+  },
+  "044279dd-3d4e-4f0d-a396-d96c25149978": {
+    "id": "044279dd-3d4e-4f0d-a396-d96c25149978",
+    "lang": "es-ES",
+    "translation": "Ajustes",
+    "keyId": "tooltip_Settings"
+  },
+  "b588902d-6208-4233-ad27-8078574b83c3": {
+    "id": "b588902d-6208-4233-ad27-8078574b83c3",
+    "lang": "es-ES",
+    "translation": "",
+    "keyId": "button_Copy key"
+  },
+  "14ddcc30-fbfd-4687-92c3-44a308cbd293": {
+    "id": "14ddcc30-fbfd-4687-92c3-44a308cbd293",
+    "lang": "es-ES",
+    "translation": "Copiar mensaje",
+    "keyId": "button_Copy message"
+  },
+  "6a239ba8-9cc0-44b4-a36a-90991ccc3787": {
+    "id": "6a239ba8-9cc0-44b4-a36a-90991ccc3787",
+    "lang": "es-ES",
+    "translation": "Borrar",
+    "keyId": "button_Delete"
+  },
+  "7a63d4f7-dea5-4872-bf10-307bc5c0d5b2": {
+    "id": "7a63d4f7-dea5-4872-bf10-307bc5c0d5b2",
+    "lang": "es-ES",
+    "translation": "Cancelar cambios",
+    "keyId": "button_Revert"
+  },
+  "0e2d8aad-8612-4227-8c0b-2d2d6073c804": {
+    "id": "0e2d8aad-8612-4227-8c0b-2d2d6073c804",
+    "lang": "es-ES",
+    "translation": "Guardar",
+    "keyId": "button_Save"
+  },
+  "defe1f6e-b3cd-4f41-93a1-9a51ca6eb891": {
+    "id": "defe1f6e-b3cd-4f41-93a1-9a51ca6eb891",
+    "lang": "es-ES",
+    "translation": "Añadir columna",
+    "keyId": "tooltip_Add column"
+  },
+  "cbaca565-0ac1-4377-9b1a-11752132b389": {
+    "id": "cbaca565-0ac1-4377-9b1a-11752132b389",
+    "lang": "es-ES",
+    "translation": "Cambiar idioma",
+    "keyId": "tooltip_Change language"
+  },
+  "148a00f1-388b-451b-97d2-ab0ae0a794e1": {
+    "id": "148a00f1-388b-451b-97d2-ab0ae0a794e1",
+    "lang": "es-ES",
+    "translation": "Borrar mensaje (NO borra ninguna traducción)",
+    "keyId": "tooltip_Delete message (does NOT delete any translations)"
+  },
+  "5ae2f650-ee51-470a-b47f-fbdb63e4ed58": {
+    "id": "5ae2f650-ee51-470a-b47f-fbdb63e4ed58",
+    "lang": "es-ES",
+    "translation": "Analizar los ficheros de código para actualizar la lista de mensajes",
+    "keyId": "tooltip_Parse source files to update the message list"
+  },
+  "0c58245a-1596-4667-8690-cdf32fd2f92c": {
+    "id": "0c58245a-1596-4667-8690-cdf32fd2f92c",
+    "lang": "es-ES",
+    "translation": "Quitar columna (NO borra ninguna traducción)",
+    "keyId": "tooltip_Remove column (does NOT delete any translations)"
+  },
+  "b93577ce-e6d1-441f-9d0a-35b5552c39a0": {
+    "id": "b93577ce-e6d1-441f-9d0a-35b5552c39a0",
+    "lang": "es-ES",
+    "translation": "Mensajes",
+    "keyId": "columnTitle_Messages"
+  },
+  "3aca2d74-6bde-40fa-bbcd-21218e46020e": {
+    "id": "3aca2d74-6bde-40fa-bbcd-21218e46020e",
+    "lang": "es-ES",
+    "translation": "Detalles",
+    "keyId": "msgDetailsView_Details"
+  },
+  "bf3e6c9c-46a7-40d6-ad03-11afa6c7c08b": {
+    "id": "bf3e6c9c-46a7-40d6-ad03-11afa6c7c08b",
+    "lang": "es-ES",
+    "translation": "Ningún mensaje seleccionado",
+    "keyId": "msgDetailsView_No message selected"
+  },
+  "91a481b7-c161-4a5f-989e-ab4bfd525705": {
+    "id": "91a481b7-c161-4a5f-989e-ab4bfd525705",
+    "lang": "es-ES",
+    "translation": "En uso desde",
+    "keyId": "msgDetailsView_Used since"
+  },
+  "a25b207d-163c-4535-aded-5e866cde84e1": {
+    "id": "a25b207d-163c-4535-aded-5e866cde84e1",
+    "lang": "es-ES",
+    "translation": "hasta",
+    "keyId": "msgDetailsView_until"
+  },
+  "28047a72-207f-42a7-9c98-8cf4c692b511": {
+    "id": "28047a72-207f-42a7-9c98-8cf4c692b511",
+    "lang": "es-ES",
+    "translation": "Cancelar",
+    "keyId": "button_Cancel"
+  },
+  "2328325b-bd67-4223-9789-29828c3ff2b5": {
+    "id": "2328325b-bd67-4223-9789-29828c3ff2b5",
+    "lang": "es-ES",
+    "translation": "Idiomas (códigos BCP47):",
+    "keyId": "settingsForm_Languages (BCP47 codes):"
+  },
+  "a893d902-b0a9-416c-8e6d-49119fd21d72": {
+    "id": "a893d902-b0a9-416c-8e6d-49119fd21d72",
+    "lang": "es-ES",
+    "translation": "Idioma de Mady:",
+    "keyId": "settingsForm_Mady language:"
+  },
+  "2d9ea250-759b-4a67-99f3-effd69ba4f19": {
+    "id": "2d9ea250-759b-4a67-99f3-effd69ba4f19",
+    "lang": "es-ES",
+    "translation": "Minificar el JavaScript de salida",
+    "keyId": "settingsForm_Minify output JavaScript"
+  },
+  "9db9dab4-823e-4f5c-8e78-3c2b403f51c4": {
+    "id": "9db9dab4-823e-4f5c-8e78-3c2b403f51c4",
+    "lang": "es-ES",
+    "translation": "Extensiones de fichero a buscar:",
+    "keyId": "settingsForm_Source extensions:"
+  },
+  "7989471c-f420-44eb-a877-76754323114d": {
+    "id": "7989471c-f420-44eb-a877-76754323114d",
+    "lang": "es-ES",
+    "translation": "Carpetas a buscar:",
+    "keyId": "settingsForm_Source paths:"
+  }
+}

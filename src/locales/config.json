@@ -1,0 +1,19 @@
+{
+  "srcPaths": [
+    "src/client",
+    "src/common",
+    "src/server"
+  ],
+  "srcExtensions": [
+    ".js",
+    ".jsx",
+    ".coffee",
+    ".cjsx"
+  ],
+  "langs": [
+    "en-US",
+    "es-ES",
+    "ca-CA"
+  ],
+  "fMinify": false
+}

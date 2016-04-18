@@ -1,0 +1,223 @@
+{
+  "tooltip_Settings": {
+    "id": "tooltip_Settings",
+    "context": "tooltip",
+    "text": "Settings",
+    "firstUsed": "2016-04-18T05:37:47.074Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/050-header.js"
+    ]
+  },
+  "tooltip_Convert translations to JavaScript files": {
+    "id": "tooltip_Convert translations to JavaScript files",
+    "context": "tooltip",
+    "text": "Convert translations to JavaScript files",
+    "firstUsed": "2016-04-18T05:37:47.074Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/050-header.js"
+    ]
+  },
+  "tooltip_Change language": {
+    "id": "tooltip_Change language",
+    "context": "tooltip",
+    "text": "Change language",
+    "firstUsed": "2016-04-18T06:07:16.000Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/060-translator.js"
+    ]
+  },
+  "tooltip_Remove column (does NOT delete any translations)": {
+    "id": "tooltip_Remove column (does NOT delete any translations)",
+    "context": "tooltip",
+    "text": "Remove column (does NOT delete any translations)",
+    "firstUsed": "2016-04-18T06:07:16.000Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/060-translator.js"
+    ]
+  },
+  "tooltip_Add column": {
+    "id": "tooltip_Add column",
+    "context": "tooltip",
+    "text": "Add column",
+    "firstUsed": "2016-04-18T06:07:16.000Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/060-translator.js"
+    ]
+  },
+  "button_Delete": {
+    "id": "button_Delete",
+    "context": "button",
+    "text": "Delete",
+    "firstUsed": "2016-04-18T06:07:16.000Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/062-translation.js"
+    ]
+  },
+  "button_Save": {
+    "id": "button_Save",
+    "context": "button",
+    "text": "Save",
+    "firstUsed": "2016-04-18T06:07:16.000Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/062-translation.js",
+      "src/client/components/080-settings.js"
+    ]
+  },
+  "button_Revert": {
+    "id": "button_Revert",
+    "context": "button",
+    "text": "Revert",
+    "firstUsed": "2016-04-18T06:07:16.000Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/062-translation.js"
+    ]
+  },
+  "button_Copy message": {
+    "id": "button_Copy message",
+    "context": "button",
+    "text": "Copy message",
+    "firstUsed": "2016-04-18T06:13:51.348Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/062-translation.js"
+    ]
+  },
+  "tooltip_Delete message (does NOT delete any translations)": {
+    "id": "tooltip_Delete message (does NOT delete any translations)",
+    "context": "tooltip",
+    "text": "Delete message (does NOT delete any translations)",
+    "firstUsed": "2016-04-18T06:17:12.287Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/061-translatorRow.js"
+    ]
+  },
+  "tooltip_Parse source files to update the message list": {
+    "id": "tooltip_Parse source files to update the message list",
+    "context": "tooltip",
+    "text": "Parse source files to update the message list",
+    "firstUsed": "2016-04-18T06:17:27.893Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/060-translator.js"
+    ]
+  },
+  "columnTitle_Messages": {
+    "id": "columnTitle_Messages",
+    "context": "columnTitle",
+    "text": "Messages",
+    "firstUsed": "2016-04-18T06:23:18.511Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/060-translator.js"
+    ]
+  },
+  "msgDetailsView_Details": {
+    "id": "msgDetailsView_Details",
+    "context": "msgDetailsView",
+    "text": "Details",
+    "firstUsed": "2016-04-18T06:25:17.799Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/070-details.js"
+    ]
+  },
+  "msgDetailsView_No message selected": {
+    "id": "msgDetailsView_No message selected",
+    "context": "msgDetailsView",
+    "text": "No message selected",
+    "firstUsed": "2016-04-18T06:25:17.799Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/070-details.js"
+    ]
+  },
+  "msgDetailsView_until": {
+    "id": "msgDetailsView_until",
+    "context": "msgDetailsView",
+    "text": "until",
+    "firstUsed": "2016-04-18T06:26:52.684Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/070-details.js"
+    ]
+  },
+  "msgDetailsView_Used since": {
+    "id": "msgDetailsView_Used since",
+    "context": "msgDetailsView",
+    "text": "Used since",
+    "firstUsed": "2016-04-18T06:26:52.684Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/070-details.js"
+    ]
+  },
+  "settingsForm_Languages (BCP47 codes):": {
+    "id": "settingsForm_Languages (BCP47 codes):",
+    "context": "settingsForm",
+    "text": "Languages (BCP47 codes):",
+    "firstUsed": "2016-04-18T10:25:17.494Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/080-settings.js"
+    ]
+  },
+  "settingsForm_Source paths:": {
+    "id": "settingsForm_Source paths:",
+    "context": "settingsForm",
+    "text": "Source paths:",
+    "firstUsed": "2016-04-18T10:25:17.494Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/080-settings.js"
+    ]
+  },
+  "settingsForm_Source extensions:": {
+    "id": "settingsForm_Source extensions:",
+    "context": "settingsForm",
+    "text": "Source extensions:",
+    "firstUsed": "2016-04-18T10:25:17.494Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/080-settings.js"
+    ]
+  },
+  "settingsForm_Minify output JavaScript": {
+    "id": "settingsForm_Minify output JavaScript",
+    "context": "settingsForm",
+    "text": "Minify output JavaScript",
+    "firstUsed": "2016-04-18T10:25:17.494Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/080-settings.js"
+    ]
+  },
+  "button_Cancel": {
+    "id": "button_Cancel",
+    "context": "button",
+    "text": "Cancel",
+    "firstUsed": "2016-04-18T10:25:17.494Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/080-settings.js"
+    ]
+  },
+  "settingsForm_Mady language:": {
+    "id": "settingsForm_Mady language:",
+    "context": "settingsForm",
+    "text": "Mady language:",
+    "firstUsed": "2016-04-18T13:45:06.771Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/080-settings.js"
+    ]
+  }
+}

@@ -15,8 +15,6 @@ node_modules
 *.sublime-workspace
 
 # Project-specific
-.madyrc
-/locales
 
 
 # GIT-specific
