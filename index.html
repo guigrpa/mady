@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Mady by guigrpa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Mady</h1>
+      <h2 class="project-tagline">An easy-to-use tool to manage and translate ICU MessageFormat messages</h2>
+      <a href="https://github.com/guigrpa/mady" class="btn">View on GitHub</a>
+      <a href="https://github.com/guigrpa/mady/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/guigrpa/mady/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="mady-" class="anchor" href="#mady-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Mady <a href="https://www.npmjs.com/package/mady"><img src="https://img.shields.io/npm/v/mady.svg" alt="npm version"></a>
+</h1>
+
+<h2>
+<a id="what" class="anchor" href="#what" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What?</h2>
+
+<p>An easy-to-use tool to manage and translate ICU MessageFormat messages.</p>
+
+<p><img src="https://raw.githubusercontent.com/guigrpa/mady/master/docs/01-ui.png" alt="Mady UI"></p>
+
+<p><em>Yes, it's Mady's view of itself!</em> <img class="emoji" title=":open_mouth:" alt=":open_mouth:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f62e.png" height="20" width="20" align="absmiddle"></p>
+
+<h2>
+<a id="why" class="anchor" href="#why" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Why?</h2>
+
+<ul>
+<li>
+<strong>MessageFormat messages</strong>: while it does not solve all the problems in the huge field of i18n, it is a much more powerful tool than the conventional gettext (IMHO).</li>
+<li>Use it as a development tool in your project: an <strong>easy-to-use UI</strong> that allows <strong>parsing source files, adding languages and translations, comparing translations side-by-side, and compiling to (optionally minified) JavaScript modules</strong>.</li>
+<li>Use it as a library: no-frills translate function to run the compiled language modules.</li>
+</ul>
+
+<h2>
+<a id="how" class="anchor" href="#how" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How?</h2>
+
+<h3>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h3>
+
+<pre><code>$ npm install --save-dev mady
+</code></pre>
+
+<h3>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h3>
+
+<p>There are two main parts in Mady: the web-based translation app and the translate function.</p>
+
+<h4>
+<a id="the-translation-app" class="anchor" href="#the-translation-app" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The translation app</h4>
+
+<p>Access the translation app by running:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ ./node_modules/.bin/mady</pre></div>
+
+<p>Or just add the following line to your <code>package.json</code>:</p>
+
+<div class="highlight highlight-source-json"><pre><span class="pl-s"><span class="pl-pds">"</span>scripts<span class="pl-pds">"</span></span>: {
+    <span class="pl-s"><span class="pl-pds">"</span>translate<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>mady<span class="pl-pds">"</span></span>
+}</pre></div>
+
+<p>and run <code>npm run translate</code>.</p>
+
+<p>The first time you run it, Mady will ask you for some additional information: the path to your locales folder and a default port for the application. Now open Mady's URL in your browser (http://localhost:8080 by default) and there you go!</p>
+
+<p>From the web application, you can:</p>
+
+<ul>
+<li>Update the key database with new keys extracted from your source files</li>
+<li>Configure your languages, source paths, file extensions, etc.</li>
+<li>Translate your keys to the different supported languages</li>
+<li>Export translations to JS files, for use by the <a href="#the-translate-function">translate function</a>
+</li>
+</ul>
+
+<p>Messages in your source files should have the form: <code>_t('someContext_Once upon a time...')</code> (single or double quotes are supported), where <code>_t()</code> is the default name for the translate function (see below), <code>someContext</code> is some hint for the translator and <code>Once upon a time...</code> is your untranslated <a href="#messageformat">MessageFormat</a> message.</p>
+
+<p>Configuration looks like this:</p>
+
+<p><img src="https://raw.githubusercontent.com/guigrpa/mady/master/docs/02-config.png" alt="Mady config"></p>
+
+<p>You can see the UI in English, Spanish and Catalan at the moment. Mady <em>eats its own dog food</em>.</p>
+
+<h4>
+<a id="the-translate-function" class="anchor" href="#the-translate-function" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The translate function</h4>
+
+<p>Using the translate function is similarly straightforward:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">import</span> <span class="pl-smi">_t</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>mady<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> <span class="pl-smi">locales</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>./locales/es-ES<span class="pl-pds">'</span></span>;
+
+<span class="pl-smi">_t</span>.<span class="pl-en">setLocales</span>(locales);
+
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-en">_t</span>(<span class="pl-s"><span class="pl-pds">'</span>someContext_Once upon a time...<span class="pl-pds">'</span></span>));
+<span class="pl-c">// Érase una vez...</span>
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-en">_t</span>(<span class="pl-s"><span class="pl-pds">'</span>someContext_Number of items: {NUM}<span class="pl-pds">'</span></span>, { NUM<span class="pl-k">:</span> <span class="pl-c1">5</span> }));
+<span class="pl-c">// Número de ítems: 5</span>
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-en">_t</span>(<span class="pl-s"><span class="pl-pds">"</span>someContext_{NUM, plural, one{1 hamburger} other{# hamburgers} }<span class="pl-pds">"</span></span>, { NUM<span class="pl-k">:</span> <span class="pl-c1">1</span> }));
+<span class="pl-c">// 1 hamburguesa</span>
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-en">_t</span>(<span class="pl-s"><span class="pl-pds">"</span>someContext_{NUM, plural, one{1 hamburger} other{# hamburgers} }<span class="pl-pds">"</span></span>, { NUM<span class="pl-k">:</span> <span class="pl-c1">2</span> }));
+<span class="pl-c">// 2 hamburguesas</span></pre></div>
+
+<h2>
+<a id="messageformat" class="anchor" href="#messageformat" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MessageFormat</h2>
+
+<p>Mady uses the <a href="https://github.com/SlexAxton/messageformat.js">messageformat.js</a> library by Alex Sexton, which "supports and extends all parts of the <strong>[ICU MessageFormat]</strong> standard (see the <a href="http://userguide.icu-project.org/formatparse/messages">user guide</a>), with the exception of the deprecated ChoiceFormat." IMHO, and while it does not solve all the problems in the huge field of i18n, it is a much more powerful tool than the conventional gettext.</p>
+
+<p>Some examples of MessageFormat messages are given above, but this does not even scratch the surface of what is enabled by this standard.</p>
+
+<h2>
+<a id="internals" class="anchor" href="#internals" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Internals</h2>
+
+<p>Mady is built with <a href="https://facebook.github.io/react/">React</a> and <a href="https://facebook.github.io/relay/">Relay</a>.</p>
+
+<h2>
+<a id="whats-changed-since-version-x" class="anchor" href="#whats-changed-since-version-x" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="CHANGELOG.md">What's changed since version X?</a>
+</h2>
+
+<h2>
+<a id="shall-i--the-mit-license" class="anchor" href="#shall-i--the-mit-license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Shall I? — The MIT license</h2>
+
+<p>Copyright (c) <a href="https://github.com/guigrpa">Guillermo Grau Panea</a> 2016</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/guigrpa/mady">Mady</a> is maintained by <a href="https://github.com/guigrpa">guigrpa</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
