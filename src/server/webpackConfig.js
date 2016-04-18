@@ -1,5 +1,5 @@
 import path                 from 'path';
-import { mainStory, chalk } from 'storyboard';
+import { mainStory }        from 'storyboard';
 import webpack              from 'webpack';
 import ExtractTextPlugin    from 'extract-text-webpack-plugin';
 const pkg                   = require('../../package.json');
@@ -82,7 +82,7 @@ export default {
       ret.push(new ExtractTextPlugin('[name].bundle.css'));
     }
     const langsDesc = MOMENT_LANGS.join(', ');
-    mainStory.warn('webpack', 
+    mainStory.warn('webpack',
       `Please check that the supported langs for moment.js are correct: ${langsDesc}`);
     if (fProduction) {
       ret.push(new webpack.optimize.UglifyJsPlugin({

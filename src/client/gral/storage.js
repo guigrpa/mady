@@ -40,4 +40,4 @@ function cookieSet(key, val) {
 export {
   localGet, localSet,
   cookieGet, cookieSet,
-}
+};

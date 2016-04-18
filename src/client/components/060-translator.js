@@ -109,7 +109,8 @@ class Translator extends React.Component {
         style={timm.merge(style.row, style.headerRow)}
       >
         <div style={timm.merge(style.headerCell, style.keyCol)}>
-          {_t('columnTitle_Messages').toUpperCase()} <span style={style.numItems}>[{keys.edges.length}]</span>
+          {_t('columnTitle_Messages').toUpperCase()}{' '}
+          <span style={style.numItems}>[{keys.edges.length}]</span>
           {' '}
           <Icon
             icon="refresh"

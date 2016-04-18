@@ -13,8 +13,6 @@ import Relay                from 'react-relay';
 import App                  from './components/010-app';
 import { ViewerQuery }      from './gral/rootQueries';
 import _t                   from '../translate';
-const DEFAULT_LANG = 'en-US';
-const DEFAULT_LOCALES = require('../locales/en-US');
 
 if (process.env.NODE_ENV === 'production') {
   addListener(wsClient);
@@ -25,8 +23,8 @@ if (process.env.NODE_ENV === 'production') {
 
 mainStory.info('startup', 'Launching...');
 
-_t.setLocales(AppBootstrap.locales);
-moment.locale(AppBootstrap.lang);
+_t.setLocales(window.AppBootstrap.locales);
+moment.locale(window.AppBootstrap.lang);
 
 ReactDOM.render(
   <Relay.RootContainer

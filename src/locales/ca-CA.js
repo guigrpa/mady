@@ -1,3 +1,4 @@
+/* eslint-disable */
 function anonymous() {
 var number = function (value, offset) {
   if (isNaN(value)) throw new Error("'" + value + "' isn't a number.");
@@ -53,3 +54,4 @@ return {
 }
 };
 module.exports = anonymous();
+/* eslint-enable */

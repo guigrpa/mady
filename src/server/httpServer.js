@@ -38,7 +38,7 @@ const COOKIE_NAMESPACE = 'mady';
 function sendIndexHtml(req, res) {
   mainStory.info('http', 'Preparing index.html...');
   let userLang = req.query.lang || req.cookies[`${COOKIE_NAMESPACE}_lang`] || 'en-US';
-  let bootstrap = cloneDeep(DEFAULT_BOOTSTRAP);
+  const bootstrap = cloneDeep(DEFAULT_BOOTSTRAP);
   return Promise.resolve()
 
     // Locales
@@ -59,8 +59,8 @@ function sendIndexHtml(req, res) {
 
     // SSR
     .then(() => {
-      if (!ssr) return;
-      mainStory.debug('http', `Rendering...`);
+      if (!ssr) return null;
+      mainStory.debug('http', 'Rendering...');
       return ssr.render(req).then(results => timm.merge(bootstrap, results));
     })
 
