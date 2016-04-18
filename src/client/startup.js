@@ -1,5 +1,6 @@
 import 'babel-polyfill';
 import Promise              from 'bluebird';
+import moment               from 'moment';
 import {
   mainStory,
   addListener,
@@ -11,6 +12,9 @@ import ReactDOM             from 'react-dom';
 import Relay                from 'react-relay';
 import App                  from './components/010-app';
 import { ViewerQuery }      from './gral/rootQueries';
+import _t                   from '../translate';
+const DEFAULT_LANG = 'en-US';
+const DEFAULT_LOCALES = require('../locales/en-US');
 
 if (process.env.NODE_ENV === 'production') {
   addListener(wsClient);
@@ -20,6 +24,9 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 mainStory.info('startup', 'Launching...');
+
+_t.setLocales(AppBootstrap.locales);
+moment.locale(AppBootstrap.lang);
 
 ReactDOM.render(
   <Relay.RootContainer

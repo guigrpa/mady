@@ -3,11 +3,15 @@
 - [x] Delete key
 - [-] Optimistic mutations
 - [-] SSR
-- [-] Save langs in cookies, not in localStorage (use in SSR)
+- [x] Save langs in cookies, not in localStorage (use in SSR)
 - [x] Show spinner while doing lengthy things: parsing files, etc.
-- [ ] Use draft.js for text inputs?
+- [x] Remove moment.js locales (except for the supported languages)
+- [x] Use _t in Mady itself
+- [x] Include possibility to change language in Mady config (use it to bootstrap the correct locales). Add bundle-loader for locale fetching
+- [ ] Add --build option to CLI
+- [ ] Use draft.js for text inputs? Improve the way long translations are shown
 - [ ] Details in various areas:
     + Key: # total, # unused, + details for selected key
     + Per language: # missing translations
-- [ ] Key shortcuts, blur/focus shortcuts
-- [ ] Create/update key?
+- [x] Key shortcuts, blur/focus shortcuts
+- [ ] ESC key reverts changes

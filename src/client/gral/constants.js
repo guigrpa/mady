@@ -1,10 +1,8 @@
 import tinycolor from 'tinycolor2';
 
-let scrollbarWidth = null;
-
 const BASE_COLOR = tinycolor('aliceblue').spin(40).toHexString();
 const BASE_COLOR2 = tinycolor('aliceblue').spin(10).toHexString();
-export const COLORS = {
+const COLORS = {
   light: BASE_COLOR,
   lightAlt: BASE_COLOR2,
   medium: tinycolor(BASE_COLOR).darken(5).toHexString(),
@@ -14,7 +12,26 @@ export const COLORS = {
   dim: '#999',
 };
 
-export function getScrollbarWidth() {
+const LANG_OPTIONS = [
+  {
+    value: 'en-US',
+    label: 'English (US)',
+  },
+  {
+    value: 'es-ES',
+    label: 'Español',
+  },
+  {
+    value: 'ca-CA',
+    label: 'Català',
+  },
+];
+
+// ==========================================
+// Scrollbar width
+// ==========================================
+let scrollbarWidth = null;
+function getScrollbarWidth() {
   if (scrollbarWidth == null) {
     const scrollDiv = document.createElement('div');
     scrollDiv.className = 'scrollbarMeasure';
@@ -31,3 +48,12 @@ try {
     getScrollbarWidth();
   });
 } catch (err) { /* ignore */ }
+
+// ==========================================
+// Public API
+// ==========================================
+export {
+  COLORS,
+  LANG_OPTIONS,
+  getScrollbarWidth,
+};
