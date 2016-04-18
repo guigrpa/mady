@@ -4,7 +4,7 @@
 
 An easy-to-use tool to manage and translate ICU MessageFormat messages.
 
-![Mady UI](https://raw.githubusercontent.com/guigrpa/storyboard/master/docs/01-ui.png)
+![Mady UI](https://raw.githubusercontent.com/guigrpa/mady/master/docs/01-ui.png)
 
 *Yes, it's Mady's view of itself!* :open_mouth:
 
@@ -59,7 +59,7 @@ Messages in your source files should have the form: `_t('someContext_Once upon a
 
 Configuration looks like this:
 
-![Mady config](https://raw.githubusercontent.com/guigrpa/storyboard/master/docs/02-config.png)
+![Mady config](https://raw.githubusercontent.com/guigrpa/mady/master/docs/02-config.png)
 
 You can see the UI in English, Spanish and Catalan at the moment. Mady *eats its own dog food*.
 
@@ -91,8 +91,14 @@ Mady uses the [messageformat.js](https://github.com/SlexAxton/messageformat.js) 
 
 Some examples of MessageFormat messages are given above, but this does not even scratch the surface of what is enabled by this standard.
 
+## Internals
 
-## MIT license
+Mady is built with [React](https://facebook.github.io/react/) and [Relay](https://facebook.github.io/relay/).
+
+
+## [What's changed since version X?](CHANGELOG.md)
+
+## Shall I? — The MIT license
 
 Copyright (c) [Guillermo Grau Panea](https://github.com/guigrpa) 2016
 
