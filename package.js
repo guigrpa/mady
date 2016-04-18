@@ -182,6 +182,7 @@ const specs = {
     'font-awesome': '4.5.0',
     moment: '^2.11.2',
     tinycolor2: '1.3.0',
+    'tiny-cookie': '0.5.5',
 
     // Pure dev dependencies
     // ---------------------
@@ -203,6 +204,7 @@ const specs = {
     'css-loader': '0.23.1',
     'style-loader': '0.13.1',
     'json-loader': '0.5.4',
+    'bundle-loader': '0.5.4',
     'sass-loader': '3.2.0',
     'node-sass': '3.4.2',
     'extract-text-webpack-plugin': '1.0.1',
