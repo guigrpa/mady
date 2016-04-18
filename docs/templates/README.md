@@ -10,9 +10,9 @@ An easy-to-use tool to manage and translate ICU MessageFormat messages.
 
 ## Why?
 
-* **MessageFormat messages**: while it does not solve all the problems in the huge field of i18n, it is a much more powerful tool than the conventional gettext (IMHO).
+* **MessageFormat messages**: while it does not solve all the problems in the huge field of i18n, MessageFormat is a much more powerful tool than the conventional gettext (IMHO).
 * Use it as a development tool in your project: an **easy-to-use UI** that allows **parsing source files, adding languages and translations, comparing translations side-by-side, and compiling to (optionally minified) JavaScript modules**.
-* Use it as a library: no-frills translate function to run the compiled language modules.
+* Use it as a library: a no-frills translate function to run the compiled language modules.
 
 ## How?
 
