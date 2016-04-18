@@ -9,6 +9,15 @@
   </head>
   <body>
     <div id="app"><%- ssrHtml %></div>
+    <script>
+      window.AppBootstrap = <%- jsonData %>;
+      window.module = {};
+      // Bootstrapped locales START -------
+      <%- fnLocales %>
+      // Bootstrapped locales END -------
+      window.AppBootstrap.locales = window.module.exports;
+      delete window.module;
+    </script>
     <script src='/app.bundle.js'></script>
   </body>
 </html>

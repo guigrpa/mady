@@ -1,7 +1,9 @@
 import path                 from 'path';
+import fs                   from 'fs';
 import http                 from 'http';
 import Promise              from 'bluebird';
 import timm                 from 'timm';
+import { cloneDeep }        from 'lodash';
 import storyboard           from 'storyboard';
 const { mainStory, chalk } = storyboard;
 import storyboardWsServer   from 'storyboard/lib/listeners/wsServer';
@@ -24,18 +26,49 @@ try {
 }
 
 const ASSET_PATH = '../../public';
+const LOCALE_PATH = '../locales';
 const DEFAULT_BOOTSTRAP = {
   ssrHtml: '',
   ssrCss: '',
+  fnLocales: '',
+  jsonData: {},
 };
+const COOKIE_NAMESPACE = 'mady';
 
 function sendIndexHtml(req, res) {
-  mainStory.info('http', 'Sending index.html...');
+  mainStory.info('http', 'Preparing index.html...');
+  let userLang = req.query.lang || req.cookies[`${COOKIE_NAMESPACE}_lang`] || 'en-US';
+  let bootstrap = cloneDeep(DEFAULT_BOOTSTRAP);
   return Promise.resolve()
-    .then(() => (ssr ? ssr.render(req) : {}))
-    .then(bootstrap => {
-      const finalBootstrap = timm.addDefaults(bootstrap, DEFAULT_BOOTSTRAP);
-      res.render('index.html', finalBootstrap);
+
+    // Locales
+    .then(() => {
+      let langPath = path.join(__dirname, LOCALE_PATH, `${userLang}.js`);
+      mainStory.debug('http', `Reading ${chalk.cyan.bold(langPath)}...`);
+      try {
+        bootstrap.fnLocales = fs.readFileSync(langPath, 'utf8');
+        bootstrap.jsonData.lang = userLang;
+      } catch (err) {
+        userLang = 'en-US';
+        langPath = path.join(__dirname, LOCALE_PATH, `${userLang}.js`);
+        mainStory.debug('http', `Not found. Reading ${chalk.cyan.bold(langPath)} instead...`);
+        bootstrap.fnLocales = fs.readFileSync(langPath, 'utf8');
+        bootstrap.jsonData.lang = userLang;
+      }
+    })
+
+    // SSR
+    .then(() => {
+      if (!ssr) return;
+      mainStory.debug('http', `Rendering...`);
+      return ssr.render(req).then(results => timm.merge(bootstrap, results));
+    })
+
+    // Render the result!
+    .finally(() => {
+      bootstrap.jsonData = JSON.stringify(bootstrap.jsonData);
+      res.render('index.html', bootstrap);
+      return;
     });
 }
 
