@@ -3,6 +3,7 @@ import React                from 'react';
 import Relay                from 'react-relay';
 import PureRenderMixin      from 'react-addons-pure-render-mixin';
 import { throttle }         from 'lodash';
+import _t                   from '../../translate';
 import {
   ParseSrcFilesMutation,
 }                           from '../gral/mutations';
@@ -10,6 +11,10 @@ import {
   COLORS,
   getScrollbarWidth,
 }                           from '../gral/constants';
+import {
+  cookieGet,
+  cookieSet,
+}                           from '../gral/storage';
 import {
   bindAll,
   mutate,
@@ -54,6 +59,7 @@ const fragments = {
 // ------------------------------------------
 class Translator extends React.Component {
   static propTypes = {
+    lang:                   React.PropTypes.string.isRequired,
     viewer:                 React.PropTypes.object.isRequired,
     selectedKeyId:          React.PropTypes.string,
     changeSelectedKey:      React.PropTypes.func.isRequired,
@@ -103,11 +109,11 @@ class Translator extends React.Component {
         style={timm.merge(style.row, style.headerRow)}
       >
         <div style={timm.merge(style.headerCell, style.keyCol)}>
-          MESSAGES <span style={style.numItems}>[{keys.edges.length}]</span>
+          {_t('columnTitle_Messages').toUpperCase()} <span style={style.numItems}>[{keys.edges.length}]</span>
           {' '}
           <Icon
             icon="refresh"
-            title="Parse source files to update this list"
+            title={_t('tooltip_Parse source files to update the message list')}
             onClick={this.onParseSrcFiles}
             fSpin={this.state.fParsing}
           />
@@ -127,7 +133,7 @@ class Translator extends React.Component {
         style={timm.merge(style.headerCell, style.langCol)}
       >
         <div
-          title="Change language"
+          title={_t('tooltip_Change language')}
           style={style.langSelectorOuter}
         >
           <Icon icon="caret-down" style={style.langSelectorCaret} />
@@ -144,7 +150,7 @@ class Translator extends React.Component {
         <Icon
           id={idx}
           icon="remove"
-          title="Remove column"
+          title={_t('tooltip_Remove column (does NOT delete any translations)')}
           onClick={this.onRemoveLang}
         />
       </div>
@@ -206,7 +212,7 @@ class Translator extends React.Component {
       <div
         id="addLang"
         onClick={fDisabled ? undefined : this.onAddLang}
-        title="Add column"
+        title={_t('tooltip_Add column')}
         style={style.addLang(fDisabled)}
       >
         <Icon icon="plus" fDisabled={fDisabled} />
@@ -218,10 +224,8 @@ class Translator extends React.Component {
   // Langs
   // ------------------------------------------
   readLangs() {
-    let langs;
-    try {
-      langs = JSON.parse(localStorage.madyLangs);
-    } catch (err) {
+    let langs = cookieGet('langs');
+    if (langs == null) {
       langs = [];
       const availableLangs = this.props.viewer.config.langs;
       if (availableLangs.length) langs.push(availableLangs[0]);
@@ -230,11 +234,7 @@ class Translator extends React.Component {
     return langs;
   }
 
-  writeLangs(langs) {
-    try {
-      localStorage.madyLangs = JSON.stringify(langs);
-    } catch (err) { /* Ignore */ }
-  }
+  writeLangs(langs) { cookieSet('langs', langs); }
 
   onAddLang() {
     const prevLangs = this.state.langs;
@@ -320,7 +320,7 @@ const style = {
     backgroundColor: COLORS.light,
     marginRight: 5,
     paddingLeft: 5,
-    paddingRight: 5,
+    paddingRight: 17,
   }),
   langCol: flexItem('1 1 0px', {
     backgroundColor: COLORS.light,

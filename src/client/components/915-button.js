@@ -11,7 +11,7 @@ class Button extends React.Component {
     fText:                  React.PropTypes.bool,
     onClick:                React.PropTypes.func,
     fCancelMouseDown:       React.PropTypes.bool,
-    children:               React.PropTypes.object.isRequired,
+    children:               React.PropTypes.any,
     // all other props are passed through
   };
   static defaultProps = {

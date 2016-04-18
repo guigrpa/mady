@@ -2,6 +2,7 @@ import timm                 from 'timm';
 import React                from 'react';
 import Relay                from 'react-relay';
 import { pick }             from 'lodash';
+import _t                   from '../../translate';
 import {
   UpdateConfigMutation,
 }                           from '../gral/mutations';
@@ -10,6 +11,8 @@ import {
   mutate,
   flexContainer,
 }                           from './helpers';
+import { LANG_OPTIONS }     from '../gral/constants';
+import Select               from './900-select';
 import Icon                 from './905-icon';
 import Button               from './915-button';
 
@@ -36,6 +39,8 @@ const fragments = {
 // ==========================================
 class Settings extends React.Component {
   static propTypes = {
+    lang:                   React.PropTypes.string.isRequired,
+    onChangeLang:           React.PropTypes.func.isRequired,
     viewer:                 React.PropTypes.object.isRequired,
     onClose:                React.PropTypes.func.isRequired,
   };
@@ -46,12 +51,14 @@ class Settings extends React.Component {
       config: pick(props.viewer.config, [
         'langs', 'srcPaths', 'srcExtensions', 'fMinify',
       ]),
+      lang: props.lang,
     };
     bindAll(this, [
       'onCreateListItem',
       'onRemoveListItem',
       'onUpdateListItem',
       'onChangeCheckbox',
+      'changeLang',
       'onCancel',
       'onSave',
     ]);
@@ -70,8 +77,20 @@ class Settings extends React.Component {
   renderConfig() {
     return (
       <div>
+        <div style={style.configLine}>
+          <label htmlFor="lang">
+            {_t('settingsForm_Mady language:')}
+          </label>
+          {' '}
+          <Select
+            id="lang"
+            value={this.state.lang}
+            onChange={this.changeLang}
+            options={LANG_OPTIONS}
+          />
+        </div>
         <div style={style.listLabel}>
-          Languages (BCP47 codes):
+          {_t('settingsForm_Languages (BCP47 codes):')}
         </div>
         {this.renderList({
           id: 'langs',
@@ -80,7 +99,9 @@ class Settings extends React.Component {
           placeholder: 'e.g. es-ES',
           width: 80,
         })}
-        <div style={style.listLabel}>Source paths:</div>
+        <div style={style.listLabel}>
+          {_t('settingsForm_Source paths:')}
+        </div>
         {this.renderList({
           id: 'srcPaths',
           dir: 'column',
@@ -88,7 +109,9 @@ class Settings extends React.Component {
           placeholder: 'e.g. src/client',
           width: 200,
         })}
-        <div style={style.listLabel}>Source extensions:</div>
+        <div style={style.listLabel}>
+          {_t('settingsForm_Source extensions:')}
+        </div>
         {this.renderList({
           id: 'srcExtensions',
           dir: 'row',
@@ -103,7 +126,9 @@ class Settings extends React.Component {
             checked={this.state.config.fMinify}
             onChange={this.onChangeCheckbox}
           />
-          <label htmlFor="fMinify">Minify output JavaScript</label>
+          <label htmlFor="fMinify">
+            {_t('settingsForm_Minify output JavaScript')}
+          </label>
         </div>
       </div>
     );
@@ -159,9 +184,13 @@ class Settings extends React.Component {
   renderButtons() {
     return (
       <div style={style.buttons}>
-        <Button onClick={this.onCancel}>Cancel</Button>
+        <Button onClick={this.onCancel}>
+          {_t('button_Cancel')}
+        </Button>
         {' '}
-        <Button onClick={this.onSave}>Save</Button>
+        <Button onClick={this.onSave}>
+          {_t('button_Save')}
+        </Button>
       </div>
     );
   }
@@ -195,8 +224,16 @@ class Settings extends React.Component {
     this.setState({ config });
   }
 
+  changeLang(lang) { this.setState({ lang }); }
+
   onCancel() { this.props.onClose(); }
   onSave() {
+    // Save lang
+    if (this.state.lang !== this.props.lang) {
+      this.props.onChangeLang(this.state.lang);
+    }
+
+    // Save other settings
     const { viewer } = this.props;
     const set = this.state.config;
     mutate({

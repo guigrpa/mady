@@ -1,6 +1,7 @@
 import React                from 'react';
 import Relay                from 'react-relay';
 import moment               from 'moment';
+import _t                   from '../../translate';
 import { COLORS }           from '../gral/constants';
 import {
   flexItem,
@@ -29,6 +30,7 @@ const fragments = {
 // ==========================================
 class Details extends React.Component {
   static propTypes = {
+    lang:                   React.PropTypes.string.isRequired,
     relay:                  React.PropTypes.object.isRequired,
     viewer:                 React.PropTypes.object.isRequired,
     selectedKeyId:          React.PropTypes.string,
@@ -42,7 +44,9 @@ class Details extends React.Component {
     this._theKey = this.props.viewer.anyNode;
     return (
       <div style={style.outer}>
-        <div style={style.title}>DETAILS</div>
+        <div style={style.title}>
+          {_t('msgDetailsView_Details').toUpperCase()}
+        </div>
         {this.renderContents()}
       </div>
     );
@@ -50,7 +54,7 @@ class Details extends React.Component {
 
   renderContents() {
     if (this.props.selectedKeyId == null) {
-      return <LargeMessage>No message selected</LargeMessage>;
+      return <LargeMessage>{_t('msgDetailsView_No message selected')}</LargeMessage>;
     }
     if (!this._theKey) {
       return <LargeMessage><Icon icon="circle-o-notch" /></LargeMessage>;
@@ -66,7 +70,7 @@ class Details extends React.Component {
     const { sources, firstUsed, unusedSince } = this._theKey;
     const since = this.renderDate(firstUsed);
     const until = unusedSince
-      ? <span> until {this.renderDate(unusedSince)}</span>
+      ? <span> {_t('msgDetailsView_until')} {this.renderDate(unusedSince)}</span>
       : ':';
     const elSources = sources.length
       ? <ul style={style.srcList}>
@@ -75,7 +79,7 @@ class Details extends React.Component {
       : null;
     return (
       <div>
-        Used since {since}{until}
+        {_t('msgDetailsView_Used since')} {since}{until}
         {elSources}
       </div>
     );

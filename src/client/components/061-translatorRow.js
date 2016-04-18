@@ -2,6 +2,7 @@ import timm                 from 'timm';
 import React                from 'react';
 import Relay                from 'react-relay';
 import PureRenderMixin      from 'react-addons-pure-render-mixin';
+import _t                   from '../../translate';
 import { COLORS }           from '../gral/constants';
 import {
   DeleteKeyMutation,
@@ -53,7 +54,7 @@ class TranslatorRow extends React.Component {
     styleKeyCol:            React.PropTypes.object.isRequired,
     styleLangCol:           React.PropTypes.object.isRequired,
     // From hoverable
-    hovering:               React.PropTypes.string,
+    hovering:               React.PropTypes.bool,
     onHoverStart:           React.PropTypes.func.isRequired,
     onHoverStop:            React.PropTypes.func.isRequired,
   };
@@ -84,6 +85,7 @@ class TranslatorRow extends React.Component {
       ? (
         <Icon
           icon="remove"
+          title={_t('tooltip_Delete message (does NOT delete any translations)')}
           onClick={this.onClickDeleteKey}
           style={style.removeIcon}
         />

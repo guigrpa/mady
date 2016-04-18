@@ -1,11 +1,17 @@
 import React                from 'react';
 import Relay                from 'react-relay';
+import moment               from 'moment';
+import _t                   from '../../translate';
 import Header               from './050-header';
 import Translator           from './060-translator';
 import Details              from './070-details';
 import Settings             from './080-settings';
 import Modal                from './910-modal';
 import { bindAll }          from './helpers';
+import {
+  cookieGet,
+  cookieSet,
+}                           from '../gral/storage';
 require('./010-app.sass');
 
 // ==========================================
@@ -37,11 +43,13 @@ class App extends React.Component {
     this.state = {
       selectedKeyId: null,
       fSettingsShown: false,
+      lang: cookieGet('lang', { defaultValue: 'es-ES' }),
     };
     bindAll(this, [
       'changeSelectedKey',
       'showSettings',
       'hideSettings',
+      'onChangeLang',
     ]);
   }
 
@@ -53,6 +61,7 @@ class App extends React.Component {
           onShowSettings={this.showSettings}
         />
         <Translator
+          lang={this.state.lang}
           viewer={this.props.viewer}
           selectedKeyId={this.state.selectedKeyId}
           changeSelectedKey={this.changeSelectedKey}
@@ -66,6 +75,7 @@ class App extends React.Component {
   renderDetails() {
     return (
       <Details
+        lang={this.state.lang}
         viewer={this.props.viewer}
         selectedKeyId={this.state.selectedKeyId}
       />
@@ -77,6 +87,8 @@ class App extends React.Component {
     return (
       <Modal>
         <Settings
+          lang={this.state.lang}
+          onChangeLang={this.onChangeLang}
           viewer={this.props.viewer}
           onClose={this.hideSettings}
         />
@@ -88,6 +100,14 @@ class App extends React.Component {
   changeSelectedKey(selectedKeyId) { this.setState({ selectedKeyId }); }
   showSettings() { this.setState({ fSettingsShown: true }); }
   hideSettings() { this.setState({ fSettingsShown: false }); }
+  onChangeLang(lang) {
+    cookieSet('lang', lang);
+    require(`bundle!../../locales/${lang}`)(locales => {
+      _t.setLocales(locales);
+      moment.locale(lang);
+      this.setState({ lang });
+    });
+  }
 }
 
 // ==========================================

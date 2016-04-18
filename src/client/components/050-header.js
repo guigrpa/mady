@@ -1,4 +1,5 @@
 import React                from 'react';
+import _t                   from '../../translate';
 import { COLORS }           from '../gral/constants';
 import {
   CompileTranslationsMutation,
@@ -26,13 +27,13 @@ class Header extends React.Component {
           MADY
           <Icon
             icon="cog"
-            title="Settings"
+            title={_t('tooltip_Settings')}
             onClick={this.props.onShowSettings}
             style={style.icon}
           />
           <Icon
             icon="save"
-            title="Convert translations to JavaScript files"
+            title={_t('tooltip_Convert translations to JavaScript files')}
             onClick={this.onCompileTranslations}
             style={style.icon}
           />

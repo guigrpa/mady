@@ -1,5 +1,6 @@
 import React                from 'react';
 import Relay                from 'react-relay';
+import _t                   from '../../translate';
 import {
   CreateTranslationMutation,
   UpdateTranslationMutation,
@@ -112,7 +113,7 @@ class Translation extends React.Component {
             fCancelMouseDown
             fText
           >
-            Delete
+            {_t('button_Delete')}
           </Button>
         </span>
       : null;
@@ -123,7 +124,7 @@ class Translation extends React.Component {
           fCancelMouseDown
           fText
         >
-          Copy key
+          {_t('button_Copy message')}
         </Button>
         {' | '}
         <Button
@@ -131,7 +132,7 @@ class Translation extends React.Component {
           fCancelMouseDown
           fText
         >
-          Save
+          {_t('button_Save')}
         </Button>
         {' | '}
         <Button
@@ -139,7 +140,7 @@ class Translation extends React.Component {
           fCancelMouseDown
           fText
         >
-          Revert
+          {_t('button_Revert')}
         </Button>
         {elDelete}
       </div>
@@ -194,8 +195,9 @@ class Translation extends React.Component {
   editBlur() {
     if (this.state.text === this.getInitialTranslation()) {
       this.setState({ fEditing: false });
+    } else {
+      this.editCommit();
     }
-    // TODO: auto-commit, depending on settings
   }
   deleteTranslation() {
     this.editRevert();

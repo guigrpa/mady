@@ -9,7 +9,7 @@ import {
 // ==========================================
 class LargeMessage extends React.Component {
   static propTypes = {
-    children:               React.PropTypes.object.isRequired,
+    children:               React.PropTypes.any,
   };
 
   constructor(props) {

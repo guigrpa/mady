@@ -8,7 +8,7 @@ import { bindAll }          from './helpers';
 // ==========================================
 class Select extends React.Component {
   static propTypes = {
-    id:                     React.PropTypes.string,
+    id:                     React.PropTypes.any,
     fAllowNull:             React.PropTypes.bool,
     options:                React.PropTypes.array.isRequired,
     value:                  React.PropTypes.string,
