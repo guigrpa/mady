@@ -6,7 +6,15 @@ An easy-to-use tool to manage and translate ICU MessageFormat messages.
 
 ![Mady UI](https://raw.githubusercontent.com/guigrpa/mady/master/docs/01-ui.png)
 
-*Yes, it's Mady's view of itself!* :open_mouth:
+*Yes, it's Mady's view of itself!* :open_mouth: More complex MessageFormat examples:
+
+```js
+console.log(_t("someContext_{NUM, plural, one{1 hamburger} other{# hamburgers} }", { NUM: 1 }));
+// 1 hamburguesa
+console.log(_t("someContext_{NUM, plural, one{1 hamburger} other{# hamburgers} }", { NUM: 2 }));
+// 2 hamburguesas
+```
+
 
 ## Why?
 
