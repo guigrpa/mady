@@ -82,7 +82,7 @@ const specs = {
     buildClient:                WEBPACK_CLIENT,
     build:                      runMultiple([
                                   'node package',
-                                  'npm run lint',
+                                  //'npm run lint',
                                   //'npm run flow',
                                   'npm run compile',
                                   'npm run buildClient',
@@ -147,7 +147,7 @@ const specs = {
     commander: '^2.9.0',
     "node-uuid": "1.4.7",
     bluebird: '^3.3.4',
-    'fs-extra': '^0.26.7',
+    'fs-extra': '^0.28.0',
     'diveSync': '0.3.0',
     'messageformat': '0.3.0',
     'uglify-js': '2.6.2',
@@ -175,11 +175,11 @@ const specs = {
     'react-relay':        '0.8.0',
     'babel-relay-plugin': '0.8.0',
     graphql:              '0.5.0',
-    'graphql-relay':      '0.3.6',
+    'graphql-relay':      '0.4.1',
     'express-graphql':    '0.5.1',
 
     // Miscellaneous
-    'font-awesome': '4.5.0',
+    'font-awesome': '4.6.1',
     moment: '^2.11.2',
     tinycolor2: '1.3.0',
     'tiny-cookie': '0.5.5',
@@ -196,7 +196,7 @@ const specs = {
     'babel-preset-react-hmre': '1.1.1', // to use Hot Module Replacement
 
     // Webpack + loaders (+ related stuff)
-    webpack: '1.12.15',
+    webpack: '1.13.0',
     'webpack-dev-middleware': '1.6.1',
     'webpack-hot-middleware': '2.10.0',
     'babel-loader': '6.2.4',
@@ -213,8 +213,8 @@ const specs = {
     eslint: '^2.4.0',
     'eslint-config-airbnb': '^7.0.0',
     'eslint-plugin-flowtype': '^2.2.2',
-    'eslint-plugin-react': '^4.3.0',
-    'eslint-plugin-jsx-a11y': '^0.6.2',
+    'eslint-plugin-react': '^5.0.1',
+    'eslint-plugin-jsx-a11y': '^1.0.1',
     'babel-eslint': '^6.0.0',
 
     // Testing
@@ -225,7 +225,7 @@ const specs = {
     // Other tools
     'extract-docs': '^1.0.0',
     'cross-env': '^1.0.7',
-    'flow-bin': '^0.22.1',
+    'flow-bin': '^0.23.0',
   },
 
   // -----------------------------------------------
