@@ -53,7 +53,7 @@ From the web application, you can:
 * Update the key database with new keys extracted from your source files
 * Configure your languages, source paths, file extensions, etc.
 * Translate your keys to the different supported languages
-* Export translations to JS files, for use by the [translate function](#the-translate-function)
+* [Automatically] export translations to JS files, for use by the [translate function](#the-translate-function)
 
 Messages in your source files should have the form: `_t('someContext_Once upon a time...')` (single or double quotes are supported), where `_t()` is the default name for the translate function (see below), `someContext` is some hint for the translator and `Once upon a time...` is your untranslated [MessageFormat](#messageformat) message.
 
