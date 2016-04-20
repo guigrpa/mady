@@ -2,10 +2,6 @@ import React                from 'react';
 import _t                   from '../../translate';
 import { COLORS }           from '../gral/constants';
 import {
-  CompileTranslationsMutation,
-}                           from '../gral/mutations';
-import {
-  mutate,
   flexContainer,
   flexItem,
 }                           from './helpers';
@@ -31,25 +27,10 @@ class Header extends React.Component {
             onClick={this.props.onShowSettings}
             style={style.icon}
           />
-          <Icon
-            icon="save"
-            title={_t('tooltip_Convert translations to JavaScript files')}
-            onClick={this.onCompileTranslations}
-            style={style.icon}
-          />
         </div>
         <div style={style.spacer} />
       </div>
     );
-  }
-
-  // ==========================================
-  onCompileTranslations() {
-    mutate({
-      description: 'Click on Compile translations',
-      Mutation: CompileTranslationsMutation,
-      props: {},
-    });
   }
 }
 
