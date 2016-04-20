@@ -166,6 +166,7 @@ class Settings extends React.Component {
                   id={`${id}.${idx}`}
                   icon="remove"
                   onClick={this.onRemoveListItem}
+                  style={style.remove}
                 />
               </div>
             );
@@ -173,8 +174,8 @@ class Settings extends React.Component {
           <Icon
             id={id}
             icon="plus"
-            style={style.add}
             onClick={this.onCreateListItem}
+            style={style.add}
           />
         </div>
       </div>
@@ -266,7 +267,9 @@ const style = {
   add: {
     display: 'inline-block',
     marginTop: 5,
+    color: '#444',
   },
+  remove: { color: '#444' },
   buttons: {
     marginTop: 15,
     borderTop: '1px solid #ccc',
