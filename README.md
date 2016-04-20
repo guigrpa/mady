@@ -28,7 +28,7 @@ Remember: this is not only for translation! Even if you only use English, you ma
 ### Installation
 
 ```
-$ npm install --save-dev mady
+$ npm install --save mady
 ```
 
 
