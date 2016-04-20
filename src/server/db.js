@@ -2,6 +2,7 @@ import path                 from 'path';
 import fs                   from 'fs-extra';
 import timm                 from 'timm';
 import { mainStory, chalk } from 'storyboard';
+import { debounce }         from 'lodash';
 import uuid                 from 'node-uuid';
 import parse                from './parseSources';
 import compile              from './compileTranslations';
@@ -14,10 +15,12 @@ const DEFAULT_CONFIG = {
   fMinify: false,
 };
 
+const DEBOUNCE_COMPILE = 1000;     // [ms]
+
 // ==============================================
-// Main API
+// Init
 // ==============================================
-export function init(options: Object) {
+function init(options: Object) {
   initLocaleDir(options);
   initConfig();
   initKeys();
@@ -64,11 +67,13 @@ function readConfig() {
 }
 function saveConfig(options) { saveJson(_configPath, _config, options); }
 
-export function getConfig() { return _config; }
-export function updateConfig(newAttrs, { story }) {
+function getConfig() { return _config; }
+
+function updateConfig(newAttrs, { story }) {
   _config = timm.merge(_config, newAttrs);
   story.debug('db', 'New config:', { attach: _config });
   saveConfig({ story });
+  compileTranslations();
   return _config;
 }
 
@@ -92,11 +97,14 @@ function initKeys() {
 }
 
 function readKeys() { _keys = readJson(_keyPath); }
+
 function saveKeys(options) { saveJson(_keyPath, _keys, options); }
 
-export function getKeys() { return Object.keys(_keys).map(id => _keys[id]); }
-export function getKey(id) { return _keys[id]; }
-export function createKey(newAttrs) {
+function getKeys() { return Object.keys(_keys).map(id => _keys[id]); }
+
+function getKey(id) { return _keys[id]; }
+
+function createKey(newAttrs) {
   const id = newAttrs.context != null
     ? `${newAttrs.context}_${newAttrs.text}`
     : newAttrs.text;
@@ -109,20 +117,26 @@ export function createKey(newAttrs) {
     sources: [],
   };
   saveKeys();
+  compileTranslations();
   return _keys[id];
 }
-export function updateKey(id, newAttrs) {
+
+function updateKey(id, newAttrs) {
   _keys[id] = timm.merge(_keys[id], newAttrs);
   saveKeys();
+  compileTranslations();
   return _keys[id];
 }
-export function deleteKey(id) {
+
+function deleteKey(id) {
   const item = _keys[id];
   delete _keys[id];
   saveKeys();
+  compileTranslations();
   return item;
 }
-export function parseSrcFiles({ story }) {
+
+function parseSrcFiles({ story }) {
   const { srcPaths, srcExtensions } = _config;
   const curKeys = parse({ srcPaths, srcExtensions, story });
   const now = new Date().toISOString();
@@ -161,6 +175,7 @@ export function parseSrcFiles({ story }) {
   }
 
   saveKeys({ story });
+  compileTranslations();
   return _keys;
 }
 
@@ -192,6 +207,7 @@ function readTranslations(lang) {
     _translations = timm.merge(_translations, translations);
   }
 }
+
 function saveTranslations(lang, options) {
   const langTranslations = {};
   Object.keys(_translations).forEach((translationId) => {
@@ -203,10 +219,11 @@ function saveTranslations(lang, options) {
   saveJson(getLangPath(lang), langTranslations, options);
 }
 
-export function getTranslations() {
+function getTranslations() {
   return Object.keys(_translations).map(id => _translations[id]);
 }
-export function getLangTranslations(lang) {
+
+function getLangTranslations(lang) {
   const out = [];
   Object.keys(_translations).forEach((translationId) => {
     const translation = _translations[translationId];
@@ -216,7 +233,8 @@ export function getLangTranslations(lang) {
   });
   return out;
 }
-export function getKeyTranslations(keyId) {
+
+function getKeyTranslations(keyId) {
   const out = [];
   Object.keys(_translations).forEach((translationId) => {
     const translation = _translations[translationId];
@@ -226,30 +244,41 @@ export function getKeyTranslations(keyId) {
   });
   return out;
 }
-export function getTranslation(id) { return _translations[id]; }
-export function createTranslation(newAttrs, { story }) {
+
+function getTranslation(id) { return _translations[id]; }
+
+function createTranslation(newAttrs, { story }) {
   const { lang, translation, keyId } = newAttrs;
   if (!lang) throw new Error('Translation language must be specified');
   if (keyId == null) throw new Error('Translation key must be specified');
   const id = uuid.v4();
   _translations[id] = { id, lang, translation, keyId };
   saveTranslations(lang, { story });
+  compileTranslations();
   return _translations[id];
 }
-export function updateTranslation(id, newAttrs, { story }) {
+
+function updateTranslation(id, newAttrs, { story }) {
   _translations[id] = timm.merge(_translations[id], newAttrs);
   saveTranslations(_translations[id].lang, { story });
+  compileTranslations();
   return _translations[id];
 }
-export function deleteTranslation(id, { story }) {
+
+function deleteTranslation(id, { story }) {
   const item = _translations[id];
   const { lang } = _translations[id];
   delete _translations[id];
   saveTranslations(lang, { story });
+  compileTranslations();
   return item;
 }
 
-export function compileTranslations({ story }) {
+function _compileTranslations() {
+  const story = mainStory.child({
+    src: 'db',
+    title: 'Compile translations',
+  })
   for (const lang of _config.langs) {
     const compiledLangPath = getCompiledLangPath(lang);
     const translations = getLangTranslations(lang);
@@ -258,12 +287,14 @@ export function compileTranslations({ story }) {
     story.debug('db', `Writing file ${chalk.cyan.bold(compiledLangPath)}...`);
     fs.writeFileSync(compiledLangPath, fnTranslate, 'utf8');
   }
+  story.close();
 }
+const compileTranslations = debounce(_compileTranslations, DEBOUNCE_COMPILE);
 
 // ==============================================
 // Merge keys and translations from old stores
 // ==============================================
-export function importV0(dir: string) {
+function importV0(dir: string) {
   const story = mainStory.child({
     src: 'db',
     title: 'Import v0',
@@ -285,6 +316,7 @@ export function importV0(dir: string) {
       saveTranslations(lang, { story });
     }
   }
+  compileTranslations();
   story.close();
 }
 
@@ -294,7 +326,8 @@ export function importV0(dir: string) {
 function readJson(filePath: string): Object {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
-export function saveJson(
+
+function saveJson(
   filePath: string,
   obj: Object,
   { story = mainStory } = {}: Object
@@ -302,3 +335,20 @@ export function saveJson(
   story.debug('db', `Writing file ${chalk.cyan.bold(filePath)}...`);
   fs.writeFileSync(filePath, JSON.stringify(obj, null, '  '), 'utf8');
 }
+
+// ==============================================
+// Public API
+// ==============================================
+export {
+  init,
+
+  getConfig, updateConfig,
+  getKeys, getKey, createKey, updateKey, deleteKey,
+  getTranslations, getLangTranslations, getKeyTranslations, getTranslation,
+  createTranslation, updateTranslation, deleteTranslation,
+
+  parseSrcFiles,
+  compileTranslations,
+  importV0,
+  saveJson,
+};
