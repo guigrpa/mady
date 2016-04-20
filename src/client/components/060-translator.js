@@ -44,9 +44,12 @@ const fragments = {
     fragment on Viewer {
       config { langs }
       keys(first: 100000) { edges { node {
-        id
+        id unusedSince
         context text     # for sorting
         ${TranslatorRow.getFragment('theKey')}
+        translations(first: 100000) { edges { node {
+          lang
+        }}}
       }}}
       ${ParseSrcFilesMutation.getFragment('viewer')}
       ${TranslatorRow.getFragment('viewer')}
@@ -92,6 +95,7 @@ class Translator extends React.Component {
   // Render
   // ------------------------------------------
   render() {
+    this.calcStats();
     return (
       <div style={style.outer}>
         {this.renderHeader()}
@@ -109,8 +113,15 @@ class Translator extends React.Component {
         style={timm.merge(style.row, style.headerRow)}
       >
         <div style={timm.merge(style.headerCell, style.keyCol)}>
-          {_t('columnTitle_Messages').toUpperCase()}{' '}
-          <span style={style.numItems}>[{keys.edges.length}]</span>
+          {_t('columnTitle_Messages').toUpperCase()}
+          {' '}
+          <span style={style.numItems}>
+            [
+              <span title={_t('tooltip_Used messages')}>{this.stats.numUsedKeys}</span>
+              {' / '}
+              <span title={_t('tooltip_Total messages')}>{keys.edges.length}</span>
+            ]
+          </span>
           {' '}
           <Icon
             icon="refresh"
@@ -147,6 +158,14 @@ class Translator extends React.Component {
             style={style.langSelector}
           />
         </div>
+        {' '}
+        <span style={style.numItems}>
+          [
+            <span title={_t('tooltip_Translations')}>{this.stats.numTranslations[lang] || 0}</span>
+            {' / '}
+            <span title={_t('tooltip_Used messages')}>{this.stats.numUsedKeys}</span>
+          ]
+        </span>
         {' '}
         <Icon
           id={idx}
@@ -286,6 +305,24 @@ class Translator extends React.Component {
       props: { viewer: this.props.viewer },
       onFinish: () => this.setState({ fParsing: false }),
     });
+  }
+
+  // ------------------------------------------
+  // Helpers
+  // ------------------------------------------
+  calcStats() {
+    let numUsedKeys = 0;
+    const numTranslations = {};
+    for (const { node: key } of this.props.viewer.keys.edges) {
+      if (key.unusedSince) continue;
+      numUsedKeys++;
+      for (const { node: translation } of key.translations.edges) {
+        const { lang } = translation;
+        if (numTranslations[lang] == null) numTranslations[lang] = 0;
+        numTranslations[lang]++;
+      }
+    }
+    this.stats = { numUsedKeys, numTranslations };
   }
 }
 
