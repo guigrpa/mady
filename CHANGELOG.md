@@ -1,8 +1,8 @@
 # Changelog
 
-## 1.0.1 (Apr. 20, 2016)
+## 1.0.1, 1.0.2 (Apr. 20, 2016)
 
-* Fix production dependencies.
+* Fix production dependencies and config.
 
 ## 1.0.0 (Apr. 20, 2016)
 

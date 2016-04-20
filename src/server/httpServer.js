@@ -12,11 +12,17 @@ import graphqlHttp          from 'express-graphql';
 import ejs                  from 'ejs';
 import cookieParser         from 'cookie-parser';
 import compression          from 'compression';
-import webpack              from 'webpack';
-import webpackDevMiddleware from 'webpack-dev-middleware';
-import webpackHotMiddleware from 'webpack-hot-middleware';
-import webpackConfig        from './webpackConfig';
 import * as gqlServer       from './gqlServer';
+let webpack;
+let webpackDevMiddleware;
+let webpackHotMiddleware;
+let webpackConfig;
+if (process.env.NODE_ENV !== 'production') {
+  webpack              = require('webpack');
+  webpackDevMiddleware = require('webpack-dev-middleware');
+  webpackHotMiddleware = require('webpack-hot-middleware');
+  webpackConfig        = require('./webpackConfig').default;
+}
 let ssr = null;
 try {
   ssr = require('../../lib/server/ssr/ssr.bundle');

@@ -1,6 +1,6 @@
 {
   "name": "mady",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Easy-to-use tool to manage and translate ICU MessageFormat messages",
   "bin": {
     "mady": "lib/mady.js"
@@ -28,7 +28,7 @@
   },
   "scripts": {
     "start": "babel-node src/server/startup",
-    "startProd": "cross-env NODE_ENV=production node lib/server/startup",
+    "startProd": "node lib/mady",
     "compile": "rm -rf ./lib && mkdir lib && babel -d lib src",
     "updateSchemaJson": "babel-node src/server/gqlUpdateSchema",
     "docs": "extract-docs --template docs/templates/README.md --output README.md",

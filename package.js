@@ -4,7 +4,7 @@
 // Basic config
 // ===============================================
 const NAME = 'mady';
-const VERSION = '1.0.1';
+const VERSION = '1.0.2';
 const DESCRIPTION = 'Easy-to-use tool to manage and translate ICU MessageFormat messages';
 const KEYWORDS = ['i18n', 'MessageFormat', 'translation', 'locales', 'translator'];
 
@@ -67,7 +67,7 @@ const specs = {
 
     // Top-level
     start:                      'babel-node src/server/startup',
-    startProd:                  'cross-env NODE_ENV=production node lib/server/startup',
+    startProd:                  'node lib/mady',
     compile:                    runMultiple([
                                   'rm -rf ./lib',
                                   'mkdir lib',
