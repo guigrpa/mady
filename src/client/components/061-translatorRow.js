@@ -117,8 +117,9 @@ class TranslatorRow extends React.Component {
     const { theKey: key, fSelected, styleLangCol } = this.props;
     const edge = key.translations.edges.find(({ node }) => node.lang === lang);
     const translation = edge ? edge.node : null;
+    const fUnused = !!key.unusedSince;
     let cellStyle = timm.merge(style.bodyCell, styleLangCol);
-    if (!edge) cellStyle = style.untranslated(cellStyle);
+    if (!edge && !fUnused) cellStyle = style.untranslated(cellStyle);
     if (fSelected) cellStyle = style.selected(cellStyle);
     return (
       <div key={lang}
