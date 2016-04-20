@@ -9,9 +9,9 @@ An easy-to-use tool to manage and translate ICU MessageFormat messages.
 *Yes, it's Mady's view of itself!* :open_mouth: More complex [MessageFormat](#messageformat) examples:
 
 ```js
-console.log(_t("someContext_{NUM, plural, one{1 hamburger} other{# hamburgers} }", { NUM: 1 }));
+console.log(_t("someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}", { NUM: 1 }));
 // 1 hamburguesa
-console.log(_t("someContext_{NUM, plural, one{1 hamburger} other{# hamburgers} }", { NUM: 2 }));
+console.log(_t("someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}", { NUM: 2 }));
 // 2 hamburguesas
 ```
 
