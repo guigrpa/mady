@@ -4,7 +4,7 @@
 // Basic config
 // ===============================================
 const NAME = 'mady';
-const VERSION = '0.1.6';
+const VERSION = '1.0.0';
 const DESCRIPTION = 'Easy-to-use tool to manage and translate ICU MessageFormat messages';
 const KEYWORDS = ['i18n', 'MessageFormat', 'translation', 'locales', 'translator'];
 

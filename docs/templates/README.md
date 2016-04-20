@@ -96,7 +96,7 @@ Some examples of MessageFormat messages are given above, but this does not even 
 Mady is built with [React](https://facebook.github.io/react/) and [Relay](https://facebook.github.io/relay/).
 
 
-## [What's changed since version X?](CHANGELOG.md)
+## [What's changed since version X?](https://github.com/guigrpa/mady/blob/master/CHANGELOG.md)
 
 ## Shall I? — The MIT license
 
