@@ -6,7 +6,7 @@ An easy-to-use tool to manage and translate ICU MessageFormat messages.
 
 ![Mady UI](https://raw.githubusercontent.com/guigrpa/mady/master/docs/01-ui.png)
 
-*Yes, it's Mady's view of itself!* :open_mouth: More complex [MessageFormat](#messageformat) examples:
+*Yes, it's Mady's view of itself!* :open_mouth: More complex [MessageFormat](https://messageformat.github.io/guide/) examples:
 
 ```js
 console.log(_t("someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}", { NUM: 1 }));
@@ -15,6 +15,7 @@ console.log(_t("someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}"
 // 2 hamburguesas
 ```
 
+Remember: this is not only for translation! Even if you only use English, you may need MessageFormat for gender and pluralization.
 
 ## Why?
 
@@ -97,7 +98,8 @@ console.log(_t("someContext_{NUM, plural, one{1 hamburger} other{# hamburgers} }
 
 Mady uses the [messageformat.js](https://github.com/SlexAxton/messageformat.js) library by Alex Sexton, which "supports and extends all parts of the **[ICU MessageFormat]** standard (see the [user guide](http://userguide.icu-project.org/formatparse/messages)), with the exception of the deprecated ChoiceFormat." IMHO, and while it does not solve all the problems in the huge field of i18n, it is a much more powerful tool than the conventional gettext.
 
-Some examples of MessageFormat messages are given above, but this does not even scratch the surface of what is enabled by this standard.
+Some examples of MessageFormat messages are given above ([more here](https://messageformat.github.io/guide/)), but this does not even scratch the surface of what is enabled by this standard.
+
 
 ## Internals
 
