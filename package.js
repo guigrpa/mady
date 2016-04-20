@@ -4,7 +4,7 @@
 // Basic config
 // ===============================================
 const NAME = 'mady';
-const VERSION = '1.0.0';
+const VERSION = '1.0.1';
 const DESCRIPTION = 'Easy-to-use tool to manage and translate ICU MessageFormat messages';
 const KEYWORDS = ['i18n', 'MessageFormat', 'translation', 'locales', 'translator'];
 
@@ -157,6 +157,12 @@ const specs = {
     ejs: '2.4.1',
     'cookie-parser': '1.4.1',
     compression: '1.6.1',
+
+    // GraphQL
+    graphql:              '0.5.0',
+    'graphql-relay':      '0.4.1',
+    'express-graphql':    '0.5.1',
+    'babel-relay-plugin': '0.8.0',
   },
 
   devDependencies: {
@@ -170,13 +176,7 @@ const specs = {
     'react-dom':                      '15.0.1',
     'react-addons-pure-render-mixin': '15.0.1',
     'react-addons-perf':              '15.0.1',
-
-    // Relay
     'react-relay':        '0.8.0',
-    'babel-relay-plugin': '0.8.0',
-    graphql:              '0.5.0',
-    'graphql-relay':      '0.4.1',
-    'express-graphql':    '0.5.1',
 
     // Miscellaneous
     'font-awesome': '4.6.1',

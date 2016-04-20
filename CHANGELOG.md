@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1 (Apr. 20, 2016)
+
+* Fix production dependencies.
+
 ## 1.0.0 (Apr. 20, 2016)
 
 * Semver
