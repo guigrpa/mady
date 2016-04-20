@@ -1,8 +1,9 @@
 # Changelog
 
-## 1.0.1, 1.0.2 (Apr. 20, 2016)
+## 1.0.1, 1.0.2, 1.0.3 (Apr. 20, 2016)
 
 * Fix production dependencies and config.
+* [m] Remove columns for languages missing from config.
 
 ## 1.0.0 (Apr. 20, 2016)
 

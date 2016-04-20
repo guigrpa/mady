@@ -2,7 +2,10 @@ import timm                 from 'timm';
 import React                from 'react';
 import Relay                from 'react-relay';
 import PureRenderMixin      from 'react-addons-pure-render-mixin';
-import { throttle }         from 'lodash';
+import {
+  throttle,
+  filter,
+}                           from 'lodash';
 import _t                   from '../../translate';
 import {
   ParseSrcFilesMutation,
@@ -244,13 +247,11 @@ class Translator extends React.Component {
   // Langs
   // ------------------------------------------
   readLangs() {
-    let langs = cookieGet('langs');
-    if (langs == null) {
-      langs = [];
-      const availableLangs = this.props.viewer.config.langs;
-      if (availableLangs.length) langs.push(availableLangs[0]);
-      this.writeLangs(langs);
-    }
+    const availableLangs = this.props.viewer.config.langs;
+    let langs = cookieGet('langs') || [];
+    langs = filter(langs, o => availableLangs.indexOf(o) >= 0);
+    if (!langs.length && availableLangs.length) langs.push(availableLangs[0]);
+    this.writeLangs(langs);
     return langs;
   }
 
