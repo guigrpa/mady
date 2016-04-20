@@ -25,9 +25,7 @@ var fmt = {};
 
 return {
   "tooltip_Convert translations to JavaScript files": function(d) { return "Convertir traducciones a ficheros JavaScript"; },
-  tooltip_Settings: function(d) { return "Ajustes"; },
   "button_Copy key": function(d) { return ""; },
-  "button_Copy message": function(d) { return "Copiar mensaje"; },
   button_Delete: function(d) { return "Borrar"; },
   button_Revert: function(d) { return "Cancelar cambios"; },
   button_Save: function(d) { return "Guardar"; },
@@ -46,7 +44,14 @@ return {
   "settingsForm_Mady language:": function(d) { return "Idioma de Mady:"; },
   "settingsForm_Minify output JavaScript": function(d) { return "Minificar el JavaScript de salida"; },
   "settingsForm_Source extensions:": function(d) { return "Extensiones de fichero a buscar:"; },
-  "settingsForm_Source paths:": function(d) { return "Carpetas a buscar:"; }
+  "settingsForm_Source paths:": function(d) { return "Carpetas a buscar:"; },
+  "tooltip_Total messages": function(d) { return "Total mensajes"; },
+  "tooltip_Used messages": function(d) { return "Mensajes en uso"; },
+  tooltip_Translations: function(d) { return "Traducciones"; },
+  "tooltip_Copy message": function(d) { return "Copiar mensaje"; },
+  "tooltip_Delete translation": function(d) { return "Borrar traducción"; },
+  "translationHelp_Click outside or TAB to save. ESC to undo.": function(d) { return "Haz clic fuera o pulsa TAB para guardar. Pulsa ESC para deshacer."; },
+  tooltip_Settings: function(d) { return "Ajustes"; }
 }
 };
 module.exports = anonymous();

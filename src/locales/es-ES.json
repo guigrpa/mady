@@ -5,23 +5,11 @@
     "translation": "Convertir traducciones a ficheros JavaScript",
     "keyId": "tooltip_Convert translations to JavaScript files"
   },
-  "044279dd-3d4e-4f0d-a396-d96c25149978": {
-    "id": "044279dd-3d4e-4f0d-a396-d96c25149978",
-    "lang": "es-ES",
-    "translation": "Ajustes",
-    "keyId": "tooltip_Settings"
-  },
   "b588902d-6208-4233-ad27-8078574b83c3": {
     "id": "b588902d-6208-4233-ad27-8078574b83c3",
     "lang": "es-ES",
     "translation": "",
     "keyId": "button_Copy key"
-  },
-  "14ddcc30-fbfd-4687-92c3-44a308cbd293": {
-    "id": "14ddcc30-fbfd-4687-92c3-44a308cbd293",
-    "lang": "es-ES",
-    "translation": "Copiar mensaje",
-    "keyId": "button_Copy message"
   },
   "6a239ba8-9cc0-44b4-a36a-90991ccc3787": {
     "id": "6a239ba8-9cc0-44b4-a36a-90991ccc3787",
@@ -136,5 +124,47 @@
     "lang": "es-ES",
     "translation": "Carpetas a buscar:",
     "keyId": "settingsForm_Source paths:"
+  },
+  "8aff72a7-0e00-4c7b-bd60-d5f3603d4020": {
+    "id": "8aff72a7-0e00-4c7b-bd60-d5f3603d4020",
+    "lang": "es-ES",
+    "translation": "Total mensajes",
+    "keyId": "tooltip_Total messages"
+  },
+  "79130e91-bf60-4c7a-8ec3-24dd189d8527": {
+    "id": "79130e91-bf60-4c7a-8ec3-24dd189d8527",
+    "lang": "es-ES",
+    "translation": "Mensajes en uso",
+    "keyId": "tooltip_Used messages"
+  },
+  "d7f9b7c5-edbe-4e42-b670-492a78c79190": {
+    "id": "d7f9b7c5-edbe-4e42-b670-492a78c79190",
+    "lang": "es-ES",
+    "translation": "Traducciones",
+    "keyId": "tooltip_Translations"
+  },
+  "23d82d27-922c-4fc8-a773-3152216d473b": {
+    "id": "23d82d27-922c-4fc8-a773-3152216d473b",
+    "lang": "es-ES",
+    "translation": "Copiar mensaje",
+    "keyId": "tooltip_Copy message"
+  },
+  "2adf72d3-a3db-475b-9089-e263c54f6fa9": {
+    "id": "2adf72d3-a3db-475b-9089-e263c54f6fa9",
+    "lang": "es-ES",
+    "translation": "Borrar traducción",
+    "keyId": "tooltip_Delete translation"
+  },
+  "37f24c6d-9985-4f1d-b0af-5c70b9b12736": {
+    "id": "37f24c6d-9985-4f1d-b0af-5c70b9b12736",
+    "lang": "es-ES",
+    "translation": "Haz clic fuera o pulsa TAB para guardar. Pulsa ESC para deshacer.",
+    "keyId": "translationHelp_Click outside or TAB to save. ESC to undo."
+  },
+  "4f9dedd6-f874-4326-915d-3b5806d15ce6": {
+    "id": "4f9dedd6-f874-4326-915d-3b5806d15ce6",
+    "lang": "es-ES",
+    "translation": "Ajustes",
+    "keyId": "tooltip_Settings"
   }
 }

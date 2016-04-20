@@ -31,7 +31,6 @@ var fmt = {};
 return {
   "tooltip_Convert translations to JavaScript files": function(d) { return "Convertir traduccions a fitxers javaScript"; },
   tooltip_Settings: function(d) { return "Ajustos"; },
-  "button_Copy message": function(d) { return "Copiar missatge"; },
   button_Delete: function(d) { return "Esborrar"; },
   button_Revert: function(d) { return "Cancel·lar canvis"; },
   button_Save: function(d) { return "Guardar"; },
@@ -50,7 +49,13 @@ return {
   "settingsForm_Mady language:": function(d) { return "Idioma de Mady:"; },
   "settingsForm_Minify output JavaScript": function(d) { return "Minificar el JavaScript de sortida"; },
   "settingsForm_Source extensions:": function(d) { return "Extensions de fitxer a buscar:"; },
-  "settingsForm_Source paths:": function(d) { return "Carpetes a buscar:"; }
+  "settingsForm_Source paths:": function(d) { return "Carpetes a buscar:"; },
+  "tooltip_Total messages": function(d) { return "Total missatges"; },
+  "tooltip_Used messages": function(d) { return "Missatges en ús"; },
+  tooltip_Translations: function(d) { return "Traduccions"; },
+  "tooltip_Delete translation": function(d) { return "Esborrar traducció"; },
+  "translationHelp_Click outside or TAB to save. ESC to undo.": function(d) { return "Fes clic a fora o prem TAB per guardar. Prem ESC per desfer."; },
+  "tooltip_Copy message": function(d) { return "Copiar missatge"; }
 }
 };
 module.exports = anonymous();

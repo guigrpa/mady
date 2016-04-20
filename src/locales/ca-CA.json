@@ -11,12 +11,6 @@
     "translation": "Ajustos",
     "keyId": "tooltip_Settings"
   },
-  "37aea2df-a739-440e-b42b-1f2d3cd98054": {
-    "id": "37aea2df-a739-440e-b42b-1f2d3cd98054",
-    "lang": "ca-CA",
-    "translation": "Copiar missatge",
-    "keyId": "button_Copy message"
-  },
   "c6c83d0b-114a-4b7f-a60e-27c11ddc9bc4": {
     "id": "c6c83d0b-114a-4b7f-a60e-27c11ddc9bc4",
     "lang": "ca-CA",
@@ -130,5 +124,41 @@
     "lang": "ca-CA",
     "translation": "Carpetes a buscar:",
     "keyId": "settingsForm_Source paths:"
+  },
+  "8e1b8a8b-825e-40ad-86d8-23b70207f693": {
+    "id": "8e1b8a8b-825e-40ad-86d8-23b70207f693",
+    "lang": "ca-CA",
+    "translation": "Total missatges",
+    "keyId": "tooltip_Total messages"
+  },
+  "a58b332f-f3de-4688-b8b6-e841ecdcfa73": {
+    "id": "a58b332f-f3de-4688-b8b6-e841ecdcfa73",
+    "lang": "ca-CA",
+    "translation": "Missatges en ús",
+    "keyId": "tooltip_Used messages"
+  },
+  "40202fca-c4e1-4606-9c78-3371194952c4": {
+    "id": "40202fca-c4e1-4606-9c78-3371194952c4",
+    "lang": "ca-CA",
+    "translation": "Traduccions",
+    "keyId": "tooltip_Translations"
+  },
+  "35cce019-cb28-481b-88b2-aff38f81f78a": {
+    "id": "35cce019-cb28-481b-88b2-aff38f81f78a",
+    "lang": "ca-CA",
+    "translation": "Esborrar traducció",
+    "keyId": "tooltip_Delete translation"
+  },
+  "39540d42-d93e-4d8b-a7cf-cc10bca62d0f": {
+    "id": "39540d42-d93e-4d8b-a7cf-cc10bca62d0f",
+    "lang": "ca-CA",
+    "translation": "Fes clic a fora o prem TAB per guardar. Prem ESC per desfer.",
+    "keyId": "translationHelp_Click outside or TAB to save. ESC to undo."
+  },
+  "fe529baa-c670-4a28-9f83-0a6c1a08078d": {
+    "id": "fe529baa-c670-4a28-9f83-0a6c1a08078d",
+    "lang": "ca-CA",
+    "translation": "Copiar missatge",
+    "keyId": "tooltip_Copy message"
   }
 }

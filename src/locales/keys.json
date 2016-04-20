@@ -14,10 +14,8 @@
     "context": "tooltip",
     "text": "Convert translations to JavaScript files",
     "firstUsed": "2016-04-18T05:37:47.074Z",
-    "unusedSince": null,
-    "sources": [
-      "src/client/components/050-header.js"
-    ]
+    "unusedSince": "2016-04-20T11:33:38.450Z",
+    "sources": []
   },
   "tooltip_Change language": {
     "id": "tooltip_Change language",
@@ -49,16 +47,6 @@
       "src/client/components/060-translator.js"
     ]
   },
-  "button_Delete": {
-    "id": "button_Delete",
-    "context": "button",
-    "text": "Delete",
-    "firstUsed": "2016-04-18T06:07:16.000Z",
-    "unusedSince": null,
-    "sources": [
-      "src/client/components/062-translation.js"
-    ]
-  },
   "button_Save": {
     "id": "button_Save",
     "context": "button",
@@ -66,28 +54,7 @@
     "firstUsed": "2016-04-18T06:07:16.000Z",
     "unusedSince": null,
     "sources": [
-      "src/client/components/062-translation.js",
       "src/client/components/080-settings.js"
-    ]
-  },
-  "button_Revert": {
-    "id": "button_Revert",
-    "context": "button",
-    "text": "Revert",
-    "firstUsed": "2016-04-18T06:07:16.000Z",
-    "unusedSince": null,
-    "sources": [
-      "src/client/components/062-translation.js"
-    ]
-  },
-  "button_Copy message": {
-    "id": "button_Copy message",
-    "context": "button",
-    "text": "Copy message",
-    "firstUsed": "2016-04-18T06:13:51.348Z",
-    "unusedSince": null,
-    "sources": [
-      "src/client/components/062-translation.js"
     ]
   },
   "tooltip_Delete message (does NOT delete any translations)": {
@@ -218,6 +185,83 @@
     "unusedSince": null,
     "sources": [
       "src/client/components/080-settings.js"
+    ]
+  },
+  "tooltip_Used messages": {
+    "id": "tooltip_Used messages",
+    "context": "tooltip",
+    "text": "Used messages",
+    "firstUsed": "2016-04-20T05:54:48.437Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/060-translator.js",
+      "src/client/components/060-translator.js"
+    ]
+  },
+  "tooltip_Total messages": {
+    "id": "tooltip_Total messages",
+    "context": "tooltip",
+    "text": "Total messages",
+    "firstUsed": "2016-04-20T05:54:48.437Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/060-translator.js"
+    ]
+  },
+  "tooltip_Translations": {
+    "id": "tooltip_Translations",
+    "context": "tooltip",
+    "text": "Translations",
+    "firstUsed": "2016-04-20T06:06:44.958Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/060-translator.js"
+    ]
+  },
+  "tooltip_Unused messages": {
+    "id": "tooltip_Unused messages",
+    "context": "tooltip",
+    "text": "Unused messages",
+    "firstUsed": "2016-04-20T06:07:55.314Z",
+    "unusedSince": "2016-04-20T06:08:06.501Z",
+    "sources": []
+  },
+  "tooltip_Delete translation": {
+    "id": "tooltip_Delete translation",
+    "context": "tooltip",
+    "text": "Delete translation",
+    "firstUsed": "2016-04-20T06:54:22.605Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/062-translation.js"
+    ]
+  },
+  "tooltip_Copy message": {
+    "id": "tooltip_Copy message",
+    "context": "tooltip",
+    "text": "Copy message",
+    "firstUsed": "2016-04-20T06:54:22.605Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/062-translation.js"
+    ]
+  },
+  "translationHelp_Click outside or press TAB to save. Press ESC to undo.": {
+    "id": "translationHelp_Click outside or press TAB to save. Press ESC to undo.",
+    "context": "translationHelp",
+    "text": "Click outside or press TAB to save. Press ESC to undo.",
+    "firstUsed": "2016-04-20T06:54:22.605Z",
+    "unusedSince": "2016-04-20T07:10:53.837Z",
+    "sources": []
+  },
+  "translationHelp_Click outside or TAB to save. ESC to undo.": {
+    "id": "translationHelp_Click outside or TAB to save. ESC to undo.",
+    "context": "translationHelp",
+    "text": "Click outside or TAB to save. ESC to undo.",
+    "firstUsed": "2016-04-20T07:10:53.837Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/062-translation.js"
     ]
   }
 }
