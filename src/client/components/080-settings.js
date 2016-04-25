@@ -2,19 +2,19 @@ import timm                 from 'timm';
 import React                from 'react';
 import Relay                from 'react-relay';
 import { pick }             from 'lodash';
+import {
+  bindAll,
+  flexContainer,
+  Icon,
+  Select,
+  Modal,
+}                           from 'giu';
 import _t                   from '../../translate';
 import {
   UpdateConfigMutation,
 }                           from '../gral/mutations';
-import {
-  bindAll,
-  mutate,
-  flexContainer,
-}                           from './helpers';
+import { mutate }           from './helpers';
 import { LANG_OPTIONS }     from '../gral/constants';
-import Select               from './900-select';
-import Icon                 from './905-icon';
-import Button               from './915-button';
 
 
 // ==========================================
@@ -40,8 +40,8 @@ const fragments = {
 class Settings extends React.Component {
   static propTypes = {
     lang:                   React.PropTypes.string.isRequired,
-    onChangeLang:           React.PropTypes.func.isRequired,
     viewer:                 React.PropTypes.object.isRequired,
+    onChangeLang:           React.PropTypes.func.isRequired,
     onClose:                React.PropTypes.func.isRequired,
   };
 
@@ -58,7 +58,7 @@ class Settings extends React.Component {
       'onRemoveListItem',
       'onUpdateListItem',
       'onChangeCheckbox',
-      'changeLang',
+      'onChangeLang',
       'onCancel',
       'onSave',
     ]);
@@ -66,11 +66,20 @@ class Settings extends React.Component {
 
   // ------------------------------------------
   render() {
+    const buttons = [
+      {
+        label: _t('button_Cancel'),
+        onClick: this.onCancel,
+      },
+      {
+        label: _t('button_Save'),
+        onClick: this.onSave,
+      },
+    ];
     return (
-      <div>
+      <Modal buttons={buttons}>
         {this.renderConfig()}
-        {this.renderButtons()}
-      </div>
+      </Modal>
     );
   }
 
@@ -85,7 +94,7 @@ class Settings extends React.Component {
           <Select
             id="lang"
             value={this.state.lang}
-            onChange={this.changeLang}
+            onChange={this.onChangeLang}
             options={LANG_OPTIONS}
           />
         </div>
@@ -182,20 +191,6 @@ class Settings extends React.Component {
     );
   }
 
-  renderButtons() {
-    return (
-      <div style={style.buttons}>
-        <Button onClick={this.onCancel}>
-          {_t('button_Cancel')}
-        </Button>
-        {' '}
-        <Button onClick={this.onSave}>
-          {_t('button_Save')}
-        </Button>
-      </div>
-    );
-  }
-
   // ------------------------------------------
   onCreateListItem(ev) {
     const { id } = ev.currentTarget;
@@ -225,7 +220,7 @@ class Settings extends React.Component {
     this.setState({ config });
   }
 
-  changeLang(lang) { this.setState({ lang }); }
+  onChangeLang(ev, lang) { this.setState({ lang }); }
 
   onCancel() { this.props.onClose(); }
   onSave() {
@@ -270,11 +265,6 @@ const style = {
     color: '#444',
   },
   remove: { color: '#444' },
-  buttons: {
-    marginTop: 15,
-    borderTop: '1px solid #ccc',
-    paddingTop: 10,
-  },
   configLine: {
     marginTop: 7,
   },

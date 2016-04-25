@@ -6,28 +6,26 @@ import {
   throttle,
   filter,
 }                           from 'lodash';
+import {
+  bindAll,
+  getScrollbarWidth,
+  flexItem,
+  flexContainer,
+  Icon,
+  Select,
+  LargeMessage,
+}                           from 'giu';
 import _t                   from '../../translate';
 import {
   ParseSrcFilesMutation,
 }                           from '../gral/mutations';
-import {
-  COLORS,
-  getScrollbarWidth,
-}                           from '../gral/constants';
+import { COLORS }           from '../gral/constants';
 import {
   cookieGet,
   cookieSet,
 }                           from '../gral/storage';
-import {
-  bindAll,
-  mutate,
-  flexItem,
-  flexContainer,
-}                           from './helpers';
+import { mutate }           from './helpers';
 import TranslatorRow        from './061-translatorRow';
-import Select               from './900-select';
-import Icon                 from './905-icon';
-import LargeMessage         from './920-largeMessage';
 
 // ==========================================
 // Translator
@@ -83,7 +81,7 @@ class Translator extends React.Component {
 
       'onAddLang',
       'onRemoveLang',
-      'changeLang',
+      'onChangeLang',
 
       'onParseSrcFiles',
     ]);
@@ -156,7 +154,7 @@ class Translator extends React.Component {
           <Select
             id={idx}
             value={lang}
-            onChange={this.changeLang}
+            onChange={this.onChangeLang}
             options={langOptions}
             style={style.langSelector}
           />
@@ -272,8 +270,10 @@ class Translator extends React.Component {
     this.updateLangs(nextLangs);
   }
 
-  changeLang(lang, idx) {
+  onChangeLang(ev, lang) {
     const prevLangs = this.state.langs;
+    const idx = Number(ev.currentTarget.id);
+    console.log(idx)
     let fFound = false;
     for (let i = 0; i < prevLangs.length; i++) {
       if (i === idx) continue;

@@ -1,3 +1,4 @@
 - [-] Optimistic mutations
 - [-] SSR
+- [ ] Allow configuration of translate function name (for parser), default _t
 - [ ] Add --build option to CLI

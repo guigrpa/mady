@@ -23,12 +23,6 @@
     "translation": "Cancelar cambios",
     "keyId": "button_Revert"
   },
-  "0e2d8aad-8612-4227-8c0b-2d2d6073c804": {
-    "id": "0e2d8aad-8612-4227-8c0b-2d2d6073c804",
-    "lang": "es-ES",
-    "translation": "Guardar",
-    "keyId": "button_Save"
-  },
   "defe1f6e-b3cd-4f41-93a1-9a51ca6eb891": {
     "id": "defe1f6e-b3cd-4f41-93a1-9a51ca6eb891",
     "lang": "es-ES",
@@ -58,12 +52,6 @@
     "lang": "es-ES",
     "translation": "Quitar columna (NO borra ninguna traducción)",
     "keyId": "tooltip_Remove column (does NOT delete any translations)"
-  },
-  "b93577ce-e6d1-441f-9d0a-35b5552c39a0": {
-    "id": "b93577ce-e6d1-441f-9d0a-35b5552c39a0",
-    "lang": "es-ES",
-    "translation": "Mensajes",
-    "keyId": "columnTitle_Messages"
   },
   "3aca2d74-6bde-40fa-bbcd-21218e46020e": {
     "id": "3aca2d74-6bde-40fa-bbcd-21218e46020e",
@@ -166,5 +154,17 @@
     "lang": "es-ES",
     "translation": "Ajustes",
     "keyId": "tooltip_Settings"
+  },
+  "ae7807cd-314e-4d0f-ad24-91d14ab048aa": {
+    "id": "ae7807cd-314e-4d0f-ad24-91d14ab048aa",
+    "lang": "es-ES",
+    "translation": "Mensajes",
+    "keyId": "columnTitle_Messages"
+  },
+  "aa05812f-f015-4fed-bd13-b18a3b8767cb": {
+    "id": "aa05812f-f015-4fed-bd13-b18a3b8767cb",
+    "lang": "es-ES",
+    "translation": "Guardar",
+    "keyId": "button_Save"
   }
 }

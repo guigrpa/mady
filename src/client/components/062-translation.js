@@ -1,5 +1,11 @@
 import React                from 'react';
 import Relay                from 'react-relay';
+import {
+  bindAll,
+  Icon,
+  Textarea,
+  hoverable,
+}                           from 'giu';
 import _t                   from '../../translate';
 import {
   CreateTranslationMutation,
@@ -7,12 +13,7 @@ import {
   DeleteTranslationMutation,
 }                           from '../gral/mutations';
 import { COLORS }           from '../gral/constants';
-import {
-  bindAll,
-  mutate,
-}                           from './helpers';
-import Icon                 from './905-icon';
-import hoverable            from './hocs/hoverable';
+import { mutate }           from './helpers';
 
 // ==========================================
 // Relay fragments
@@ -53,12 +54,8 @@ class Translation extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      fEditing: false,
-      text: this.getInitialTranslation(),
-    };
+    this.state = { fEditing: false };
     bindAll(this, [
-      'onChange',
       'onFocus',
       'onBlur',
       'onKeyUp',
@@ -66,17 +63,6 @@ class Translation extends React.Component {
       'onClickDelete',
     ]);
   }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.translation !== this.props.translation) {
-      this.setState({
-        text: this.getInitialTranslation(nextProps),
-      });
-    }
-  }
-
-  componentDidMount() { this.resizeTextarea(); }
-  componentDidUpdate() { this.resizeTextarea(); }
 
   // ==========================================
   // Render
@@ -98,23 +84,14 @@ class Translation extends React.Component {
   renderTranslation() {
     const { translation, relay, fUnused } = this.props;
     const fUpdating = translation && relay.hasOptimisticUpdate(translation);
-    const fEmpty = !this.state.text.length;
     return (
-      <div style={style.textareaWrapper}>
-        <div ref={c => { this._refPlaceholder = c; }}
-          style={style.placeholder(this.state, { fUnused, fUpdating, fEmpty })}
-        >
-          {fEmpty ? 'x' : this.state.text}
-        </div>
-        <textarea ref={c => { this._refInput = c; }}
-          value={this.state.text}
-          onChange={this.onChange}
-          onFocus={this.onFocus}
-          onBlur={this.onBlur}
-          onKeyUp={this.onKeyUp}
-          style={style.textarea(this.state, { fUnused, fUpdating })}
-        />
-      </div>
+      <Textarea ref={c => { this._refInput = c; }}
+        value={translation ? translation.translation : null}
+        onFocus={this.onFocus}
+        onBlur={this.onBlur}
+        onKeyUp={this.onKeyUp}
+        style={style.textareaBase(this.state)}
+      />
     );
   }
 
@@ -154,18 +131,18 @@ class Translation extends React.Component {
   // ==========================================
   // Handlers
   // ==========================================
-  onChange(ev) { this.setState({ text: ev.currentTarget.value }); }
   onFocus() {
     this.setState({ fEditing: true });
     this.props.changeSelectedKey(this.props.theKey.id);
   }
   onKeyUp(ev) {
     if (ev.which !== 27) return;
-    this.revert(() => { this._refInput.blur(); })
+    this._refInput.revert(() => this._refInput.blur())
   }
   onBlur() {
     this.setState({ fEditing: false });
-    if (this.state.text === this.getInitialTranslation()) return;
+    const text = this._refInput.getValue();
+    if (text === this.getInitialTranslation()) return;
     const description = 'Commit translation edit';
     let Mutation;
     let props;
@@ -174,7 +151,7 @@ class Translation extends React.Component {
       props = {
         translation: this.props.translation,
         set: {
-          translation: this.state.text,
+          translation: text,
         },
       };
     } else {
@@ -183,53 +160,32 @@ class Translation extends React.Component {
         set: {
           lang: this.props.lang,
           keyId: this.props.theKey.id,
-          translation: this.state.text,
+          translation: text,
         },
       };
     }
     mutate({ description, Mutation, props });
-    this.setState({ text: this.getInitialTranslation() });
   }
 
   onClickCopyKey() {
-    this.setState({ text: this.props.theKey.text });
-    this._refInput.focus();
+    this._refInput.setValue(this.props.theKey.text, () => this._refInput.focus());
   }
   onClickDelete() {
-    this.revert(() => {
-      mutate({
-        description: 'Click on Delete translation',
-        Mutation: DeleteTranslationMutation,
-        props: {
-          id: this.props.translation.id,
-          theKey: this.props.theKey,
-        },
-      });
+    mutate({
+      description: 'Click on Delete translation',
+      Mutation: DeleteTranslationMutation,
+      props: {
+        id: this.props.translation.id,
+        theKey: this.props.theKey,
+      },
     });
   }
 
   // ==========================================
   // Helpers
   // ==========================================
-  revert(cb) {
-    this.setState({
-      fEditing: false,
-      text: this.getInitialTranslation(),
-    }, cb);
-  }
-
   getInitialTranslation(props = this.props) {
-    return props.translation ? props.translation.translation : '';
-  }
-
-  resizeTextarea() {
-    // if (this._refInput.scrollHeight > 150) {
-    //   console.log(this._refInput)
-    //   console.log(`${this._refInput.scrollHeight}, ${this._refInput.offsetHeight}`)
-    // }
-    let height = this._refPlaceholder.offsetHeight;
-    if (this.state.fEditing) height += 4
-    this._refInput.style.height = `${height}px`;
+    return props.translation ? props.translation.translation : null;
   }
 }
 
@@ -240,30 +196,9 @@ const style = {
   outer: {
     paddingRight: 40,
   },
-  textareaWrapper: {
-    position: 'relative',
-  },
-  placeholder: ({ fEditing }, { fUnused, fUpdating, fEmpty }) => ({
-    opacity: (fEditing || fEmpty) ? 0 : 1,
-    color: fUpdating ? 'red' : (fUnused ? COLORS.dim : undefined),
-    width: '100%',
-    cursor: 'beam',
-  }),
-  textarea: ({ fEditing }, { fUpdating }) => ({
-    position: 'absolute',
-    top: -1,
-    left: -1,
-    width: '100%',
-    padding: fEditing ? '0px 0px 3px 0px' : '0px 0px 0px 0px',
-    overflow: 'hidden',
-    opacity: fEditing ? 1 : 0,
-    background: fEditing ? undefined : 'transparent',
-    border: fEditing ? undefined : '0px solid transparent',
-    color: fUpdating ? 'red' : 'black',
-    cursor: 'beam',
-    fontFamily: 'inherit',
-    fontSize: 'inherit',
-    resize: 'none',
+  textareaBase: ({ fEditing }) => ({
+    padding: 0,
+    border: '1px solid transparent',
   }),
   buttons: {
     position: 'absolute',
