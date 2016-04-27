@@ -1,5 +1,5 @@
 - [-] Optimistic mutations
 - [-] SSR
-- [ ] Use giu's input fields for its settings?
+- [x] Use giu's input fields for its settings?
 - [ ] Allow configuration of translate function name (for parser), default _t
 - [ ] Add --build option to CLI
