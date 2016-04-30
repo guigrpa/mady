@@ -283,7 +283,14 @@ function _compileTranslations() {
     const compiledLangPath = getCompiledLangPath(lang);
     const translations = getLangTranslations(lang);
     const { fMinify } = _config;
-    const fnTranslate = compile({ lang, keys: _keys, translations, fMinify, story });
+    let fnTranslate;
+    try {
+      fnTranslate = compile({ lang, keys: _keys, translations, fMinify, story });
+    } catch (err) {
+      story.error('db', 'Could not compile translations:', { attach: err });
+      story.close();
+      return;
+    }
     story.debug('db', `Writing file ${chalk.cyan.bold(compiledLangPath)}...`);
     fs.writeFileSync(compiledLangPath, fnTranslate, 'utf8');
   }
