@@ -195,8 +195,9 @@ class Translation extends React.Component {
 const style = {
   outer: {
     paddingRight: 40,
+    marginBottom: -2,
   },
-  textareaBase: ({ fEditing }) => ({
+  textareaBase: () => ({
     padding: 0,
     border: '1px solid transparent',
   }),
@@ -210,7 +211,8 @@ const style = {
     marginLeft: 5,
   },
   help: {
-    marginTop: 2,
+    marginTop: 1,
+    marginBottom: 2,
     fontStyle: 'italic',
     color: COLORS.dim,
   },
