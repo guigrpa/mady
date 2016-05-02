@@ -1,13 +1,13 @@
 import React                from 'react';
 import Relay                from 'react-relay';
 import moment               from 'moment';
-import _t                   from '../../translate';
-import { COLORS }           from '../gral/constants';
 import {
   flexItem,
-}                           from './helpers';
-import Icon                 from './905-icon';
-import LargeMessage         from './920-largeMessage';
+  Icon,
+  LargeMessage,
+}                           from 'giu';
+import _t                   from '../../translate';
+import { COLORS }           from '../gral/constants';
 
 // ==========================================
 // Relay fragments

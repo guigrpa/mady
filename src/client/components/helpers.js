@@ -2,35 +2,8 @@ import timm                 from 'timm';
 import Relay                from 'react-relay';
 import { mainStory }        from 'storyboard';
 
-export function bindAll(_this, fnNames) {
-  for (const name of fnNames) {
-    /* eslint-disable no-param-reassign */
-    _this[name] = _this[name].bind(_this);
-    /* eslint-enable no-param-reassign */
-  }
-}
-
-export function flexItem(flex, style) {
-  return timm.merge({
-    flex,
-    WebkitFlex: flex,
-  }, style);
-}
-
-export function flexContainer(flexDirection, style) {
-  return timm.merge({
-    display: 'flex',
-    flexDirection,
-  }, style);
-}
-
-export function cancelEvent(ev) {
-  ev.preventDefault();
-  ev.stopPropagation();
-}
-
 // Runs a Relay mutation inside a Storyboard story
-export function mutate(options) {
+function mutate(options) {
   const {
     description,
     Mutation,
@@ -63,4 +36,8 @@ export function mutate(options) {
       if (onFinish) onFinish();
     },
   });
+}
+
+export {
+  mutate,
 }

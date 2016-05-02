@@ -170,6 +170,7 @@ const specs = {
     // Packaged in the client app
     // --------------------------
     'babel-polyfill': '6.7.4',
+    giu: '^0.2.0',
 
     // React
     react:                            '15.0.1',

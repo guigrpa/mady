@@ -1,11 +1,11 @@
 import React                from 'react';
-import _t                   from '../../translate';
-import { COLORS }           from '../gral/constants';
 import {
+  Icon,
   flexContainer,
   flexItem,
-}                           from './helpers';
-import Icon                 from './905-icon';
+}                           from 'giu';
+import _t                   from '../../translate';
+import { COLORS }           from '../gral/constants';
 
 // ==========================================
 // Component

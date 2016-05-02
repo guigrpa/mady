@@ -2,19 +2,19 @@ import timm                 from 'timm';
 import React                from 'react';
 import Relay                from 'react-relay';
 import { pick }             from 'lodash';
+import {
+  bindAll,
+  flexContainer,
+  Icon,
+  Select, Checkbox, TextInput,
+  Modal,
+}                           from 'giu';
 import _t                   from '../../translate';
 import {
   UpdateConfigMutation,
 }                           from '../gral/mutations';
-import {
-  bindAll,
-  mutate,
-  flexContainer,
-}                           from './helpers';
+import { mutate }           from './helpers';
 import { LANG_OPTIONS }     from '../gral/constants';
-import Select               from './900-select';
-import Icon                 from './905-icon';
-import Button               from './915-button';
 
 
 // ==========================================
@@ -40,25 +40,22 @@ const fragments = {
 class Settings extends React.Component {
   static propTypes = {
     lang:                   React.PropTypes.string.isRequired,
-    onChangeLang:           React.PropTypes.func.isRequired,
     viewer:                 React.PropTypes.object.isRequired,
+    onChangeLang:           React.PropTypes.func.isRequired,
     onClose:                React.PropTypes.func.isRequired,
   };
 
   constructor(props) {
     super(props);
-    this.state = {
-      config: pick(props.viewer.config, [
-        'langs', 'srcPaths', 'srcExtensions', 'fMinify',
-      ]),
-      lang: props.lang,
-    };
+    // For arrays without IDs, it's better if we keep the current state at this level,
+    // rather than relying on `giu`. For other attributes (`lang`, `fMinify`), we can
+    // leave state handling entirely to `giu`, and fetch the value when the user clicks on
+    // Save.
+    this.state = pick(props.viewer.config, ['langs', 'srcPaths', 'srcExtensions']);
     bindAll(this, [
       'onCreateListItem',
       'onRemoveListItem',
       'onUpdateListItem',
-      'onChangeCheckbox',
-      'changeLang',
       'onCancel',
       'onSave',
     ]);
@@ -66,15 +63,20 @@ class Settings extends React.Component {
 
   // ------------------------------------------
   render() {
+    const buttons = [
+      { label: _t('button_Cancel'), onClick: this.onCancel },
+      { label: _t('button_Save'),   onClick: this.onSave, defaultButton: true },
+    ];
     return (
-      <div>
+      <Modal buttons={buttons}>
         {this.renderConfig()}
-        {this.renderButtons()}
-      </div>
+      </Modal>
     );
   }
 
   renderConfig() {
+    const { lang } = this.props;
+    const { fMinify } = this.props.viewer.config;
     return (
       <div>
         <div style={style.configLine}>
@@ -82,12 +84,7 @@ class Settings extends React.Component {
             {_t('settingsForm_Mady language:')}
           </label>
           {' '}
-          <Select
-            id="lang"
-            value={this.state.lang}
-            onChange={this.changeLang}
-            options={LANG_OPTIONS}
-          />
+          <Select ref={c => { this.refLang = c; }} value={lang} options={LANG_OPTIONS} />
         </div>
         <div style={style.listLabel}>
           {_t('settingsForm_Languages (BCP47 codes):')}
@@ -95,7 +92,7 @@ class Settings extends React.Component {
         {this.renderList({
           id: 'langs',
           dir: 'row',
-          type: 'textInput',
+          Component: TextInput,
           placeholder: 'e.g. es-ES',
           width: 80,
         })}
@@ -105,9 +102,9 @@ class Settings extends React.Component {
         {this.renderList({
           id: 'srcPaths',
           dir: 'column',
-          type: 'textInput',
+          Component: TextInput,
           placeholder: 'e.g. src/client',
-          width: 200,
+          width: 300,
         })}
         <div style={style.listLabel}>
           {_t('settingsForm_Source extensions:')}
@@ -115,17 +112,12 @@ class Settings extends React.Component {
         {this.renderList({
           id: 'srcExtensions',
           dir: 'row',
-          type: 'textInput',
+          Component: TextInput,
           placeholder: 'e.g. .js',
           width: 60,
         })}
         <div style={style.configLine}>
-          <input
-            id="fMinify"
-            type="checkbox"
-            checked={this.state.config.fMinify}
-            onChange={this.onChangeCheckbox}
-          />
+          <Checkbox ref={c => { this.refMinify = c; }} id="fMinify" value={fMinify} />
           <label htmlFor="fMinify">
             {_t('settingsForm_Minify output JavaScript')}
           </label>
@@ -134,64 +126,34 @@ class Settings extends React.Component {
     );
   }
 
-  renderList({ id, dir, type, placeholder, width }) {
-    const values = this.state.config[id];
+  renderList({ id, dir, Component, placeholder, width }) {
+    const values = this.state[id];
     return (
-      <div>
-        <div style={style.list(dir)}>
-          {values.map((value, idx) => {
-            let input;
-            switch (type) {
-              case 'textInput':
-                input = (
-                  <input
-                    id={`${id}.${idx}`}
-                    type="text"
-                    value={value}
-                    onChange={this.onUpdateListItem}
-                    placeholder={placeholder}
-                    style={style.input(width)}
-                  />
-                );
-                break;
-              default:
-                input = null;
-                break;
-            }
-            return (
-              <div key={idx} style={style.listItem(dir)}>
-                {input}
-                {' '}
-                <Icon
-                  id={`${id}.${idx}`}
-                  icon="remove"
-                  onClick={this.onRemoveListItem}
-                  style={style.remove}
-                />
-              </div>
-            );
-          })}
-          <Icon
-            id={id}
-            icon="plus"
-            onClick={this.onCreateListItem}
-            style={style.add}
-          />
-        </div>
-      </div>
-    );
-  }
-
-  renderButtons() {
-    return (
-      <div style={style.buttons}>
-        <Button onClick={this.onCancel}>
-          {_t('button_Cancel')}
-        </Button>
-        {' '}
-        <Button onClick={this.onSave}>
-          {_t('button_Save')}
-        </Button>
+      <div style={style.list(dir)}>
+        {values.map((value, idx) =>
+          <div key={idx} style={style.listItem(dir)}>
+            <Component 
+              id={`${id}.${idx}`}
+              value={value}
+              placeholder={placeholder}
+              onChange={this.onUpdateListItem}
+              style={style.input(width)}
+            />
+            {' '}
+            <Icon
+              id={`${id}.${idx}`}
+              icon="remove"
+              onClick={this.onRemoveListItem}
+              style={style.remove}
+            />
+          </div>
+        )}
+        <Icon
+          id={id}
+          icon="plus"
+          onClick={this.onCreateListItem}
+          style={style.add}
+        />
       </div>
     );
   }
@@ -199,44 +161,33 @@ class Settings extends React.Component {
   // ------------------------------------------
   onCreateListItem(ev) {
     const { id } = ev.currentTarget;
-    const newList = timm.addLast(this.state.config[id], '');
-    const config = timm.set(this.state.config, id, newList);
-    this.setState({ config });
+    const newList = timm.addLast(this.state[id], '');
+    this.setState({ [id]: newList });
   }
 
   onRemoveListItem(ev) {
     const [id, idx] = ev.currentTarget.id.split('.');
-    const newList = timm.removeAt(this.state.config[id], idx);
-    const config = timm.set(this.state.config, id, newList);
-    this.setState({ config });
+    const newList = timm.removeAt(this.state[id], idx);
+    this.setState({ [id]: newList });
   }
 
   onUpdateListItem(ev) {
     const [id, idx] = ev.currentTarget.id.split('.');
     const value = ev.currentTarget.value;
-    const newList = timm.replaceAt(this.state.config[id], idx, value);
-    const config = timm.set(this.state.config, id, newList);
-    this.setState({ config });
+    const newList = timm.replaceAt(this.state[id], idx, value);
+    this.setState({ [id]: newList });
   }
-
-  onChangeCheckbox(ev) {
-    const { id, checked } = ev.currentTarget;
-    const config = timm.set(this.state.config, id, checked);
-    this.setState({ config });
-  }
-
-  changeLang(lang) { this.setState({ lang }); }
 
   onCancel() { this.props.onClose(); }
   onSave() {
     // Save lang
-    if (this.state.lang !== this.props.lang) {
-      this.props.onChangeLang(this.state.lang);
-    }
+    const lang = this.refLang.getValue();
+    if (lang !== this.props.lang) this.props.onChangeLang(lang);
 
     // Save other settings
     const { viewer } = this.props;
-    const set = this.state.config;
+    const set = pick(this.state, ['langs', 'srcPaths', 'srcExtensions']);
+    set.fMinify = this.refMinify.getValue();
     mutate({
       description: 'Click on Save settings',
       Mutation: UpdateConfigMutation,
@@ -270,11 +221,6 @@ const style = {
     color: '#444',
   },
   remove: { color: '#444' },
-  buttons: {
-    marginTop: 15,
-    borderTop: '1px solid #ccc',
-    paddingTop: 10,
-  },
   configLine: {
     marginTop: 7,
   },

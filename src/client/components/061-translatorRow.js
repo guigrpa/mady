@@ -2,20 +2,20 @@ import timm                 from 'timm';
 import React                from 'react';
 import Relay                from 'react-relay';
 import PureRenderMixin      from 'react-addons-pure-render-mixin';
+import {
+  bindAll,
+  flexItem,
+  flexContainer,
+  Icon,
+  hoverable,
+}                           from 'giu';
 import _t                   from '../../translate';
 import { COLORS }           from '../gral/constants';
 import {
   DeleteKeyMutation,
 }                           from '../gral/mutations';
-import {
-  bindAll,
-  mutate,
-  flexItem,
-  flexContainer,
-}                           from './helpers';
+import { mutate }           from './helpers';
 import Translation          from './062-translation';
-import Icon                 from './905-icon';
-import hoverable            from './hocs/hoverable';
 
 // ------------------------------------------
 // Relay fragments

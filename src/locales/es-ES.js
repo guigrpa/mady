@@ -28,13 +28,11 @@ return {
   "button_Copy key": function(d) { return ""; },
   button_Delete: function(d) { return "Borrar"; },
   button_Revert: function(d) { return "Cancelar cambios"; },
-  button_Save: function(d) { return "Guardar"; },
   "tooltip_Add column": function(d) { return "Añadir columna"; },
   "tooltip_Change language": function(d) { return "Cambiar idioma"; },
   "tooltip_Delete message (does NOT delete any translations)": function(d) { return "Borrar mensaje (NO borra ninguna traducción)"; },
   "tooltip_Parse source files to update the message list": function(d) { return "Analizar los ficheros de código para actualizar la lista de mensajes"; },
   "tooltip_Remove column (does NOT delete any translations)": function(d) { return "Quitar columna (NO borra ninguna traducción)"; },
-  columnTitle_Messages: function(d) { return "Mensajes"; },
   msgDetailsView_Details: function(d) { return "Detalles"; },
   "msgDetailsView_No message selected": function(d) { return "Ningún mensaje seleccionado"; },
   "msgDetailsView_Used since": function(d) { return "En uso desde"; },
@@ -51,7 +49,9 @@ return {
   "tooltip_Copy message": function(d) { return "Copiar mensaje"; },
   "tooltip_Delete translation": function(d) { return "Borrar traducción"; },
   "translationHelp_Click outside or TAB to save. ESC to undo.": function(d) { return "Haz clic fuera o pulsa TAB para guardar. Pulsa ESC para deshacer."; },
-  tooltip_Settings: function(d) { return "Ajustes"; }
+  tooltip_Settings: function(d) { return "Ajustes"; },
+  columnTitle_Messages: function(d) { return "Mensajes"; },
+  button_Save: function(d) { return "Guardar"; }
 }
 };
 module.exports = anonymous();

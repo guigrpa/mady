@@ -1,13 +1,12 @@
 import React                from 'react';
 import Relay                from 'react-relay';
 import moment               from 'moment';
+import { bindAll }          from 'giu';
 import _t                   from '../../translate';
 import Header               from './050-header';
 import Translator           from './060-translator';
 import Details              from './070-details';
 import Settings             from './080-settings';
-import Modal                from './910-modal';
-import { bindAll }          from './helpers';
 import {
   cookieGet,
   cookieSet,
@@ -57,42 +56,28 @@ class App extends React.Component {
   render() {
     return (
       <div style={style.outer}>
-        <Header
-          onShowSettings={this.showSettings}
-        />
+        <Header onShowSettings={this.showSettings} />
         <Translator
           lang={this.state.lang}
           viewer={this.props.viewer}
           selectedKeyId={this.state.selectedKeyId}
           changeSelectedKey={this.changeSelectedKey}
         />
-        {this.renderDetails()}
-        {this.renderSettings()}
-      </div>
-    );
-  }
-
-  renderDetails() {
-    return (
-      <Details
-        lang={this.state.lang}
-        viewer={this.props.viewer}
-        selectedKeyId={this.state.selectedKeyId}
-      />
-    );
-  }
-
-  renderSettings() {
-    if (!this.state.fSettingsShown) return null;
-    return (
-      <Modal>
-        <Settings
+        <Details
           lang={this.state.lang}
-          onChangeLang={this.onChangeLang}
           viewer={this.props.viewer}
-          onClose={this.hideSettings}
+          selectedKeyId={this.state.selectedKeyId}
         />
-      </Modal>
+        {
+          this.state.fSettingsShown &&
+          <Settings
+            lang={this.state.lang}
+            viewer={this.props.viewer}
+            onChangeLang={this.onChangeLang}
+            onClose={this.hideSettings}
+          />
+        }
+      </div>
     );
   }
 
@@ -102,7 +87,7 @@ class App extends React.Component {
   hideSettings() { this.setState({ fSettingsShown: false }); }
   onChangeLang(lang) {
     cookieSet('lang', lang);
-    require(`bundle!../../locales/${lang}`)(locales => {
+    require(`bundle!../../locales/${lang}.js`)(locales => {
       _t.setLocales(locales);
       moment.locale(lang);
       this.setState({ lang });
