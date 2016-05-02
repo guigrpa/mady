@@ -1,7 +1,9 @@
 # Changelog
 
-* [M] Use `giu` for all components.
-* Fix #1: Badly formatted translations crash the server process.
+## 1.0.4 (May 2, 2016)
+
+* [M] **Use `giu` for all components**.
+* **Fix #1**: Badly formatted translations crash the server process.
 
 ## 1.0.1, 1.0.2, 1.0.3 (Apr. 20, 2016)
 
