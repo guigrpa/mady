@@ -207,7 +207,7 @@ const specs = {
     'json-loader': '0.5.4',
     'bundle-loader': '0.5.4',
     'sass-loader': '3.2.0',
-    'node-sass': '3.4.2',
+    'node-sass': '3.7.0',
     'extract-text-webpack-plugin': '1.0.1',
 
     // Linting
