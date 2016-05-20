@@ -1,7 +1,7 @@
 import React                from 'react';
 import Relay                from 'react-relay';
 import moment               from 'moment';
-import { bindAll }          from 'giu';
+import { bindAll, Floats }  from 'giu';
 import _t                   from '../../translate';
 import Header               from './050-header';
 import Translator           from './060-translator';
@@ -56,6 +56,7 @@ class App extends React.Component {
   render() {
     return (
       <div style={style.outer}>
+        <Floats />
         <Header onShowSettings={this.showSettings} />
         <Translator
           lang={this.state.lang}

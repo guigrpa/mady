@@ -151,11 +151,11 @@ class Translator extends React.Component {
         >
           <Icon icon="caret-down" style={style.langSelectorCaret} />
           {lang}
-          <Select
+          <Select required
             id={idx}
             value={lang}
             onChange={this.onChangeLang}
-            options={langOptions}
+            items={langOptions}
             style={style.langSelector}
           />
         </div>

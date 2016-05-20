@@ -6,7 +6,7 @@
     "firstUsed": "2016-04-18T05:37:47.074Z",
     "unusedSince": null,
     "sources": [
-      "src\\client\\components\\050-header.js"
+      "src/client/components/050-header.js"
     ]
   },
   "tooltip_Convert translations to JavaScript files": {
@@ -24,7 +24,7 @@
     "firstUsed": "2016-04-18T06:07:16.000Z",
     "unusedSince": null,
     "sources": [
-      "src\\client\\components\\060-translator.js"
+      "src/client/components/060-translator.js"
     ]
   },
   "tooltip_Remove column (does NOT delete any translations)": {
@@ -34,7 +34,7 @@
     "firstUsed": "2016-04-18T06:07:16.000Z",
     "unusedSince": null,
     "sources": [
-      "src\\client\\components\\060-translator.js"
+      "src/client/components/060-translator.js"
     ]
   },
   "tooltip_Add column": {
@@ -44,7 +44,7 @@
     "firstUsed": "2016-04-18T06:07:16.000Z",
     "unusedSince": null,
     "sources": [
-      "src\\client\\components\\060-translator.js"
+      "src/client/components/060-translator.js"
     ]
   },
   "button_Save": {
@@ -54,7 +54,7 @@
     "firstUsed": "2016-04-18T06:07:16.000Z",
     "unusedSince": null,
     "sources": [
-      "src\\client\\components\\080-settings.js"
+      "src/client/components/080-settings.js"
     ]
   },
   "tooltip_Delete message (does NOT delete any translations)": {
@@ -64,7 +64,7 @@
     "firstUsed": "2016-04-18T06:17:12.287Z",
     "unusedSince": null,
     "sources": [
-      "src\\client\\components\\061-translatorRow.js"
+      "src/client/components/061-translatorRow.js"
     ]
   },
   "tooltip_Parse source files to update the message list": {
@@ -74,7 +74,7 @@
     "firstUsed": "2016-04-18T06:17:27.893Z",
     "unusedSince": null,
     "sources": [
-      "src\\client\\components\\060-translator.js"
+      "src/client/components/060-translator.js"
     ]
   },
   "columnTitle_Messages": {
@@ -84,7 +84,7 @@
     "firstUsed": "2016-04-18T06:23:18.511Z",
     "unusedSince": null,
     "sources": [
-      "src\\client\\components\\060-translator.js"
+      "src/client/components/060-translator.js"
     ]
   },
   "msgDetailsView_Details": {
@@ -94,7 +94,7 @@
     "firstUsed": "2016-04-18T06:25:17.799Z",
     "unusedSince": null,
     "sources": [
-      "src\\client\\components\\070-details.js"
+      "src/client/components/070-details.js"
     ]
   },
   "msgDetailsView_No message selected": {
@@ -104,7 +104,7 @@
     "firstUsed": "2016-04-18T06:25:17.799Z",
     "unusedSince": null,
     "sources": [
-      "src\\client\\components\\070-details.js"
+      "src/client/components/070-details.js"
     ]
   },
   "msgDetailsView_until": {
@@ -114,7 +114,7 @@
     "firstUsed": "2016-04-18T06:26:52.684Z",
     "unusedSince": null,
     "sources": [
-      "src\\client\\components\\070-details.js"
+      "src/client/components/070-details.js"
     ]
   },
   "msgDetailsView_Used since": {
@@ -124,7 +124,7 @@
     "firstUsed": "2016-04-18T06:26:52.684Z",
     "unusedSince": null,
     "sources": [
-      "src\\client\\components\\070-details.js"
+      "src/client/components/070-details.js"
     ]
   },
   "settingsForm_Languages (BCP47 codes):": {
@@ -134,7 +134,7 @@
     "firstUsed": "2016-04-18T10:25:17.494Z",
     "unusedSince": null,
     "sources": [
-      "src\\client\\components\\080-settings.js"
+      "src/client/components/080-settings.js"
     ]
   },
   "settingsForm_Source paths:": {
@@ -144,7 +144,7 @@
     "firstUsed": "2016-04-18T10:25:17.494Z",
     "unusedSince": null,
     "sources": [
-      "src\\client\\components\\080-settings.js"
+      "src/client/components/080-settings.js"
     ]
   },
   "settingsForm_Source extensions:": {
@@ -154,7 +154,7 @@
     "firstUsed": "2016-04-18T10:25:17.494Z",
     "unusedSince": null,
     "sources": [
-      "src\\client\\components\\080-settings.js"
+      "src/client/components/080-settings.js"
     ]
   },
   "settingsForm_Minify output JavaScript": {
@@ -164,7 +164,7 @@
     "firstUsed": "2016-04-18T10:25:17.494Z",
     "unusedSince": null,
     "sources": [
-      "src\\client\\components\\080-settings.js"
+      "src/client/components/080-settings.js"
     ]
   },
   "button_Cancel": {
@@ -174,17 +174,7 @@
     "firstUsed": "2016-04-18T10:25:17.494Z",
     "unusedSince": null,
     "sources": [
-      "src\\client\\components\\080-settings.js"
-    ]
-  },
-  "settingsForm_Mady language:": {
-    "id": "settingsForm_Mady language:",
-    "context": "settingsForm",
-    "text": "Mady language:",
-    "firstUsed": "2016-04-18T13:45:06.771Z",
-    "unusedSince": null,
-    "sources": [
-      "src\\client\\components\\080-settings.js"
+      "src/client/components/080-settings.js"
     ]
   },
   "tooltip_Used messages": {
@@ -194,8 +184,8 @@
     "firstUsed": "2016-04-20T05:54:48.437Z",
     "unusedSince": null,
     "sources": [
-      "src\\client\\components\\060-translator.js",
-      "src\\client\\components\\060-translator.js"
+      "src/client/components/060-translator.js",
+      "src/client/components/060-translator.js"
     ]
   },
   "tooltip_Total messages": {
@@ -205,7 +195,7 @@
     "firstUsed": "2016-04-20T05:54:48.437Z",
     "unusedSince": null,
     "sources": [
-      "src\\client\\components\\060-translator.js"
+      "src/client/components/060-translator.js"
     ]
   },
   "tooltip_Translations": {
@@ -215,7 +205,7 @@
     "firstUsed": "2016-04-20T06:06:44.958Z",
     "unusedSince": null,
     "sources": [
-      "src\\client\\components\\060-translator.js"
+      "src/client/components/060-translator.js"
     ]
   },
   "tooltip_Unused messages": {
@@ -233,7 +223,7 @@
     "firstUsed": "2016-04-20T06:54:22.605Z",
     "unusedSince": null,
     "sources": [
-      "src\\client\\components\\062-translation.js"
+      "src/client/components/062-translation.js"
     ]
   },
   "tooltip_Copy message": {
@@ -243,7 +233,7 @@
     "firstUsed": "2016-04-20T06:54:22.605Z",
     "unusedSince": null,
     "sources": [
-      "src\\client\\components\\062-translation.js"
+      "src/client/components/062-translation.js"
     ]
   },
   "translationHelp_Click outside or press TAB to save. Press ESC to undo.": {
@@ -261,7 +251,17 @@
     "firstUsed": "2016-04-20T07:10:53.837Z",
     "unusedSince": null,
     "sources": [
-      "src\\client\\components\\062-translation.js"
+      "src/client/components/062-translation.js"
+    ]
+  },
+  "settingsForm_Mady language:": {
+    "id": "settingsForm_Mady language:",
+    "context": "settingsForm",
+    "text": "Mady language:",
+    "firstUsed": "2016-05-20T23:33:30.217Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/080-settings.js"
     ]
   }
 }

@@ -197,9 +197,10 @@ const style = {
     paddingRight: 40,
     marginBottom: -2,
   },
-  textareaBase: () => ({
+  textareaBase: ({ fEditing }) => ({
     padding: 0,
     border: '1px solid transparent',
+    backgroundColor: fEditing ? undefined : 'transparent',
   }),
   buttons: {
     position: 'absolute',
