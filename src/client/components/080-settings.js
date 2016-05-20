@@ -84,7 +84,7 @@ class Settings extends React.Component {
             {_t('settingsForm_Mady language:')}
           </label>
           {' '}
-          <Select ref={c => { this.refLang = c; }} value={lang} options={LANG_OPTIONS} />
+          <Select ref={c => { this.refLang = c; }} value={lang} items={LANG_OPTIONS} />
         </div>
         <div style={style.listLabel}>
           {_t('settingsForm_Languages (BCP47 codes):')}
