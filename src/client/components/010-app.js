@@ -1,7 +1,11 @@
 import React                from 'react';
 import Relay                from 'react-relay';
 import moment               from 'moment';
-import { bindAll }          from 'giu';
+import {
+  bindAll,
+  Floats, Hints,
+  hintDefine, hintShow,
+}                           from 'giu';
 import _t                   from '../../translate';
 import Header               from './050-header';
 import Translator           from './060-translator';
@@ -52,10 +56,14 @@ class App extends React.Component {
     ]);
   }
 
+  componentDidMount() { this.showHint(); }
+
   // ------------------------------------------
   render() {
     return (
       <div style={style.outer}>
+        <Floats />
+        <Hints />
         <Header onShowSettings={this.showSettings} />
         <Translator
           lang={this.state.lang}
@@ -92,6 +100,36 @@ class App extends React.Component {
       moment.locale(lang);
       this.setState({ lang });
     });
+  }
+
+  // ------------------------------------------
+  showHint() {
+    const labels = [];
+    const arrows = [];
+    const nodeSettings = document.getElementById('madyBtnSettings');
+    if (nodeSettings) {
+      const bcr = nodeSettings.getBoundingClientRect();
+      const x = window.innerWidth / 2;
+      labels.push({ x, y: 70, align: 'center', children: _t('hint_Configure Mady') });
+      arrows.push({
+        from: { x, y: 70 },
+        to: { x: bcr.left - 5, y: (bcr.top + bcr.bottom) / 2 },
+      });
+    }
+    const nodeAddLang = document.getElementById('madyBtnAddLang');
+    if (nodeAddLang) {
+      const bcr = nodeAddLang.getBoundingClientRect();
+      const x = window.innerWidth - 50;
+      labels.push({ x, y: 140, align: 'right', children: _t('hint_Add language column') });
+      arrows.push({
+        from: { x, y: 140 },
+        to: { x: (bcr.left + bcr.right) / 2, y: bcr.bottom },
+        counterclockwise: true,
+      });
+    }
+    const closeLabel = _t('hint_Enjoy translating!');
+    hintDefine('main', { labels, arrows, closeLabel });
+    hintShow('main');
   }
 }
 

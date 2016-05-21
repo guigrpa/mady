@@ -170,13 +170,13 @@ const specs = {
     // Packaged in the client app
     // --------------------------
     'babel-polyfill': '6.7.4',
-    giu: '^0.2.0',
+    giu: '^0.3.0',
 
     // React
-    react:                            '15.0.1',
-    'react-dom':                      '15.0.1',
-    'react-addons-pure-render-mixin': '15.0.1',
-    'react-addons-perf':              '15.0.1',
+    react:                            '15.0.2',
+    'react-dom':                      '15.0.2',
+    'react-addons-pure-render-mixin': '15.0.2',
+    'react-addons-perf':              '15.0.2',
     'react-relay':        '0.8.0',
 
     // Miscellaneous
@@ -212,10 +212,11 @@ const specs = {
 
     // Linting
     eslint: '^2.4.0',
-    'eslint-config-airbnb': '^7.0.0',
+    'eslint-config-airbnb': '^9.0.0',
     'eslint-plugin-flowtype': '^2.2.2',
-    'eslint-plugin-react': '^5.0.1',
-    'eslint-plugin-jsx-a11y': '^1.0.1',
+    'eslint-plugin-react': '^5.1.1',
+    'eslint-plugin-jsx-a11y': '^1.2.2',
+    'eslint-plugin-import': '^1.8.0',
     'babel-eslint': '^6.0.0',
 
     // Testing

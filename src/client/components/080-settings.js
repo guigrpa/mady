@@ -64,11 +64,15 @@ class Settings extends React.Component {
   // ------------------------------------------
   render() {
     const buttons = [
-      { label: _t('button_Cancel'), onClick: this.onCancel },
-      { label: _t('button_Save'),   onClick: this.onSave, defaultButton: true },
+      { label: _t('button_Cancel'), onClick: this.onCancel, left: true },
+      { label: _t('button_Save'), onClick: this.onSave, defaultButton: true },
     ];
     return (
-      <Modal buttons={buttons}>
+      <Modal
+        buttons={buttons}
+        onEsc={this.onCancel}
+        onClickBackdrop={this.onCancel}
+      >
         {this.renderConfig()}
       </Modal>
     );
@@ -84,7 +88,11 @@ class Settings extends React.Component {
             {_t('settingsForm_Mady language:')}
           </label>
           {' '}
-          <Select ref={c => { this.refLang = c; }} value={lang} options={LANG_OPTIONS} />
+          <Select ref={c => { this.refLang = c; }}
+            value={lang}
+            items={LANG_OPTIONS}
+            required
+          />
         </div>
         <div style={style.listLabel}>
           {_t('settingsForm_Languages (BCP47 codes):')}
@@ -132,11 +140,12 @@ class Settings extends React.Component {
       <div style={style.list(dir)}>
         {values.map((value, idx) =>
           <div key={idx} style={style.listItem(dir)}>
-            <Component 
+            <Component
               id={`${id}.${idx}`}
               value={value}
               placeholder={placeholder}
               onChange={this.onUpdateListItem}
+              required errorZ={52}
               style={style.input(width)}
             />
             {' '}

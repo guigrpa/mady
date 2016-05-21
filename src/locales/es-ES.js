@@ -36,7 +36,6 @@ return {
   msgDetailsView_Details: function(d) { return "Detalles"; },
   "msgDetailsView_No message selected": function(d) { return "Ningún mensaje seleccionado"; },
   "msgDetailsView_Used since": function(d) { return "En uso desde"; },
-  msgDetailsView_until: function(d) { return "hasta"; },
   button_Cancel: function(d) { return "Cancelar"; },
   "settingsForm_Languages (BCP47 codes):": function(d) { return "Idiomas (códigos BCP47):"; },
   "settingsForm_Mady language:": function(d) { return "Idioma de Mady:"; },
@@ -51,7 +50,12 @@ return {
   "translationHelp_Click outside or TAB to save. ESC to undo.": function(d) { return "Haz clic fuera o pulsa TAB para guardar. Pulsa ESC para deshacer."; },
   tooltip_Settings: function(d) { return "Ajustes"; },
   columnTitle_Messages: function(d) { return "Mensajes"; },
-  button_Save: function(d) { return "Guardar"; }
+  button_Save: function(d) { return "Guardar"; },
+  msgDetailsView_until: function(d) { return "hasta"; },
+  "hint_Got it!": function(d) { return "¡Entendido!"; },
+  "hint_Add language column": function(d) { return "Añadir columna de idioma"; },
+  "hint_Configure Mady": function(d) { return "Configurar Mady"; },
+  "hint_Enjoy translating!": function(d) { return "¡Disfruta traduciendo!"; }
 }
 };
 module.exports = anonymous();

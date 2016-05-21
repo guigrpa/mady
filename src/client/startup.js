@@ -4,7 +4,7 @@ import moment               from 'moment';
 import {
   mainStory,
   addListener,
-}                           from 'storyboard';
+}                           from 'storyboard/lib/noPlugins';
 import wsClient             from 'storyboard/lib/listeners/wsClient';
 import browserExtension     from 'storyboard/lib/listeners/browserExtension';
 import React                from 'react';
@@ -14,12 +14,9 @@ import App                  from './components/010-app';
 import { ViewerQuery }      from './gral/rootQueries';
 import _t                   from '../translate';
 
-if (process.env.NODE_ENV === 'production') {
-  addListener(wsClient);
-  addListener(browserExtension);
-} else {
-  Promise.longStackTraces();
-}
+addListener(wsClient);
+addListener(browserExtension);
+if (process.env.NODE_ENV !== 'production') Promise.longStackTraces();
 
 mainStory.info('startup', 'Launching...');
 

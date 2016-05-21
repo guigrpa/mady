@@ -4,8 +4,7 @@ import Relay                from 'react-relay';
 import PureRenderMixin      from 'react-addons-pure-render-mixin';
 import {
   bindAll,
-  flexItem,
-  flexContainer,
+  flexContainer, flexItem,
   Icon,
   hoverable,
 }                           from 'giu';
@@ -122,9 +121,7 @@ class TranslatorRow extends React.Component {
     if (!edge && !fUnused) cellStyle = style.untranslated(cellStyle);
     if (fSelected) cellStyle = style.selected(cellStyle);
     return (
-      <div key={lang}
-        style={cellStyle}
-      >
+      <div key={lang} style={cellStyle}>
         <Translation
           theKey={key}
           lang={lang}

@@ -71,12 +71,6 @@
     "translation": "En uso desde",
     "keyId": "msgDetailsView_Used since"
   },
-  "a25b207d-163c-4535-aded-5e866cde84e1": {
-    "id": "a25b207d-163c-4535-aded-5e866cde84e1",
-    "lang": "es-ES",
-    "translation": "hasta",
-    "keyId": "msgDetailsView_until"
-  },
   "28047a72-207f-42a7-9c98-8cf4c692b511": {
     "id": "28047a72-207f-42a7-9c98-8cf4c692b511",
     "lang": "es-ES",
@@ -166,5 +160,35 @@
     "lang": "es-ES",
     "translation": "Guardar",
     "keyId": "button_Save"
+  },
+  "0a165e3f-07c3-409b-b02d-33e13a6ab886": {
+    "id": "0a165e3f-07c3-409b-b02d-33e13a6ab886",
+    "lang": "es-ES",
+    "translation": "hasta",
+    "keyId": "msgDetailsView_until"
+  },
+  "1b8a4bb6-1ac7-4b4c-bdbd-ac655cea675d": {
+    "id": "1b8a4bb6-1ac7-4b4c-bdbd-ac655cea675d",
+    "lang": "es-ES",
+    "translation": "¡Entendido!",
+    "keyId": "hint_Got it!"
+  },
+  "58b37477-173e-4e10-a4e8-834cdc1e78c7": {
+    "id": "58b37477-173e-4e10-a4e8-834cdc1e78c7",
+    "lang": "es-ES",
+    "translation": "Añadir columna de idioma",
+    "keyId": "hint_Add language column"
+  },
+  "ebde6828-792b-4806-bc6e-ff7032eb11a6": {
+    "id": "ebde6828-792b-4806-bc6e-ff7032eb11a6",
+    "lang": "es-ES",
+    "translation": "Configurar Mady",
+    "keyId": "hint_Configure Mady"
+  },
+  "8383eadf-a1e8-4fd1-b2e3-8abb58c603aa": {
+    "id": "8383eadf-a1e8-4fd1-b2e3-8abb58c603aa",
+    "lang": "es-ES",
+    "translation": "¡Disfruta traduciendo!",
+    "keyId": "hint_Enjoy translating!"
   }
 }

@@ -9,11 +9,8 @@ import {
 import {
   bindAll,
   getScrollbarWidth,
-  flexItem,
-  flexContainer,
-  Icon,
-  Select,
-  LargeMessage,
+  flexItem, flexContainer,
+  Icon, Select, LargeMessage,
 }                           from 'giu';
 import _t                   from '../../translate';
 import {
@@ -118,9 +115,9 @@ class Translator extends React.Component {
           {' '}
           <span style={style.numItems}>
             [
-              <span title={_t('tooltip_Used messages')}>{this.stats.numUsedKeys}</span>
-              {' / '}
-              <span title={_t('tooltip_Total messages')}>{keys.edges.length}</span>
+            <span title={_t('tooltip_Used messages')}>{this.stats.numUsedKeys}</span>
+            {' / '}
+            <span title={_t('tooltip_Total messages')}>{keys.edges.length}</span>
             ]
           </span>
           {' '}
@@ -155,16 +152,17 @@ class Translator extends React.Component {
             id={idx}
             value={lang}
             onChange={this.onChangeLang}
-            options={langOptions}
+            required
+            items={langOptions}
             style={style.langSelector}
           />
         </div>
         {' '}
         <span style={style.numItems}>
           [
-            <span title={_t('tooltip_Translations')}>{this.stats.numTranslations[lang] || 0}</span>
-            {' / '}
-            <span title={_t('tooltip_Used messages')}>{this.stats.numUsedKeys}</span>
+          <span title={_t('tooltip_Translations')}>{this.stats.numTranslations[lang] || 0}</span>
+          {' / '}
+          <span title={_t('tooltip_Used messages')}>{this.stats.numUsedKeys}</span>
           ]
         </span>
         {' '}
@@ -219,9 +217,7 @@ class Translator extends React.Component {
       >
         <div style={style.keyCol}>{noKeys}</div>
         {this.state.langs.map(lang => (
-          <div key={lang}
-            style={style.langCol}
-          />
+          <div key={lang} style={style.langCol} />
         ))}
       </div>
     );
@@ -231,7 +227,7 @@ class Translator extends React.Component {
     const fDisabled = this.state.langs.length === this.props.viewer.config.langs.length;
     return (
       <div
-        id="addLang"
+        id="madyBtnAddLang"
         onClick={fDisabled ? undefined : this.onAddLang}
         title={_t('tooltip_Add column')}
         style={style.addLang(fDisabled)}
@@ -273,7 +269,6 @@ class Translator extends React.Component {
   onChangeLang(ev, lang) {
     const prevLangs = this.state.langs;
     const idx = Number(ev.currentTarget.id);
-    console.log(idx)
     let fFound = false;
     for (let i = 0; i < prevLangs.length; i++) {
       if (i === idx) continue;
