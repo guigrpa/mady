@@ -1,7 +1,7 @@
 import React                from 'react';
 import Relay                from 'react-relay';
 import {
-  bindAll,
+  bindAll, cancelEvent,
   Icon, Textarea,
   KEYS,
   hoverable,
@@ -61,6 +61,7 @@ class Translation extends React.Component {
     bindAll(this, [
       'onFocus',
       'onBlur',
+      'onKeyDown',
       'onKeyUp',
       'onClickCopyKey',
       'onClickDelete',
@@ -93,6 +94,7 @@ class Translation extends React.Component {
         value={translation ? translation.translation : null}
         onFocus={this.onFocus}
         onBlur={this.onBlur}
+        onKeyDown={this.onKeyDown}
         onKeyUp={this.onKeyUp}
         cmds={cmds}
         style={style.textareaBase(this.state)}
@@ -141,11 +143,20 @@ class Translation extends React.Component {
     this.props.changeSelectedKey(this.props.theKey.id);
   }
 
+  onKeyDown(ev) {
+    if (ev.which === KEYS.enter &&
+        (ev.ctrlKey || ev.altKey || ev.metaKey || ev.shiftKey)) {
+      cancelEvent(ev);
+    }
+  }
+
   onKeyUp(ev) {
-    if (ev.which !== KEYS.esc) return;
-    this.setState({
-      cmds: [{ type: 'REVERT' }, { type: 'BLUR' }],
-    });
+    if (ev.which === KEYS.esc) {
+      this.setState({ cmds: [{ type: 'REVERT' }, { type: 'BLUR' }] });
+    } else if (ev.which === KEYS.enter &&
+               (ev.ctrlKey || ev.altKey || ev.metaKey || ev.shiftKey)) {
+      this.setState({ cmds: [{ type: 'BLUR' }] });
+    }
   }
 
   onBlur() {
