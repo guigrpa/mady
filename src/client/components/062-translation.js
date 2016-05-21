@@ -2,8 +2,8 @@ import React                from 'react';
 import Relay                from 'react-relay';
 import {
   bindAll,
-  Icon,
-  Textarea,
+  Icon, Textarea,
+  KEYS,
   hoverable,
 }                           from 'giu';
 import _t                   from '../../translate';
@@ -54,7 +54,10 @@ class Translation extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { fEditing: false };
+    this.state = {
+      fEditing: false,
+      cmds: [],
+    };
     bindAll(this, [
       'onFocus',
       'onBlur',
@@ -82,14 +85,16 @@ class Translation extends React.Component {
   }
 
   renderTranslation() {
-    const { translation, relay, fUnused } = this.props;
-    const fUpdating = translation && relay.hasOptimisticUpdate(translation);
+    const { translation } = this.props;
+    const { cmds } = this.state;
+    // const fUpdating = translation && relay.hasOptimisticUpdate(translation);
     return (
-      <Textarea ref={c => { this._refInput = c; }}
+      <Textarea ref={c => { this.refInput = c; }}
         value={translation ? translation.translation : null}
         onFocus={this.onFocus}
         onBlur={this.onBlur}
         onKeyUp={this.onKeyUp}
+        cmds={cmds}
         style={style.textareaBase(this.state)}
       />
     );
@@ -135,41 +140,54 @@ class Translation extends React.Component {
     this.setState({ fEditing: true });
     this.props.changeSelectedKey(this.props.theKey.id);
   }
+
   onKeyUp(ev) {
-    if (ev.which !== 27) return;
-    this._refInput.revert(() => this._refInput.blur())
+    if (ev.which !== KEYS.esc) return;
+    this.setState({
+      cmds: [{ type: 'REVERT' }, { type: 'BLUR' }],
+    });
   }
+
   onBlur() {
     this.setState({ fEditing: false });
-    const text = this._refInput.getValue();
-    if (text === this.getInitialTranslation()) return;
-    const description = 'Commit translation edit';
-    let Mutation;
-    let props;
-    if (this.props.translation) {
-      Mutation = UpdateTranslationMutation;
-      props = {
-        translation: this.props.translation,
-        set: {
-          translation: text,
-        },
-      };
-    } else {
-      Mutation = CreateTranslationMutation;
-      props = {
-        set: {
-          lang: this.props.lang,
-          keyId: this.props.theKey.id,
-          translation: text,
-        },
-      };
-    }
-    mutate({ description, Mutation, props });
+    if (!this.refInput) return;
+    this.refInput.validateAndGetValue()
+    .then(text => {
+      if (text === this.getInitialTranslation()) return;
+      const description = 'Commit translation edit';
+      let Mutation;
+      let props;
+      if (this.props.translation) {
+        Mutation = UpdateTranslationMutation;
+        props = {
+          translation: this.props.translation,
+          set: {
+            translation: text,
+          },
+        };
+      } else {
+        Mutation = CreateTranslationMutation;
+        props = {
+          set: {
+            lang: this.props.lang,
+            keyId: this.props.theKey.id,
+            translation: text,
+          },
+        };
+      }
+      mutate({ description, Mutation, props });
+    });
   }
 
   onClickCopyKey() {
-    this._refInput.setValue(this.props.theKey.text, () => this._refInput.focus());
+    this.setState({
+      cmds: [
+        { type: 'SET_VALUE', value: this.props.theKey.text },
+        { type: 'FOCUS' },
+      ],
+    });
   }
+
   onClickDelete() {
     mutate({
       description: 'Click on Delete translation',
