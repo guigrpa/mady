@@ -29,6 +29,7 @@ var pluralFuncs = {
 var fmt = {};
 
 return {
+  "someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}": function(d) { return plural(d.NUM, 0, pluralFuncs["ca-CA"], { one: function() { return "1 hamburguesa";}, other: function() { return number(d.NUM) + " hamburgueses";} }); },
   "tooltip_Convert translations to JavaScript files": function(d) { return "Convertir traduccions a fitxers javaScript"; },
   tooltip_Settings: function(d) { return "Ajustos"; },
   button_Delete: function(d) { return "Esborrar"; },
@@ -55,11 +56,11 @@ return {
   tooltip_Translations: function(d) { return "Traduccions"; },
   "tooltip_Delete translation": function(d) { return "Esborrar traducció"; },
   "translationHelp_Click outside or TAB to save. ESC to undo.": function(d) { return "Fes clic a fora o prem TAB per guardar. Prem ESC per desfer."; },
-  "tooltip_Copy message": function(d) { return "Copiar missatge"; },
   "hint_Got it!": function(d) { return "Entesos!"; },
   "hint_Add language column": function(d) { return "Afegir columna d'idioma"; },
   "hint_Configure Mady": function(d) { return "Configurar Mady"; },
-  "hint_Enjoy translating!": function(d) { return "Gaudeix traduint!"; }
+  "hint_Enjoy translating!": function(d) { return "Gaudeix traduint!"; },
+  "tooltip_Copy message": function(d) { return "Copiar missatge"; }
 }
 };
 module.exports = anonymous();

@@ -143,12 +143,6 @@
     "translation": "Haz clic fuera o pulsa TAB para guardar. Pulsa ESC para deshacer.",
     "keyId": "translationHelp_Click outside or TAB to save. ESC to undo."
   },
-  "4f9dedd6-f874-4326-915d-3b5806d15ce6": {
-    "id": "4f9dedd6-f874-4326-915d-3b5806d15ce6",
-    "lang": "es-ES",
-    "translation": "Ajustes",
-    "keyId": "tooltip_Settings"
-  },
   "ae7807cd-314e-4d0f-ad24-91d14ab048aa": {
     "id": "ae7807cd-314e-4d0f-ad24-91d14ab048aa",
     "lang": "es-ES",
@@ -190,5 +184,17 @@
     "lang": "es-ES",
     "translation": "¡Disfruta traduciendo!",
     "keyId": "hint_Enjoy translating!"
+  },
+  "80e0d18b-5f81-4e79-84e2-66335ac4b3ad": {
+    "id": "80e0d18b-5f81-4e79-84e2-66335ac4b3ad",
+    "lang": "es-ES",
+    "translation": "{NUM, plural, one{1 hamburguesa} other{# hamburguesas}}",
+    "keyId": "someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}"
+  },
+  "7735f763-6bb9-4008-a4d3-e07d4be5b7a3": {
+    "id": "7735f763-6bb9-4008-a4d3-e07d4be5b7a3",
+    "lang": "es-ES",
+    "translation": "Ajustes",
+    "keyId": "tooltip_Settings"
   }
 }

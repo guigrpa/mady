@@ -1,6 +1,7 @@
 - [-] Optimistic mutations
 - [-] SSR
-- [x] Use giu's input fields for its settings?
-- [ ] Add examples of MessageFormat messages to snapshot
+- [ ] **Bug**: ctrl-enter does not save!
+- [ ] Add some simple validation of MessageFormat translations
+- [ ] Use new HintScreen API when available
 - [ ] Allow configuration of translate function name (for parser), default _t
 - [ ] Add --build option to CLI

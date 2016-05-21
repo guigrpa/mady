@@ -155,12 +155,6 @@
     "translation": "Fes clic a fora o prem TAB per guardar. Prem ESC per desfer.",
     "keyId": "translationHelp_Click outside or TAB to save. ESC to undo."
   },
-  "fe529baa-c670-4a28-9f83-0a6c1a08078d": {
-    "id": "fe529baa-c670-4a28-9f83-0a6c1a08078d",
-    "lang": "ca-CA",
-    "translation": "Copiar missatge",
-    "keyId": "tooltip_Copy message"
-  },
   "199ed7b7-84e1-4709-9cd8-93a7d22d99aa": {
     "id": "199ed7b7-84e1-4709-9cd8-93a7d22d99aa",
     "lang": "ca-CA",
@@ -184,5 +178,17 @@
     "lang": "ca-CA",
     "translation": "Gaudeix traduint!",
     "keyId": "hint_Enjoy translating!"
+  },
+  "4fe4e93a-9b06-48ce-b7d4-131edd1d0dcd": {
+    "id": "4fe4e93a-9b06-48ce-b7d4-131edd1d0dcd",
+    "lang": "ca-CA",
+    "translation": "{NUM, plural, one{1 hamburguesa} other{# hamburgueses}}",
+    "keyId": "someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}"
+  },
+  "e390b021-2e70-4daa-b61c-1296992ce89f": {
+    "id": "e390b021-2e70-4daa-b61c-1296992ce89f",
+    "lang": "ca-CA",
+    "translation": "Copiar missatge",
+    "keyId": "tooltip_Copy message"
   }
 }

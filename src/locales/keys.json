@@ -301,5 +301,15 @@
     "sources": [
       "src/client/components/010-app.js"
     ]
+  },
+  "someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}": {
+    "id": "someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}",
+    "context": "someContext",
+    "text": "{NUM, plural, one{1 hamburger} other{# hamburgers}}",
+    "firstUsed": "2016-05-21T21:54:54.834Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/010-app.js"
+    ]
   }
 }

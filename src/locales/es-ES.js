@@ -24,6 +24,7 @@ var pluralFuncs = {
 var fmt = {};
 
 return {
+  "someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}": function(d) { return plural(d.NUM, 0, pluralFuncs["es-ES"], { one: function() { return "1 hamburguesa";}, other: function() { return number(d.NUM) + " hamburguesas";} }); },
   "tooltip_Convert translations to JavaScript files": function(d) { return "Convertir traducciones a ficheros JavaScript"; },
   "button_Copy key": function(d) { return ""; },
   button_Delete: function(d) { return "Borrar"; },
@@ -48,14 +49,14 @@ return {
   "tooltip_Copy message": function(d) { return "Copiar mensaje"; },
   "tooltip_Delete translation": function(d) { return "Borrar traducción"; },
   "translationHelp_Click outside or TAB to save. ESC to undo.": function(d) { return "Haz clic fuera o pulsa TAB para guardar. Pulsa ESC para deshacer."; },
-  tooltip_Settings: function(d) { return "Ajustes"; },
   columnTitle_Messages: function(d) { return "Mensajes"; },
   button_Save: function(d) { return "Guardar"; },
   msgDetailsView_until: function(d) { return "hasta"; },
   "hint_Got it!": function(d) { return "¡Entendido!"; },
   "hint_Add language column": function(d) { return "Añadir columna de idioma"; },
   "hint_Configure Mady": function(d) { return "Configurar Mady"; },
-  "hint_Enjoy translating!": function(d) { return "¡Disfruta traduciendo!"; }
+  "hint_Enjoy translating!": function(d) { return "¡Disfruta traduciendo!"; },
+  tooltip_Settings: function(d) { return "Ajustes"; }
 }
 };
 module.exports = anonymous();

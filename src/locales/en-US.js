@@ -29,6 +29,7 @@ var pluralFuncs = {
 var fmt = {};
 
 return {
+  "someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}": function(d) { return plural(d.NUM, 0, pluralFuncs["en-US"], { one: function() { return "1 hamburger";}, other: function() { return number(d.NUM) + " hamburgers";} }); }
 }
 };
 module.exports = anonymous();

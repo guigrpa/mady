@@ -17,6 +17,9 @@ import {
 }                           from '../gral/storage';
 require('./010-app.sass');
 
+// Example MessageFormat message with plural, so that it appears in the screenshot:
+// _t("someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}", { NUM: 1 }))
+
 // ==========================================
 // Relay fragments
 // ==========================================
@@ -64,7 +67,7 @@ class App extends React.Component {
       <div style={style.outer}>
         <Floats />
         <Hints />
-        <Header onShowSettings={this.showSettings} />
+        <Header onShowSettings={this.showSettings} onShowHelp={() => this.showHint(true)} />
         <Translator
           lang={this.state.lang}
           viewer={this.props.viewer}
@@ -103,7 +106,7 @@ class App extends React.Component {
   }
 
   // ------------------------------------------
-  showHint() {
+  showHint(fForce) {
     const labels = [];
     const arrows = [];
     const nodeSettings = document.getElementById('madyBtnSettings');
@@ -129,7 +132,7 @@ class App extends React.Component {
     }
     const closeLabel = _t('hint_Enjoy translating!');
     hintDefine('main', { labels, arrows, closeLabel });
-    hintShow('main');
+    hintShow('main', fForce);
   }
 }
 
