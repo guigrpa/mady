@@ -51,7 +51,11 @@ return {
   tooltip_Settings: function(d) { return "Ajustes"; },
   columnTitle_Messages: function(d) { return "Mensajes"; },
   button_Save: function(d) { return "Guardar"; },
-  msgDetailsView_until: function(d) { return "hasta"; }
+  msgDetailsView_until: function(d) { return "hasta"; },
+  "hint_Got it!": function(d) { return "¡Entendido!"; },
+  "hint_Add language column": function(d) { return "Añadir columna de idioma"; },
+  "hint_Configure Mady": function(d) { return "Configurar Mady"; },
+  "hint_Enjoy translating!": function(d) { return "¡Disfruta traduciendo!"; }
 }
 };
 module.exports = anonymous();

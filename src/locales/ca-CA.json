@@ -160,5 +160,29 @@
     "lang": "ca-CA",
     "translation": "Copiar missatge",
     "keyId": "tooltip_Copy message"
+  },
+  "199ed7b7-84e1-4709-9cd8-93a7d22d99aa": {
+    "id": "199ed7b7-84e1-4709-9cd8-93a7d22d99aa",
+    "lang": "ca-CA",
+    "translation": "Entesos!",
+    "keyId": "hint_Got it!"
+  },
+  "4087c83b-3ab9-4e20-a700-4eab5a70158d": {
+    "id": "4087c83b-3ab9-4e20-a700-4eab5a70158d",
+    "lang": "ca-CA",
+    "translation": "Afegir columna d'idioma",
+    "keyId": "hint_Add language column"
+  },
+  "a0876995-f4d3-4809-98dc-8e36b524c2a1": {
+    "id": "a0876995-f4d3-4809-98dc-8e36b524c2a1",
+    "lang": "ca-CA",
+    "translation": "Configurar Mady",
+    "keyId": "hint_Configure Mady"
+  },
+  "c5f69f15-5406-4623-bf99-643b95ac62ca": {
+    "id": "c5f69f15-5406-4623-bf99-643b95ac62ca",
+    "lang": "ca-CA",
+    "translation": "Gaudeix traduint!",
+    "keyId": "hint_Enjoy translating!"
   }
 }

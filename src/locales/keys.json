@@ -263,5 +263,43 @@
     "sources": [
       "src/client/components/080-settings.js"
     ]
+  },
+  "hint_Got it!": {
+    "id": "hint_Got it!",
+    "context": "hint",
+    "text": "Got it!",
+    "firstUsed": "2016-05-21T21:03:05.945Z",
+    "unusedSince": "2016-05-21T21:21:15.632Z",
+    "sources": []
+  },
+  "hint_Configure Mady": {
+    "id": "hint_Configure Mady",
+    "context": "hint",
+    "text": "Configure Mady",
+    "firstUsed": "2016-05-21T21:21:15.632Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/010-app.js"
+    ]
+  },
+  "hint_Add language column": {
+    "id": "hint_Add language column",
+    "context": "hint",
+    "text": "Add language column",
+    "firstUsed": "2016-05-21T21:21:15.632Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/010-app.js"
+    ]
+  },
+  "hint_Enjoy translating!": {
+    "id": "hint_Enjoy translating!",
+    "context": "hint",
+    "text": "Enjoy translating!",
+    "firstUsed": "2016-05-21T21:21:15.632Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/010-app.js"
+    ]
   }
 }

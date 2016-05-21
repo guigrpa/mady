@@ -166,5 +166,29 @@
     "lang": "es-ES",
     "translation": "hasta",
     "keyId": "msgDetailsView_until"
+  },
+  "1b8a4bb6-1ac7-4b4c-bdbd-ac655cea675d": {
+    "id": "1b8a4bb6-1ac7-4b4c-bdbd-ac655cea675d",
+    "lang": "es-ES",
+    "translation": "¡Entendido!",
+    "keyId": "hint_Got it!"
+  },
+  "58b37477-173e-4e10-a4e8-834cdc1e78c7": {
+    "id": "58b37477-173e-4e10-a4e8-834cdc1e78c7",
+    "lang": "es-ES",
+    "translation": "Añadir columna de idioma",
+    "keyId": "hint_Add language column"
+  },
+  "ebde6828-792b-4806-bc6e-ff7032eb11a6": {
+    "id": "ebde6828-792b-4806-bc6e-ff7032eb11a6",
+    "lang": "es-ES",
+    "translation": "Configurar Mady",
+    "keyId": "hint_Configure Mady"
+  },
+  "8383eadf-a1e8-4fd1-b2e3-8abb58c603aa": {
+    "id": "8383eadf-a1e8-4fd1-b2e3-8abb58c603aa",
+    "lang": "es-ES",
+    "translation": "¡Disfruta traduciendo!",
+    "keyId": "hint_Enjoy translating!"
   }
 }
