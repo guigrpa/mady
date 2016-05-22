@@ -1,4 +1,6 @@
+/* eslint-disable global-require */
 const Cookie = !process.env.SERVER_SIDE_RENDERING && require('tiny-cookie');
+/* eslint-enable global-require */
 const NAMESPACE = 'mady';
 
 function localGet(key, options = {}) {

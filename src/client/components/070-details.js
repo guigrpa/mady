@@ -41,7 +41,7 @@ class Details extends React.Component {
   }
 
   render() {
-    this._theKey = this.props.viewer.anyNode;
+    this.theKey = this.props.viewer.anyNode;
     return (
       <div style={style.outer}>
         <div style={style.title}>
@@ -56,7 +56,7 @@ class Details extends React.Component {
     if (this.props.selectedKeyId == null) {
       return <LargeMessage>{_t('msgDetailsView_No message selected')}</LargeMessage>;
     }
-    if (!this._theKey) {
+    if (!this.theKey) {
       return <LargeMessage><Icon icon="circle-o-notch" /></LargeMessage>;
     }
     return (
@@ -67,7 +67,7 @@ class Details extends React.Component {
   }
 
   renderSources() {
-    const { sources, firstUsed, unusedSince } = this._theKey;
+    const { sources, firstUsed, unusedSince } = this.theKey;
     const since = this.renderDate(firstUsed);
     const until = unusedSince
       ? <span> {_t('msgDetailsView_until')} {this.renderDate(unusedSince)}</span>

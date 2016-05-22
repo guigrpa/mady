@@ -17,6 +17,7 @@ let webpack;
 let webpackDevMiddleware;
 let webpackHotMiddleware;
 let webpackConfig;
+/* eslint-disable global-require */
 if (process.env.NODE_ENV !== 'production') {
   webpack              = require('webpack');
   webpackDevMiddleware = require('webpack-dev-middleware');
@@ -25,11 +26,14 @@ if (process.env.NODE_ENV !== 'production') {
 }
 let ssr = null;
 try {
+  /* eslint-disable import/no-unresolved */
   ssr = require('../../lib/server/ssr/ssr.bundle');
+  /* eslint-disable import/no-unresolved */
   mainStory.info('http', 'Loaded SSR module successfully');
 } catch (err) {
   mainStory.warn('http', 'No SSR module available');
 }
+/* eslint-enable global-require */
 
 const ASSET_PATH = '../../public';
 const LOCALE_PATH = '../locales';

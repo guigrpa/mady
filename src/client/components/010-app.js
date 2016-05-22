@@ -3,7 +3,7 @@ import Relay                from 'react-relay';
 import moment               from 'moment';
 import {
   bindAll,
-  Floats, Hints,
+  Floats, Hints, Notifications,
   hintDefine, hintShow,
 }                           from 'giu';
 import _t                   from '../../translate';
@@ -66,6 +66,7 @@ class App extends React.Component {
     return (
       <div style={style.outer}>
         <Floats />
+        <Notifications />
         <Hints />
         <Header onShowSettings={this.showSettings} />
         <Translator
@@ -79,8 +80,7 @@ class App extends React.Component {
           viewer={this.props.viewer}
           selectedKeyId={this.state.selectedKeyId}
         />
-        {
-          this.state.fSettingsShown &&
+        {this.state.fSettingsShown &&
           <Settings
             lang={this.state.lang}
             viewer={this.props.viewer}
@@ -98,11 +98,13 @@ class App extends React.Component {
   hideSettings() { this.setState({ fSettingsShown: false }); }
   onChangeLang(lang) {
     cookieSet('lang', lang);
+    /* eslint-disable global-require */
     require(`bundle!../../locales/${lang}.js`)(locales => {
       _t.setLocales(locales);
       moment.locale(lang);
       this.setState({ lang });
     });
+    /* eslint-enable global-require */
   }
 
   // ------------------------------------------

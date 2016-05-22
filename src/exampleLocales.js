@@ -1,5 +1,5 @@
 import _t from './translate';
-import locales from '../locales/es-ES';
+import locales from './locales/es-ES';
 
 _t.setLocales(locales);
 

@@ -8,6 +8,7 @@ import {
   Icon,
   Select, Checkbox, TextInput,
   Modal,
+  notify,
 }                           from 'giu';
 import _t                   from '../../translate';
 import {
@@ -202,7 +203,11 @@ class Settings extends React.Component {
       Mutation: UpdateConfigMutation,
       props: { viewer, set, unset: [] },
       onSuccess: () => this.props.onClose(),
-      onFailure: () => alert('Configuration could not be saved'),
+      onFailure: () => notify({
+        msg: 'Configuration could not be saved',
+        type: 'error',
+        icon: 'save',
+      }),
     });
   }
 }

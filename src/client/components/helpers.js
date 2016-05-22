@@ -40,4 +40,4 @@ function mutate(options) {
 
 export {
   mutate,
-}
+};

@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 const storyboard = require('storyboard');
 try {
   const getBabelRelayPlugin = require('babel-relay-plugin');
@@ -6,3 +7,4 @@ try {
 } catch (err) {
   storyboard.mainStory.warn('babelRelayPlugin', 'Could not load babel-relay-plugin');
 }
+/* eslint-enable global-require */

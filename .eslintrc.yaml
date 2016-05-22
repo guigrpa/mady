@@ -10,11 +10,7 @@ rules:
     - error
     - allowShortCircuit: true
   no-use-before-define: off
-  no-multi-spaces:
-    - warn
-    - exceptions:
-        VariableDeclarator: true
-        ImportDeclaration: true
+  no-multi-spaces: off
   no-nested-ternary: off
   no-cond-assign:
     - error
@@ -26,3 +22,8 @@ rules:
       afterColon: true
       mode: 'minimum'
   react/sort-comp: off
+  react/jsx-first-prop-new-line: off
+  react/jsx-indent: off
+  react/jsx-indent-props: off
+  react/jsx-closing-bracket-location: off
+  no-underscore-dangle: off

@@ -11,32 +11,30 @@ import { COLORS }           from '../gral/constants';
 // ==========================================
 // Component
 // ==========================================
-class Header extends React.Component {
-  static propTypes = {
-    onShowSettings:         React.PropTypes.func.isRequired,
-  };
+const PROP_TYPES = {
+  onShowSettings:         React.PropTypes.func.isRequired,
+};
 
-  render() {
-    return (
-      <div style={style.outer}>
-        <div style={style.spacer} />
-        <div style={style.title}>
-          MADY
-          <Icon
-            id="madyBtnSettings"
-            icon="cog"
-            title={_t('tooltip_Settings')}
-            onClick={this.props.onShowSettings}
-            style={style.icon}
-          />
-        </div>
-        <div style={merge(style.spacer, style.help)}>
-          <Icon icon="question-circle" onClick={() => hintShow('main', true)} />
-        </div>
-      </div>
-    );
-  }
-}
+const Header = ({ onShowSettings }) => (
+  <div style={style.outer}>
+    <div style={style.spacer} />
+    <div style={style.title}>
+      MADY
+      <Icon
+        id="madyBtnSettings"
+        icon="cog"
+        title={_t('tooltip_Settings')}
+        onClick={onShowSettings}
+        style={style.icon}
+      />
+    </div>
+    <div style={merge(style.spacer, style.help)}>
+      <Icon icon="question-circle" onClick={() => hintShow('main', true)} />
+    </div>
+  </div>
+);
+
+Header.propTypes = PROP_TYPES;
 
 // ==========================================
 // Styles
