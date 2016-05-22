@@ -196,5 +196,11 @@
     "lang": "es-ES",
     "translation": "Ajustes",
     "keyId": "tooltip_Settings"
+  },
+  "98a58f81-c529-4dba-9dd4-bf401d2b2fc3": {
+    "id": "98a58f81-c529-4dba-9dd4-bf401d2b2fc3",
+    "lang": "es-ES",
+    "translation": "el número de llaves abiertas y cerradas no coincide",
+    "keyId": "validation_the number of left and right brackets does not match"
   }
 }

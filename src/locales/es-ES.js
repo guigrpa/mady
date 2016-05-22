@@ -56,7 +56,8 @@ return {
   "hint_Add language column": function(d) { return "Añadir columna de idioma"; },
   "hint_Configure Mady": function(d) { return "Configurar Mady"; },
   "hint_Enjoy translating!": function(d) { return "¡Disfruta traduciendo!"; },
-  tooltip_Settings: function(d) { return "Ajustes"; }
+  tooltip_Settings: function(d) { return "Ajustes"; },
+  "validation_the number of left and right brackets does not match": function(d) { return "el número de llaves abiertas y cerradas no coincide"; }
 }
 };
 module.exports = anonymous();

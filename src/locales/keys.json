@@ -311,5 +311,15 @@
     "sources": [
       "src/client/components/010-app.js"
     ]
+  },
+  "validation_the number of left and right brackets does not match": {
+    "id": "validation_the number of left and right brackets does not match",
+    "context": "validation",
+    "text": "the number of left and right brackets does not match",
+    "firstUsed": "2016-05-22T06:18:10.874Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/062-translation.js"
+    ]
   }
 }

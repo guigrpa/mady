@@ -60,7 +60,8 @@ return {
   "hint_Add language column": function(d) { return "Afegir columna d'idioma"; },
   "hint_Configure Mady": function(d) { return "Configurar Mady"; },
   "hint_Enjoy translating!": function(d) { return "Gaudeix traduint!"; },
-  "tooltip_Copy message": function(d) { return "Copiar missatge"; }
+  "tooltip_Copy message": function(d) { return "Copiar missatge"; },
+  "validation_the number of left and right brackets does not match": function(d) { return "el nombre de claus obertes i tancades no coincideix"; }
 }
 };
 module.exports = anonymous();

@@ -190,5 +190,11 @@
     "lang": "ca-CA",
     "translation": "Copiar missatge",
     "keyId": "tooltip_Copy message"
+  },
+  "ee4c914f-b3e8-4ea8-ae65-42db5841013f": {
+    "id": "ee4c914f-b3e8-4ea8-ae65-42db5841013f",
+    "lang": "ca-CA",
+    "translation": "el nombre de claus obertes i tancades no coincideix",
+    "keyId": "validation_the number of left and right brackets does not match"
   }
 }

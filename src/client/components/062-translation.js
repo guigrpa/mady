@@ -20,7 +20,7 @@ const validateTranslation = val => {
   const numClose = val.split('}').length - 1;
   return numOpen === numClose
     ? undefined
-    : _t('validation_the number of { should match the number of }');
+    : _t('validation_the number of left and right brackets does not match');
 };
 
 // ==========================================
