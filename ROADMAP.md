@@ -1,6 +1,8 @@
 - [-] Optimistic mutations
 - [-] SSR
-- [ ] **Bug**: ctrl-enter does not save!
+- [ ] Remove debounce for compilation
+- [ ] Show progress during mutation
+- [ ] Show errors after mutation
 - [ ] Allow unicode escape sequences in messages and translations
 - [ ] Allow configuration of translate function name (for parser), default _t
 - [ ] Add --build option to CLI

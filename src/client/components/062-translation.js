@@ -1,5 +1,7 @@
 import React                from 'react';
 import Relay                from 'react-relay';
+import MessageFormat        from 'messageformat';
+import { mainStory }        from 'storyboard';
 import {
   bindAll, cancelEvent,
   Icon, Textarea,
@@ -15,12 +17,20 @@ import {
 import { COLORS }           from '../gral/constants';
 import { mutate }           from './helpers';
 
-const validateTranslation = val => {
+const validateTranslation = lang => val => {
   const numOpen = val.split('{').length - 1;
   const numClose = val.split('}').length - 1;
-  return numOpen === numClose
-    ? undefined
-    : _t('validation_the number of left and right brackets does not match');
+  if (numOpen !== numClose) {
+    return _t('validation_the number of left and right brackets does not match');
+  }
+  const mf = new MessageFormat(lang);
+  try {
+    mf.compile(val);
+  } catch (err) {
+    const msg = _t('validation_MessageFormat syntax error');
+    return `${msg}: ${err.message}`;
+  }
+  return undefined;
 };
 
 // ==========================================
@@ -94,13 +104,13 @@ class Translation extends React.Component {
   }
 
   renderTranslation() {
-    const { translation } = this.props;
+    const { lang, translation } = this.props;
     const { cmds } = this.state;
     // const fUpdating = translation && relay.hasOptimisticUpdate(translation);
     return (
       <Textarea ref={c => { this.refInput = c; }}
         value={translation ? translation.translation : null}
-        validators={[validateTranslation]}
+        validators={[validateTranslation(lang)]}
         onFocus={this.onFocus}
         onBlur={this.onBlur}
         onKeyDown={this.onKeyDown}
@@ -170,7 +180,10 @@ class Translation extends React.Component {
 
   onBlur() {
     this.setState({ fEditing: false });
-    if (!this.refInput) return;
+    if (!this.refInput) {
+      mainStory.warn('translation', 'Could not save translation');
+      return;
+    }
     this.refInput.validateAndGetValue()
     .then(text => {
       if (text === this.getInitialTranslation()) return;
