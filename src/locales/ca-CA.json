@@ -196,5 +196,11 @@
     "lang": "ca-CA",
     "translation": "el nombre de claus obertes i tancades no coincideix",
     "keyId": "validation_the number of left and right brackets does not match"
+  },
+  "e9eeaa32-7f10-4cef-bbd6-eaf0387687bb": {
+    "id": "e9eeaa32-7f10-4cef-bbd6-eaf0387687bb",
+    "lang": "ca-CA",
+    "translation": "Error de sintaxi MessageFormat",
+    "keyId": "validation_MessageFormat syntax error"
   }
 }

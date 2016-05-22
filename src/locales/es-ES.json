@@ -202,5 +202,11 @@
     "lang": "es-ES",
     "translation": "el número de llaves abiertas y cerradas no coincide",
     "keyId": "validation_the number of left and right brackets does not match"
+  },
+  "4bb37f3b-f610-4868-a6fd-75e31fc97c8b": {
+    "id": "4bb37f3b-f610-4868-a6fd-75e31fc97c8b",
+    "lang": "es-ES",
+    "translation": "Error de sintaxis MessageFormat",
+    "keyId": "validation_MessageFormat syntax error"
   }
 }

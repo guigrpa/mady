@@ -321,5 +321,15 @@
     "sources": [
       "src/client/components/062-translation.js"
     ]
+  },
+  "validation_MessageFormat syntax error": {
+    "id": "validation_MessageFormat syntax error",
+    "context": "validation",
+    "text": "MessageFormat syntax error",
+    "firstUsed": "2016-05-22T14:02:36.806Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/062-translation.js"
+    ]
   }
 }

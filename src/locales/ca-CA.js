@@ -61,7 +61,8 @@ return {
   "hint_Configure Mady": function(d) { return "Configurar Mady"; },
   "hint_Enjoy translating!": function(d) { return "Gaudeix traduint!"; },
   "tooltip_Copy message": function(d) { return "Copiar missatge"; },
-  "validation_the number of left and right brackets does not match": function(d) { return "el nombre de claus obertes i tancades no coincideix"; }
+  "validation_the number of left and right brackets does not match": function(d) { return "el nombre de claus obertes i tancades no coincideix"; },
+  "validation_MessageFormat syntax error": function(d) { return "Error de sintaxi MessageFormat"; }
 }
 };
 module.exports = anonymous();
