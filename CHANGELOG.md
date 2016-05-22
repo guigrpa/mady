@@ -1,6 +1,6 @@
 # Changelog
 
-* [M] Migrate to Giu v0.3.x.
+* [M] Migrate to Giu v0.4.x.
 * [M] **Add hint screen**.
 
 ## 1.0.4 (May 2, 2016)

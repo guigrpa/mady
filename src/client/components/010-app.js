@@ -67,7 +67,7 @@ class App extends React.Component {
       <div style={style.outer}>
         <Floats />
         <Hints />
-        <Header onShowSettings={this.showSettings} onShowHelp={() => this.showHint(true)} />
+        <Header onShowSettings={this.showSettings} />
         <Translator
           lang={this.state.lang}
           viewer={this.props.viewer}
@@ -107,31 +107,39 @@ class App extends React.Component {
 
   // ------------------------------------------
   showHint(fForce) {
-    const labels = [];
-    const arrows = [];
-    const nodeSettings = document.getElementById('madyBtnSettings');
-    if (nodeSettings) {
-      const bcr = nodeSettings.getBoundingClientRect();
-      const x = window.innerWidth / 2;
-      labels.push({ x, y: 70, align: 'center', children: _t('hint_Configure Mady') });
-      arrows.push({
-        from: { x, y: 70 },
-        to: { x: bcr.left - 5, y: (bcr.top + bcr.bottom) / 2 },
-      });
-    }
-    const nodeAddLang = document.getElementById('madyBtnAddLang');
-    if (nodeAddLang) {
-      const bcr = nodeAddLang.getBoundingClientRect();
-      const x = window.innerWidth - 50;
-      labels.push({ x, y: 140, align: 'right', children: _t('hint_Add language column') });
-      arrows.push({
-        from: { x, y: 140 },
-        to: { x: (bcr.left + bcr.right) / 2, y: bcr.bottom },
-        counterclockwise: true,
-      });
-    }
+    const elements = () => {
+      const out = [];
+      const nodeSettings = document.getElementById('madyBtnSettings');
+      if (nodeSettings) {
+        const bcr = nodeSettings.getBoundingClientRect();
+        const x = window.innerWidth / 2;
+        out.push({
+          type: 'LABEL', x, y: 70, align: 'center',
+          children: _t('hint_Configure Mady'),
+        });
+        out.push({
+          type: 'ARROW', from: { x, y: 70 },
+          to: { x: bcr.left - 5, y: (bcr.top + bcr.bottom) / 2 },
+        });
+      }
+      const nodeAddLang = document.getElementById('madyBtnAddLang');
+      if (nodeAddLang) {
+        const bcr = nodeAddLang.getBoundingClientRect();
+        const x = window.innerWidth - 50;
+        out.push({
+          type: 'LABEL', x, y: 140, align: 'right',
+          children: _t('hint_Add language column'),
+        });
+        out.push({
+          type: 'ARROW', from: { x, y: 140 },
+          to: { x: (bcr.left + bcr.right) / 2, y: bcr.bottom },
+          counterclockwise: true,
+        });
+      }
+      return out;
+    };
     const closeLabel = _t('hint_Enjoy translating!');
-    hintDefine('main', { labels, arrows, closeLabel });
+    hintDefine('main', { elements, closeLabel });
     hintShow('main', fForce);
   }
 }

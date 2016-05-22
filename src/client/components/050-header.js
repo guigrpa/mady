@@ -14,7 +14,6 @@ import { COLORS }           from '../gral/constants';
 class Header extends React.Component {
   static propTypes = {
     onShowSettings:         React.PropTypes.func.isRequired,
-    onShowHelp:             React.PropTypes.func.isRequired,
   };
 
   render() {
@@ -32,7 +31,7 @@ class Header extends React.Component {
           />
         </div>
         <div style={merge(style.spacer, style.help)}>
-          <Icon icon="question-circle" onClick={this.props.onShowHelp} />
+          <Icon icon="question-circle" onClick={() => hintShow('main', true)} />
         </div>
       </div>
     );
