@@ -2,7 +2,6 @@ import path                 from 'path';
 import fs                   from 'fs-extra';
 import timm                 from 'timm';
 import { mainStory, chalk } from 'storyboard';
-import { debounce }         from 'lodash';
 import uuid                 from 'node-uuid';
 import parse                from './parseSources';
 import compile              from './compileTranslations';
@@ -14,8 +13,6 @@ const DEFAULT_CONFIG = {
   langs: ['en-US'],
   fMinify: false,
 };
-
-const DEBOUNCE_COMPILE = 1000;     // [ms]
 
 // ==============================================
 // Init
@@ -73,7 +70,7 @@ function updateConfig(newAttrs, { story }) {
   _config = timm.merge(_config, newAttrs);
   story.debug('db', 'New config:', { attach: _config });
   saveConfig({ story });
-  compileTranslations();
+  compileTranslations({ story });
   return _config;
 }
 
@@ -175,7 +172,7 @@ function parseSrcFiles({ story }) {
   }
 
   saveKeys({ story });
-  compileTranslations();
+  compileTranslations({ story });
   return _keys;
 }
 
@@ -254,14 +251,14 @@ function createTranslation(newAttrs, { story }) {
   const id = uuid.v4();
   _translations[id] = { id, lang, translation, keyId };
   saveTranslations(lang, { story });
-  compileTranslations();
+  compileTranslations({ story });
   return _translations[id];
 }
 
 function updateTranslation(id, newAttrs, { story }) {
   _translations[id] = timm.merge(_translations[id], newAttrs);
   saveTranslations(_translations[id].lang, { story });
-  compileTranslations();
+  compileTranslations({ story });
   return _translations[id];
 }
 
@@ -270,15 +267,15 @@ function deleteTranslation(id, { story }) {
   const { lang } = _translations[id];
   delete _translations[id];
   saveTranslations(lang, { story });
-  compileTranslations();
+  compileTranslations({ story });
   return item;
 }
 
-function _compileTranslations() {
-  const story = mainStory.child({
+function compileTranslations({ story: baseStory } = {}) {
+  const story = (baseStory || mainStory).child({
     src: 'db',
     title: 'Compile translations',
-  })
+  });
   for (const lang of _config.langs) {
     const compiledLangPath = getCompiledLangPath(lang);
     const translations = getLangTranslations(lang);
@@ -296,7 +293,6 @@ function _compileTranslations() {
   }
   story.close();
 }
-const compileTranslations = debounce(_compileTranslations, DEBOUNCE_COMPILE);
 
 // ==============================================
 // Merge keys and translations from old stores

@@ -1,6 +1,6 @@
 - [-] Optimistic mutations
 - [-] SSR
-- [ ] Remove debounce for compilation
+- [x] Remove debounce for compilation
 - [ ] Show progress during mutation
 - [ ] Show errors after mutation
 - [ ] Allow unicode escape sequences in messages and translations
