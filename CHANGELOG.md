@@ -1,5 +1,7 @@
 # Changelog
 
+## 1.1.0 (May 22, 2016)
+
 * [M] Migrate to Giu v0.4.x.
 * [M] **Add hint screen**.
 * Can now press alt-return to commit translation
