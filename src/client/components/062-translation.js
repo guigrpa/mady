@@ -15,6 +15,14 @@ import {
 import { COLORS }           from '../gral/constants';
 import { mutate }           from './helpers';
 
+const validateTranslation = val => {
+  const numOpen = val.split('{').length - 1;
+  const numClose = val.split('}').length - 1;
+  return numOpen === numClose
+    ? undefined
+    : _t('validation_the number of { should match the number of }');
+};
+
 // ==========================================
 // Relay fragments
 // ==========================================
@@ -92,6 +100,7 @@ class Translation extends React.Component {
     return (
       <Textarea ref={c => { this.refInput = c; }}
         value={translation ? translation.translation : null}
+        validators={[validateTranslation]}
         onFocus={this.onFocus}
         onBlur={this.onBlur}
         onKeyDown={this.onKeyDown}

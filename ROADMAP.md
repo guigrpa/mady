@@ -1,6 +1,5 @@
 - [-] Optimistic mutations
 - [-] SSR
 - [ ] **Bug**: ctrl-enter does not save!
-- [ ] Add some simple validation of MessageFormat translations
 - [ ] Allow configuration of translate function name (for parser), default _t
 - [ ] Add --build option to CLI
