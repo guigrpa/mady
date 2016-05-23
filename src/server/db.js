@@ -1,4 +1,5 @@
 import path                 from 'path';
+import Promise              from 'bluebird';
 import fs                   from 'fs-extra';
 import timm                 from 'timm';
 import { mainStory, chalk } from 'storyboard';
@@ -126,6 +127,9 @@ function updateKey(id, newAttrs) {
 }
 
 function deleteKey(id) {
+  console.log('Remove active wait...')
+  let i = 0;
+  while (i++ < 1.5e9) {}
   const item = _keys[id];
   delete _keys[id];
   saveKeys();

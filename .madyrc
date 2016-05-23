@@ -1,4 +1,4 @@
 {
-  "localeDir": "src/locales",
+  "localeDir": "tools/locales",
   "port": 8080
 }

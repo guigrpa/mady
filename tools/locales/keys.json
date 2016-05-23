@@ -1,0 +1,12 @@
+{
+  "hello_there": {
+    "id": "hello_there",
+    "context": "hello",
+    "text": "there",
+    "firstUsed": "2016-05-23T13:47:59.337Z",
+    "unusedSince": null,
+    "sources": [
+      "tools/js/exampleLocales.js"
+    ]
+  }
+}

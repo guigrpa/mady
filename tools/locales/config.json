@@ -1,0 +1,13 @@
+{
+  "srcPaths": [
+    "tools/js"
+  ],
+  "srcExtensions": [
+    ".js",
+    ".jsx"
+  ],
+  "langs": [
+    "en-US"
+  ],
+  "fMinify": false
+}

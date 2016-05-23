@@ -1,4 +1,4 @@
-- [-] Optimistic mutations
+- [-] Optimistic mutations: check response in http://stackoverflow.com/questions/36664385/optimistic-update-for-a-deletion-mutation
 - [-] SSR
 - [x] Remove debounce for compilation
 - [ ] Allow unicode escape sequences in messages and translations
