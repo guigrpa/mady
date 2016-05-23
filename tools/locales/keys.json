@@ -3,7 +3,7 @@
     "id": "hello_there",
     "context": "hello",
     "text": "there",
-    "firstUsed": "2016-05-23T13:47:59.337Z",
+    "firstUsed": "2016-05-23T20:03:05.596Z",
     "unusedSince": null,
     "sources": [
       "tools/js/exampleLocales.js"

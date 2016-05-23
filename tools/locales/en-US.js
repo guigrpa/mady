@@ -29,6 +29,7 @@ var pluralFuncs = {
 var fmt = {};
 
 return {
+  hello_there: function(d) { return "qwerf"; }
 }
 };
 module.exports = anonymous();

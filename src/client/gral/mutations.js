@@ -146,9 +146,10 @@ export class DeleteKeyMutation extends Relay.Mutation {
   /*
   getOptimisticResponse() {
     const prevEdges = this.props.viewer.keys.edges;
-    const edges = filter(prevEdges, ({ node }) => node.id !== this.props.id);
-    // console.log(`${prevEdges.length} -> ${edges.length}`)
-    return {
+    console.log(prevEdges.length)
+    const edges = prevEdges.filter(({ node }) => node.id !== this.props.id);
+    console.log(this.props.viewer.id)
+    const out = {
       viewer: {
         id: this.props.viewer.id,
         keys: {
@@ -156,6 +157,8 @@ export class DeleteKeyMutation extends Relay.Mutation {
         },
       },
     };
+    console.log(out);
+    return out;
   }
   */
   getCollisionKey() { return this.props.id; }
@@ -237,6 +240,8 @@ export class UpdateTranslationMutation extends Relay.Mutation {
   getOptimisticResponse() {
     const { translation, set, unset } = this.props;
     const nextTranslation = applySetUnset(translation, set, unset);
+    nextTranslation.translation = 'TEMPORARY';
+    console.log('optimistic translation update', nextTranslation)
     return { translation: nextTranslation };
   }
   getCollisionKey() { return this.props.id; }
