@@ -49,10 +49,10 @@ const fragments = {
           lang
         }}}
       }}}
-      ${ParseSrcFilesMutation.getFragment('viewer')}
       ${TranslatorRow.getFragment('viewer')}
     }
   `,
+//      ${ParseSrcFilesMutation.getFragment('viewer')}
 };
 
 // ------------------------------------------

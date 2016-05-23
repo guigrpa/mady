@@ -27,10 +27,10 @@ const fragments = {
   viewer: () => Relay.QL`
     fragment on Viewer {
       ${Translator.getFragment('viewer')}
-      ${Settings.getFragment('viewer')}
-      ${Details.getFragment('viewer')}
     }
   `,
+//      ${Settings.getFragment('viewer')}
+//      ${Details.getFragment('viewer')}
 };
 const initialVariables = {
   selectedKeyId: null,
@@ -68,19 +68,19 @@ class App extends React.Component {
         <Floats />
         <Notifications />
         <Hints />
-        <Header onShowSettings={this.showSettings} />
+        {false && <Header onShowSettings={this.showSettings} />}
         <Translator
           lang={this.state.lang}
           viewer={this.props.viewer}
           selectedKeyId={this.state.selectedKeyId}
           changeSelectedKey={this.changeSelectedKey}
         />
-        <Details
+        {false && <Details
           lang={this.state.lang}
           viewer={this.props.viewer}
           selectedKeyId={this.state.selectedKeyId}
-        />
-        {this.state.fSettingsShown &&
+        />}
+        {false && this.state.fSettingsShown &&
           <Settings
             lang={this.state.lang}
             viewer={this.props.viewer}
