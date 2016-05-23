@@ -1,3 +1,4 @@
+/* eslint-disable strict, indent, max-len, quote-props */
 'use strict';
 
 // ===============================================
@@ -66,7 +67,8 @@ const specs = {
   scripts: {
 
     // Top-level
-    start:                      'babel-node src/server/startup',
+    start:                      'babel-node src/server/startup --dir src/locales',
+    startAlt:                   'babel-node src/server/startup --dir tools/locales',
     startProd:                  'node lib/mady',
     compile:                    runMultiple([
                                   'rm -rf ./lib',
@@ -147,7 +149,7 @@ const specs = {
     lodash: '^4.8.2',
     inquirer: '^1.0.0',
     commander: '^2.9.0',
-    "node-uuid": "1.4.7",
+    'node-uuid': '1.4.7',
     bluebird: '^3.3.4',
     'fs-extra': '^0.28.0',
     'diveSync': '0.3.0',
@@ -258,3 +260,5 @@ specs.dependencies = _sortDeps(specs.dependencies);
 specs.devDependencies = _sortDeps(specs.devDependencies);
 const packageJson = `${JSON.stringify(specs, null, '  ')}\n`;
 require('fs').writeFileSync('package.json', packageJson);
+
+/* eslint-enable strict, indent, max-len, quote-props */

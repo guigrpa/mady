@@ -27,7 +27,8 @@
     "url": "git+https://github.com/guigrpa/mady.git"
   },
   "scripts": {
-    "start": "babel-node src/server/startup",
+    "start": "babel-node src/server/startup --dir src/locales",
+    "startAlt": "babel-node src/server/startup --dir tools/locales",
     "startProd": "node lib/mady",
     "compile": "rm -rf ./lib && mkdir lib && babel -d lib src",
     "updateSchemaJson": "babel-node src/server/gqlUpdateSchema",
