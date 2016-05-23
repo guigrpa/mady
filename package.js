@@ -88,6 +88,7 @@ const specs = {
                                   'npm run buildClient',
                                   'npm run test',
                                   'npm run docs',
+                                  'npm run xxl',
                                 ]),
     travis:                     runMultiple([
                                   'npm run compile',
@@ -98,6 +99,7 @@ const specs = {
     lint:                       'eslint src',
     flow:                       'flow && test $? -eq 0 -o $? -eq 2',
     flowStop:                   'flow stop',
+    xxl:                        "xxl --src \"[\\\"src\\\"]\"",
 
     // Testing - general
     test:                       'npm run testCovFull',
@@ -159,10 +161,10 @@ const specs = {
     compression: '1.6.1',
 
     // GraphQL
-    graphql:              '0.5.0',
-    'graphql-relay':      '0.4.1',
-    'express-graphql':    '0.5.1',
-    'babel-relay-plugin': '0.8.0',
+    graphql: '0.5.0',
+    'graphql-relay': '0.4.1',
+    'express-graphql': '0.5.1',
+    'babel-relay-plugin': '0.8.1',
   },
 
   devDependencies: {
@@ -173,11 +175,11 @@ const specs = {
     giu: '^0.4.0',
 
     // React
-    react:                            '15.0.2',
-    'react-dom':                      '15.0.2',
-    'react-addons-pure-render-mixin': '15.0.2',
-    'react-addons-perf':              '15.0.2',
-    'react-relay':        '0.8.0',
+    react:                            '15.1.0',
+    'react-dom':                      '15.1.0',
+    'react-addons-pure-render-mixin': '15.1.0',
+    'react-addons-perf':              '15.1.0',
+    'react-relay': '0.8.1',
 
     // Miscellaneous
     'font-awesome': '4.6.1',
@@ -211,7 +213,7 @@ const specs = {
     'extract-text-webpack-plugin': '1.0.1',
 
     // Linting
-    eslint: '^2.4.0',
+    eslint: '^2.9.0',
     'eslint-config-airbnb': '^9.0.0',
     'eslint-plugin-flowtype': '^2.2.2',
     'eslint-plugin-react': '^5.1.1',
@@ -226,6 +228,7 @@ const specs = {
 
     // Other tools
     'extract-docs': '^1.0.0',
+    'xxl': '^0.1.0',
     'cross-env': '^1.0.7',
     'flow-bin': '^0.23.0',
   },
