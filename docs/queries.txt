@@ -1,0 +1,13 @@
+query RootQueries { viewer { id, ...F4 } }
+fragment F0 on Key { id, context, text, unusedSince }
+fragment F1 on Viewer { id, _keysOtBLz: keys(first: 100000) { edges { node { id }, cursor }, pageInfo { hasNextPage, hasPreviousPage } } }
+fragment F2 on Viewer { id, ...F1 }
+fragment F3 on Viewer { config { langs, id }, _keysOtBLz: keys(first: 100000) { edges { node { id, unusedSince, context, text, _translationsRb29x: translations(first: 100000) { edges { node { lang, id }, cursor }, pageInfo { hasNextPage, hasPreviousPage } }, ...F0 }, cursor }, pageInfo { hasNextPage, hasPreviousPage } }, id, ...F2 }
+fragment F4 on Viewer { id, ...F3 }
+
+
+
+App - F4
+Translator - F3
+TranslatorRow - F0 (key), F2 (Viewer)
+DeleteKeyMutation - F1
