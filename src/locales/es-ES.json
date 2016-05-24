@@ -161,12 +161,6 @@
     "translation": "hasta",
     "keyId": "msgDetailsView_until"
   },
-  "1b8a4bb6-1ac7-4b4c-bdbd-ac655cea675d": {
-    "id": "1b8a4bb6-1ac7-4b4c-bdbd-ac655cea675d",
-    "lang": "es-ES",
-    "translation": "¡Entendido!",
-    "keyId": "hint_Got it!"
-  },
   "58b37477-173e-4e10-a4e8-834cdc1e78c7": {
     "id": "58b37477-173e-4e10-a4e8-834cdc1e78c7",
     "lang": "es-ES",
@@ -208,5 +202,11 @@
     "lang": "es-ES",
     "translation": "Error de sintaxis MessageFormat",
     "keyId": "validation_MessageFormat syntax error"
+  },
+  "e1eeaa63-e42f-4195-b1af-c9ab278682bd": {
+    "id": "e1eeaa63-e42f-4195-b1af-c9ab278682bd",
+    "lang": "es-ES",
+    "translation": "¡Entendido!",
+    "keyId": "hint_Got it!"
   }
 }

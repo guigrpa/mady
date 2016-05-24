@@ -437,7 +437,7 @@
             },
             {
               "name": "edges",
-              "description": "Information to aid in pagination.",
+              "description": "A list of edges.",
               "args": [],
               "type": {
                 "kind": "LIST",
@@ -736,7 +736,7 @@
             },
             {
               "name": "edges",
-              "description": "Information to aid in pagination.",
+              "description": "A list of edges.",
               "args": [],
               "type": {
                 "kind": "LIST",
@@ -1694,6 +1694,18 @@
               "deprecationReason": null
             },
             {
+              "name": "deletedKeyId",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "clientMutationId",
               "description": null,
               "args": [],
@@ -2211,6 +2223,18 @@
               "type": {
                 "kind": "OBJECT",
                 "name": "Viewer",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "deletedTranslationId",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "ID",
                 "ofType": null
               },
               "isDeprecated": false,
