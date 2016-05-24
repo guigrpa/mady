@@ -204,7 +204,7 @@ class Settings extends React.Component {
       props: { viewer, set, unset: [] },
       onSuccess: () => this.props.onClose(),
       onFailure: () => notify({
-        msg: 'Configuration could not be saved',
+        msg: _t('error_Configuration could not be saved'),
         type: 'error',
         icon: 'save',
       }),

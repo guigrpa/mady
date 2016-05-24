@@ -62,7 +62,10 @@ return {
   "hint_Enjoy translating!": function(d) { return "Gaudeix traduint!"; },
   "tooltip_Copy message": function(d) { return "Copiar missatge"; },
   "validation_the number of left and right brackets does not match": function(d) { return "el nombre de claus obertes i tancades no coincideix"; },
-  "validation_MessageFormat syntax error": function(d) { return "Error de sintaxi MessageFormat"; }
+  "validation_MessageFormat syntax error": function(d) { return "Error de sintaxi MessageFormat"; },
+  "error_Changes could not be saved": function(d) { return "No s'han pogut guardar els canvis"; },
+  "error_Configuration could not be saved": function(d) { return "No s'ha pogut guardar la configuració"; },
+  "error_Is the server running?": function(d) { return "El servidor està funcionant?"; }
 }
 };
 module.exports = anonymous();

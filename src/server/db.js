@@ -290,7 +290,7 @@ function compileTranslations({ story: baseStory } = {}) {
   })
   .catch(err => {
     story.error('db', 'Could not compile translations:', { attach: err });
-    story.close();
+    throw err;
   })
   .finally(() => story.close());
 }

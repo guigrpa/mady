@@ -17,16 +17,6 @@
     "unusedSince": "2016-04-20T11:33:38.450Z",
     "sources": []
   },
-  "tooltip_Change language": {
-    "id": "tooltip_Change language",
-    "context": "tooltip",
-    "text": "Change language",
-    "firstUsed": "2016-04-18T06:07:16.000Z",
-    "unusedSince": null,
-    "sources": [
-      "src/client/components/060-translator.js"
-    ]
-  },
   "tooltip_Remove column (does NOT delete any translations)": {
     "id": "tooltip_Remove column (does NOT delete any translations)",
     "context": "tooltip",
@@ -264,14 +254,6 @@
       "src/client/components/080-settings.js"
     ]
   },
-  "hint_Got it!": {
-    "id": "hint_Got it!",
-    "context": "hint",
-    "text": "Got it!",
-    "firstUsed": "2016-05-21T21:03:05.945Z",
-    "unusedSince": "2016-05-21T21:21:15.632Z",
-    "sources": []
-  },
   "hint_Configure Mady": {
     "id": "hint_Configure Mady",
     "context": "hint",
@@ -330,6 +312,46 @@
     "unusedSince": null,
     "sources": [
       "src/client/components/062-translation.js"
+    ]
+  },
+  "tooltip_Change language": {
+    "id": "tooltip_Change language",
+    "context": "tooltip",
+    "text": "Change language",
+    "firstUsed": "2016-05-24T14:33:23.107Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/060-translator.js"
+    ]
+  },
+  "error_Configuration could not be saved": {
+    "id": "error_Configuration could not be saved",
+    "context": "error",
+    "text": "Configuration could not be saved",
+    "firstUsed": "2016-05-24T14:54:50.197Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/080-settings.js"
+    ]
+  },
+  "error_Changes could not be saved": {
+    "id": "error_Changes could not be saved",
+    "context": "error",
+    "text": "Changes could not be saved",
+    "firstUsed": "2016-05-24T14:54:50.197Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/helpers.js"
+    ]
+  },
+  "error_Is the server running?": {
+    "id": "error_Is the server running?",
+    "context": "error",
+    "text": "Is the server running?",
+    "firstUsed": "2016-05-24T14:54:50.197Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/helpers.js"
     ]
   }
 }

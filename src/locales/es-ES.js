@@ -34,7 +34,6 @@ return {
   "tooltip_Delete message (does NOT delete any translations)": function(d) { return "Borrar mensaje (NO borra ninguna traducción)"; },
   "tooltip_Parse source files to update the message list": function(d) { return "Analizar los ficheros de código para actualizar la lista de mensajes"; },
   "tooltip_Remove column (does NOT delete any translations)": function(d) { return "Quitar columna (NO borra ninguna traducción)"; },
-  msgDetailsView_Details: function(d) { return "Detalles"; },
   "msgDetailsView_No message selected": function(d) { return "Ningún mensaje seleccionado"; },
   "msgDetailsView_Used since": function(d) { return "En uso desde"; },
   button_Cancel: function(d) { return "Cancelar"; },
@@ -58,7 +57,11 @@ return {
   tooltip_Settings: function(d) { return "Ajustes"; },
   "validation_the number of left and right brackets does not match": function(d) { return "el número de llaves abiertas y cerradas no coincide"; },
   "validation_MessageFormat syntax error": function(d) { return "Error de sintaxis MessageFormat"; },
-  "hint_Got it!": function(d) { return "¡Entendido!"; }
+  "hint_Got it!": function(d) { return "¡Entendido!"; },
+  msgDetailsView_Details: function(d) { return "Detalles"; },
+  "error_Changes could not be saved": function(d) { return "No se pudieron guardar los cambios"; },
+  "error_Configuration could not be saved": function(d) { return "No se pudo guardar la configuración"; },
+  "error_Is the server running?": function(d) { return "¿El servidor está funcionando?"; }
 }
 };
 module.exports = anonymous();

@@ -1,6 +1,8 @@
 import timm                 from 'timm';
 import Relay                from 'react-relay';
 import { mainStory }        from 'storyboard';
+import { notify }           from 'giu';
+import _t                   from '../../translate';
 
 // Runs a Relay mutation inside a Storyboard story
 function mutate(options) {
@@ -8,9 +10,7 @@ function mutate(options) {
     description,
     Mutation,
     props,
-    onFailure,
-    onSuccess,
-    onFinish,
+    onFailure, onSuccess, onFinish,
   } = options;
   const story = mainStory.child({
     src: 'views',
@@ -23,7 +23,16 @@ function mutate(options) {
       const error = transaction.getError() || new Error('Mutation failed');
       story.error('views', 'Transaction error:', { attach: error });
       story.close();
-      if (onFailure) onFailure(transaction);
+      if (onFailure) {
+        onFailure(transaction);
+      } else {
+        notify({
+          title: _t('error_Changes could not be saved'),
+          msg: _t('error_Is the server running?'),
+          type: 'error',
+          icon: 'save',
+        });
+      }
       if (onFinish) onFinish();
     },
     onSuccess: response => {

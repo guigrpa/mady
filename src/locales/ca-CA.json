@@ -202,5 +202,23 @@
     "lang": "ca-CA",
     "translation": "Error de sintaxi MessageFormat",
     "keyId": "validation_MessageFormat syntax error"
+  },
+  "2bb61dd0-1a76-4a1c-938a-84de51a2fbb5": {
+    "id": "2bb61dd0-1a76-4a1c-938a-84de51a2fbb5",
+    "lang": "ca-CA",
+    "translation": "No s'han pogut guardar els canvis",
+    "keyId": "error_Changes could not be saved"
+  },
+  "d0313b5b-529d-4fac-8c4a-da98713f1075": {
+    "id": "d0313b5b-529d-4fac-8c4a-da98713f1075",
+    "lang": "ca-CA",
+    "translation": "No s'ha pogut guardar la configuració",
+    "keyId": "error_Configuration could not be saved"
+  },
+  "4ee32aa9-4257-435c-b983-2c10aa6f25c4": {
+    "id": "4ee32aa9-4257-435c-b983-2c10aa6f25c4",
+    "lang": "ca-CA",
+    "translation": "El servidor està funcionant?",
+    "keyId": "error_Is the server running?"
   }
 }

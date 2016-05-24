@@ -53,12 +53,6 @@
     "translation": "Quitar columna (NO borra ninguna traducción)",
     "keyId": "tooltip_Remove column (does NOT delete any translations)"
   },
-  "3aca2d74-6bde-40fa-bbcd-21218e46020e": {
-    "id": "3aca2d74-6bde-40fa-bbcd-21218e46020e",
-    "lang": "es-ES",
-    "translation": "Detalles",
-    "keyId": "msgDetailsView_Details"
-  },
   "bf3e6c9c-46a7-40d6-ad03-11afa6c7c08b": {
     "id": "bf3e6c9c-46a7-40d6-ad03-11afa6c7c08b",
     "lang": "es-ES",
@@ -208,5 +202,29 @@
     "lang": "es-ES",
     "translation": "¡Entendido!",
     "keyId": "hint_Got it!"
+  },
+  "6e992cd3-2aea-4772-800b-a2317327f665": {
+    "id": "6e992cd3-2aea-4772-800b-a2317327f665",
+    "lang": "es-ES",
+    "translation": "Detalles",
+    "keyId": "msgDetailsView_Details"
+  },
+  "08d77fa4-e22e-49cc-8f83-6dd8180b9f21": {
+    "id": "08d77fa4-e22e-49cc-8f83-6dd8180b9f21",
+    "lang": "es-ES",
+    "translation": "No se pudieron guardar los cambios",
+    "keyId": "error_Changes could not be saved"
+  },
+  "27cf1276-1d9a-442a-b4b6-80b6cb2d4b79": {
+    "id": "27cf1276-1d9a-442a-b4b6-80b6cb2d4b79",
+    "lang": "es-ES",
+    "translation": "No se pudo guardar la configuración",
+    "keyId": "error_Configuration could not be saved"
+  },
+  "5d0aebbf-e435-4051-be8f-f4cf0d8a641a": {
+    "id": "5d0aebbf-e435-4051-be8f-f4cf0d8a641a",
+    "lang": "es-ES",
+    "translation": "¿El servidor está funcionando?",
+    "keyId": "error_Is the server running?"
   }
 }
