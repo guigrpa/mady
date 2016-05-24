@@ -370,7 +370,9 @@ function addConnectionType(name) {
 }
 
 function addMutation(type, op, options = {}) {
-  const name = `${capitalize(op)}${type}`;
+  const { parentConnection } = options;
+  let name = `${capitalize(op)}${type}`;
+  if (parentConnection) name += `From${parentConnection.parentType}`;
 
   // Input fields
   const inputFields = {
@@ -383,15 +385,19 @@ function addMutation(type, op, options = {}) {
     inputFields.set = { type: gqlTypes[`${type}${capitalize(op)}`] };
     inputFields.unset = { type: new GraphQLList(GraphQLString) };
   }
+  if (parentConnection) {
+    inputFields.parentId = { type: new GraphQLNonNull(GraphQLID) };
+  }
 
   // The operation
-  const mutateAndGetPayload = ({ id: globalId, set, unset, storyId }) => {
+  const mutateAndGetPayload = (mutationArgs) => {
+    const { id: globalId, storyId } = mutationArgs;
     const story = mainStory.child({
       src: 'gql',
       title: `Mutation: ${op} on ${type} ${globalId || ''}`,
       extraParents: storyId,
     });
-    return mutate(type, op, globalId, set, unset, options, story)
+    return mutate(type, op, mutationArgs, options, story)
     .finally(() => story.close());
   };
 
@@ -435,7 +441,10 @@ function addMutation(type, op, options = {}) {
   });
 }
 
-function mutate(type, op, globalId, set = {}, unset = [], options = {}, story) {
+function mutate(type, op, mutationArgs, options, story) {
+  const set = mutationArgs.set || {};
+  const unset = mutationArgs.unset || [];
+  const globalId = mutationArgs.id;
   const localId = (op !== 'CREATE' && !options.fSingleton)
     ? fromGlobalId(globalId).id
     : null;
