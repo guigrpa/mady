@@ -15,6 +15,8 @@ const DEFAULT_CONFIG = {
   fMinify: false,
 };
 
+const RESPONSE_DELAY = 2000;
+
 // ==============================================
 // Init
 // ==============================================
@@ -131,6 +133,7 @@ function deleteKey(id) {
   delete _keys[id];
   saveKeys();
   return compileTranslations()
+  .delay(RESPONSE_DELAY)
   .then(() => item);
 }
 
