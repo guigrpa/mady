@@ -1,5 +1,4 @@
 - [-] SSR
-- [ ] **Bug**: when I delete a translation (or two) and then the key, a warning is shown in the console.
 - [ ] Allow unicode escape sequences in messages and translations
 - [ ] Allow configuration of translate function name (for parser), default _t
 - [ ] Add --build option to CLI
