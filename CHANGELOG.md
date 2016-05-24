@@ -1,11 +1,16 @@
 # Changelog
 
+* Show notifications upon mutation errors.
+* Internal: Use promises for all mutations.
+* Internal: Add optimistic responses for delete mutations.
+* Internal: Fix Storyboard config.
+
 ## 1.1.0 (May 22, 2016)
 
 * [M] Migrate to Giu v0.4.x.
 * [M] **Add hint screen**.
-* Can now press alt-return to commit translation
-* Back end: compilation now happens synchronously rather than asynchronously whenever the DB changes, as part of the mutation
+* Can now press alt-return to commit translation.
+* Back end: compilation now happens synchronously rather than asynchronously whenever the DB changes, as part of the mutation.
 
 ## 1.0.4 (May 2, 2016)
 
