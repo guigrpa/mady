@@ -256,6 +256,7 @@ function createTranslation(newAttrs, { story }) {
   _translations[id] = { id, lang, translation, keyId };
   saveTranslations(lang, { story });
   return compileTranslations({ story })
+  .delay(RESPONSE_DELAY)
   .then(() => _translations[id]);
 }
 
@@ -263,6 +264,7 @@ function updateTranslation(id, newAttrs, { story }) {
   _translations[id] = timm.merge(_translations[id], newAttrs);
   saveTranslations(_translations[id].lang, { story });
   return compileTranslations({ story })
+  .delay(RESPONSE_DELAY)
   .then(() => _translations[id]);
 }
 
@@ -272,6 +274,7 @@ function deleteTranslation(id, { story }) {
   delete _translations[id];
   saveTranslations(lang, { story });
   return compileTranslations({ story })
+  .delay(RESPONSE_DELAY)
   .then(() => item);
 }
 
