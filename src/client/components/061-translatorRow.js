@@ -25,15 +25,14 @@ const fragments = {
       id
       context text
       unusedSince
-    }
-  `,
-/*      ${Translation.getFragment('theKey')}
+      ${Translation.getFragment('theKey')}
       translations(first: 100000) { edges { node {
         id
         lang
         ${Translation.getFragment('translation')}
       }}}
-*/
+    }
+  `,
   viewer: () => Relay.QL`
     fragment on Viewer {
       ${DeleteKeyMutation.getFragment('viewer')}
@@ -114,7 +113,6 @@ class TranslatorRow extends React.Component {
   }
 
   renderTranslation(lang) {
-    return null;
     const { theKey: key, fSelected, styleLangCol } = this.props;
     const edge = key.translations.edges.find(({ node }) => node.lang === lang);
     const translation = edge ? edge.node : null;

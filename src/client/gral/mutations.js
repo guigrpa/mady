@@ -126,41 +126,28 @@ export class DeleteKeyMutation extends Relay.Mutation {
   getFatQuery() {
     return Relay.QL`
       fragment on DeleteKeyPayload {
-        viewer {
-          id
-          keys
-        }
+        viewer { keys }
+        deletedKeyId
       }
     `;
   }
   getConfigs() {
-    return [
-      {
-        type: 'FIELDS_CHANGE',
-        fieldIDs: {
-          viewer: this.props.viewer.id,
-        },
-      },
-    ];
+    return [{
+      type: 'NODE_DELETE',
+      parentName: 'viewer',
+      parentID: this.props.viewer.id,
+      connectionName: 'keys',
+      deletedIDFieldName: 'deletedKeyId',
+    }];
   }
-  /*
   getOptimisticResponse() {
     const prevEdges = this.props.viewer.keys.edges;
-    console.log(prevEdges.length)
     const edges = prevEdges.filter(({ node }) => node.id !== this.props.id);
-    console.log(this.props.viewer.id)
-    const out = {
-      viewer: {
-        id: this.props.viewer.id,
-        keys: {
-          edges,
-        },
-      },
+    return {
+      viewer: { keys: { edges } },
+      deletedKeyId: this.props.id,
     };
-    console.log(out);
-    return out;
   }
-  */
   getCollisionKey() { return this.props.id; }
 }
 
@@ -188,14 +175,12 @@ export class CreateTranslationMutation extends Relay.Mutation {
     `;
   }
   getConfigs() {
-    return [
-      {
-        type: 'FIELDS_CHANGE',
-        fieldIDs: {
-          key: this.props.set.keyId,
-        },
+    return [{
+      type: 'FIELDS_CHANGE',
+      fieldIDs: {
+        key: this.props.set.keyId,
       },
-    ];
+    }];
   }
   getCollisionKey() {
     return `${this.props.set.keyId}_${this.props.set.lang}`;
@@ -228,14 +213,12 @@ export class UpdateTranslationMutation extends Relay.Mutation {
     `;
   }
   getConfigs() {
-    return [
-      {
-        type: 'FIELDS_CHANGE',
-        fieldIDs: {
-          translation: this.props.translation.id,
-        },
+    return [{
+      type: 'FIELDS_CHANGE',
+      fieldIDs: {
+        translation: this.props.translation.id,
       },
-    ];
+    }];
   }
   getOptimisticResponse() {
     const { translation, set, unset } = this.props;
@@ -271,32 +254,29 @@ export class DeleteTranslationMutation extends Relay.Mutation {
   getFatQuery() {
     return Relay.QL`
       fragment on DeleteTranslationPayload {
-        key {
-          translations
-        }
+        key { translations }
+        deletedTranslationId
       }
     `;
   }
   getConfigs() {
-    return [
-      {
-        type: 'FIELDS_CHANGE',
-        fieldIDs: {
-          key: this.props.theKey.id,
-        },
-      },
-    ];
+    return [{
+      type: 'NODE_DELETE',
+      parentName: 'key',
+      parentID: this.props.theKey.id,
+      connectionName: 'translation',
+      deletedIDFieldName: 'deletedTranslationId',
+    }];
   }
-  /*
   getOptimisticResponse() {
     const { theKey, id } = this.props;
-    console.log(theKey.translations.edges);
-    const nextEdges = filter(theKey.translations.edges, o => o.node.id !== id);
+    const nextEdges = theKey.translations.edges.filter(({ node }) => node.id !== id);
     const nextKey = timm.setIn(theKey, ['translations', 'edges'], nextEdges);
-    console.log(nextKey.translations.edges);
-    return { key: nextKey };
+    return {
+      key: nextKey,
+      deletedTranslationId: this.props.id,
+    };
   }
-  */
   getCollisionKey() { return this.props.id; }
 }
 

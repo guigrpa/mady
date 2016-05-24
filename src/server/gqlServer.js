@@ -414,12 +414,27 @@ function addMutation(type, op, options = {}) {
 
   // Output fields
   const outputFields = { viewer: viewerRootField };
-  if (op !== 'DELETE') {
+  if (op === 'DELETE') {
+    outputFields[`deleted${type}Id`] = {
+      type: GraphQLID,
+      resolve: ({ globalId }) => globalId,
+    };
+  } else {
     outputFields[lowerFirst(type)] = {
       type: gqlTypes[type],
       resolve: ({ node }) => node,
     };
   }
+  /*
+  if (op === 'CREATE') {
+    outputFields[`created${type}Edge`] = {
+      type: gqlTypes[`${type}Edge`],
+      resolve: ({ localId, node }) => {
+        return { cursor, node };
+      },
+    };
+  }
+  */
   const relations = options.relations != null ? options.relations : [];
   for (const relation of relations) {
     outputFields[relation.name] = {
