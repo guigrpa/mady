@@ -1,5 +1,6 @@
 import path                 from 'path';
 import fs                   from 'fs-extra';
+import Promise              from 'bluebird';
 import timm                 from 'timm';
 import { mainStory, chalk } from 'storyboard';
 import uuid                 from 'node-uuid';
@@ -70,8 +71,8 @@ function updateConfig(newAttrs, { story }) {
   _config = timm.merge(_config, newAttrs);
   story.debug('db', 'New config:', { attach: _config });
   saveConfig({ story });
-  compileTranslations({ story });
-  return _config;
+  return compileTranslations({ story })
+  .then(() => _config);
 }
 
 
@@ -114,23 +115,23 @@ function createKey(newAttrs) {
     sources: [],
   };
   saveKeys();
-  compileTranslations();
-  return _keys[id];
+  return compileTranslations()
+  .then(() => _keys[id]);
 }
 
 function updateKey(id, newAttrs) {
   _keys[id] = timm.merge(_keys[id], newAttrs);
   saveKeys();
-  compileTranslations();
-  return _keys[id];
+  return compileTranslations()
+  .then(() => _keys[id]);
 }
 
 function deleteKey(id) {
   const item = _keys[id];
   delete _keys[id];
   saveKeys();
-  compileTranslations();
-  return item;
+  return compileTranslations()
+  .then(() => item);
 }
 
 function parseSrcFiles({ story }) {
@@ -172,8 +173,8 @@ function parseSrcFiles({ story }) {
   }
 
   saveKeys({ story });
-  compileTranslations({ story });
-  return _keys;
+  return compileTranslations({ story })
+  .then(() => _keys);
 }
 
 
@@ -251,15 +252,15 @@ function createTranslation(newAttrs, { story }) {
   const id = uuid.v4();
   _translations[id] = { id, lang, translation, keyId };
   saveTranslations(lang, { story });
-  compileTranslations({ story });
-  return _translations[id];
+  return compileTranslations({ story })
+  .then(() => _translations[id]);
 }
 
 function updateTranslation(id, newAttrs, { story }) {
   _translations[id] = timm.merge(_translations[id], newAttrs);
   saveTranslations(_translations[id].lang, { story });
-  compileTranslations({ story });
-  return _translations[id];
+  return compileTranslations({ story })
+  .then(() => _translations[id]);
 }
 
 function deleteTranslation(id, { story }) {
@@ -267,8 +268,8 @@ function deleteTranslation(id, { story }) {
   const { lang } = _translations[id];
   delete _translations[id];
   saveTranslations(lang, { story });
-  compileTranslations({ story });
-  return item;
+  return compileTranslations({ story })
+  .then(() => item);
 }
 
 function compileTranslations({ story: baseStory } = {}) {
@@ -276,22 +277,22 @@ function compileTranslations({ story: baseStory } = {}) {
     src: 'db',
     title: 'Compile translations',
   });
-  for (const lang of _config.langs) {
-    const compiledLangPath = getCompiledLangPath(lang);
-    const translations = getLangTranslations(lang);
-    const { fMinify } = _config;
-    let fnTranslate;
-    try {
-      fnTranslate = compile({ lang, keys: _keys, translations, fMinify, story });
-    } catch (err) {
-      story.error('db', 'Could not compile translations:', { attach: err });
-      story.close();
-      return;
-    }
-    story.debug('db', `Writing file ${chalk.cyan.bold(compiledLangPath)}...`);
-    fs.writeFileSync(compiledLangPath, fnTranslate, 'utf8');
-  }
-  story.close();
+  return Promise.resolve()
+  .then(() => {
+    _config.langs.forEach(lang => {
+      const compiledLangPath = getCompiledLangPath(lang);
+      const translations = getLangTranslations(lang);
+      const { fMinify } = _config;
+      const fnTranslate = compile({ lang, keys: _keys, translations, fMinify, story });
+      story.debug('db', `Writing file ${chalk.cyan.bold(compiledLangPath)}...`);
+      fs.writeFileSync(compiledLangPath, fnTranslate, 'utf8');
+    });
+  })
+  .catch(err => {
+    story.error('db', 'Could not compile translations:', { attach: err });
+    story.close();
+  })
+  .finally(() => story.close());
 }
 
 // ==============================================

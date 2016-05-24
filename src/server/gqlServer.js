@@ -210,14 +210,9 @@ export function init() {
         title: 'Mutation: parse source files',
         extraParents: storyId,
       });
-      try {
-        db.parseSrcFiles({ story });
-      } catch (err) {
-        throw err;
-      } finally {
-        story.close();
-      }
-      return {};
+      return db.parseSrcFiles({ story })
+      .then(() => ({})) // empty object as a result
+      .finally(() => story.close());
     },
     outputFields: {
       keys: keysBaseField,
@@ -286,14 +281,9 @@ export function init() {
         title: 'Mutation: compile translations',
         extraParents: storyId,
       });
-      try {
-        db.compileTranslations({ story });
-      } catch (err) {
-        throw err;
-      } finally {
-        story.close();
-      }
-      return {};
+      return db.compileTranslations({ story })
+      .then(() => ({})) // empty object as a result
+      .finally(() => story.close());
     },
     outputFields: {},
   });
@@ -401,15 +391,8 @@ function addMutation(type, op, options = {}) {
       title: `Mutation: ${op} on ${type} ${globalId || ''}`,
       extraParents: storyId,
     });
-    let out;
-    try {
-      out = mutate(type, op, globalId, set, unset, options, story);
-    } catch (err) {
-      throw err;
-    } finally {
-      story.close();
-    }
-    return out;
+    return mutate(type, op, globalId, set, unset, options, story)
+    .finally(() => story.close());
   };
 
   // Output fields
@@ -456,25 +439,34 @@ function mutate(type, op, globalId, set = {}, unset = [], options = {}, story) {
   const localId = (op !== 'CREATE' && !options.fSingleton)
     ? fromGlobalId(globalId).id
     : null;
-  const out = { globalId, localId };
+  const result = { globalId, localId };
+  let promise;
   if (op === 'DELETE') {
-    out.node = db[`delete${type}`](localId, { story });
+    promise = db[`delete${type}`](localId, { story })
+    .then(node => { result.node = node; });
   } else {
     let newAttrs = mergeSetUnset(set, unset);
     newAttrs = resolveGlobalIds(newAttrs, options.globalIds);
     if (op === 'CREATE') {
-      out.node = db[`create${type}`](newAttrs, { story });
-      out.localId = out.node.id;
+      promise = db[`create${type}`](newAttrs, { story })
+      .then(node => {
+        result.node = node;
+        result.localId = result.node.id;
+      });
     } else {
       if (options.fSingleton) {
-        out.node = db[`update${type}`](newAttrs, { story });
+        promise = db[`update${type}`](newAttrs, { story });
       } else {
-        out.node = db[`update${type}`](localId, newAttrs, { story });
+        promise = db[`update${type}`](localId, newAttrs, { story });
       }
+      promise = promise.then(node => { result.node = node; });
     }
   }
-  out.node = addTypeAttr(out.node, type);
-  return out;
+  promise = promise.then(() => {
+    result.node = addTypeAttr(result.node, type);
+    return result;
+  });
+  return promise;
 }
 
 function mergeSetUnset(set, unset) {
