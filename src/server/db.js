@@ -249,6 +249,9 @@ function getKeyTranslations(keyId) {
 function getTranslation(id) { return _translations[id]; }
 
 function createTranslation(newAttrs, { story }) {
+  console.log('Remove active wait...')
+  let i = 0;
+  while (i++ < 1.5e9) {}
   const { lang, translation, keyId } = newAttrs;
   if (!lang) throw new Error('Translation language must be specified');
   if (keyId == null) throw new Error('Translation key must be specified');
@@ -267,6 +270,9 @@ function updateTranslation(id, newAttrs, { story }) {
 }
 
 function deleteTranslation(id, { story }) {
+  console.log('Remove active wait...')
+  let i = 0;
+  while (i++ < 1.5e9) {}
   const item = _translations[id];
   const { lang } = _translations[id];
   delete _translations[id];
