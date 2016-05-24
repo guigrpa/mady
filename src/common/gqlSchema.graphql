@@ -54,27 +54,31 @@ type CreateTranslationPayload {
   clientMutationId: String!
 }
 
-input DeleteKeyInput {
+input DeleteKeyInViewerKeysInput {
   storyId: String
   id: ID!
+  parentId: ID!
   clientMutationId: String!
 }
 
-type DeleteKeyPayload {
+type DeleteKeyInViewerKeysPayload {
   viewer: Viewer
   deletedKeyId: ID
+  parent: Viewer
   clientMutationId: String!
 }
 
-input DeleteTranslationInput {
+input DeleteTranslationInKeyTranslationsInput {
   storyId: String
   id: ID!
+  parentId: ID!
   clientMutationId: String!
 }
 
-type DeleteTranslationPayload {
+type DeleteTranslationInKeyTranslationsPayload {
   viewer: Viewer
   deletedTranslationId: ID
+  parent: Key
   key: Key
   clientMutationId: String!
 }
@@ -117,11 +121,11 @@ type Mutation {
   updateConfig(input: UpdateConfigInput!): UpdateConfigPayload
   createKey(input: CreateKeyInput!): CreateKeyPayload
   updateKey(input: UpdateKeyInput!): UpdateKeyPayload
-  deleteKey(input: DeleteKeyInput!): DeleteKeyPayload
+  deleteKeyInViewerKeys(input: DeleteKeyInViewerKeysInput!): DeleteKeyInViewerKeysPayload
   parseSrcFiles(input: ParseSrcFilesInput!): ParseSrcFilesPayload
   createTranslation(input: CreateTranslationInput!): CreateTranslationPayload
   updateTranslation(input: UpdateTranslationInput!): UpdateTranslationPayload
-  deleteTranslation(input: DeleteTranslationInput!): DeleteTranslationPayload
+  deleteTranslationInKeyTranslations(input: DeleteTranslationInKeyTranslationsInput!): DeleteTranslationInKeyTranslationsPayload
   compileTranslations(input: CompileTranslationsInput!): CompileTranslationsPayload
 }
 

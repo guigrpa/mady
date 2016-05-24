@@ -31,7 +31,7 @@ import {
 }                           from 'graphql-relay';
 import {
   capitalize,
-  lowerFirst,
+  lowerFirst, upperFirst,
   omitBy,
   isUndefined,
   pick,
@@ -198,7 +198,9 @@ export function init() {
 
   addMutation('Key', 'CREATE');
   addMutation('Key', 'UPDATE');
-  addMutation('Key', 'DELETE');
+  addMutation('Key', 'DELETE', {
+    parent: { type: 'Viewer', connection: 'keys' },
+  });
   gqlMutations.parseSrcFiles = mutationWithClientMutationId({
     name: 'ParseSrcFiles',
     inputFields: {
@@ -269,7 +271,10 @@ export function init() {
   ];
   addMutation('Translation', 'CREATE', { globalIds, relations });
   addMutation('Translation', 'UPDATE', { globalIds });
-  addMutation('Translation', 'DELETE', { globalIds, relations });
+  addMutation('Translation', 'DELETE', {
+    globalIds, relations,
+    parent: { type: 'Key', connection: 'translations' },
+  });
   gqlMutations.compileTranslations = mutationWithClientMutationId({
     name: 'CompileTranslations',
     inputFields: {
@@ -307,11 +312,11 @@ export function init() {
         'updateConfig',
         'createKey',
         'updateKey',
-        'deleteKey',
+        'deleteKeyInViewerKeys',
         'parseSrcFiles',
         'createTranslation',
         'updateTranslation',
-        'deleteTranslation',
+        'deleteTranslationInKeyTranslations',
         'compileTranslations',
       ]),
     }),
@@ -370,9 +375,13 @@ function addConnectionType(name) {
 }
 
 function addMutation(type, op, options = {}) {
-  const { parentConnection } = options;
-  let name = `${capitalize(op)}${type}`;
-  if (parentConnection) name += `From${parentConnection.parentType}`;
+  const { parent } = options;
+  let name;
+  if (parent) {
+    name = `${capitalize(op)}${type}In${parent.type}${upperFirst(parent.connection)}`;
+  } else {
+    name = `${capitalize(op)}${type}`;
+  }
 
   // Input fields
   const inputFields = {
@@ -385,7 +394,7 @@ function addMutation(type, op, options = {}) {
     inputFields.set = { type: gqlTypes[`${type}${capitalize(op)}`] };
     inputFields.unset = { type: new GraphQLList(GraphQLString) };
   }
-  if (parentConnection) {
+  if (parent) {
     inputFields.parentId = { type: new GraphQLNonNull(GraphQLID) };
   }
 
@@ -394,7 +403,7 @@ function addMutation(type, op, options = {}) {
     const { id: globalId, storyId } = mutationArgs;
     const story = mainStory.child({
       src: 'gql',
-      title: `Mutation: ${op} on ${type} ${globalId || ''}`,
+      title: `Mutation: ${name} ${globalId || ''}`,
       extraParents: storyId,
     });
     return mutate(type, op, mutationArgs, options, story)
@@ -406,12 +415,18 @@ function addMutation(type, op, options = {}) {
   if (op === 'DELETE') {
     outputFields[`deleted${type}Id`] = {
       type: GraphQLID,
-      resolve: ({ globalId }) => globalId,
+      resolve: result => result.globalId,
     };
   } else {
     outputFields[lowerFirst(type)] = {
       type: gqlTypes[type],
-      resolve: ({ node }) => node,
+      resolve: result => result.node,
+    };
+  }
+  if (parent) {
+    outputFields.parent = {
+      type: gqlTypes[parent.type],
+      resolve: result => result.parent,
     };
   }
   /*
@@ -433,7 +448,7 @@ function addMutation(type, op, options = {}) {
   }
 
   // Save mutation
-  gqlMutations[`${op.toLowerCase()}${type}`] = mutationWithClientMutationId({
+  gqlMutations[lowerFirst(name)] = mutationWithClientMutationId({
     name,
     inputFields,
     mutateAndGetPayload,
@@ -442,13 +457,12 @@ function addMutation(type, op, options = {}) {
 }
 
 function mutate(type, op, mutationArgs, options, story) {
-  const set = mutationArgs.set || {};
-  const unset = mutationArgs.unset || [];
-  const globalId = mutationArgs.id;
+  const { id: globalId, parentId: globalParentId, set, unset } = mutationArgs;
   const localId = (op !== 'CREATE' && !options.fSingleton)
     ? fromGlobalId(globalId).id
     : null;
-  const result = { globalId, localId };
+  const parent = getNodeFromGlobalId(globalParentId);
+  const result = { globalId, localId, globalParentId, parent };
   let promise;
   if (op === 'DELETE') {
     promise = db[`delete${type}`](localId, { story })
@@ -478,7 +492,7 @@ function mutate(type, op, mutationArgs, options, story) {
   return promise;
 }
 
-function mergeSetUnset(set, unset) {
+function mergeSetUnset(set = {}, unset = []) {
   const attrs = omitBy(set, isUndefined);
   for (const attr of unset) {
     attrs[attr] = null;

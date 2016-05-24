@@ -115,18 +115,19 @@ export class DeleteKeyMutation extends Relay.Mutation {
     `,
   };
   getMutation() {
-    return Relay.QL`mutation {deleteKey}`;
+    return Relay.QL`mutation {deleteKeyInViewerKeys}`;
   }
   getVariables() {
     return {
       id: this.props.id,
+      parentId: this.props.viewer.id,
       storyId: this.props.storyId,
     };
   }
   getFatQuery() {
     return Relay.QL`
-      fragment on DeleteKeyPayload {
-        viewer { keys }
+      fragment on DeleteKeyInViewerKeysPayload {
+        parent { keys }
         deletedKeyId
       }
     `;
@@ -134,7 +135,7 @@ export class DeleteKeyMutation extends Relay.Mutation {
   getConfigs() {
     return [{
       type: 'NODE_DELETE',
-      parentName: 'viewer',
+      parentName: 'parent',
       parentID: this.props.viewer.id,
       connectionName: 'keys',
       deletedIDFieldName: 'deletedKeyId',
@@ -144,7 +145,7 @@ export class DeleteKeyMutation extends Relay.Mutation {
     const prevEdges = this.props.viewer.keys.edges;
     const edges = prevEdges.filter(({ node }) => node.id !== this.props.id);
     return {
-      viewer: { keys: { edges } },
+      parent: { keys: { edges } },
       deletedKeyId: this.props.id,
     };
   }
@@ -241,18 +242,19 @@ export class DeleteTranslationMutation extends Relay.Mutation {
     `,
   };
   getMutation() {
-    return Relay.QL`mutation {deleteTranslation}`;
+    return Relay.QL`mutation {deleteTranslationInKeyTranslations}`;
   }
   getVariables() {
     return {
       id: this.props.id,
+      parentId: this.props.theKey.id,
       storyId: this.props.storyId,
     };
   }
   getFatQuery() {
     return Relay.QL`
-      fragment on DeleteTranslationPayload {
-        key { translations }
+      fragment on DeleteTranslationInKeyTranslationsPayload {
+        parent { translations }
         deletedTranslationId
       }
     `;
@@ -260,9 +262,9 @@ export class DeleteTranslationMutation extends Relay.Mutation {
   getConfigs() {
     return [{
       type: 'NODE_DELETE',
-      parentName: 'key',
+      parentName: 'parent',
       parentID: this.props.theKey.id,
-      connectionName: 'translation',
+      connectionName: 'translations',
       deletedIDFieldName: 'deletedTranslationId',
     }];
   }
@@ -271,7 +273,7 @@ export class DeleteTranslationMutation extends Relay.Mutation {
     const nextEdges = theKey.translations.edges.filter(({ node }) => node.id !== id);
     const nextKey = timm.setIn(theKey, ['translations', 'edges'], nextEdges);
     return {
-      key: nextKey,
+      parent: nextKey,
       deletedTranslationId: this.props.id,
     };
   }
