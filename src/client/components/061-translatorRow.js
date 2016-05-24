@@ -3,7 +3,7 @@ import React                from 'react';
 import Relay                from 'react-relay';
 import PureRenderMixin      from 'react-addons-pure-render-mixin';
 import {
-  bindAll,
+  bindAll, cancelEvent,
   flexContainer, flexItem,
   Icon,
   hoverable,
@@ -138,8 +138,10 @@ class TranslatorRow extends React.Component {
   // ------------------------------------------
   onClickKeyRow() { this.props.changeSelectedKey(this.props.theKey.id); }
 
-  onClickDeleteKey() {
-    const { viewer } = this.props;
+  onClickDeleteKey(ev) {
+    const { viewer, fSelected, changeSelectedKey } = this.props;
+    cancelEvent(ev);
+    if (fSelected) changeSelectedKey(null);
     mutate({
       description: 'Click on Delete key',
       Mutation: DeleteKeyMutation,
