@@ -26,7 +26,7 @@ import {
   connectionArgs,
   connectionDefinitions,
   connectionFromArray,
-  // cursorForObjectInConnection,
+  offsetToCursor,
   mutationWithClientMutationId,
 }                           from 'graphql-relay';
 import {
@@ -196,11 +196,16 @@ export function init() {
     resolve: (base, args) => connectionFromArray(db.getKeys(), args),
   };
 
-  addMutation('Key', 'CREATE');
-  addMutation('Key', 'UPDATE');
-  addMutation('Key', 'DELETE', {
-    parent: { type: 'Viewer', connection: 'keys' },
-  });
+  {
+    const parent = {
+      type: 'Viewer',
+      connection: 'keys',
+      resolveConnection: () => db.getKeys(),
+    };
+    addMutation('Key', 'CREATE', { parent });
+    addMutation('Key', 'UPDATE');
+    addMutation('Key', 'DELETE', { parent });
+  }
   gqlMutations.parseSrcFiles = mutationWithClientMutationId({
     name: 'ParseSrcFiles',
     inputFields: {
@@ -261,20 +266,18 @@ export function init() {
     resolve: (base, args) => connectionFromArray(db.getTranslations(), args),
   };
 
-  const globalIds = ['keyId'];
-  const relations = [
-    {
-      name: 'key',
+  {
+    const globalIds = ['keyId'];
+    const parent = {
       type: 'Key',
-      resolve: translation => db.getKey(translation.keyId),
-    },
-  ];
-  addMutation('Translation', 'CREATE', { globalIds, relations });
-  addMutation('Translation', 'UPDATE', { globalIds });
-  addMutation('Translation', 'DELETE', {
-    globalIds, relations,
-    parent: { type: 'Key', connection: 'translations' },
-  });
+      connection: 'translations',
+      resolveConnection: key => db.getKeyTranslations(key.id),
+    };
+    addMutation('Translation', 'CREATE', { globalIds, parent });
+    addMutation('Translation', 'UPDATE', { globalIds });
+    addMutation('Translation', 'DELETE', { globalIds, parent });
+  }
+
   gqlMutations.compileTranslations = mutationWithClientMutationId({
     name: 'CompileTranslations',
     inputFields: {
@@ -310,13 +313,13 @@ export function init() {
       name: 'Mutation',
       fields: () => pick(gqlMutations, [
         'updateConfig',
-        'createKey',
-        'updateKey',
+        'createKeyInViewerKeys',
         'deleteKeyInViewerKeys',
+        'updateKey',
         'parseSrcFiles',
-        'createTranslation',
-        'updateTranslation',
+        'createTranslationInKeyTranslations',
         'deleteTranslationInKeyTranslations',
+        'updateTranslation',
         'compileTranslations',
       ]),
     }),
@@ -384,9 +387,7 @@ function addMutation(type, op, options = {}) {
   }
 
   // Input fields
-  const inputFields = {
-    storyId: { type: GraphQLString },
-  };
+  const inputFields = {};
   if (op !== 'CREATE' && !options.fSingleton) {
     inputFields.id = { type: new GraphQLNonNull(GraphQLID) };
   }
@@ -397,6 +398,7 @@ function addMutation(type, op, options = {}) {
   if (parent) {
     inputFields.parentId = { type: new GraphQLNonNull(GraphQLID) };
   }
+  inputFields.storyId = { type: GraphQLString };
 
   // The operation
   const mutateAndGetPayload = (mutationArgs) => {
@@ -411,34 +413,40 @@ function addMutation(type, op, options = {}) {
   };
 
   // Output fields
+  // - `viewer`
+  // - `deletedTypeNameId` [DELETE]
+  // - `typeName` [non-DELETE]
+  // - `parent` [if in args, typically in CREATE/DELETE]
   const outputFields = { viewer: viewerRootField };
   if (op === 'DELETE') {
     outputFields[`deleted${type}Id`] = {
       type: GraphQLID,
-      resolve: result => result.globalId,
+      resolve: ({ globalId }) => globalId,
     };
   } else {
     outputFields[lowerFirst(type)] = {
       type: gqlTypes[type],
-      resolve: result => result.node,
+      resolve: ({ node }) => node,
     };
   }
   if (parent) {
     outputFields.parent = {
       type: gqlTypes[parent.type],
-      resolve: result => result.parent,
+      resolve: ({ parentNode }) => parentNode,
     };
+    if (op === 'CREATE') {
+      outputFields[`created${type}Edge`] = {
+        type: gqlTypes[`${type}Edge`],
+        resolve: ({ localId, node, parentNode }) => {
+          if (!node) return null;
+          const allNodes = parent.resolveConnection(parentNode);
+          const idx = allNodes.findIndex(o => o.id === node.id);
+          const cursor = idx >= 0 ? offsetToCursor(idx) : null;
+          return { cursor, node };
+        },
+      };
+    }
   }
-  /*
-  if (op === 'CREATE') {
-    outputFields[`created${type}Edge`] = {
-      type: gqlTypes[`${type}Edge`],
-      resolve: ({ localId, node }) => {
-        return { cursor, node };
-      },
-    };
-  }
-  */
   const relations = options.relations != null ? options.relations : [];
   for (const relation of relations) {
     outputFields[relation.name] = {
@@ -461,8 +469,8 @@ function mutate(type, op, mutationArgs, options, story) {
   const localId = (op !== 'CREATE' && !options.fSingleton)
     ? fromGlobalId(globalId).id
     : null;
-  const parent = getNodeFromGlobalId(globalParentId);
-  const result = { globalId, localId, globalParentId, parent };
+  const parentNode = getNodeFromGlobalId(globalParentId);
+  const result = { globalId, localId, globalParentId, parentNode };
   let promise;
   if (op === 'DELETE') {
     promise = db[`delete${type}`](localId, { story })

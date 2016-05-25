@@ -226,7 +226,7 @@ function getTranslations() {
 
 function getLangTranslations(lang) {
   const out = [];
-  Object.keys(_translations).forEach((translationId) => {
+  Object.keys(_translations).forEach(translationId => {
     const translation = _translations[translationId];
     if (translation.lang === lang) {
       out.push(translation);
@@ -237,7 +237,7 @@ function getLangTranslations(lang) {
 
 function getKeyTranslations(keyId) {
   const out = [];
-  Object.keys(_translations).forEach((translationId) => {
+  Object.keys(_translations).forEach(translationId => {
     const translation = _translations[translationId];
     if (translation.keyId === keyId) {
       out.push(translation);

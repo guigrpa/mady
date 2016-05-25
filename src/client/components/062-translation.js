@@ -41,6 +41,7 @@ const fragments = {
     fragment on Key {
       id
       text
+      ${CreateTranslationMutation.getFragment('theKey')}
       ${DeleteTranslationMutation.getFragment('theKey')}
     }
   `,
@@ -206,6 +207,7 @@ class Translation extends React.Component {
             keyId: this.props.theKey.id,
             translation: text,
           },
+          theKey: this.props.theKey,
         };
       }
       mutate({ description, Mutation, props });
