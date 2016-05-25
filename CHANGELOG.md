@@ -7,14 +7,14 @@
 
 ## 1.1.0 (May 22, 2016)
 
-* [M] Migrate to Giu v0.4.x.
+* [M] Migrate to [Giu](https://github.com/guigrpa/giu) v0.4.x.
 * [M] **Add hint screen**.
 * Can now press alt-return to commit translation.
 * Back end: compilation now happens synchronously rather than asynchronously whenever the DB changes, as part of the mutation.
 
 ## 1.0.4 (May 2, 2016)
 
-* [M] **Use `giu` for all components**.
+* [M] **Use [Giu](https://github.com/guigrpa/giu) for all components**.
 * **Fix #1**: Badly formatted translations crash the server process.
 
 ## 1.0.1, 1.0.2, 1.0.3 (Apr. 20, 2016)
