@@ -27,11 +27,15 @@ if (process.env.NODE_ENV !== 'production') {
 let ssr = null;
 try {
   /* eslint-disable import/no-unresolved */
-  ssr = require('../../lib/server/ssr/ssr.bundle');
+  ssr = require('../../public/ssr/ssr.bundle');
   /* eslint-disable import/no-unresolved */
   mainStory.info('http', 'Loaded SSR module successfully');
 } catch (err) {
-  mainStory.warn('http', 'No SSR module available');
+  if (err.message.indexOf('Cannot find module') !== 0) {
+    mainStory.warn('http', 'SSR module could not be loaded', { attach: err });
+  } else {
+    mainStory.warn('http', 'No SSR module available');
+  }
 }
 /* eslint-enable global-require */
 
@@ -40,6 +44,7 @@ const LOCALE_PATH = '../locales';
 const DEFAULT_BOOTSTRAP = {
   ssrHtml: '',
   ssrCss: '',
+  ssrData: '',
   fnLocales: '',
   jsonData: {},
 };
@@ -71,8 +76,21 @@ function sendIndexHtml(req, res) {
     .then(() => {
       if (!ssr) return null;
       mainStory.debug('http', 'Rendering...');
-      return ssr.render(req).then(results => timm.merge(bootstrap, results));
+      return ssr.render(req, {
+        lang: userLang,
+        fnLocales: bootstrap.fnLocales,
+      })
+      .then(results => {
+        mainStory.debug('http', 'Finished rendering');
+        const { ssrHtml, ssrCss, relayData } = results;
+        bootstrap.ssrHtml = ssrHtml;
+        bootstrap.ssrCss = ssrCss;
+        bootstrap.jsonData.relayData = relayData;
+      })
+      .catch(err => mainStory.error('http', 'Error rendering', { attach: err }));
     })
+
+    .catch(err => mainStory.error('http', 'Error preparing bootstrap', { attach: err }))
 
     // Render the result!
     .finally(() => {
