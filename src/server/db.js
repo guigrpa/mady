@@ -15,7 +15,7 @@ const DEFAULT_CONFIG = {
   fMinify: false,
 };
 
-const RESPONSE_DELAY = 2000;
+const RESPONSE_DELAY = 0;
 
 // ==============================================
 // Init
