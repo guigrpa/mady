@@ -12,11 +12,6 @@ const KEYWORDS = ['i18n', 'MessageFormat', 'translation', 'locales', 'translator
 // ===============================================
 // Helpers
 // ===============================================
-const WEBPACK_OPTIONS = '--config ./src/server/webpackConfigCommonJS ' +
-  '--progress ' +
-  // '--display-modules ' +
-  '--display-chunks';
-
 const runMultiple = arr => arr.join(' && ');
 const runTestCov = env => {
   const envStr = env != null ? `${env} ` : '';
@@ -25,11 +20,22 @@ const runTestCov = env => {
     'mv .nyc_output/* .nyc_tmp/',
   ]);
 };
-const runWebpackSsr = fWatch => runMultiple([
-  'rm -rf ./lib/server/ssr',
-  `cross-env SERVER_SIDE_RENDERING=true webpack ${WEBPACK_OPTIONS}${fWatch ? ' --watch' : ''}`,
-]);
-const WEBPACK_CLIENT = `cross-env NODE_ENV=production webpack ${WEBPACK_OPTIONS}`;
+
+const WEBPACK_OPTIONS = '--config ./src/server/webpackConfig.cjs ' +
+  '--progress ' +
+  // '--display-modules ' +
+  '--display-chunks';
+const runWebpack = ({ fProduction, fSsr, fWatch } = {}) => {
+  const out = [`rm -rf ./public/${fSsr ? 'ssr' : 'assets'}`];
+  if (fSsr) out.push('rm -rf ./lib/server/ssr');
+  const env = [];
+  if (fSsr) env.push('SERVER_SIDE_RENDERING=true');
+  if (fProduction) env.push('NODE_ENV=production');
+  const envStr = env.length ? `cross-env ${env.join(' ')} ` : '';
+  const webpackOpts = `${WEBPACK_OPTIONS}${fWatch ? ' --watch' : ''}`;
+  out.push(`${envStr}webpack ${webpackOpts}`);
+  return runMultiple(out);
+};
 
 // ===============================================
 // Specs
@@ -79,9 +85,9 @@ const specs = {
                                 ]),
     updateSchemaJson:           'babel-node src/server/gqlUpdateSchema',
     docs:                       'extract-docs --template docs/templates/README.md --output README.md',
-    buildSsrWatch:              runWebpackSsr(true),
-    buildSsr:                   runWebpackSsr(false),
-    buildClient:                WEBPACK_CLIENT,
+    buildSsrWatch:              runWebpack({ fSsr: true, fWatch: true }),
+    buildSsr:                   runWebpack({ fSsr: true /*, fProduction: true */ }),
+    buildClient:                runWebpack({ fProduction: true }),
     build:                      runMultiple([
                                   'node package',
                                   //'npm run lint',

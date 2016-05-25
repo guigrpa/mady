@@ -23,9 +23,5 @@ node_modules
 /lib
 
 # Project-specific
-/public/*.js
-/public/*.eot
-/public/*.woff
-/public/*.woff2
-/public/*.ttf
-/public/*.svg
+/public/assets
+/public/ssr

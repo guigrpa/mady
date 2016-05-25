@@ -42,10 +42,10 @@ export default {
     filename: '[name].bundle.js',
 
     // Where PRODUCTION bundles will be stored
-    path: fSsr ? path.resolve(process.cwd(), 'lib/server/ssr')
-               : path.resolve(process.cwd(), 'public'),
+    path: fSsr ? path.resolve(process.cwd(), 'public/ssr')
+               : path.resolve(process.cwd(), 'public/assets'),
 
-    publicPath: '/',
+    publicPath: '/assets/',
 
     libraryTarget: fSsr ? 'commonjs2' : undefined,
   },
