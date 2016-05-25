@@ -101,7 +101,7 @@
     "file-loader": "0.8.5",
     "flow-bin": "^0.23.0",
     "font-awesome": "4.6.1",
-    "giu": "^0.4.0",
+    "giu": "^0.5.0",
     "isomorphic-relay": "0.7.0-beta.0",
     "json-loader": "0.5.4",
     "moment": "^2.11.2",
