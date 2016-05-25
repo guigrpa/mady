@@ -85,7 +85,7 @@ class Translator extends React.Component {
     this.forceRender = throttle(this.forceRender.bind(this), 200);
   }
 
-  componentWillMount() { window.addEventListener('resize', this.forceRender); }
+  componentDidMount() { window.addEventListener('resize', this.forceRender); }
   componentWillUnmount() { window.removeEventListener('resize', this.forceRender); }
   forceRender() { this.forceUpdate(); }
 

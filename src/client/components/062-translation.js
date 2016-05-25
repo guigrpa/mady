@@ -254,6 +254,7 @@ const style = {
     padding: 0,
     border: '1px solid transparent',
     backgroundColor: fEditing ? undefined : 'transparent',
+    minHeight: 17,
   }),
   buttons: {
     position: 'absolute',

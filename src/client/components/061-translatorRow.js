@@ -154,7 +154,9 @@ class TranslatorRow extends React.Component {
 // Styles
 // ------------------------------------------
 const style = {
-  row: flexItem('none', flexContainer('row')),
+  row: flexItem('none', flexContainer('row', {
+    minHeight: 21,
+  })),
   bodyCell: {
     position: 'relative',
     paddingTop: 1,
