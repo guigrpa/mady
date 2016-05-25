@@ -2,7 +2,7 @@
 
 * Show notifications upon mutation errors.
 * Internal: Use promises for all mutations.
-* Internal: Add optimistic responses for delete mutations.
+* Internal: Add optimistic responses for delete and create mutations.
 * Internal: Fix Storyboard config.
 
 ## 1.1.0 (May 22, 2016)
