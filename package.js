@@ -172,12 +172,12 @@ const specs = {
     graphql: '0.5.0',
     'graphql-relay': '0.4.1',
     'express-graphql': '0.5.1',
-    'babel-relay-plugin': '0.8.1',
+    'babel-relay-plugin': '0.8.0',
   },
 
   devDependencies: {
 
-    // Packaged in the client app
+    // Packaged in the client app (or SSR)
     // --------------------------
     'babel-polyfill': '6.7.4',
     giu: '^0.4.0',
@@ -187,7 +187,8 @@ const specs = {
     'react-dom':                      '15.1.0',
     'react-addons-pure-render-mixin': '15.1.0',
     'react-addons-perf':              '15.1.0',
-    'react-relay': '0.8.1',
+    'react-relay': '0.8.0',
+    'isomorphic-relay': '0.7.0-beta.0',
 
     // Miscellaneous
     'font-awesome': '4.6.1',
