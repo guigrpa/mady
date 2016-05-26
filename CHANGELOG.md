@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.1 (May 26, 2016)
+
+* Fix SSR in production (bad relative paths).
+
 ## 1.2.0 (May 26, 2016)
 
 * [M] Add server-side rendering (SSR)
