@@ -5,7 +5,7 @@
 // Basic config
 // ===============================================
 const NAME = 'mady';
-const VERSION = '1.1.0';
+const VERSION = '1.2.0';
 const DESCRIPTION = 'Easy-to-use tool to manage and translate ICU MessageFormat messages';
 const KEYWORDS = ['i18n', 'MessageFormat', 'translation', 'locales', 'translator'];
 
@@ -86,15 +86,16 @@ const specs = {
     updateSchemaJson:           'babel-node src/server/gqlUpdateSchema',
     docs:                       'extract-docs --template docs/templates/README.md --output README.md',
     buildSsrWatch:              runWebpack({ fSsr: true, fWatch: true }),
-    buildSsr:                   runWebpack({ fSsr: true /*, fProduction: true */ }),
+    buildSsr:                   runWebpack({ fSsr: true, fProduction: true }),
     buildClient:                runWebpack({ fProduction: true }),
     build:                      runMultiple([
                                   'node package',
-                                  //'npm run lint',
-                                  //'npm run flow',
+                                  // 'npm run lint',
+                                  // 'npm run flow',
                                   'npm run compile',
                                   'npm run buildClient',
-                                  'npm run test',
+                                  'npm run buildSsr',
+                                  // 'npm run test',
                                   'npm run docs',
                                   'npm run xxl',
                                 ]),
@@ -107,7 +108,7 @@ const specs = {
     lint:                       'eslint src',
     flow:                       'flow && test $? -eq 0 -o $? -eq 2',
     flowStop:                   'flow stop',
-    xxl:                        "xxl --src \"[\\\"src\\\"]\"",
+    xxl:                        "xxl --src \"[\\\"src\\\"]\"",  // eslint-disable-line quotes
 
     // Testing - general
     test:                       'npm run testCovFull',
@@ -150,14 +151,14 @@ const specs = {
   // Deps
   // -----------------------------------------------
   dependencies: {
-    timm: '^0.6.0',
-    storyboard: '^1.0.0',
-    lodash: '^4.8.2',
-    inquirer: '^1.0.0',
-    commander: '^2.9.0',
+    timm: '0.6.1',
+    storyboard: '1.2.0',
+    lodash: '4.12.0',
+    inquirer: '1.0.2',
+    commander: '2.9.0',
     'node-uuid': '1.4.7',
-    bluebird: '^3.3.4',
-    'fs-extra': '^0.28.0',
+    bluebird: '3.3.5',
+    'fs-extra': '0.28.0',
     'diveSync': '0.3.0',
     'messageformat': '0.3.0',
     'uglify-js': '2.6.2',
@@ -180,7 +181,7 @@ const specs = {
     // Packaged in the client app (or SSR)
     // --------------------------
     'babel-polyfill': '6.7.4',
-    giu: '^0.5.0',
+    giu: '0.5.0',
 
     // React
     react:                            '15.1.0',
@@ -192,19 +193,19 @@ const specs = {
 
     // Miscellaneous
     'font-awesome': '4.6.1',
-    moment: '^2.11.2',
+    moment: '2.13.0',
     tinycolor2: '1.3.0',
     'tiny-cookie': '0.5.5',
 
     // Pure dev dependencies
     // ---------------------
     // Babel + plugins (except babel-eslint)
-    'babel-cli': '^6.6.5',
-    'babel-core': '^6.7.2',
-    'babel-plugin-transform-flow-strip-types': '^6.7.0',
-    'babel-preset-es2015': '^6.6.0',
-    'babel-preset-stage-0': '^6.5.0',
-    'babel-preset-react': '^6.5.0',
+    'babel-cli': '6.8.0',
+    'babel-core': '6.8.0',
+    'babel-plugin-transform-flow-strip-types': '6.8.0',
+    'babel-preset-es2015': '6.6.0',
+    'babel-preset-stage-0': '6.5.0',
+    'babel-preset-react': '6.5.0',
     'babel-preset-react-hmre': '1.1.1', // to use Hot Module Replacement
 
     // Webpack + loaders (+ related stuff)
@@ -222,24 +223,24 @@ const specs = {
     'extract-text-webpack-plugin': '1.0.1',
 
     // Linting
-    eslint: '^2.9.0',
-    'eslint-config-airbnb': '^9.0.0',
-    'eslint-plugin-flowtype': '^2.2.2',
-    'eslint-plugin-react': '^5.1.1',
-    'eslint-plugin-jsx-a11y': '^1.2.2',
-    'eslint-plugin-import': '^1.8.0',
-    'babel-eslint': '^6.0.0',
+    eslint: '2.9.0',
+    'eslint-config-airbnb': '9.0.1',
+    'eslint-plugin-flowtype': '2.2.7',
+    'eslint-plugin-react': '5.1.1',
+    'eslint-plugin-jsx-a11y': '1.2.2',
+    'eslint-plugin-import': '1.8.0',
+    'babel-eslint': '6.0.4',
 
     // Testing
-    ava: '^0.14.0',
-    nyc: '^6.1.1',
-    coveralls: '^2.11.6',
+    ava: '0.15.0',
+    nyc: '6.4.4',
+    coveralls: '2.11.9',
 
     // Other tools
-    'extract-docs': '^1.0.0',
-    'xxl': '^0.1.0',
-    'cross-env': '^1.0.7',
-    'flow-bin': '^0.23.0',
+    'extract-docs': '1.0.1',
+    'xxl': '0.1.1',
+    'cross-env': '1.0.7',
+    'flow-bin': '0.23.1',
   },
 
   // -----------------------------------------------

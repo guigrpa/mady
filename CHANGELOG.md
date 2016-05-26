@@ -1,5 +1,7 @@
 # Changelog
 
+## 1.2.0 (May 26, 2016)
+
 * [M] Add server-side rendering (SSR)
 * Show notifications upon mutation errors.
 * Internal: Use promises for all mutations.
