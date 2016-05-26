@@ -40,6 +40,7 @@ const keyComparator = (a, b) => {
 const fragments = {
   viewer: () => Relay.QL`
     fragment on Viewer {
+      id
       config { langs }
       keys(first: 100000) { edges { node {
         id unusedSince
@@ -49,7 +50,6 @@ const fragments = {
           lang
         }}}
       }}}
-      ${ParseSrcFilesMutation.getFragment('viewer')}
       ${TranslatorRow.getFragment('viewer')}
     }
   `,
@@ -85,7 +85,7 @@ class Translator extends React.Component {
     this.forceRender = throttle(this.forceRender.bind(this), 200);
   }
 
-  componentWillMount() { window.addEventListener('resize', this.forceRender); }
+  componentDidMount() { window.addEventListener('resize', this.forceRender); }
   componentWillUnmount() { window.removeEventListener('resize', this.forceRender); }
   forceRender() { this.forceUpdate(); }
 
@@ -298,7 +298,7 @@ class Translator extends React.Component {
     mutate({
       description: 'Click on Parse source files',
       Mutation: ParseSrcFilesMutation,
-      props: { viewer: this.props.viewer },
+      props: { viewerId: this.props.viewer.id },
       onFinish: () => this.setState({ fParsing: false }),
     });
   }

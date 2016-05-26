@@ -3,6 +3,9 @@ const Cookie = !process.env.SERVER_SIDE_RENDERING && require('tiny-cookie');
 /* eslint-enable global-require */
 const NAMESPACE = 'mady';
 
+// SSR
+let currentCookies = null;
+
 function localGet(key, options = {}) {
   let out = options.defaultValue;
   try {
@@ -21,8 +24,10 @@ function localSet(key, val) {
 // and null-valued ones...
 function cookieGet(key, options = {}) {
   let out;
+  const fullKey = `${NAMESPACE}_${key}`;
   try {
-    out = JSON.parse(Cookie.getRaw(`${NAMESPACE}_${key}`));
+    const raw = currentCookies ? currentCookies[fullKey] : Cookie.getRaw(fullKey);
+    out = JSON.parse(raw);
   } catch (err) { /* ignore */ }
   if (out == null) out = options.defaultValue;
   return out;
@@ -35,6 +40,8 @@ function cookieSet(key, val) {
   } catch (err) { /* ignore */ }
 }
 
+// SSR
+function setCurrentCookies(cookies) { currentCookies = cookies; }
 
 // ==========================================
 // Public API
@@ -42,4 +49,6 @@ function cookieSet(key, val) {
 export {
   localGet, localSet,
   cookieGet, cookieSet,
+
+  setCurrentCookies,
 };

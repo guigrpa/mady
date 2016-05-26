@@ -24,13 +24,13 @@ import { LANG_OPTIONS }     from '../gral/constants';
 const fragments = {
   viewer: () => Relay.QL`
     fragment on Viewer {
+      id
       config {
         langs
         srcPaths
         srcExtensions
         fMinify
       }
-      ${UpdateConfigMutation.getFragment('viewer')}
     }
   `,
 };
@@ -201,7 +201,7 @@ class Settings extends React.Component {
     mutate({
       description: 'Click on Save settings',
       Mutation: UpdateConfigMutation,
-      props: { viewer, set, unset: [] },
+      props: { viewerId: viewer.id, set, unset: [] },
       onSuccess: () => this.props.onClose(),
       onFailure: () => notify({
         msg: _t('error_Configuration could not be saved'),
