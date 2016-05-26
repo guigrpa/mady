@@ -56,6 +56,12 @@ export default {
   devtool: fProduction || fSsr ? undefined : 'eval',
   target: fSsr ? 'node' : undefined,
 
+  // Don't redefine `__dirname` when compiling for Node (SSR)
+  // https://github.com/webpack/webpack/issues/1599#issuecomment-186841345
+  node: fSsr
+    ? { __dirname: false, __filename: false }
+    : undefined,
+
   resolve: {
     // Add automatically the following extensions to required modules
     extensions: ['', '.jsx', '.js'],

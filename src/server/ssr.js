@@ -12,7 +12,7 @@ import _t                   from '../translate';
 let gqlServer;
 let mainStory;
 
-const SSR_CSS_PATH = path.resolve(process.cwd(), './public/ssr/ssr.bundle.css');
+const SSR_CSS_PATH = path.resolve(__dirname, './ssr.bundle.css');
 const ssrCss = fs.readFileSync(SSR_CSS_PATH);
 
 
