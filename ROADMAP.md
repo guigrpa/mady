@@ -1,3 +1,4 @@
 - [-] Allow unicode escape sequences in messages and translations -- pending: https://github.com/graphql/graphql-relay-js/pull/90
+- [ ] Better processing of BCP47
 - [ ] Allow configuration of translate function name (for parser), default _t
 - [ ] Add --build option to CLI
