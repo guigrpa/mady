@@ -15,9 +15,7 @@ function applySetUnset(item, set, unset = []) {
 // ParseSrcFilesMutation
 // =======================================================
 class ParseSrcFilesMutation extends Relay.Mutation {
-  static fragments = {
-    viewer: () => Relay.QL`fragment on Viewer { id }`,
-  };
+  static fragments = {};
   getMutation() {
     return Relay.QL`mutation { parseSrcFiles }`;
   }
@@ -38,10 +36,11 @@ class ParseSrcFilesMutation extends Relay.Mutation {
     return [{
       type: 'FIELDS_CHANGE',
       fieldIDs: {
-        viewer: this.props.viewer.id,
+        viewer: this.props.viewerId,
       },
     }];
   }
+  getCollisionKey() { return 'compileTranslations'; }
 }
 
 // -------------------------------------------------------
@@ -68,9 +67,7 @@ class CompileTranslationsMutation extends Relay.Mutation {
 // UpdateConfigMutation
 // =======================================================
 class UpdateConfigMutation extends Relay.Mutation {
-  static fragments = {
-    viewer: () => Relay.QL`fragment on Viewer { id }`,
-  };
+  static fragments = {};
   getMutation() {
     return Relay.QL`mutation { updateConfig }`;
   }
@@ -92,7 +89,7 @@ class UpdateConfigMutation extends Relay.Mutation {
     return [{
       type: 'FIELDS_CHANGE',
       fieldIDs: {
-        viewer: this.props.viewer.id,
+        viewer: this.props.viewerId,
       },
     }];
   }
@@ -104,23 +101,14 @@ class UpdateConfigMutation extends Relay.Mutation {
 // Key mutations
 // =======================================================
 class DeleteKeyMutation extends Relay.Mutation {
-  static fragments = {
-    viewer: () => Relay.QL`
-      fragment on Viewer {
-        id
-        keys(first: 100000) { edges { node {
-          id
-        }}}
-      }
-    `,
-  };
+  static fragments = {};
   getMutation() {
     return Relay.QL`mutation {deleteKeyInViewerKeys}`;
   }
   getVariables() {
     return {
       id: this.props.id,
-      parentId: this.props.viewer.id,
+      parentId: this.props.viewerId,
       storyId: this.props.storyId,
     };
   }
@@ -136,17 +124,16 @@ class DeleteKeyMutation extends Relay.Mutation {
     return [{
       type: 'NODE_DELETE',
       parentName: 'parent',
-      parentID: this.props.viewer.id,
+      parentID: this.props.viewerId,
       connectionName: 'keys',
       deletedIDFieldName: 'deletedKeyId',
     }];
   }
   getOptimisticResponse() {
-    const prevEdges = this.props.viewer.keys.edges;
-    const edges = prevEdges.filter(({ node }) => node.id !== this.props.id);
+    const { viewerId, id } = this.props;
     return {
-      parent: { keys: { edges } },
-      deletedKeyId: this.props.id,
+      parent: { id: viewerId },
+      deletedKeyId: id,
     };
   }
   getCollisionKey() { return this.props.id; }
@@ -157,17 +144,13 @@ class DeleteKeyMutation extends Relay.Mutation {
 // Translation mutations
 // =======================================================
 class UpdateTranslationMutation extends Relay.Mutation {
-  static fragments = {
-    translation: () => Relay.QL`
-      fragment on Translation { id translation }
-    `,
-  };
+  static fragments = {};
   getMutation() {
     return Relay.QL`mutation {updateTranslation}`;
   }
   getVariables() {
     return {
-      id: this.props.translation.id,
+      id: this.props.id,
       set: this.props.set,
       unset: this.props.unset,
       storyId: this.props.storyId,
@@ -184,7 +167,7 @@ class UpdateTranslationMutation extends Relay.Mutation {
     return [{
       type: 'FIELDS_CHANGE',
       fieldIDs: {
-        translation: this.props.translation.id,
+        translation: this.props.id,
       },
     }];
   }
@@ -198,11 +181,7 @@ class UpdateTranslationMutation extends Relay.Mutation {
 
 // -------------------------------------------------------
 class CreateTranslationMutation extends Relay.Mutation {
-  static fragments = {
-    theKey: () => Relay.QL`
-      fragment on Key { id }
-    `,
-  };
+  static fragments = {};
   getMutation() {
     return Relay.QL`mutation {createTranslationInKeyTranslations}`;
   }
@@ -210,7 +189,7 @@ class CreateTranslationMutation extends Relay.Mutation {
     return {
       set: this.props.set,
       unset: this.props.unset,
-      parentId: this.props.theKey.id,
+      parentId: this.props.keyId,
       storyId: this.props.storyId,
     };
   }
@@ -226,7 +205,7 @@ class CreateTranslationMutation extends Relay.Mutation {
     return [{
       type: 'RANGE_ADD',
       parentName: 'parent',
-      parentID: this.props.theKey.id,
+      parentID: this.props.keyId,
       connectionName: 'translations',
       edgeName: 'createdTranslationEdge',
       rangeBehaviors: {
@@ -236,37 +215,28 @@ class CreateTranslationMutation extends Relay.Mutation {
   }
   // Based on facebook/relay/examples/star-wars/js/mutation/AddShipMutation.js
   getOptimisticResponse() {
-    const { set, unset, theKey } = this.props;
+    const { set, unset, keyId } = this.props;
     const node = applySetUnset(undefined, set, unset);
     return {
-      parent: { id: theKey.id },
+      parent: { id: keyId },
       createdTranslationEdge: { node },
     };
   }
   getCollisionKey() {
-    return `${this.props.theKey.id}_${this.props.set.lang}`;
+    return `${this.props.keyId}_${this.props.set.lang}`;
   }
 }
 
 // -------------------------------------------------------
 class DeleteTranslationMutation extends Relay.Mutation {
-  static fragments = {
-    theKey: () => Relay.QL`
-      fragment on Key {
-        id
-        translations(first: 100000) { edges { node {
-          id
-        }}}
-      }
-    `,
-  };
+  static fragments = {};
   getMutation() {
     return Relay.QL`mutation {deleteTranslationInKeyTranslations}`;
   }
   getVariables() {
     return {
       id: this.props.id,
-      parentId: this.props.theKey.id,
+      parentId: this.props.keyId,
       storyId: this.props.storyId,
     };
   }
@@ -282,18 +252,18 @@ class DeleteTranslationMutation extends Relay.Mutation {
     return [{
       type: 'NODE_DELETE',
       parentName: 'parent',
-      parentID: this.props.theKey.id,
+      parentID: this.props.keyId,
       connectionName: 'translations',
       deletedIDFieldName: 'deletedTranslationId',
     }];
   }
   // Based (indirectly) on facebook/relay/examples/star-wars/js/mutation/AddShipMutation.js
   getOptimisticResponse() {
-    const { theKey, id } = this.props;
+    const { keyId, id } = this.props;
     // const nextEdges = theKey.translations.edges.filter(({ node }) => node.id !== id);
     // const nextKey = timm.setIn(theKey, ['translations', 'edges'], nextEdges);
     return {
-      parent: { id: theKey.id },
+      parent: { id: keyId },
       // parent: nextKey,
       deletedTranslationId: id,
     };

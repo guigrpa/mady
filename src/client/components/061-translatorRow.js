@@ -34,9 +34,7 @@ const fragments = {
     }
   `,
   viewer: () => Relay.QL`
-    fragment on Viewer {
-      ${DeleteKeyMutation.getFragment('viewer')}
-    }
+    fragment on Viewer { id }
   `,
 };
 
@@ -139,13 +137,13 @@ class TranslatorRow extends React.Component {
   onClickKeyRow() { this.props.changeSelectedKey(this.props.theKey.id); }
 
   onClickDeleteKey(ev) {
-    const { viewer, fSelected, changeSelectedKey } = this.props;
+    const { viewer, theKey, fSelected, changeSelectedKey } = this.props;
     cancelEvent(ev);
     if (fSelected) changeSelectedKey(null);
     mutate({
       description: 'Click on Delete key',
       Mutation: DeleteKeyMutation,
-      props: { viewer, id: this.props.theKey.id },
+      props: { viewerId: viewer.id, id: theKey.id },
     });
   }
 }

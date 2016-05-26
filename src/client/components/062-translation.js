@@ -41,15 +41,12 @@ const fragments = {
     fragment on Key {
       id
       text
-      ${CreateTranslationMutation.getFragment('theKey')}
-      ${DeleteTranslationMutation.getFragment('theKey')}
     }
   `,
   translation: () => Relay.QL`
     fragment on Translation {
       id
       lang, translation
-      ${UpdateTranslationMutation.getFragment('translation')}
     }
   `,
 };
@@ -194,7 +191,7 @@ class Translation extends React.Component {
       if (this.props.translation) {
         Mutation = UpdateTranslationMutation;
         props = {
-          translation: this.props.translation,
+          id: this.props.translation.id,
           set: {
             translation: text,
           },
@@ -207,7 +204,7 @@ class Translation extends React.Component {
             keyId: this.props.theKey.id,
             translation: text,
           },
-          theKey: this.props.theKey,
+          keyId: this.props.theKey.id,
         };
       }
       mutate({ description, Mutation, props });
@@ -229,7 +226,7 @@ class Translation extends React.Component {
       Mutation: DeleteTranslationMutation,
       props: {
         id: this.props.translation.id,
-        theKey: this.props.theKey,
+        keyId: this.props.theKey.id,
       },
     });
   }
