@@ -2,7 +2,6 @@ import path                 from 'path';
 import fs                   from 'fs';
 import http                 from 'http';
 import Promise              from 'bluebird';
-import timm                 from 'timm';
 import { cloneDeep }        from 'lodash';
 import storyboard           from 'storyboard';
 const { mainStory, chalk } = storyboard;

@@ -437,7 +437,7 @@ function addMutation(type, op, options = {}) {
     if (op === 'CREATE') {
       outputFields[`created${type}Edge`] = {
         type: gqlTypes[`${type}Edge`],
-        resolve: ({ localId, node, parentNode }) => {
+        resolve: ({ node, parentNode }) => {
           if (!node) return null;
           const allNodes = parent.resolveConnection(parentNode);
           const idx = allNodes.findIndex(o => o.id === node.id);
