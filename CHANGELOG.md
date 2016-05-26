@@ -1,5 +1,6 @@
 # Changelog
 
+* [M] Add server-side rendering (SSR)
 * Show notifications upon mutation errors.
 * Internal: Use promises for all mutations.
 * Internal: Add optimistic responses for delete and create mutations.

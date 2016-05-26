@@ -1,5 +1,4 @@
-- [-] SSR
-    + [ ] Fix mutations (apparently the store is not initialised with correct data, since no mutation succeeds)
+- [ ] Fix situation in which the locales folder is destroyed -- application no longer launches (with or without SSR?)
 - [ ] Freeze dep versions
 - [ ] Publish v1.2.0
 - [-] Allow unicode escape sequences in messages and translations -- pending: https://github.com/graphql/graphql-relay-js/pull/90
