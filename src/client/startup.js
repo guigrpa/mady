@@ -39,7 +39,7 @@ if (window.AppBootstrap.relayData) {
 
   // Comment out the following line if you find issues with the way the
   // client-side Relay store is initialised (esp. wrt. mutations doing erratic things)
-  // IsomorphicRelay.injectPreparedData(environment, window.AppBootstrap.relayData);
+  IsomorphicRelay.injectPreparedData(environment, window.AppBootstrap.relayData);
 
   const rootContainerProps = {
     Container: App,
