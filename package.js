@@ -162,6 +162,7 @@ const specs = {
     'diveSync': '0.3.0',
     'messageformat': '0.3.0',
     'uglify-js': '2.6.2',
+    'slash': '1.0.0',
 
     // Express + plugins
     express: '4.13.4',
@@ -170,10 +171,10 @@ const specs = {
     compression: '1.6.1',
 
     // GraphQL
-    graphql: '0.5.0',
-    'graphql-relay': '0.4.1',
-    'express-graphql': '0.5.1',
-    'babel-relay-plugin': '0.8.0',
+    graphql: '0.6.0',
+    'graphql-relay': '0.4.2',
+    'express-graphql': '0.5.3',
+    'babel-relay-plugin': '0.9.0',
   },
 
   devDependencies: {
@@ -188,7 +189,7 @@ const specs = {
     'react-dom':                      '15.1.0',
     'react-addons-pure-render-mixin': '15.1.0',
     'react-addons-perf':              '15.1.0',
-    'react-relay': '0.8.0',
+    'react-relay': '0.9.0',
     'isomorphic-relay': '0.7.0-beta.0',
 
     // Miscellaneous
