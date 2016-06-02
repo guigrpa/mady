@@ -29,6 +29,7 @@ const fragments = {
         langs
         srcPaths
         srcExtensions
+        msgFunctionNames
         fMinify
       }
     }
@@ -52,7 +53,9 @@ class Settings extends React.Component {
     // rather than relying on `giu`. For other attributes (`lang`, `fMinify`), we can
     // leave state handling entirely to `giu`, and fetch the value when the user clicks on
     // Save.
-    this.state = pick(props.viewer.config, ['langs', 'srcPaths', 'srcExtensions']);
+    this.state = pick(props.viewer.config, [
+      'langs', 'srcPaths', 'srcExtensions', 'msgFunctionNames'
+    ]);
     bindAll(this, [
       'onCreateListItem',
       'onRemoveListItem',
@@ -125,6 +128,16 @@ class Settings extends React.Component {
           placeholder: 'e.g. .js',
           width: 60,
         })}
+        <div style={style.listLabel}>
+          {_t('settingsForm_Message translation functions to look for:')}
+        </div>
+        {this.renderList({
+          id: 'msgFunctionNames',
+          dir: 'row',
+          Component: TextInput,
+          placeholder: 'e.g. _t',
+          width: 60,
+        })}
         <div style={style.configLine}>
           <Checkbox ref={c => { this.refMinify = c; }} id="fMinify" value={fMinify} />
           <label htmlFor="fMinify">
@@ -148,8 +161,7 @@ class Settings extends React.Component {
               onChange={this.onUpdateListItem}
               required errorZ={52}
               style={style.input(width)}
-            />
-            {' '}
+            />&nbsp;
             <Icon
               id={`${id}.${idx}`}
               icon="remove"
@@ -196,7 +208,9 @@ class Settings extends React.Component {
 
     // Save other settings
     const { viewer } = this.props;
-    const set = pick(this.state, ['langs', 'srcPaths', 'srcExtensions']);
+    const set = pick(this.state, [
+      'langs', 'srcPaths', 'srcExtensions', 'msgFunctionNames'
+    ]);
     set.fMinify = this.refMinify.getValue();
     mutate({
       description: 'Click on Save settings',
@@ -227,6 +241,7 @@ const style = {
     padding: '0px 2px',
     marginTop: dir === 'column' ? 1 : undefined,
     marginRight: 10,
+    whiteSpace: 'nowrap',
   }),
   input: width => ({ width }),
   add: {

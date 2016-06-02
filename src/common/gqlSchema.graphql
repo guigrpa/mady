@@ -16,6 +16,7 @@ type Config implements Node {
   srcPaths: [String]
   srcExtensions: [String]
   langs: [String]
+  msgFunctionNames: [String]
   fMinify: Boolean
   id: ID!
 }
@@ -24,6 +25,7 @@ input ConfigUpdate {
   srcPaths: [String]
   srcExtensions: [String]
   langs: [String]
+  msgFunctionNames: [String]
   fMinify: Boolean
 }
 

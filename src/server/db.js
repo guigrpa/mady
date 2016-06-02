@@ -12,6 +12,7 @@ const DEFAULT_CONFIG = {
   srcPaths: ['src'],
   srcExtensions: ['.js', '.jsx', '.coffee', '.cjsx'],
   langs: ['en-US'],
+  msgFunctionNames: ['_t'],
   fMinify: false,
 };
 
@@ -63,7 +64,9 @@ function initConfig() {
 }
 
 function readConfig() {
-  _config = timm.addDefaults(readJson(_configPath), DEFAULT_CONFIG);
+  const config = readJson(_configPath);
+  _config = timm.addDefaults(config, DEFAULT_CONFIG);
+  if (_config !== config) saveConfig();
 }
 function saveConfig(options) { saveJson(_configPath, _config, options); }
 
@@ -138,8 +141,8 @@ function deleteKey(id) {
 }
 
 function parseSrcFiles({ story }) {
-  const { srcPaths, srcExtensions } = _config;
-  const curKeys = parse({ srcPaths, srcExtensions, story });
+  const { srcPaths, srcExtensions, msgFunctionNames } = _config;
+  const curKeys = parse({ srcPaths, srcExtensions, msgFunctionNames, story });
   const now = new Date().toISOString();
 
   const unusedKeys = [];

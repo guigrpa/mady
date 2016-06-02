@@ -8,12 +8,17 @@
     ".js",
     ".jsx",
     ".coffee",
-    ".cjsx"
+    ".cjsx",
+    ""
   ],
   "langs": [
     "en-US",
     "es-ES",
     "ca-CA"
   ],
-  "fMinify": false
+  "fMinify": false,
+  "msgFunctionNames": [
+    "_t",
+    "i18n"
+  ]
 }

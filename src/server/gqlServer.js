@@ -119,10 +119,11 @@ export function init() {
   // Config
   // ----------------------------------------------
   const configFields = () => ({
-    srcPaths:       { type: new GraphQLList(GraphQLString) },
-    srcExtensions:  { type: new GraphQLList(GraphQLString) },
-    langs:          { type: new GraphQLList(GraphQLString) },
-    fMinify:        { type: GraphQLBoolean },
+    srcPaths:         { type: new GraphQLList(GraphQLString) },
+    srcExtensions:    { type: new GraphQLList(GraphQLString) },
+    langs:            { type: new GraphQLList(GraphQLString) },
+    msgFunctionNames: { type: new GraphQLList(GraphQLString) },
+    fMinify:          { type: GraphQLBoolean },
   });
 
   gqlTypes.Config = new GraphQLObjectType({

@@ -345,6 +345,22 @@
               "deprecationReason": null
             },
             {
+              "name": "msgFunctionNames",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "fMinify",
               "description": null,
               "args": [],
@@ -1213,6 +1229,20 @@
             },
             {
               "name": "langs",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "msgFunctionNames",
               "description": null,
               "type": {
                 "kind": "LIST",
@@ -2460,7 +2490,8 @@
                     "name": null,
                     "ofType": {
                       "kind": "OBJECT",
-                      "name": "__Type"
+                      "name": "__Type",
+                      "ofType": null
                     }
                   }
                 }
@@ -2523,7 +2554,8 @@
                     "name": null,
                     "ofType": {
                       "kind": "OBJECT",
-                      "name": "__Directive"
+                      "name": "__Directive",
+                      "ofType": null
                     }
                   }
                 }
@@ -2829,7 +2861,8 @@
                     "name": null,
                     "ofType": {
                       "kind": "OBJECT",
-                      "name": "__InputValue"
+                      "name": "__InputValue",
+                      "ofType": null
                     }
                   }
                 }
@@ -3069,7 +3102,8 @@
                     "name": null,
                     "ofType": {
                       "kind": "ENUM",
-                      "name": "__DirectiveLocation"
+                      "name": "__DirectiveLocation",
+                      "ofType": null
                     }
                   }
                 }
@@ -3092,7 +3126,8 @@
                     "name": null,
                     "ofType": {
                       "kind": "OBJECT",
-                      "name": "__InputValue"
+                      "name": "__InputValue",
+                      "ofType": null
                     }
                   }
                 }
@@ -3203,6 +3238,72 @@
               "description": "Location adjacent to an inline fragment.",
               "isDeprecated": false,
               "deprecationReason": null
+            },
+            {
+              "name": "SCHEMA",
+              "description": "Location adjacent to a schema definition.",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "SCALAR",
+              "description": "Location adjacent to a scalar definition.",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "OBJECT",
+              "description": "Location adjacent to an object type definition.",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "FIELD_DEFINITION",
+              "description": "Location adjacent to a field definition.",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "ARGUMENT_DEFINITION",
+              "description": "Location adjacent to an argument definition.",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "INTERFACE",
+              "description": "Location adjacent to an interface definition.",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "UNION",
+              "description": "Location adjacent to a union definition.",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "ENUM",
+              "description": "Location adjacent to an enum definition.",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "ENUM_VALUE",
+              "description": "Location adjacent to an enum value definition.",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "INPUT_OBJECT",
+              "description": "Location adjacent to an input object type definition.",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "INPUT_FIELD_DEFINITION",
+              "description": "Location adjacent to an input object field definition.",
+              "isDeprecated": false,
+              "deprecationReason": null
             }
           ],
           "possibleTypes": null
@@ -3256,6 +3357,26 @@
                 }
               },
               "defaultValue": null
+            }
+          ]
+        },
+        {
+          "name": "deprecated",
+          "description": "Marks an element of a GraphQL schema as no longer supported.",
+          "locations": [
+            "FIELD_DEFINITION",
+            "ENUM_VALUE"
+          ],
+          "args": [
+            {
+              "name": "reason",
+              "description": "Explains why this element was deprecated, usually also including a suggestion for how to access supported similar data. Formattedin [Markdown](https://daringfireball.net/projects/markdown/).",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": "\"No longer supported\""
             }
           ]
         }
