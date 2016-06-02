@@ -1,14 +1,31 @@
 import fs                   from 'fs';
 import path                 from 'path';
+import slash                from 'slash';
 import { chalk }            from 'storyboard';
 import diveSync             from 'diveSync';
 
-const REGEXP_TRANSLATE_CMDS = [
-  /_t\s*\(\s*"(.*?)"/g,
-  /_t\s*\(\s*'(.*?)'/g,
-];
+// const REGEXP_TRANSLATE_CMDS = [
+//   /_t\s*\(\s*"(.*?)"/g,
+//   /_t\s*\(\s*'(.*?)'/g,
+// ];
 
-export default function parse({ srcPaths, srcExtensions, story }) {
+const getRegexps = msgFunctionNames => {
+  const out = [];
+  msgFunctionNames.forEach(fnName => {
+    const escapedFnName = fnName.replace(/([\$])/g, '\\$1');
+
+    // Looking for something like:
+    // * i18n("xk s fjkl")
+    // * i18n ( "xk s fjkl")
+    // * i18n('xk s fjkl')
+    out.push(new RegExp(`${escapedFnName}\\s*\\(\\s*"([\\s\\S]*?)"`, 'gm'));
+    out.push(new RegExp(`${escapedFnName}\\s*\\(\\s*'([\\s\\S]*?)'`, 'gm'));
+  });
+  return out;
+};
+
+export default function parse({ srcPaths, srcExtensions, msgFunctionNames, story }) {
+  const regexpFunctionNames = getRegexps(msgFunctionNames);
   const keys = {};
   const diveOptions = { filter: (filePath, fDir) => {
     if (fDir) return true;
@@ -18,7 +35,7 @@ export default function parse({ srcPaths, srcExtensions, story }) {
     const finalFilePath = path.normalize(filePath);
     story.info('parser', `Processing ${chalk.cyan.bold(finalFilePath)}...`);
     const fileContents = fs.readFileSync(finalFilePath);
-    for (const re of REGEXP_TRANSLATE_CMDS) {
+    regexpFunctionNames.forEach(re => {
       let match;
       while ((match = re.exec(fileContents))) {
         const key = match[1];
@@ -39,12 +56,10 @@ export default function parse({ srcPaths, srcExtensions, story }) {
           unusedSince: null,
           sources: [],
         };
-        keys[key].sources.push(finalFilePath);
+        keys[key].sources.push(slash(finalFilePath));
       }
-    }
+    });
   };
-  for (const srcPath of srcPaths) {
-    diveSync(srcPath, diveOptions, diveProcess);
-  }
+  srcPaths.forEach(srcPath => diveSync(srcPath, diveOptions, diveProcess))
   return keys;
 }

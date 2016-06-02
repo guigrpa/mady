@@ -18,7 +18,6 @@
   ],
   "fMinify": false,
   "msgFunctionNames": [
-    "_t",
-    "i18n"
+    "_t"
   ]
 }

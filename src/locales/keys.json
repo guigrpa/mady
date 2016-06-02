@@ -353,5 +353,15 @@
     "sources": [
       "src/client/components/helpers.js"
     ]
+  },
+  "settingsForm_Message translation functions to look for:": {
+    "id": "settingsForm_Message translation functions to look for:",
+    "context": "settingsForm",
+    "text": "Message translation functions to look for:",
+    "firstUsed": "2016-06-02T13:49:20.542Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/080-settings.js"
+    ]
   }
 }

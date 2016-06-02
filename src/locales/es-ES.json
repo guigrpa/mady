@@ -226,5 +226,11 @@
     "lang": "es-ES",
     "translation": "¿El servidor está funcionando?",
     "keyId": "error_Is the server running?"
+  },
+  "2c2c21f1-d8ac-41a6-b452-2a518826b435": {
+    "id": "2c2c21f1-d8ac-41a6-b452-2a518826b435",
+    "lang": "es-ES",
+    "translation": "Funciones de traducción de mensajes a buscar:",
+    "keyId": "settingsForm_Message translation functions to look for:"
   }
 }

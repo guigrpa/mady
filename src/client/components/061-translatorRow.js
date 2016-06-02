@@ -78,6 +78,7 @@ class TranslatorRow extends React.Component {
     const elContext = key.context
       ? <span style={style.context}>{key.context}</span>
       : undefined;
+    const elText = <span style={style.text}>{key.text}</span>;
     const elDeleteKey = hovering
       ? (
         <Icon
@@ -103,7 +104,7 @@ class TranslatorRow extends React.Component {
           onMouseLeave={onHoverStop}
           style={cellStyle}
         >
-          {elContext}{key.text}{elDeleteKey}
+          {elContext}{elText}{elDeleteKey}
         </div>
         {this.props.langs.map(this.renderTranslation)}
       </div>
@@ -176,6 +177,9 @@ const style = {
   context: {
     fontWeight: 900,
     marginRight: 10,
+  },
+  text: {
+    whiteSpace: 'pre-wrap',
   },
   removeIcon: {
     position: 'absolute',

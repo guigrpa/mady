@@ -20,15 +20,6 @@ require('./010-app.sass');
 // Example MessageFormat message with plural, so that it appears in the screenshot:
 // _t("someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}", { NUM: 1 }))
 
-// Example message with alternative function name:
-// i18n("someContext_Test message with alternative function name")
-
-// Example multiline:
-/*
-_t("someContext_This is a
-multi-line message")
-*/
-
 // ==========================================
 // Relay fragments
 // ==========================================

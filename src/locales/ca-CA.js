@@ -65,7 +65,8 @@ return {
   "validation_MessageFormat syntax error": function(d) { return "Error de sintaxi MessageFormat"; },
   "error_Changes could not be saved": function(d) { return "No s'han pogut guardar els canvis"; },
   "error_Configuration could not be saved": function(d) { return "No s'ha pogut guardar la configuració"; },
-  "error_Is the server running?": function(d) { return "El servidor està funcionant?"; }
+  "error_Is the server running?": function(d) { return "El servidor està funcionant?"; },
+  "settingsForm_Message translation functions to look for:": function(d) { return "Funcions de traducció de missatges a buscar:"; }
 }
 };
 module.exports = anonymous();

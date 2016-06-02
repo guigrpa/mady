@@ -61,7 +61,8 @@ return {
   msgDetailsView_Details: function(d) { return "Detalles"; },
   "error_Changes could not be saved": function(d) { return "No se pudieron guardar los cambios"; },
   "error_Configuration could not be saved": function(d) { return "No se pudo guardar la configuración"; },
-  "error_Is the server running?": function(d) { return "¿El servidor está funcionando?"; }
+  "error_Is the server running?": function(d) { return "¿El servidor está funcionando?"; },
+  "settingsForm_Message translation functions to look for:": function(d) { return "Funciones de traducción de mensajes a buscar:"; }
 }
 };
 module.exports = anonymous();

@@ -220,5 +220,11 @@
     "lang": "ca-CA",
     "translation": "El servidor està funcionant?",
     "keyId": "error_Is the server running?"
+  },
+  "ae2c5503-3f04-45c2-a2ba-f1ea6958c88d": {
+    "id": "ae2c5503-3f04-45c2-a2ba-f1ea6958c88d",
+    "lang": "ca-CA",
+    "translation": "Funcions de traducció de missatges a buscar:",
+    "keyId": "settingsForm_Message translation functions to look for:"
   }
 }

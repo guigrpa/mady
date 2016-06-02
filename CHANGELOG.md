@@ -1,5 +1,7 @@
 # Changelog
 
+* [M] **Allow configuration of the message translation functions** (markers for message extraction).
+* [M] **Support extraction of multi-line messages** (especially useful for complex MessageFormat strings with nested plurals and selections).
 * Update docs.
 * Deps: bump `graphql@0.6.0`, `react-relay@0.9.0` (+ related).
 * Store sources always with slashes (not with backward-slashes in Windows).
