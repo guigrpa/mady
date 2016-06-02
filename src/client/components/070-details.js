@@ -15,7 +15,7 @@ import { COLORS }           from '../gral/constants';
 const fragments = {
   viewer: () => Relay.QL`
     fragment on Viewer {
-      anyNode(id: $selectedKeyId) {
+      anyNode(id: $details_selectedKeyId) {
         ... on Key {
           firstUsed unusedSince
           sources
@@ -37,7 +37,7 @@ class Details extends React.Component {
   };
 
   componentWillReceiveProps(nextProps) {
-    this.props.relay.setVariables({ selectedKeyId: nextProps.selectedKeyId });
+    this.props.relay.setVariables({ details_selectedKeyId: nextProps.selectedKeyId });
   }
 
   render() {
@@ -124,5 +124,5 @@ const style = {
 // ==========================================
 export default Relay.createContainer(Details, {
   fragments,
-  initialVariables: { selectedKeyId: null },
+  initialVariables: { details_selectedKeyId: null },
 });
