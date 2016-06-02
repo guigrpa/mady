@@ -1,11 +1,14 @@
 # Changelog
 
+## 1.3.0 (June 2, 2016)
+
 * [M] **Allow configuration of the message translation functions** (markers for message extraction).
 * [M] **Support extraction of multi-line messages** (especially useful for complex MessageFormat strings with nested plurals and selections).
 * Update docs.
 * Deps: bump `graphql@0.6.0`, `react-relay@0.9.0` (+ related).
 * Store sources always with slashes (not with backward-slashes in Windows).
 * **Bugfix**: Details: correct variable usage (add namespace to selectedKeyId prop, to avoid overlap with Relay variable).
+* Add thank-you note to readme.
 
 ## 1.2.1 (May 26, 2016)
 

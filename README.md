@@ -104,9 +104,10 @@ Mady is built with [React](https://facebook.github.io/react/) and [Relay](https:
 
 ## [Changelog](https://github.com/guigrpa/mady/blob/master/CHANGELOG.md)
 
+
 ## Why *Mady*?
 
-This library is named after my cousin, a brilliant person with an extraordinary talent for languages. She taught me English when I was a little child.
+This library is named after my cousin, a brilliant person with an extraordinary talent for languages. I thank her for teaching me English when I was a little child.
 
 
 ## License (MIT)
