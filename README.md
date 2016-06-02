@@ -92,7 +92,7 @@ console.log(_t("someContext_{NUM, plural, one{1 hamburger} other{# hamburgers} }
 
 ## MessageFormat
 
-Mady uses the [messageformat.js](https://github.com/SlexAxton/messageformat.js) library by Alex Sexton, which "supports and extends all parts of the **[ICU MessageFormat]** standard (see the [user guide](http://userguide.icu-project.org/formatparse/messages)), with the exception of the deprecated ChoiceFormat." IMHO, and while it does not solve all the problems in the huge field of i18n, it is a much more powerful tool than the conventional gettext.
+Mady uses the [messageformat.js](https://github.com/SlexAxton/messageformat.js) library by Alex Sexton, which "supports and extends all parts of the **ICU MessageFormat** standard (see the [user guide](http://userguide.icu-project.org/formatparse/messages)), with the exception of the deprecated ChoiceFormat." IMHO, and while it does not solve all the problems in the huge field of i18n, it is a much more powerful tool than the conventional gettext.
 
 Some examples of MessageFormat messages are given above ([more here](https://messageformat.github.io/guide/)), but this does not even scratch the surface of what is enabled by this standard.
 
