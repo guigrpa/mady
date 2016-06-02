@@ -1,5 +1,10 @@
 # Changelog
 
+* Update docs.
+* Deps: bump `graphql@0.6.0`, `react-relay@0.9.0` (+ related).
+* Store sources always with slashes (not with backward-slashes in Windows).
+* **Bugfix**: Details: correct variable usage (add namespace to selectedKeyId prop, to avoid overlap with Relay variable).
+
 ## 1.2.1 (May 26, 2016)
 
 * Fix SSR in production (bad relative paths).
@@ -7,10 +12,10 @@
 ## 1.2.0 (May 26, 2016)
 
 * [M] Add server-side rendering (SSR)
-* Show notifications upon mutation errors.
-* Internal: Use promises for all mutations.
-* Internal: Add optimistic responses for delete and create mutations.
-* Internal: Fix Storyboard config.
+* Show user notifications upon mutation errors.
+* Use promises for all mutations.
+* Add optimistic responses for delete and create mutations.
+* **Bugfix**: fix Storyboard config.
 
 ## 1.1.0 (May 22, 2016)
 
