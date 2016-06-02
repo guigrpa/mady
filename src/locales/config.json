@@ -8,8 +8,7 @@
     ".js",
     ".jsx",
     ".coffee",
-    ".cjsx",
-    ""
+    ".cjsx"
   ],
   "langs": [
     "en-US",
