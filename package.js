@@ -151,30 +151,30 @@ const specs = {
   // Deps
   // -----------------------------------------------
   dependencies: {
-    timm: '0.6.1',
-    storyboard: '1.2.0',
-    lodash: '4.12.0',
-    inquirer: '1.0.2',
+    timm: '1.0.0',
+    storyboard: '2.0.1',
+    lodash: '4.13.1',
+    inquirer: '1.1.2',
     commander: '2.9.0',
     'node-uuid': '1.4.7',
-    bluebird: '3.3.5',
-    'fs-extra': '0.28.0',
+    bluebird: '3.4.1',
+    'fs-extra': '0.30.0',
     'diveSync': '0.3.0',
     'messageformat': '0.3.0',
     'uglify-js': '2.6.2',
     'slash': '1.0.0',
 
     // Express + plugins
-    express: '4.13.4',
-    ejs: '2.4.1',
-    'cookie-parser': '1.4.1',
-    compression: '1.6.1',
+    express: '4.14.0',
+    ejs: '2.4.2',
+    'cookie-parser': '1.4.3',
+    compression: '1.6.2',
 
     // GraphQL
-    graphql: '0.6.0',
+    graphql: '0.6.1',
     'graphql-relay': '0.4.2',
     'express-graphql': '0.5.3',
-    'babel-relay-plugin': '0.9.0',
+    'babel-relay-plugin': '0.9.2',
   },
 
   devDependencies: {
@@ -182,18 +182,18 @@ const specs = {
     // Packaged in the client app (or SSR)
     // --------------------------
     'babel-polyfill': '6.7.4',
-    giu: '0.5.0',
+    giu: '0.6.0',
 
     // React
     react:                            '15.1.0',
     'react-dom':                      '15.1.0',
     'react-addons-pure-render-mixin': '15.1.0',
     'react-addons-perf':              '15.1.0',
-    'react-relay': '0.9.0',
-    'isomorphic-relay': '0.7.0-beta.0',
+    'react-relay': '0.9.2',
+    'isomorphic-relay': '0.7.0',
 
     // Miscellaneous
-    'font-awesome': '4.6.1',
+    'font-awesome': '4.6.3',
     moment: '2.13.0',
     tinycolor2: '1.3.0',
     'tiny-cookie': '0.5.5',
@@ -210,7 +210,7 @@ const specs = {
     'babel-preset-react-hmre': '1.1.1', // to use Hot Module Replacement
 
     // Webpack + loaders (+ related stuff)
-    webpack: '1.13.0',
+    webpack: '1.13.1',
     'webpack-dev-middleware': '1.6.1',
     'webpack-hot-middleware': '2.10.0',
     'babel-loader': '6.2.4',
@@ -226,8 +226,8 @@ const specs = {
     // Linting
     eslint: '2.9.0',
     'eslint-config-airbnb': '9.0.1',
-    'eslint-plugin-flowtype': '2.2.7',
-    'eslint-plugin-react': '5.1.1',
+    'eslint-plugin-flowtype': '2.3.1',
+    'eslint-plugin-react': '5.2.2',
     'eslint-plugin-jsx-a11y': '1.2.2',
     'eslint-plugin-import': '1.8.0',
     'babel-eslint': '6.0.4',
@@ -235,7 +235,7 @@ const specs = {
     // Testing
     ava: '0.15.0',
     nyc: '6.4.4',
-    coveralls: '2.11.9',
+    coveralls: '2.11.11',
 
     // Other tools
     'extract-docs': '1.0.1',

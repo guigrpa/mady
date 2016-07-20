@@ -4,7 +4,8 @@ import Promise              from 'bluebird';
 Promise.longStackTraces();
 import path                 from 'path';
 import timm                 from 'timm';
-import { mainStory }        from 'storyboard';
+import { mainStory, addListener } from 'storyboard';
+import consoleListener      from 'storyboard/lib/listeners/console';
 import fs                   from 'fs-extra';
 import program              from 'commander';
 import inquirer             from 'inquirer';
@@ -17,6 +18,12 @@ let _launchPars = null;
 
 const DEFAULT_LOCALE_PATH = 'locales';
 const DEFAULT_PORT = 8080;
+
+addListener(consoleListener);
+process.on('SIGINT', () => {
+  mainStory.debug('startup', 'CTRL-C received');
+  process.exit(0);
+});
 
 // ==============================================
 // Main

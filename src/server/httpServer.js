@@ -5,7 +5,7 @@ import Promise              from 'bluebird';
 import { cloneDeep }        from 'lodash';
 import storyboard           from 'storyboard';
 const { mainStory, chalk } = storyboard;
-import storyboardWsServer   from 'storyboard/lib/listeners/wsServer';
+import wsServerListener     from 'storyboard/lib/listeners/wsServer';
 import express              from 'express';
 import graphqlHttp          from 'express-graphql';
 import ejs                  from 'ejs';
@@ -145,7 +145,7 @@ export function init(options: Object) {
   const httpServer = http.createServer(expressApp);
 
   // Storyboard
-  storyboard.addListener(storyboardWsServer, { httpServer });
+  storyboard.addListener(wsServerListener, { httpServer });
 
   // Look for a suitable port and start listening
   let port = options.port;

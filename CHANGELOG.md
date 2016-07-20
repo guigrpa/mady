@@ -1,5 +1,7 @@
 # Changelog
 
+* [m] Bump dependencies
+
 ## 1.3.0 (June 2, 2016)
 
 * [M] **Allow configuration of the message translation functions** (markers for message extraction).
