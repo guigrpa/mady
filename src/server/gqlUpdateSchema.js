@@ -1,8 +1,11 @@
 import fs                   from 'fs-extra';
 import path                 from 'path';
-import { mainStory, chalk } from 'storyboard';
+import { addListener, mainStory, chalk } from 'storyboard';
+import consoleListener      from 'storyboard/lib/listeners/console';
 import Promise              from 'bluebird';
 import * as gqlServer       from './gqlServer';
+
+addListener(consoleListener);
 
 const outputPath = path.join(__dirname, '../common/');
 gqlServer.init();
