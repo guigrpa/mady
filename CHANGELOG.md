@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.3.1 (July 23, 2016)
+
+* [m] Exclude .babelrc from NPM package
 * [m] Bump dependencies
 
 ## 1.3.0 (June 2, 2016)
