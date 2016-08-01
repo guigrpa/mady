@@ -125,7 +125,7 @@ class Translator extends React.Component {
             icon="refresh"
             title={_t('tooltip_Parse source files to update the message list')}
             onClick={this.onParseSrcFiles}
-            fSpin={this.state.fParsing}
+            spin={this.state.fParsing}
           />
         </div>
         {this.state.langs.map((lang, idx) =>
@@ -208,7 +208,7 @@ class Translator extends React.Component {
   renderFillerRow() {
     const noKeys = this.props.viewer.keys.edges.length > 0 ? '' :
       <LargeMessage>
-        No messages. Click on <Icon icon="refresh" fDisabled /> to refresh
+        No messages. Click on <Icon icon="refresh" disabled /> to refresh
       </LargeMessage>;
     return (
       <div
@@ -232,7 +232,7 @@ class Translator extends React.Component {
         title={_t('tooltip_Add column')}
         style={style.addLang(fDisabled)}
       >
-        <Icon icon="plus" fDisabled={fDisabled} />
+        <Icon icon="plus" disabled={fDisabled} />
       </div>
     );
   }
