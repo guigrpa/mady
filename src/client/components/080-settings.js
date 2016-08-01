@@ -54,7 +54,7 @@ class Settings extends React.Component {
     // leave state handling entirely to `giu`, and fetch the value when the user clicks on
     // Save.
     this.state = pick(props.viewer.config, [
-      'langs', 'srcPaths', 'srcExtensions', 'msgFunctionNames'
+      'langs', 'srcPaths', 'srcExtensions', 'msgFunctionNames',
     ]);
     bindAll(this, [
       'onCreateListItem',
@@ -105,7 +105,7 @@ class Settings extends React.Component {
           id: 'langs',
           dir: 'row',
           Component: TextInput,
-          placeholder: 'e.g. es-ES',
+          placeholder: 'e.g. es',
           width: 80,
         })}
         <div style={style.listLabel}>
@@ -189,7 +189,7 @@ class Settings extends React.Component {
 
   onRemoveListItem(ev) {
     const [id, idx] = ev.currentTarget.id.split('.');
-    const newList = timm.removeAt(this.state[id], idx);
+    const newList = timm.removeAt(this.state[id], Number(idx));
     this.setState({ [id]: newList });
   }
 
@@ -209,7 +209,7 @@ class Settings extends React.Component {
     // Save other settings
     const { viewer } = this.props;
     const set = pick(this.state, [
-      'langs', 'srcPaths', 'srcExtensions', 'msgFunctionNames'
+      'langs', 'srcPaths', 'srcExtensions', 'msgFunctionNames',
     ]);
     set.fMinify = this.refMinify.getValue();
     mutate({
