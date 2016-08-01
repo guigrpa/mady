@@ -1,0 +1,236 @@
+{
+  "47362ba9-6518-4f87-823d-8f4d42560892": {
+    "id": "47362ba9-6518-4f87-823d-8f4d42560892",
+    "lang": "ca",
+    "translation": "Convertir traduccions a fitxers javaScript",
+    "keyId": "dG9vbHRpcF9Db252ZXJ0IHRyYW5zbGF0aW9ucyB0byBKYXZhU2NyaXB0IGZpbGVz"
+  },
+  "ede1b358-92a9-47cc-be40-022bad306252": {
+    "id": "ede1b358-92a9-47cc-be40-022bad306252",
+    "lang": "ca",
+    "translation": "Ajustos",
+    "keyId": "dG9vbHRpcF9TZXR0aW5ncw=="
+  },
+  "c6c83d0b-114a-4b7f-a60e-27c11ddc9bc4": {
+    "id": "c6c83d0b-114a-4b7f-a60e-27c11ddc9bc4",
+    "lang": "ca",
+    "translation": "Esborrar",
+    "keyId": "YnV0dG9uX0RlbGV0ZQ=="
+  },
+  "568e781e-9e48-4df9-9332-843182299469": {
+    "id": "568e781e-9e48-4df9-9332-843182299469",
+    "lang": "ca",
+    "translation": "Cancel·lar canvis",
+    "keyId": "YnV0dG9uX1JldmVydA=="
+  },
+  "f661d2d7-e7be-45b6-ab82-e3377c04cc23": {
+    "id": "f661d2d7-e7be-45b6-ab82-e3377c04cc23",
+    "lang": "ca",
+    "translation": "Guardar",
+    "keyId": "YnV0dG9uX1NhdmU="
+  },
+  "58d6ed4d-3302-4cf0-a8a9-40a6161c2b1e": {
+    "id": "58d6ed4d-3302-4cf0-a8a9-40a6161c2b1e",
+    "lang": "ca",
+    "translation": "Afegir columna",
+    "keyId": "dG9vbHRpcF9BZGQgY29sdW1u"
+  },
+  "5478b270-4b64-474b-acd4-00093c482dff": {
+    "id": "5478b270-4b64-474b-acd4-00093c482dff",
+    "lang": "ca",
+    "translation": "Canviar idioma",
+    "keyId": "dG9vbHRpcF9DaGFuZ2UgbGFuZ3VhZ2U="
+  },
+  "b65dd268-dfd0-4782-a714-2be834737fb3": {
+    "id": "b65dd268-dfd0-4782-a714-2be834737fb3",
+    "lang": "ca",
+    "translation": "Esborrar missatge (NO esborra cap traducció)",
+    "keyId": "dG9vbHRpcF9EZWxldGUgbWVzc2FnZSAoZG9lcyBOT1QgZGVsZXRlIGFueSB0cmFuc2xhdGlvbnMp"
+  },
+  "ca1e9119-70ec-4355-b26e-dca5dd6860bb": {
+    "id": "ca1e9119-70ec-4355-b26e-dca5dd6860bb",
+    "lang": "ca",
+    "translation": "Analitzar els fitxers de codi per actualitzar la llista de missatges",
+    "keyId": "dG9vbHRpcF9QYXJzZSBzb3VyY2UgZmlsZXMgdG8gdXBkYXRlIHRoZSBtZXNzYWdlIGxpc3Q="
+  },
+  "7cf2de63-ed0a-441d-9a21-b04534f6d80e": {
+    "id": "7cf2de63-ed0a-441d-9a21-b04534f6d80e",
+    "lang": "ca",
+    "translation": "Treure columna (NO esborra cap traducció)",
+    "keyId": "dG9vbHRpcF9SZW1vdmUgY29sdW1uIChkb2VzIE5PVCBkZWxldGUgYW55IHRyYW5zbGF0aW9ucyk="
+  },
+  "7dc783e7-41c2-4252-a513-17264fd1df10": {
+    "id": "7dc783e7-41c2-4252-a513-17264fd1df10",
+    "lang": "ca",
+    "translation": "Missatges",
+    "keyId": "Y29sdW1uVGl0bGVfTWVzc2FnZXM="
+  },
+  "1f94ee41-08c0-41d8-ad6d-c3cbd1a92b94": {
+    "id": "1f94ee41-08c0-41d8-ad6d-c3cbd1a92b94",
+    "lang": "ca",
+    "translation": "Detalls",
+    "keyId": "bXNnRGV0YWlsc1ZpZXdfRGV0YWlscw=="
+  },
+  "be69e318-01f4-43a8-8581-1d03c80164d6": {
+    "id": "be69e318-01f4-43a8-8581-1d03c80164d6",
+    "lang": "ca",
+    "translation": "Cap missatge seleccionat",
+    "keyId": "bXNnRGV0YWlsc1ZpZXdfTm8gbWVzc2FnZSBzZWxlY3RlZA=="
+  },
+  "733fb846-b2ab-46e3-9d5c-073e96f5f59f": {
+    "id": "733fb846-b2ab-46e3-9d5c-073e96f5f59f",
+    "lang": "ca",
+    "translation": "En ús des de",
+    "keyId": "bXNnRGV0YWlsc1ZpZXdfVXNlZCBzaW5jZQ=="
+  },
+  "14c7c94c-26c2-4b54-9e8e-b2bb6c17317f": {
+    "id": "14c7c94c-26c2-4b54-9e8e-b2bb6c17317f",
+    "lang": "ca",
+    "translation": "fins a",
+    "keyId": "bXNnRGV0YWlsc1ZpZXdfdW50aWw="
+  },
+  "2401070b-65cb-4d9b-bc09-40e70fee49af": {
+    "id": "2401070b-65cb-4d9b-bc09-40e70fee49af",
+    "lang": "ca",
+    "translation": "Cancel·lar",
+    "keyId": "YnV0dG9uX0NhbmNlbA=="
+  },
+  "8453b672-2372-4b82-b1a8-2c36d09b1b67": {
+    "id": "8453b672-2372-4b82-b1a8-2c36d09b1b67",
+    "lang": "ca",
+    "translation": "Idiomes (codis BCP47):",
+    "keyId": "c2V0dGluZ3NGb3JtX0xhbmd1YWdlcyAoQkNQNDcgY29kZXMpOg=="
+  },
+  "24d9fbfa-b97b-4ba8-9ab6-882bd5ca509f": {
+    "id": "24d9fbfa-b97b-4ba8-9ab6-882bd5ca509f",
+    "lang": "ca",
+    "translation": "Idioma de Mady:",
+    "keyId": "c2V0dGluZ3NGb3JtX01hZHkgbGFuZ3VhZ2U6"
+  },
+  "dac5114c-ff53-4ec3-874c-729f6adb75d4": {
+    "id": "dac5114c-ff53-4ec3-874c-729f6adb75d4",
+    "lang": "ca",
+    "translation": "Minificar el JavaScript de sortida",
+    "keyId": "c2V0dGluZ3NGb3JtX01pbmlmeSBvdXRwdXQgSmF2YVNjcmlwdA=="
+  },
+  "97325cc5-0b0d-4a71-b058-ef65d5a68b8e": {
+    "id": "97325cc5-0b0d-4a71-b058-ef65d5a68b8e",
+    "lang": "ca",
+    "translation": "Extensions de fitxer a buscar:",
+    "keyId": "c2V0dGluZ3NGb3JtX1NvdXJjZSBleHRlbnNpb25zOg=="
+  },
+  "3f8c5121-e4bf-42a0-9216-398f9af8365c": {
+    "id": "3f8c5121-e4bf-42a0-9216-398f9af8365c",
+    "lang": "ca",
+    "translation": "Carpetes a buscar:",
+    "keyId": "c2V0dGluZ3NGb3JtX1NvdXJjZSBwYXRoczo="
+  },
+  "8e1b8a8b-825e-40ad-86d8-23b70207f693": {
+    "id": "8e1b8a8b-825e-40ad-86d8-23b70207f693",
+    "lang": "ca",
+    "translation": "Total missatges",
+    "keyId": "dG9vbHRpcF9Ub3RhbCBtZXNzYWdlcw=="
+  },
+  "a58b332f-f3de-4688-b8b6-e841ecdcfa73": {
+    "id": "a58b332f-f3de-4688-b8b6-e841ecdcfa73",
+    "lang": "ca",
+    "translation": "Missatges en ús",
+    "keyId": "dG9vbHRpcF9Vc2VkIG1lc3NhZ2Vz"
+  },
+  "40202fca-c4e1-4606-9c78-3371194952c4": {
+    "id": "40202fca-c4e1-4606-9c78-3371194952c4",
+    "lang": "ca",
+    "translation": "Traduccions",
+    "keyId": "dG9vbHRpcF9UcmFuc2xhdGlvbnM="
+  },
+  "35cce019-cb28-481b-88b2-aff38f81f78a": {
+    "id": "35cce019-cb28-481b-88b2-aff38f81f78a",
+    "lang": "ca",
+    "translation": "Esborrar traducció",
+    "keyId": "dG9vbHRpcF9EZWxldGUgdHJhbnNsYXRpb24="
+  },
+  "39540d42-d93e-4d8b-a7cf-cc10bca62d0f": {
+    "id": "39540d42-d93e-4d8b-a7cf-cc10bca62d0f",
+    "lang": "ca",
+    "translation": "Fes clic a fora o prem TAB per guardar. Prem ESC per desfer.",
+    "keyId": "dHJhbnNsYXRpb25IZWxwX0NsaWNrIG91dHNpZGUgb3IgVEFCIHRvIHNhdmUuIEVTQyB0byB1bmRvLg=="
+  },
+  "199ed7b7-84e1-4709-9cd8-93a7d22d99aa": {
+    "id": "199ed7b7-84e1-4709-9cd8-93a7d22d99aa",
+    "lang": "ca",
+    "translation": "Entesos!",
+    "keyId": "aGludF9Hb3QgaXQh"
+  },
+  "4087c83b-3ab9-4e20-a700-4eab5a70158d": {
+    "id": "4087c83b-3ab9-4e20-a700-4eab5a70158d",
+    "lang": "ca",
+    "translation": "Afegir columna d'idioma",
+    "keyId": "aGludF9BZGQgbGFuZ3VhZ2UgY29sdW1u"
+  },
+  "a0876995-f4d3-4809-98dc-8e36b524c2a1": {
+    "id": "a0876995-f4d3-4809-98dc-8e36b524c2a1",
+    "lang": "ca",
+    "translation": "Configurar Mady",
+    "keyId": "aGludF9Db25maWd1cmUgTWFkeQ=="
+  },
+  "c5f69f15-5406-4623-bf99-643b95ac62ca": {
+    "id": "c5f69f15-5406-4623-bf99-643b95ac62ca",
+    "lang": "ca",
+    "translation": "Gaudeix traduint!",
+    "keyId": "aGludF9FbmpveSB0cmFuc2xhdGluZyE="
+  },
+  "4fe4e93a-9b06-48ce-b7d4-131edd1d0dcd": {
+    "id": "4fe4e93a-9b06-48ce-b7d4-131edd1d0dcd",
+    "lang": "ca",
+    "translation": "{NUM, plural, one{1 hamburguesa} other{# hamburgueses}}",
+    "keyId": "c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319"
+  },
+  "e390b021-2e70-4daa-b61c-1296992ce89f": {
+    "id": "e390b021-2e70-4daa-b61c-1296992ce89f",
+    "lang": "ca",
+    "translation": "Copiar missatge",
+    "keyId": "dG9vbHRpcF9Db3B5IG1lc3NhZ2U="
+  },
+  "ee4c914f-b3e8-4ea8-ae65-42db5841013f": {
+    "id": "ee4c914f-b3e8-4ea8-ae65-42db5841013f",
+    "lang": "ca",
+    "translation": "el nombre de claus obertes i tancades no coincideix",
+    "keyId": "dmFsaWRhdGlvbl90aGUgbnVtYmVyIG9mIGxlZnQgYW5kIHJpZ2h0IGJyYWNrZXRzIGRvZXMgbm90IG1hdGNo"
+  },
+  "e9eeaa32-7f10-4cef-bbd6-eaf0387687bb": {
+    "id": "e9eeaa32-7f10-4cef-bbd6-eaf0387687bb",
+    "lang": "ca",
+    "translation": "Error de sintaxi MessageFormat",
+    "keyId": "dmFsaWRhdGlvbl9NZXNzYWdlRm9ybWF0IHN5bnRheCBlcnJvcg=="
+  },
+  "2bb61dd0-1a76-4a1c-938a-84de51a2fbb5": {
+    "id": "2bb61dd0-1a76-4a1c-938a-84de51a2fbb5",
+    "lang": "ca",
+    "translation": "No s'han pogut guardar els canvis",
+    "keyId": "ZXJyb3JfQ2hhbmdlcyBjb3VsZCBub3QgYmUgc2F2ZWQ="
+  },
+  "d0313b5b-529d-4fac-8c4a-da98713f1075": {
+    "id": "d0313b5b-529d-4fac-8c4a-da98713f1075",
+    "lang": "ca",
+    "translation": "No s'ha pogut guardar la configuració",
+    "keyId": "ZXJyb3JfQ29uZmlndXJhdGlvbiBjb3VsZCBub3QgYmUgc2F2ZWQ="
+  },
+  "4ee32aa9-4257-435c-b983-2c10aa6f25c4": {
+    "id": "4ee32aa9-4257-435c-b983-2c10aa6f25c4",
+    "lang": "ca",
+    "translation": "El servidor està funcionant?",
+    "keyId": "ZXJyb3JfSXMgdGhlIHNlcnZlciBydW5uaW5nPw=="
+  },
+  "ae2c5503-3f04-45c2-a2ba-f1ea6958c88d": {
+    "id": "ae2c5503-3f04-45c2-a2ba-f1ea6958c88d",
+    "lang": "ca",
+    "translation": "Funcions de traducció de missatges a buscar:",
+    "keyId": "c2V0dGluZ3NGb3JtX01lc3NhZ2UgdHJhbnNsYXRpb24gZnVuY3Rpb25zIHRvIGxvb2sgZm9yOg=="
+  },
+  "f8100fb6-3e76-423b-b2ab-57354fbe04da": {
+    "id": "f8100fb6-3e76-423b-b2ab-57354fbe04da",
+    "lang": "ca",
+    "translation": "Missatge amb emoji: 🎉",
+    "keyId": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppOiDwn46J"
+  }
+}

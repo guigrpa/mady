@@ -75,7 +75,7 @@ Using the translate function is similarly straightforward:
 
 ```js
 import _t from 'mady';
-import locales from './locales/es-ES';
+import locales from './locales/es';
 
 _t.setLocales(locales);
 

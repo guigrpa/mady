@@ -15,7 +15,7 @@ export default function compileTranslations({
   const finalTranslations = {};
   // We must always include those keys using curly braces, even if there is no translation
   Object.keys(keys).forEach(keyId => {
-    if (keyId.indexOf('{') >= 0) {
+    if (keys[keyId].text.indexOf('{') >= 0) {
       finalTranslations[keyId] = keys[keyId].text;
     }
   });

@@ -33,6 +33,7 @@ program
   .option('-d, --dir [dir]', 'Relative path to locale folder')
   .option('-p, --port [port]', 'Initial port number to use ' +
     '(if unavailable, the next available one will be used)')
+  .option('--recompile', 'Recompile translations upon launch')
   .option('--importV0 [dir]', 'Import a "v0" (old) locale folder')
   .parse(process.argv);
 
@@ -40,7 +41,7 @@ Promise.resolve()
   .then(() => _readLaunchPars())
   .then(() => {
     mainStory.info('startup', 'Launch parameters:', { attach: _launchPars });
-    db.init({ localeDir: _launchPars.localeDir });
+    db.init({ localeDir: _launchPars.localeDir, fRecompile: program.recompile });
   })
   .then(() => {
     if (program.importV0) {

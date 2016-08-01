@@ -4,16 +4,20 @@ import Promise              from 'bluebird';
 import timm                 from 'timm';
 import { mainStory, chalk } from 'storyboard';
 import uuid                 from 'node-uuid';
+import { base64ToUtf8 }     from '../common/base64';
 import parse                from './parseSources';
 import compile              from './compileTranslations';
 import * as importers       from './importData';
 
+const DB_VERSION = 2;
+
 const DEFAULT_CONFIG = {
   srcPaths: ['src'],
   srcExtensions: ['.js', '.jsx', '.coffee', '.cjsx'],
-  langs: ['en-US'],
+  langs: ['en'],
   msgFunctionNames: ['_t'],
   fMinify: false,
+  dbVersion: DB_VERSION,
 };
 
 const RESPONSE_DELAY = 0;
@@ -21,11 +25,12 @@ const RESPONSE_DELAY = 0;
 // ==============================================
 // Init
 // ==============================================
-function init(options: Object) {
+function init(options) {
   initLocaleDir(options);
-  initConfig();
+  const fMigrated = initConfig();
   initKeys();
   initTranslations();
+  if (fMigrated || options.fRecompile) compileTranslations();
 }
 
 
@@ -34,7 +39,7 @@ function init(options: Object) {
 // ==============================================
 let _localeDir = null;
 
-function initLocaleDir(options: Object) {
+function initLocaleDir(options) {
   _localeDir = options.localeDir;
   try {
     fs.statSync(_localeDir);
@@ -52,22 +57,29 @@ let _config = null;
 
 function initConfig() {
   _configPath = path.join(_localeDir, 'config.json');
+  let fMigrated = false;
   try {
+    mainStory.info('db', `Reading file ${chalk.cyan.bold(_configPath)}...`);
     fs.statSync(_configPath);
+    readConfig();
+    if (_config.dbVersion !== DB_VERSION) {
+      migrateDatabase(_config.dbVersion);
+      _config.dbVersion = DB_VERSION;
+      fMigrated = true;
+    }
+    _config = timm.addDefaults(_config, DEFAULT_CONFIG);
+    saveConfig();
+    return fMigrated;
   } catch (err) {
+    mainStory.error('db', `Error reading config: ${err.message}`,
+      { attach: err, attachLevel: 'trace' });
     _config = DEFAULT_CONFIG;
     saveConfig();
-  } finally {
-    mainStory.info('db', `Reading file ${chalk.cyan.bold(_configPath)}...`);
-    readConfig();
+    return fMigrated;
   }
 }
 
-function readConfig() {
-  const config = readJson(_configPath);
-  _config = timm.addDefaults(config, DEFAULT_CONFIG);
-  if (_config !== config) saveConfig();
-}
+function readConfig() { _config = readJson(_configPath); }
 function saveConfig(options) { saveJson(_configPath, _config, options); }
 
 function getConfig() { return _config; }
@@ -159,7 +171,7 @@ function parseSrcFiles({ story }) {
   });
   if (unusedKeys.length) {
     story.debug('db', `${chalk.bold('Unused')} keys: ${unusedKeys.length}`, {
-      attach: unusedKeys,
+      attach: unusedKeys.map(base64ToUtf8),
     });
   }
 
@@ -174,7 +186,7 @@ function parseSrcFiles({ story }) {
   });
   if (newKeys.length) {
     story.debug('db', `${chalk.bold('New')} keys: ${newKeys.length}`, {
-      attach: newKeys,
+      attach: newKeys.map(base64ToUtf8),
     });
   }
 
@@ -307,11 +319,8 @@ function compileTranslations({ story: baseStory } = {}) {
 // ==============================================
 // Merge keys and translations from old stores
 // ==============================================
-function importV0(dir: string) {
-  const story = mainStory.child({
-    src: 'db',
-    title: 'Import v0',
-  });
+function importV0(dir) {
+  const story = mainStory.child({ src: 'db', title: 'Import v0' });
   const { langs, keys, translations } = importers.importV0({
     langs: _config.langs,
     keys: _keys,
@@ -330,6 +339,17 @@ function importV0(dir: string) {
     }
   }
   compileTranslations();
+  story.close();
+}
+
+function migrateDatabase(prevDbVersion) {
+  const story = mainStory.child({
+    src: 'db',
+    title: `Upgrade DB ${prevDbVersion} -> ${DB_VERSION}`,
+  });
+  if (prevDbVersion == null || prevDbVersion < 2) {
+    importers.importToV2({ langs: _config.langs, dir: _localeDir, story });
+  }
   story.close();
 }
 

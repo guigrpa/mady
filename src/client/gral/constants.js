@@ -14,15 +14,15 @@ const COLORS = {
 
 const LANG_OPTIONS = [
   {
-    value: 'en-US',
+    value: 'en',
     label: 'English (US)',
   },
   {
-    value: 'es-ES',
+    value: 'es',
     label: 'Español',
   },
   {
-    value: 'ca-CA',
+    value: 'ca',
     label: 'Català',
   },
 ];

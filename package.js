@@ -152,8 +152,8 @@ const specs = {
   // -----------------------------------------------
   dependencies: {
     timm: '1.0.0',
-    storyboard: '2.0.1',
-    lodash: '4.13.1',
+    storyboard: '2.0.2',
+    lodash: '4.14.1',
     inquirer: '1.1.2',
     commander: '2.9.0',
     'node-uuid': '1.4.7',
@@ -182,13 +182,13 @@ const specs = {
     // Packaged in the client app (or SSR)
     // --------------------------
     'babel-polyfill': '6.7.4',
-    giu: '0.6.0',
+    giu: '0.7.1',
 
     // React
-    react:                            '15.1.0',
-    'react-dom':                      '15.1.0',
-    'react-addons-pure-render-mixin': '15.1.0',
-    'react-addons-perf':              '15.1.0',
+    react:                            '15.2.1',
+    'react-dom':                      '15.2.1',
+    'react-addons-pure-render-mixin': '15.2.1',
+    'react-addons-perf':              '15.2.1',
     'react-relay': '0.9.2',
     'isomorphic-relay': '0.7.0',
 

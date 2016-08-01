@@ -3,6 +3,7 @@ import path                 from 'path';
 import slash                from 'slash';
 import { chalk }            from 'storyboard';
 import diveSync             from 'diveSync';
+import { utf8ToBase64 }     from '../common/base64';
 
 // const REGEXP_TRANSLATE_CMDS = [
 //   /_t\s*\(\s*"(.*?)"/g,
@@ -38,8 +39,8 @@ export default function parse({ srcPaths, srcExtensions, msgFunctionNames, story
     regexpFunctionNames.forEach(re => {
       let match;
       while ((match = re.exec(fileContents))) {
-        const key = match[1];
-        const tokens = key.split('_');
+        const utf8 = match[1];
+        const tokens = utf8.split('_');
         let context;
         let text;
         if (tokens.length >= 2) {
@@ -49,17 +50,18 @@ export default function parse({ srcPaths, srcExtensions, msgFunctionNames, story
           context = null;
           text = tokens[0];
         }
-        keys[key] = keys[key] || {
-          id: key,
+        const base64 = utf8ToBase64(utf8);
+        keys[base64] = keys[base64] || {
+          id: base64,
           context, text,
           firstUsed: null,
           unusedSince: null,
           sources: [],
         };
-        keys[key].sources.push(slash(finalFilePath));
+        keys[base64].sources.push(slash(finalFilePath));
       }
     });
   };
-  srcPaths.forEach(srcPath => diveSync(srcPath, diveOptions, diveProcess))
+  srcPaths.forEach(srcPath => diveSync(srcPath, diveOptions, diveProcess));
   return keys;
 }

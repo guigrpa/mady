@@ -10,7 +10,7 @@ function exampleMessages() {
 }
 
 try {
-  var locales = require('../locales/en-US');
+  var locales = require('../locales/en');
   _t.setLocales(locales);
   console.log('\nEnglish:\n')
   exampleMessages();

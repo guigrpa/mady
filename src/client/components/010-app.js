@@ -19,6 +19,8 @@ require('./010-app.sass');
 
 // Example MessageFormat message with plural, so that it appears in the screenshot:
 // _t("someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}", { NUM: 1 }))
+// Example message with emoji, so that it appears in the screenshot:
+// _t("someContext_Message with emoji: 🎉"))
 
 // ==========================================
 // Relay fragments
@@ -46,7 +48,7 @@ class App extends React.Component {
     this.state = {
       selectedKeyId: null,
       fSettingsShown: false,
-      lang: cookieGet('lang', { defaultValue: 'es-ES' }),
+      lang: cookieGet('lang', { defaultValue: 'en' }),
     };
     bindAll(this, [
       'changeSelectedKey',

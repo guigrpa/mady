@@ -294,6 +294,16 @@
       "src/client/components/010-app.js"
     ]
   },
+  "dmFsaWRhdGlvbl90aGUgbnVtYmVyIG9mIGxlZnQgYW5kIHJpZ2h0IGJyYWNrZXRzIGRvZXMgbm90IG1hdGNo": {
+    "id": "dmFsaWRhdGlvbl90aGUgbnVtYmVyIG9mIGxlZnQgYW5kIHJpZ2h0IGJyYWNrZXRzIGRvZXMgbm90IG1hdGNo",
+    "context": "validation",
+    "text": "the number of left and right brackets does not match",
+    "firstUsed": "2016-05-22T06:18:10.874Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/062-translation.js"
+    ]
+  },
   "dmFsaWRhdGlvbl9NZXNzYWdlRm9ybWF0IHN5bnRheCBlcnJvcg==": {
     "id": "dmFsaWRhdGlvbl9NZXNzYWdlRm9ybWF0IHN5bnRheCBlcnJvcg==",
     "context": "validation",
@@ -352,26 +362,6 @@
     "unusedSince": null,
     "sources": [
       "src/client/components/080-settings.js"
-    ]
-  },
-  "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppOiDwn46J": {
-    "id": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppOiDwn46J",
-    "context": "someContext",
-    "text": "Message with emoji: 🎉",
-    "firstUsed": "2016-08-01T07:44:56.872Z",
-    "unusedSince": null,
-    "sources": [
-      "src/client/components/010-app.js"
-    ]
-  },
-  "dmFsaWRhdGlvbl90aGUgbnVtYmVyIG9mIGxlZnQgYW5kIHJpZ2h0IGJyYWNrZXRzIGRvZXMgbm90IG1hdGNo": {
-    "id": "dmFsaWRhdGlvbl90aGUgbnVtYmVyIG9mIGxlZnQgYW5kIHJpZ2h0IGJyYWNrZXRzIGRvZXMgbm90IG1hdGNo",
-    "context": "validation",
-    "text": "the number of left and right brackets does not match",
-    "firstUsed": "2016-08-01T07:58:48.228Z",
-    "unusedSince": null,
-    "sources": [
-      "src/client/components/062-translation.js"
     ]
   }
 }

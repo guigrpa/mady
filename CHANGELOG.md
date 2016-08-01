@@ -1,5 +1,11 @@
 # Changelog
 
+* [M] Allow **Unicode escape sequences** in keys and translations (i.e. emojis, and non-English messages!! -- translations were fine already).
+* [M] **Automatic migration** from older DB versions.
+* [M] **Add `--recompile` option** to CLI.
+* [m] Bug: Fix a case in which removing an item from a list in the settings dialogue also removes the following ones.
+* [m] Get the parse icon to spin again.
+
 ## 1.3.1 (July 23, 2016)
 
 * [m] Exclude .babelrc from NPM package

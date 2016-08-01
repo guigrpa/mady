@@ -51,7 +51,7 @@ const COOKIE_NAMESPACE = 'mady';
 
 function sendIndexHtml(req, res) {
   mainStory.info('http', 'Preparing index.html...');
-  let userLang = req.query.lang || req.cookies[`${COOKIE_NAMESPACE}_lang`] || 'en-US';
+  let userLang = req.query.lang || req.cookies[`${COOKIE_NAMESPACE}_lang`] || 'en';
   const bootstrap = cloneDeep(DEFAULT_BOOTSTRAP);
   return Promise.resolve()
 
@@ -63,7 +63,7 @@ function sendIndexHtml(req, res) {
         bootstrap.fnLocales = fs.readFileSync(langPath, 'utf8');
         bootstrap.jsonData.lang = userLang;
       } catch (err) {
-        userLang = 'en-US';
+        userLang = 'en';
         langPath = path.join(__dirname, LOCALE_PATH, `${userLang}.js`);
         mainStory.debug('http', `Not found. Reading ${chalk.cyan.bold(langPath)} instead...`);
         bootstrap.fnLocales = fs.readFileSync(langPath, 'utf8');

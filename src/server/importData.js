@@ -4,6 +4,7 @@ import timm                 from 'timm';
 import { chalk }            from 'storyboard';
 import diveSync             from 'diveSync';
 import uuid                 from 'node-uuid';
+import { utf8ToBase64 }     from '../common/base64';
 
 function duplicatedTranslation(translations, newKeyId, newLang, newTranslation) {
   let fFound = false;
@@ -18,7 +19,7 @@ function duplicatedTranslation(translations, newKeyId, newLang, newTranslation) 
   return fFound;
 }
 
-export function importV0({ langs, keys, translations, dir, story }) {
+function importV0({ langs, keys, translations, dir, story }) {
   let outK = keys;
   let outT = translations;
   let outLangs = langs;
@@ -29,7 +30,7 @@ export function importV0({ langs, keys, translations, dir, story }) {
   let totNewT = 0;
   const diveProcess = (err, filePath) => {
     const finalFilePath = path.normalize(filePath);
-    story.info('importV0', `Processing ${chalk.cyan.bold(finalFilePath)}...`);
+    story.info('importData', `Processing ${chalk.cyan.bold(finalFilePath)}...`);
     const lang = path.basename(filePath, '.json').replace(/_/gi, '-');
     if (outLangs.indexOf(lang) < 0) {
       outLangs = timm.addLast(outLangs, lang);
@@ -72,10 +73,44 @@ export function importV0({ langs, keys, translations, dir, story }) {
         }
       }
     });
-    story.info('importV0',
+    story.info('importData',
       `Lang ${chalk.magenta.bold(lang)}: new keys ${numNewK}, new translations ${numNewT}`);
   };
   diveSync(dir, diveOptions, diveProcess);
-  story.info('importV0', `Total: new keys ${totNewK}, new translations ${totNewT}`);
+  story.info('importData', `Total: new keys ${totNewK}, new translations ${totNewT}`);
   return { keys: outK, translations: outT, langs: outLangs };
 }
+
+function importToV2({ langs, dir, story }) {
+  // Import keys
+  story.info('importData', 'Processing keys...');
+  const keyPath = path.join(dir, 'keys.json');
+  const prevKeys = JSON.parse(fs.readFileSync(keyPath));
+  const nextKeys = {};
+  Object.keys(prevKeys).forEach(id => {
+    const keyData = prevKeys[id];
+    const nextId = utf8ToBase64(id);
+    nextKeys[nextId] = timm.set(keyData, 'id', nextId);
+  });
+  fs.writeFileSync(keyPath, JSON.stringify(nextKeys, null, '  '), 'utf8');
+
+  // Import translations
+  langs.forEach(lang => {
+    story.info('importData', `Processing translations: ${lang}...`);
+    const translationPath = path.join(dir, `${lang}.json`);
+    const translations = JSON.parse(fs.readFileSync(translationPath));
+    Object.keys(translations).forEach(id => {
+      const translation = translations[id];
+      translation.keyId = utf8ToBase64(translation.keyId);
+    });
+    fs.writeFileSync(translationPath, JSON.stringify(translations, null, '  '), 'utf8');
+  });
+}
+
+// ==============================================
+// Public API
+// ==============================================
+export {
+  importV0,
+  importToV2,
+};
