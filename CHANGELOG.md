@@ -1,5 +1,7 @@
 # Changelog
 
+## 1.4.0 (August 1, 2016)
+
 * [M] Allow **Unicode escape sequences** in keys and translations (i.e. emojis, and non-English messages!! -- translations were fine already).
 * [M] **Automatic migration** from older DB versions.
 * [M] **Add `--recompile` option** to CLI.
