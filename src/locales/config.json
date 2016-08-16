@@ -13,7 +13,9 @@
   "langs": [
     "en",
     "es",
-    "ca"
+    "ca",
+    "en-US",
+    "en-GB"
   ],
   "fMinify": false,
   "msgFunctionNames": [

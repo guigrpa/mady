@@ -15,7 +15,7 @@ const COLORS = {
 const LANG_OPTIONS = [
   {
     value: 'en',
-    label: 'English (US)',
+    label: 'English',
   },
   {
     value: 'es',

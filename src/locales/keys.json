@@ -373,5 +373,15 @@
     "sources": [
       "src/client/components/062-translation.js"
     ]
+  },
+  "c29tZUNvbnRleHRfQSB0b29sIGZvciBpbnRlcm5hdGlvbmFsaXphdGlvbg==": {
+    "id": "c29tZUNvbnRleHRfQSB0b29sIGZvciBpbnRlcm5hdGlvbmFsaXphdGlvbg==",
+    "context": "someContext",
+    "text": "A tool for internationalization",
+    "firstUsed": "2016-08-16T14:09:39.741Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/010-app.js"
+    ]
   }
 }

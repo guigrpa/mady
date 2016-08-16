@@ -294,17 +294,20 @@ function deleteTranslation(id, { story }) {
 }
 
 function compileTranslations({ story: baseStory } = {}) {
-  const story = (baseStory || mainStory).child({
-    src: 'db',
-    title: 'Compile translations',
-  });
+  const story = (baseStory || mainStory).child({ src: 'db', title: 'Compile translations' });
   return Promise.resolve()
   .then(() => {
-    _config.langs.forEach(lang => {
+    const { fMinify, langs } = _config;
+    const allTranslations = getAllTranslations(langs, story);
+    Object.keys(allTranslations).forEach(lang => {
       const compiledLangPath = getCompiledLangPath(lang);
-      const translations = getLangTranslations(lang);
-      const { fMinify } = _config;
-      const fnTranslate = compile({ lang, keys: _keys, translations, fMinify, story });
+      const fnTranslate = compile({
+        lang,
+        keys: _keys,
+        translations: allTranslations[lang],
+        fMinify,
+        story,
+      });
       story.debug('db', `Writing file ${chalk.cyan.bold(compiledLangPath)}...`);
       fs.writeFileSync(compiledLangPath, fnTranslate, 'utf8');
     });
@@ -314,6 +317,83 @@ function compileTranslations({ story: baseStory } = {}) {
     throw err;
   })
   .finally(() => story.close());
+}
+
+// function objToArray(obj) {
+//   const out = [];
+//   Object.keys(obj).forEach(key => {
+//     out.push(obj[key]);
+//   });
+//   return out;
+// }
+
+function getAllTranslations(langs, story) {
+  // Determine lang structure
+  const langStructure = {};
+  const sortedLangs = langs.slice().sort();
+  // story.debug('db', 'Sorted languages', { attach: sortedLangs });
+  sortedLangs.forEach(lang => {
+    langStructure[lang] = { parent: null, children: [] };
+    const tokens = lang.split(/[_-]/);
+    for (let i = 0; i < tokens.length; i++) {
+      const tmpLang = tokens.slice(0, i + 1).join('-');
+      if (!langStructure[tmpLang]) langStructure[tmpLang] = { parent: null, children: [] };
+      if (i > 0) {
+        const parentLang = tokens.slice(0, i).join('-');
+        langStructure[parentLang].children.push(tmpLang);
+        langStructure[tmpLang].parent = parentLang;
+      }
+    }
+  });
+  // story.debug('db', 'Language tree', { attach: langStructure });
+
+  // Collect all translations for languages, from top to bottom:
+  // - Add all children translations (backup)
+  // - Add ancestor translations (including those coming up from other branches)
+  // - Add own translations
+  // This algorithm may result in multiple translations for the same key, but the latest one
+  // should have higher priority (this is used by `compileTranslations()` during flattening).
+  // Higher priority is guaranteed by the order in which languages are processed,
+  // and the order in which translations are added to the array.
+  const allLangs = Object.keys(langStructure).sort();
+  allLangs.forEach(lang => {
+    const childrenTranslations = getChildrenTranslations(langStructure, lang, []);
+    // story.debug('db', `Children translations for ${lang}`, { attach: childrenTranslations });
+    const parentTranslations = getParentTranslations(langStructure, lang);
+    // story.debug('db', `Parent translations for ${lang}`, { attach: parentTranslations });
+    const ownTranslations = getLangTranslations(lang);
+    // story.debug('db', `Own translations for ${lang}`, { attach: ownTranslations });
+    langStructure[lang].translations = childrenTranslations
+      .concat(parentTranslations, ownTranslations);
+  });
+
+  // Replace lang structure by the translations themselves
+  const out = {};
+  Object.keys(langStructure).forEach(lang => {
+    out[lang] = langStructure[lang].translations;
+  });
+  // story.debug('db', 'All translations', { attach: out });
+  return out;
+}
+
+function getChildrenTranslations(langStructure, lang, translations0) {
+  let translations = translations0;
+  langStructure[lang].children.forEach(childLang => {
+    translations = translations.concat(getLangTranslations(childLang));
+    translations = getChildrenTranslations(langStructure, childLang, translations);
+  });
+  return translations;
+}
+
+function getParentTranslations(langStructure, lang) {
+  let out = [];
+  const tokens = lang.split(/[_-]/);
+  if (tokens.length < 1) return out;
+  for (let i = 0; i < tokens.length - 1; i++) {
+    const tmpLang = tokens.slice(0, i + 1).join('-');
+    out = out.concat(langStructure[tmpLang].translations);
+  }
+  return out;
 }
 
 // ==============================================

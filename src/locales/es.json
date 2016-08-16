@@ -238,5 +238,11 @@
     "lang": "es",
     "translation": "Mensaje con emoji: 🎉",
     "keyId": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppOiDwn46J"
+  },
+  "414fb0de-2670-4b9d-8d3d-e6a5ad2aefc4": {
+    "id": "414fb0de-2670-4b9d-8d3d-e6a5ad2aefc4",
+    "lang": "es",
+    "translation": "Una herramienta para la internacionalización",
+    "keyId": "c29tZUNvbnRleHRfQSB0b29sIGZvciBpbnRlcm5hdGlvbmFsaXphdGlvbg=="
   }
 }

@@ -232,5 +232,11 @@
     "lang": "ca",
     "translation": "Missatge amb emoji: 🎉",
     "keyId": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppOiDwn46J"
+  },
+  "1a7ed819-4ded-4444-8192-213a0900bf84": {
+    "id": "1a7ed819-4ded-4444-8192-213a0900bf84",
+    "lang": "ca",
+    "translation": "Una eina per la internacionalització",
+    "keyId": "c29tZUNvbnRleHRfQSB0b29sIGZvciBpbnRlcm5hdGlvbmFsaXphdGlvbg=="
   }
 }

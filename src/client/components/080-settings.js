@@ -105,7 +105,7 @@ class Settings extends React.Component {
           id: 'langs',
           dir: 'row',
           Component: TextInput,
-          placeholder: 'e.g. es',
+          placeholder: 'e.g. es-ES, ca…',
           width: 80,
         })}
         <div style={style.listLabel}>

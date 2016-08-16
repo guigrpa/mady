@@ -18,9 +18,11 @@ import {
 require('./010-app.sass');
 
 // Example MessageFormat message with plural, so that it appears in the screenshot:
-// _t("someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}", { NUM: 1 }))
+// _t("someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}", { NUM: 1 })
 // Example message with emoji, so that it appears in the screenshot:
-// _t("someContext_Message with emoji: 🎉"))
+// _t("someContext_Message with emoji: 🎉")
+// Example message with American and British English versions, so that it appears in the screenshot:
+// _t("someContext_A tool for internationalization")
 
 // ==========================================
 // Relay fragments

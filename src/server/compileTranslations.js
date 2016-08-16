@@ -19,9 +19,8 @@ export default function compileTranslations({
       finalTranslations[keyId] = keys[keyId].text;
     }
   });
-  Object.keys(translations).forEach(translationId => {
-    const o = translations[translationId];
-    finalTranslations[o.keyId] = o.translation;
+  translations.forEach(translation => {
+    finalTranslations[translation.keyId] = translation.translation;
   });
   story.debug('compiler', `${logPrefix} Translations prepared`, {
     attach: finalTranslations,
