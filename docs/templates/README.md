@@ -4,7 +4,7 @@ An easy-to-use tool to manage and translate ICU MessageFormat messages.
 
 ![Mady UI](https://raw.githubusercontent.com/guigrpa/mady/master/docs/01-ui.png)
 
-*Yes, it's Mady's view of itself!* :open_mouth: For more details on the MessageFormat syntax (*hamburger* examples above), [see the MessageFormat guide](https://messageformat.github.io/guide/):
+*Yes, it's Mady's view of herself!* :open_mouth: For more details on the MessageFormat syntax (*hamburger* examples above), [see the MessageFormat guide](https://messageformat.github.io/guide/):
 
 ```js
 console.log(_t("someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}", { NUM: 1 }));
@@ -67,7 +67,7 @@ Configuration looks like this:
 
 ![Mady config](https://raw.githubusercontent.com/guigrpa/mady/master/docs/02-config.png)
 
-You can see the UI in English, Spanish and Catalan at the moment. Mady *eats its own dog food*.
+You can see the UI in English, Spanish and Catalan at the moment. Mady *eats her own dog food*.
 
 
 ### The translate function
