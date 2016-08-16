@@ -18,6 +18,7 @@ Remember: this is not only for translation! Even if you only use English, you ma
 ## Why?
 
 * **MessageFormat messages**: while it does not solve all the problems in the huge field of i18n, MessageFormat is a much more powerful tool than the conventional gettext (IMHO).
+* **Full UNICODE support**: messages and translations can include any UNICODE character. In other words, you can now translate 👍 (en) as 👏 (es-ES) and then 💃 (es-ES-andalusia)!
 * Use it as a development tool in your project: an **easy-to-use UI** that allows **parsing source files, adding languages and translations, comparing translations side-by-side, and compiling to (optionally minified) JavaScript modules**.
 * Use it as a library: a no-frills translate function to run the compiled language modules.
 
