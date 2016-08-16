@@ -1,6 +1,6 @@
 # Changelog
 
-* [M] Better **BCP47** support:
+* [M] Better **BCP47** support: complete missing translations with those from descendants and ancestors.
   - If you define your languages as `['en-US', 'es']`, you'll get *three* JS files, not two: `en`, `en-US` and `es`.
   - If you define translations for `en`, `en-US` will inherit them, plus the specific `en-US` translations.
   - Translations for a sub-language (e.g. `es-ES`) will flow up to the parent language if it doesn't have a translation for that key. What's more, those translations will also flow down to other sub-languages (e.g. `es-MX`) if the key is missing.
