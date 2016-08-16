@@ -42,6 +42,8 @@
 <ul>
 <li>
 <strong>MessageFormat messages</strong>: while it does not solve all the problems in the huge field of i18n, MessageFormat is a much more powerful tool than the conventional gettext (IMHO).</li>
+<li>
+<strong>Full UNICODE support</strong>: messages and translations can include any UNICODE character. In other words, you can now translate <g-emoji alias="+1" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44d.png">👍</g-emoji> (en) as <g-emoji alias="clap" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44f.png">👏</g-emoji> (es-ES) and then <g-emoji alias="dancer" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f483.png">💃</g-emoji> (es-ES-andalusia)!</li>
 <li>Use it as a development tool in your project: an <strong>easy-to-use UI</strong> that allows <strong>parsing source files, adding languages and translations, comparing translations side-by-side, and compiling to (optionally minified) JavaScript modules</strong>.</li>
 <li>Use it as a library: a no-frills translate function to run the compiled language modules.</li>
 </ul>
@@ -98,7 +100,7 @@
 <p>Using the translate function is similarly straightforward:</p>
 
 <div class="highlight highlight-source-js"><pre><span class="pl-k">import</span> <span class="pl-smi">_t</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>mady<span class="pl-pds">'</span></span>;
-<span class="pl-k">import</span> <span class="pl-smi">locales</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>./locales/es-ES<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> <span class="pl-smi">locales</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>./locales/es<span class="pl-pds">'</span></span>;
 
 <span class="pl-smi">_t</span>.<span class="pl-en">setLocales</span>(locales);
 
