@@ -1,5 +1,7 @@
 # Changelog
 
+## 1.5.0 (August 1, 2016)
+
 * [M] Better **BCP47** support: complete missing translations with those from descendants and ancestors.
   - If you define your languages as `['en-US', 'es']`, you'll get *three* JS files, not two: `en`, `en-US` and `es`.
   - If you define translations for `en`, `en-US` will inherit them, plus the specific `en-US` translations.

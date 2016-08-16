@@ -4,7 +4,7 @@ An easy-to-use tool to manage and translate ICU MessageFormat messages.
 
 ![Mady UI](https://raw.githubusercontent.com/guigrpa/mady/master/docs/01-ui.png)
 
-*Yes, it's Mady's view of herself!* :open_mouth: For more details on the MessageFormat syntax (*hamburger* examples above), [see the MessageFormat guide](https://messageformat.github.io/guide/):
+*Yes, it's Mady's view of herself!* :open_mouth: For more details on the MessageFormat syntax (*hamburger* examples above), see the [MessageFormat guide](https://messageformat.github.io/guide/):
 
 ```js
 console.log(_t("someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}", { NUM: 1 }));
@@ -13,14 +13,15 @@ console.log(_t("someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}"
 // 2 hamburguesas
 ```
 
-Remember: this is not only for translation! Even if you only use English, you may need MessageFormat for gender and pluralization.
+Remember: this is not only for translation! Even if you only use English, you may need MessageFormat for gender, pluralisation and even regionalisation (*regionalization*).
 
 ## Why?
 
 * **MessageFormat messages**: while it does not solve all the problems in the huge field of i18n, MessageFormat is a much more powerful tool than the conventional gettext (IMHO).
 * **Full UNICODE support**: messages and translations can include any UNICODE character. In other words, you can now translate 👍 (en) as 👏 (es-ES) and then 💃 (es-ES-andalusia)!
 * Use it as a development tool in your project: an **easy-to-use UI** that allows **parsing source files, adding languages and translations, comparing translations side-by-side, and compiling to (optionally minified) JavaScript modules**.
-* Use it as a library: a no-frills translate function to run the compiled language modules.
+* Use it as a library: a no-frills translation function to run the compiled language modules.
+* **BCP47 support**: fetch missing translations from parent/child languages, and even sibling languages (other regions) as a last resort.
 
 ## Installation
 
@@ -31,7 +32,7 @@ $ npm install --save mady
 
 ## Usage
 
-There are two main parts in Mady: the web-based translation app and the translate function.
+There are two main parts in Mady: the web-based translation app and the translation function.
 
 
 ### The translation app
@@ -59,9 +60,9 @@ From the web application, you can:
 * Update the key database with new keys extracted from your source files
 * Configure your languages, source paths, file extensions, etc.
 * Translate your keys to the different supported languages
-* [Automatically] export translations to JS files, for use by the [translate function](#the-translate-function)
+* [Automatically] export translations to JS files, for use by the [translation function](#the-translation-function)
 
-Messages in your source files should have the form: `_t('someContext_Once upon a time...')` (single or double quotes are supported), where `_t()` is the default name for the translate function (see below), `someContext` is some hint for the translator and `Once upon a time...` is your untranslated [MessageFormat](#messageformat) message.
+Messages in your source files should have the form: `_t('someContext_Once upon a time...')` (single or double quotes are supported), where `_t()` is the default name for the translation function (see below), `someContext` is some hint for the translator and `Once upon a time...` is your untranslated [MessageFormat](#messageformat) message.
 
 Configuration looks like this:
 
@@ -70,9 +71,9 @@ Configuration looks like this:
 You can see the UI in English, Spanish and Catalan at the moment. Mady *eats her own dog food*.
 
 
-### The translate function
+### The translation function
 
-Using the translate function is similarly straightforward:
+Using the translation function is similarly straightforward:
 
 ```js
 import _t from 'mady';
@@ -100,7 +101,7 @@ Some examples of MessageFormat messages are given above ([more here](https://mes
 
 ## Internals
 
-Mady is built with [React](https://facebook.github.io/react/) and [Relay](https://facebook.github.io/relay/).
+Mady is built with [React](https://facebook.github.io/react/) and [Relay](https://facebook.github.io/relay/), and is fully server-side-rendered. It was built as a proof-of-concept for the latest web technologies.
 
 
 ## [Changelog](https://github.com/guigrpa/mady/blob/master/CHANGELOG.md)
