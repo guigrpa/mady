@@ -2,9 +2,8 @@ import path                 from 'path';
 import { mainStory }        from 'storyboard';
 import webpack              from 'webpack';
 import ExtractTextPlugin    from 'extract-text-webpack-plugin';
+import { SUPPORTED_LOCALES } from '../locales/all';
 const pkg                   = require('../../package.json');
-
-const MOMENT_LANGS = ['en-gb', 'ca', 'es'];
 
 const fProduction = (process.env.NODE_ENV === 'production');
 const fSsr = (!!process.env.SERVER_SIDE_RENDERING);
@@ -68,6 +67,8 @@ export default {
   },
 
   plugins: (() => {
+    const momentLocaleFiles = SUPPORTED_LOCALES.map(o => `${o.toLowerCase()}.js`);
+    const ourOwnLocaleFiles = SUPPORTED_LOCALES.map(o => `${o}.js`);
     const ret = [
       function pluginCompile() {
         this.plugin('compile', () => mainStory.debug('webpack', 'Bundling...'));
@@ -79,15 +80,21 @@ export default {
         'process.env.NODE_ENV': JSON.stringify(fProduction ? 'production' : 'development'),
         'process.env.SERVER_SIDE_RENDERING': JSON.stringify(fSsr),
       }),
+      // Replace moment's dynamic require regex: ^\.\/.*$    by...
       new webpack.ContextReplacementPlugin(
         /moment[\\\/]locale$/,
-        new RegExp(`.[\\\/](${MOMENT_LANGS.join('|')})`)
+        new RegExp(`.[\\\/](${momentLocaleFiles.join('|')})$`)
+      ),
+      // Replace mady's dynamic require regex: ./~/bundle-loader!^\.\/.*\.js$    by...
+      new webpack.ContextReplacementPlugin(
+        /src[\\\/]locales$/,
+        new RegExp(`.[\\\/](${ourOwnLocaleFiles.join('|')})$`)
       ),
     ];
     if (fSsr) {
       ret.push(new ExtractTextPlugin('[name].bundle.css'));
     }
-    const langsDesc = MOMENT_LANGS.join(', ');
+    const langsDesc = SUPPORTED_LOCALES.join(', ');
     mainStory.warn('webpack',
       `Please check that the supported langs for moment.js are correct: ${langsDesc}`);
     if (fProduction) {

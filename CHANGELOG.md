@@ -1,6 +1,7 @@
 # Changelog
 
 * [m] Add `_t.addLocales(lang, locales)` function and `_t.setLocales(lang)` signature: Mady can now keep track of all locales and use parent BCP47 codes when the requested BCP47 is not available.
+* [m] Add `_t.addLocaleCode(lang, localeCode)` and `_t.getLocaleCode(desiredLang)` (returning { lang, result }, where the returned `lang` isn't necessarily the same as `desiredLang`). These two are useful for bootstrapping locale code.
 
 ## 1.5.0 (August 1, 2016)
 

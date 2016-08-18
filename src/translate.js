@@ -5,6 +5,7 @@ let _locales = {};
 
 // Caches
 const allLocales = {};
+const allLocaleCode = {};
 const keyCache = {};
 
 const translate = (utf8, data) => {
@@ -25,25 +26,35 @@ const translate = (utf8, data) => {
   return out;
 };
 
-const _t = translate;
-
-_t.setLocales = langOrLocales => {
-  if (typeof langOrLocales === 'string') {
-    let lang = langOrLocales;
-    let locales = null;
-    while (!(locales = allLocales[lang])) {
-      lang = _t.getParentBcp47(lang);
-      if (!lang) return null;
-    }
-    _locales = locales;
-    return lang;
-  } else {
-    _locales = langOrLocales;
-    return null
+const getLocaleOrLocaleCode = (cache, initialLang) => {
+  let result = null;
+  let lang = initialLang;
+  while (!(result = cache[lang])) {
+    lang = _t.getParentBcp47(lang);
+    if (!lang) break;
   }
+  return { lang, result };
 };
 
+const _t = translate;
+
 _t.addLocales = (lang, locales) => { allLocales[lang] = locales; };
+_t.addLocaleCode = (lang, localeCode) => { allLocaleCode[lang] = localeCode; };
+
+_t.setLocales = langOrLocales => {
+  let out = null;
+  if (typeof langOrLocales === 'string') {
+    const { lang, result } = getLocaleOrLocaleCode(allLocales, langOrLocales);
+    if (lang) _locales = result;
+    out = lang;
+  } else {
+    _locales = langOrLocales;
+  }
+  return out;
+};
+
+_t.getLocales = lang => getLocaleOrLocaleCode(allLocales, lang);
+_t.getLocaleCode = lang => getLocaleOrLocaleCode(allLocaleCode, lang);
 
 _t.getParentBcp47 = bcp47 => {
   const tokens = bcp47.replace(/_/g, '-').split('-');
