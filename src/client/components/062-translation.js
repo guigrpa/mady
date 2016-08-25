@@ -79,7 +79,7 @@ class Translation extends React.Component {
       'onBlur',
       'onKeyDown',
       'onKeyUp',
-      'onClickCopyKey',
+      'onMouseDownCopyKey',
       'onClickDelete',
     ]);
   }
@@ -135,7 +135,7 @@ class Translation extends React.Component {
         <Icon
           icon="copy"
           title={_t('tooltip_Copy message')}
-          onClick={this.onClickCopyKey}
+          onMouseDown={this.onMouseDownCopyKey}
           style={style.iconButton}
         />
         {elDelete}
@@ -160,6 +160,8 @@ class Translation extends React.Component {
     this.props.changeSelectedKey(this.props.theKey.id);
   }
 
+  // RETURN + modifier key (unmodified RETURNs are accepted in the textarea): ignore (will
+  // be processed on keyup)
   onKeyDown(ev) {
     if (ev.which === KEYS.enter &&
         (ev.ctrlKey || ev.altKey || ev.metaKey || ev.shiftKey)) {
@@ -167,6 +169,8 @@ class Translation extends React.Component {
     }
   }
 
+  // ESC: revert and blur
+  // RETURN + modifier key (unmodified RETURNs are accepted in the textarea): blur (and save)
   onKeyUp(ev) {
     if (ev.which === KEYS.esc) {
       this.setState({ cmds: [{ type: 'REVERT' }, { type: 'BLUR' }] });
@@ -211,7 +215,7 @@ class Translation extends React.Component {
     });
   }
 
-  onClickCopyKey() {
+  onMouseDownCopyKey() {
     this.setState({
       cmds: [
         { type: 'SET_VALUE', value: this.props.theKey.text },

@@ -1,5 +1,8 @@
 # Changelog
 
++ [m] Automatically open Mady's webpage when the server starts
++ [m] Bugfix: prevent click on "copy key" button from getting lost when the user is editing another translation.
+
 ## 1.6.0 (August 18, 2016)
 
 * [m] Add `_t.addLocales(lang, locales)` function and `_t.setLocales(lang)` signature: Mady can now keep track of all locales and use parent BCP47 codes when the requested BCP47 is not available.
