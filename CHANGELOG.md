@@ -1,5 +1,7 @@
 # Changelog
 
+## 1.6.1 (August 25, 2016)
+
 + [m] Automatically open Mady's webpage when the server starts
 + [m] Bugfix: prevent click on "copy key" button from getting lost when the user is editing another translation.
 
