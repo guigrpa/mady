@@ -163,6 +163,7 @@ const specs = {
     'messageformat': '0.3.0',
     'uglify-js': '2.6.2',
     'slash': '1.0.0',
+    opn: '4.0.2',
 
     // Express + plugins
     express: '4.14.0',

@@ -9,6 +9,7 @@ import consoleListener      from 'storyboard/lib/listeners/console';
 import fs                   from 'fs-extra';
 import program              from 'commander';
 import inquirer             from 'inquirer';
+import opn                  from 'opn';
 const pkg                   = require('../../package.json');
 import * as db              from './db';
 import * as gqlServer       from './gqlServer';
@@ -50,6 +51,7 @@ Promise.resolve()
       gqlServer.init();
       httpServer.init({ port: _launchPars.port });
     }
+    opn(`http://localhost:${_launchPars.port}/`);
   });
 
 

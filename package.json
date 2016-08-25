@@ -70,6 +70,7 @@
     "lodash": "4.14.1",
     "messageformat": "0.3.0",
     "node-uuid": "1.4.7",
+    "opn": "4.0.2",
     "slash": "1.0.0",
     "storyboard": "2.0.2",
     "timm": "1.0.0",
