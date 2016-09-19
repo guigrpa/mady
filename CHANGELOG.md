@@ -1,5 +1,10 @@
 # Changelog
 
+* [M] **Add [React Intl](https://github.com/yahoo/react-intl) integration**:
+  - If Mady finds the babel-core and babel-plugin-react-intl modules (included as `peerDependencies`), it will automatically enable the React Intl integration and extract messages from your `FormattedMessage`/`FormattedHTMLMessage` components and `defineMessages()` calls, as supported by the Babel plugin.
+  - Add support for React Intl's `description` field, used to give more context to the translator than the message prefix (e.g. `someContext_A message`)
+  - Translation compilation now generates `${lang}.reactIntl.json` files that you can use to bootstrap React Intl
+
 ## 1.6.1 (August 25, 2016)
 
 + [m] Automatically open Mady's webpage when the server starts

@@ -93,6 +93,7 @@ type Key implements Node {
   id: ID!
   context: String
   text: String
+  description: String
   firstUsed: String
   unusedSince: String
   sources: [String]

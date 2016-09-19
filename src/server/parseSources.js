@@ -1,9 +1,36 @@
+/* eslint-disable global-require */
 import fs                   from 'fs';
 import path                 from 'path';
 import slash                from 'slash';
-import { chalk }            from 'storyboard';
+import { mainStory, chalk } from 'storyboard';
 import diveSync             from 'diveSync';
 import { utf8ToBase64 }     from '../common/base64';
+
+// Enable react-intl integration only when we have the necessary packages
+let fReactIntl = false;
+let babelCore;
+const babelConfig = {
+  presets: [],
+  plugins: ['react-intl'],
+};
+try {
+  babelCore = require('babel-core');
+  require('babel-plugin-react-intl');
+  fReactIntl = true;
+  try {
+    const babelrc = JSON.parse(fs.readFileSync('.babelrc'));
+    if (babelrc.presets) babelConfig.presets = babelConfig.presets.concat(babelrc.presets);
+    if (babelrc.plugins) babelConfig.plugins = babelrc.plugins.concat(babelConfig.plugins);
+  } catch (err) {
+    mainStory.warn('parser',
+      'Could not find your .babelrc file; using default config for React Intl integration');
+  }
+} catch (err) {
+  mainStory.warn('parser', 'Disabled React Intl integration');
+  // eslint-disable-line max-len
+  mainStory.warn('parser',
+    'If you need it, make sure you install babel-core and babel-plugin-react-intl');
+}
 
 // const REGEXP_TRANSLATE_CMDS = [
 //   /_t\s*\(\s*"(.*?)"/g,
@@ -39,29 +66,49 @@ export default function parse({ srcPaths, srcExtensions, msgFunctionNames, story
     regexpFunctionNames.forEach(re => {
       let match;
       while ((match = re.exec(fileContents))) {
-        const utf8 = match[1];
-        const tokens = utf8.split('_');
-        let context;
-        let text;
-        if (tokens.length >= 2) {
-          context = tokens.shift();
-          text = tokens.join('_');
-        } else {
-          context = null;
-          text = tokens[0];
-        }
-        const base64 = utf8ToBase64(utf8);
-        keys[base64] = keys[base64] || {
-          id: base64,
-          context, text,
-          firstUsed: null,
-          unusedSince: null,
-          sources: [],
-        };
-        keys[base64].sources.push(slash(finalFilePath));
+        addMessageToKeys(keys, match[1], finalFilePath);
       }
     });
+
+    // React-intl strings
+    if (fReactIntl) {
+      try {
+        const { messages } = babelCore.transform(fileContents, babelConfig).metadata['react-intl'];
+        if (messages) {
+          messages.forEach(message => {
+            const { defaultMessage: utf8, description, id: reactIntlId } = message;
+            addMessageToKeys(keys, utf8, finalFilePath, { reactIntlId, description });
+          });
+        }
+      } catch (err2) {
+        story.error('parser', 'Error extracting React Intl messages', { attach: err2 });
+      }
+    }
   };
   srcPaths.forEach(srcPath => diveSync(srcPath, diveOptions, diveProcess));
   return keys;
 }
+
+const addMessageToKeys = (keys, utf8, filePath, extras = {}) => {
+  const tokens = utf8.split('_');
+  let context;
+  let text;
+  if (tokens.length >= 2) {
+    context = tokens.shift();
+    text = tokens.join('_');
+  } else {
+    context = null;
+    text = tokens[0];
+  }
+  const base64 = utf8ToBase64(utf8);
+  // eslint-disable-next-line no-param-reassign
+  keys[base64] = keys[base64] || {
+    id: base64,
+    context, text,
+    ...extras,
+    firstUsed: null,
+    unusedSince: null,
+    sources: [],
+  };
+  keys[base64].sources.push(slash(filePath));
+};

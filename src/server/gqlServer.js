@@ -158,6 +158,7 @@ export function init() {
       id:             globalIdField('Key'),
       context:        { type: GraphQLString },
       text:           { type: GraphQLString },
+      description:    { type: GraphQLString },
       firstUsed:      { type: GraphQLString },
       unusedSince:    { type: GraphQLString },
       sources:        { type: new GraphQLList(GraphQLString) },

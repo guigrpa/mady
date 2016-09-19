@@ -10,7 +10,7 @@ import graphqlHttp          from 'express-graphql';
 import ejs                  from 'ejs';
 import cookieParser         from 'cookie-parser';
 import compression          from 'compression';
-import addAllLocales        from '../locales/all';
+import addAllLocales, { getReactIntlMessages } from '../locales/all';
 import _t                   from '../translate';
 import * as gqlServer       from './gqlServer';
 let webpack;
@@ -63,6 +63,7 @@ function sendIndexHtml(req, res) {
       const { lang, result } = _t.getLocaleCode(userLang);
       bootstrap.fnLocales = result;
       bootstrap.jsonData.lang = lang;
+      bootstrap.jsonData.reactIntlMessages = getReactIntlMessages(lang);
       if (lang && lang !== userLang) {
         mainStory.info('http',
           `Serving locales for ${chalk.cyan.bold(lang)} instead of ${chalk.cyan.bold(userLang)}`);
@@ -75,6 +76,7 @@ function sendIndexHtml(req, res) {
       mainStory.debug('http', 'Rendering...');
       return ssr.render(req, {
         lang: bootstrap.jsonData.lang,
+        reactIntlMessages: bootstrap.jsonData.reactIntlMessages,
         fnLocales: bootstrap.fnLocales,
       })
       .then(results => {

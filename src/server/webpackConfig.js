@@ -67,7 +67,7 @@ export default {
   },
 
   plugins: (() => {
-    const momentLocaleFiles = SUPPORTED_LOCALES.map(o => `${o.toLowerCase()}.js`);
+    // const momentLocaleFiles = SUPPORTED_LOCALES.map(o => `${o.toLowerCase()}.js`);
     const ourOwnLocaleFiles = SUPPORTED_LOCALES.map(o => `${o}.js`);
     const ret = [
       function pluginCompile() {
@@ -81,10 +81,10 @@ export default {
         'process.env.SERVER_SIDE_RENDERING': JSON.stringify(fSsr),
       }),
       // Replace moment's dynamic require regex: ^\.\/.*$    by...
-      new webpack.ContextReplacementPlugin(
-        /moment[\\\/]locale$/,
-        new RegExp(`.[\\\/](${momentLocaleFiles.join('|')})$`)
-      ),
+      // new webpack.ContextReplacementPlugin(
+      //   /moment[\\\/]locale$/,
+      //   new RegExp(`.[\\\/](${momentLocaleFiles.join('|')})$`)
+      // ),
       // Replace mady's dynamic require regex: ./~/bundle-loader!^\.\/.*\.js$    by...
       new webpack.ContextReplacementPlugin(
         /src[\\\/]locales$/,

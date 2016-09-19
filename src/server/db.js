@@ -7,6 +7,7 @@ import uuid                 from 'node-uuid';
 import { base64ToUtf8 }     from '../common/base64';
 import parse                from './parseSources';
 import compile              from './compileTranslations';
+import collectReactIntlTranslations from './collectReactIntlTranslations';
 import * as importers       from './importData';
 
 const DB_VERSION = 2;
@@ -201,6 +202,7 @@ function parseSrcFiles({ story }) {
 // ==============================================
 const getLangPath = (lang) => path.join(_localeDir, `${lang}.json`);
 const getCompiledLangPath = (lang) => path.join(_localeDir, `${lang}.js`);
+const getReactIntlLangPath = (lang) => path.join(_localeDir, `${lang}.reactIntl.json`);
 let _translations = {};
 
 function initTranslations() {
@@ -301,15 +303,24 @@ function compileTranslations({ story: baseStory } = {}) {
     const allTranslations = getAllTranslations(langs, story);
     Object.keys(allTranslations).forEach(lang => {
       const compiledLangPath = getCompiledLangPath(lang);
+      const translations = allTranslations[lang];
       const fnTranslate = compile({
         lang,
         keys: _keys,
-        translations: allTranslations[lang],
+        translations,
         fMinify,
         story,
       });
       story.debug('db', `Writing file ${chalk.cyan.bold(compiledLangPath)}...`);
       fs.writeFileSync(compiledLangPath, fnTranslate, 'utf8');
+      const reactIntlLangPath = getReactIntlLangPath(lang);
+      const reactIntlMessages = collectReactIntlTranslations({
+        lang,
+        keys: _keys,
+        translations,
+        story,
+      });
+      saveJson(reactIntlLangPath, reactIntlMessages, { story });
     });
   })
   .catch(err => {
@@ -327,7 +338,7 @@ function compileTranslations({ story: baseStory } = {}) {
 //   return out;
 // }
 
-function getAllTranslations(langs, story) {
+function getAllTranslations(langs /* , story */) {
   // Determine lang structure
   const langStructure = {};
   const sortedLangs = langs.slice().sort();

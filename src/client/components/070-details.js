@@ -18,6 +18,7 @@ const fragments = {
       anyNode(id: $details_selectedKeyId) {
         ... on Key {
           firstUsed unusedSince
+          description
           sources
         }
       }
@@ -59,15 +60,7 @@ class Details extends React.Component {
     if (!this.theKey) {
       return <LargeMessage><Icon icon="circle-o-notch" /></LargeMessage>;
     }
-    return (
-      <div>
-        {this.renderSources()}
-      </div>
-    );
-  }
-
-  renderSources() {
-    const { sources, firstUsed, unusedSince } = this.theKey;
+    const { description, sources, firstUsed, unusedSince } = this.theKey;
     const since = this.renderDate(firstUsed);
     const until = unusedSince
       ? <span> {_t('msgDetailsView_until')} {this.renderDate(unusedSince)}</span>
@@ -79,6 +72,7 @@ class Details extends React.Component {
       : null;
     return (
       <div>
+        {description && <div>{description}</div>}
         {_t('msgDetailsView_Used since')} {since}{until}
         {elSources}
       </div>

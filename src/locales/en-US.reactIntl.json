@@ -1,0 +1,5 @@
+{
+  "reactIntlSample1": "Hello, {NAME}!",
+  "reactIntlSample2": "Hello {NAME}, you have {UNREAD_COUNT, number} {UNREAD_COUNT, plural, one {message} other {messages}}",
+  "reactIntlSample3": "<i>Hi</i> <b>{NAME}</b>!"
+}

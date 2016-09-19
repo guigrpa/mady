@@ -178,6 +178,14 @@ const specs = {
     'babel-relay-plugin': '0.9.2',
   },
 
+  peerDependencies: {
+    'babel-core': '^6.0.0',
+    'babel-preset-es2015': '^6.0.0',
+    'babel-preset-stage-0': '^6.0.0',
+    'babel-preset-react': '^6.0.0',
+    "babel-plugin-react-intl": "^2.2.0",
+  },
+
   devDependencies: {
 
     // Packaged in the client app (or SSR)
@@ -192,10 +200,11 @@ const specs = {
     'react-addons-perf':              '15.2.1',
     'react-relay': '0.9.2',
     'isomorphic-relay': '0.7.0',
+    'react-intl': '2.1.5',
 
     // Miscellaneous
     'font-awesome': '4.6.3',
-    moment: '2.13.0',
+    moment: '2.14.0',
     tinycolor2: '1.3.0',
     'tiny-cookie': '0.5.5',
 
