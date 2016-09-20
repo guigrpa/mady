@@ -3,8 +3,8 @@ import {
   addLocaleData, defineMessages,
   IntlProvider, FormattedMessage, FormattedHTMLMessage,
 } from 'react-intl';
-
 import esLocaleData from 'react-intl/locale-data/es';
+
 addLocaleData(esLocaleData);
 
 defineMessages({

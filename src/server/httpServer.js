@@ -3,7 +3,6 @@ import http                 from 'http';
 import Promise              from 'bluebird';
 import { cloneDeep }        from 'lodash';
 import storyboard           from 'storyboard';
-const { mainStory, chalk } = storyboard;
 import wsServerListener     from 'storyboard/lib/listeners/wsServer';
 import express              from 'express';
 import graphqlHttp          from 'express-graphql';
@@ -13,6 +12,8 @@ import compression          from 'compression';
 import addAllLocales, { getReactIntlMessages } from '../locales/all';
 import _t                   from '../translate';
 import * as gqlServer       from './gqlServer';
+
+const { mainStory, chalk } = storyboard;
 let webpack;
 let webpackDevMiddleware;
 let webpackHotMiddleware;
@@ -79,17 +80,17 @@ function sendIndexHtml(req, res) {
         reactIntlMessages: bootstrap.jsonData.reactIntlMessages,
         fnLocales: bootstrap.fnLocales,
       })
-      .then(results => {
+      .then((results) => {
         mainStory.debug('http', 'Finished rendering');
         const { ssrHtml, ssrCss, relayData } = results;
         bootstrap.ssrHtml = ssrHtml;
         bootstrap.ssrCss = ssrCss;
         bootstrap.jsonData.relayData = relayData;
       })
-      .catch(err => mainStory.error('http', 'Error rendering', { attach: err }));
+      .catch((err) => mainStory.error('http', 'Error rendering', { attach: err }));
     })
 
-    .catch(err => mainStory.error('http', 'Error preparing bootstrap', { attach: err }))
+    .catch((err) => mainStory.error('http', 'Error preparing bootstrap', { attach: err }))
 
     // Render the result!
     .finally(() => {
@@ -99,7 +100,7 @@ function sendIndexHtml(req, res) {
     });
 }
 
-export function init(options: Object) {
+function init(options: Object) {
   // TODO: webpack SSR if not pre-compiled
   ssr && ssr.init({ gqlServer, mainStory });
 
@@ -151,7 +152,7 @@ export function init(options: Object) {
   let port = options.port;
   httpServer.on('error', () => {
     mainStory.warn('http', `Port ${port} busy`);
-    port++;
+    port += 1;
     if (port >= options.port + 20) {
       mainStory.error('http', 'Cannot open port (tried 20 times)');
       return;
@@ -163,3 +164,9 @@ export function init(options: Object) {
   });
   httpServer.listen(port);
 }
+
+// ==============================================
+// Public API
+// ==============================================
+// eslint-disable-next-line import/prefer-default-export
+export { init };

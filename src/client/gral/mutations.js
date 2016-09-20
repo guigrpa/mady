@@ -1,3 +1,5 @@
+/* eslint-disable class-methods-use-this */
+
 import Relay                from 'react-relay';
 import timm                 from 'timm';
 

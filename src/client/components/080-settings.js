@@ -92,7 +92,7 @@ class Settings extends React.Component {
             {_t('settingsForm_Mady language:')}
           </label>
           {' '}
-          <Select ref={c => { this.refLang = c; }}
+          <Select ref={(c) => { this.refLang = c; }}
             value={lang}
             items={LANG_OPTIONS}
             required
@@ -139,7 +139,7 @@ class Settings extends React.Component {
           width: 60,
         })}
         <div style={style.configLine}>
-          <Checkbox ref={c => { this.refMinify = c; }} id="fMinify" value={fMinify} />
+          <Checkbox ref={(c) => { this.refMinify = c; }} id="fMinify" value={fMinify} />
           <label htmlFor="fMinify">
             {_t('settingsForm_Minify output JavaScript')}
           </label>
@@ -234,16 +234,16 @@ const style = {
     marginTop: 7,
     marginBottom: 3,
   },
-  list: dir => flexContainer(dir, {
+  list: (dir) => flexContainer(dir, {
     marginLeft: 15,
   }),
-  listItem: dir => ({
+  listItem: (dir) => ({
     padding: '0px 2px',
     marginTop: dir === 'column' ? 1 : undefined,
     marginRight: 10,
     whiteSpace: 'nowrap',
   }),
-  input: width => ({ width }),
+  input: (width) => ({ width }),
   add: {
     display: 'inline-block',
     marginTop: 5,
@@ -259,3 +259,4 @@ const style = {
 // Public API
 // ==========================================
 export default Relay.createContainer(Settings, { fragments });
+export { Settings as _Settings };

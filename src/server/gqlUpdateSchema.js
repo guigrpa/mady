@@ -15,7 +15,7 @@ Promise.resolve()
   mainStory.info('gqlUpdate', 'Introspecting...');
   return gqlServer.runIntrospect();
 })
-.then(result => {
+.then((result) => {
   let filePath = path.join(outputPath, 'gqlSchema.json');
   mainStory.info('gqlUpdate', `Writing ${chalk.cyan(filePath)}...`);
   fs.writeFileSync(filePath, JSON.stringify(result, null, 2));

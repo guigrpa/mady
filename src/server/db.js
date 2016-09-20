@@ -116,7 +116,7 @@ function readKeys() { _keys = readJson(_keyPath); }
 
 function saveKeys(options) { saveJson(_keyPath, _keys, options); }
 
-function getKeys() { return Object.keys(_keys).map(id => _keys[id]); }
+function getKeys() { return Object.keys(_keys).map((id) => _keys[id]); }
 
 function getKey(id) { return _keys[id]; }
 
@@ -159,7 +159,7 @@ function parseSrcFiles({ story }) {
   const now = new Date().toISOString();
 
   const unusedKeys = [];
-  Object.keys(_keys).forEach(id => {
+  Object.keys(_keys).forEach((id) => {
     const key = _keys[id];
     if (curKeys[id]) {
       curKeys[id].firstUsed = key.firstUsed;
@@ -177,7 +177,7 @@ function parseSrcFiles({ story }) {
   }
 
   const newKeys = [];
-  Object.keys(curKeys).forEach(id => {
+  Object.keys(curKeys).forEach((id) => {
     const key = curKeys[id];
     if (!key.firstUsed) {
       newKeys.push(id);
@@ -238,12 +238,12 @@ function saveTranslations(lang, options) {
 }
 
 function getTranslations() {
-  return Object.keys(_translations).map(id => _translations[id]);
+  return Object.keys(_translations).map((id) => _translations[id]);
 }
 
 function getLangTranslations(lang) {
   const out = [];
-  Object.keys(_translations).forEach(translationId => {
+  Object.keys(_translations).forEach((translationId) => {
     const translation = _translations[translationId];
     if (translation.lang === lang) {
       out.push(translation);
@@ -254,7 +254,7 @@ function getLangTranslations(lang) {
 
 function getKeyTranslations(keyId) {
   const out = [];
-  Object.keys(_translations).forEach(translationId => {
+  Object.keys(_translations).forEach((translationId) => {
     const translation = _translations[translationId];
     if (translation.keyId === keyId) {
       out.push(translation);
@@ -301,7 +301,7 @@ function compileTranslations({ story: baseStory } = {}) {
   .then(() => {
     const { fMinify, langs } = _config;
     const allTranslations = getAllTranslations(langs, story);
-    Object.keys(allTranslations).forEach(lang => {
+    Object.keys(allTranslations).forEach((lang) => {
       const compiledLangPath = getCompiledLangPath(lang);
       const translations = allTranslations[lang];
       const fnTranslate = compile({
@@ -323,7 +323,7 @@ function compileTranslations({ story: baseStory } = {}) {
       saveJson(reactIntlLangPath, reactIntlMessages, { story });
     });
   })
-  .catch(err => {
+  .catch((err) => {
     story.error('db', 'Could not compile translations:', { attach: err });
     throw err;
   })
@@ -343,7 +343,7 @@ function getAllTranslations(langs /* , story */) {
   const langStructure = {};
   const sortedLangs = langs.slice().sort();
   // story.debug('db', 'Sorted languages', { attach: sortedLangs });
-  sortedLangs.forEach(lang => {
+  sortedLangs.forEach((lang) => {
     langStructure[lang] = { parent: null, children: [] };
     const tokens = lang.split(/[_-]/);
     for (let i = 0; i < tokens.length; i++) {
@@ -367,7 +367,7 @@ function getAllTranslations(langs /* , story */) {
   // Higher priority is guaranteed by the order in which languages are processed,
   // and the order in which translations are added to the array.
   const allLangs = Object.keys(langStructure).sort();
-  allLangs.forEach(lang => {
+  allLangs.forEach((lang) => {
     const childrenTranslations = getChildrenTranslations(langStructure, lang, []);
     // story.debug('db', `Children translations for ${lang}`, { attach: childrenTranslations });
     const parentTranslations = getParentTranslations(langStructure, lang);
@@ -380,7 +380,7 @@ function getAllTranslations(langs /* , story */) {
 
   // Replace lang structure by the translations themselves
   const out = {};
-  Object.keys(langStructure).forEach(lang => {
+  Object.keys(langStructure).forEach((lang) => {
     out[lang] = langStructure[lang].translations;
   });
   // story.debug('db', 'All translations', { attach: out });
@@ -389,7 +389,7 @@ function getAllTranslations(langs /* , story */) {
 
 function getChildrenTranslations(langStructure, lang, translations0) {
   let translations = translations0;
-  langStructure[lang].children.forEach(childLang => {
+  langStructure[lang].children.forEach((childLang) => {
     translations = translations.concat(getLangTranslations(childLang));
     translations = getChildrenTranslations(langStructure, childLang, translations);
   });
@@ -447,14 +447,14 @@ function migrateDatabase(prevDbVersion) {
 // ==============================================
 // Helpers
 // ==============================================
-function readJson(filePath: string): Object {
+function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
 
 function saveJson(
-  filePath: string,
-  obj: Object,
-  { story = mainStory } = {}: Object
+  filePath,
+  obj,
+  { story = mainStory } = {}
 ) {
   story.debug('db', `Writing file ${chalk.cyan.bold(filePath)}...`);
   fs.writeFileSync(filePath, JSON.stringify(obj, null, '  '), 'utf8');

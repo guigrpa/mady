@@ -16,6 +16,7 @@ const babelConfig = {
 try {
   babelCore = require('babel-core');
   require('babel-plugin-react-intl');
+
   fReactIntl = true;
   try {
     const babelrc = JSON.parse(fs.readFileSync('.babelrc'));
@@ -37,9 +38,9 @@ try {
 //   /_t\s*\(\s*'(.*?)'/g,
 // ];
 
-const getRegexps = msgFunctionNames => {
+const getRegexps = (msgFunctionNames) => {
   const out = [];
-  msgFunctionNames.forEach(fnName => {
+  msgFunctionNames.forEach((fnName) => {
     const escapedFnName = fnName.replace(/([\$])/g, '\\$1');
 
     // Looking for something like:
@@ -63,7 +64,7 @@ export default function parse({ srcPaths, srcExtensions, msgFunctionNames, story
     const finalFilePath = path.normalize(filePath);
     story.info('parser', `Processing ${chalk.cyan.bold(finalFilePath)}...`);
     const fileContents = fs.readFileSync(finalFilePath);
-    regexpFunctionNames.forEach(re => {
+    regexpFunctionNames.forEach((re) => {
       let match;
       while ((match = re.exec(fileContents))) {
         addMessageToKeys(keys, match[1], finalFilePath);
@@ -75,7 +76,7 @@ export default function parse({ srcPaths, srcExtensions, msgFunctionNames, story
       try {
         const { messages } = babelCore.transform(fileContents, babelConfig).metadata['react-intl'];
         if (messages) {
-          messages.forEach(message => {
+          messages.forEach((message) => {
             const { defaultMessage: utf8, description, id: reactIntlId } = message;
             addMessageToKeys(keys, utf8, finalFilePath, { reactIntlId, description });
           });
@@ -85,7 +86,7 @@ export default function parse({ srcPaths, srcExtensions, msgFunctionNames, story
       }
     }
   };
-  srcPaths.forEach(srcPath => diveSync(srcPath, diveOptions, diveProcess));
+  srcPaths.forEach((srcPath) => diveSync(srcPath, diveOptions, diveProcess));
   return keys;
 }
 
@@ -104,7 +105,8 @@ const addMessageToKeys = (keys, utf8, filePath, extras = {}) => {
   // eslint-disable-next-line no-param-reassign
   keys[base64] = keys[base64] || {
     id: base64,
-    context, text,
+    context,
+    text,
     ...extras,
     firstUsed: null,
     unusedSince: null,

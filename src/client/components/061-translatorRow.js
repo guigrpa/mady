@@ -1,7 +1,6 @@
 import timm                 from 'timm';
 import React                from 'react';
 import Relay                from 'react-relay';
-import PureRenderMixin      from 'react-addons-pure-render-mixin';
 import {
   bindAll, cancelEvent,
   flexContainer, flexItem,
@@ -41,7 +40,7 @@ const fragments = {
 // ------------------------------------------
 // Component
 // ------------------------------------------
-class TranslatorRow extends React.Component {
+class TranslatorRow extends React.PureComponent {
   static propTypes = {
     theKey:                 React.PropTypes.object.isRequired,
     viewer:                 React.PropTypes.object.isRequired,
@@ -58,7 +57,6 @@ class TranslatorRow extends React.Component {
 
   constructor(props) {
     super(props);
-    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     bindAll(this, [
       'renderTranslation',
       'onClickKeyRow',
@@ -126,7 +124,6 @@ class TranslatorRow extends React.Component {
           lang={lang}
           translation={translation}
           changeSelectedKey={this.props.changeSelectedKey}
-          fUnused={!!key.unusedSince}
         />
       </div>
     );

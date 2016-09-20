@@ -31,7 +31,7 @@ const fragments = {
 // ==========================================
 class Details extends React.Component {
   static propTypes = {
-    lang:                   React.PropTypes.string.isRequired,
+    // lang:                   React.PropTypes.string.isRequired,
     relay:                  React.PropTypes.object.isRequired,
     viewer:                 React.PropTypes.object.isRequired,
     selectedKeyId:          React.PropTypes.string,

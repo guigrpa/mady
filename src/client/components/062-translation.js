@@ -17,7 +17,7 @@ import {
 import { COLORS }           from '../gral/constants';
 import { mutate }           from './helpers';
 
-const validateTranslation = lang => val => {
+const validateTranslation = (lang) => (val) => {
   const numOpen = val.split('{').length - 1;
   const numClose = val.split('}').length - 1;
   if (numOpen !== numClose) {
@@ -56,12 +56,12 @@ const fragments = {
 // ==========================================
 class Translation extends React.Component {
   static propTypes = {
-    relay:                  React.PropTypes.object.isRequired,
+    // relay:                  React.PropTypes.object.isRequired,
     theKey:                 React.PropTypes.object.isRequired,
     lang:                   React.PropTypes.string.isRequired,
     translation:            React.PropTypes.object,
     changeSelectedKey:      React.PropTypes.func.isRequired,
-    fUnused:                React.PropTypes.bool.isRequired,
+    // fUnused:                React.PropTypes.bool.isRequired,
     // From hoverable
     hovering:               React.PropTypes.bool,
     onHoverStart:           React.PropTypes.func.isRequired,
@@ -106,7 +106,7 @@ class Translation extends React.Component {
     const { cmds } = this.state;
     // const fUpdating = translation && relay.hasOptimisticUpdate(translation);
     return (
-      <Textarea ref={c => { this.refInput = c; }}
+      <Textarea ref={(c) => { this.refInput = c; }}
         value={translation ? translation.translation : null}
         validators={[validateTranslation(lang)]}
         onFocus={this.onFocus}
@@ -187,7 +187,7 @@ class Translation extends React.Component {
       return;
     }
     this.refInput.validateAndGetValue()
-    .then(text => {
+    .then((text) => {
       if (text === this.getInitialTranslation()) return;
       const description = 'Commit translation edit';
       let Mutation;

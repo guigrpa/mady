@@ -14,12 +14,12 @@ export default function compileTranslations({
   story.info('compiler', `${logPrefix} Preparing translations...`);
   const finalTranslations = {};
   // We must always include those keys using curly braces, even if there is no translation
-  Object.keys(keys).forEach(keyId => {
+  Object.keys(keys).forEach((keyId) => {
     if (keys[keyId].text.indexOf('{') >= 0) {
       finalTranslations[keyId] = keys[keyId].text;
     }
   });
-  translations.forEach(translation => {
+  translations.forEach((translation) => {
     finalTranslations[translation.keyId] = translation.translation;
   });
   story.debug('compiler', `${logPrefix} Translations prepared`, {

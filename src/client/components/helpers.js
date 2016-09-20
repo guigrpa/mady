@@ -19,7 +19,7 @@ function mutate(options) {
   const finalProps = timm.set(props, 'storyId', story.storyId);
   const mutation = new Mutation(finalProps);
   Relay.Store.commitUpdate(mutation, {
-    onFailure: transaction => {
+    onFailure: (transaction) => {
       const error = transaction.getError() || new Error('Mutation failed');
       story.error('views', 'Transaction error:', { attach: error });
       story.close();
@@ -35,7 +35,7 @@ function mutate(options) {
       }
       if (onFinish) onFinish();
     },
-    onSuccess: response => {
+    onSuccess: (response) => {
       story.debug('views', 'Transaction result:', {
         attach: response,
         attachLevel: 'trace',

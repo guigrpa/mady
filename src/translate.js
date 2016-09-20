@@ -41,7 +41,7 @@ const _t = translate;
 _t.addLocales = (lang, locales) => { allLocales[lang] = locales; };
 _t.addLocaleCode = (lang, localeCode) => { allLocaleCode[lang] = localeCode; };
 
-_t.setLocales = langOrLocales => {
+_t.setLocales = (langOrLocales) => {
   let out = null;
   if (typeof langOrLocales === 'string') {
     const { lang, result } = getLocaleOrLocaleCode(allLocales, langOrLocales);
@@ -53,10 +53,10 @@ _t.setLocales = langOrLocales => {
   return out;
 };
 
-_t.getLocales = lang => getLocaleOrLocaleCode(allLocales, lang);
-_t.getLocaleCode = lang => getLocaleOrLocaleCode(allLocaleCode, lang);
+_t.getLocales = (lang) => getLocaleOrLocaleCode(allLocales, lang);
+_t.getLocaleCode = (lang) => getLocaleOrLocaleCode(allLocaleCode, lang);
 
-_t.getParentBcp47 = bcp47 => {
+_t.getParentBcp47 = (bcp47) => {
   const tokens = bcp47.replace(/_/g, '-').split('-');
   if (tokens.length <= 1) return null;
   return tokens.slice(0, tokens.length - 1).join('-');

@@ -3,6 +3,7 @@ import { mainStory }        from 'storyboard';
 import webpack              from 'webpack';
 import ExtractTextPlugin    from 'extract-text-webpack-plugin';
 import { SUPPORTED_LOCALES } from '../locales/all';
+
 const pkg                   = require('../../package.json');
 
 const fProduction = (process.env.NODE_ENV === 'production');
@@ -16,12 +17,12 @@ mainStory.info('webpack', 'Webpack configuration:', {
   },
 });
 
-const _entry = file => (
+const _entry = (file) => (
   (fProduction || fSsr) ? [file]
                         : ['webpack-hot-middleware/client?reload=true', file]
 );
 
-const _styleLoader = loaderDesc => (
+const _styleLoader = (loaderDesc) => (
   fSsr ? ExtractTextPlugin.extract('style-loader', loaderDesc)
        : `style!${loaderDesc}`
 );
@@ -68,7 +69,7 @@ export default {
 
   plugins: (() => {
     // const momentLocaleFiles = SUPPORTED_LOCALES.map(o => `${o.toLowerCase()}.js`);
-    const ourOwnLocaleFiles = SUPPORTED_LOCALES.map(o => `${o}.js`);
+    const ourOwnLocaleFiles = SUPPORTED_LOCALES.map((o) => `${o}.js`);
     const ret = [
       function pluginCompile() {
         this.plugin('compile', () => mainStory.debug('webpack', 'Bundling...'));

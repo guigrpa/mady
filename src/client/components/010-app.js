@@ -1,3 +1,4 @@
+/* eslint-env browser */
 import React                from 'react';
 import Relay                from 'react-relay';
 import moment               from 'moment';
@@ -15,6 +16,7 @@ import {
   cookieGet,
   cookieSet,
 }                           from '../gral/storage';
+
 require('./010-app.sass');
 
 // Example MessageFormat message with plural, so that it appears in the screenshot:
@@ -100,7 +102,7 @@ class App extends React.Component {
   onChangeLang(lang) {
     cookieSet('lang', lang);
     /* eslint-disable global-require */
-    require(`bundle!../../locales/${lang}.js`)(locales => {
+    require(`bundle!../../locales/${lang}.js`)((locales) => {
       _t.setLocales(locales);
       moment.locale(lang);
       this.setState({ lang });

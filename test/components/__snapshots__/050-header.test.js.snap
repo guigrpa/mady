@@ -1,0 +1,68 @@
+exports[`Header renders correctly 1`] = `
+<div
+  style={
+    Object {
+      "WebkitFlex": "0 0 2.5em",
+      "alignItems": "center",
+      "backgroundColor": "#dcd6ff",
+      "display": "flex",
+      "flex": "0 0 2.5em",
+      "flexDirection": "row",
+      "padding": "5px 8px"
+    }
+  }>
+  <div
+    style={
+      Object {
+        "WebkitFlex": "1",
+        "flex": "1"
+      }
+    } />
+  <div
+    style={
+      Object {
+        "fontSize": "1.3em",
+        "fontWeight": 900,
+        "letterSpacing": 3
+      }
+    }>
+    MADY
+    <i
+      className="giu-icon fa fa-cog"
+      id="madyBtnSettings"
+      onClick={[Function onShowSettings]}
+      style={
+        Object {
+          "color": undefined,
+          "cursor": "pointer",
+          "letterSpacing": "normal",
+          "marginLeft": 10
+        }
+      }
+      title="Settings" />
+  </div>
+  <div
+    style={
+      Object {
+        "WebkitFlex": "1",
+        "flex": "1",
+        "fontSize": "1.3em",
+        "fontWeight": 900,
+        "letterSpacing": 3,
+        "marginRight": 10,
+        "textAlign": "right"
+      }
+    }>
+    <i
+      className="giu-icon fa fa-question-circle"
+      onClick={[Function onClick]}
+      style={
+        Object {
+          "color": undefined,
+          "cursor": "pointer",
+          "letterSpacing": "normal"
+        }
+      } />
+  </div>
+</div>
+`;

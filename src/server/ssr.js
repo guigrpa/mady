@@ -21,7 +21,7 @@ function processQuery(queryRequest, idx) {
   const query = queryRequest.getQueryString();
   const vars = queryRequest.getVariables();
   return gqlServer.runQuery(query, null, null, vars)
-    .then(result => {
+    .then((result) => {
       let out;
       if (result.errors) {
         mainStory.error('ssr', 'SSR query failed', { attach: result.errors });
@@ -32,14 +32,14 @@ function processQuery(queryRequest, idx) {
       }
       return out;
     })
-    .catch(err => {
+    .catch((err) => {
       mainStory.error('ssr', 'SSR query failed', { attach: err });
     });
 }
 
 const networkLayer = {
   sendMutation: () => Promise.resolve(),
-  sendQueries: queryReqs => {
+  sendQueries: (queryReqs) => {
     mainStory.debug('ssr', `Received ${queryReqs.length} queries`);
     return Promise.all(queryReqs.map(processQuery));
   },

@@ -12,11 +12,18 @@ const KEYWORDS = ['i18n', 'MessageFormat', 'translation', 'locales', 'translator
 // ===============================================
 // Helpers
 // ===============================================
-const runMultiple = arr => arr.join(' && ');
-const runTestCov = env => {
+const runMultiple = (arr) => arr.join(' && ');
+// const runTestCov = (env) => {
+//   const envStr = env != null ? `${env} ` : '';
+//   return runMultiple([
+//     `cross-env ${envStr}nyc ava`,
+//     'mv .nyc_output/* .nyc_tmp/',
+//   ]);
+// };
+const runTestCov = (env) => {
   const envStr = env != null ? `${env} ` : '';
   return runMultiple([
-    `cross-env ${envStr}nyc ava`,
+    `cross-env ${envStr}jest --coverage`,
     'mv .nyc_output/* .nyc_tmp/',
   ]);
 };
@@ -90,8 +97,8 @@ const specs = {
     buildClient:                runWebpack({ fProduction: true }),
     build:                      runMultiple([
                                   'node package',
-                                  // 'npm run lint',
-                                  // 'npm run flow',
+                                  'npm run lint',
+                                  'npm run flow',
                                   'npm run compile',
                                   'npm run buildClient',
                                   'npm run buildSsr',
@@ -106,8 +113,7 @@ const specs = {
 
     // Static analysis
     lint:                       'eslint src',
-    flow:                       'flow && test $? -eq 0 -o $? -eq 2',
-    flowStop:                   'flow stop',
+    flow:                       'flow check || exit 0',
     xxl:                        "xxl --src \"[\\\"src\\\"]\"",  // eslint-disable-line quotes
 
     // Testing - general
@@ -133,6 +139,7 @@ const specs = {
 
     // Testing - steps
     ava:                        'ava --watch',
+    jest:                       'jest --watch',
     testCovPrepare:             runMultiple([
                                   'rm -rf ./coverage .nyc_output .nyc_tmp',
                                   'mkdir .nyc_tmp',
@@ -152,30 +159,30 @@ const specs = {
   // -----------------------------------------------
   dependencies: {
     timm: '1.0.0',
-    storyboard: '2.0.2',
-    lodash: '4.14.1',
-    inquirer: '1.1.2',
+    storyboard: '2.1.1',
+    lodash: '4.16.0',
+    inquirer: '1.1.3',
     commander: '2.9.0',
     'node-uuid': '1.4.7',
-    bluebird: '3.4.1',
+    bluebird: '3.4.6',
     'fs-extra': '0.30.0',
     'diveSync': '0.3.0',
     'messageformat': '0.3.0',
-    'uglify-js': '2.6.2',
+    'uglify-js': '2.7.3',
     'slash': '1.0.0',
     opn: '4.0.2',
 
     // Express + plugins
     express: '4.14.0',
-    ejs: '2.4.2',
+    ejs: '2.5.2',
     'cookie-parser': '1.4.3',
     compression: '1.6.2',
 
     // GraphQL
-    graphql: '0.6.1',
-    'graphql-relay': '0.4.2',
-    'express-graphql': '0.5.3',
-    'babel-relay-plugin': '0.9.2',
+    graphql: '0.7.0',
+    'graphql-relay': '0.4.3',
+    'express-graphql': '0.5.4',
+    'babel-relay-plugin': '0.9.3',
   },
 
   peerDependencies: {
@@ -183,75 +190,79 @@ const specs = {
     'babel-preset-es2015': '^6.0.0',
     'babel-preset-stage-0': '^6.0.0',
     'babel-preset-react': '^6.0.0',
-    "babel-plugin-react-intl": "^2.2.0",
+    'babel-plugin-react-intl': '^2.2.0',
   },
 
   devDependencies: {
 
     // Packaged in the client app (or SSR)
     // --------------------------
-    'babel-polyfill': '6.7.4',
+    'babel-polyfill': '6.13.0',
     giu: '0.7.1',
 
     // React
-    react:                            '15.2.1',
-    'react-dom':                      '15.2.1',
-    'react-addons-pure-render-mixin': '15.2.1',
-    'react-addons-perf':              '15.2.1',
-    'react-relay': '0.9.2',
-    'isomorphic-relay': '0.7.0',
+    react:                            '15.3.2',
+    'react-dom':                      '15.3.2',
+    'react-addons-perf':              '15.3.2',
+    'react-addons-pure-render-mixin': '15.3.2',  // remove when giu is upgraded!
+    'react-relay': '0.9.3',
+    'isomorphic-relay': '0.7.3',
     'react-intl': '2.1.5',
 
     // Miscellaneous
     'font-awesome': '4.6.3',
     moment: '2.14.0',
-    tinycolor2: '1.3.0',
+    tinycolor2: '1.4.1',
     'tiny-cookie': '0.5.5',
 
     // Pure dev dependencies
     // ---------------------
     // Babel + plugins (except babel-eslint)
-    'babel-cli': '6.8.0',
-    'babel-core': '6.8.0',
-    'babel-plugin-transform-flow-strip-types': '6.8.0',
-    'babel-preset-es2015': '6.6.0',
+    'babel-cli': '6.14.0',
+    'babel-core': '6.14.0',
+    'babel-plugin-transform-flow-strip-types': '6.14.0',
+    'babel-preset-es2015': '6.14.0',
     'babel-preset-stage-0': '6.5.0',
-    'babel-preset-react': '6.5.0',
+    'babel-preset-react': '6.11.1',
     'babel-preset-react-hmre': '1.1.1', // to use Hot Module Replacement
 
     // Webpack + loaders (+ related stuff)
-    webpack: '1.13.1',
-    'webpack-dev-middleware': '1.6.1',
-    'webpack-hot-middleware': '2.10.0',
-    'babel-loader': '6.2.4',
-    'file-loader': '0.8.5',
-    'css-loader': '0.23.1',
+    webpack: '1.13.2',
+    'webpack-dev-middleware': '1.8.1',
+    'webpack-hot-middleware': '2.12.2',
+    'babel-loader': '6.2.5',
+    'file-loader': '0.9.0',
+    'css-loader': '0.25.0',
     'style-loader': '0.13.1',
     'json-loader': '0.5.4',
     'bundle-loader': '0.5.4',
-    'sass-loader': '3.2.0',
-    'node-sass': '3.7.0',
+    'sass-loader': '4.0.2',
+    'node-sass': '3.10.0',
     'extract-text-webpack-plugin': '1.0.1',
 
     // Linting
-    eslint: '2.9.0',
-    'eslint-config-airbnb': '9.0.1',
-    'eslint-plugin-flowtype': '2.3.1',
-    'eslint-plugin-react': '5.2.2',
-    'eslint-plugin-jsx-a11y': '1.2.2',
-    'eslint-plugin-import': '1.8.0',
-    'babel-eslint': '6.0.4',
+    eslint: '3.5.0',
+    'eslint-config-airbnb': '11.1.0',
+    'eslint-plugin-flowtype': '2.18.2',
+    'eslint-plugin-react': '6.3.0',
+    'eslint-plugin-jsx-a11y': '2.2.2',
+    'eslint-plugin-import': '1.15.0',
+    'babel-eslint': '6.1.2',
 
     // Testing
-    ava: '0.15.0',
-    nyc: '6.4.4',
-    coveralls: '2.11.11',
+    jest: '15.1.1',
+    'react-test-renderer': '15.3.2',
+    'babel-jest': '15.0.0',
+    'ignore-styles': '4.0.0',
+    ava: '0.16.0',
+    nyc: '8.3.0',
+    coveralls: '2.11.14',
 
     // Other tools
-    'extract-docs': '1.0.1',
+    'extract-docs': '1.3.0',
     'xxl': '0.1.1',
-    'cross-env': '1.0.7',
-    'flow-bin': '0.23.1',
+    'cross-env': '2.0.1',
+    'flow-bin': '0.32.0',
   },
 
   // -----------------------------------------------
@@ -261,14 +272,24 @@ const specs = {
     files: [
       './test/test.js',
     ],
-    babel: 'inherit',
+    // babel: 'inherit',
+  },
+
+  jest: {
+    coverageDirectory: '.nyc_output',
+    coverageReporters: ['json'],
+    moduleNameMapper: {
+      /* eslint-disable no-useless-escape */
+      '.*\.css$': '<rootDir>/test/stub.js',
+      /* eslint-enable no-useless-escape */
+    },
   },
 };
 
 // ===============================================
 // Build package.json
 // ===============================================
-const _sortDeps = deps => {
+const _sortDeps = (deps) => {
   const newDeps = {};
   for (const key of Object.keys(deps).sort()) {
     newDeps[key] = deps[key];

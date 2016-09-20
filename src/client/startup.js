@@ -1,3 +1,4 @@
+/* eslint-env browser */
 import 'babel-polyfill';
 import Promise              from 'bluebird';
 import moment               from 'moment';
@@ -44,7 +45,7 @@ if (window.AppBootstrap.relayData) {
     queryConfig: new ViewerQuery(),
   };
   IsomorphicRelay.prepareInitialRender({ ...rootContainerProps, environment })
-  .then(props => {
+  .then((props) => {
     ReactDOM.render(<IsomorphicRelay.Renderer {...props} />, rootElement);
   });
 } else {

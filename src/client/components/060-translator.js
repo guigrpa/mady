@@ -1,7 +1,7 @@
+/* eslint-env browser */
 import timm                 from 'timm';
 import React                from 'react';
 import Relay                from 'react-relay';
-import PureRenderMixin      from 'react-addons-pure-render-mixin';
 import {
   throttle,
   filter,
@@ -58,9 +58,9 @@ const fragments = {
 // ------------------------------------------
 // Component
 // ------------------------------------------
-class Translator extends React.Component {
+class Translator extends React.PureComponent {
   static propTypes = {
-    lang:                   React.PropTypes.string.isRequired,
+    // lang:                   React.PropTypes.string.isRequired,
     viewer:                 React.PropTypes.object.isRequired,
     selectedKeyId:          React.PropTypes.string,
     changeSelectedKey:      React.PropTypes.func.isRequired,
@@ -68,7 +68,6 @@ class Translator extends React.Component {
 
   constructor(props) {
     super(props);
-    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     this.state = {
       langs: this.readLangs(),
       fParsing: false,
@@ -104,7 +103,7 @@ class Translator extends React.Component {
 
   renderHeader() {
     const { keys, config } = this.props.viewer;
-    const langOptions = config.langs.map(lang => ({ value: lang, label: lang }));
+    const langOptions = config.langs.map((lang) => ({ value: lang, label: lang }));
     return (
       <div
         className="tableHeaderRow"
@@ -177,7 +176,7 @@ class Translator extends React.Component {
   }
 
   renderBody() {
-    let keys = this.props.viewer.keys.edges.map(o => o.node);
+    let keys = this.props.viewer.keys.edges.map((o) => o.node);
     keys = keys.sort(keyComparator);
     return (
       <div
@@ -216,7 +215,7 @@ class Translator extends React.Component {
         style={style.fillerRow}
       >
         <div style={style.keyCol}>{noKeys}</div>
-        {this.state.langs.map(lang => (
+        {this.state.langs.map((lang) => (
           <div key={lang} style={style.langCol} />
         ))}
       </div>
@@ -243,7 +242,7 @@ class Translator extends React.Component {
   readLangs() {
     const availableLangs = this.props.viewer.config.langs;
     let langs = cookieGet('langs') || [];
-    langs = filter(langs, o => availableLangs.indexOf(o) >= 0);
+    langs = filter(langs, (o) => availableLangs.indexOf(o) >= 0);
     if (!langs.length && availableLangs.length) langs.push(availableLangs[0]);
     this.writeLangs(langs);
     return langs;
@@ -254,7 +253,7 @@ class Translator extends React.Component {
   onAddLang() {
     const prevLangs = this.state.langs;
     const availableLangs = this.props.viewer.config.langs;
-    const newLang = availableLangs.find(o => prevLangs.indexOf(o) < 0);
+    const newLang = availableLangs.find((o) => prevLangs.indexOf(o) < 0);
     if (newLang == null) return;
     const nextLangs = timm.addLast(prevLangs, newLang);
     this.updateLangs(nextLangs);
@@ -311,11 +310,11 @@ class Translator extends React.Component {
     const numTranslations = {};
     for (const { node: key } of this.props.viewer.keys.edges) {
       if (key.unusedSince) continue;
-      numUsedKeys++;
+      numUsedKeys += 1;
       for (const { node: translation } of key.translations.edges) {
         const { lang } = translation;
         if (numTranslations[lang] == null) numTranslations[lang] = 0;
-        numTranslations[lang]++;
+        numTranslations[lang] += 1;
       }
     }
     this.stats = { numUsedKeys, numTranslations };

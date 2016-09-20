@@ -11,7 +11,7 @@ export default function collectReactIntlTranslations({
   story.info('compiler', `${logPrefix} Preparing translations for React Intl...`);
   const finalTranslations = {};
   // We must always include those keys using curly braces, even if there is no translation
-  Object.keys(keys).forEach(keyId => {
+  Object.keys(keys).forEach((keyId) => {
     const key = keys[keyId];
     const { reactIntlId } = key;
     if (!reactIntlId) return;
@@ -19,7 +19,7 @@ export default function collectReactIntlTranslations({
       finalTranslations[reactIntlId] = key.text;
     }
   });
-  translations.forEach(translation => {
+  translations.forEach((translation) => {
     const key = keys[translation.keyId];
     if (!key) return;
     const { reactIntlId } = key;

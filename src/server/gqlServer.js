@@ -96,7 +96,7 @@ export function init() {
   gqlTypes.Viewer = new GraphQLObjectType({
     name: 'Viewer',
     interfaces: [gqlInterfaces.Node],
-    isTypeOf: node => node._type === 'Viewer',
+    isTypeOf: (node) => node._type === 'Viewer',
     fields: () => ({
       id: globalIdField('Viewer'),
       config: configBaseField,
@@ -273,7 +273,7 @@ export function init() {
     const parent = {
       type: 'Key',
       connection: 'translations',
-      resolveConnection: key => db.getKeyTranslations(key.id),
+      resolveConnection: (key) => db.getKeyTranslations(key.id),
     };
     addMutation('Translation', 'CREATE', { globalIds, parent });
     addMutation('Translation', 'UPDATE', { globalIds });
@@ -442,7 +442,7 @@ function addMutation(type, op, options = {}) {
         resolve: ({ node, parentNode }) => {
           if (!node) return null;
           const allNodes = parent.resolveConnection(parentNode);
-          const idx = allNodes.findIndex(o => o.id === node.id);
+          const idx = allNodes.findIndex((o) => o.id === node.id);
           const cursor = idx >= 0 ? offsetToCursor(idx) : null;
           return { cursor, node };
         },
@@ -476,13 +476,13 @@ function mutate(type, op, mutationArgs, options, story) {
   let promise;
   if (op === 'DELETE') {
     promise = db[`delete${type}`](localId, { story })
-    .then(node => { result.node = node; });
+    .then((node) => { result.node = node; });
   } else {
     let newAttrs = mergeSetUnset(set, unset);
     newAttrs = resolveGlobalIds(newAttrs, options.globalIds);
     if (op === 'CREATE') {
       promise = db[`create${type}`](newAttrs, { story })
-      .then(node => {
+      .then((node) => {
         result.node = node;
         result.localId = result.node.id;
       });
@@ -492,7 +492,7 @@ function mutate(type, op, mutationArgs, options, story) {
       } else {
         promise = db[`update${type}`](localId, newAttrs, { story });
       }
-      promise = promise.then(node => { result.node = node; });
+      promise = promise.then((node) => { result.node = node; });
     }
   }
   promise = promise.then(() => {
