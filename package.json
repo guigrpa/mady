@@ -48,9 +48,9 @@
     "ava": "ava --watch",
     "jest": "jest --watch",
     "testCovPrepare": "rm -rf ./coverage .nyc_output .nyc_tmp && mkdir .nyc_tmp",
-    "testDev": "cross-env NODE_ENV=development jest --coverage && mv .nyc_output/* .nyc_tmp/",
-    "testProd": "cross-env NODE_ENV=production jest --coverage && mv .nyc_output/* .nyc_tmp/",
-    "testMin": "cross-env TEST_MINIFIED_LIB=1 jest --coverage && mv .nyc_output/* .nyc_tmp/",
+    "testDev": "cross-env NODE_ENV=development jest --coverage && mv .nyc_output/coverage-final.json .nyc_tmp/coverage-dev.json",
+    "testProd": "cross-env NODE_ENV=production jest --coverage && mv .nyc_output/coverage-final.json .nyc_tmp/coverage-prod.json",
+    "testMin": "cross-env TEST_MINIFIED_LIB=1 jest --coverage && mv .nyc_output/coverage-final.json .nyc_tmp/coverage-min.json",
     "testCovReport": "cp .nyc_tmp/* .nyc_output/ && nyc report --reporter=html --reporter=lcov --reporter=text"
   },
   "dependencies": {
@@ -147,6 +147,8 @@
     ],
     "moduleNameMapper": {
       ".*.css$": "<rootDir>/test/stub.js"
-    }
+    },
+    "setupTestFrameworkScriptFile": "./test/setup.js",
+    "testEnvironment": "node"
   }
 }

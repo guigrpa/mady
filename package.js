@@ -20,11 +20,11 @@ const runMultiple = (arr) => arr.join(' && ');
 //     'mv .nyc_output/* .nyc_tmp/',
 //   ]);
 // };
-const runTestCov = (env) => {
+const runTestCov = (env, name) => {
   const envStr = env != null ? `${env} ` : '';
   return runMultiple([
     `cross-env ${envStr}jest --coverage`,
-    'mv .nyc_output/* .nyc_tmp/',
+    `mv .nyc_output/coverage-final.json .nyc_tmp/coverage-${name}.json`,
   ]);
 };
 
@@ -144,9 +144,9 @@ const specs = {
                                   'rm -rf ./coverage .nyc_output .nyc_tmp',
                                   'mkdir .nyc_tmp',
                                 ]),
-    testDev:                    runTestCov('NODE_ENV=development'),
-    testProd:                   runTestCov('NODE_ENV=production'),
-    testMin:                    runTestCov('TEST_MINIFIED_LIB=1'),
+    testDev:                    runTestCov('NODE_ENV=development', 'dev'),
+    testProd:                   runTestCov('NODE_ENV=production', 'prod'),
+    testMin:                    runTestCov('TEST_MINIFIED_LIB=1', 'min'),
     testCovReport:              runMultiple([
                                   'cp .nyc_tmp/* .nyc_output/',
                                   'nyc report --reporter=html --reporter=lcov --reporter=text',
@@ -283,6 +283,8 @@ const specs = {
       '.*\.css$': '<rootDir>/test/stub.js',
       /* eslint-enable no-useless-escape */
     },
+    setupTestFrameworkScriptFile: './test/setup.js',
+    testEnvironment: 'node',
   },
 };
 
