@@ -159,7 +159,7 @@ const specs = {
   // -----------------------------------------------
   dependencies: {
     timm: '1.0.0',
-    storyboard: '2.1.1',
+    storyboard: '2.1.2',
     lodash: '4.16.0',
     inquirer: '1.1.3',
     commander: '2.9.0',
