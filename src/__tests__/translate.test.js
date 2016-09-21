@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import _t from '../src/translate';
+import _t from '../translate';
 
 describe('Translate library', () => {
   describe('When an unknown key is provided', () => {

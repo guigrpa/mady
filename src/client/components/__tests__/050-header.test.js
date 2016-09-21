@@ -1,7 +1,9 @@
 /* eslint-env jest */
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Header from '../../src/client/components/050-header';
+import Header from '../050-header';
+
+jest.mock('react-dom');
 
 describe('Header', () => {
   it('renders correctly', () => {

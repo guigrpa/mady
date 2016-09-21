@@ -1,0 +1,145 @@
+exports[`HoverableTranslation renders correctly with translation 1`] = `
+<div
+  onMouseEnter={[Function bound onHoverStart]}
+  onMouseLeave={[Function bound onHoverStop]}
+  style={
+    Object {
+      "marginBottom": -2,
+      "paddingRight": 40
+    }
+  }>
+  <div
+    className="giu-textarea"
+    style={
+      Object {
+        "position": "relative"
+      }
+    }>
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "border": "1px solid transparent",
+          "color": "red",
+          "cursor": "beam",
+          "left": 0,
+          "minHeight": 17,
+          "opacity": 0,
+          "overflowY": "hidden",
+          "padding": 0,
+          "position": "absolute",
+          "top": 0,
+          "whiteSpace": "pre-wrap",
+          "width": "100%",
+          "zIndex": -50
+        }
+      }>
+      Un mensaje
+    </div>
+    <textarea
+      disabled={undefined}
+      onBlur={[Function bound onBlur]}
+      onChange={[Function bound onChange]}
+      onCopy={undefined}
+      onCut={undefined}
+      onFocus={[Function bound onFocus]}
+      onKeyDown={[Function bound onKeyDown]}
+      onKeyUp={[Function bound onKeyUp]}
+      onPaste={undefined}
+      required={undefined}
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "border": "1px solid transparent",
+          "color": "inherit",
+          "cursor": "beam",
+          "fontFamily": "inherit",
+          "fontSize": "inherit",
+          "fontWeight": "inherit",
+          "height": 1,
+          "lineHeight": "inherit",
+          "minHeight": 17,
+          "overflow": "hidden",
+          "padding": 0,
+          "resize": "none",
+          "width": "100%"
+        }
+      }
+      tabIndex={undefined}
+      value="Un mensaje" />
+  </div>
+</div>
+`;
+
+exports[`HoverableTranslation renders correctly without translation 1`] = `
+<div
+  onMouseEnter={[Function bound onHoverStart]}
+  onMouseLeave={[Function bound onHoverStop]}
+  style={
+    Object {
+      "marginBottom": -2,
+      "paddingRight": 40
+    }
+  }>
+  <div
+    className="giu-textarea"
+    style={
+      Object {
+        "position": "relative"
+      }
+    }>
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "border": "1px solid transparent",
+          "color": "red",
+          "cursor": "beam",
+          "left": 0,
+          "minHeight": 17,
+          "opacity": 0,
+          "overflowY": "hidden",
+          "padding": 0,
+          "position": "absolute",
+          "top": 0,
+          "whiteSpace": "pre-wrap",
+          "width": "100%",
+          "zIndex": -50
+        }
+      }>
+      x
+    </div>
+    <textarea
+      disabled={undefined}
+      onBlur={[Function bound onBlur]}
+      onChange={[Function bound onChange]}
+      onCopy={undefined}
+      onCut={undefined}
+      onFocus={[Function bound onFocus]}
+      onKeyDown={[Function bound onKeyDown]}
+      onKeyUp={[Function bound onKeyUp]}
+      onPaste={undefined}
+      required={undefined}
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "border": "1px solid transparent",
+          "color": "inherit",
+          "cursor": "beam",
+          "fontFamily": "inherit",
+          "fontSize": "inherit",
+          "fontWeight": "inherit",
+          "height": 1,
+          "lineHeight": "inherit",
+          "minHeight": 17,
+          "overflow": "hidden",
+          "padding": 0,
+          "resize": "none",
+          "width": "100%"
+        }
+      }
+      tabIndex={undefined}
+      value="" />
+  </div>
+</div>
+`;

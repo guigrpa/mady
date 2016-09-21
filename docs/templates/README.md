@@ -17,16 +17,31 @@ Remember: this is not only for translation! Even if you only use English, you ma
 
 ## Why?
 
+* **Easy-to-use tool for parsing source files, adding locales, editing translations, comparing locales side-by-side, and compiling to (optionally minified) JavaScript modules**.
+* Use it also as a library: a no-frills translation function to run the compiled language modules.
+* **[React Intl](https://github.com/yahoo/react-intl) interoperability**, both for message extraction and translation injection.
 * **MessageFormat messages**: while it does not solve all the problems in the huge field of i18n, MessageFormat is a much more powerful tool than the conventional gettext (IMHO).
 * **Full UNICODE support**: messages and translations can include any UNICODE character. In other words, you can now translate 👍 (en) as 👏 (es-ES) and then 💃 (es-ES-andalusia)!
-* Use it as a development tool in your project: an **easy-to-use UI** that allows **parsing source files, adding languages and translations, comparing translations side-by-side, and compiling to (optionally minified) JavaScript modules**.
-* Use it as a library: a no-frills translation function to run the compiled language modules.
 * **BCP47 support**: fetch missing translations from parent/child languages, and even sibling languages (other regions) as a last resort.
 
 ## Installation
 
 ```
 $ npm install --save mady
+```
+
+If you use [React Intl](https://github.com/yahoo/react-intl), make sure you also install the following packages so that Mady can parse your React Intl components:
+
+```
+$ npm install --save-dev babel-plugin-react-intl babel-core
+```
+
+Then add the following line to your `package.json` file:
+
+```json
+"scripts": {
+    "translate": "mady"
+}
 ```
 
 
@@ -37,30 +52,14 @@ There are two main parts in Mady: the web-based translation app and the translat
 
 ### The translation app
 
-Access the translation app by running:
+Access the translation app by running `npm run translate`. The first time you do it, Mady will ask you for some additional information (saved in `.madyrc`): the path to your locales folder and a default port for the application.
 
-```bash
-$ ./node_modules/.bin/mady
-```
+Mady will automatically launch in your default browser (URL: http://localhost:8080, if you kept the default port). From the web application, you can:
 
-Or just add the following line to your `package.json`:
-
-```json
-"scripts": {
-    "translate": "mady"
-}
-```
-
-and run `npm run translate`.
-
-The first time you run it, Mady will ask you for some additional information: the path to your locales folder and a default port for the application. Now open Mady's URL in your browser (http://localhost:8080 by default) and there you go!
-
-From the web application, you can:
-
-* Update the key database with new keys extracted from your source files
+* Update the message database with new messages extracted from your source files
 * Configure your languages, source paths, file extensions, etc.
 * Translate your keys to the different supported languages
-* [Automatically] export translations to JS files, for use by the [translation function](#the-translation-function)
+* [Automatically] export translations to JS files and message bundles, for use by the [translation function](#the-translation-function) or React Intl
 
 Messages in your source files should have the form: `_t('someContext_Once upon a time...')` (single or double quotes are supported), where `_t()` is the default name for the translation function (see below), `someContext` is some hint for the translator and `Once upon a time...` is your untranslated [MessageFormat](#messageformat) message.
 
@@ -90,6 +89,40 @@ console.log(_t("someContext_{NUM, plural, one{1 hamburger} other{# hamburgers} }
 console.log(_t("someContext_{NUM, plural, one{1 hamburger} other{# hamburgers} }", { NUM: 2 }));
 // 2 hamburguesas
 ```
+
+Alternatively, you can set up locales beforehand and then activate one or the other. In case the requested variant is not available, its closest BCP47 parent is enabled:
+
+```js
+import _t from 'mady';
+import locales from './locales/es';
+
+_t.addLocales('es', locales);
+const lang = _t.setLocales('es-US');
+// returns 'es', since we don't have the American Spanish variant
+
+const lang = _t.setLocales('fr');
+// does nothing, since we have no French translations
+```
+
+
+## BCP47 and translation fallbacks
+
+Mady "fills in the gaps" when **building** translation modules (`{lang.js}`) and React Intl message bundles (`{lang}.reactIntl.json`). In other words, when you don't provide a translation for message X for a particular language (e.g. `es-ES`), it will look for suitable fallback translations in related languages:
+
+* Parent languages (e.g. `es`)
+* Sibling languages (e.g. `es-MX`)
+* Children languages (e.g. `es-ES-andalusia`)
+
+If you use Mady's translation function and it cannot find a suitable translation, it will just take the message key (e.g. `someContext_Untranslated message`), remove the context prefix and use it as a last-resort fallback.
+
+
+## The locales folder
+
+You can find the following files in the locales folder (`./locales` by default):
+
+* A configuration file: `config.json`
+* A message file: `keys.json`
+* Several translation files for each language: a raw translation file (e.g. `fr.json`), a compiled translation module (`fr.js`) and a message bundle for React Intl (e.g. `fr.reactIntl.json`). The web application lets you edit the raw translation file, whereas all others are generated automatically.
 
 
 ## MessageFormat

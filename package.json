@@ -36,7 +36,7 @@
     "buildSsrWatch": "rm -rf ./public/ssr && rm -rf ./lib/server/ssr && cross-env SERVER_SIDE_RENDERING=true webpack --config ./src/server/webpackConfig.cjs --progress --display-chunks --watch",
     "buildSsr": "rm -rf ./public/ssr && rm -rf ./lib/server/ssr && cross-env SERVER_SIDE_RENDERING=true NODE_ENV=production webpack --config ./src/server/webpackConfig.cjs --progress --display-chunks",
     "buildClient": "rm -rf ./public/assets && cross-env NODE_ENV=production webpack --config ./src/server/webpackConfig.cjs --progress --display-chunks",
-    "build": "node package && npm run lint && npm run flow && npm run compile && npm run buildClient && npm run buildSsr && npm run docs && npm run xxl",
+    "build": "node package && npm run lint && npm run flow && npm run compile && npm run buildClient && npm run buildSsr && npm run test && npm run docs && npm run xxl",
     "travis": "npm run compile && npm run testCovFullExceptMin",
     "lint": "eslint src",
     "flow": "flow check || exit 0",
@@ -90,6 +90,7 @@
     "babel-eslint": "6.1.2",
     "babel-jest": "15.0.0",
     "babel-loader": "6.2.5",
+    "babel-plugin-react-intl": "2.2.0",
     "babel-plugin-transform-flow-strip-types": "6.14.0",
     "babel-polyfill": "6.13.0",
     "babel-preset-es2015": "6.14.0",
@@ -111,7 +112,7 @@
     "file-loader": "0.9.0",
     "flow-bin": "0.32.0",
     "font-awesome": "4.6.3",
-    "giu": "0.7.1",
+    "giu": "0.8.0",
     "ignore-styles": "4.0.0",
     "isomorphic-relay": "0.7.3",
     "jest": "15.1.1",
@@ -141,14 +142,15 @@
     ]
   },
   "jest": {
+    "testRegex": "src/.*__tests__/.*\\.(test|spec)\\.(js|jsx)$",
+    "moduleNameMapper": {
+      "^.+\\.(css|less|sass)$": "<rootDir>/test/styleMock.js",
+      "^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/test/fileMock.js"
+    },
     "coverageDirectory": ".nyc_output",
     "coverageReporters": [
-      "json"
-    ],
-    "moduleNameMapper": {
-      ".*.css$": "<rootDir>/test/stub.js"
-    },
-    "setupTestFrameworkScriptFile": "./test/setup.js",
-    "testEnvironment": "node"
+      "json",
+      "text"
+    ]
   }
 }

@@ -120,3 +120,4 @@ export default Relay.createContainer(Details, {
   fragments,
   initialVariables: { details_selectedKeyId: null },
 });
+export { Details as _Details };

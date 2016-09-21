@@ -167,7 +167,6 @@ exports[`Settings renders correctly 1`] = `
               onPaste={undefined}
               orient={undefined}
               placeholder="e.g. es-ES, ca…"
-              required={true}
               style={
                 Object {
                   "backgroundColor": "white",
@@ -215,7 +214,6 @@ exports[`Settings renders correctly 1`] = `
               onPaste={undefined}
               orient={undefined}
               placeholder="e.g. es-ES, ca…"
-              required={true}
               style={
                 Object {
                   "backgroundColor": "white",
@@ -294,7 +292,6 @@ exports[`Settings renders correctly 1`] = `
               onPaste={undefined}
               orient={undefined}
               placeholder="e.g. src/client"
-              required={true}
               style={
                 Object {
                   "backgroundColor": "white",
@@ -373,7 +370,6 @@ exports[`Settings renders correctly 1`] = `
               onPaste={undefined}
               orient={undefined}
               placeholder="e.g. .js"
-              required={true}
               style={
                 Object {
                   "backgroundColor": "white",
@@ -421,7 +417,6 @@ exports[`Settings renders correctly 1`] = `
               onPaste={undefined}
               orient={undefined}
               placeholder="e.g. .js"
-              required={true}
               style={
                 Object {
                   "backgroundColor": "white",
@@ -500,7 +495,6 @@ exports[`Settings renders correctly 1`] = `
               onPaste={undefined}
               orient={undefined}
               placeholder="e.g. _t"
-              required={true}
               style={
                 Object {
                   "backgroundColor": "white",

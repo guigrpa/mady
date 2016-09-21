@@ -189,4 +189,6 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-export default Relay.createContainer(hoverable(TranslatorRow), { fragments });
+const HoverableTranslatorRow = hoverable(TranslatorRow);
+export default Relay.createContainer(HoverableTranslatorRow, { fragments });
+export { HoverableTranslatorRow as _HoverableTranslatorRow };

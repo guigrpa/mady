@@ -102,7 +102,7 @@ const specs = {
                                   'npm run compile',
                                   'npm run buildClient',
                                   'npm run buildSsr',
-                                  // 'npm run test',
+                                  'npm run test',
                                   'npm run docs',
                                   'npm run xxl',
                                 ]),
@@ -198,7 +198,7 @@ const specs = {
     // Packaged in the client app (or SSR)
     // --------------------------
     'babel-polyfill': '6.13.0',
-    giu: '0.7.1',
+    giu: '0.8.0',
 
     // React
     react:                            '15.3.2',
@@ -221,6 +221,7 @@ const specs = {
     'babel-cli': '6.14.0',
     'babel-core': '6.14.0',
     'babel-plugin-transform-flow-strip-types': '6.14.0',
+    'babel-plugin-react-intl': '2.2.0',
     'babel-preset-es2015': '6.14.0',
     'babel-preset-stage-0': '6.5.0',
     'babel-preset-react': '6.11.1',
@@ -276,15 +277,15 @@ const specs = {
   },
 
   jest: {
-    coverageDirectory: '.nyc_output',
-    coverageReporters: ['json'],
+    // Default test path:
+    // testRegex: '(/__tests__/.*|\\.(test|spec))\\.(js|jsx)$',
+    testRegex: 'src/.*__tests__/.*\\.(test|spec)\\.(js|jsx)$',
     moduleNameMapper: {
-      /* eslint-disable no-useless-escape */
-      '.*\.css$': '<rootDir>/test/stub.js',
-      /* eslint-enable no-useless-escape */
+      '^.+\\.(css|less|sass)$': '<rootDir>/test/styleMock.js',
+      '^.+\\.(gif|ttf|eot|svg)$': '<rootDir>/test/fileMock.js',
     },
-    setupTestFrameworkScriptFile: './test/setup.js',
-    testEnvironment: 'node',
+    coverageDirectory: '.nyc_output',
+    coverageReporters: ['json', 'text'],
   },
 };
 
