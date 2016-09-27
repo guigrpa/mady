@@ -45,7 +45,6 @@
     "testCovFull": "npm run testCovPrepare && npm run testDev && npm run testProd && npm run testCovReport",
     "testCovFullExceptMin": "npm run testCovPrepare && npm run testDev && npm run testProd && npm run testCovReport",
     "testCovFast": "npm run testCovPrepare && npm run testDev && npm run testCovReport",
-    "ava": "ava --watch",
     "jest": "jest --watch",
     "testCovPrepare": "rm -rf ./coverage .nyc_output .nyc_tmp && mkdir .nyc_tmp",
     "testDev": "cross-env NODE_ENV=development jest --coverage && mv .nyc_output/coverage-final.json .nyc_tmp/coverage-dev.json",
@@ -84,7 +83,6 @@
     "babel-plugin-react-intl": "^2.2.0"
   },
   "devDependencies": {
-    "ava": "0.16.0",
     "babel-cli": "6.14.0",
     "babel-core": "6.14.0",
     "babel-eslint": "6.1.2",
@@ -136,16 +134,12 @@
     "webpack-hot-middleware": "2.12.2",
     "xxl": "0.1.1"
   },
-  "ava": {
-    "files": [
-      "./test/test.js"
-    ]
-  },
   "jest": {
     "testRegex": "src/.*__tests__/.*\\.(test|spec)\\.(js|jsx)$",
     "moduleNameMapper": {
-      "^.+\\.(css|less|sass)$": "<rootDir>/test/styleMock.js",
-      "^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/test/fileMock.js"
+      "^.+\\.(css|less|sass)$": "<rootDir>/test/emptyObject.js",
+      "^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/test/emptyString.js",
+      "node-uuid": "<rootDir>/test/mockUuid.js"
     },
     "coverageDirectory": ".nyc_output",
     "coverageReporters": [

@@ -1,629 +1,642 @@
 exports[`Settings renders correctly 1`] = `
-<div
-  className="giu-modal"
-  id={undefined}
-  onClick={[Function bound onClickOuter]}
-  onKeyDown={[Function bound onKeyDown]}
-  style={
-    Object {
-      "height": "100vh",
-      "left": 0,
-      "position": "fixed",
-      "top": 0,
-      "width": "100vw",
-      "zIndex": 50
-    }
-  }>
+<div>
   <div
-    className="giu-backdrop"
-    onClick={[Function bound onCancel]}
-    onTouchMove={[Function cancelEvent]}
-    onWheel={[Function cancelEvent]}
+    className="giu-floats"
     style={
       Object {
-        "backgroundColor": "white",
-        "height": "100vh",
+        "height": 0,
         "left": 0,
-        "opacity": 0.7,
-        "position": "fixed",
+        "position": "absolute",
         "top": 0,
-        "width": "100vw"
+        "width": 0
       }
     } />
   <div
+    className="giu-modal"
+    id={undefined}
+    onClick={[Function bound onClickOuter]}
+    onKeyDown={[Function bound onKeyDown]}
     style={
       Object {
-        "display": "flex",
-        "flexDirection": "row",
+        "height": "100vh",
         "left": 0,
         "position": "fixed",
-        "top": "5vh",
-        "width": "100%"
+        "top": 0,
+        "width": "100vw",
+        "zIndex": 50
       }
     }>
     <div
+      className="giu-backdrop"
       onClick={[Function bound onCancel]}
       onTouchMove={[Function cancelEvent]}
       onWheel={[Function cancelEvent]}
-      style={
-        Object {
-          "WebkitFlex": 1,
-          "flex": 1
-        }
-      } />
-    <div
-      onScroll={[Function floatReposition]}
-      onWheel={[Function cancelBodyScrolling]}
       style={
         Object {
           "backgroundColor": "white",
-          "borderRadius": 2,
-          "boxShadow": "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)",
-          "maxHeight": "90vh",
-          "overflowY": "auto",
-          "padding": 20
+          "height": "100vh",
+          "left": 0,
+          "opacity": 0.7,
+          "position": "fixed",
+          "top": 0,
+          "width": "100vw"
+        }
+      } />
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+          "left": 0,
+          "position": "fixed",
+          "top": "5vh",
+          "width": "100%"
         }
       }>
-      <input
-        autoFocus={true}
+      <div
+        onClick={[Function bound onCancel]}
+        onTouchMove={[Function cancelEvent]}
+        onWheel={[Function cancelEvent]}
         style={
           Object {
-            "cursor": "default",
-            "height": 0,
-            "left": 8,
-            "opacity": 0,
-            "padding": 0,
-            "pointerEvents": "none",
-            "position": "fixed",
-            "top": 8,
-            "width": 0,
-            "zIndex": -80
+            "WebkitFlex": 1,
+            "flex": 1
           }
-        }
-        tabIndex={undefined} />
-      <div>
-        <div
+        } />
+      <div
+        onScroll={[Function floatReposition]}
+        onWheel={[Function cancelBodyScrolling]}
+        style={
+          Object {
+            "backgroundColor": "white",
+            "borderRadius": 2,
+            "boxShadow": "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)",
+            "maxHeight": "90vh",
+            "overflowY": "auto",
+            "padding": 20
+          }
+        }>
+        <input
+          autoFocus={true}
           style={
             Object {
-              "marginTop": 7
+              "cursor": "default",
+              "height": 0,
+              "left": 8,
+              "opacity": 0,
+              "padding": 0,
+              "pointerEvents": "none",
+              "position": "fixed",
+              "top": 8,
+              "width": 0,
+              "zIndex": -80
             }
-          }>
-          <label
-            htmlFor="lang">
-            Mady language:
-          </label>
-           
-          <select
-            className="giu-select-native"
-            onBlur={[Function bound onBlur]}
-            onChange={[Function bound onChange]}
-            onCopy={undefined}
-            onCut={undefined}
-            onFocus={[Function bound onFocus]}
-            onPaste={undefined}
+          }
+          tabIndex={undefined} />
+        <div>
+          <div
             style={
               Object {
-                "backgroundColor": "default",
-                "border": "default",
-                "color": "inherit",
-                "fontFamily": "inherit",
-                "fontSize": "inherit",
-                "fontWeight": "inherit"
+                "marginTop": 7
               }
-            }
-            tabIndex={undefined}
-            value="\"en\"">
-            <option
-              id="\"en\""
+            }>
+            <label
+              htmlFor="lang">
+              Mady language:
+            </label>
+             
+            <select
+              className="giu-select-native"
+              onBlur={[Function bound onBlur]}
+              onChange={[Function bound onChange]}
+              onCopy={undefined}
+              onCut={undefined}
+              onFocus={[Function bound onFocus]}
+              onPaste={undefined}
+              style={
+                Object {
+                  "backgroundColor": "default",
+                  "border": "default",
+                  "color": "inherit",
+                  "fontFamily": "inherit",
+                  "fontSize": "inherit",
+                  "fontWeight": "inherit"
+                }
+              }
+              tabIndex={undefined}
               value="\"en\"">
-              English
-            </option>
-            <option
-              id="\"es\""
-              value="\"es\"">
-              Español
-            </option>
-            <option
-              id="\"ca\""
-              value="\"ca\"">
-              Català
-            </option>
-          </select>
+              <option
+                id="\"en\""
+                value="\"en\"">
+                English
+              </option>
+              <option
+                id="\"es\""
+                value="\"es\"">
+                Español
+              </option>
+              <option
+                id="\"ca\""
+                value="\"ca\"">
+                Català
+              </option>
+            </select>
+          </div>
+          <div
+            style={
+              Object {
+                "marginBottom": 3,
+                "marginTop": 7
+              }
+            }>
+            Languages (BCP47 codes):
+          </div>
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "flexDirection": "row",
+                "marginLeft": 15
+              }
+            }>
+            <div
+              style={
+                Object {
+                  "marginRight": 10,
+                  "marginTop": undefined,
+                  "padding": "0px 2px",
+                  "whiteSpace": "nowrap"
+                }
+              }>
+              <input
+                className="giu-text-input"
+                id="langs.0"
+                onBlur={[Function bound onBlur]}
+                onChange={[Function bound onChange]}
+                onCopy={undefined}
+                onCut={undefined}
+                onFocus={[Function bound onFocus]}
+                onPaste={undefined}
+                orient={undefined}
+                placeholder="e.g. es-ES, ca…"
+                style={
+                  Object {
+                    "backgroundColor": "white",
+                    "border": "1px solid #999999",
+                    "color": "inherit",
+                    "fontFamily": "inherit",
+                    "fontSize": "inherit",
+                    "fontWeight": "inherit",
+                    "width": 80
+                  }
+                }
+                tabIndex={undefined}
+                type="text"
+                value="en" />
+               
+              <i
+                className="giu-icon fa fa-remove"
+                id="langs.0"
+                onClick={[Function bound onRemoveListItem]}
+                style={
+                  Object {
+                    "color": "#444",
+                    "cursor": "pointer",
+                    "letterSpacing": "normal"
+                  }
+                } />
+            </div>
+            <div
+              style={
+                Object {
+                  "marginRight": 10,
+                  "marginTop": undefined,
+                  "padding": "0px 2px",
+                  "whiteSpace": "nowrap"
+                }
+              }>
+              <input
+                className="giu-text-input"
+                id="langs.1"
+                onBlur={[Function bound onBlur]}
+                onChange={[Function bound onChange]}
+                onCopy={undefined}
+                onCut={undefined}
+                onFocus={[Function bound onFocus]}
+                onPaste={undefined}
+                orient={undefined}
+                placeholder="e.g. es-ES, ca…"
+                style={
+                  Object {
+                    "backgroundColor": "white",
+                    "border": "1px solid #999999",
+                    "color": "inherit",
+                    "fontFamily": "inherit",
+                    "fontSize": "inherit",
+                    "fontWeight": "inherit",
+                    "width": 80
+                  }
+                }
+                tabIndex={undefined}
+                type="text"
+                value="es" />
+               
+              <i
+                className="giu-icon fa fa-remove"
+                id="langs.1"
+                onClick={[Function bound onRemoveListItem]}
+                style={
+                  Object {
+                    "color": "#444",
+                    "cursor": "pointer",
+                    "letterSpacing": "normal"
+                  }
+                } />
+            </div>
+            <i
+              className="giu-icon fa fa-plus"
+              id="langs"
+              onClick={[Function bound onCreateListItem]}
+              style={
+                Object {
+                  "color": "#444",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "letterSpacing": "normal",
+                  "marginTop": 5
+                }
+              } />
+          </div>
+          <div
+            style={
+              Object {
+                "marginBottom": 3,
+                "marginTop": 7
+              }
+            }>
+            Source paths:
+          </div>
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "marginLeft": 15
+              }
+            }>
+            <div
+              style={
+                Object {
+                  "marginRight": 10,
+                  "marginTop": 1,
+                  "padding": "0px 2px",
+                  "whiteSpace": "nowrap"
+                }
+              }>
+              <input
+                className="giu-text-input"
+                id="srcPaths.0"
+                onBlur={[Function bound onBlur]}
+                onChange={[Function bound onChange]}
+                onCopy={undefined}
+                onCut={undefined}
+                onFocus={[Function bound onFocus]}
+                onPaste={undefined}
+                orient={undefined}
+                placeholder="e.g. src/client"
+                style={
+                  Object {
+                    "backgroundColor": "white",
+                    "border": "1px solid #999999",
+                    "color": "inherit",
+                    "fontFamily": "inherit",
+                    "fontSize": "inherit",
+                    "fontWeight": "inherit",
+                    "width": 300
+                  }
+                }
+                tabIndex={undefined}
+                type="text"
+                value="src" />
+               
+              <i
+                className="giu-icon fa fa-remove"
+                id="srcPaths.0"
+                onClick={[Function bound onRemoveListItem]}
+                style={
+                  Object {
+                    "color": "#444",
+                    "cursor": "pointer",
+                    "letterSpacing": "normal"
+                  }
+                } />
+            </div>
+            <i
+              className="giu-icon fa fa-plus"
+              id="srcPaths"
+              onClick={[Function bound onCreateListItem]}
+              style={
+                Object {
+                  "color": "#444",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "letterSpacing": "normal",
+                  "marginTop": 5
+                }
+              } />
+          </div>
+          <div
+            style={
+              Object {
+                "marginBottom": 3,
+                "marginTop": 7
+              }
+            }>
+            Source extensions:
+          </div>
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "flexDirection": "row",
+                "marginLeft": 15
+              }
+            }>
+            <div
+              style={
+                Object {
+                  "marginRight": 10,
+                  "marginTop": undefined,
+                  "padding": "0px 2px",
+                  "whiteSpace": "nowrap"
+                }
+              }>
+              <input
+                className="giu-text-input"
+                id="srcExtensions.0"
+                onBlur={[Function bound onBlur]}
+                onChange={[Function bound onChange]}
+                onCopy={undefined}
+                onCut={undefined}
+                onFocus={[Function bound onFocus]}
+                onPaste={undefined}
+                orient={undefined}
+                placeholder="e.g. .js"
+                style={
+                  Object {
+                    "backgroundColor": "white",
+                    "border": "1px solid #999999",
+                    "color": "inherit",
+                    "fontFamily": "inherit",
+                    "fontSize": "inherit",
+                    "fontWeight": "inherit",
+                    "width": 60
+                  }
+                }
+                tabIndex={undefined}
+                type="text"
+                value=".js" />
+               
+              <i
+                className="giu-icon fa fa-remove"
+                id="srcExtensions.0"
+                onClick={[Function bound onRemoveListItem]}
+                style={
+                  Object {
+                    "color": "#444",
+                    "cursor": "pointer",
+                    "letterSpacing": "normal"
+                  }
+                } />
+            </div>
+            <div
+              style={
+                Object {
+                  "marginRight": 10,
+                  "marginTop": undefined,
+                  "padding": "0px 2px",
+                  "whiteSpace": "nowrap"
+                }
+              }>
+              <input
+                className="giu-text-input"
+                id="srcExtensions.1"
+                onBlur={[Function bound onBlur]}
+                onChange={[Function bound onChange]}
+                onCopy={undefined}
+                onCut={undefined}
+                onFocus={[Function bound onFocus]}
+                onPaste={undefined}
+                orient={undefined}
+                placeholder="e.g. .js"
+                style={
+                  Object {
+                    "backgroundColor": "white",
+                    "border": "1px solid #999999",
+                    "color": "inherit",
+                    "fontFamily": "inherit",
+                    "fontSize": "inherit",
+                    "fontWeight": "inherit",
+                    "width": 60
+                  }
+                }
+                tabIndex={undefined}
+                type="text"
+                value=".jsx" />
+               
+              <i
+                className="giu-icon fa fa-remove"
+                id="srcExtensions.1"
+                onClick={[Function bound onRemoveListItem]}
+                style={
+                  Object {
+                    "color": "#444",
+                    "cursor": "pointer",
+                    "letterSpacing": "normal"
+                  }
+                } />
+            </div>
+            <i
+              className="giu-icon fa fa-plus"
+              id="srcExtensions"
+              onClick={[Function bound onCreateListItem]}
+              style={
+                Object {
+                  "color": "#444",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "letterSpacing": "normal",
+                  "marginTop": 5
+                }
+              } />
+          </div>
+          <div
+            style={
+              Object {
+                "marginBottom": 3,
+                "marginTop": 7
+              }
+            }>
+            Message translation functions to look for:
+          </div>
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "flexDirection": "row",
+                "marginLeft": 15
+              }
+            }>
+            <div
+              style={
+                Object {
+                  "marginRight": 10,
+                  "marginTop": undefined,
+                  "padding": "0px 2px",
+                  "whiteSpace": "nowrap"
+                }
+              }>
+              <input
+                className="giu-text-input"
+                id="msgFunctionNames.0"
+                onBlur={[Function bound onBlur]}
+                onChange={[Function bound onChange]}
+                onCopy={undefined}
+                onCut={undefined}
+                onFocus={[Function bound onFocus]}
+                onPaste={undefined}
+                orient={undefined}
+                placeholder="e.g. _t"
+                style={
+                  Object {
+                    "backgroundColor": "white",
+                    "border": "1px solid #999999",
+                    "color": "inherit",
+                    "fontFamily": "inherit",
+                    "fontSize": "inherit",
+                    "fontWeight": "inherit",
+                    "width": 60
+                  }
+                }
+                tabIndex={undefined}
+                type="text"
+                value="_t" />
+               
+              <i
+                className="giu-icon fa fa-remove"
+                id="msgFunctionNames.0"
+                onClick={[Function bound onRemoveListItem]}
+                style={
+                  Object {
+                    "color": "#444",
+                    "cursor": "pointer",
+                    "letterSpacing": "normal"
+                  }
+                } />
+            </div>
+            <i
+              className="giu-icon fa fa-plus"
+              id="msgFunctionNames"
+              onClick={[Function bound onCreateListItem]}
+              style={
+                Object {
+                  "color": "#444",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "letterSpacing": "normal",
+                  "marginTop": 5
+                }
+              } />
+          </div>
+          <div
+            style={
+              Object {
+                "marginTop": 7
+              }
+            }>
+            <input
+              checked={false}
+              className="giu-checkbox"
+              id="fMinify"
+              onBlur={[Function bound onBlur]}
+              onChange={[Function bound onChange]}
+              onCopy={undefined}
+              onCut={undefined}
+              onFocus={[Function bound onFocus]}
+              onPaste={undefined}
+              required={undefined}
+              tabIndex={undefined}
+              type="checkbox" />
+            <label
+              htmlFor="fMinify">
+              Minify output JavaScript
+            </label>
+          </div>
         </div>
         <div
           style={
             Object {
-              "marginBottom": 3,
-              "marginTop": 7
-            }
-          }>
-          Languages (BCP47 codes):
-        </div>
-        <div
-          style={
-            Object {
+              "borderTop": "1px solid #999999",
               "display": "flex",
               "flexDirection": "row",
-              "marginLeft": 15
+              "marginTop": 10,
+              "paddingTop": 10
             }
           }>
-          <div
+          <span
+            className="giu-button"
+            onClick={[Function bound onCancel]}
             style={
               Object {
-                "marginRight": 10,
-                "marginTop": undefined,
-                "padding": "0px 2px",
-                "whiteSpace": "nowrap"
-              }
-            }>
-            <input
-              className="giu-text-input"
-              id="langs.0"
-              onBlur={[Function bound onBlur]}
-              onChange={[Function bound onChange]}
-              onCopy={undefined}
-              onCut={undefined}
-              onFocus={[Function bound onFocus]}
-              onPaste={undefined}
-              orient={undefined}
-              placeholder="e.g. es-ES, ca…"
-              style={
-                Object {
-                  "backgroundColor": "white",
-                  "border": "1px solid #999999",
-                  "color": "inherit",
-                  "fontFamily": "inherit",
-                  "fontSize": "inherit",
-                  "fontWeight": "inherit",
-                  "width": 80
-                }
-              }
-              tabIndex={undefined}
-              type="text"
-              value="en" />
-             
-            <i
-              className="giu-icon fa fa-remove"
-              id="langs.0"
-              onClick={[Function bound onRemoveListItem]}
-              style={
-                Object {
-                  "color": "#444",
-                  "cursor": "pointer",
-                  "letterSpacing": "normal"
-                }
-              } />
-          </div>
-          <div
-            style={
-              Object {
-                "marginRight": 10,
-                "marginTop": undefined,
-                "padding": "0px 2px",
-                "whiteSpace": "nowrap"
-              }
-            }>
-            <input
-              className="giu-text-input"
-              id="langs.1"
-              onBlur={[Function bound onBlur]}
-              onChange={[Function bound onChange]}
-              onCopy={undefined}
-              onCut={undefined}
-              onFocus={[Function bound onFocus]}
-              onPaste={undefined}
-              orient={undefined}
-              placeholder="e.g. es-ES, ca…"
-              style={
-                Object {
-                  "backgroundColor": "white",
-                  "border": "1px solid #999999",
-                  "color": "inherit",
-                  "fontFamily": "inherit",
-                  "fontSize": "inherit",
-                  "fontWeight": "inherit",
-                  "width": 80
-                }
-              }
-              tabIndex={undefined}
-              type="text"
-              value="es" />
-             
-            <i
-              className="giu-icon fa fa-remove"
-              id="langs.1"
-              onClick={[Function bound onRemoveListItem]}
-              style={
-                Object {
-                  "color": "#444",
-                  "cursor": "pointer",
-                  "letterSpacing": "normal"
-                }
-              } />
-          </div>
-          <i
-            className="giu-icon fa fa-plus"
-            id="langs"
-            onClick={[Function bound onCreateListItem]}
-            style={
-              Object {
-                "color": "#444",
+                "WebkitUserSelect": "none",
+                "border": "1px solid #999999",
+                "borderRadius": 5,
                 "cursor": "pointer",
                 "display": "inline-block",
-                "letterSpacing": "normal",
-                "marginTop": 5
+                "marginRight": 5,
+                "padding": "1px 5px",
+                "userSelect": "none"
               }
-            } />
-        </div>
-        <div
-          style={
-            Object {
-              "marginBottom": 3,
-              "marginTop": 7
-            }
-          }>
-          Source paths:
-        </div>
-        <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "marginLeft": 15
-            }
-          }>
+            }>
+            Cancel
+          </span>
           <div
             style={
               Object {
-                "marginRight": 10,
-                "marginTop": 1,
-                "padding": "0px 2px",
-                "whiteSpace": "nowrap"
+                "WebkitFlex": 1,
+                "flex": 1
               }
-            }>
-            <input
-              className="giu-text-input"
-              id="srcPaths.0"
-              onBlur={[Function bound onBlur]}
-              onChange={[Function bound onChange]}
-              onCopy={undefined}
-              onCut={undefined}
-              onFocus={[Function bound onFocus]}
-              onPaste={undefined}
-              orient={undefined}
-              placeholder="e.g. src/client"
-              style={
-                Object {
-                  "backgroundColor": "white",
-                  "border": "1px solid #999999",
-                  "color": "inherit",
-                  "fontFamily": "inherit",
-                  "fontSize": "inherit",
-                  "fontWeight": "inherit",
-                  "width": 300
-                }
-              }
-              tabIndex={undefined}
-              type="text"
-              value="src" />
-             
-            <i
-              className="giu-icon fa fa-remove"
-              id="srcPaths.0"
-              onClick={[Function bound onRemoveListItem]}
-              style={
-                Object {
-                  "color": "#444",
-                  "cursor": "pointer",
-                  "letterSpacing": "normal"
-                }
-              } />
-          </div>
-          <i
-            className="giu-icon fa fa-plus"
-            id="srcPaths"
-            onClick={[Function bound onCreateListItem]}
+            } />
+          <span
+            className="giu-button"
+            onClick={[Function bound onSave]}
             style={
               Object {
-                "color": "#444",
+                "WebkitUserSelect": "none",
+                "border": "1px solid black",
+                "borderRadius": 5,
                 "cursor": "pointer",
                 "display": "inline-block",
-                "letterSpacing": "normal",
-                "marginTop": 5
-              }
-            } />
-        </div>
-        <div
-          style={
-            Object {
-              "marginBottom": 3,
-              "marginTop": 7
-            }
-          }>
-          Source extensions:
-        </div>
-        <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "row",
-              "marginLeft": 15
-            }
-          }>
-          <div
-            style={
-              Object {
-                "marginRight": 10,
-                "marginTop": undefined,
-                "padding": "0px 2px",
-                "whiteSpace": "nowrap"
+                "marginLeft": 5,
+                "padding": "1px 5px",
+                "userSelect": "none"
               }
             }>
-            <input
-              className="giu-text-input"
-              id="srcExtensions.0"
-              onBlur={[Function bound onBlur]}
-              onChange={[Function bound onChange]}
-              onCopy={undefined}
-              onCut={undefined}
-              onFocus={[Function bound onFocus]}
-              onPaste={undefined}
-              orient={undefined}
-              placeholder="e.g. .js"
-              style={
-                Object {
-                  "backgroundColor": "white",
-                  "border": "1px solid #999999",
-                  "color": "inherit",
-                  "fontFamily": "inherit",
-                  "fontSize": "inherit",
-                  "fontWeight": "inherit",
-                  "width": 60
-                }
-              }
-              tabIndex={undefined}
-              type="text"
-              value=".js" />
-             
-            <i
-              className="giu-icon fa fa-remove"
-              id="srcExtensions.0"
-              onClick={[Function bound onRemoveListItem]}
-              style={
-                Object {
-                  "color": "#444",
-                  "cursor": "pointer",
-                  "letterSpacing": "normal"
-                }
-              } />
-          </div>
-          <div
-            style={
-              Object {
-                "marginRight": 10,
-                "marginTop": undefined,
-                "padding": "0px 2px",
-                "whiteSpace": "nowrap"
-              }
-            }>
-            <input
-              className="giu-text-input"
-              id="srcExtensions.1"
-              onBlur={[Function bound onBlur]}
-              onChange={[Function bound onChange]}
-              onCopy={undefined}
-              onCut={undefined}
-              onFocus={[Function bound onFocus]}
-              onPaste={undefined}
-              orient={undefined}
-              placeholder="e.g. .js"
-              style={
-                Object {
-                  "backgroundColor": "white",
-                  "border": "1px solid #999999",
-                  "color": "inherit",
-                  "fontFamily": "inherit",
-                  "fontSize": "inherit",
-                  "fontWeight": "inherit",
-                  "width": 60
-                }
-              }
-              tabIndex={undefined}
-              type="text"
-              value=".jsx" />
-             
-            <i
-              className="giu-icon fa fa-remove"
-              id="srcExtensions.1"
-              onClick={[Function bound onRemoveListItem]}
-              style={
-                Object {
-                  "color": "#444",
-                  "cursor": "pointer",
-                  "letterSpacing": "normal"
-                }
-              } />
-          </div>
-          <i
-            className="giu-icon fa fa-plus"
-            id="srcExtensions"
-            onClick={[Function bound onCreateListItem]}
-            style={
-              Object {
-                "color": "#444",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "letterSpacing": "normal",
-                "marginTop": 5
-              }
-            } />
-        </div>
-        <div
-          style={
-            Object {
-              "marginBottom": 3,
-              "marginTop": 7
-            }
-          }>
-          Message translation functions to look for:
-        </div>
-        <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "row",
-              "marginLeft": 15
-            }
-          }>
-          <div
-            style={
-              Object {
-                "marginRight": 10,
-                "marginTop": undefined,
-                "padding": "0px 2px",
-                "whiteSpace": "nowrap"
-              }
-            }>
-            <input
-              className="giu-text-input"
-              id="msgFunctionNames.0"
-              onBlur={[Function bound onBlur]}
-              onChange={[Function bound onChange]}
-              onCopy={undefined}
-              onCut={undefined}
-              onFocus={[Function bound onFocus]}
-              onPaste={undefined}
-              orient={undefined}
-              placeholder="e.g. _t"
-              style={
-                Object {
-                  "backgroundColor": "white",
-                  "border": "1px solid #999999",
-                  "color": "inherit",
-                  "fontFamily": "inherit",
-                  "fontSize": "inherit",
-                  "fontWeight": "inherit",
-                  "width": 60
-                }
-              }
-              tabIndex={undefined}
-              type="text"
-              value="_t" />
-             
-            <i
-              className="giu-icon fa fa-remove"
-              id="msgFunctionNames.0"
-              onClick={[Function bound onRemoveListItem]}
-              style={
-                Object {
-                  "color": "#444",
-                  "cursor": "pointer",
-                  "letterSpacing": "normal"
-                }
-              } />
-          </div>
-          <i
-            className="giu-icon fa fa-plus"
-            id="msgFunctionNames"
-            onClick={[Function bound onCreateListItem]}
-            style={
-              Object {
-                "color": "#444",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "letterSpacing": "normal",
-                "marginTop": 5
-              }
-            } />
-        </div>
-        <div
-          style={
-            Object {
-              "marginTop": 7
-            }
-          }>
-          <input
-            checked={false}
-            className="giu-checkbox"
-            id="fMinify"
-            onBlur={[Function bound onBlur]}
-            onChange={[Function bound onChange]}
-            onCopy={undefined}
-            onCut={undefined}
-            onFocus={[Function bound onFocus]}
-            onPaste={undefined}
-            required={undefined}
-            tabIndex={undefined}
-            type="checkbox" />
-          <label
-            htmlFor="fMinify">
-            Minify output JavaScript
-          </label>
+            Save
+          </span>
         </div>
       </div>
       <div
+        onClick={[Function bound onCancel]}
+        onTouchMove={[Function cancelEvent]}
+        onWheel={[Function cancelEvent]}
         style={
           Object {
-            "borderTop": "1px solid #999999",
-            "display": "flex",
-            "flexDirection": "row",
-            "marginTop": 10,
-            "paddingTop": 10
+            "WebkitFlex": 1,
+            "flex": 1
           }
-        }>
-        <span
-          className="giu-button"
-          onClick={[Function bound onCancel]}
-          style={
-            Object {
-              "WebkitUserSelect": "none",
-              "border": "1px solid #999999",
-              "borderRadius": 5,
-              "cursor": "pointer",
-              "display": "inline-block",
-              "marginRight": 5,
-              "padding": "1px 5px",
-              "userSelect": "none"
-            }
-          }>
-          Cancel
-        </span>
-        <div
-          style={
-            Object {
-              "WebkitFlex": 1,
-              "flex": 1
-            }
-          } />
-        <span
-          className="giu-button"
-          onClick={[Function bound onSave]}
-          style={
-            Object {
-              "WebkitUserSelect": "none",
-              "border": "1px solid black",
-              "borderRadius": 5,
-              "cursor": "pointer",
-              "display": "inline-block",
-              "marginLeft": 5,
-              "padding": "1px 5px",
-              "userSelect": "none"
-            }
-          }>
-          Save
-        </span>
-      </div>
+        } />
     </div>
-    <div
-      onClick={[Function bound onCancel]}
-      onTouchMove={[Function cancelEvent]}
-      onWheel={[Function cancelEvent]}
-      style={
-        Object {
-          "WebkitFlex": 1,
-          "flex": 1
-        }
-      } />
   </div>
 </div>
 `;

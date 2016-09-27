@@ -118,11 +118,7 @@ describe('HoverableTranslatorRow', () => {
         styleLangCol={STYLE_LANG_COL}
       />
     ).toJSON();
-    expect(tree).toMatchSnapshot();
-
-    // Click!
     tree.props.onClick();
-    expect(spyChangeSelectedKey.mock.calls.length).toBe(1);
-    expect(spyChangeSelectedKey.mock.calls[0][0]).toBe(KEY_WITHOUT_TRANSLATIONS.id);
+    expect(spyChangeSelectedKey).toBeCalledWith(KEY_WITHOUT_TRANSLATIONS.id);
   });
 });

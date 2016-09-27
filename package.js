@@ -13,13 +13,6 @@ const KEYWORDS = ['i18n', 'MessageFormat', 'translation', 'locales', 'translator
 // Helpers
 // ===============================================
 const runMultiple = (arr) => arr.join(' && ');
-// const runTestCov = (env) => {
-//   const envStr = env != null ? `${env} ` : '';
-//   return runMultiple([
-//     `cross-env ${envStr}nyc ava`,
-//     'mv .nyc_output/* .nyc_tmp/',
-//   ]);
-// };
 const runTestCov = (env, name) => {
   const envStr = env != null ? `${env} ` : '';
   return runMultiple([
@@ -138,7 +131,6 @@ const specs = {
                                 ]),
 
     // Testing - steps
-    ava:                        'ava --watch',
     jest:                       'jest --watch',
     testCovPrepare:             runMultiple([
                                   'rm -rf ./coverage .nyc_output .nyc_tmp',
@@ -255,7 +247,6 @@ const specs = {
     'react-test-renderer': '15.3.2',
     'babel-jest': '15.0.0',
     'ignore-styles': '4.0.0',
-    ava: '0.16.0',
     nyc: '8.3.0',
     coveralls: '2.11.14',
 
@@ -269,20 +260,14 @@ const specs = {
   // -----------------------------------------------
   // Other configs
   // -----------------------------------------------
-  ava: {
-    files: [
-      './test/test.js',
-    ],
-    // babel: 'inherit',
-  },
-
   jest: {
     // Default test path:
     // testRegex: '(/__tests__/.*|\\.(test|spec))\\.(js|jsx)$',
     testRegex: 'src/.*__tests__/.*\\.(test|spec)\\.(js|jsx)$',
     moduleNameMapper: {
-      '^.+\\.(css|less|sass)$': '<rootDir>/test/styleMock.js',
-      '^.+\\.(gif|ttf|eot|svg)$': '<rootDir>/test/fileMock.js',
+      '^.+\\.(css|less|sass)$': '<rootDir>/test/emptyObject.js',
+      '^.+\\.(gif|ttf|eot|svg)$': '<rootDir>/test/emptyString.js',
+      'node-uuid': '<rootDir>/test/mockUuid.js',
     },
     coverageDirectory: '.nyc_output',
     coverageReporters: ['json', 'text'],
