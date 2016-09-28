@@ -247,6 +247,7 @@ const specs = {
     'react-test-renderer': '15.3.2',
     'babel-jest': '15.0.0',
     'ignore-styles': '4.0.0',
+    'moment-timezone': '0.5.5',
     nyc: '8.3.0',
     coveralls: '2.11.14',
 
@@ -271,6 +272,7 @@ const specs = {
     },
     coverageDirectory: '.nyc_output',
     coverageReporters: ['json', 'text'],
+    setupTestFrameworkScriptFile: './test/setup.js',
   },
 };
 

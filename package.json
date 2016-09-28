@@ -116,6 +116,7 @@
     "jest": "15.1.1",
     "json-loader": "0.5.4",
     "moment": "2.14.0",
+    "moment-timezone": "0.5.5",
     "node-sass": "3.10.0",
     "nyc": "8.3.0",
     "react": "15.3.2",
@@ -145,6 +146,7 @@
     "coverageReporters": [
       "json",
       "text"
-    ]
+    ],
+    "setupTestFrameworkScriptFile": "./test/setup.js"
   }
 }

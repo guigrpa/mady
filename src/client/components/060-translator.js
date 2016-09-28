@@ -393,15 +393,8 @@ const style = {
   scrollbarSpacer: () => flexItem(`0 0 ${getScrollbarWidth()}px`),
 };
 
-// ------------------------------------------
-// Build container
-// ------------------------------------------
-const TranslatorContainer = Relay.createContainer(Translator, {
-  fragments,
-});
-
-
 // ==========================================
 // Public API
 // ==========================================
-export default TranslatorContainer;
+export default Relay.createContainer(Translator, { fragments });
+export { Translator as _Translator };
