@@ -8,14 +8,15 @@ import {
   hintDefine, hintShow,
 }                           from 'giu';
 import _t                   from '../../translate';
-import Header               from './050-header';
-import Translator           from './060-translator';
-import Details              from './070-details';
-import Settings             from './080-settings';
 import {
   cookieGet,
   cookieSet,
 }                           from '../gral/storage';
+import Header               from './050-header';
+import Translator           from './060-translator';
+import Details              from './070-details';
+import Settings             from './080-settings';
+import fetchLangBundle      from './fetchLangBundle';
 
 require('./010-app.sass');
 
@@ -101,13 +102,11 @@ class App extends React.Component {
   hideSettings() { this.setState({ fSettingsShown: false }); }
   onChangeLang(lang) {
     cookieSet('lang', lang);
-    /* eslint-disable global-require */
-    require(`bundle!../../locales/${lang}.js`)((locales) => {
+    fetchLangBundle(lang, (locales) => {
       _t.setLocales(locales);
       moment.locale(lang);
       this.setState({ lang });
     });
-    /* eslint-enable global-require */
   }
 
   // ------------------------------------------
@@ -166,3 +165,4 @@ const style = {
 // Public API
 // ==========================================
 export default Relay.createContainer(App, { fragments });
+export { App as _App };

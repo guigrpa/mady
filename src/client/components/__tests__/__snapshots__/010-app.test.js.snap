@@ -1,0 +1,555 @@
+exports[`App changes the selected key when clicked 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "white",
+      "display": "flex",
+      "flexDirection": "column",
+      "minHeight": "100%",
+      "padding": "0px 10px"
+    }
+  }>
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0
+      }
+    } />
+  <div
+    className="giu-notifications"
+    style={
+      Object {
+        "bottom": 20,
+        "maxWidth": 350,
+        "position": "fixed",
+        "right": 20,
+        "zIndex": 9000
+      }
+    } />
+  <div
+    className="giu-hints">
+    <div
+      className="giu-hint-screen"
+      onClick={[Function hintHide]}
+      style={
+        Object {
+          "height": "100vh",
+          "left": 0,
+          "position": "fixed",
+          "top": 0,
+          "width": "100vw",
+          "zIndex": 50
+        }
+      }>
+      <div
+        className="giu-backdrop"
+        onTouchMove={[Function cancelEvent]}
+        onWheel={[Function cancelEvent]}
+        style={
+          Object {
+            "backgroundColor": "black",
+            "cursor": "pointer",
+            "height": "100vh",
+            "left": 0,
+            "opacity": 0.6,
+            "position": "fixed",
+            "top": 0,
+            "width": "100vw"
+          }
+        } />
+      <div
+        style={
+          Object {
+            "color": "white",
+            "fontFamily": "\"Gloria Hallelujah\", sans-serif",
+            "fontSize": 20
+          }
+        }>
+        <div
+          style={
+            Object {
+              "border": "1px solid white",
+              "borderRadius": 8,
+              "bottom": 20,
+              "cursor": "pointer",
+              "padding": "5px 25px",
+              "position": "fixed",
+              "right": 20
+            }
+          }>
+          Enjoy translating!
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    dataMockType="Header"
+    onShowSettings={[Function bound showSettings]} />
+  <div
+    changeSelectedKey={[Function bound changeSelectedKey]}
+    dataMockType="Translator"
+    lang="en"
+    selectedKeyId="SELECTED_KEY"
+    viewer={
+      Object {
+        "config": Object {
+          "langs": Array [
+            "es",
+            "ca",
+            "en"
+          ]
+        },
+        "id": "me",
+        "keys": Object {
+          "edges": Array []
+        }
+      }
+    } />
+  <div
+    dataMockType="Details"
+    lang="en"
+    selectedKeyId="SELECTED_KEY"
+    viewer={
+      Object {
+        "config": Object {
+          "langs": Array [
+            "es",
+            "ca",
+            "en"
+          ]
+        },
+        "id": "me",
+        "keys": Object {
+          "edges": Array []
+        }
+      }
+    } />
+</div>
+`;
+
+exports[`App renders correctly with no content 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "white",
+      "display": "flex",
+      "flexDirection": "column",
+      "minHeight": "100%",
+      "padding": "0px 10px"
+    }
+  }>
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0
+      }
+    } />
+  <div
+    className="giu-notifications"
+    style={
+      Object {
+        "bottom": 20,
+        "maxWidth": 350,
+        "position": "fixed",
+        "right": 20,
+        "zIndex": 9000
+      }
+    } />
+  <div
+    className="giu-hints">
+    <div
+      className="giu-hint-screen"
+      onClick={[Function hintHide]}
+      style={
+        Object {
+          "height": "100vh",
+          "left": 0,
+          "position": "fixed",
+          "top": 0,
+          "width": "100vw",
+          "zIndex": 50
+        }
+      }>
+      <div
+        className="giu-backdrop"
+        onTouchMove={[Function cancelEvent]}
+        onWheel={[Function cancelEvent]}
+        style={
+          Object {
+            "backgroundColor": "black",
+            "cursor": "pointer",
+            "height": "100vh",
+            "left": 0,
+            "opacity": 0.6,
+            "position": "fixed",
+            "top": 0,
+            "width": "100vw"
+          }
+        } />
+      <div
+        style={
+          Object {
+            "color": "white",
+            "fontFamily": "\"Gloria Hallelujah\", sans-serif",
+            "fontSize": 20
+          }
+        }>
+        <div
+          style={
+            Object {
+              "border": "1px solid white",
+              "borderRadius": 8,
+              "bottom": 20,
+              "cursor": "pointer",
+              "padding": "5px 25px",
+              "position": "fixed",
+              "right": 20
+            }
+          }>
+          Enjoy translating!
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    dataMockType="Header"
+    onShowSettings={[Function bound showSettings]} />
+  <div
+    changeSelectedKey={[Function bound changeSelectedKey]}
+    dataMockType="Translator"
+    lang="en"
+    selectedKeyId={null}
+    viewer={
+      Object {
+        "config": Object {
+          "langs": Array [
+            "es",
+            "ca",
+            "en"
+          ]
+        },
+        "id": "me",
+        "keys": Object {
+          "edges": Array []
+        }
+      }
+    } />
+  <div
+    dataMockType="Details"
+    lang="en"
+    selectedKeyId={null}
+    viewer={
+      Object {
+        "config": Object {
+          "langs": Array [
+            "es",
+            "ca",
+            "en"
+          ]
+        },
+        "id": "me",
+        "keys": Object {
+          "edges": Array []
+        }
+      }
+    } />
+</div>
+`;
+
+exports[`App shows the settings when clicked 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "white",
+      "display": "flex",
+      "flexDirection": "column",
+      "minHeight": "100%",
+      "padding": "0px 10px"
+    }
+  }>
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0
+      }
+    } />
+  <div
+    className="giu-notifications"
+    style={
+      Object {
+        "bottom": 20,
+        "maxWidth": 350,
+        "position": "fixed",
+        "right": 20,
+        "zIndex": 9000
+      }
+    } />
+  <div
+    className="giu-hints">
+    <div
+      className="giu-hint-screen"
+      onClick={[Function hintHide]}
+      style={
+        Object {
+          "height": "100vh",
+          "left": 0,
+          "position": "fixed",
+          "top": 0,
+          "width": "100vw",
+          "zIndex": 50
+        }
+      }>
+      <div
+        className="giu-backdrop"
+        onTouchMove={[Function cancelEvent]}
+        onWheel={[Function cancelEvent]}
+        style={
+          Object {
+            "backgroundColor": "black",
+            "cursor": "pointer",
+            "height": "100vh",
+            "left": 0,
+            "opacity": 0.6,
+            "position": "fixed",
+            "top": 0,
+            "width": "100vw"
+          }
+        } />
+      <div
+        style={
+          Object {
+            "color": "white",
+            "fontFamily": "\"Gloria Hallelujah\", sans-serif",
+            "fontSize": 20
+          }
+        }>
+        <div
+          style={
+            Object {
+              "border": "1px solid white",
+              "borderRadius": 8,
+              "bottom": 20,
+              "cursor": "pointer",
+              "padding": "5px 25px",
+              "position": "fixed",
+              "right": 20
+            }
+          }>
+          Enjoy translating!
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    dataMockType="Header"
+    onShowSettings={[Function bound showSettings]} />
+  <div
+    changeSelectedKey={[Function bound changeSelectedKey]}
+    dataMockType="Translator"
+    lang="en"
+    selectedKeyId={null}
+    viewer={
+      Object {
+        "config": Object {
+          "langs": Array [
+            "es",
+            "ca",
+            "en"
+          ]
+        },
+        "id": "me",
+        "keys": Object {
+          "edges": Array []
+        }
+      }
+    } />
+  <div
+    dataMockType="Details"
+    lang="en"
+    selectedKeyId={null}
+    viewer={
+      Object {
+        "config": Object {
+          "langs": Array [
+            "es",
+            "ca",
+            "en"
+          ]
+        },
+        "id": "me",
+        "keys": Object {
+          "edges": Array []
+        }
+      }
+    } />
+  <div
+    dataMockType="Settings"
+    lang="en"
+    onChangeLang={[Function bound onChangeLang]}
+    onClose={[Function bound hideSettings]}
+    viewer={
+      Object {
+        "config": Object {
+          "langs": Array [
+            "es",
+            "ca",
+            "en"
+          ]
+        },
+        "id": "me",
+        "keys": Object {
+          "edges": Array []
+        }
+      }
+    } />
+</div>
+`;
+
+exports[`App shows the settings when clicked 2`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "white",
+      "display": "flex",
+      "flexDirection": "column",
+      "minHeight": "100%",
+      "padding": "0px 10px"
+    }
+  }>
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0
+      }
+    } />
+  <div
+    className="giu-notifications"
+    style={
+      Object {
+        "bottom": 20,
+        "maxWidth": 350,
+        "position": "fixed",
+        "right": 20,
+        "zIndex": 9000
+      }
+    } />
+  <div
+    className="giu-hints">
+    <div
+      className="giu-hint-screen"
+      onClick={[Function hintHide]}
+      style={
+        Object {
+          "height": "100vh",
+          "left": 0,
+          "position": "fixed",
+          "top": 0,
+          "width": "100vw",
+          "zIndex": 50
+        }
+      }>
+      <div
+        className="giu-backdrop"
+        onTouchMove={[Function cancelEvent]}
+        onWheel={[Function cancelEvent]}
+        style={
+          Object {
+            "backgroundColor": "black",
+            "cursor": "pointer",
+            "height": "100vh",
+            "left": 0,
+            "opacity": 0.6,
+            "position": "fixed",
+            "top": 0,
+            "width": "100vw"
+          }
+        } />
+      <div
+        style={
+          Object {
+            "color": "white",
+            "fontFamily": "\"Gloria Hallelujah\", sans-serif",
+            "fontSize": 20
+          }
+        }>
+        <div
+          style={
+            Object {
+              "border": "1px solid white",
+              "borderRadius": 8,
+              "bottom": 20,
+              "cursor": "pointer",
+              "padding": "5px 25px",
+              "position": "fixed",
+              "right": 20
+            }
+          }>
+          Enjoy translating!
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    dataMockType="Header"
+    onShowSettings={[Function bound showSettings]} />
+  <div
+    changeSelectedKey={[Function bound changeSelectedKey]}
+    dataMockType="Translator"
+    lang="en"
+    selectedKeyId={null}
+    viewer={
+      Object {
+        "config": Object {
+          "langs": Array [
+            "es",
+            "ca",
+            "en"
+          ]
+        },
+        "id": "me",
+        "keys": Object {
+          "edges": Array []
+        }
+      }
+    } />
+  <div
+    dataMockType="Details"
+    lang="en"
+    selectedKeyId={null}
+    viewer={
+      Object {
+        "config": Object {
+          "langs": Array [
+            "es",
+            "ca",
+            "en"
+          ]
+        },
+        "id": "me",
+        "keys": Object {
+          "edges": Array []
+        }
+      }
+    } />
+</div>
+`;

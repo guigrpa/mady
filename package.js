@@ -131,7 +131,8 @@ const specs = {
                                 ]),
 
     // Testing - steps
-    jest:                       'jest --watch',
+    jest:                       'jest --watch --coverage',
+    jestDebug:                  'node --debug-brk --inspect node_modules/.bin/jest -i',
     testCovPrepare:             runMultiple([
                                   'rm -rf ./coverage .nyc_output .nyc_tmp',
                                   'mkdir .nyc_tmp',
@@ -190,7 +191,7 @@ const specs = {
     // Packaged in the client app (or SSR)
     // --------------------------
     'babel-polyfill': '6.13.0',
-    giu: '0.8.0',
+    giu: '0.8.1',
 
     // React
     react:                            '15.3.2',
@@ -271,7 +272,7 @@ const specs = {
       'node-uuid': '<rootDir>/test/mockUuid.js',
     },
     coverageDirectory: '.nyc_output',
-    coverageReporters: ['json', 'text'],
+    coverageReporters: ['json', 'text', 'html'],
     setupTestFrameworkScriptFile: './test/setup.js',
   },
 };

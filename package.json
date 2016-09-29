@@ -45,7 +45,8 @@
     "testCovFull": "npm run testCovPrepare && npm run testDev && npm run testProd && npm run testCovReport",
     "testCovFullExceptMin": "npm run testCovPrepare && npm run testDev && npm run testProd && npm run testCovReport",
     "testCovFast": "npm run testCovPrepare && npm run testDev && npm run testCovReport",
-    "jest": "jest --watch",
+    "jest": "jest --watch --coverage",
+    "jestDebug": "node --debug-brk --inspect node_modules/.bin/jest -i",
     "testCovPrepare": "rm -rf ./coverage .nyc_output .nyc_tmp && mkdir .nyc_tmp",
     "testDev": "cross-env NODE_ENV=development jest --coverage && mv .nyc_output/coverage-final.json .nyc_tmp/coverage-dev.json",
     "testProd": "cross-env NODE_ENV=production jest --coverage && mv .nyc_output/coverage-final.json .nyc_tmp/coverage-prod.json",
@@ -110,7 +111,7 @@
     "file-loader": "0.9.0",
     "flow-bin": "0.32.0",
     "font-awesome": "4.6.3",
-    "giu": "0.8.0",
+    "giu": "0.8.1",
     "ignore-styles": "4.0.0",
     "isomorphic-relay": "0.7.3",
     "jest": "15.1.1",
@@ -145,7 +146,8 @@
     "coverageDirectory": ".nyc_output",
     "coverageReporters": [
       "json",
-      "text"
+      "text",
+      "html"
     ],
     "setupTestFrameworkScriptFile": "./test/setup.js"
   }

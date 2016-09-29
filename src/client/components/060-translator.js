@@ -139,6 +139,7 @@ class Translator extends React.PureComponent {
   renderLangHeader(lang, idx, langOptions) {
     return (
       <div key={lang}
+        className="madyLangHeader"
         style={timm.merge(style.headerCell, style.langCol)}
       >
         <div

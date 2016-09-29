@@ -4,6 +4,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { flexItem } from 'giu';
 import { _HoverableTranslatorRow as HoverableTranslatorRow } from '../061-translatorRow';
+import {
+  VIEWER,
+  KEY_WITHOUT_TRANSLATIONS, KEY_WITH_TRANSLATIONS,
+} from './fixtures';
 
 // https://github.com/facebook/react/issues/7386#issuecomment-238091398
 jest.mock('react-dom');
@@ -12,36 +16,6 @@ jest.mock('../062-translation', () => require('./mockComponent')('Translation'))
 // ======================================================
 // Fixtures
 // ======================================================
-const VIEWER = { id: 'me' };
-
-const KEY_WITHOUT_TRANSLATIONS = {
-  id: 'keyId1',
-  context: 'someContext',
-  text: 'A message',
-  unusedSince: null,
-  // unusedSince: '2016-04-20T11:33:38.450Z',
-  translations: { edges: [] },
-};
-
-const KEY_WITH_TRANSLATIONS = {
-  id: 'keyId2',
-  context: 'someContext',
-  text: 'A message',
-  unusedSince: null,
-  translations: { edges: [
-    { node: {
-      id: 'translationId1',
-      lang: 'es',
-      translation: 'Un mensaje',
-    } },
-    { node: {
-      id: 'translationId2',
-      lang: 'ca',
-      translation: 'Un missatge',
-    } },
-  ] },
-};
-
 const STYLE_KEY_COL = flexItem('1 1 0px', {
   backgroundColor: 'white',
   marginRight: 5,

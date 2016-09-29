@@ -1,3 +1,1458 @@
+exports[`Translator allows changing the language of a column 1`] = `
+<div>
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0
+      }
+    } />
+  <div
+    style={
+      Object {
+        "WebkitFlex": "1 0 10em",
+        "display": "flex",
+        "flex": "1 0 10em",
+        "flexDirection": "column",
+        "marginTop": 5
+      }
+    }>
+    <div
+      className="tableHeaderRow"
+      style={
+        Object {
+          "WebkitFlex": "none",
+          "display": "flex",
+          "flex": "none",
+          "flexDirection": "row",
+          "fontWeight": "bold",
+          "position": "relative"
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "borderBottom": "1px solid #1600a3",
+            "flex": "1 1 0px",
+            "fontWeight": 900,
+            "letterSpacing": 3,
+            "marginRight": 5,
+            "paddingBottom": 3,
+            "paddingLeft": 5,
+            "paddingRight": 17,
+            "paddingTop": 3,
+            "textAlign": "center"
+          }
+        }>
+        MESSAGES
+         
+        <span
+          style={
+            Object {
+              "color": "darkgrey"
+            }
+          }>
+          [
+          <span
+            title="Used messages">
+            2
+          </span>
+           / 
+          <span
+            title="Total messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          className="giu-icon fa fa-refresh"
+          onClick={[Function bound onParseSrcFiles]}
+          style={
+            Object {
+              "color": undefined,
+              "cursor": "pointer",
+              "letterSpacing": "normal"
+            }
+          }
+          title="Parse source files to update the message list" />
+      </div>
+      <div
+        className="madyLangHeader"
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "borderBottom": "1px solid #1600a3",
+            "flex": "1 1 0px",
+            "fontWeight": 900,
+            "letterSpacing": 3,
+            "marginRight": 5,
+            "paddingBottom": 3,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+            "paddingTop": 3,
+            "textAlign": "center"
+          }
+        }>
+        <div
+          style={
+            Object {
+              "display": "inline-block",
+              "paddingRight": 5,
+              "position": "relative"
+            }
+          }
+          title="Change language">
+          <i
+            className="giu-icon fa fa-caret-down"
+            style={
+              Object {
+                "color": undefined,
+                "cursor": "pointer",
+                "letterSpacing": "normal",
+                "marginRight": 5
+              }
+            } />
+          es
+          <select
+            className="giu-select-native"
+            id={0}
+            onBlur={[Function bound onBlur]}
+            onChange={[Function bound onChange]}
+            onCopy={undefined}
+            onCut={undefined}
+            onFocus={[Function bound onFocus]}
+            onPaste={undefined}
+            style={
+              Object {
+                "backgroundColor": "default",
+                "border": "default",
+                "color": "inherit",
+                "cursor": "pointer",
+                "fontFamily": "inherit",
+                "fontSize": "inherit",
+                "fontWeight": "inherit",
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "top": 0,
+                "width": "100%"
+              }
+            }
+            tabIndex={undefined}
+            value="\"es\"">
+            <option
+              id="\"es\""
+              value="\"es\"">
+              es
+            </option>
+            <option
+              id="\"ca\""
+              value="\"ca\"">
+              ca
+            </option>
+            <option
+              id="\"en\""
+              value="\"en\"">
+              en
+            </option>
+          </select>
+        </div>
+         
+        <span
+          style={
+            Object {
+              "color": "darkgrey"
+            }
+          }>
+          [
+          <span
+            title="Translations">
+            1
+          </span>
+           / 
+          <span
+            title="Used messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          className="giu-icon fa fa-remove"
+          id={0}
+          onClick={[Function bound onRemoveLang]}
+          style={
+            Object {
+              "color": undefined,
+              "cursor": "pointer",
+              "letterSpacing": "normal"
+            }
+          }
+          title="Remove column (does NOT delete any translations)" />
+      </div>
+      <div
+        id="madyBtnAddLang"
+        onClick={[Function bound onAddLang]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "fontWeight": 900,
+            "letterSpacing": 3,
+            "padding": "3px 6px",
+            "position": "absolute",
+            "right": NaN,
+            "top": 0
+          }
+        }
+        title="Add column">
+        <i
+          className="giu-icon fa fa-plus"
+          style={
+            Object {
+              "color": undefined,
+              "cursor": "pointer",
+              "letterSpacing": "normal"
+            }
+          } />
+      </div>
+      <div
+        style={
+          Object {
+            "WebkitFlex": "0 0 NaNpx",
+            "flex": "0 0 NaNpx"
+          }
+        } />
+    </div>
+    <div
+      className="tableBody"
+      style={
+        Object {
+          "WebkitFlex": 1,
+          "display": "flex",
+          "flex": 1,
+          "flexDirection": "column",
+          "overflowY": "scroll"
+        }
+      }>
+      <div
+        changeSelectedKey={[Function changeSelectedKey]}
+        dataMockType="TranslatorRow"
+        fSelected={false}
+        langs={
+          Array [
+            "es"
+          ]
+        }
+        styleKeyCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 17
+          }
+        }
+        styleLangCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5
+          }
+        }
+        theKey={
+          Object {
+            "context": "someContext",
+            "id": "keyId1",
+            "text": "A message",
+            "translations": Object {
+              "edges": Array []
+            },
+            "unusedSince": null
+          }
+        }
+        viewer={
+          Object {
+            "config": Object {
+              "langs": Array [
+                "es",
+                "ca",
+                "en"
+              ]
+            },
+            "id": "me",
+            "keys": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId1",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array []
+                    },
+                    "unusedSince": null
+                  }
+                },
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId2",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [
+                        Object {
+                          "node": Object {
+                            "id": "translationId1",
+                            "lang": "es",
+                            "translation": "Un mensaje"
+                          }
+                        },
+                        Object {
+                          "node": Object {
+                            "id": "translationId2",
+                            "lang": "ca",
+                            "translation": "Un missatge"
+                          }
+                        }
+                      ]
+                    },
+                    "unusedSince": null
+                  }
+                }
+              ]
+            }
+          }
+        } />
+      <div
+        changeSelectedKey={[Function changeSelectedKey]}
+        dataMockType="TranslatorRow"
+        fSelected={false}
+        langs={
+          Array [
+            "es"
+          ]
+        }
+        styleKeyCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 17
+          }
+        }
+        styleLangCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5
+          }
+        }
+        theKey={
+          Object {
+            "context": "someContext",
+            "id": "keyId2",
+            "text": "A message",
+            "translations": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "id": "translationId1",
+                    "lang": "es",
+                    "translation": "Un mensaje"
+                  }
+                },
+                Object {
+                  "node": Object {
+                    "id": "translationId2",
+                    "lang": "ca",
+                    "translation": "Un missatge"
+                  }
+                }
+              ]
+            },
+            "unusedSince": null
+          }
+        }
+        viewer={
+          Object {
+            "config": Object {
+              "langs": Array [
+                "es",
+                "ca",
+                "en"
+              ]
+            },
+            "id": "me",
+            "keys": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId1",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array []
+                    },
+                    "unusedSince": null
+                  }
+                },
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId2",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [
+                        Object {
+                          "node": Object {
+                            "id": "translationId1",
+                            "lang": "es",
+                            "translation": "Un mensaje"
+                          }
+                        },
+                        Object {
+                          "node": Object {
+                            "id": "translationId2",
+                            "lang": "ca",
+                            "translation": "Un missatge"
+                          }
+                        }
+                      ]
+                    },
+                    "unusedSince": null
+                  }
+                }
+              ]
+            }
+          }
+        } />
+      <div
+        className="tableFillerRow"
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "display": "flex",
+            "flex": "1 1 0px",
+            "flexDirection": "row"
+          }
+        }>
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 17
+            }
+          }>
+          
+        </div>
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 5
+            }
+          } />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Translator allows changing the language of a column 2`] = `
+<div>
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0
+      }
+    } />
+  <div
+    style={
+      Object {
+        "WebkitFlex": "1 0 10em",
+        "display": "flex",
+        "flex": "1 0 10em",
+        "flexDirection": "column",
+        "marginTop": 5
+      }
+    }>
+    <div
+      className="tableHeaderRow"
+      style={
+        Object {
+          "WebkitFlex": "none",
+          "display": "flex",
+          "flex": "none",
+          "flexDirection": "row",
+          "fontWeight": "bold",
+          "position": "relative"
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "borderBottom": "1px solid #1600a3",
+            "flex": "1 1 0px",
+            "fontWeight": 900,
+            "letterSpacing": 3,
+            "marginRight": 5,
+            "paddingBottom": 3,
+            "paddingLeft": 5,
+            "paddingRight": 17,
+            "paddingTop": 3,
+            "textAlign": "center"
+          }
+        }>
+        MESSAGES
+         
+        <span
+          style={
+            Object {
+              "color": "darkgrey"
+            }
+          }>
+          [
+          <span
+            title="Used messages">
+            2
+          </span>
+           / 
+          <span
+            title="Total messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          className="giu-icon fa fa-refresh"
+          onClick={[Function bound onParseSrcFiles]}
+          style={
+            Object {
+              "color": undefined,
+              "cursor": "pointer",
+              "letterSpacing": "normal"
+            }
+          }
+          title="Parse source files to update the message list" />
+      </div>
+      <div
+        className="madyLangHeader"
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "borderBottom": "1px solid #1600a3",
+            "flex": "1 1 0px",
+            "fontWeight": 900,
+            "letterSpacing": 3,
+            "marginRight": 5,
+            "paddingBottom": 3,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+            "paddingTop": 3,
+            "textAlign": "center"
+          }
+        }>
+        <div
+          style={
+            Object {
+              "display": "inline-block",
+              "paddingRight": 5,
+              "position": "relative"
+            }
+          }
+          title="Change language">
+          <i
+            className="giu-icon fa fa-caret-down"
+            style={
+              Object {
+                "color": undefined,
+                "cursor": "pointer",
+                "letterSpacing": "normal",
+                "marginRight": 5
+              }
+            } />
+          en
+          <select
+            className="giu-select-native"
+            id={0}
+            onBlur={[Function bound onBlur]}
+            onChange={[Function bound onChange]}
+            onCopy={undefined}
+            onCut={undefined}
+            onFocus={[Function bound onFocus]}
+            onPaste={undefined}
+            style={
+              Object {
+                "backgroundColor": "default",
+                "border": "default",
+                "color": "inherit",
+                "cursor": "pointer",
+                "fontFamily": "inherit",
+                "fontSize": "inherit",
+                "fontWeight": "inherit",
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "top": 0,
+                "width": "100%"
+              }
+            }
+            tabIndex={undefined}
+            value="\"en\"">
+            <option
+              id="\"es\""
+              value="\"es\"">
+              es
+            </option>
+            <option
+              id="\"ca\""
+              value="\"ca\"">
+              ca
+            </option>
+            <option
+              id="\"en\""
+              value="\"en\"">
+              en
+            </option>
+          </select>
+        </div>
+         
+        <span
+          style={
+            Object {
+              "color": "darkgrey"
+            }
+          }>
+          [
+          <span
+            title="Translations">
+            0
+          </span>
+           / 
+          <span
+            title="Used messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          className="giu-icon fa fa-remove"
+          id={0}
+          onClick={[Function bound onRemoveLang]}
+          style={
+            Object {
+              "color": undefined,
+              "cursor": "pointer",
+              "letterSpacing": "normal"
+            }
+          }
+          title="Remove column (does NOT delete any translations)" />
+      </div>
+      <div
+        id="madyBtnAddLang"
+        onClick={[Function bound onAddLang]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "fontWeight": 900,
+            "letterSpacing": 3,
+            "padding": "3px 6px",
+            "position": "absolute",
+            "right": NaN,
+            "top": 0
+          }
+        }
+        title="Add column">
+        <i
+          className="giu-icon fa fa-plus"
+          style={
+            Object {
+              "color": undefined,
+              "cursor": "pointer",
+              "letterSpacing": "normal"
+            }
+          } />
+      </div>
+      <div
+        style={
+          Object {
+            "WebkitFlex": "0 0 NaNpx",
+            "flex": "0 0 NaNpx"
+          }
+        } />
+    </div>
+    <div
+      className="tableBody"
+      style={
+        Object {
+          "WebkitFlex": 1,
+          "display": "flex",
+          "flex": 1,
+          "flexDirection": "column",
+          "overflowY": "scroll"
+        }
+      }>
+      <div
+        changeSelectedKey={[Function changeSelectedKey]}
+        dataMockType="TranslatorRow"
+        fSelected={false}
+        langs={
+          Array [
+            "en"
+          ]
+        }
+        styleKeyCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 17
+          }
+        }
+        styleLangCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5
+          }
+        }
+        theKey={
+          Object {
+            "context": "someContext",
+            "id": "keyId1",
+            "text": "A message",
+            "translations": Object {
+              "edges": Array []
+            },
+            "unusedSince": null
+          }
+        }
+        viewer={
+          Object {
+            "config": Object {
+              "langs": Array [
+                "es",
+                "ca",
+                "en"
+              ]
+            },
+            "id": "me",
+            "keys": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId1",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array []
+                    },
+                    "unusedSince": null
+                  }
+                },
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId2",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [
+                        Object {
+                          "node": Object {
+                            "id": "translationId1",
+                            "lang": "es",
+                            "translation": "Un mensaje"
+                          }
+                        },
+                        Object {
+                          "node": Object {
+                            "id": "translationId2",
+                            "lang": "ca",
+                            "translation": "Un missatge"
+                          }
+                        }
+                      ]
+                    },
+                    "unusedSince": null
+                  }
+                }
+              ]
+            }
+          }
+        } />
+      <div
+        changeSelectedKey={[Function changeSelectedKey]}
+        dataMockType="TranslatorRow"
+        fSelected={false}
+        langs={
+          Array [
+            "en"
+          ]
+        }
+        styleKeyCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 17
+          }
+        }
+        styleLangCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5
+          }
+        }
+        theKey={
+          Object {
+            "context": "someContext",
+            "id": "keyId2",
+            "text": "A message",
+            "translations": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "id": "translationId1",
+                    "lang": "es",
+                    "translation": "Un mensaje"
+                  }
+                },
+                Object {
+                  "node": Object {
+                    "id": "translationId2",
+                    "lang": "ca",
+                    "translation": "Un missatge"
+                  }
+                }
+              ]
+            },
+            "unusedSince": null
+          }
+        }
+        viewer={
+          Object {
+            "config": Object {
+              "langs": Array [
+                "es",
+                "ca",
+                "en"
+              ]
+            },
+            "id": "me",
+            "keys": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId1",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array []
+                    },
+                    "unusedSince": null
+                  }
+                },
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId2",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [
+                        Object {
+                          "node": Object {
+                            "id": "translationId1",
+                            "lang": "es",
+                            "translation": "Un mensaje"
+                          }
+                        },
+                        Object {
+                          "node": Object {
+                            "id": "translationId2",
+                            "lang": "ca",
+                            "translation": "Un missatge"
+                          }
+                        }
+                      ]
+                    },
+                    "unusedSince": null
+                  }
+                }
+              ]
+            }
+          }
+        } />
+      <div
+        className="tableFillerRow"
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "display": "flex",
+            "flex": "1 1 0px",
+            "flexDirection": "row"
+          }
+        }>
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 17
+            }
+          }>
+          
+        </div>
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 5
+            }
+          } />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Translator allows removing columns 1`] = `
+<div>
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0
+      }
+    } />
+  <div
+    style={
+      Object {
+        "WebkitFlex": "1 0 10em",
+        "display": "flex",
+        "flex": "1 0 10em",
+        "flexDirection": "column",
+        "marginTop": 5
+      }
+    }>
+    <div
+      className="tableHeaderRow"
+      style={
+        Object {
+          "WebkitFlex": "none",
+          "display": "flex",
+          "flex": "none",
+          "flexDirection": "row",
+          "fontWeight": "bold",
+          "position": "relative"
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "borderBottom": "1px solid #1600a3",
+            "flex": "1 1 0px",
+            "fontWeight": 900,
+            "letterSpacing": 3,
+            "marginRight": 5,
+            "paddingBottom": 3,
+            "paddingLeft": 5,
+            "paddingRight": 17,
+            "paddingTop": 3,
+            "textAlign": "center"
+          }
+        }>
+        MESSAGES
+         
+        <span
+          style={
+            Object {
+              "color": "darkgrey"
+            }
+          }>
+          [
+          <span
+            title="Used messages">
+            2
+          </span>
+           / 
+          <span
+            title="Total messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          className="giu-icon fa fa-refresh"
+          onClick={[Function bound onParseSrcFiles]}
+          style={
+            Object {
+              "color": undefined,
+              "cursor": "pointer",
+              "letterSpacing": "normal"
+            }
+          }
+          title="Parse source files to update the message list" />
+      </div>
+      <div
+        className="madyLangHeader"
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "borderBottom": "1px solid #1600a3",
+            "flex": "1 1 0px",
+            "fontWeight": 900,
+            "letterSpacing": 3,
+            "marginRight": 5,
+            "paddingBottom": 3,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+            "paddingTop": 3,
+            "textAlign": "center"
+          }
+        }>
+        <div
+          style={
+            Object {
+              "display": "inline-block",
+              "paddingRight": 5,
+              "position": "relative"
+            }
+          }
+          title="Change language">
+          <i
+            className="giu-icon fa fa-caret-down"
+            style={
+              Object {
+                "color": undefined,
+                "cursor": "pointer",
+                "letterSpacing": "normal",
+                "marginRight": 5
+              }
+            } />
+          es
+          <select
+            className="giu-select-native"
+            id={0}
+            onBlur={[Function bound onBlur]}
+            onChange={[Function bound onChange]}
+            onCopy={undefined}
+            onCut={undefined}
+            onFocus={[Function bound onFocus]}
+            onPaste={undefined}
+            style={
+              Object {
+                "backgroundColor": "default",
+                "border": "default",
+                "color": "inherit",
+                "cursor": "pointer",
+                "fontFamily": "inherit",
+                "fontSize": "inherit",
+                "fontWeight": "inherit",
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "top": 0,
+                "width": "100%"
+              }
+            }
+            tabIndex={undefined}
+            value=""es"">
+            <option
+              id=""es""
+              value=""es"">
+              es
+            </option>
+            <option
+              id=""ca""
+              value=""ca"">
+              ca
+            </option>
+            <option
+              id=""en""
+              value=""en"">
+              en
+            </option>
+          </select>
+        </div>
+         
+        <span
+          style={
+            Object {
+              "color": "darkgrey"
+            }
+          }>
+          [
+          <span
+            title="Translations">
+            1
+          </span>
+           / 
+          <span
+            title="Used messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          className="giu-icon fa fa-remove"
+          id={0}
+          onClick={[Function bound onRemoveLang]}
+          style={
+            Object {
+              "color": undefined,
+              "cursor": "pointer",
+              "letterSpacing": "normal"
+            }
+          }
+          title="Remove column (does NOT delete any translations)" />
+      </div>
+      <div
+        id="madyBtnAddLang"
+        onClick={[Function bound onAddLang]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "fontWeight": 900,
+            "letterSpacing": 3,
+            "padding": "3px 6px",
+            "position": "absolute",
+            "right": NaN,
+            "top": 0
+          }
+        }
+        title="Add column">
+        <i
+          className="giu-icon fa fa-plus"
+          style={
+            Object {
+              "color": undefined,
+              "cursor": "pointer",
+              "letterSpacing": "normal"
+            }
+          } />
+      </div>
+      <div
+        style={
+          Object {
+            "WebkitFlex": "0 0 NaNpx",
+            "flex": "0 0 NaNpx"
+          }
+        } />
+    </div>
+    <div
+      className="tableBody"
+      style={
+        Object {
+          "WebkitFlex": 1,
+          "display": "flex",
+          "flex": 1,
+          "flexDirection": "column",
+          "overflowY": "scroll"
+        }
+      }>
+      <div
+        changeSelectedKey={[Function changeSelectedKey]}
+        dataMockType="TranslatorRow"
+        fSelected={false}
+        langs={
+          Array [
+            "es"
+          ]
+        }
+        styleKeyCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 17
+          }
+        }
+        styleLangCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5
+          }
+        }
+        theKey={
+          Object {
+            "context": "someContext",
+            "id": "keyId1",
+            "text": "A message",
+            "translations": Object {
+              "edges": Array []
+            },
+            "unusedSince": null
+          }
+        }
+        viewer={
+          Object {
+            "config": Object {
+              "langs": Array [
+                "es",
+                "ca",
+                "en"
+              ]
+            },
+            "id": "me",
+            "keys": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId1",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array []
+                    },
+                    "unusedSince": null
+                  }
+                },
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId2",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [
+                        Object {
+                          "node": Object {
+                            "id": "translationId1",
+                            "lang": "es",
+                            "translation": "Un mensaje"
+                          }
+                        },
+                        Object {
+                          "node": Object {
+                            "id": "translationId2",
+                            "lang": "ca",
+                            "translation": "Un missatge"
+                          }
+                        }
+                      ]
+                    },
+                    "unusedSince": null
+                  }
+                }
+              ]
+            }
+          }
+        } />
+      <div
+        changeSelectedKey={[Function changeSelectedKey]}
+        dataMockType="TranslatorRow"
+        fSelected={false}
+        langs={
+          Array [
+            "es"
+          ]
+        }
+        styleKeyCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 17
+          }
+        }
+        styleLangCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5
+          }
+        }
+        theKey={
+          Object {
+            "context": "someContext",
+            "id": "keyId2",
+            "text": "A message",
+            "translations": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "id": "translationId1",
+                    "lang": "es",
+                    "translation": "Un mensaje"
+                  }
+                },
+                Object {
+                  "node": Object {
+                    "id": "translationId2",
+                    "lang": "ca",
+                    "translation": "Un missatge"
+                  }
+                }
+              ]
+            },
+            "unusedSince": null
+          }
+        }
+        viewer={
+          Object {
+            "config": Object {
+              "langs": Array [
+                "es",
+                "ca",
+                "en"
+              ]
+            },
+            "id": "me",
+            "keys": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId1",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array []
+                    },
+                    "unusedSince": null
+                  }
+                },
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId2",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [
+                        Object {
+                          "node": Object {
+                            "id": "translationId1",
+                            "lang": "es",
+                            "translation": "Un mensaje"
+                          }
+                        },
+                        Object {
+                          "node": Object {
+                            "id": "translationId2",
+                            "lang": "ca",
+                            "translation": "Un missatge"
+                          }
+                        }
+                      ]
+                    },
+                    "unusedSince": null
+                  }
+                }
+              ]
+            }
+          }
+        } />
+      <div
+        className="tableFillerRow"
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "display": "flex",
+            "flex": "1 1 0px",
+            "flexDirection": "row"
+          }
+        }>
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 17
+            }
+          }>
+          
+        </div>
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 5
+            }
+          } />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Translator renders correctly with a selection 1`] = `
 <div>
   <div
@@ -84,6 +1539,7 @@ exports[`Translator renders correctly with a selection 1`] = `
           title="Parse source files to update the message list" />
       </div>
       <div
+        className="madyLangHeader"
         style={
           Object {
             "WebkitFlex": "1 1 0px",
@@ -198,6 +1654,7 @@ exports[`Translator renders correctly with a selection 1`] = `
           title="Remove column (does NOT delete any translations)" />
       </div>
       <div
+        className="madyLangHeader"
         style={
           Object {
             "WebkitFlex": "1 1 0px",
@@ -312,6 +1769,7 @@ exports[`Translator renders correctly with a selection 1`] = `
           title="Remove column (does NOT delete any translations)" />
       </div>
       <div
+        className="madyLangHeader"
         style={
           Object {
             "WebkitFlex": "1 1 0px",
@@ -823,6 +2281,7 @@ exports[`Translator renders correctly with default columns 1`] = `
           title="Parse source files to update the message list" />
       </div>
       <div
+        className="madyLangHeader"
         style={
           Object {
             "WebkitFlex": "1 1 0px",
@@ -1307,6 +2766,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
           title="Parse source files to update the message list" />
       </div>
       <div
+        className="madyLangHeader"
         style={
           Object {
             "WebkitFlex": "1 1 0px",
@@ -1421,6 +2881,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
           title="Remove column (does NOT delete any translations)" />
       </div>
       <div
+        className="madyLangHeader"
         style={
           Object {
             "WebkitFlex": "1 1 0px",
@@ -1918,6 +3379,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
           title="Parse source files to update the message list" />
       </div>
       <div
+        className="madyLangHeader"
         style={
           Object {
             "WebkitFlex": "1 1 0px",
@@ -2032,6 +3494,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
           title="Remove column (does NOT delete any translations)" />
       </div>
       <div
+        className="madyLangHeader"
         style={
           Object {
             "WebkitFlex": "1 1 0px",
@@ -2146,6 +3609,1056 @@ exports[`Translator renders correctly with fixed columns using up all available 
           title="Remove column (does NOT delete any translations)" />
       </div>
       <div
+        className="madyLangHeader"
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "borderBottom": "1px solid #1600a3",
+            "flex": "1 1 0px",
+            "fontWeight": 900,
+            "letterSpacing": 3,
+            "marginRight": 5,
+            "paddingBottom": 3,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+            "paddingTop": 3,
+            "textAlign": "center"
+          }
+        }>
+        <div
+          style={
+            Object {
+              "display": "inline-block",
+              "paddingRight": 5,
+              "position": "relative"
+            }
+          }
+          title="Change language">
+          <i
+            className="giu-icon fa fa-caret-down"
+            style={
+              Object {
+                "color": undefined,
+                "cursor": "pointer",
+                "letterSpacing": "normal",
+                "marginRight": 5
+              }
+            } />
+          en
+          <select
+            className="giu-select-native"
+            id={2}
+            onBlur={[Function bound onBlur]}
+            onChange={[Function bound onChange]}
+            onCopy={undefined}
+            onCut={undefined}
+            onFocus={[Function bound onFocus]}
+            onPaste={undefined}
+            style={
+              Object {
+                "backgroundColor": "default",
+                "border": "default",
+                "color": "inherit",
+                "cursor": "pointer",
+                "fontFamily": "inherit",
+                "fontSize": "inherit",
+                "fontWeight": "inherit",
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "top": 0,
+                "width": "100%"
+              }
+            }
+            tabIndex={undefined}
+            value="\"en\"">
+            <option
+              id="\"es\""
+              value="\"es\"">
+              es
+            </option>
+            <option
+              id="\"ca\""
+              value="\"ca\"">
+              ca
+            </option>
+            <option
+              id="\"en\""
+              value="\"en\"">
+              en
+            </option>
+          </select>
+        </div>
+         
+        <span
+          style={
+            Object {
+              "color": "darkgrey"
+            }
+          }>
+          [
+          <span
+            title="Translations">
+            0
+          </span>
+           / 
+          <span
+            title="Used messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          className="giu-icon fa fa-remove"
+          id={2}
+          onClick={[Function bound onRemoveLang]}
+          style={
+            Object {
+              "color": undefined,
+              "cursor": "pointer",
+              "letterSpacing": "normal"
+            }
+          }
+          title="Remove column (does NOT delete any translations)" />
+      </div>
+      <div
+        id="madyBtnAddLang"
+        onClick={undefined}
+        style={
+          Object {
+            "cursor": undefined,
+            "fontWeight": 900,
+            "letterSpacing": 3,
+            "padding": "3px 6px",
+            "position": "absolute",
+            "right": NaN,
+            "top": 0
+          }
+        }
+        title="Add column">
+        <i
+          className="giu-icon fa fa-plus"
+          onClick={undefined}
+          style={
+            Object {
+              "color": "#999999",
+              "cursor": undefined,
+              "letterSpacing": "normal"
+            }
+          } />
+      </div>
+      <div
+        style={
+          Object {
+            "WebkitFlex": "0 0 NaNpx",
+            "flex": "0 0 NaNpx"
+          }
+        } />
+    </div>
+    <div
+      className="tableBody"
+      style={
+        Object {
+          "WebkitFlex": 1,
+          "display": "flex",
+          "flex": 1,
+          "flexDirection": "column",
+          "overflowY": "scroll"
+        }
+      }>
+      <div
+        changeSelectedKey={[Function changeSelectedKey]}
+        dataMockType="TranslatorRow"
+        fSelected={false}
+        langs={
+          Array [
+            "ca",
+            "es",
+            "en"
+          ]
+        }
+        styleKeyCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 17
+          }
+        }
+        styleLangCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5
+          }
+        }
+        theKey={
+          Object {
+            "context": "someContext",
+            "id": "keyId1",
+            "text": "A message",
+            "translations": Object {
+              "edges": Array []
+            },
+            "unusedSince": null
+          }
+        }
+        viewer={
+          Object {
+            "config": Object {
+              "langs": Array [
+                "es",
+                "ca",
+                "en"
+              ]
+            },
+            "id": "me",
+            "keys": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId1",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array []
+                    },
+                    "unusedSince": null
+                  }
+                },
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId2",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [
+                        Object {
+                          "node": Object {
+                            "id": "translationId1",
+                            "lang": "es",
+                            "translation": "Un mensaje"
+                          }
+                        },
+                        Object {
+                          "node": Object {
+                            "id": "translationId2",
+                            "lang": "ca",
+                            "translation": "Un missatge"
+                          }
+                        }
+                      ]
+                    },
+                    "unusedSince": null
+                  }
+                }
+              ]
+            }
+          }
+        } />
+      <div
+        changeSelectedKey={[Function changeSelectedKey]}
+        dataMockType="TranslatorRow"
+        fSelected={false}
+        langs={
+          Array [
+            "ca",
+            "es",
+            "en"
+          ]
+        }
+        styleKeyCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 17
+          }
+        }
+        styleLangCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5
+          }
+        }
+        theKey={
+          Object {
+            "context": "someContext",
+            "id": "keyId2",
+            "text": "A message",
+            "translations": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "id": "translationId1",
+                    "lang": "es",
+                    "translation": "Un mensaje"
+                  }
+                },
+                Object {
+                  "node": Object {
+                    "id": "translationId2",
+                    "lang": "ca",
+                    "translation": "Un missatge"
+                  }
+                }
+              ]
+            },
+            "unusedSince": null
+          }
+        }
+        viewer={
+          Object {
+            "config": Object {
+              "langs": Array [
+                "es",
+                "ca",
+                "en"
+              ]
+            },
+            "id": "me",
+            "keys": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId1",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array []
+                    },
+                    "unusedSince": null
+                  }
+                },
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId2",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [
+                        Object {
+                          "node": Object {
+                            "id": "translationId1",
+                            "lang": "es",
+                            "translation": "Un mensaje"
+                          }
+                        },
+                        Object {
+                          "node": Object {
+                            "id": "translationId2",
+                            "lang": "ca",
+                            "translation": "Un missatge"
+                          }
+                        }
+                      ]
+                    },
+                    "unusedSince": null
+                  }
+                }
+              ]
+            }
+          }
+        } />
+      <div
+        className="tableFillerRow"
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "display": "flex",
+            "flex": "1 1 0px",
+            "flexDirection": "row"
+          }
+        }>
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 17
+            }
+          }>
+          
+        </div>
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 5
+            }
+          } />
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 5
+            }
+          } />
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 5
+            }
+          } />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Translator renders correctly with no content 1`] = `
+<div>
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0
+      }
+    } />
+  <div
+    style={
+      Object {
+        "WebkitFlex": "1 0 10em",
+        "display": "flex",
+        "flex": "1 0 10em",
+        "flexDirection": "column",
+        "marginTop": 5
+      }
+    }>
+    <div
+      className="tableHeaderRow"
+      style={
+        Object {
+          "WebkitFlex": "none",
+          "display": "flex",
+          "flex": "none",
+          "flexDirection": "row",
+          "fontWeight": "bold",
+          "position": "relative"
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "borderBottom": "1px solid #1600a3",
+            "flex": "1 1 0px",
+            "fontWeight": 900,
+            "letterSpacing": 3,
+            "marginRight": 5,
+            "paddingBottom": 3,
+            "paddingLeft": 5,
+            "paddingRight": 17,
+            "paddingTop": 3,
+            "textAlign": "center"
+          }
+        }>
+        MESSAGES
+         
+        <span
+          style={
+            Object {
+              "color": "darkgrey"
+            }
+          }>
+          [
+          <span
+            title="Used messages">
+            0
+          </span>
+           / 
+          <span
+            title="Total messages">
+            0
+          </span>
+          ]
+        </span>
+         
+        <i
+          className="giu-icon fa fa-refresh"
+          onClick={[Function bound onParseSrcFiles]}
+          style={
+            Object {
+              "color": undefined,
+              "cursor": "pointer",
+              "letterSpacing": "normal"
+            }
+          }
+          title="Parse source files to update the message list" />
+      </div>
+      <div
+        className="madyLangHeader"
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "borderBottom": "1px solid #1600a3",
+            "flex": "1 1 0px",
+            "fontWeight": 900,
+            "letterSpacing": 3,
+            "marginRight": 5,
+            "paddingBottom": 3,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+            "paddingTop": 3,
+            "textAlign": "center"
+          }
+        }>
+        <div
+          style={
+            Object {
+              "display": "inline-block",
+              "paddingRight": 5,
+              "position": "relative"
+            }
+          }
+          title="Change language">
+          <i
+            className="giu-icon fa fa-caret-down"
+            style={
+              Object {
+                "color": undefined,
+                "cursor": "pointer",
+                "letterSpacing": "normal",
+                "marginRight": 5
+              }
+            } />
+          es
+          <select
+            className="giu-select-native"
+            id={0}
+            onBlur={[Function bound onBlur]}
+            onChange={[Function bound onChange]}
+            onCopy={undefined}
+            onCut={undefined}
+            onFocus={[Function bound onFocus]}
+            onPaste={undefined}
+            style={
+              Object {
+                "backgroundColor": "default",
+                "border": "default",
+                "color": "inherit",
+                "cursor": "pointer",
+                "fontFamily": "inherit",
+                "fontSize": "inherit",
+                "fontWeight": "inherit",
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "top": 0,
+                "width": "100%"
+              }
+            }
+            tabIndex={undefined}
+            value="\"es\"">
+            <option
+              id="\"es\""
+              value="\"es\"">
+              es
+            </option>
+            <option
+              id="\"ca\""
+              value="\"ca\"">
+              ca
+            </option>
+            <option
+              id="\"en\""
+              value="\"en\"">
+              en
+            </option>
+          </select>
+        </div>
+         
+        <span
+          style={
+            Object {
+              "color": "darkgrey"
+            }
+          }>
+          [
+          <span
+            title="Translations">
+            0
+          </span>
+           / 
+          <span
+            title="Used messages">
+            0
+          </span>
+          ]
+        </span>
+         
+        <i
+          className="giu-icon fa fa-remove"
+          id={0}
+          onClick={[Function bound onRemoveLang]}
+          style={
+            Object {
+              "color": undefined,
+              "cursor": "pointer",
+              "letterSpacing": "normal"
+            }
+          }
+          title="Remove column (does NOT delete any translations)" />
+      </div>
+      <div
+        id="madyBtnAddLang"
+        onClick={[Function bound onAddLang]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "fontWeight": 900,
+            "letterSpacing": 3,
+            "padding": "3px 6px",
+            "position": "absolute",
+            "right": NaN,
+            "top": 0
+          }
+        }
+        title="Add column">
+        <i
+          className="giu-icon fa fa-plus"
+          style={
+            Object {
+              "color": undefined,
+              "cursor": "pointer",
+              "letterSpacing": "normal"
+            }
+          } />
+      </div>
+      <div
+        style={
+          Object {
+            "WebkitFlex": "0 0 NaNpx",
+            "flex": "0 0 NaNpx"
+          }
+        } />
+    </div>
+    <div
+      className="tableBody"
+      style={
+        Object {
+          "WebkitFlex": 1,
+          "display": "flex",
+          "flex": 1,
+          "flexDirection": "column",
+          "overflowY": "scroll"
+        }
+      }>
+      <div
+        className="tableFillerRow"
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "display": "flex",
+            "flex": "1 1 0px",
+            "flexDirection": "row"
+          }
+        }>
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 17
+            }
+          }>
+          <div
+            className="giu-large-message"
+            style={
+              Object {
+                "color": "#999999",
+                "fontSize": "1.4em",
+                "fontWeight": 700,
+                "padding": "0.8em",
+                "textAlign": "center"
+              }
+            }>
+            No messages. Click on 
+            <i
+              className="giu-icon fa fa-refresh"
+              onClick={undefined}
+              style={
+                Object {
+                  "color": "#999999",
+                  "cursor": undefined,
+                  "letterSpacing": "normal"
+                }
+              } />
+             to refresh
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 5
+            }
+          } />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Translator when adding a column, it corresponds to a new language 1`] = `
+<div>
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0
+      }
+    } />
+  <div
+    style={
+      Object {
+        "WebkitFlex": "1 0 10em",
+        "display": "flex",
+        "flex": "1 0 10em",
+        "flexDirection": "column",
+        "marginTop": 5
+      }
+    }>
+    <div
+      className="tableHeaderRow"
+      style={
+        Object {
+          "WebkitFlex": "none",
+          "display": "flex",
+          "flex": "none",
+          "flexDirection": "row",
+          "fontWeight": "bold",
+          "position": "relative"
+        }
+      }>
+      <div
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "borderBottom": "1px solid #1600a3",
+            "flex": "1 1 0px",
+            "fontWeight": 900,
+            "letterSpacing": 3,
+            "marginRight": 5,
+            "paddingBottom": 3,
+            "paddingLeft": 5,
+            "paddingRight": 17,
+            "paddingTop": 3,
+            "textAlign": "center"
+          }
+        }>
+        MESSAGES
+         
+        <span
+          style={
+            Object {
+              "color": "darkgrey"
+            }
+          }>
+          [
+          <span
+            title="Used messages">
+            2
+          </span>
+           / 
+          <span
+            title="Total messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          className="giu-icon fa fa-refresh"
+          onClick={[Function bound onParseSrcFiles]}
+          style={
+            Object {
+              "color": undefined,
+              "cursor": "pointer",
+              "letterSpacing": "normal"
+            }
+          }
+          title="Parse source files to update the message list" />
+      </div>
+      <div
+        className="madyLangHeader"
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "borderBottom": "1px solid #1600a3",
+            "flex": "1 1 0px",
+            "fontWeight": 900,
+            "letterSpacing": 3,
+            "marginRight": 5,
+            "paddingBottom": 3,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+            "paddingTop": 3,
+            "textAlign": "center"
+          }
+        }>
+        <div
+          style={
+            Object {
+              "display": "inline-block",
+              "paddingRight": 5,
+              "position": "relative"
+            }
+          }
+          title="Change language">
+          <i
+            className="giu-icon fa fa-caret-down"
+            style={
+              Object {
+                "color": undefined,
+                "cursor": "pointer",
+                "letterSpacing": "normal",
+                "marginRight": 5
+              }
+            } />
+          ca
+          <select
+            className="giu-select-native"
+            id={0}
+            onBlur={[Function bound onBlur]}
+            onChange={[Function bound onChange]}
+            onCopy={undefined}
+            onCut={undefined}
+            onFocus={[Function bound onFocus]}
+            onPaste={undefined}
+            style={
+              Object {
+                "backgroundColor": "default",
+                "border": "default",
+                "color": "inherit",
+                "cursor": "pointer",
+                "fontFamily": "inherit",
+                "fontSize": "inherit",
+                "fontWeight": "inherit",
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "top": 0,
+                "width": "100%"
+              }
+            }
+            tabIndex={undefined}
+            value="\"ca\"">
+            <option
+              id="\"es\""
+              value="\"es\"">
+              es
+            </option>
+            <option
+              id="\"ca\""
+              value="\"ca\"">
+              ca
+            </option>
+            <option
+              id="\"en\""
+              value="\"en\"">
+              en
+            </option>
+          </select>
+        </div>
+         
+        <span
+          style={
+            Object {
+              "color": "darkgrey"
+            }
+          }>
+          [
+          <span
+            title="Translations">
+            1
+          </span>
+           / 
+          <span
+            title="Used messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          className="giu-icon fa fa-remove"
+          id={0}
+          onClick={[Function bound onRemoveLang]}
+          style={
+            Object {
+              "color": undefined,
+              "cursor": "pointer",
+              "letterSpacing": "normal"
+            }
+          }
+          title="Remove column (does NOT delete any translations)" />
+      </div>
+      <div
+        className="madyLangHeader"
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "borderBottom": "1px solid #1600a3",
+            "flex": "1 1 0px",
+            "fontWeight": 900,
+            "letterSpacing": 3,
+            "marginRight": 5,
+            "paddingBottom": 3,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+            "paddingTop": 3,
+            "textAlign": "center"
+          }
+        }>
+        <div
+          style={
+            Object {
+              "display": "inline-block",
+              "paddingRight": 5,
+              "position": "relative"
+            }
+          }
+          title="Change language">
+          <i
+            className="giu-icon fa fa-caret-down"
+            style={
+              Object {
+                "color": undefined,
+                "cursor": "pointer",
+                "letterSpacing": "normal",
+                "marginRight": 5
+              }
+            } />
+          es
+          <select
+            className="giu-select-native"
+            id={1}
+            onBlur={[Function bound onBlur]}
+            onChange={[Function bound onChange]}
+            onCopy={undefined}
+            onCut={undefined}
+            onFocus={[Function bound onFocus]}
+            onPaste={undefined}
+            style={
+              Object {
+                "backgroundColor": "default",
+                "border": "default",
+                "color": "inherit",
+                "cursor": "pointer",
+                "fontFamily": "inherit",
+                "fontSize": "inherit",
+                "fontWeight": "inherit",
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "top": 0,
+                "width": "100%"
+              }
+            }
+            tabIndex={undefined}
+            value="\"es\"">
+            <option
+              id="\"es\""
+              value="\"es\"">
+              es
+            </option>
+            <option
+              id="\"ca\""
+              value="\"ca\"">
+              ca
+            </option>
+            <option
+              id="\"en\""
+              value="\"en\"">
+              en
+            </option>
+          </select>
+        </div>
+         
+        <span
+          style={
+            Object {
+              "color": "darkgrey"
+            }
+          }>
+          [
+          <span
+            title="Translations">
+            1
+          </span>
+           / 
+          <span
+            title="Used messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          className="giu-icon fa fa-remove"
+          id={1}
+          onClick={[Function bound onRemoveLang]}
+          style={
+            Object {
+              "color": undefined,
+              "cursor": "pointer",
+              "letterSpacing": "normal"
+            }
+          }
+          title="Remove column (does NOT delete any translations)" />
+      </div>
+      <div
+        className="madyLangHeader"
         style={
           Object {
             "WebkitFlex": "1 1 0px",
