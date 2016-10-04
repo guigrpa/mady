@@ -53,7 +53,7 @@ const getRegexps = (msgFunctionNames) => {
   return out;
 };
 
-export default function parse({ srcPaths, srcExtensions, msgFunctionNames, story }) {
+const parse = ({ srcPaths, srcExtensions, msgFunctionNames, story }) => {
   const regexpFunctionNames = getRegexps(msgFunctionNames);
   const keys = {};
   const diveOptions = { filter: (filePath, fDir) => {
@@ -64,31 +64,35 @@ export default function parse({ srcPaths, srcExtensions, msgFunctionNames, story
     const finalFilePath = path.normalize(filePath);
     story.info('parser', `Processing ${chalk.cyan.bold(finalFilePath)}...`);
     const fileContents = fs.readFileSync(finalFilePath);
-    regexpFunctionNames.forEach((re) => {
-      let match;
-      while ((match = re.exec(fileContents))) {
-        addMessageToKeys(keys, match[1], finalFilePath);
-      }
-    });
-
-    // React-intl strings
-    if (fReactIntl) {
-      try {
-        const { messages } = babelCore.transform(fileContents, babelConfig).metadata['react-intl'];
-        if (messages) {
-          messages.forEach((message) => {
-            const { defaultMessage: utf8, description, id: reactIntlId } = message;
-            addMessageToKeys(keys, utf8, finalFilePath, { reactIntlId, description });
-          });
-        }
-      } catch (err2) {
-        story.error('parser', 'Error extracting React Intl messages', { attach: err2 });
-      }
-    }
+    parseFunctionCalls(keys, finalFilePath, fileContents, regexpFunctionNames);
+    if (fReactIntl) parseReactIntl(keys, finalFilePath, fileContents, story);
   };
   srcPaths.forEach((srcPath) => diveSync(srcPath, diveOptions, diveProcess));
   return keys;
-}
+};
+
+const parseFunctionCalls = (keys, filePath, fileContents, regexpFunctionNames) => {
+  regexpFunctionNames.forEach((re) => {
+    let match;
+    while ((match = re.exec(fileContents))) {
+      addMessageToKeys(keys, match[1], filePath);
+    }
+  });
+};
+
+const parseReactIntl = (keys, filePath, fileContents, story) => {
+  try {
+    const { messages } = babelCore.transform(fileContents, babelConfig).metadata['react-intl'];
+    if (messages) {
+      messages.forEach((message) => {
+        const { defaultMessage: utf8, description, id: reactIntlId } = message;
+        addMessageToKeys(keys, utf8, filePath, { reactIntlId, description });
+      });
+    }
+  } catch (err2) {
+    story.error('parser', 'Error extracting React Intl messages', { attach: err2 });
+  }
+};
 
 const addMessageToKeys = (keys, utf8, filePath, extras = {}) => {
   const tokens = utf8.split('_');
@@ -113,4 +117,16 @@ const addMessageToKeys = (keys, utf8, filePath, extras = {}) => {
     sources: [],
   };
   keys[base64].sources.push(slash(filePath));
+};
+
+// ======================================================
+// Public API
+// ======================================================
+export default parse;
+
+// Only for unit tests
+export {
+  getRegexps as _getRegexps,
+  parseFunctionCalls as _parseFunctionCalls,
+  parseReactIntl as _parseReactIntl,
 };

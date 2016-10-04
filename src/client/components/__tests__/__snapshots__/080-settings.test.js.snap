@@ -8,14 +8,14 @@ exports[`Settings renders correctly 1`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 0
+        "width": 0,
       }
     } />
   <div
     className="giu-modal"
     id={undefined}
-    onClick={[Function bound onClickOuter]}
-    onKeyDown={[Function bound onKeyDown]}
+    onClick={[Function]}
+    onKeyDown={[Function]}
     style={
       Object {
         "height": "100vh",
@@ -23,14 +23,14 @@ exports[`Settings renders correctly 1`] = `
         "position": "fixed",
         "top": 0,
         "width": "100vw",
-        "zIndex": 50
+        "zIndex": 50,
       }
     }>
     <div
       className="giu-backdrop"
-      onClick={[Function bound onCancel]}
-      onTouchMove={[Function cancelEvent]}
-      onWheel={[Function cancelEvent]}
+      onClick={[Function]}
+      onTouchMove={[Function]}
+      onWheel={[Function]}
       style={
         Object {
           "backgroundColor": "white",
@@ -39,7 +39,7 @@ exports[`Settings renders correctly 1`] = `
           "opacity": 0.7,
           "position": "fixed",
           "top": 0,
-          "width": "100vw"
+          "width": "100vw",
         }
       } />
     <div
@@ -50,22 +50,22 @@ exports[`Settings renders correctly 1`] = `
           "left": 0,
           "position": "fixed",
           "top": "5vh",
-          "width": "100%"
+          "width": "100%",
         }
       }>
       <div
-        onClick={[Function bound onCancel]}
-        onTouchMove={[Function cancelEvent]}
-        onWheel={[Function cancelEvent]}
+        onClick={[Function]}
+        onTouchMove={[Function]}
+        onWheel={[Function]}
         style={
           Object {
             "WebkitFlex": 1,
-            "flex": 1
+            "flex": 1,
           }
         } />
       <div
-        onScroll={[Function floatReposition]}
-        onWheel={[Function cancelBodyScrolling]}
+        onScroll={[Function]}
+        onWheel={[Function]}
         style={
           Object {
             "backgroundColor": "white",
@@ -73,7 +73,7 @@ exports[`Settings renders correctly 1`] = `
             "boxShadow": "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)",
             "maxHeight": "90vh",
             "overflowY": "auto",
-            "padding": 20
+            "padding": 20,
           }
         }>
         <input
@@ -89,7 +89,7 @@ exports[`Settings renders correctly 1`] = `
               "position": "fixed",
               "top": 8,
               "width": 0,
-              "zIndex": -80
+              "zIndex": -80,
             }
           }
           tabIndex={undefined} />
@@ -97,7 +97,7 @@ exports[`Settings renders correctly 1`] = `
           <div
             style={
               Object {
-                "marginTop": 7
+                "marginTop": 7,
               }
             }>
             <label
@@ -107,11 +107,11 @@ exports[`Settings renders correctly 1`] = `
              
             <select
               className="giu-select-native"
-              onBlur={[Function bound onBlur]}
-              onChange={[Function bound onChange]}
+              onBlur={[Function]}
+              onChange={[Function]}
               onCopy={undefined}
               onCut={undefined}
-              onFocus={[Function bound onFocus]}
+              onFocus={[Function]}
               onPaste={undefined}
               style={
                 Object {
@@ -120,7 +120,7 @@ exports[`Settings renders correctly 1`] = `
                   "color": "inherit",
                   "fontFamily": "inherit",
                   "fontSize": "inherit",
-                  "fontWeight": "inherit"
+                  "fontWeight": "inherit",
                 }
               }
               tabIndex={undefined}
@@ -146,7 +146,7 @@ exports[`Settings renders correctly 1`] = `
             style={
               Object {
                 "marginBottom": 3,
-                "marginTop": 7
+                "marginTop": 7,
               }
             }>
             Languages (BCP47 codes):
@@ -156,7 +156,7 @@ exports[`Settings renders correctly 1`] = `
               Object {
                 "display": "flex",
                 "flexDirection": "row",
-                "marginLeft": 15
+                "marginLeft": 15,
               }
             }>
             <div
@@ -165,17 +165,17 @@ exports[`Settings renders correctly 1`] = `
                   "marginRight": 10,
                   "marginTop": undefined,
                   "padding": "0px 2px",
-                  "whiteSpace": "nowrap"
+                  "whiteSpace": "nowrap",
                 }
               }>
               <input
                 className="giu-text-input"
                 id="langs.0"
-                onBlur={[Function bound onBlur]}
-                onChange={[Function bound onChange]}
+                onBlur={[Function]}
+                onChange={[Function]}
                 onCopy={undefined}
                 onCut={undefined}
-                onFocus={[Function bound onFocus]}
+                onFocus={[Function]}
                 onPaste={undefined}
                 orient={undefined}
                 placeholder="e.g. es-ES, ca…"
@@ -187,7 +187,7 @@ exports[`Settings renders correctly 1`] = `
                     "fontFamily": "inherit",
                     "fontSize": "inherit",
                     "fontWeight": "inherit",
-                    "width": 80
+                    "width": 80,
                   }
                 }
                 tabIndex={undefined}
@@ -197,12 +197,12 @@ exports[`Settings renders correctly 1`] = `
               <i
                 className="giu-icon fa fa-remove"
                 id="langs.0"
-                onClick={[Function bound onRemoveListItem]}
+                onClick={[Function]}
                 style={
                   Object {
                     "color": "#444",
                     "cursor": "pointer",
-                    "letterSpacing": "normal"
+                    "letterSpacing": "normal",
                   }
                 } />
             </div>
@@ -212,17 +212,17 @@ exports[`Settings renders correctly 1`] = `
                   "marginRight": 10,
                   "marginTop": undefined,
                   "padding": "0px 2px",
-                  "whiteSpace": "nowrap"
+                  "whiteSpace": "nowrap",
                 }
               }>
               <input
                 className="giu-text-input"
                 id="langs.1"
-                onBlur={[Function bound onBlur]}
-                onChange={[Function bound onChange]}
+                onBlur={[Function]}
+                onChange={[Function]}
                 onCopy={undefined}
                 onCut={undefined}
-                onFocus={[Function bound onFocus]}
+                onFocus={[Function]}
                 onPaste={undefined}
                 orient={undefined}
                 placeholder="e.g. es-ES, ca…"
@@ -234,7 +234,7 @@ exports[`Settings renders correctly 1`] = `
                     "fontFamily": "inherit",
                     "fontSize": "inherit",
                     "fontWeight": "inherit",
-                    "width": 80
+                    "width": 80,
                   }
                 }
                 tabIndex={undefined}
@@ -244,26 +244,26 @@ exports[`Settings renders correctly 1`] = `
               <i
                 className="giu-icon fa fa-remove"
                 id="langs.1"
-                onClick={[Function bound onRemoveListItem]}
+                onClick={[Function]}
                 style={
                   Object {
                     "color": "#444",
                     "cursor": "pointer",
-                    "letterSpacing": "normal"
+                    "letterSpacing": "normal",
                   }
                 } />
             </div>
             <i
               className="giu-icon fa fa-plus"
               id="langs"
-              onClick={[Function bound onCreateListItem]}
+              onClick={[Function]}
               style={
                 Object {
                   "color": "#444",
                   "cursor": "pointer",
                   "display": "inline-block",
                   "letterSpacing": "normal",
-                  "marginTop": 5
+                  "marginTop": 5,
                 }
               } />
           </div>
@@ -271,7 +271,7 @@ exports[`Settings renders correctly 1`] = `
             style={
               Object {
                 "marginBottom": 3,
-                "marginTop": 7
+                "marginTop": 7,
               }
             }>
             Source paths:
@@ -281,7 +281,7 @@ exports[`Settings renders correctly 1`] = `
               Object {
                 "display": "flex",
                 "flexDirection": "column",
-                "marginLeft": 15
+                "marginLeft": 15,
               }
             }>
             <div
@@ -290,17 +290,17 @@ exports[`Settings renders correctly 1`] = `
                   "marginRight": 10,
                   "marginTop": 1,
                   "padding": "0px 2px",
-                  "whiteSpace": "nowrap"
+                  "whiteSpace": "nowrap",
                 }
               }>
               <input
                 className="giu-text-input"
                 id="srcPaths.0"
-                onBlur={[Function bound onBlur]}
-                onChange={[Function bound onChange]}
+                onBlur={[Function]}
+                onChange={[Function]}
                 onCopy={undefined}
                 onCut={undefined}
-                onFocus={[Function bound onFocus]}
+                onFocus={[Function]}
                 onPaste={undefined}
                 orient={undefined}
                 placeholder="e.g. src/client"
@@ -312,7 +312,7 @@ exports[`Settings renders correctly 1`] = `
                     "fontFamily": "inherit",
                     "fontSize": "inherit",
                     "fontWeight": "inherit",
-                    "width": 300
+                    "width": 300,
                   }
                 }
                 tabIndex={undefined}
@@ -322,26 +322,26 @@ exports[`Settings renders correctly 1`] = `
               <i
                 className="giu-icon fa fa-remove"
                 id="srcPaths.0"
-                onClick={[Function bound onRemoveListItem]}
+                onClick={[Function]}
                 style={
                   Object {
                     "color": "#444",
                     "cursor": "pointer",
-                    "letterSpacing": "normal"
+                    "letterSpacing": "normal",
                   }
                 } />
             </div>
             <i
               className="giu-icon fa fa-plus"
               id="srcPaths"
-              onClick={[Function bound onCreateListItem]}
+              onClick={[Function]}
               style={
                 Object {
                   "color": "#444",
                   "cursor": "pointer",
                   "display": "inline-block",
                   "letterSpacing": "normal",
-                  "marginTop": 5
+                  "marginTop": 5,
                 }
               } />
           </div>
@@ -349,7 +349,7 @@ exports[`Settings renders correctly 1`] = `
             style={
               Object {
                 "marginBottom": 3,
-                "marginTop": 7
+                "marginTop": 7,
               }
             }>
             Source extensions:
@@ -359,7 +359,7 @@ exports[`Settings renders correctly 1`] = `
               Object {
                 "display": "flex",
                 "flexDirection": "row",
-                "marginLeft": 15
+                "marginLeft": 15,
               }
             }>
             <div
@@ -368,17 +368,17 @@ exports[`Settings renders correctly 1`] = `
                   "marginRight": 10,
                   "marginTop": undefined,
                   "padding": "0px 2px",
-                  "whiteSpace": "nowrap"
+                  "whiteSpace": "nowrap",
                 }
               }>
               <input
                 className="giu-text-input"
                 id="srcExtensions.0"
-                onBlur={[Function bound onBlur]}
-                onChange={[Function bound onChange]}
+                onBlur={[Function]}
+                onChange={[Function]}
                 onCopy={undefined}
                 onCut={undefined}
-                onFocus={[Function bound onFocus]}
+                onFocus={[Function]}
                 onPaste={undefined}
                 orient={undefined}
                 placeholder="e.g. .js"
@@ -390,7 +390,7 @@ exports[`Settings renders correctly 1`] = `
                     "fontFamily": "inherit",
                     "fontSize": "inherit",
                     "fontWeight": "inherit",
-                    "width": 60
+                    "width": 60,
                   }
                 }
                 tabIndex={undefined}
@@ -400,12 +400,12 @@ exports[`Settings renders correctly 1`] = `
               <i
                 className="giu-icon fa fa-remove"
                 id="srcExtensions.0"
-                onClick={[Function bound onRemoveListItem]}
+                onClick={[Function]}
                 style={
                   Object {
                     "color": "#444",
                     "cursor": "pointer",
-                    "letterSpacing": "normal"
+                    "letterSpacing": "normal",
                   }
                 } />
             </div>
@@ -415,17 +415,17 @@ exports[`Settings renders correctly 1`] = `
                   "marginRight": 10,
                   "marginTop": undefined,
                   "padding": "0px 2px",
-                  "whiteSpace": "nowrap"
+                  "whiteSpace": "nowrap",
                 }
               }>
               <input
                 className="giu-text-input"
                 id="srcExtensions.1"
-                onBlur={[Function bound onBlur]}
-                onChange={[Function bound onChange]}
+                onBlur={[Function]}
+                onChange={[Function]}
                 onCopy={undefined}
                 onCut={undefined}
-                onFocus={[Function bound onFocus]}
+                onFocus={[Function]}
                 onPaste={undefined}
                 orient={undefined}
                 placeholder="e.g. .js"
@@ -437,7 +437,7 @@ exports[`Settings renders correctly 1`] = `
                     "fontFamily": "inherit",
                     "fontSize": "inherit",
                     "fontWeight": "inherit",
-                    "width": 60
+                    "width": 60,
                   }
                 }
                 tabIndex={undefined}
@@ -447,26 +447,26 @@ exports[`Settings renders correctly 1`] = `
               <i
                 className="giu-icon fa fa-remove"
                 id="srcExtensions.1"
-                onClick={[Function bound onRemoveListItem]}
+                onClick={[Function]}
                 style={
                   Object {
                     "color": "#444",
                     "cursor": "pointer",
-                    "letterSpacing": "normal"
+                    "letterSpacing": "normal",
                   }
                 } />
             </div>
             <i
               className="giu-icon fa fa-plus"
               id="srcExtensions"
-              onClick={[Function bound onCreateListItem]}
+              onClick={[Function]}
               style={
                 Object {
                   "color": "#444",
                   "cursor": "pointer",
                   "display": "inline-block",
                   "letterSpacing": "normal",
-                  "marginTop": 5
+                  "marginTop": 5,
                 }
               } />
           </div>
@@ -474,7 +474,7 @@ exports[`Settings renders correctly 1`] = `
             style={
               Object {
                 "marginBottom": 3,
-                "marginTop": 7
+                "marginTop": 7,
               }
             }>
             Message translation functions to look for:
@@ -484,7 +484,7 @@ exports[`Settings renders correctly 1`] = `
               Object {
                 "display": "flex",
                 "flexDirection": "row",
-                "marginLeft": 15
+                "marginLeft": 15,
               }
             }>
             <div
@@ -493,17 +493,17 @@ exports[`Settings renders correctly 1`] = `
                   "marginRight": 10,
                   "marginTop": undefined,
                   "padding": "0px 2px",
-                  "whiteSpace": "nowrap"
+                  "whiteSpace": "nowrap",
                 }
               }>
               <input
                 className="giu-text-input"
                 id="msgFunctionNames.0"
-                onBlur={[Function bound onBlur]}
-                onChange={[Function bound onChange]}
+                onBlur={[Function]}
+                onChange={[Function]}
                 onCopy={undefined}
                 onCut={undefined}
-                onFocus={[Function bound onFocus]}
+                onFocus={[Function]}
                 onPaste={undefined}
                 orient={undefined}
                 placeholder="e.g. _t"
@@ -515,7 +515,7 @@ exports[`Settings renders correctly 1`] = `
                     "fontFamily": "inherit",
                     "fontSize": "inherit",
                     "fontWeight": "inherit",
-                    "width": 60
+                    "width": 60,
                   }
                 }
                 tabIndex={undefined}
@@ -525,44 +525,44 @@ exports[`Settings renders correctly 1`] = `
               <i
                 className="giu-icon fa fa-remove"
                 id="msgFunctionNames.0"
-                onClick={[Function bound onRemoveListItem]}
+                onClick={[Function]}
                 style={
                   Object {
                     "color": "#444",
                     "cursor": "pointer",
-                    "letterSpacing": "normal"
+                    "letterSpacing": "normal",
                   }
                 } />
             </div>
             <i
               className="giu-icon fa fa-plus"
               id="msgFunctionNames"
-              onClick={[Function bound onCreateListItem]}
+              onClick={[Function]}
               style={
                 Object {
                   "color": "#444",
                   "cursor": "pointer",
                   "display": "inline-block",
                   "letterSpacing": "normal",
-                  "marginTop": 5
+                  "marginTop": 5,
                 }
               } />
           </div>
           <div
             style={
               Object {
-                "marginTop": 7
+                "marginTop": 7,
               }
             }>
             <input
               checked={false}
               className="giu-checkbox"
               id="fMinify"
-              onBlur={[Function bound onBlur]}
-              onChange={[Function bound onChange]}
+              onBlur={[Function]}
+              onChange={[Function]}
               onCopy={undefined}
               onCut={undefined}
-              onFocus={[Function bound onFocus]}
+              onFocus={[Function]}
               onPaste={undefined}
               required={undefined}
               tabIndex={undefined}
@@ -580,12 +580,12 @@ exports[`Settings renders correctly 1`] = `
               "display": "flex",
               "flexDirection": "row",
               "marginTop": 10,
-              "paddingTop": 10
+              "paddingTop": 10,
             }
           }>
           <span
             className="giu-button"
-            onClick={[Function bound onCancel]}
+            onClick={[Function]}
             style={
               Object {
                 "WebkitUserSelect": "none",
@@ -595,7 +595,7 @@ exports[`Settings renders correctly 1`] = `
                 "display": "inline-block",
                 "marginRight": 5,
                 "padding": "1px 5px",
-                "userSelect": "none"
+                "userSelect": "none",
               }
             }>
             Cancel
@@ -604,12 +604,12 @@ exports[`Settings renders correctly 1`] = `
             style={
               Object {
                 "WebkitFlex": 1,
-                "flex": 1
+                "flex": 1,
               }
             } />
           <span
             className="giu-button"
-            onClick={[Function bound onSave]}
+            onClick={[Function]}
             style={
               Object {
                 "WebkitUserSelect": "none",
@@ -619,7 +619,7 @@ exports[`Settings renders correctly 1`] = `
                 "display": "inline-block",
                 "marginLeft": 5,
                 "padding": "1px 5px",
-                "userSelect": "none"
+                "userSelect": "none",
               }
             }>
             Save
@@ -627,13 +627,13 @@ exports[`Settings renders correctly 1`] = `
         </div>
       </div>
       <div
-        onClick={[Function bound onCancel]}
-        onTouchMove={[Function cancelEvent]}
-        onWheel={[Function cancelEvent]}
+        onClick={[Function]}
+        onTouchMove={[Function]}
+        onWheel={[Function]}
         style={
           Object {
             "WebkitFlex": 1,
-            "flex": 1
+            "flex": 1,
           }
         } />
     </div>

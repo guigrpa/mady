@@ -8,23 +8,23 @@ exports[`HoverableTranslation renders correctly with translation 1`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 0
+        "width": 0,
       }
     } />
   <div
-    onMouseEnter={[Function bound onHoverStart]}
-    onMouseLeave={[Function bound onHoverStop]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     style={
       Object {
         "marginBottom": -2,
-        "paddingRight": 40
+        "paddingRight": 40,
       }
     }>
     <div
       className="giu-textarea"
       style={
         Object {
-          "position": "relative"
+          "position": "relative",
         }
       }>
       <div
@@ -43,20 +43,20 @@ exports[`HoverableTranslation renders correctly with translation 1`] = `
             "top": 0,
             "whiteSpace": "pre-wrap",
             "width": "100%",
-            "zIndex": -50
+            "zIndex": -50,
           }
         }>
         Un mensaje
       </div>
       <textarea
         disabled={undefined}
-        onBlur={[Function bound onBlur]}
-        onChange={[Function bound onChange]}
+        onBlur={[Function]}
+        onChange={[Function]}
         onCopy={undefined}
         onCut={undefined}
-        onFocus={[Function bound onFocus]}
-        onKeyDown={[Function bound onKeyDown]}
-        onKeyUp={[Function bound onKeyUp]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
         onPaste={undefined}
         required={undefined}
         style={
@@ -74,7 +74,7 @@ exports[`HoverableTranslation renders correctly with translation 1`] = `
             "overflow": "hidden",
             "padding": 0,
             "resize": "none",
-            "width": "100%"
+            "width": "100%",
           }
         }
         tabIndex={undefined}
@@ -94,23 +94,23 @@ exports[`HoverableTranslation renders correctly without translation 1`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 0
+        "width": 0,
       }
     } />
   <div
-    onMouseEnter={[Function bound onHoverStart]}
-    onMouseLeave={[Function bound onHoverStop]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     style={
       Object {
         "marginBottom": -2,
-        "paddingRight": 40
+        "paddingRight": 40,
       }
     }>
     <div
       className="giu-textarea"
       style={
         Object {
-          "position": "relative"
+          "position": "relative",
         }
       }>
       <div
@@ -129,20 +129,20 @@ exports[`HoverableTranslation renders correctly without translation 1`] = `
             "top": 0,
             "whiteSpace": "pre-wrap",
             "width": "100%",
-            "zIndex": -50
+            "zIndex": -50,
           }
         }>
         x
       </div>
       <textarea
         disabled={undefined}
-        onBlur={[Function bound onBlur]}
-        onChange={[Function bound onChange]}
+        onBlur={[Function]}
+        onChange={[Function]}
         onCopy={undefined}
         onCut={undefined}
-        onFocus={[Function bound onFocus]}
-        onKeyDown={[Function bound onKeyDown]}
-        onKeyUp={[Function bound onKeyUp]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
         onPaste={undefined}
         required={undefined}
         style={
@@ -160,7 +160,7 @@ exports[`HoverableTranslation renders correctly without translation 1`] = `
             "overflow": "hidden",
             "padding": 0,
             "resize": "none",
-            "width": "100%"
+            "width": "100%",
           }
         }
         tabIndex={undefined}

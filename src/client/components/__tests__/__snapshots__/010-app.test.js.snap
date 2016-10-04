@@ -6,7 +6,7 @@ exports[`App changes the selected key when clicked 1`] = `
       "display": "flex",
       "flexDirection": "column",
       "minHeight": "100%",
-      "padding": "0px 10px"
+      "padding": "0px 10px",
     }
   }>
   <div
@@ -17,7 +17,7 @@ exports[`App changes the selected key when clicked 1`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 0
+        "width": 0,
       }
     } />
   <div
@@ -28,14 +28,14 @@ exports[`App changes the selected key when clicked 1`] = `
         "maxWidth": 350,
         "position": "fixed",
         "right": 20,
-        "zIndex": 9000
+        "zIndex": 9000,
       }
     } />
   <div
     className="giu-hints">
     <div
       className="giu-hint-screen"
-      onClick={[Function hintHide]}
+      onClick={[Function]}
       style={
         Object {
           "height": "100vh",
@@ -43,13 +43,13 @@ exports[`App changes the selected key when clicked 1`] = `
           "position": "fixed",
           "top": 0,
           "width": "100vw",
-          "zIndex": 50
+          "zIndex": 50,
         }
       }>
       <div
         className="giu-backdrop"
-        onTouchMove={[Function cancelEvent]}
-        onWheel={[Function cancelEvent]}
+        onTouchMove={[Function]}
+        onWheel={[Function]}
         style={
           Object {
             "backgroundColor": "black",
@@ -59,7 +59,7 @@ exports[`App changes the selected key when clicked 1`] = `
             "opacity": 0.6,
             "position": "fixed",
             "top": 0,
-            "width": "100vw"
+            "width": "100vw",
           }
         } />
       <div
@@ -67,7 +67,7 @@ exports[`App changes the selected key when clicked 1`] = `
           Object {
             "color": "white",
             "fontFamily": "\"Gloria Hallelujah\", sans-serif",
-            "fontSize": 20
+            "fontSize": 20,
           }
         }>
         <div
@@ -79,7 +79,7 @@ exports[`App changes the selected key when clicked 1`] = `
               "cursor": "pointer",
               "padding": "5px 25px",
               "position": "fixed",
-              "right": 20
+              "right": 20,
             }
           }>
           Enjoy translating!
@@ -89,9 +89,9 @@ exports[`App changes the selected key when clicked 1`] = `
   </div>
   <div
     dataMockType="Header"
-    onShowSettings={[Function bound showSettings]} />
+    onShowSettings={[Function]} />
   <div
-    changeSelectedKey={[Function bound changeSelectedKey]}
+    changeSelectedKey={[Function]}
     dataMockType="Translator"
     lang="en"
     selectedKeyId="SELECTED_KEY"
@@ -101,13 +101,13 @@ exports[`App changes the selected key when clicked 1`] = `
           "langs": Array [
             "es",
             "ca",
-            "en"
-          ]
+            "en",
+          ],
         },
         "id": "me",
         "keys": Object {
-          "edges": Array []
-        }
+          "edges": Array [],
+        },
       }
     } />
   <div
@@ -120,13 +120,13 @@ exports[`App changes the selected key when clicked 1`] = `
           "langs": Array [
             "es",
             "ca",
-            "en"
-          ]
+            "en",
+          ],
         },
         "id": "me",
         "keys": Object {
-          "edges": Array []
-        }
+          "edges": Array [],
+        },
       }
     } />
 </div>
@@ -140,7 +140,7 @@ exports[`App renders correctly with no content 1`] = `
       "display": "flex",
       "flexDirection": "column",
       "minHeight": "100%",
-      "padding": "0px 10px"
+      "padding": "0px 10px",
     }
   }>
   <div
@@ -151,7 +151,7 @@ exports[`App renders correctly with no content 1`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 0
+        "width": 0,
       }
     } />
   <div
@@ -162,14 +162,14 @@ exports[`App renders correctly with no content 1`] = `
         "maxWidth": 350,
         "position": "fixed",
         "right": 20,
-        "zIndex": 9000
+        "zIndex": 9000,
       }
     } />
   <div
     className="giu-hints">
     <div
       className="giu-hint-screen"
-      onClick={[Function hintHide]}
+      onClick={[Function]}
       style={
         Object {
           "height": "100vh",
@@ -177,13 +177,13 @@ exports[`App renders correctly with no content 1`] = `
           "position": "fixed",
           "top": 0,
           "width": "100vw",
-          "zIndex": 50
+          "zIndex": 50,
         }
       }>
       <div
         className="giu-backdrop"
-        onTouchMove={[Function cancelEvent]}
-        onWheel={[Function cancelEvent]}
+        onTouchMove={[Function]}
+        onWheel={[Function]}
         style={
           Object {
             "backgroundColor": "black",
@@ -193,7 +193,7 @@ exports[`App renders correctly with no content 1`] = `
             "opacity": 0.6,
             "position": "fixed",
             "top": 0,
-            "width": "100vw"
+            "width": "100vw",
           }
         } />
       <div
@@ -201,7 +201,7 @@ exports[`App renders correctly with no content 1`] = `
           Object {
             "color": "white",
             "fontFamily": "\"Gloria Hallelujah\", sans-serif",
-            "fontSize": 20
+            "fontSize": 20,
           }
         }>
         <div
@@ -213,7 +213,7 @@ exports[`App renders correctly with no content 1`] = `
               "cursor": "pointer",
               "padding": "5px 25px",
               "position": "fixed",
-              "right": 20
+              "right": 20,
             }
           }>
           Enjoy translating!
@@ -223,9 +223,9 @@ exports[`App renders correctly with no content 1`] = `
   </div>
   <div
     dataMockType="Header"
-    onShowSettings={[Function bound showSettings]} />
+    onShowSettings={[Function]} />
   <div
-    changeSelectedKey={[Function bound changeSelectedKey]}
+    changeSelectedKey={[Function]}
     dataMockType="Translator"
     lang="en"
     selectedKeyId={null}
@@ -235,13 +235,13 @@ exports[`App renders correctly with no content 1`] = `
           "langs": Array [
             "es",
             "ca",
-            "en"
-          ]
+            "en",
+          ],
         },
         "id": "me",
         "keys": Object {
-          "edges": Array []
-        }
+          "edges": Array [],
+        },
       }
     } />
   <div
@@ -254,13 +254,13 @@ exports[`App renders correctly with no content 1`] = `
           "langs": Array [
             "es",
             "ca",
-            "en"
-          ]
+            "en",
+          ],
         },
         "id": "me",
         "keys": Object {
-          "edges": Array []
-        }
+          "edges": Array [],
+        },
       }
     } />
 </div>
@@ -274,7 +274,7 @@ exports[`App shows the settings when clicked 1`] = `
       "display": "flex",
       "flexDirection": "column",
       "minHeight": "100%",
-      "padding": "0px 10px"
+      "padding": "0px 10px",
     }
   }>
   <div
@@ -285,7 +285,7 @@ exports[`App shows the settings when clicked 1`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 0
+        "width": 0,
       }
     } />
   <div
@@ -296,14 +296,14 @@ exports[`App shows the settings when clicked 1`] = `
         "maxWidth": 350,
         "position": "fixed",
         "right": 20,
-        "zIndex": 9000
+        "zIndex": 9000,
       }
     } />
   <div
     className="giu-hints">
     <div
       className="giu-hint-screen"
-      onClick={[Function hintHide]}
+      onClick={[Function]}
       style={
         Object {
           "height": "100vh",
@@ -311,13 +311,13 @@ exports[`App shows the settings when clicked 1`] = `
           "position": "fixed",
           "top": 0,
           "width": "100vw",
-          "zIndex": 50
+          "zIndex": 50,
         }
       }>
       <div
         className="giu-backdrop"
-        onTouchMove={[Function cancelEvent]}
-        onWheel={[Function cancelEvent]}
+        onTouchMove={[Function]}
+        onWheel={[Function]}
         style={
           Object {
             "backgroundColor": "black",
@@ -327,7 +327,7 @@ exports[`App shows the settings when clicked 1`] = `
             "opacity": 0.6,
             "position": "fixed",
             "top": 0,
-            "width": "100vw"
+            "width": "100vw",
           }
         } />
       <div
@@ -335,7 +335,7 @@ exports[`App shows the settings when clicked 1`] = `
           Object {
             "color": "white",
             "fontFamily": "\"Gloria Hallelujah\", sans-serif",
-            "fontSize": 20
+            "fontSize": 20,
           }
         }>
         <div
@@ -347,7 +347,7 @@ exports[`App shows the settings when clicked 1`] = `
               "cursor": "pointer",
               "padding": "5px 25px",
               "position": "fixed",
-              "right": 20
+              "right": 20,
             }
           }>
           Enjoy translating!
@@ -357,9 +357,9 @@ exports[`App shows the settings when clicked 1`] = `
   </div>
   <div
     dataMockType="Header"
-    onShowSettings={[Function bound showSettings]} />
+    onShowSettings={[Function]} />
   <div
-    changeSelectedKey={[Function bound changeSelectedKey]}
+    changeSelectedKey={[Function]}
     dataMockType="Translator"
     lang="en"
     selectedKeyId={null}
@@ -369,13 +369,13 @@ exports[`App shows the settings when clicked 1`] = `
           "langs": Array [
             "es",
             "ca",
-            "en"
-          ]
+            "en",
+          ],
         },
         "id": "me",
         "keys": Object {
-          "edges": Array []
-        }
+          "edges": Array [],
+        },
       }
     } />
   <div
@@ -388,33 +388,33 @@ exports[`App shows the settings when clicked 1`] = `
           "langs": Array [
             "es",
             "ca",
-            "en"
-          ]
+            "en",
+          ],
         },
         "id": "me",
         "keys": Object {
-          "edges": Array []
-        }
+          "edges": Array [],
+        },
       }
     } />
   <div
     dataMockType="Settings"
     lang="en"
-    onChangeLang={[Function bound onChangeLang]}
-    onClose={[Function bound hideSettings]}
+    onChangeLang={[Function]}
+    onClose={[Function]}
     viewer={
       Object {
         "config": Object {
           "langs": Array [
             "es",
             "ca",
-            "en"
-          ]
+            "en",
+          ],
         },
         "id": "me",
         "keys": Object {
-          "edges": Array []
-        }
+          "edges": Array [],
+        },
       }
     } />
 </div>
@@ -428,7 +428,7 @@ exports[`App shows the settings when clicked 2`] = `
       "display": "flex",
       "flexDirection": "column",
       "minHeight": "100%",
-      "padding": "0px 10px"
+      "padding": "0px 10px",
     }
   }>
   <div
@@ -439,7 +439,7 @@ exports[`App shows the settings when clicked 2`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 0
+        "width": 0,
       }
     } />
   <div
@@ -450,14 +450,14 @@ exports[`App shows the settings when clicked 2`] = `
         "maxWidth": 350,
         "position": "fixed",
         "right": 20,
-        "zIndex": 9000
+        "zIndex": 9000,
       }
     } />
   <div
     className="giu-hints">
     <div
       className="giu-hint-screen"
-      onClick={[Function hintHide]}
+      onClick={[Function]}
       style={
         Object {
           "height": "100vh",
@@ -465,13 +465,13 @@ exports[`App shows the settings when clicked 2`] = `
           "position": "fixed",
           "top": 0,
           "width": "100vw",
-          "zIndex": 50
+          "zIndex": 50,
         }
       }>
       <div
         className="giu-backdrop"
-        onTouchMove={[Function cancelEvent]}
-        onWheel={[Function cancelEvent]}
+        onTouchMove={[Function]}
+        onWheel={[Function]}
         style={
           Object {
             "backgroundColor": "black",
@@ -481,7 +481,7 @@ exports[`App shows the settings when clicked 2`] = `
             "opacity": 0.6,
             "position": "fixed",
             "top": 0,
-            "width": "100vw"
+            "width": "100vw",
           }
         } />
       <div
@@ -489,7 +489,7 @@ exports[`App shows the settings when clicked 2`] = `
           Object {
             "color": "white",
             "fontFamily": "\"Gloria Hallelujah\", sans-serif",
-            "fontSize": 20
+            "fontSize": 20,
           }
         }>
         <div
@@ -501,7 +501,7 @@ exports[`App shows the settings when clicked 2`] = `
               "cursor": "pointer",
               "padding": "5px 25px",
               "position": "fixed",
-              "right": 20
+              "right": 20,
             }
           }>
           Enjoy translating!
@@ -511,9 +511,9 @@ exports[`App shows the settings when clicked 2`] = `
   </div>
   <div
     dataMockType="Header"
-    onShowSettings={[Function bound showSettings]} />
+    onShowSettings={[Function]} />
   <div
-    changeSelectedKey={[Function bound changeSelectedKey]}
+    changeSelectedKey={[Function]}
     dataMockType="Translator"
     lang="en"
     selectedKeyId={null}
@@ -523,13 +523,13 @@ exports[`App shows the settings when clicked 2`] = `
           "langs": Array [
             "es",
             "ca",
-            "en"
-          ]
+            "en",
+          ],
         },
         "id": "me",
         "keys": Object {
-          "edges": Array []
-        }
+          "edges": Array [],
+        },
       }
     } />
   <div
@@ -542,13 +542,13 @@ exports[`App shows the settings when clicked 2`] = `
           "langs": Array [
             "es",
             "ca",
-            "en"
-          ]
+            "en",
+          ],
         },
         "id": "me",
         "keys": Object {
-          "edges": Array []
-        }
+          "edges": Array [],
+        },
       }
     } />
 </div>

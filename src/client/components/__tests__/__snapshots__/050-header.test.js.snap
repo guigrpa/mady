@@ -8,14 +8,14 @@ exports[`Header renders correctly 1`] = `
       "display": "flex",
       "flex": "0 0 2.5em",
       "flexDirection": "row",
-      "padding": "5px 8px"
+      "padding": "5px 8px",
     }
   }>
   <div
     style={
       Object {
         "WebkitFlex": "1",
-        "flex": "1"
+        "flex": "1",
       }
     } />
   <div
@@ -23,20 +23,20 @@ exports[`Header renders correctly 1`] = `
       Object {
         "fontSize": "1.3em",
         "fontWeight": 900,
-        "letterSpacing": 3
+        "letterSpacing": 3,
       }
     }>
     MADY
     <i
       className="giu-icon fa fa-cog"
       id="madyBtnSettings"
-      onClick={[Function onShowSettings]}
+      onClick={[Function]}
       style={
         Object {
           "color": undefined,
           "cursor": "pointer",
           "letterSpacing": "normal",
-          "marginLeft": 10
+          "marginLeft": 10,
         }
       }
       title="Settings" />
@@ -50,17 +50,17 @@ exports[`Header renders correctly 1`] = `
         "fontWeight": 900,
         "letterSpacing": 3,
         "marginRight": 10,
-        "textAlign": "right"
+        "textAlign": "right",
       }
     }>
     <i
       className="giu-icon fa fa-question-circle"
-      onClick={[Function onClick]}
+      onClick={[Function]}
       style={
         Object {
           "color": undefined,
           "cursor": "pointer",
-          "letterSpacing": "normal"
+          "letterSpacing": "normal",
         }
       } />
   </div>
@@ -80,14 +80,14 @@ exports[`Header shows hints when the info button is clicked 1`] = `
         "display": "flex",
         "flex": "0 0 2.5em",
         "flexDirection": "row",
-        "padding": "5px 8px"
+        "padding": "5px 8px",
       }
     }>
     <div
       style={
         Object {
           "WebkitFlex": "1",
-          "flex": "1"
+          "flex": "1",
         }
       } />
     <div
@@ -95,20 +95,20 @@ exports[`Header shows hints when the info button is clicked 1`] = `
         Object {
           "fontSize": "1.3em",
           "fontWeight": 900,
-          "letterSpacing": 3
+          "letterSpacing": 3,
         }
       }>
       MADY
       <i
         className="giu-icon fa fa-cog"
         id="madyBtnSettings"
-        onClick={[Function onShowSettings]}
+        onClick={[Function]}
         style={
           Object {
             "color": undefined,
             "cursor": "pointer",
             "letterSpacing": "normal",
-            "marginLeft": 10
+            "marginLeft": 10,
           }
         }
         title="Settings" />
@@ -122,17 +122,17 @@ exports[`Header shows hints when the info button is clicked 1`] = `
           "fontWeight": 900,
           "letterSpacing": 3,
           "marginRight": 10,
-          "textAlign": "right"
+          "textAlign": "right",
         }
       }>
       <i
         className="giu-icon fa fa-question-circle"
-        onClick={[Function onClick]}
+        onClick={[Function]}
         style={
           Object {
             "color": undefined,
             "cursor": "pointer",
-            "letterSpacing": "normal"
+            "letterSpacing": "normal",
           }
         } />
     </div>
@@ -146,7 +146,7 @@ exports[`Header shows hints when the info button is clicked 2`] = `
     className="giu-hints">
     <div
       className="giu-hint-screen"
-      onClick={[Function hintHide]}
+      onClick={[Function]}
       style={
         Object {
           "height": "100vh",
@@ -154,13 +154,13 @@ exports[`Header shows hints when the info button is clicked 2`] = `
           "position": "fixed",
           "top": 0,
           "width": "100vw",
-          "zIndex": 50
+          "zIndex": 50,
         }
       }>
       <div
         className="giu-backdrop"
-        onTouchMove={[Function cancelEvent]}
-        onWheel={[Function cancelEvent]}
+        onTouchMove={[Function]}
+        onWheel={[Function]}
         style={
           Object {
             "backgroundColor": "black",
@@ -170,15 +170,15 @@ exports[`Header shows hints when the info button is clicked 2`] = `
             "opacity": 0.6,
             "position": "fixed",
             "top": 0,
-            "width": "100vw"
+            "width": "100vw",
           }
         } />
       <div
         style={
           Object {
             "color": "white",
-            "fontFamily": ""Gloria Hallelujah", sans-serif",
-            "fontSize": 20
+            "fontFamily": "\"Gloria Hallelujah\", sans-serif",
+            "fontSize": 20,
           }
         }>
         <div
@@ -190,7 +190,7 @@ exports[`Header shows hints when the info button is clicked 2`] = `
               "cursor": "pointer",
               "padding": "5px 25px",
               "position": "fixed",
-              "right": 20
+              "right": 20,
             }
           }>
           Got it!
@@ -207,14 +207,14 @@ exports[`Header shows hints when the info button is clicked 2`] = `
         "display": "flex",
         "flex": "0 0 2.5em",
         "flexDirection": "row",
-        "padding": "5px 8px"
+        "padding": "5px 8px",
       }
     }>
     <div
       style={
         Object {
           "WebkitFlex": "1",
-          "flex": "1"
+          "flex": "1",
         }
       } />
     <div
@@ -222,20 +222,20 @@ exports[`Header shows hints when the info button is clicked 2`] = `
         Object {
           "fontSize": "1.3em",
           "fontWeight": 900,
-          "letterSpacing": 3
+          "letterSpacing": 3,
         }
       }>
       MADY
       <i
         className="giu-icon fa fa-cog"
         id="madyBtnSettings"
-        onClick={[Function onShowSettings]}
+        onClick={[Function]}
         style={
           Object {
             "color": undefined,
             "cursor": "pointer",
             "letterSpacing": "normal",
-            "marginLeft": 10
+            "marginLeft": 10,
           }
         }
         title="Settings" />
@@ -249,17 +249,17 @@ exports[`Header shows hints when the info button is clicked 2`] = `
           "fontWeight": 900,
           "letterSpacing": 3,
           "marginRight": 10,
-          "textAlign": "right"
+          "textAlign": "right",
         }
       }>
       <i
         className="giu-icon fa fa-question-circle"
-        onClick={[Function onClick]}
+        onClick={[Function]}
         style={
           Object {
             "color": undefined,
             "cursor": "pointer",
-            "letterSpacing": "normal"
+            "letterSpacing": "normal",
           }
         } />
     </div>

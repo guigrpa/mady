@@ -1,0 +1,71 @@
+exports[`Source parser Function parser should extract context if available 1`] = `
+Object {
+  "Y29udGV4dF9FeGFtcGxl": Object {
+    "context": "context",
+    "firstUsed": null,
+    "id": "Y29udGV4dF9FeGFtcGxl",
+    "sources": Array [
+      "FILENAME",
+    ],
+    "text": "Example",
+    "unusedSince": null,
+  },
+}
+`;
+
+exports[`Source parser Function parser should work in a simple case 1`] = `
+Object {
+  "RXhhbXBsZQ==": Object {
+    "context": null,
+    "firstUsed": null,
+    "id": "RXhhbXBsZQ==",
+    "sources": Array [
+      "FILENAME",
+    ],
+    "text": "Example",
+    "unusedSince": null,
+  },
+}
+`;
+
+exports[`Source parser Function parser should work with multiline strings 1`] = `
+Object {
+  "Y29udGV4dF9UaGlzIGlzIGEgdmVyeQpsb25nCnN0cmluZw==": Object {
+    "context": "context",
+    "firstUsed": null,
+    "id": "Y29udGV4dF9UaGlzIGlzIGEgdmVyeQpsb25nCnN0cmluZw==",
+    "sources": Array [
+      "FILENAME",
+    ],
+    "text": "This is a very
+long
+string",
+    "unusedSince": null,
+  },
+}
+`;
+
+exports[`Source parser Function parser should work with single and double quotes 1`] = `
+Object {
+  "RXhhbXBsZQ==": Object {
+    "context": null,
+    "firstUsed": null,
+    "id": "RXhhbXBsZQ==",
+    "sources": Array [
+      "FILENAME",
+    ],
+    "text": "Example",
+    "unusedSince": null,
+  },
+  "RXhhbXBsZTI=": Object {
+    "context": null,
+    "firstUsed": null,
+    "id": "RXhhbXBsZTI=",
+    "sources": Array [
+      "FILENAME",
+    ],
+    "text": "Example2",
+    "unusedSince": null,
+  },
+}
+`;

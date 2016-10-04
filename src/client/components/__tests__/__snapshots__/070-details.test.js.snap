@@ -7,7 +7,7 @@ exports[`Details renders correctly with a selection but no data yet 1`] = `
       "flex": "none",
       "marginTop": 5,
       "minHeight": 110,
-      "padding": 5
+      "padding": 5,
     }
   }>
   <div
@@ -16,7 +16,7 @@ exports[`Details renders correctly with a selection but no data yet 1`] = `
         "fontWeight": 900,
         "letterSpacing": 3,
         "marginBottom": 10,
-        "textAlign": "center"
+        "textAlign": "center",
       }
     }>
     DETAILS
@@ -29,7 +29,7 @@ exports[`Details renders correctly with a selection but no data yet 1`] = `
         "fontSize": "1.4em",
         "fontWeight": 700,
         "padding": "0.8em",
-        "textAlign": "center"
+        "textAlign": "center",
       }
     }>
     <i
@@ -38,7 +38,7 @@ exports[`Details renders correctly with a selection but no data yet 1`] = `
         Object {
           "color": undefined,
           "cursor": "pointer",
-          "letterSpacing": "normal"
+          "letterSpacing": "normal",
         }
       } />
   </div>
@@ -54,7 +54,7 @@ exports[`Details renders correctly without a selection 1`] = `
       "flex": "none",
       "marginTop": 5,
       "minHeight": 110,
-      "padding": 5
+      "padding": 5,
     }
   }>
   <div
@@ -63,7 +63,7 @@ exports[`Details renders correctly without a selection 1`] = `
         "fontWeight": 900,
         "letterSpacing": 3,
         "marginBottom": 10,
-        "textAlign": "center"
+        "textAlign": "center",
       }
     }>
     DETAILS
@@ -76,7 +76,7 @@ exports[`Details renders correctly without a selection 1`] = `
         "fontSize": "1.4em",
         "fontWeight": 700,
         "padding": "0.8em",
-        "textAlign": "center"
+        "textAlign": "center",
       }
     }>
     No message selected
@@ -93,7 +93,7 @@ exports[`Details when the details for the selection are available renders correc
       "flex": "none",
       "marginTop": 5,
       "minHeight": 110,
-      "padding": 5
+      "padding": 5,
     }
   }>
   <div
@@ -102,7 +102,7 @@ exports[`Details when the details for the selection are available renders correc
         "fontWeight": 900,
         "letterSpacing": 3,
         "marginBottom": 10,
-        "textAlign": "center"
+        "textAlign": "center",
       }
     }>
     DETAILS
@@ -117,11 +117,11 @@ exports[`Details when the details for the selection are available renders correc
       style={
         Object {
           "color": "#444",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
         }
       }
       title="Monday, April 18, 2016 7:37 AM">
-      5 months ago
+      6 months ago
     </span>
     <span>
        
@@ -131,7 +131,7 @@ exports[`Details when the details for the selection are available renders correc
         style={
           Object {
             "color": "#444",
-            "fontWeight": "bold"
+            "fontWeight": "bold",
           }
         }
         title="Thursday, April 21, 2016 7:37 AM">
@@ -151,7 +151,7 @@ exports[`Details when the details for the selection are available renders correc
       "flex": "none",
       "marginTop": 5,
       "minHeight": 110,
-      "padding": 5
+      "padding": 5,
     }
   }>
   <div
@@ -160,7 +160,7 @@ exports[`Details when the details for the selection are available renders correc
         "fontWeight": 900,
         "letterSpacing": 3,
         "marginBottom": 10,
-        "textAlign": "center"
+        "textAlign": "center",
       }
     }>
     DETAILS
@@ -175,17 +175,17 @@ exports[`Details when the details for the selection are available renders correc
       style={
         Object {
           "color": "#444",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
         }
       }
       title="Monday, April 18, 2016 7:37 AM">
-      5 months ago
+      6 months ago
     </span>
     :
     <ul
       style={
         Object {
-          "marginTop": 0
+          "marginTop": 0,
         }
       }>
       <li>

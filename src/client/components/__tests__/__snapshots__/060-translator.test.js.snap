@@ -8,7 +8,7 @@ exports[`Translator allows changing the language of a column 1`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 0
+        "width": 0,
       }
     } />
   <div
@@ -18,7 +18,7 @@ exports[`Translator allows changing the language of a column 1`] = `
         "display": "flex",
         "flex": "1 0 10em",
         "flexDirection": "column",
-        "marginTop": 5
+        "marginTop": 5,
       }
     }>
     <div
@@ -30,7 +30,7 @@ exports[`Translator allows changing the language of a column 1`] = `
           "flex": "none",
           "flexDirection": "row",
           "fontWeight": "bold",
-          "position": "relative"
+          "position": "relative",
         }
       }>
       <div
@@ -47,7 +47,7 @@ exports[`Translator allows changing the language of a column 1`] = `
             "paddingLeft": 5,
             "paddingRight": 17,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         MESSAGES
@@ -55,7 +55,7 @@ exports[`Translator allows changing the language of a column 1`] = `
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -73,12 +73,12 @@ exports[`Translator allows changing the language of a column 1`] = `
          
         <i
           className="giu-icon fa fa-refresh"
-          onClick={[Function bound onParseSrcFiles]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Parse source files to update the message list" />
@@ -98,7 +98,7 @@ exports[`Translator allows changing the language of a column 1`] = `
             "paddingLeft": 5,
             "paddingRight": 5,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         <div
@@ -106,7 +106,7 @@ exports[`Translator allows changing the language of a column 1`] = `
             Object {
               "display": "inline-block",
               "paddingRight": 5,
-              "position": "relative"
+              "position": "relative",
             }
           }
           title="Change language">
@@ -117,18 +117,18 @@ exports[`Translator allows changing the language of a column 1`] = `
                 "color": undefined,
                 "cursor": "pointer",
                 "letterSpacing": "normal",
-                "marginRight": 5
+                "marginRight": 5,
               }
             } />
           es
           <select
             className="giu-select-native"
             id={0}
-            onBlur={[Function bound onBlur]}
-            onChange={[Function bound onChange]}
+            onBlur={[Function]}
+            onChange={[Function]}
             onCopy={undefined}
             onCut={undefined}
-            onFocus={[Function bound onFocus]}
+            onFocus={[Function]}
             onPaste={undefined}
             style={
               Object {
@@ -143,7 +143,7 @@ exports[`Translator allows changing the language of a column 1`] = `
                 "opacity": 0,
                 "position": "absolute",
                 "top": 0,
-                "width": "100%"
+                "width": "100%",
               }
             }
             tabIndex={undefined}
@@ -169,7 +169,7 @@ exports[`Translator allows changing the language of a column 1`] = `
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -188,19 +188,19 @@ exports[`Translator allows changing the language of a column 1`] = `
         <i
           className="giu-icon fa fa-remove"
           id={0}
-          onClick={[Function bound onRemoveLang]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Remove column (does NOT delete any translations)" />
       </div>
       <div
         id="madyBtnAddLang"
-        onClick={[Function bound onAddLang]}
+        onClick={[Function]}
         style={
           Object {
             "cursor": "pointer",
@@ -209,7 +209,7 @@ exports[`Translator allows changing the language of a column 1`] = `
             "padding": "3px 6px",
             "position": "absolute",
             "right": NaN,
-            "top": 0
+            "top": 0,
           }
         }
         title="Add column">
@@ -219,7 +219,7 @@ exports[`Translator allows changing the language of a column 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           } />
       </div>
@@ -227,7 +227,7 @@ exports[`Translator allows changing the language of a column 1`] = `
         style={
           Object {
             "WebkitFlex": "0 0 NaNpx",
-            "flex": "0 0 NaNpx"
+            "flex": "0 0 NaNpx",
           }
         } />
     </div>
@@ -239,16 +239,16 @@ exports[`Translator allows changing the language of a column 1`] = `
           "display": "flex",
           "flex": 1,
           "flexDirection": "column",
-          "overflowY": "scroll"
+          "overflowY": "scroll",
         }
       }>
       <div
-        changeSelectedKey={[Function changeSelectedKey]}
+        changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
           Array [
-            "es"
+            "es",
           ]
         }
         styleKeyCol={
@@ -258,7 +258,7 @@ exports[`Translator allows changing the language of a column 1`] = `
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 17
+            "paddingRight": 17,
           }
         }
         styleLangCol={
@@ -268,7 +268,7 @@ exports[`Translator allows changing the language of a column 1`] = `
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 5
+            "paddingRight": 5,
           }
         }
         theKey={
@@ -277,9 +277,9 @@ exports[`Translator allows changing the language of a column 1`] = `
             "id": "keyId1",
             "text": "A message",
             "translations": Object {
-              "edges": Array []
+              "edges": Array [],
             },
-            "unusedSince": null
+            "unusedSince": null,
           }
         }
         viewer={
@@ -288,8 +288,8 @@ exports[`Translator allows changing the language of a column 1`] = `
               "langs": Array [
                 "es",
                 "ca",
-                "en"
-              ]
+                "en",
+              ],
             },
             "id": "me",
             "keys": Object {
@@ -300,10 +300,10 @@ exports[`Translator allows changing the language of a column 1`] = `
                     "id": "keyId1",
                     "text": "A message",
                     "translations": Object {
-                      "edges": Array []
+                      "edges": Array [],
                     },
-                    "unusedSince": null
-                  }
+                    "unusedSince": null,
+                  },
                 },
                 Object {
                   "node": Object {
@@ -316,32 +316,32 @@ exports[`Translator allows changing the language of a column 1`] = `
                           "node": Object {
                             "id": "translationId1",
                             "lang": "es",
-                            "translation": "Un mensaje"
-                          }
+                            "translation": "Un mensaje",
+                          },
                         },
                         Object {
                           "node": Object {
                             "id": "translationId2",
                             "lang": "ca",
-                            "translation": "Un missatge"
-                          }
-                        }
-                      ]
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
                     },
-                    "unusedSince": null
-                  }
-                }
-              ]
-            }
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
           }
         } />
       <div
-        changeSelectedKey={[Function changeSelectedKey]}
+        changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
           Array [
-            "es"
+            "es",
           ]
         }
         styleKeyCol={
@@ -351,7 +351,7 @@ exports[`Translator allows changing the language of a column 1`] = `
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 17
+            "paddingRight": 17,
           }
         }
         styleLangCol={
@@ -361,7 +361,7 @@ exports[`Translator allows changing the language of a column 1`] = `
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 5
+            "paddingRight": 5,
           }
         }
         theKey={
@@ -375,19 +375,19 @@ exports[`Translator allows changing the language of a column 1`] = `
                   "node": Object {
                     "id": "translationId1",
                     "lang": "es",
-                    "translation": "Un mensaje"
-                  }
+                    "translation": "Un mensaje",
+                  },
                 },
                 Object {
                   "node": Object {
                     "id": "translationId2",
                     "lang": "ca",
-                    "translation": "Un missatge"
-                  }
-                }
-              ]
+                    "translation": "Un missatge",
+                  },
+                },
+              ],
             },
-            "unusedSince": null
+            "unusedSince": null,
           }
         }
         viewer={
@@ -396,8 +396,8 @@ exports[`Translator allows changing the language of a column 1`] = `
               "langs": Array [
                 "es",
                 "ca",
-                "en"
-              ]
+                "en",
+              ],
             },
             "id": "me",
             "keys": Object {
@@ -408,10 +408,10 @@ exports[`Translator allows changing the language of a column 1`] = `
                     "id": "keyId1",
                     "text": "A message",
                     "translations": Object {
-                      "edges": Array []
+                      "edges": Array [],
                     },
-                    "unusedSince": null
-                  }
+                    "unusedSince": null,
+                  },
                 },
                 Object {
                   "node": Object {
@@ -424,23 +424,23 @@ exports[`Translator allows changing the language of a column 1`] = `
                           "node": Object {
                             "id": "translationId1",
                             "lang": "es",
-                            "translation": "Un mensaje"
-                          }
+                            "translation": "Un mensaje",
+                          },
                         },
                         Object {
                           "node": Object {
                             "id": "translationId2",
                             "lang": "ca",
-                            "translation": "Un missatge"
-                          }
-                        }
-                      ]
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
                     },
-                    "unusedSince": null
-                  }
-                }
-              ]
-            }
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
           }
         } />
       <div
@@ -450,7 +450,7 @@ exports[`Translator allows changing the language of a column 1`] = `
             "WebkitFlex": "1 1 0px",
             "display": "flex",
             "flex": "1 1 0px",
-            "flexDirection": "row"
+            "flexDirection": "row",
           }
         }>
         <div
@@ -461,7 +461,7 @@ exports[`Translator allows changing the language of a column 1`] = `
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 17
+              "paddingRight": 17,
             }
           }>
           
@@ -474,7 +474,7 @@ exports[`Translator allows changing the language of a column 1`] = `
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 5
+              "paddingRight": 5,
             }
           } />
       </div>
@@ -493,7 +493,7 @@ exports[`Translator allows changing the language of a column 2`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 0
+        "width": 0,
       }
     } />
   <div
@@ -503,7 +503,7 @@ exports[`Translator allows changing the language of a column 2`] = `
         "display": "flex",
         "flex": "1 0 10em",
         "flexDirection": "column",
-        "marginTop": 5
+        "marginTop": 5,
       }
     }>
     <div
@@ -515,7 +515,7 @@ exports[`Translator allows changing the language of a column 2`] = `
           "flex": "none",
           "flexDirection": "row",
           "fontWeight": "bold",
-          "position": "relative"
+          "position": "relative",
         }
       }>
       <div
@@ -532,7 +532,7 @@ exports[`Translator allows changing the language of a column 2`] = `
             "paddingLeft": 5,
             "paddingRight": 17,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         MESSAGES
@@ -540,7 +540,7 @@ exports[`Translator allows changing the language of a column 2`] = `
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -558,12 +558,12 @@ exports[`Translator allows changing the language of a column 2`] = `
          
         <i
           className="giu-icon fa fa-refresh"
-          onClick={[Function bound onParseSrcFiles]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Parse source files to update the message list" />
@@ -583,7 +583,7 @@ exports[`Translator allows changing the language of a column 2`] = `
             "paddingLeft": 5,
             "paddingRight": 5,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         <div
@@ -591,7 +591,7 @@ exports[`Translator allows changing the language of a column 2`] = `
             Object {
               "display": "inline-block",
               "paddingRight": 5,
-              "position": "relative"
+              "position": "relative",
             }
           }
           title="Change language">
@@ -602,18 +602,18 @@ exports[`Translator allows changing the language of a column 2`] = `
                 "color": undefined,
                 "cursor": "pointer",
                 "letterSpacing": "normal",
-                "marginRight": 5
+                "marginRight": 5,
               }
             } />
           en
           <select
             className="giu-select-native"
             id={0}
-            onBlur={[Function bound onBlur]}
-            onChange={[Function bound onChange]}
+            onBlur={[Function]}
+            onChange={[Function]}
             onCopy={undefined}
             onCut={undefined}
-            onFocus={[Function bound onFocus]}
+            onFocus={[Function]}
             onPaste={undefined}
             style={
               Object {
@@ -628,7 +628,7 @@ exports[`Translator allows changing the language of a column 2`] = `
                 "opacity": 0,
                 "position": "absolute",
                 "top": 0,
-                "width": "100%"
+                "width": "100%",
               }
             }
             tabIndex={undefined}
@@ -654,7 +654,7 @@ exports[`Translator allows changing the language of a column 2`] = `
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -673,19 +673,19 @@ exports[`Translator allows changing the language of a column 2`] = `
         <i
           className="giu-icon fa fa-remove"
           id={0}
-          onClick={[Function bound onRemoveLang]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Remove column (does NOT delete any translations)" />
       </div>
       <div
         id="madyBtnAddLang"
-        onClick={[Function bound onAddLang]}
+        onClick={[Function]}
         style={
           Object {
             "cursor": "pointer",
@@ -694,7 +694,7 @@ exports[`Translator allows changing the language of a column 2`] = `
             "padding": "3px 6px",
             "position": "absolute",
             "right": NaN,
-            "top": 0
+            "top": 0,
           }
         }
         title="Add column">
@@ -704,7 +704,7 @@ exports[`Translator allows changing the language of a column 2`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           } />
       </div>
@@ -712,7 +712,7 @@ exports[`Translator allows changing the language of a column 2`] = `
         style={
           Object {
             "WebkitFlex": "0 0 NaNpx",
-            "flex": "0 0 NaNpx"
+            "flex": "0 0 NaNpx",
           }
         } />
     </div>
@@ -724,16 +724,16 @@ exports[`Translator allows changing the language of a column 2`] = `
           "display": "flex",
           "flex": 1,
           "flexDirection": "column",
-          "overflowY": "scroll"
+          "overflowY": "scroll",
         }
       }>
       <div
-        changeSelectedKey={[Function changeSelectedKey]}
+        changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
           Array [
-            "en"
+            "en",
           ]
         }
         styleKeyCol={
@@ -743,7 +743,7 @@ exports[`Translator allows changing the language of a column 2`] = `
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 17
+            "paddingRight": 17,
           }
         }
         styleLangCol={
@@ -753,7 +753,7 @@ exports[`Translator allows changing the language of a column 2`] = `
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 5
+            "paddingRight": 5,
           }
         }
         theKey={
@@ -762,9 +762,9 @@ exports[`Translator allows changing the language of a column 2`] = `
             "id": "keyId1",
             "text": "A message",
             "translations": Object {
-              "edges": Array []
+              "edges": Array [],
             },
-            "unusedSince": null
+            "unusedSince": null,
           }
         }
         viewer={
@@ -773,8 +773,8 @@ exports[`Translator allows changing the language of a column 2`] = `
               "langs": Array [
                 "es",
                 "ca",
-                "en"
-              ]
+                "en",
+              ],
             },
             "id": "me",
             "keys": Object {
@@ -785,10 +785,10 @@ exports[`Translator allows changing the language of a column 2`] = `
                     "id": "keyId1",
                     "text": "A message",
                     "translations": Object {
-                      "edges": Array []
+                      "edges": Array [],
                     },
-                    "unusedSince": null
-                  }
+                    "unusedSince": null,
+                  },
                 },
                 Object {
                   "node": Object {
@@ -801,32 +801,32 @@ exports[`Translator allows changing the language of a column 2`] = `
                           "node": Object {
                             "id": "translationId1",
                             "lang": "es",
-                            "translation": "Un mensaje"
-                          }
+                            "translation": "Un mensaje",
+                          },
                         },
                         Object {
                           "node": Object {
                             "id": "translationId2",
                             "lang": "ca",
-                            "translation": "Un missatge"
-                          }
-                        }
-                      ]
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
                     },
-                    "unusedSince": null
-                  }
-                }
-              ]
-            }
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
           }
         } />
       <div
-        changeSelectedKey={[Function changeSelectedKey]}
+        changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
           Array [
-            "en"
+            "en",
           ]
         }
         styleKeyCol={
@@ -836,7 +836,7 @@ exports[`Translator allows changing the language of a column 2`] = `
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 17
+            "paddingRight": 17,
           }
         }
         styleLangCol={
@@ -846,7 +846,7 @@ exports[`Translator allows changing the language of a column 2`] = `
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 5
+            "paddingRight": 5,
           }
         }
         theKey={
@@ -860,19 +860,19 @@ exports[`Translator allows changing the language of a column 2`] = `
                   "node": Object {
                     "id": "translationId1",
                     "lang": "es",
-                    "translation": "Un mensaje"
-                  }
+                    "translation": "Un mensaje",
+                  },
                 },
                 Object {
                   "node": Object {
                     "id": "translationId2",
                     "lang": "ca",
-                    "translation": "Un missatge"
-                  }
-                }
-              ]
+                    "translation": "Un missatge",
+                  },
+                },
+              ],
             },
-            "unusedSince": null
+            "unusedSince": null,
           }
         }
         viewer={
@@ -881,8 +881,8 @@ exports[`Translator allows changing the language of a column 2`] = `
               "langs": Array [
                 "es",
                 "ca",
-                "en"
-              ]
+                "en",
+              ],
             },
             "id": "me",
             "keys": Object {
@@ -893,10 +893,10 @@ exports[`Translator allows changing the language of a column 2`] = `
                     "id": "keyId1",
                     "text": "A message",
                     "translations": Object {
-                      "edges": Array []
+                      "edges": Array [],
                     },
-                    "unusedSince": null
-                  }
+                    "unusedSince": null,
+                  },
                 },
                 Object {
                   "node": Object {
@@ -909,23 +909,23 @@ exports[`Translator allows changing the language of a column 2`] = `
                           "node": Object {
                             "id": "translationId1",
                             "lang": "es",
-                            "translation": "Un mensaje"
-                          }
+                            "translation": "Un mensaje",
+                          },
                         },
                         Object {
                           "node": Object {
                             "id": "translationId2",
                             "lang": "ca",
-                            "translation": "Un missatge"
-                          }
-                        }
-                      ]
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
                     },
-                    "unusedSince": null
-                  }
-                }
-              ]
-            }
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
           }
         } />
       <div
@@ -935,7 +935,7 @@ exports[`Translator allows changing the language of a column 2`] = `
             "WebkitFlex": "1 1 0px",
             "display": "flex",
             "flex": "1 1 0px",
-            "flexDirection": "row"
+            "flexDirection": "row",
           }
         }>
         <div
@@ -946,7 +946,7 @@ exports[`Translator allows changing the language of a column 2`] = `
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 17
+              "paddingRight": 17,
             }
           }>
           
@@ -959,7 +959,7 @@ exports[`Translator allows changing the language of a column 2`] = `
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 5
+              "paddingRight": 5,
             }
           } />
       </div>
@@ -978,7 +978,7 @@ exports[`Translator allows removing columns 1`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 0
+        "width": 0,
       }
     } />
   <div
@@ -988,7 +988,7 @@ exports[`Translator allows removing columns 1`] = `
         "display": "flex",
         "flex": "1 0 10em",
         "flexDirection": "column",
-        "marginTop": 5
+        "marginTop": 5,
       }
     }>
     <div
@@ -1000,7 +1000,7 @@ exports[`Translator allows removing columns 1`] = `
           "flex": "none",
           "flexDirection": "row",
           "fontWeight": "bold",
-          "position": "relative"
+          "position": "relative",
         }
       }>
       <div
@@ -1017,7 +1017,7 @@ exports[`Translator allows removing columns 1`] = `
             "paddingLeft": 5,
             "paddingRight": 17,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         MESSAGES
@@ -1025,7 +1025,7 @@ exports[`Translator allows removing columns 1`] = `
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -1043,12 +1043,12 @@ exports[`Translator allows removing columns 1`] = `
          
         <i
           className="giu-icon fa fa-refresh"
-          onClick={[Function bound onParseSrcFiles]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Parse source files to update the message list" />
@@ -1068,7 +1068,7 @@ exports[`Translator allows removing columns 1`] = `
             "paddingLeft": 5,
             "paddingRight": 5,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         <div
@@ -1076,7 +1076,7 @@ exports[`Translator allows removing columns 1`] = `
             Object {
               "display": "inline-block",
               "paddingRight": 5,
-              "position": "relative"
+              "position": "relative",
             }
           }
           title="Change language">
@@ -1087,18 +1087,18 @@ exports[`Translator allows removing columns 1`] = `
                 "color": undefined,
                 "cursor": "pointer",
                 "letterSpacing": "normal",
-                "marginRight": 5
+                "marginRight": 5,
               }
             } />
           es
           <select
             className="giu-select-native"
             id={0}
-            onBlur={[Function bound onBlur]}
-            onChange={[Function bound onChange]}
+            onBlur={[Function]}
+            onChange={[Function]}
             onCopy={undefined}
             onCut={undefined}
-            onFocus={[Function bound onFocus]}
+            onFocus={[Function]}
             onPaste={undefined}
             style={
               Object {
@@ -1113,24 +1113,24 @@ exports[`Translator allows removing columns 1`] = `
                 "opacity": 0,
                 "position": "absolute",
                 "top": 0,
-                "width": "100%"
+                "width": "100%",
               }
             }
             tabIndex={undefined}
-            value=""es"">
+            value="\"es\"">
             <option
-              id=""es""
-              value=""es"">
+              id="\"es\""
+              value="\"es\"">
               es
             </option>
             <option
-              id=""ca""
-              value=""ca"">
+              id="\"ca\""
+              value="\"ca\"">
               ca
             </option>
             <option
-              id=""en""
-              value=""en"">
+              id="\"en\""
+              value="\"en\"">
               en
             </option>
           </select>
@@ -1139,7 +1139,7 @@ exports[`Translator allows removing columns 1`] = `
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -1158,19 +1158,19 @@ exports[`Translator allows removing columns 1`] = `
         <i
           className="giu-icon fa fa-remove"
           id={0}
-          onClick={[Function bound onRemoveLang]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Remove column (does NOT delete any translations)" />
       </div>
       <div
         id="madyBtnAddLang"
-        onClick={[Function bound onAddLang]}
+        onClick={[Function]}
         style={
           Object {
             "cursor": "pointer",
@@ -1179,7 +1179,7 @@ exports[`Translator allows removing columns 1`] = `
             "padding": "3px 6px",
             "position": "absolute",
             "right": NaN,
-            "top": 0
+            "top": 0,
           }
         }
         title="Add column">
@@ -1189,7 +1189,7 @@ exports[`Translator allows removing columns 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           } />
       </div>
@@ -1197,7 +1197,7 @@ exports[`Translator allows removing columns 1`] = `
         style={
           Object {
             "WebkitFlex": "0 0 NaNpx",
-            "flex": "0 0 NaNpx"
+            "flex": "0 0 NaNpx",
           }
         } />
     </div>
@@ -1209,16 +1209,16 @@ exports[`Translator allows removing columns 1`] = `
           "display": "flex",
           "flex": 1,
           "flexDirection": "column",
-          "overflowY": "scroll"
+          "overflowY": "scroll",
         }
       }>
       <div
-        changeSelectedKey={[Function changeSelectedKey]}
+        changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
           Array [
-            "es"
+            "es",
           ]
         }
         styleKeyCol={
@@ -1228,7 +1228,7 @@ exports[`Translator allows removing columns 1`] = `
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 17
+            "paddingRight": 17,
           }
         }
         styleLangCol={
@@ -1238,7 +1238,7 @@ exports[`Translator allows removing columns 1`] = `
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 5
+            "paddingRight": 5,
           }
         }
         theKey={
@@ -1247,9 +1247,9 @@ exports[`Translator allows removing columns 1`] = `
             "id": "keyId1",
             "text": "A message",
             "translations": Object {
-              "edges": Array []
+              "edges": Array [],
             },
-            "unusedSince": null
+            "unusedSince": null,
           }
         }
         viewer={
@@ -1258,8 +1258,8 @@ exports[`Translator allows removing columns 1`] = `
               "langs": Array [
                 "es",
                 "ca",
-                "en"
-              ]
+                "en",
+              ],
             },
             "id": "me",
             "keys": Object {
@@ -1270,10 +1270,10 @@ exports[`Translator allows removing columns 1`] = `
                     "id": "keyId1",
                     "text": "A message",
                     "translations": Object {
-                      "edges": Array []
+                      "edges": Array [],
                     },
-                    "unusedSince": null
-                  }
+                    "unusedSince": null,
+                  },
                 },
                 Object {
                   "node": Object {
@@ -1286,32 +1286,32 @@ exports[`Translator allows removing columns 1`] = `
                           "node": Object {
                             "id": "translationId1",
                             "lang": "es",
-                            "translation": "Un mensaje"
-                          }
+                            "translation": "Un mensaje",
+                          },
                         },
                         Object {
                           "node": Object {
                             "id": "translationId2",
                             "lang": "ca",
-                            "translation": "Un missatge"
-                          }
-                        }
-                      ]
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
                     },
-                    "unusedSince": null
-                  }
-                }
-              ]
-            }
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
           }
         } />
       <div
-        changeSelectedKey={[Function changeSelectedKey]}
+        changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
           Array [
-            "es"
+            "es",
           ]
         }
         styleKeyCol={
@@ -1321,7 +1321,7 @@ exports[`Translator allows removing columns 1`] = `
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 17
+            "paddingRight": 17,
           }
         }
         styleLangCol={
@@ -1331,7 +1331,7 @@ exports[`Translator allows removing columns 1`] = `
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 5
+            "paddingRight": 5,
           }
         }
         theKey={
@@ -1345,19 +1345,19 @@ exports[`Translator allows removing columns 1`] = `
                   "node": Object {
                     "id": "translationId1",
                     "lang": "es",
-                    "translation": "Un mensaje"
-                  }
+                    "translation": "Un mensaje",
+                  },
                 },
                 Object {
                   "node": Object {
                     "id": "translationId2",
                     "lang": "ca",
-                    "translation": "Un missatge"
-                  }
-                }
-              ]
+                    "translation": "Un missatge",
+                  },
+                },
+              ],
             },
-            "unusedSince": null
+            "unusedSince": null,
           }
         }
         viewer={
@@ -1366,8 +1366,8 @@ exports[`Translator allows removing columns 1`] = `
               "langs": Array [
                 "es",
                 "ca",
-                "en"
-              ]
+                "en",
+              ],
             },
             "id": "me",
             "keys": Object {
@@ -1378,10 +1378,10 @@ exports[`Translator allows removing columns 1`] = `
                     "id": "keyId1",
                     "text": "A message",
                     "translations": Object {
-                      "edges": Array []
+                      "edges": Array [],
                     },
-                    "unusedSince": null
-                  }
+                    "unusedSince": null,
+                  },
                 },
                 Object {
                   "node": Object {
@@ -1394,23 +1394,23 @@ exports[`Translator allows removing columns 1`] = `
                           "node": Object {
                             "id": "translationId1",
                             "lang": "es",
-                            "translation": "Un mensaje"
-                          }
+                            "translation": "Un mensaje",
+                          },
                         },
                         Object {
                           "node": Object {
                             "id": "translationId2",
                             "lang": "ca",
-                            "translation": "Un missatge"
-                          }
-                        }
-                      ]
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
                     },
-                    "unusedSince": null
-                  }
-                }
-              ]
-            }
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
           }
         } />
       <div
@@ -1420,7 +1420,7 @@ exports[`Translator allows removing columns 1`] = `
             "WebkitFlex": "1 1 0px",
             "display": "flex",
             "flex": "1 1 0px",
-            "flexDirection": "row"
+            "flexDirection": "row",
           }
         }>
         <div
@@ -1431,7 +1431,7 @@ exports[`Translator allows removing columns 1`] = `
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 17
+              "paddingRight": 17,
             }
           }>
           
@@ -1444,7 +1444,7 @@ exports[`Translator allows removing columns 1`] = `
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 5
+              "paddingRight": 5,
             }
           } />
       </div>
@@ -1463,7 +1463,7 @@ exports[`Translator renders correctly with a selection 1`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 0
+        "width": 0,
       }
     } />
   <div
@@ -1473,7 +1473,7 @@ exports[`Translator renders correctly with a selection 1`] = `
         "display": "flex",
         "flex": "1 0 10em",
         "flexDirection": "column",
-        "marginTop": 5
+        "marginTop": 5,
       }
     }>
     <div
@@ -1485,7 +1485,7 @@ exports[`Translator renders correctly with a selection 1`] = `
           "flex": "none",
           "flexDirection": "row",
           "fontWeight": "bold",
-          "position": "relative"
+          "position": "relative",
         }
       }>
       <div
@@ -1502,7 +1502,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             "paddingLeft": 5,
             "paddingRight": 17,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         MESSAGES
@@ -1510,7 +1510,7 @@ exports[`Translator renders correctly with a selection 1`] = `
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -1528,12 +1528,12 @@ exports[`Translator renders correctly with a selection 1`] = `
          
         <i
           className="giu-icon fa fa-refresh"
-          onClick={[Function bound onParseSrcFiles]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Parse source files to update the message list" />
@@ -1553,7 +1553,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             "paddingLeft": 5,
             "paddingRight": 5,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         <div
@@ -1561,7 +1561,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             Object {
               "display": "inline-block",
               "paddingRight": 5,
-              "position": "relative"
+              "position": "relative",
             }
           }
           title="Change language">
@@ -1572,18 +1572,18 @@ exports[`Translator renders correctly with a selection 1`] = `
                 "color": undefined,
                 "cursor": "pointer",
                 "letterSpacing": "normal",
-                "marginRight": 5
+                "marginRight": 5,
               }
             } />
           ca
           <select
             className="giu-select-native"
             id={0}
-            onBlur={[Function bound onBlur]}
-            onChange={[Function bound onChange]}
+            onBlur={[Function]}
+            onChange={[Function]}
             onCopy={undefined}
             onCut={undefined}
-            onFocus={[Function bound onFocus]}
+            onFocus={[Function]}
             onPaste={undefined}
             style={
               Object {
@@ -1598,7 +1598,7 @@ exports[`Translator renders correctly with a selection 1`] = `
                 "opacity": 0,
                 "position": "absolute",
                 "top": 0,
-                "width": "100%"
+                "width": "100%",
               }
             }
             tabIndex={undefined}
@@ -1624,7 +1624,7 @@ exports[`Translator renders correctly with a selection 1`] = `
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -1643,12 +1643,12 @@ exports[`Translator renders correctly with a selection 1`] = `
         <i
           className="giu-icon fa fa-remove"
           id={0}
-          onClick={[Function bound onRemoveLang]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Remove column (does NOT delete any translations)" />
@@ -1668,7 +1668,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             "paddingLeft": 5,
             "paddingRight": 5,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         <div
@@ -1676,7 +1676,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             Object {
               "display": "inline-block",
               "paddingRight": 5,
-              "position": "relative"
+              "position": "relative",
             }
           }
           title="Change language">
@@ -1687,18 +1687,18 @@ exports[`Translator renders correctly with a selection 1`] = `
                 "color": undefined,
                 "cursor": "pointer",
                 "letterSpacing": "normal",
-                "marginRight": 5
+                "marginRight": 5,
               }
             } />
           es
           <select
             className="giu-select-native"
             id={1}
-            onBlur={[Function bound onBlur]}
-            onChange={[Function bound onChange]}
+            onBlur={[Function]}
+            onChange={[Function]}
             onCopy={undefined}
             onCut={undefined}
-            onFocus={[Function bound onFocus]}
+            onFocus={[Function]}
             onPaste={undefined}
             style={
               Object {
@@ -1713,7 +1713,7 @@ exports[`Translator renders correctly with a selection 1`] = `
                 "opacity": 0,
                 "position": "absolute",
                 "top": 0,
-                "width": "100%"
+                "width": "100%",
               }
             }
             tabIndex={undefined}
@@ -1739,7 +1739,7 @@ exports[`Translator renders correctly with a selection 1`] = `
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -1758,12 +1758,12 @@ exports[`Translator renders correctly with a selection 1`] = `
         <i
           className="giu-icon fa fa-remove"
           id={1}
-          onClick={[Function bound onRemoveLang]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Remove column (does NOT delete any translations)" />
@@ -1783,7 +1783,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             "paddingLeft": 5,
             "paddingRight": 5,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         <div
@@ -1791,7 +1791,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             Object {
               "display": "inline-block",
               "paddingRight": 5,
-              "position": "relative"
+              "position": "relative",
             }
           }
           title="Change language">
@@ -1802,18 +1802,18 @@ exports[`Translator renders correctly with a selection 1`] = `
                 "color": undefined,
                 "cursor": "pointer",
                 "letterSpacing": "normal",
-                "marginRight": 5
+                "marginRight": 5,
               }
             } />
           en
           <select
             className="giu-select-native"
             id={2}
-            onBlur={[Function bound onBlur]}
-            onChange={[Function bound onChange]}
+            onBlur={[Function]}
+            onChange={[Function]}
             onCopy={undefined}
             onCut={undefined}
-            onFocus={[Function bound onFocus]}
+            onFocus={[Function]}
             onPaste={undefined}
             style={
               Object {
@@ -1828,7 +1828,7 @@ exports[`Translator renders correctly with a selection 1`] = `
                 "opacity": 0,
                 "position": "absolute",
                 "top": 0,
-                "width": "100%"
+                "width": "100%",
               }
             }
             tabIndex={undefined}
@@ -1854,7 +1854,7 @@ exports[`Translator renders correctly with a selection 1`] = `
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -1873,12 +1873,12 @@ exports[`Translator renders correctly with a selection 1`] = `
         <i
           className="giu-icon fa fa-remove"
           id={2}
-          onClick={[Function bound onRemoveLang]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Remove column (does NOT delete any translations)" />
@@ -1894,7 +1894,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             "padding": "3px 6px",
             "position": "absolute",
             "right": NaN,
-            "top": 0
+            "top": 0,
           }
         }
         title="Add column">
@@ -1905,7 +1905,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             Object {
               "color": "#999999",
               "cursor": undefined,
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           } />
       </div>
@@ -1913,7 +1913,7 @@ exports[`Translator renders correctly with a selection 1`] = `
         style={
           Object {
             "WebkitFlex": "0 0 NaNpx",
-            "flex": "0 0 NaNpx"
+            "flex": "0 0 NaNpx",
           }
         } />
     </div>
@@ -1925,18 +1925,18 @@ exports[`Translator renders correctly with a selection 1`] = `
           "display": "flex",
           "flex": 1,
           "flexDirection": "column",
-          "overflowY": "scroll"
+          "overflowY": "scroll",
         }
       }>
       <div
-        changeSelectedKey={[Function changeSelectedKey]}
+        changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
           Array [
             "ca",
             "es",
-            "en"
+            "en",
           ]
         }
         styleKeyCol={
@@ -1946,7 +1946,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 17
+            "paddingRight": 17,
           }
         }
         styleLangCol={
@@ -1956,7 +1956,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 5
+            "paddingRight": 5,
           }
         }
         theKey={
@@ -1965,9 +1965,9 @@ exports[`Translator renders correctly with a selection 1`] = `
             "id": "keyId1",
             "text": "A message",
             "translations": Object {
-              "edges": Array []
+              "edges": Array [],
             },
-            "unusedSince": null
+            "unusedSince": null,
           }
         }
         viewer={
@@ -1976,8 +1976,8 @@ exports[`Translator renders correctly with a selection 1`] = `
               "langs": Array [
                 "es",
                 "ca",
-                "en"
-              ]
+                "en",
+              ],
             },
             "id": "me",
             "keys": Object {
@@ -1988,10 +1988,10 @@ exports[`Translator renders correctly with a selection 1`] = `
                     "id": "keyId1",
                     "text": "A message",
                     "translations": Object {
-                      "edges": Array []
+                      "edges": Array [],
                     },
-                    "unusedSince": null
-                  }
+                    "unusedSince": null,
+                  },
                 },
                 Object {
                   "node": Object {
@@ -2004,34 +2004,34 @@ exports[`Translator renders correctly with a selection 1`] = `
                           "node": Object {
                             "id": "translationId1",
                             "lang": "es",
-                            "translation": "Un mensaje"
-                          }
+                            "translation": "Un mensaje",
+                          },
                         },
                         Object {
                           "node": Object {
                             "id": "translationId2",
                             "lang": "ca",
-                            "translation": "Un missatge"
-                          }
-                        }
-                      ]
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
                     },
-                    "unusedSince": null
-                  }
-                }
-              ]
-            }
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
           }
         } />
       <div
-        changeSelectedKey={[Function changeSelectedKey]}
+        changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
         fSelected={true}
         langs={
           Array [
             "ca",
             "es",
-            "en"
+            "en",
           ]
         }
         styleKeyCol={
@@ -2041,7 +2041,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 17
+            "paddingRight": 17,
           }
         }
         styleLangCol={
@@ -2051,7 +2051,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 5
+            "paddingRight": 5,
           }
         }
         theKey={
@@ -2065,19 +2065,19 @@ exports[`Translator renders correctly with a selection 1`] = `
                   "node": Object {
                     "id": "translationId1",
                     "lang": "es",
-                    "translation": "Un mensaje"
-                  }
+                    "translation": "Un mensaje",
+                  },
                 },
                 Object {
                   "node": Object {
                     "id": "translationId2",
                     "lang": "ca",
-                    "translation": "Un missatge"
-                  }
-                }
-              ]
+                    "translation": "Un missatge",
+                  },
+                },
+              ],
             },
-            "unusedSince": null
+            "unusedSince": null,
           }
         }
         viewer={
@@ -2086,8 +2086,8 @@ exports[`Translator renders correctly with a selection 1`] = `
               "langs": Array [
                 "es",
                 "ca",
-                "en"
-              ]
+                "en",
+              ],
             },
             "id": "me",
             "keys": Object {
@@ -2098,10 +2098,10 @@ exports[`Translator renders correctly with a selection 1`] = `
                     "id": "keyId1",
                     "text": "A message",
                     "translations": Object {
-                      "edges": Array []
+                      "edges": Array [],
                     },
-                    "unusedSince": null
-                  }
+                    "unusedSince": null,
+                  },
                 },
                 Object {
                   "node": Object {
@@ -2114,23 +2114,23 @@ exports[`Translator renders correctly with a selection 1`] = `
                           "node": Object {
                             "id": "translationId1",
                             "lang": "es",
-                            "translation": "Un mensaje"
-                          }
+                            "translation": "Un mensaje",
+                          },
                         },
                         Object {
                           "node": Object {
                             "id": "translationId2",
                             "lang": "ca",
-                            "translation": "Un missatge"
-                          }
-                        }
-                      ]
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
                     },
-                    "unusedSince": null
-                  }
-                }
-              ]
-            }
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
           }
         } />
       <div
@@ -2140,7 +2140,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             "WebkitFlex": "1 1 0px",
             "display": "flex",
             "flex": "1 1 0px",
-            "flexDirection": "row"
+            "flexDirection": "row",
           }
         }>
         <div
@@ -2151,7 +2151,7 @@ exports[`Translator renders correctly with a selection 1`] = `
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 17
+              "paddingRight": 17,
             }
           }>
           
@@ -2164,7 +2164,7 @@ exports[`Translator renders correctly with a selection 1`] = `
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 5
+              "paddingRight": 5,
             }
           } />
         <div
@@ -2175,7 +2175,7 @@ exports[`Translator renders correctly with a selection 1`] = `
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 5
+              "paddingRight": 5,
             }
           } />
         <div
@@ -2186,7 +2186,7 @@ exports[`Translator renders correctly with a selection 1`] = `
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 5
+              "paddingRight": 5,
             }
           } />
       </div>
@@ -2205,7 +2205,7 @@ exports[`Translator renders correctly with default columns 1`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 0
+        "width": 0,
       }
     } />
   <div
@@ -2215,7 +2215,7 @@ exports[`Translator renders correctly with default columns 1`] = `
         "display": "flex",
         "flex": "1 0 10em",
         "flexDirection": "column",
-        "marginTop": 5
+        "marginTop": 5,
       }
     }>
     <div
@@ -2227,7 +2227,7 @@ exports[`Translator renders correctly with default columns 1`] = `
           "flex": "none",
           "flexDirection": "row",
           "fontWeight": "bold",
-          "position": "relative"
+          "position": "relative",
         }
       }>
       <div
@@ -2244,7 +2244,7 @@ exports[`Translator renders correctly with default columns 1`] = `
             "paddingLeft": 5,
             "paddingRight": 17,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         MESSAGES
@@ -2252,7 +2252,7 @@ exports[`Translator renders correctly with default columns 1`] = `
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -2270,12 +2270,12 @@ exports[`Translator renders correctly with default columns 1`] = `
          
         <i
           className="giu-icon fa fa-refresh"
-          onClick={[Function bound onParseSrcFiles]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Parse source files to update the message list" />
@@ -2295,7 +2295,7 @@ exports[`Translator renders correctly with default columns 1`] = `
             "paddingLeft": 5,
             "paddingRight": 5,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         <div
@@ -2303,7 +2303,7 @@ exports[`Translator renders correctly with default columns 1`] = `
             Object {
               "display": "inline-block",
               "paddingRight": 5,
-              "position": "relative"
+              "position": "relative",
             }
           }
           title="Change language">
@@ -2314,18 +2314,18 @@ exports[`Translator renders correctly with default columns 1`] = `
                 "color": undefined,
                 "cursor": "pointer",
                 "letterSpacing": "normal",
-                "marginRight": 5
+                "marginRight": 5,
               }
             } />
           es
           <select
             className="giu-select-native"
             id={0}
-            onBlur={[Function bound onBlur]}
-            onChange={[Function bound onChange]}
+            onBlur={[Function]}
+            onChange={[Function]}
             onCopy={undefined}
             onCut={undefined}
-            onFocus={[Function bound onFocus]}
+            onFocus={[Function]}
             onPaste={undefined}
             style={
               Object {
@@ -2340,7 +2340,7 @@ exports[`Translator renders correctly with default columns 1`] = `
                 "opacity": 0,
                 "position": "absolute",
                 "top": 0,
-                "width": "100%"
+                "width": "100%",
               }
             }
             tabIndex={undefined}
@@ -2366,7 +2366,7 @@ exports[`Translator renders correctly with default columns 1`] = `
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -2385,19 +2385,19 @@ exports[`Translator renders correctly with default columns 1`] = `
         <i
           className="giu-icon fa fa-remove"
           id={0}
-          onClick={[Function bound onRemoveLang]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Remove column (does NOT delete any translations)" />
       </div>
       <div
         id="madyBtnAddLang"
-        onClick={[Function bound onAddLang]}
+        onClick={[Function]}
         style={
           Object {
             "cursor": "pointer",
@@ -2406,7 +2406,7 @@ exports[`Translator renders correctly with default columns 1`] = `
             "padding": "3px 6px",
             "position": "absolute",
             "right": NaN,
-            "top": 0
+            "top": 0,
           }
         }
         title="Add column">
@@ -2416,7 +2416,7 @@ exports[`Translator renders correctly with default columns 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           } />
       </div>
@@ -2424,7 +2424,7 @@ exports[`Translator renders correctly with default columns 1`] = `
         style={
           Object {
             "WebkitFlex": "0 0 NaNpx",
-            "flex": "0 0 NaNpx"
+            "flex": "0 0 NaNpx",
           }
         } />
     </div>
@@ -2436,16 +2436,16 @@ exports[`Translator renders correctly with default columns 1`] = `
           "display": "flex",
           "flex": 1,
           "flexDirection": "column",
-          "overflowY": "scroll"
+          "overflowY": "scroll",
         }
       }>
       <div
-        changeSelectedKey={[Function changeSelectedKey]}
+        changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
           Array [
-            "es"
+            "es",
           ]
         }
         styleKeyCol={
@@ -2455,7 +2455,7 @@ exports[`Translator renders correctly with default columns 1`] = `
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 17
+            "paddingRight": 17,
           }
         }
         styleLangCol={
@@ -2465,7 +2465,7 @@ exports[`Translator renders correctly with default columns 1`] = `
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 5
+            "paddingRight": 5,
           }
         }
         theKey={
@@ -2474,9 +2474,9 @@ exports[`Translator renders correctly with default columns 1`] = `
             "id": "keyId1",
             "text": "A message",
             "translations": Object {
-              "edges": Array []
+              "edges": Array [],
             },
-            "unusedSince": null
+            "unusedSince": null,
           }
         }
         viewer={
@@ -2485,8 +2485,8 @@ exports[`Translator renders correctly with default columns 1`] = `
               "langs": Array [
                 "es",
                 "ca",
-                "en"
-              ]
+                "en",
+              ],
             },
             "id": "me",
             "keys": Object {
@@ -2497,10 +2497,10 @@ exports[`Translator renders correctly with default columns 1`] = `
                     "id": "keyId1",
                     "text": "A message",
                     "translations": Object {
-                      "edges": Array []
+                      "edges": Array [],
                     },
-                    "unusedSince": null
-                  }
+                    "unusedSince": null,
+                  },
                 },
                 Object {
                   "node": Object {
@@ -2513,32 +2513,32 @@ exports[`Translator renders correctly with default columns 1`] = `
                           "node": Object {
                             "id": "translationId1",
                             "lang": "es",
-                            "translation": "Un mensaje"
-                          }
+                            "translation": "Un mensaje",
+                          },
                         },
                         Object {
                           "node": Object {
                             "id": "translationId2",
                             "lang": "ca",
-                            "translation": "Un missatge"
-                          }
-                        }
-                      ]
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
                     },
-                    "unusedSince": null
-                  }
-                }
-              ]
-            }
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
           }
         } />
       <div
-        changeSelectedKey={[Function changeSelectedKey]}
+        changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
           Array [
-            "es"
+            "es",
           ]
         }
         styleKeyCol={
@@ -2548,7 +2548,7 @@ exports[`Translator renders correctly with default columns 1`] = `
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 17
+            "paddingRight": 17,
           }
         }
         styleLangCol={
@@ -2558,7 +2558,7 @@ exports[`Translator renders correctly with default columns 1`] = `
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 5
+            "paddingRight": 5,
           }
         }
         theKey={
@@ -2572,19 +2572,19 @@ exports[`Translator renders correctly with default columns 1`] = `
                   "node": Object {
                     "id": "translationId1",
                     "lang": "es",
-                    "translation": "Un mensaje"
-                  }
+                    "translation": "Un mensaje",
+                  },
                 },
                 Object {
                   "node": Object {
                     "id": "translationId2",
                     "lang": "ca",
-                    "translation": "Un missatge"
-                  }
-                }
-              ]
+                    "translation": "Un missatge",
+                  },
+                },
+              ],
             },
-            "unusedSince": null
+            "unusedSince": null,
           }
         }
         viewer={
@@ -2593,8 +2593,8 @@ exports[`Translator renders correctly with default columns 1`] = `
               "langs": Array [
                 "es",
                 "ca",
-                "en"
-              ]
+                "en",
+              ],
             },
             "id": "me",
             "keys": Object {
@@ -2605,10 +2605,10 @@ exports[`Translator renders correctly with default columns 1`] = `
                     "id": "keyId1",
                     "text": "A message",
                     "translations": Object {
-                      "edges": Array []
+                      "edges": Array [],
                     },
-                    "unusedSince": null
-                  }
+                    "unusedSince": null,
+                  },
                 },
                 Object {
                   "node": Object {
@@ -2621,23 +2621,23 @@ exports[`Translator renders correctly with default columns 1`] = `
                           "node": Object {
                             "id": "translationId1",
                             "lang": "es",
-                            "translation": "Un mensaje"
-                          }
+                            "translation": "Un mensaje",
+                          },
                         },
                         Object {
                           "node": Object {
                             "id": "translationId2",
                             "lang": "ca",
-                            "translation": "Un missatge"
-                          }
-                        }
-                      ]
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
                     },
-                    "unusedSince": null
-                  }
-                }
-              ]
-            }
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
           }
         } />
       <div
@@ -2647,7 +2647,7 @@ exports[`Translator renders correctly with default columns 1`] = `
             "WebkitFlex": "1 1 0px",
             "display": "flex",
             "flex": "1 1 0px",
-            "flexDirection": "row"
+            "flexDirection": "row",
           }
         }>
         <div
@@ -2658,7 +2658,7 @@ exports[`Translator renders correctly with default columns 1`] = `
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 17
+              "paddingRight": 17,
             }
           }>
           
@@ -2671,7 +2671,7 @@ exports[`Translator renders correctly with default columns 1`] = `
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 5
+              "paddingRight": 5,
             }
           } />
       </div>
@@ -2690,7 +2690,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 0
+        "width": 0,
       }
     } />
   <div
@@ -2700,7 +2700,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
         "display": "flex",
         "flex": "1 0 10em",
         "flexDirection": "column",
-        "marginTop": 5
+        "marginTop": 5,
       }
     }>
     <div
@@ -2712,7 +2712,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
           "flex": "none",
           "flexDirection": "row",
           "fontWeight": "bold",
-          "position": "relative"
+          "position": "relative",
         }
       }>
       <div
@@ -2729,7 +2729,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             "paddingLeft": 5,
             "paddingRight": 17,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         MESSAGES
@@ -2737,7 +2737,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -2755,12 +2755,12 @@ exports[`Translator renders correctly with fixed columns 1`] = `
          
         <i
           className="giu-icon fa fa-refresh"
-          onClick={[Function bound onParseSrcFiles]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Parse source files to update the message list" />
@@ -2780,7 +2780,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             "paddingLeft": 5,
             "paddingRight": 5,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         <div
@@ -2788,7 +2788,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             Object {
               "display": "inline-block",
               "paddingRight": 5,
-              "position": "relative"
+              "position": "relative",
             }
           }
           title="Change language">
@@ -2799,18 +2799,18 @@ exports[`Translator renders correctly with fixed columns 1`] = `
                 "color": undefined,
                 "cursor": "pointer",
                 "letterSpacing": "normal",
-                "marginRight": 5
+                "marginRight": 5,
               }
             } />
           ca
           <select
             className="giu-select-native"
             id={0}
-            onBlur={[Function bound onBlur]}
-            onChange={[Function bound onChange]}
+            onBlur={[Function]}
+            onChange={[Function]}
             onCopy={undefined}
             onCut={undefined}
-            onFocus={[Function bound onFocus]}
+            onFocus={[Function]}
             onPaste={undefined}
             style={
               Object {
@@ -2825,7 +2825,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
                 "opacity": 0,
                 "position": "absolute",
                 "top": 0,
-                "width": "100%"
+                "width": "100%",
               }
             }
             tabIndex={undefined}
@@ -2851,7 +2851,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -2870,12 +2870,12 @@ exports[`Translator renders correctly with fixed columns 1`] = `
         <i
           className="giu-icon fa fa-remove"
           id={0}
-          onClick={[Function bound onRemoveLang]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Remove column (does NOT delete any translations)" />
@@ -2895,7 +2895,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             "paddingLeft": 5,
             "paddingRight": 5,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         <div
@@ -2903,7 +2903,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             Object {
               "display": "inline-block",
               "paddingRight": 5,
-              "position": "relative"
+              "position": "relative",
             }
           }
           title="Change language">
@@ -2914,18 +2914,18 @@ exports[`Translator renders correctly with fixed columns 1`] = `
                 "color": undefined,
                 "cursor": "pointer",
                 "letterSpacing": "normal",
-                "marginRight": 5
+                "marginRight": 5,
               }
             } />
           es
           <select
             className="giu-select-native"
             id={1}
-            onBlur={[Function bound onBlur]}
-            onChange={[Function bound onChange]}
+            onBlur={[Function]}
+            onChange={[Function]}
             onCopy={undefined}
             onCut={undefined}
-            onFocus={[Function bound onFocus]}
+            onFocus={[Function]}
             onPaste={undefined}
             style={
               Object {
@@ -2940,7 +2940,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
                 "opacity": 0,
                 "position": "absolute",
                 "top": 0,
-                "width": "100%"
+                "width": "100%",
               }
             }
             tabIndex={undefined}
@@ -2966,7 +2966,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -2985,19 +2985,19 @@ exports[`Translator renders correctly with fixed columns 1`] = `
         <i
           className="giu-icon fa fa-remove"
           id={1}
-          onClick={[Function bound onRemoveLang]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Remove column (does NOT delete any translations)" />
       </div>
       <div
         id="madyBtnAddLang"
-        onClick={[Function bound onAddLang]}
+        onClick={[Function]}
         style={
           Object {
             "cursor": "pointer",
@@ -3006,7 +3006,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             "padding": "3px 6px",
             "position": "absolute",
             "right": NaN,
-            "top": 0
+            "top": 0,
           }
         }
         title="Add column">
@@ -3016,7 +3016,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           } />
       </div>
@@ -3024,7 +3024,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
         style={
           Object {
             "WebkitFlex": "0 0 NaNpx",
-            "flex": "0 0 NaNpx"
+            "flex": "0 0 NaNpx",
           }
         } />
     </div>
@@ -3036,17 +3036,17 @@ exports[`Translator renders correctly with fixed columns 1`] = `
           "display": "flex",
           "flex": 1,
           "flexDirection": "column",
-          "overflowY": "scroll"
+          "overflowY": "scroll",
         }
       }>
       <div
-        changeSelectedKey={[Function changeSelectedKey]}
+        changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
           Array [
             "ca",
-            "es"
+            "es",
           ]
         }
         styleKeyCol={
@@ -3056,7 +3056,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 17
+            "paddingRight": 17,
           }
         }
         styleLangCol={
@@ -3066,7 +3066,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 5
+            "paddingRight": 5,
           }
         }
         theKey={
@@ -3075,9 +3075,9 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             "id": "keyId1",
             "text": "A message",
             "translations": Object {
-              "edges": Array []
+              "edges": Array [],
             },
-            "unusedSince": null
+            "unusedSince": null,
           }
         }
         viewer={
@@ -3086,8 +3086,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               "langs": Array [
                 "es",
                 "ca",
-                "en"
-              ]
+                "en",
+              ],
             },
             "id": "me",
             "keys": Object {
@@ -3098,10 +3098,10 @@ exports[`Translator renders correctly with fixed columns 1`] = `
                     "id": "keyId1",
                     "text": "A message",
                     "translations": Object {
-                      "edges": Array []
+                      "edges": Array [],
                     },
-                    "unusedSince": null
-                  }
+                    "unusedSince": null,
+                  },
                 },
                 Object {
                   "node": Object {
@@ -3114,33 +3114,33 @@ exports[`Translator renders correctly with fixed columns 1`] = `
                           "node": Object {
                             "id": "translationId1",
                             "lang": "es",
-                            "translation": "Un mensaje"
-                          }
+                            "translation": "Un mensaje",
+                          },
                         },
                         Object {
                           "node": Object {
                             "id": "translationId2",
                             "lang": "ca",
-                            "translation": "Un missatge"
-                          }
-                        }
-                      ]
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
                     },
-                    "unusedSince": null
-                  }
-                }
-              ]
-            }
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
           }
         } />
       <div
-        changeSelectedKey={[Function changeSelectedKey]}
+        changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
           Array [
             "ca",
-            "es"
+            "es",
           ]
         }
         styleKeyCol={
@@ -3150,7 +3150,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 17
+            "paddingRight": 17,
           }
         }
         styleLangCol={
@@ -3160,7 +3160,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 5
+            "paddingRight": 5,
           }
         }
         theKey={
@@ -3174,19 +3174,19 @@ exports[`Translator renders correctly with fixed columns 1`] = `
                   "node": Object {
                     "id": "translationId1",
                     "lang": "es",
-                    "translation": "Un mensaje"
-                  }
+                    "translation": "Un mensaje",
+                  },
                 },
                 Object {
                   "node": Object {
                     "id": "translationId2",
                     "lang": "ca",
-                    "translation": "Un missatge"
-                  }
-                }
-              ]
+                    "translation": "Un missatge",
+                  },
+                },
+              ],
             },
-            "unusedSince": null
+            "unusedSince": null,
           }
         }
         viewer={
@@ -3195,8 +3195,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               "langs": Array [
                 "es",
                 "ca",
-                "en"
-              ]
+                "en",
+              ],
             },
             "id": "me",
             "keys": Object {
@@ -3207,10 +3207,10 @@ exports[`Translator renders correctly with fixed columns 1`] = `
                     "id": "keyId1",
                     "text": "A message",
                     "translations": Object {
-                      "edges": Array []
+                      "edges": Array [],
                     },
-                    "unusedSince": null
-                  }
+                    "unusedSince": null,
+                  },
                 },
                 Object {
                   "node": Object {
@@ -3223,23 +3223,23 @@ exports[`Translator renders correctly with fixed columns 1`] = `
                           "node": Object {
                             "id": "translationId1",
                             "lang": "es",
-                            "translation": "Un mensaje"
-                          }
+                            "translation": "Un mensaje",
+                          },
                         },
                         Object {
                           "node": Object {
                             "id": "translationId2",
                             "lang": "ca",
-                            "translation": "Un missatge"
-                          }
-                        }
-                      ]
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
                     },
-                    "unusedSince": null
-                  }
-                }
-              ]
-            }
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
           }
         } />
       <div
@@ -3249,7 +3249,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             "WebkitFlex": "1 1 0px",
             "display": "flex",
             "flex": "1 1 0px",
-            "flexDirection": "row"
+            "flexDirection": "row",
           }
         }>
         <div
@@ -3260,7 +3260,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 17
+              "paddingRight": 17,
             }
           }>
           
@@ -3273,7 +3273,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 5
+              "paddingRight": 5,
             }
           } />
         <div
@@ -3284,7 +3284,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 5
+              "paddingRight": 5,
             }
           } />
       </div>
@@ -3303,7 +3303,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 0
+        "width": 0,
       }
     } />
   <div
@@ -3313,7 +3313,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
         "display": "flex",
         "flex": "1 0 10em",
         "flexDirection": "column",
-        "marginTop": 5
+        "marginTop": 5,
       }
     }>
     <div
@@ -3325,7 +3325,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
           "flex": "none",
           "flexDirection": "row",
           "fontWeight": "bold",
-          "position": "relative"
+          "position": "relative",
         }
       }>
       <div
@@ -3342,7 +3342,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             "paddingLeft": 5,
             "paddingRight": 17,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         MESSAGES
@@ -3350,7 +3350,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -3368,12 +3368,12 @@ exports[`Translator renders correctly with fixed columns using up all available 
          
         <i
           className="giu-icon fa fa-refresh"
-          onClick={[Function bound onParseSrcFiles]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Parse source files to update the message list" />
@@ -3393,7 +3393,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             "paddingLeft": 5,
             "paddingRight": 5,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         <div
@@ -3401,7 +3401,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             Object {
               "display": "inline-block",
               "paddingRight": 5,
-              "position": "relative"
+              "position": "relative",
             }
           }
           title="Change language">
@@ -3412,18 +3412,18 @@ exports[`Translator renders correctly with fixed columns using up all available 
                 "color": undefined,
                 "cursor": "pointer",
                 "letterSpacing": "normal",
-                "marginRight": 5
+                "marginRight": 5,
               }
             } />
           ca
           <select
             className="giu-select-native"
             id={0}
-            onBlur={[Function bound onBlur]}
-            onChange={[Function bound onChange]}
+            onBlur={[Function]}
+            onChange={[Function]}
             onCopy={undefined}
             onCut={undefined}
-            onFocus={[Function bound onFocus]}
+            onFocus={[Function]}
             onPaste={undefined}
             style={
               Object {
@@ -3438,7 +3438,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
                 "opacity": 0,
                 "position": "absolute",
                 "top": 0,
-                "width": "100%"
+                "width": "100%",
               }
             }
             tabIndex={undefined}
@@ -3464,7 +3464,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -3483,12 +3483,12 @@ exports[`Translator renders correctly with fixed columns using up all available 
         <i
           className="giu-icon fa fa-remove"
           id={0}
-          onClick={[Function bound onRemoveLang]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Remove column (does NOT delete any translations)" />
@@ -3508,7 +3508,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             "paddingLeft": 5,
             "paddingRight": 5,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         <div
@@ -3516,7 +3516,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             Object {
               "display": "inline-block",
               "paddingRight": 5,
-              "position": "relative"
+              "position": "relative",
             }
           }
           title="Change language">
@@ -3527,18 +3527,18 @@ exports[`Translator renders correctly with fixed columns using up all available 
                 "color": undefined,
                 "cursor": "pointer",
                 "letterSpacing": "normal",
-                "marginRight": 5
+                "marginRight": 5,
               }
             } />
           es
           <select
             className="giu-select-native"
             id={1}
-            onBlur={[Function bound onBlur]}
-            onChange={[Function bound onChange]}
+            onBlur={[Function]}
+            onChange={[Function]}
             onCopy={undefined}
             onCut={undefined}
-            onFocus={[Function bound onFocus]}
+            onFocus={[Function]}
             onPaste={undefined}
             style={
               Object {
@@ -3553,7 +3553,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
                 "opacity": 0,
                 "position": "absolute",
                 "top": 0,
-                "width": "100%"
+                "width": "100%",
               }
             }
             tabIndex={undefined}
@@ -3579,7 +3579,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -3598,12 +3598,12 @@ exports[`Translator renders correctly with fixed columns using up all available 
         <i
           className="giu-icon fa fa-remove"
           id={1}
-          onClick={[Function bound onRemoveLang]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Remove column (does NOT delete any translations)" />
@@ -3623,7 +3623,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             "paddingLeft": 5,
             "paddingRight": 5,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         <div
@@ -3631,7 +3631,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             Object {
               "display": "inline-block",
               "paddingRight": 5,
-              "position": "relative"
+              "position": "relative",
             }
           }
           title="Change language">
@@ -3642,18 +3642,18 @@ exports[`Translator renders correctly with fixed columns using up all available 
                 "color": undefined,
                 "cursor": "pointer",
                 "letterSpacing": "normal",
-                "marginRight": 5
+                "marginRight": 5,
               }
             } />
           en
           <select
             className="giu-select-native"
             id={2}
-            onBlur={[Function bound onBlur]}
-            onChange={[Function bound onChange]}
+            onBlur={[Function]}
+            onChange={[Function]}
             onCopy={undefined}
             onCut={undefined}
-            onFocus={[Function bound onFocus]}
+            onFocus={[Function]}
             onPaste={undefined}
             style={
               Object {
@@ -3668,7 +3668,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
                 "opacity": 0,
                 "position": "absolute",
                 "top": 0,
-                "width": "100%"
+                "width": "100%",
               }
             }
             tabIndex={undefined}
@@ -3694,7 +3694,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -3713,12 +3713,12 @@ exports[`Translator renders correctly with fixed columns using up all available 
         <i
           className="giu-icon fa fa-remove"
           id={2}
-          onClick={[Function bound onRemoveLang]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Remove column (does NOT delete any translations)" />
@@ -3734,7 +3734,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             "padding": "3px 6px",
             "position": "absolute",
             "right": NaN,
-            "top": 0
+            "top": 0,
           }
         }
         title="Add column">
@@ -3745,7 +3745,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             Object {
               "color": "#999999",
               "cursor": undefined,
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           } />
       </div>
@@ -3753,7 +3753,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
         style={
           Object {
             "WebkitFlex": "0 0 NaNpx",
-            "flex": "0 0 NaNpx"
+            "flex": "0 0 NaNpx",
           }
         } />
     </div>
@@ -3765,18 +3765,18 @@ exports[`Translator renders correctly with fixed columns using up all available 
           "display": "flex",
           "flex": 1,
           "flexDirection": "column",
-          "overflowY": "scroll"
+          "overflowY": "scroll",
         }
       }>
       <div
-        changeSelectedKey={[Function changeSelectedKey]}
+        changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
           Array [
             "ca",
             "es",
-            "en"
+            "en",
           ]
         }
         styleKeyCol={
@@ -3786,7 +3786,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 17
+            "paddingRight": 17,
           }
         }
         styleLangCol={
@@ -3796,7 +3796,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 5
+            "paddingRight": 5,
           }
         }
         theKey={
@@ -3805,9 +3805,9 @@ exports[`Translator renders correctly with fixed columns using up all available 
             "id": "keyId1",
             "text": "A message",
             "translations": Object {
-              "edges": Array []
+              "edges": Array [],
             },
-            "unusedSince": null
+            "unusedSince": null,
           }
         }
         viewer={
@@ -3816,8 +3816,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
               "langs": Array [
                 "es",
                 "ca",
-                "en"
-              ]
+                "en",
+              ],
             },
             "id": "me",
             "keys": Object {
@@ -3828,10 +3828,10 @@ exports[`Translator renders correctly with fixed columns using up all available 
                     "id": "keyId1",
                     "text": "A message",
                     "translations": Object {
-                      "edges": Array []
+                      "edges": Array [],
                     },
-                    "unusedSince": null
-                  }
+                    "unusedSince": null,
+                  },
                 },
                 Object {
                   "node": Object {
@@ -3844,34 +3844,34 @@ exports[`Translator renders correctly with fixed columns using up all available 
                           "node": Object {
                             "id": "translationId1",
                             "lang": "es",
-                            "translation": "Un mensaje"
-                          }
+                            "translation": "Un mensaje",
+                          },
                         },
                         Object {
                           "node": Object {
                             "id": "translationId2",
                             "lang": "ca",
-                            "translation": "Un missatge"
-                          }
-                        }
-                      ]
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
                     },
-                    "unusedSince": null
-                  }
-                }
-              ]
-            }
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
           }
         } />
       <div
-        changeSelectedKey={[Function changeSelectedKey]}
+        changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
           Array [
             "ca",
             "es",
-            "en"
+            "en",
           ]
         }
         styleKeyCol={
@@ -3881,7 +3881,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 17
+            "paddingRight": 17,
           }
         }
         styleLangCol={
@@ -3891,7 +3891,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 5
+            "paddingRight": 5,
           }
         }
         theKey={
@@ -3905,19 +3905,19 @@ exports[`Translator renders correctly with fixed columns using up all available 
                   "node": Object {
                     "id": "translationId1",
                     "lang": "es",
-                    "translation": "Un mensaje"
-                  }
+                    "translation": "Un mensaje",
+                  },
                 },
                 Object {
                   "node": Object {
                     "id": "translationId2",
                     "lang": "ca",
-                    "translation": "Un missatge"
-                  }
-                }
-              ]
+                    "translation": "Un missatge",
+                  },
+                },
+              ],
             },
-            "unusedSince": null
+            "unusedSince": null,
           }
         }
         viewer={
@@ -3926,8 +3926,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
               "langs": Array [
                 "es",
                 "ca",
-                "en"
-              ]
+                "en",
+              ],
             },
             "id": "me",
             "keys": Object {
@@ -3938,10 +3938,10 @@ exports[`Translator renders correctly with fixed columns using up all available 
                     "id": "keyId1",
                     "text": "A message",
                     "translations": Object {
-                      "edges": Array []
+                      "edges": Array [],
                     },
-                    "unusedSince": null
-                  }
+                    "unusedSince": null,
+                  },
                 },
                 Object {
                   "node": Object {
@@ -3954,23 +3954,23 @@ exports[`Translator renders correctly with fixed columns using up all available 
                           "node": Object {
                             "id": "translationId1",
                             "lang": "es",
-                            "translation": "Un mensaje"
-                          }
+                            "translation": "Un mensaje",
+                          },
                         },
                         Object {
                           "node": Object {
                             "id": "translationId2",
                             "lang": "ca",
-                            "translation": "Un missatge"
-                          }
-                        }
-                      ]
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
                     },
-                    "unusedSince": null
-                  }
-                }
-              ]
-            }
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
           }
         } />
       <div
@@ -3980,7 +3980,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             "WebkitFlex": "1 1 0px",
             "display": "flex",
             "flex": "1 1 0px",
-            "flexDirection": "row"
+            "flexDirection": "row",
           }
         }>
         <div
@@ -3991,7 +3991,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 17
+              "paddingRight": 17,
             }
           }>
           
@@ -4004,7 +4004,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 5
+              "paddingRight": 5,
             }
           } />
         <div
@@ -4015,7 +4015,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 5
+              "paddingRight": 5,
             }
           } />
         <div
@@ -4026,7 +4026,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 5
+              "paddingRight": 5,
             }
           } />
       </div>
@@ -4045,7 +4045,7 @@ exports[`Translator renders correctly with no content 1`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 0
+        "width": 0,
       }
     } />
   <div
@@ -4055,7 +4055,7 @@ exports[`Translator renders correctly with no content 1`] = `
         "display": "flex",
         "flex": "1 0 10em",
         "flexDirection": "column",
-        "marginTop": 5
+        "marginTop": 5,
       }
     }>
     <div
@@ -4067,7 +4067,7 @@ exports[`Translator renders correctly with no content 1`] = `
           "flex": "none",
           "flexDirection": "row",
           "fontWeight": "bold",
-          "position": "relative"
+          "position": "relative",
         }
       }>
       <div
@@ -4084,7 +4084,7 @@ exports[`Translator renders correctly with no content 1`] = `
             "paddingLeft": 5,
             "paddingRight": 17,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         MESSAGES
@@ -4092,7 +4092,7 @@ exports[`Translator renders correctly with no content 1`] = `
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -4110,12 +4110,12 @@ exports[`Translator renders correctly with no content 1`] = `
          
         <i
           className="giu-icon fa fa-refresh"
-          onClick={[Function bound onParseSrcFiles]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Parse source files to update the message list" />
@@ -4135,7 +4135,7 @@ exports[`Translator renders correctly with no content 1`] = `
             "paddingLeft": 5,
             "paddingRight": 5,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         <div
@@ -4143,7 +4143,7 @@ exports[`Translator renders correctly with no content 1`] = `
             Object {
               "display": "inline-block",
               "paddingRight": 5,
-              "position": "relative"
+              "position": "relative",
             }
           }
           title="Change language">
@@ -4154,18 +4154,18 @@ exports[`Translator renders correctly with no content 1`] = `
                 "color": undefined,
                 "cursor": "pointer",
                 "letterSpacing": "normal",
-                "marginRight": 5
+                "marginRight": 5,
               }
             } />
           es
           <select
             className="giu-select-native"
             id={0}
-            onBlur={[Function bound onBlur]}
-            onChange={[Function bound onChange]}
+            onBlur={[Function]}
+            onChange={[Function]}
             onCopy={undefined}
             onCut={undefined}
-            onFocus={[Function bound onFocus]}
+            onFocus={[Function]}
             onPaste={undefined}
             style={
               Object {
@@ -4180,7 +4180,7 @@ exports[`Translator renders correctly with no content 1`] = `
                 "opacity": 0,
                 "position": "absolute",
                 "top": 0,
-                "width": "100%"
+                "width": "100%",
               }
             }
             tabIndex={undefined}
@@ -4206,7 +4206,7 @@ exports[`Translator renders correctly with no content 1`] = `
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -4225,19 +4225,19 @@ exports[`Translator renders correctly with no content 1`] = `
         <i
           className="giu-icon fa fa-remove"
           id={0}
-          onClick={[Function bound onRemoveLang]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Remove column (does NOT delete any translations)" />
       </div>
       <div
         id="madyBtnAddLang"
-        onClick={[Function bound onAddLang]}
+        onClick={[Function]}
         style={
           Object {
             "cursor": "pointer",
@@ -4246,7 +4246,7 @@ exports[`Translator renders correctly with no content 1`] = `
             "padding": "3px 6px",
             "position": "absolute",
             "right": NaN,
-            "top": 0
+            "top": 0,
           }
         }
         title="Add column">
@@ -4256,7 +4256,7 @@ exports[`Translator renders correctly with no content 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           } />
       </div>
@@ -4264,7 +4264,7 @@ exports[`Translator renders correctly with no content 1`] = `
         style={
           Object {
             "WebkitFlex": "0 0 NaNpx",
-            "flex": "0 0 NaNpx"
+            "flex": "0 0 NaNpx",
           }
         } />
     </div>
@@ -4276,7 +4276,7 @@ exports[`Translator renders correctly with no content 1`] = `
           "display": "flex",
           "flex": 1,
           "flexDirection": "column",
-          "overflowY": "scroll"
+          "overflowY": "scroll",
         }
       }>
       <div
@@ -4286,7 +4286,7 @@ exports[`Translator renders correctly with no content 1`] = `
             "WebkitFlex": "1 1 0px",
             "display": "flex",
             "flex": "1 1 0px",
-            "flexDirection": "row"
+            "flexDirection": "row",
           }
         }>
         <div
@@ -4297,7 +4297,7 @@ exports[`Translator renders correctly with no content 1`] = `
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 17
+              "paddingRight": 17,
             }
           }>
           <div
@@ -4308,7 +4308,7 @@ exports[`Translator renders correctly with no content 1`] = `
                 "fontSize": "1.4em",
                 "fontWeight": 700,
                 "padding": "0.8em",
-                "textAlign": "center"
+                "textAlign": "center",
               }
             }>
             No messages. Click on 
@@ -4319,7 +4319,7 @@ exports[`Translator renders correctly with no content 1`] = `
                 Object {
                   "color": "#999999",
                   "cursor": undefined,
-                  "letterSpacing": "normal"
+                  "letterSpacing": "normal",
                 }
               } />
              to refresh
@@ -4333,7 +4333,7 @@ exports[`Translator renders correctly with no content 1`] = `
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 5
+              "paddingRight": 5,
             }
           } />
       </div>
@@ -4352,7 +4352,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 0
+        "width": 0,
       }
     } />
   <div
@@ -4362,7 +4362,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
         "display": "flex",
         "flex": "1 0 10em",
         "flexDirection": "column",
-        "marginTop": 5
+        "marginTop": 5,
       }
     }>
     <div
@@ -4374,7 +4374,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
           "flex": "none",
           "flexDirection": "row",
           "fontWeight": "bold",
-          "position": "relative"
+          "position": "relative",
         }
       }>
       <div
@@ -4391,7 +4391,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             "paddingLeft": 5,
             "paddingRight": 17,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         MESSAGES
@@ -4399,7 +4399,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -4417,12 +4417,12 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
          
         <i
           className="giu-icon fa fa-refresh"
-          onClick={[Function bound onParseSrcFiles]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Parse source files to update the message list" />
@@ -4442,7 +4442,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             "paddingLeft": 5,
             "paddingRight": 5,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         <div
@@ -4450,7 +4450,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             Object {
               "display": "inline-block",
               "paddingRight": 5,
-              "position": "relative"
+              "position": "relative",
             }
           }
           title="Change language">
@@ -4461,18 +4461,18 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
                 "color": undefined,
                 "cursor": "pointer",
                 "letterSpacing": "normal",
-                "marginRight": 5
+                "marginRight": 5,
               }
             } />
           ca
           <select
             className="giu-select-native"
             id={0}
-            onBlur={[Function bound onBlur]}
-            onChange={[Function bound onChange]}
+            onBlur={[Function]}
+            onChange={[Function]}
             onCopy={undefined}
             onCut={undefined}
-            onFocus={[Function bound onFocus]}
+            onFocus={[Function]}
             onPaste={undefined}
             style={
               Object {
@@ -4487,7 +4487,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
                 "opacity": 0,
                 "position": "absolute",
                 "top": 0,
-                "width": "100%"
+                "width": "100%",
               }
             }
             tabIndex={undefined}
@@ -4513,7 +4513,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -4532,12 +4532,12 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
         <i
           className="giu-icon fa fa-remove"
           id={0}
-          onClick={[Function bound onRemoveLang]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Remove column (does NOT delete any translations)" />
@@ -4557,7 +4557,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             "paddingLeft": 5,
             "paddingRight": 5,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         <div
@@ -4565,7 +4565,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             Object {
               "display": "inline-block",
               "paddingRight": 5,
-              "position": "relative"
+              "position": "relative",
             }
           }
           title="Change language">
@@ -4576,18 +4576,18 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
                 "color": undefined,
                 "cursor": "pointer",
                 "letterSpacing": "normal",
-                "marginRight": 5
+                "marginRight": 5,
               }
             } />
           es
           <select
             className="giu-select-native"
             id={1}
-            onBlur={[Function bound onBlur]}
-            onChange={[Function bound onChange]}
+            onBlur={[Function]}
+            onChange={[Function]}
             onCopy={undefined}
             onCut={undefined}
-            onFocus={[Function bound onFocus]}
+            onFocus={[Function]}
             onPaste={undefined}
             style={
               Object {
@@ -4602,7 +4602,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
                 "opacity": 0,
                 "position": "absolute",
                 "top": 0,
-                "width": "100%"
+                "width": "100%",
               }
             }
             tabIndex={undefined}
@@ -4628,7 +4628,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -4647,12 +4647,12 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
         <i
           className="giu-icon fa fa-remove"
           id={1}
-          onClick={[Function bound onRemoveLang]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Remove column (does NOT delete any translations)" />
@@ -4672,7 +4672,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             "paddingLeft": 5,
             "paddingRight": 5,
             "paddingTop": 3,
-            "textAlign": "center"
+            "textAlign": "center",
           }
         }>
         <div
@@ -4680,7 +4680,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             Object {
               "display": "inline-block",
               "paddingRight": 5,
-              "position": "relative"
+              "position": "relative",
             }
           }
           title="Change language">
@@ -4691,18 +4691,18 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
                 "color": undefined,
                 "cursor": "pointer",
                 "letterSpacing": "normal",
-                "marginRight": 5
+                "marginRight": 5,
               }
             } />
           en
           <select
             className="giu-select-native"
             id={2}
-            onBlur={[Function bound onBlur]}
-            onChange={[Function bound onChange]}
+            onBlur={[Function]}
+            onChange={[Function]}
             onCopy={undefined}
             onCut={undefined}
-            onFocus={[Function bound onFocus]}
+            onFocus={[Function]}
             onPaste={undefined}
             style={
               Object {
@@ -4717,7 +4717,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
                 "opacity": 0,
                 "position": "absolute",
                 "top": 0,
-                "width": "100%"
+                "width": "100%",
               }
             }
             tabIndex={undefined}
@@ -4743,7 +4743,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
         <span
           style={
             Object {
-              "color": "darkgrey"
+              "color": "darkgrey",
             }
           }>
           [
@@ -4762,12 +4762,12 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
         <i
           className="giu-icon fa fa-remove"
           id={2}
-          onClick={[Function bound onRemoveLang]}
+          onClick={[Function]}
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           }
           title="Remove column (does NOT delete any translations)" />
@@ -4783,7 +4783,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             "padding": "3px 6px",
             "position": "absolute",
             "right": NaN,
-            "top": 0
+            "top": 0,
           }
         }
         title="Add column">
@@ -4794,7 +4794,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             Object {
               "color": "#999999",
               "cursor": undefined,
-              "letterSpacing": "normal"
+              "letterSpacing": "normal",
             }
           } />
       </div>
@@ -4802,7 +4802,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
         style={
           Object {
             "WebkitFlex": "0 0 NaNpx",
-            "flex": "0 0 NaNpx"
+            "flex": "0 0 NaNpx",
           }
         } />
     </div>
@@ -4814,18 +4814,18 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
           "display": "flex",
           "flex": 1,
           "flexDirection": "column",
-          "overflowY": "scroll"
+          "overflowY": "scroll",
         }
       }>
       <div
-        changeSelectedKey={[Function changeSelectedKey]}
+        changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
           Array [
             "ca",
             "es",
-            "en"
+            "en",
           ]
         }
         styleKeyCol={
@@ -4835,7 +4835,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 17
+            "paddingRight": 17,
           }
         }
         styleLangCol={
@@ -4845,7 +4845,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 5
+            "paddingRight": 5,
           }
         }
         theKey={
@@ -4854,9 +4854,9 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             "id": "keyId1",
             "text": "A message",
             "translations": Object {
-              "edges": Array []
+              "edges": Array [],
             },
-            "unusedSince": null
+            "unusedSince": null,
           }
         }
         viewer={
@@ -4865,8 +4865,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               "langs": Array [
                 "es",
                 "ca",
-                "en"
-              ]
+                "en",
+              ],
             },
             "id": "me",
             "keys": Object {
@@ -4877,10 +4877,10 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
                     "id": "keyId1",
                     "text": "A message",
                     "translations": Object {
-                      "edges": Array []
+                      "edges": Array [],
                     },
-                    "unusedSince": null
-                  }
+                    "unusedSince": null,
+                  },
                 },
                 Object {
                   "node": Object {
@@ -4893,34 +4893,34 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
                           "node": Object {
                             "id": "translationId1",
                             "lang": "es",
-                            "translation": "Un mensaje"
-                          }
+                            "translation": "Un mensaje",
+                          },
                         },
                         Object {
                           "node": Object {
                             "id": "translationId2",
                             "lang": "ca",
-                            "translation": "Un missatge"
-                          }
-                        }
-                      ]
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
                     },
-                    "unusedSince": null
-                  }
-                }
-              ]
-            }
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
           }
         } />
       <div
-        changeSelectedKey={[Function changeSelectedKey]}
+        changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
           Array [
             "ca",
             "es",
-            "en"
+            "en",
           ]
         }
         styleKeyCol={
@@ -4930,7 +4930,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 17
+            "paddingRight": 17,
           }
         }
         styleLangCol={
@@ -4940,7 +4940,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             "flex": "1 1 0px",
             "marginRight": 5,
             "paddingLeft": 5,
-            "paddingRight": 5
+            "paddingRight": 5,
           }
         }
         theKey={
@@ -4954,19 +4954,19 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
                   "node": Object {
                     "id": "translationId1",
                     "lang": "es",
-                    "translation": "Un mensaje"
-                  }
+                    "translation": "Un mensaje",
+                  },
                 },
                 Object {
                   "node": Object {
                     "id": "translationId2",
                     "lang": "ca",
-                    "translation": "Un missatge"
-                  }
-                }
-              ]
+                    "translation": "Un missatge",
+                  },
+                },
+              ],
             },
-            "unusedSince": null
+            "unusedSince": null,
           }
         }
         viewer={
@@ -4975,8 +4975,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               "langs": Array [
                 "es",
                 "ca",
-                "en"
-              ]
+                "en",
+              ],
             },
             "id": "me",
             "keys": Object {
@@ -4987,10 +4987,10 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
                     "id": "keyId1",
                     "text": "A message",
                     "translations": Object {
-                      "edges": Array []
+                      "edges": Array [],
                     },
-                    "unusedSince": null
-                  }
+                    "unusedSince": null,
+                  },
                 },
                 Object {
                   "node": Object {
@@ -5003,23 +5003,23 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
                           "node": Object {
                             "id": "translationId1",
                             "lang": "es",
-                            "translation": "Un mensaje"
-                          }
+                            "translation": "Un mensaje",
+                          },
                         },
                         Object {
                           "node": Object {
                             "id": "translationId2",
                             "lang": "ca",
-                            "translation": "Un missatge"
-                          }
-                        }
-                      ]
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
                     },
-                    "unusedSince": null
-                  }
-                }
-              ]
-            }
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
           }
         } />
       <div
@@ -5029,7 +5029,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             "WebkitFlex": "1 1 0px",
             "display": "flex",
             "flex": "1 1 0px",
-            "flexDirection": "row"
+            "flexDirection": "row",
           }
         }>
         <div
@@ -5040,7 +5040,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 17
+              "paddingRight": 17,
             }
           }>
           
@@ -5053,7 +5053,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 5
+              "paddingRight": 5,
             }
           } />
         <div
@@ -5064,7 +5064,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 5
+              "paddingRight": 5,
             }
           } />
         <div
@@ -5075,7 +5075,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               "flex": "1 1 0px",
               "marginRight": 5,
               "paddingLeft": 5,
-              "paddingRight": 5
+              "paddingRight": 5,
             }
           } />
       </div>

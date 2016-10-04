@@ -2,19 +2,19 @@ exports[`HoverableTranslatorRow renders correctly a key with translations 1`] = 
 <div
   className="tableBodyRow"
   id="keyId2"
-  onClick={[Function bound onClickKeyRow]}
+  onClick={[Function]}
   style={
     Object {
       "WebkitFlex": "none",
       "display": "flex",
       "flex": "none",
       "flexDirection": "row",
-      "minHeight": 21
+      "minHeight": 21,
     }
   }>
   <div
-    onMouseEnter={[Function bound onHoverStart]}
-    onMouseLeave={[Function bound onHoverStop]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     style={
       Object {
         "WebkitFlex": "1 1 0px",
@@ -26,14 +26,14 @@ exports[`HoverableTranslatorRow renders correctly a key with translations 1`] = 
         "paddingLeft": 5,
         "paddingRight": 17,
         "paddingTop": 1,
-        "position": "relative"
+        "position": "relative",
       }
     }>
     <span
       style={
         Object {
           "fontWeight": 900,
-          "marginRight": 10
+          "marginRight": 10,
         }
       }>
       someContext
@@ -41,7 +41,7 @@ exports[`HoverableTranslatorRow renders correctly a key with translations 1`] = 
     <span
       style={
         Object {
-          "whiteSpace": "pre-wrap"
+          "whiteSpace": "pre-wrap",
         }
       }>
       A message
@@ -59,11 +59,11 @@ exports[`HoverableTranslatorRow renders correctly a key with translations 1`] = 
         "paddingLeft": 5,
         "paddingRight": 5,
         "paddingTop": 1,
-        "position": "relative"
+        "position": "relative",
       }
     }>
     <div
-      changeSelectedKey={[Function changeSelectedKey]}
+      changeSelectedKey={[Function]}
       dataMockType="Translation"
       lang="es"
       theKey={
@@ -77,26 +77,26 @@ exports[`HoverableTranslatorRow renders correctly a key with translations 1`] = 
                 "node": Object {
                   "id": "translationId1",
                   "lang": "es",
-                  "translation": "Un mensaje"
-                }
+                  "translation": "Un mensaje",
+                },
               },
               Object {
                 "node": Object {
                   "id": "translationId2",
                   "lang": "ca",
-                  "translation": "Un missatge"
-                }
-              }
-            ]
+                  "translation": "Un missatge",
+                },
+              },
+            ],
           },
-          "unusedSince": null
+          "unusedSince": null,
         }
       }
       translation={
         Object {
           "id": "translationId1",
           "lang": "es",
-          "translation": "Un mensaje"
+          "translation": "Un mensaje",
         }
       } />
   </div>
@@ -112,11 +112,11 @@ exports[`HoverableTranslatorRow renders correctly a key with translations 1`] = 
         "paddingLeft": 5,
         "paddingRight": 5,
         "paddingTop": 1,
-        "position": "relative"
+        "position": "relative",
       }
     }>
     <div
-      changeSelectedKey={[Function changeSelectedKey]}
+      changeSelectedKey={[Function]}
       dataMockType="Translation"
       lang="ca"
       theKey={
@@ -130,26 +130,26 @@ exports[`HoverableTranslatorRow renders correctly a key with translations 1`] = 
                 "node": Object {
                   "id": "translationId1",
                   "lang": "es",
-                  "translation": "Un mensaje"
-                }
+                  "translation": "Un mensaje",
+                },
               },
               Object {
                 "node": Object {
                   "id": "translationId2",
                   "lang": "ca",
-                  "translation": "Un missatge"
-                }
-              }
-            ]
+                  "translation": "Un missatge",
+                },
+              },
+            ],
           },
-          "unusedSince": null
+          "unusedSince": null,
         }
       }
       translation={
         Object {
           "id": "translationId2",
           "lang": "ca",
-          "translation": "Un missatge"
+          "translation": "Un missatge",
         }
       } />
   </div>
@@ -160,19 +160,19 @@ exports[`HoverableTranslatorRow renders correctly a key without translations 1`]
 <div
   className="tableBodyRow"
   id="keyId1"
-  onClick={[Function bound onClickKeyRow]}
+  onClick={[Function]}
   style={
     Object {
       "WebkitFlex": "none",
       "display": "flex",
       "flex": "none",
       "flexDirection": "row",
-      "minHeight": 21
+      "minHeight": 21,
     }
   }>
   <div
-    onMouseEnter={[Function bound onHoverStart]}
-    onMouseLeave={[Function bound onHoverStop]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     style={
       Object {
         "WebkitFlex": "1 1 0px",
@@ -184,14 +184,14 @@ exports[`HoverableTranslatorRow renders correctly a key without translations 1`]
         "paddingLeft": 5,
         "paddingRight": 17,
         "paddingTop": 1,
-        "position": "relative"
+        "position": "relative",
       }
     }>
     <span
       style={
         Object {
           "fontWeight": 900,
-          "marginRight": 10
+          "marginRight": 10,
         }
       }>
       someContext
@@ -199,7 +199,7 @@ exports[`HoverableTranslatorRow renders correctly a key without translations 1`]
     <span
       style={
         Object {
-          "whiteSpace": "pre-wrap"
+          "whiteSpace": "pre-wrap",
         }
       }>
       A message
@@ -217,11 +217,11 @@ exports[`HoverableTranslatorRow renders correctly a key without translations 1`]
         "paddingLeft": 5,
         "paddingRight": 5,
         "paddingTop": 1,
-        "position": "relative"
+        "position": "relative",
       }
     }>
     <div
-      changeSelectedKey={[Function changeSelectedKey]}
+      changeSelectedKey={[Function]}
       dataMockType="Translation"
       lang="es"
       theKey={
@@ -230,9 +230,9 @@ exports[`HoverableTranslatorRow renders correctly a key without translations 1`]
           "id": "keyId1",
           "text": "A message",
           "translations": Object {
-            "edges": Array []
+            "edges": Array [],
           },
-          "unusedSince": null
+          "unusedSince": null,
         }
       }
       translation={null} />
@@ -249,11 +249,11 @@ exports[`HoverableTranslatorRow renders correctly a key without translations 1`]
         "paddingLeft": 5,
         "paddingRight": 5,
         "paddingTop": 1,
-        "position": "relative"
+        "position": "relative",
       }
     }>
     <div
-      changeSelectedKey={[Function changeSelectedKey]}
+      changeSelectedKey={[Function]}
       dataMockType="Translation"
       lang="ca"
       theKey={
@@ -262,9 +262,9 @@ exports[`HoverableTranslatorRow renders correctly a key without translations 1`]
           "id": "keyId1",
           "text": "A message",
           "translations": Object {
-            "edges": Array []
+            "edges": Array [],
           },
-          "unusedSince": null
+          "unusedSince": null,
         }
       }
       translation={null} />
@@ -276,19 +276,19 @@ exports[`HoverableTranslatorRow renders correctly a selected key 1`] = `
 <div
   className="tableBodyRow"
   id="keyId1"
-  onClick={[Function bound onClickKeyRow]}
+  onClick={[Function]}
   style={
     Object {
       "WebkitFlex": "none",
       "display": "flex",
       "flex": "none",
       "flexDirection": "row",
-      "minHeight": 21
+      "minHeight": 21,
     }
   }>
   <div
-    onMouseEnter={[Function bound onHoverStart]}
-    onMouseLeave={[Function bound onHoverStop]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     style={
       Object {
         "WebkitFlex": "1 1 0px",
@@ -300,14 +300,14 @@ exports[`HoverableTranslatorRow renders correctly a selected key 1`] = `
         "paddingLeft": 5,
         "paddingRight": 17,
         "paddingTop": 1,
-        "position": "relative"
+        "position": "relative",
       }
     }>
     <span
       style={
         Object {
           "fontWeight": 900,
-          "marginRight": 10
+          "marginRight": 10,
         }
       }>
       someContext
@@ -315,7 +315,7 @@ exports[`HoverableTranslatorRow renders correctly a selected key 1`] = `
     <span
       style={
         Object {
-          "whiteSpace": "pre-wrap"
+          "whiteSpace": "pre-wrap",
         }
       }>
       A message
@@ -333,11 +333,11 @@ exports[`HoverableTranslatorRow renders correctly a selected key 1`] = `
         "paddingLeft": 5,
         "paddingRight": 5,
         "paddingTop": 1,
-        "position": "relative"
+        "position": "relative",
       }
     }>
     <div
-      changeSelectedKey={[Function changeSelectedKey]}
+      changeSelectedKey={[Function]}
       dataMockType="Translation"
       lang="es"
       theKey={
@@ -346,9 +346,9 @@ exports[`HoverableTranslatorRow renders correctly a selected key 1`] = `
           "id": "keyId1",
           "text": "A message",
           "translations": Object {
-            "edges": Array []
+            "edges": Array [],
           },
-          "unusedSince": null
+          "unusedSince": null,
         }
       }
       translation={null} />
@@ -365,11 +365,11 @@ exports[`HoverableTranslatorRow renders correctly a selected key 1`] = `
         "paddingLeft": 5,
         "paddingRight": 5,
         "paddingTop": 1,
-        "position": "relative"
+        "position": "relative",
       }
     }>
     <div
-      changeSelectedKey={[Function changeSelectedKey]}
+      changeSelectedKey={[Function]}
       dataMockType="Translation"
       lang="ca"
       theKey={
@@ -378,9 +378,9 @@ exports[`HoverableTranslatorRow renders correctly a selected key 1`] = `
           "id": "keyId1",
           "text": "A message",
           "translations": Object {
-            "edges": Array []
+            "edges": Array [],
           },
-          "unusedSince": null
+          "unusedSince": null,
         }
       }
       translation={null} />
