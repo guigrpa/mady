@@ -98,7 +98,9 @@ exports[`HoverableTranslatorRow renders correctly a key with translations 1`] = 
           "lang": "es",
           "translation": "Un mensaje",
         }
-      } />
+      }>
+      Translation
+    </div>
   </div>
   <div
     style={
@@ -151,7 +153,9 @@ exports[`HoverableTranslatorRow renders correctly a key with translations 1`] = 
           "lang": "ca",
           "translation": "Un missatge",
         }
-      } />
+      }>
+      Translation
+    </div>
   </div>
 </div>
 `;
@@ -235,7 +239,9 @@ exports[`HoverableTranslatorRow renders correctly a key without translations 1`]
           "unusedSince": null,
         }
       }
-      translation={null} />
+      translation={null}>
+      Translation
+    </div>
   </div>
   <div
     style={
@@ -267,7 +273,9 @@ exports[`HoverableTranslatorRow renders correctly a key without translations 1`]
           "unusedSince": null,
         }
       }
-      translation={null} />
+      translation={null}>
+      Translation
+    </div>
   </div>
 </div>
 `;
@@ -351,7 +359,9 @@ exports[`HoverableTranslatorRow renders correctly a selected key 1`] = `
           "unusedSince": null,
         }
       }
-      translation={null} />
+      translation={null}>
+      Translation
+    </div>
   </div>
   <div
     style={
@@ -383,7 +393,9 @@ exports[`HoverableTranslatorRow renders correctly a selected key 1`] = `
           "unusedSince": null,
         }
       }
-      translation={null} />
+      translation={null}>
+      Translation
+    </div>
   </div>
 </div>
 `;

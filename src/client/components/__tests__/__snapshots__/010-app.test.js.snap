@@ -89,7 +89,9 @@ exports[`App changes the selected key when clicked 1`] = `
   </div>
   <div
     dataMockType="Header"
-    onShowSettings={[Function]} />
+    onShowSettings={[Function]}>
+    Header
+  </div>
   <div
     changeSelectedKey={[Function]}
     dataMockType="Translator"
@@ -109,7 +111,9 @@ exports[`App changes the selected key when clicked 1`] = `
           "edges": Array [],
         },
       }
-    } />
+    }>
+    Translator
+  </div>
   <div
     dataMockType="Details"
     lang="en"
@@ -128,7 +132,9 @@ exports[`App changes the selected key when clicked 1`] = `
           "edges": Array [],
         },
       }
-    } />
+    }>
+    Details
+  </div>
 </div>
 `;
 
@@ -223,7 +229,9 @@ exports[`App renders correctly with no content 1`] = `
   </div>
   <div
     dataMockType="Header"
-    onShowSettings={[Function]} />
+    onShowSettings={[Function]}>
+    Header
+  </div>
   <div
     changeSelectedKey={[Function]}
     dataMockType="Translator"
@@ -243,7 +251,9 @@ exports[`App renders correctly with no content 1`] = `
           "edges": Array [],
         },
       }
-    } />
+    }>
+    Translator
+  </div>
   <div
     dataMockType="Details"
     lang="en"
@@ -262,7 +272,9 @@ exports[`App renders correctly with no content 1`] = `
           "edges": Array [],
         },
       }
-    } />
+    }>
+    Details
+  </div>
 </div>
 `;
 
@@ -357,7 +369,9 @@ exports[`App shows the settings when clicked 1`] = `
   </div>
   <div
     dataMockType="Header"
-    onShowSettings={[Function]} />
+    onShowSettings={[Function]}>
+    Header
+  </div>
   <div
     changeSelectedKey={[Function]}
     dataMockType="Translator"
@@ -377,7 +391,9 @@ exports[`App shows the settings when clicked 1`] = `
           "edges": Array [],
         },
       }
-    } />
+    }>
+    Translator
+  </div>
   <div
     dataMockType="Details"
     lang="en"
@@ -396,7 +412,9 @@ exports[`App shows the settings when clicked 1`] = `
           "edges": Array [],
         },
       }
-    } />
+    }>
+    Details
+  </div>
   <div
     dataMockType="Settings"
     lang="en"
@@ -416,7 +434,9 @@ exports[`App shows the settings when clicked 1`] = `
           "edges": Array [],
         },
       }
-    } />
+    }>
+    Settings
+  </div>
 </div>
 `;
 
@@ -511,7 +531,9 @@ exports[`App shows the settings when clicked 2`] = `
   </div>
   <div
     dataMockType="Header"
-    onShowSettings={[Function]} />
+    onShowSettings={[Function]}>
+    Header
+  </div>
   <div
     changeSelectedKey={[Function]}
     dataMockType="Translator"
@@ -531,7 +553,9 @@ exports[`App shows the settings when clicked 2`] = `
           "edges": Array [],
         },
       }
-    } />
+    }>
+    Translator
+  </div>
   <div
     dataMockType="Details"
     lang="en"
@@ -550,6 +574,8 @@ exports[`App shows the settings when clicked 2`] = `
           "edges": Array [],
         },
       }
-    } />
+    }>
+    Details
+  </div>
 </div>
 `;

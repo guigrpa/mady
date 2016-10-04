@@ -1,0 +1,1780 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Snapshot preview</title>
+    <style>
+      body.jest {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+      }
+      .jest--sidebar {
+        width: 18em;
+        padding: 0.3em 0;
+        background-color: #eee;
+        font-family: sans-serif;
+        font-size: 0.8em;
+      }
+      .jest--preview {
+        flex: 1;
+        display: none;
+        transform: translateZ(0);
+      }
+      .jest--preview.shown { display: block; }
+      .jest--key {
+        padding: 0.3em 1em;
+        cursor: pointer;
+      }
+      .jest--key.shown { background-color: #ca461a; color: white; }
+      .jest--key:hover { background-color: #ddd; }
+      .jest--key.shown:hover { background-color: #ba360a; }
+      pre.jest--nonreact { padding: 10px }
+      
+      
+    </style>
+    <script type="text/javascript">
+      function removeClass(className, classToRemove) {
+        var idx;
+        var el;
+        var classes;
+        var els = document.getElementsByClassName(className);
+        for (var i = 0; i < els.length; i++) {
+          el = els[i];
+          classes = el.className.split(' ');
+          idx = classes.indexOf(classToRemove);
+          if (idx >= 0) {
+            classes.splice(idx, 1);
+            el.className = classes.join(' ');
+          }
+        };
+      }
+      function onClick(id) {
+        removeClass('jest--key', 'shown');
+        removeClass('jest--preview', 'shown');
+        el = document.getElementById('jest--preview_' + id);
+        if (el) el.className += ' shown';
+        el = document.getElementById('jest--key_' + id);
+        if (el) el.className += ' shown';
+      }
+    </script>
+  </head>
+  <body class="jest">
+    <div class="jest--sidebar">
+
+      <div class="jest--key shown"
+           id="jest--key_Translator allows changing the language of a column 1"
+           onclick="onClick('Translator allows changing the language of a column 1')">
+        Translator allows changing the language of a column 1
+      </div>
+
+      <div class="jest--key"
+           id="jest--key_Translator allows changing the language of a column 2"
+           onclick="onClick('Translator allows changing the language of a column 2')">
+        Translator allows changing the language of a column 2
+      </div>
+
+      <div class="jest--key"
+           id="jest--key_Translator allows removing columns 1"
+           onclick="onClick('Translator allows removing columns 1')">
+        Translator allows removing columns 1
+      </div>
+
+      <div class="jest--key"
+           id="jest--key_Translator renders correctly with a selection 1"
+           onclick="onClick('Translator renders correctly with a selection 1')">
+        Translator renders correctly with a selection 1
+      </div>
+
+      <div class="jest--key"
+           id="jest--key_Translator renders correctly with default columns 1"
+           onclick="onClick('Translator renders correctly with default columns 1')">
+        Translator renders correctly with default columns 1
+      </div>
+
+      <div class="jest--key"
+           id="jest--key_Translator renders correctly with fixed columns 1"
+           onclick="onClick('Translator renders correctly with fixed columns 1')">
+        Translator renders correctly with fixed columns 1
+      </div>
+
+      <div class="jest--key"
+           id="jest--key_Translator renders correctly with fixed columns using up all available options 1"
+           onclick="onClick('Translator renders correctly with fixed columns using up all available options 1')">
+        Translator renders correctly with fixed columns using up all available options 1
+      </div>
+
+      <div class="jest--key"
+           id="jest--key_Translator renders correctly with no content 1"
+           onclick="onClick('Translator renders correctly with no content 1')">
+        Translator renders correctly with no content 1
+      </div>
+
+      <div class="jest--key"
+           id="jest--key_Translator when adding a column, it corresponds to a new language 1"
+           onclick="onClick('Translator when adding a column, it corresponds to a new language 1')">
+        Translator when adding a column, it corresponds to a new language 1
+      </div>
+
+    </div>
+
+    <div id="jest--preview_Translator allows changing the language of a column 1" class="jest--preview shown">
+      <div>
+  <div
+    class="giu-floats"
+    style="height:0;left:0;position:absolute;top:0;width:0;">
+    
+  </div>
+  <div
+    style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+    <div
+      class="tableHeaderRow"
+      style="-webkit-flex:none;display:flex;flex:none;flex-direction:row;font-weight:bold;position:relative;">
+      <div
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:17px;padding-top:3px;text-align:center;">
+        MESSAGES
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Used messages">
+            2
+          </span>
+           / 
+          <span
+            title="Total messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-refresh"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Parse source files to update the message list">
+          
+        </i>
+      </div>
+      <div
+        class="madyLangHeader"
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:5px;padding-top:3px;text-align:center;">
+        <div
+          style="display:inline-block;padding-right:5px;position:relative;"
+          title="Change language">
+          <i
+            class="giu-icon fa fa-caret-down"
+            style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
+            
+          </i>
+          es
+          <select
+            class="giu-select-native"
+            style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            value="\"es\"">
+            <option
+              id="\"es\""
+              value="\"es\"">
+              es
+            </option>
+            <option
+              id="\"ca\""
+              value="\"ca\"">
+              ca
+            </option>
+            <option
+              id="\"en\""
+              value="\"en\"">
+              en
+            </option>
+          </select>
+        </div>
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Translations">
+            1
+          </span>
+           / 
+          <span
+            title="Used messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-remove"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Remove column (does NOT delete any translations)">
+          
+        </i>
+      </div>
+      <div
+        id="madyBtnAddLang"
+        style="cursor:pointer;font-weight:900;letter-spacing:3px;padding:3px 6px;position:absolute;right:NaNpx;top:0;"
+        title="Add column">
+        <i
+          class="giu-icon fa fa-plus"
+          style="color:;cursor:pointer;letter-spacing:normal;">
+          
+        </i>
+      </div>
+      <div
+        style="-webkit-flex:0 0 NaNpx;flex:0 0 NaNpx;">
+        
+      </div>
+    </div>
+    <div
+      class="tableBody"
+      style="-webkit-flex:1;display:flex;flex:1;flex-direction:column;overflow-y:scroll;">
+      <div
+        dataMockType="TranslatorRow">
+        TranslatorRow
+      </div>
+      <div
+        dataMockType="TranslatorRow">
+        TranslatorRow
+      </div>
+      <div
+        class="tableFillerRow"
+        style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;">
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
+          
+        </div>
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+    <div id="jest--preview_Translator allows changing the language of a column 2" class="jest--preview">
+      <div>
+  <div
+    class="giu-floats"
+    style="height:0;left:0;position:absolute;top:0;width:0;">
+    
+  </div>
+  <div
+    style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+    <div
+      class="tableHeaderRow"
+      style="-webkit-flex:none;display:flex;flex:none;flex-direction:row;font-weight:bold;position:relative;">
+      <div
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:17px;padding-top:3px;text-align:center;">
+        MESSAGES
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Used messages">
+            2
+          </span>
+           / 
+          <span
+            title="Total messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-refresh"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Parse source files to update the message list">
+          
+        </i>
+      </div>
+      <div
+        class="madyLangHeader"
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:5px;padding-top:3px;text-align:center;">
+        <div
+          style="display:inline-block;padding-right:5px;position:relative;"
+          title="Change language">
+          <i
+            class="giu-icon fa fa-caret-down"
+            style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
+            
+          </i>
+          en
+          <select
+            class="giu-select-native"
+            style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            value="\"en\"">
+            <option
+              id="\"es\""
+              value="\"es\"">
+              es
+            </option>
+            <option
+              id="\"ca\""
+              value="\"ca\"">
+              ca
+            </option>
+            <option
+              id="\"en\""
+              value="\"en\"">
+              en
+            </option>
+          </select>
+        </div>
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Translations">
+            0
+          </span>
+           / 
+          <span
+            title="Used messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-remove"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Remove column (does NOT delete any translations)">
+          
+        </i>
+      </div>
+      <div
+        id="madyBtnAddLang"
+        style="cursor:pointer;font-weight:900;letter-spacing:3px;padding:3px 6px;position:absolute;right:NaNpx;top:0;"
+        title="Add column">
+        <i
+          class="giu-icon fa fa-plus"
+          style="color:;cursor:pointer;letter-spacing:normal;">
+          
+        </i>
+      </div>
+      <div
+        style="-webkit-flex:0 0 NaNpx;flex:0 0 NaNpx;">
+        
+      </div>
+    </div>
+    <div
+      class="tableBody"
+      style="-webkit-flex:1;display:flex;flex:1;flex-direction:column;overflow-y:scroll;">
+      <div
+        dataMockType="TranslatorRow">
+        TranslatorRow
+      </div>
+      <div
+        dataMockType="TranslatorRow">
+        TranslatorRow
+      </div>
+      <div
+        class="tableFillerRow"
+        style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;">
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
+          
+        </div>
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+    <div id="jest--preview_Translator allows removing columns 1" class="jest--preview">
+      <div>
+  <div
+    class="giu-floats"
+    style="height:0;left:0;position:absolute;top:0;width:0;">
+    
+  </div>
+  <div
+    style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+    <div
+      class="tableHeaderRow"
+      style="-webkit-flex:none;display:flex;flex:none;flex-direction:row;font-weight:bold;position:relative;">
+      <div
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:17px;padding-top:3px;text-align:center;">
+        MESSAGES
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Used messages">
+            2
+          </span>
+           / 
+          <span
+            title="Total messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-refresh"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Parse source files to update the message list">
+          
+        </i>
+      </div>
+      <div
+        class="madyLangHeader"
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:5px;padding-top:3px;text-align:center;">
+        <div
+          style="display:inline-block;padding-right:5px;position:relative;"
+          title="Change language">
+          <i
+            class="giu-icon fa fa-caret-down"
+            style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
+            
+          </i>
+          es
+          <select
+            class="giu-select-native"
+            style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            value="\"es\"">
+            <option
+              id="\"es\""
+              value="\"es\"">
+              es
+            </option>
+            <option
+              id="\"ca\""
+              value="\"ca\"">
+              ca
+            </option>
+            <option
+              id="\"en\""
+              value="\"en\"">
+              en
+            </option>
+          </select>
+        </div>
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Translations">
+            1
+          </span>
+           / 
+          <span
+            title="Used messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-remove"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Remove column (does NOT delete any translations)">
+          
+        </i>
+      </div>
+      <div
+        id="madyBtnAddLang"
+        style="cursor:pointer;font-weight:900;letter-spacing:3px;padding:3px 6px;position:absolute;right:NaNpx;top:0;"
+        title="Add column">
+        <i
+          class="giu-icon fa fa-plus"
+          style="color:;cursor:pointer;letter-spacing:normal;">
+          
+        </i>
+      </div>
+      <div
+        style="-webkit-flex:0 0 NaNpx;flex:0 0 NaNpx;">
+        
+      </div>
+    </div>
+    <div
+      class="tableBody"
+      style="-webkit-flex:1;display:flex;flex:1;flex-direction:column;overflow-y:scroll;">
+      <div
+        dataMockType="TranslatorRow">
+        TranslatorRow
+      </div>
+      <div
+        dataMockType="TranslatorRow">
+        TranslatorRow
+      </div>
+      <div
+        class="tableFillerRow"
+        style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;">
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
+          
+        </div>
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+    <div id="jest--preview_Translator renders correctly with a selection 1" class="jest--preview">
+      <div>
+  <div
+    class="giu-floats"
+    style="height:0;left:0;position:absolute;top:0;width:0;">
+    
+  </div>
+  <div
+    style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+    <div
+      class="tableHeaderRow"
+      style="-webkit-flex:none;display:flex;flex:none;flex-direction:row;font-weight:bold;position:relative;">
+      <div
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:17px;padding-top:3px;text-align:center;">
+        MESSAGES
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Used messages">
+            2
+          </span>
+           / 
+          <span
+            title="Total messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-refresh"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Parse source files to update the message list">
+          
+        </i>
+      </div>
+      <div
+        class="madyLangHeader"
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:5px;padding-top:3px;text-align:center;">
+        <div
+          style="display:inline-block;padding-right:5px;position:relative;"
+          title="Change language">
+          <i
+            class="giu-icon fa fa-caret-down"
+            style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
+            
+          </i>
+          ca
+          <select
+            class="giu-select-native"
+            style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            value="\"ca\"">
+            <option
+              id="\"es\""
+              value="\"es\"">
+              es
+            </option>
+            <option
+              id="\"ca\""
+              value="\"ca\"">
+              ca
+            </option>
+            <option
+              id="\"en\""
+              value="\"en\"">
+              en
+            </option>
+          </select>
+        </div>
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Translations">
+            1
+          </span>
+           / 
+          <span
+            title="Used messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-remove"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Remove column (does NOT delete any translations)">
+          
+        </i>
+      </div>
+      <div
+        class="madyLangHeader"
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:5px;padding-top:3px;text-align:center;">
+        <div
+          style="display:inline-block;padding-right:5px;position:relative;"
+          title="Change language">
+          <i
+            class="giu-icon fa fa-caret-down"
+            style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
+            
+          </i>
+          es
+          <select
+            class="giu-select-native"
+            style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            value="\"es\"">
+            <option
+              id="\"es\""
+              value="\"es\"">
+              es
+            </option>
+            <option
+              id="\"ca\""
+              value="\"ca\"">
+              ca
+            </option>
+            <option
+              id="\"en\""
+              value="\"en\"">
+              en
+            </option>
+          </select>
+        </div>
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Translations">
+            1
+          </span>
+           / 
+          <span
+            title="Used messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-remove"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Remove column (does NOT delete any translations)">
+          
+        </i>
+      </div>
+      <div
+        class="madyLangHeader"
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:5px;padding-top:3px;text-align:center;">
+        <div
+          style="display:inline-block;padding-right:5px;position:relative;"
+          title="Change language">
+          <i
+            class="giu-icon fa fa-caret-down"
+            style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
+            
+          </i>
+          en
+          <select
+            class="giu-select-native"
+            style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            value="\"en\"">
+            <option
+              id="\"es\""
+              value="\"es\"">
+              es
+            </option>
+            <option
+              id="\"ca\""
+              value="\"ca\"">
+              ca
+            </option>
+            <option
+              id="\"en\""
+              value="\"en\"">
+              en
+            </option>
+          </select>
+        </div>
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Translations">
+            0
+          </span>
+           / 
+          <span
+            title="Used messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-remove"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Remove column (does NOT delete any translations)">
+          
+        </i>
+      </div>
+      <div
+        id="madyBtnAddLang"
+        style="cursor:;font-weight:900;letter-spacing:3px;padding:3px 6px;position:absolute;right:NaNpx;top:0;"
+        title="Add column">
+        <i
+          class="giu-icon fa fa-plus"
+          style="color:#999999;cursor:;letter-spacing:normal;">
+          
+        </i>
+      </div>
+      <div
+        style="-webkit-flex:0 0 NaNpx;flex:0 0 NaNpx;">
+        
+      </div>
+    </div>
+    <div
+      class="tableBody"
+      style="-webkit-flex:1;display:flex;flex:1;flex-direction:column;overflow-y:scroll;">
+      <div
+        dataMockType="TranslatorRow">
+        TranslatorRow
+      </div>
+      <div
+        dataMockType="TranslatorRow">
+        TranslatorRow
+      </div>
+      <div
+        class="tableFillerRow"
+        style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;">
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
+          
+        </div>
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
+          
+        </div>
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
+          
+        </div>
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+    <div id="jest--preview_Translator renders correctly with default columns 1" class="jest--preview">
+      <div>
+  <div
+    class="giu-floats"
+    style="height:0;left:0;position:absolute;top:0;width:0;">
+    
+  </div>
+  <div
+    style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+    <div
+      class="tableHeaderRow"
+      style="-webkit-flex:none;display:flex;flex:none;flex-direction:row;font-weight:bold;position:relative;">
+      <div
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:17px;padding-top:3px;text-align:center;">
+        MESSAGES
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Used messages">
+            2
+          </span>
+           / 
+          <span
+            title="Total messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-refresh"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Parse source files to update the message list">
+          
+        </i>
+      </div>
+      <div
+        class="madyLangHeader"
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:5px;padding-top:3px;text-align:center;">
+        <div
+          style="display:inline-block;padding-right:5px;position:relative;"
+          title="Change language">
+          <i
+            class="giu-icon fa fa-caret-down"
+            style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
+            
+          </i>
+          es
+          <select
+            class="giu-select-native"
+            style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            value="\"es\"">
+            <option
+              id="\"es\""
+              value="\"es\"">
+              es
+            </option>
+            <option
+              id="\"ca\""
+              value="\"ca\"">
+              ca
+            </option>
+            <option
+              id="\"en\""
+              value="\"en\"">
+              en
+            </option>
+          </select>
+        </div>
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Translations">
+            1
+          </span>
+           / 
+          <span
+            title="Used messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-remove"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Remove column (does NOT delete any translations)">
+          
+        </i>
+      </div>
+      <div
+        id="madyBtnAddLang"
+        style="cursor:pointer;font-weight:900;letter-spacing:3px;padding:3px 6px;position:absolute;right:NaNpx;top:0;"
+        title="Add column">
+        <i
+          class="giu-icon fa fa-plus"
+          style="color:;cursor:pointer;letter-spacing:normal;">
+          
+        </i>
+      </div>
+      <div
+        style="-webkit-flex:0 0 NaNpx;flex:0 0 NaNpx;">
+        
+      </div>
+    </div>
+    <div
+      class="tableBody"
+      style="-webkit-flex:1;display:flex;flex:1;flex-direction:column;overflow-y:scroll;">
+      <div
+        dataMockType="TranslatorRow">
+        TranslatorRow
+      </div>
+      <div
+        dataMockType="TranslatorRow">
+        TranslatorRow
+      </div>
+      <div
+        class="tableFillerRow"
+        style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;">
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
+          
+        </div>
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+    <div id="jest--preview_Translator renders correctly with fixed columns 1" class="jest--preview">
+      <div>
+  <div
+    class="giu-floats"
+    style="height:0;left:0;position:absolute;top:0;width:0;">
+    
+  </div>
+  <div
+    style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+    <div
+      class="tableHeaderRow"
+      style="-webkit-flex:none;display:flex;flex:none;flex-direction:row;font-weight:bold;position:relative;">
+      <div
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:17px;padding-top:3px;text-align:center;">
+        MESSAGES
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Used messages">
+            2
+          </span>
+           / 
+          <span
+            title="Total messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-refresh"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Parse source files to update the message list">
+          
+        </i>
+      </div>
+      <div
+        class="madyLangHeader"
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:5px;padding-top:3px;text-align:center;">
+        <div
+          style="display:inline-block;padding-right:5px;position:relative;"
+          title="Change language">
+          <i
+            class="giu-icon fa fa-caret-down"
+            style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
+            
+          </i>
+          ca
+          <select
+            class="giu-select-native"
+            style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            value="\"ca\"">
+            <option
+              id="\"es\""
+              value="\"es\"">
+              es
+            </option>
+            <option
+              id="\"ca\""
+              value="\"ca\"">
+              ca
+            </option>
+            <option
+              id="\"en\""
+              value="\"en\"">
+              en
+            </option>
+          </select>
+        </div>
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Translations">
+            1
+          </span>
+           / 
+          <span
+            title="Used messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-remove"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Remove column (does NOT delete any translations)">
+          
+        </i>
+      </div>
+      <div
+        class="madyLangHeader"
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:5px;padding-top:3px;text-align:center;">
+        <div
+          style="display:inline-block;padding-right:5px;position:relative;"
+          title="Change language">
+          <i
+            class="giu-icon fa fa-caret-down"
+            style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
+            
+          </i>
+          es
+          <select
+            class="giu-select-native"
+            style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            value="\"es\"">
+            <option
+              id="\"es\""
+              value="\"es\"">
+              es
+            </option>
+            <option
+              id="\"ca\""
+              value="\"ca\"">
+              ca
+            </option>
+            <option
+              id="\"en\""
+              value="\"en\"">
+              en
+            </option>
+          </select>
+        </div>
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Translations">
+            1
+          </span>
+           / 
+          <span
+            title="Used messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-remove"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Remove column (does NOT delete any translations)">
+          
+        </i>
+      </div>
+      <div
+        id="madyBtnAddLang"
+        style="cursor:pointer;font-weight:900;letter-spacing:3px;padding:3px 6px;position:absolute;right:NaNpx;top:0;"
+        title="Add column">
+        <i
+          class="giu-icon fa fa-plus"
+          style="color:;cursor:pointer;letter-spacing:normal;">
+          
+        </i>
+      </div>
+      <div
+        style="-webkit-flex:0 0 NaNpx;flex:0 0 NaNpx;">
+        
+      </div>
+    </div>
+    <div
+      class="tableBody"
+      style="-webkit-flex:1;display:flex;flex:1;flex-direction:column;overflow-y:scroll;">
+      <div
+        dataMockType="TranslatorRow">
+        TranslatorRow
+      </div>
+      <div
+        dataMockType="TranslatorRow">
+        TranslatorRow
+      </div>
+      <div
+        class="tableFillerRow"
+        style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;">
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
+          
+        </div>
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
+          
+        </div>
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+    <div id="jest--preview_Translator renders correctly with fixed columns using up all available options 1" class="jest--preview">
+      <div>
+  <div
+    class="giu-floats"
+    style="height:0;left:0;position:absolute;top:0;width:0;">
+    
+  </div>
+  <div
+    style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+    <div
+      class="tableHeaderRow"
+      style="-webkit-flex:none;display:flex;flex:none;flex-direction:row;font-weight:bold;position:relative;">
+      <div
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:17px;padding-top:3px;text-align:center;">
+        MESSAGES
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Used messages">
+            2
+          </span>
+           / 
+          <span
+            title="Total messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-refresh"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Parse source files to update the message list">
+          
+        </i>
+      </div>
+      <div
+        class="madyLangHeader"
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:5px;padding-top:3px;text-align:center;">
+        <div
+          style="display:inline-block;padding-right:5px;position:relative;"
+          title="Change language">
+          <i
+            class="giu-icon fa fa-caret-down"
+            style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
+            
+          </i>
+          ca
+          <select
+            class="giu-select-native"
+            style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            value="\"ca\"">
+            <option
+              id="\"es\""
+              value="\"es\"">
+              es
+            </option>
+            <option
+              id="\"ca\""
+              value="\"ca\"">
+              ca
+            </option>
+            <option
+              id="\"en\""
+              value="\"en\"">
+              en
+            </option>
+          </select>
+        </div>
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Translations">
+            1
+          </span>
+           / 
+          <span
+            title="Used messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-remove"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Remove column (does NOT delete any translations)">
+          
+        </i>
+      </div>
+      <div
+        class="madyLangHeader"
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:5px;padding-top:3px;text-align:center;">
+        <div
+          style="display:inline-block;padding-right:5px;position:relative;"
+          title="Change language">
+          <i
+            class="giu-icon fa fa-caret-down"
+            style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
+            
+          </i>
+          es
+          <select
+            class="giu-select-native"
+            style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            value="\"es\"">
+            <option
+              id="\"es\""
+              value="\"es\"">
+              es
+            </option>
+            <option
+              id="\"ca\""
+              value="\"ca\"">
+              ca
+            </option>
+            <option
+              id="\"en\""
+              value="\"en\"">
+              en
+            </option>
+          </select>
+        </div>
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Translations">
+            1
+          </span>
+           / 
+          <span
+            title="Used messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-remove"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Remove column (does NOT delete any translations)">
+          
+        </i>
+      </div>
+      <div
+        class="madyLangHeader"
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:5px;padding-top:3px;text-align:center;">
+        <div
+          style="display:inline-block;padding-right:5px;position:relative;"
+          title="Change language">
+          <i
+            class="giu-icon fa fa-caret-down"
+            style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
+            
+          </i>
+          en
+          <select
+            class="giu-select-native"
+            style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            value="\"en\"">
+            <option
+              id="\"es\""
+              value="\"es\"">
+              es
+            </option>
+            <option
+              id="\"ca\""
+              value="\"ca\"">
+              ca
+            </option>
+            <option
+              id="\"en\""
+              value="\"en\"">
+              en
+            </option>
+          </select>
+        </div>
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Translations">
+            0
+          </span>
+           / 
+          <span
+            title="Used messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-remove"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Remove column (does NOT delete any translations)">
+          
+        </i>
+      </div>
+      <div
+        id="madyBtnAddLang"
+        style="cursor:;font-weight:900;letter-spacing:3px;padding:3px 6px;position:absolute;right:NaNpx;top:0;"
+        title="Add column">
+        <i
+          class="giu-icon fa fa-plus"
+          style="color:#999999;cursor:;letter-spacing:normal;">
+          
+        </i>
+      </div>
+      <div
+        style="-webkit-flex:0 0 NaNpx;flex:0 0 NaNpx;">
+        
+      </div>
+    </div>
+    <div
+      class="tableBody"
+      style="-webkit-flex:1;display:flex;flex:1;flex-direction:column;overflow-y:scroll;">
+      <div
+        dataMockType="TranslatorRow">
+        TranslatorRow
+      </div>
+      <div
+        dataMockType="TranslatorRow">
+        TranslatorRow
+      </div>
+      <div
+        class="tableFillerRow"
+        style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;">
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
+          
+        </div>
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
+          
+        </div>
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
+          
+        </div>
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+    <div id="jest--preview_Translator renders correctly with no content 1" class="jest--preview">
+      <div>
+  <div
+    class="giu-floats"
+    style="height:0;left:0;position:absolute;top:0;width:0;">
+    
+  </div>
+  <div
+    style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+    <div
+      class="tableHeaderRow"
+      style="-webkit-flex:none;display:flex;flex:none;flex-direction:row;font-weight:bold;position:relative;">
+      <div
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:17px;padding-top:3px;text-align:center;">
+        MESSAGES
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Used messages">
+            0
+          </span>
+           / 
+          <span
+            title="Total messages">
+            0
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-refresh"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Parse source files to update the message list">
+          
+        </i>
+      </div>
+      <div
+        class="madyLangHeader"
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:5px;padding-top:3px;text-align:center;">
+        <div
+          style="display:inline-block;padding-right:5px;position:relative;"
+          title="Change language">
+          <i
+            class="giu-icon fa fa-caret-down"
+            style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
+            
+          </i>
+          es
+          <select
+            class="giu-select-native"
+            style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            value="\"es\"">
+            <option
+              id="\"es\""
+              value="\"es\"">
+              es
+            </option>
+            <option
+              id="\"ca\""
+              value="\"ca\"">
+              ca
+            </option>
+            <option
+              id="\"en\""
+              value="\"en\"">
+              en
+            </option>
+          </select>
+        </div>
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Translations">
+            0
+          </span>
+           / 
+          <span
+            title="Used messages">
+            0
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-remove"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Remove column (does NOT delete any translations)">
+          
+        </i>
+      </div>
+      <div
+        id="madyBtnAddLang"
+        style="cursor:pointer;font-weight:900;letter-spacing:3px;padding:3px 6px;position:absolute;right:NaNpx;top:0;"
+        title="Add column">
+        <i
+          class="giu-icon fa fa-plus"
+          style="color:;cursor:pointer;letter-spacing:normal;">
+          
+        </i>
+      </div>
+      <div
+        style="-webkit-flex:0 0 NaNpx;flex:0 0 NaNpx;">
+        
+      </div>
+    </div>
+    <div
+      class="tableBody"
+      style="-webkit-flex:1;display:flex;flex:1;flex-direction:column;overflow-y:scroll;">
+      <div
+        class="tableFillerRow"
+        style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;">
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
+          <div
+            class="giu-large-message"
+            style="color:#999999;font-size:1.4em;font-weight:700;padding:0.8em;text-align:center;">
+            No messages. Click on 
+            <i
+              class="giu-icon fa fa-refresh"
+              style="color:#999999;cursor:;letter-spacing:normal;">
+              
+            </i>
+             to refresh
+          </div>
+        </div>
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+    <div id="jest--preview_Translator when adding a column, it corresponds to a new language 1" class="jest--preview">
+      <div>
+  <div
+    class="giu-floats"
+    style="height:0;left:0;position:absolute;top:0;width:0;">
+    
+  </div>
+  <div
+    style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+    <div
+      class="tableHeaderRow"
+      style="-webkit-flex:none;display:flex;flex:none;flex-direction:row;font-weight:bold;position:relative;">
+      <div
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:17px;padding-top:3px;text-align:center;">
+        MESSAGES
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Used messages">
+            2
+          </span>
+           / 
+          <span
+            title="Total messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-refresh"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Parse source files to update the message list">
+          
+        </i>
+      </div>
+      <div
+        class="madyLangHeader"
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:5px;padding-top:3px;text-align:center;">
+        <div
+          style="display:inline-block;padding-right:5px;position:relative;"
+          title="Change language">
+          <i
+            class="giu-icon fa fa-caret-down"
+            style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
+            
+          </i>
+          ca
+          <select
+            class="giu-select-native"
+            style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            value="\"ca\"">
+            <option
+              id="\"es\""
+              value="\"es\"">
+              es
+            </option>
+            <option
+              id="\"ca\""
+              value="\"ca\"">
+              ca
+            </option>
+            <option
+              id="\"en\""
+              value="\"en\"">
+              en
+            </option>
+          </select>
+        </div>
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Translations">
+            1
+          </span>
+           / 
+          <span
+            title="Used messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-remove"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Remove column (does NOT delete any translations)">
+          
+        </i>
+      </div>
+      <div
+        class="madyLangHeader"
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:5px;padding-top:3px;text-align:center;">
+        <div
+          style="display:inline-block;padding-right:5px;position:relative;"
+          title="Change language">
+          <i
+            class="giu-icon fa fa-caret-down"
+            style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
+            
+          </i>
+          es
+          <select
+            class="giu-select-native"
+            style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            value="\"es\"">
+            <option
+              id="\"es\""
+              value="\"es\"">
+              es
+            </option>
+            <option
+              id="\"ca\""
+              value="\"ca\"">
+              ca
+            </option>
+            <option
+              id="\"en\""
+              value="\"en\"">
+              en
+            </option>
+          </select>
+        </div>
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Translations">
+            1
+          </span>
+           / 
+          <span
+            title="Used messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-remove"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Remove column (does NOT delete any translations)">
+          
+        </i>
+      </div>
+      <div
+        class="madyLangHeader"
+        style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:5px;padding-top:3px;text-align:center;">
+        <div
+          style="display:inline-block;padding-right:5px;position:relative;"
+          title="Change language">
+          <i
+            class="giu-icon fa fa-caret-down"
+            style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
+            
+          </i>
+          en
+          <select
+            class="giu-select-native"
+            style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            value="\"en\"">
+            <option
+              id="\"es\""
+              value="\"es\"">
+              es
+            </option>
+            <option
+              id="\"ca\""
+              value="\"ca\"">
+              ca
+            </option>
+            <option
+              id="\"en\""
+              value="\"en\"">
+              en
+            </option>
+          </select>
+        </div>
+         
+        <span
+          style="color:darkgrey;">
+          [
+          <span
+            title="Translations">
+            0
+          </span>
+           / 
+          <span
+            title="Used messages">
+            2
+          </span>
+          ]
+        </span>
+         
+        <i
+          class="giu-icon fa fa-remove"
+          style="color:;cursor:pointer;letter-spacing:normal;"
+          title="Remove column (does NOT delete any translations)">
+          
+        </i>
+      </div>
+      <div
+        id="madyBtnAddLang"
+        style="cursor:;font-weight:900;letter-spacing:3px;padding:3px 6px;position:absolute;right:NaNpx;top:0;"
+        title="Add column">
+        <i
+          class="giu-icon fa fa-plus"
+          style="color:#999999;cursor:;letter-spacing:normal;">
+          
+        </i>
+      </div>
+      <div
+        style="-webkit-flex:0 0 NaNpx;flex:0 0 NaNpx;">
+        
+      </div>
+    </div>
+    <div
+      class="tableBody"
+      style="-webkit-flex:1;display:flex;flex:1;flex-direction:column;overflow-y:scroll;">
+      <div
+        dataMockType="TranslatorRow">
+        TranslatorRow
+      </div>
+      <div
+        dataMockType="TranslatorRow">
+        TranslatorRow
+      </div>
+      <div
+        class="tableFillerRow"
+        style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;">
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
+          
+        </div>
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
+          
+        </div>
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
+          
+        </div>
+        <div
+          style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+  </body>
+</html>

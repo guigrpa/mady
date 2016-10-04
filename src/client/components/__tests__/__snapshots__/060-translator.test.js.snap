@@ -334,7 +334,9 @@ exports[`Translator allows changing the language of a column 1`] = `
               ],
             },
           }
-        } />
+        }>
+        TranslatorRow
+      </div>
       <div
         changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
@@ -442,7 +444,9 @@ exports[`Translator allows changing the language of a column 1`] = `
               ],
             },
           }
-        } />
+        }>
+        TranslatorRow
+      </div>
       <div
         className="tableFillerRow"
         style={
@@ -819,7 +823,9 @@ exports[`Translator allows changing the language of a column 2`] = `
               ],
             },
           }
-        } />
+        }>
+        TranslatorRow
+      </div>
       <div
         changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
@@ -927,7 +933,9 @@ exports[`Translator allows changing the language of a column 2`] = `
               ],
             },
           }
-        } />
+        }>
+        TranslatorRow
+      </div>
       <div
         className="tableFillerRow"
         style={
@@ -1304,7 +1312,9 @@ exports[`Translator allows removing columns 1`] = `
               ],
             },
           }
-        } />
+        }>
+        TranslatorRow
+      </div>
       <div
         changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
@@ -1412,7 +1422,9 @@ exports[`Translator allows removing columns 1`] = `
               ],
             },
           }
-        } />
+        }>
+        TranslatorRow
+      </div>
       <div
         className="tableFillerRow"
         style={
@@ -2022,7 +2034,9 @@ exports[`Translator renders correctly with a selection 1`] = `
               ],
             },
           }
-        } />
+        }>
+        TranslatorRow
+      </div>
       <div
         changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
@@ -2132,7 +2146,9 @@ exports[`Translator renders correctly with a selection 1`] = `
               ],
             },
           }
-        } />
+        }>
+        TranslatorRow
+      </div>
       <div
         className="tableFillerRow"
         style={
@@ -2531,7 +2547,9 @@ exports[`Translator renders correctly with default columns 1`] = `
               ],
             },
           }
-        } />
+        }>
+        TranslatorRow
+      </div>
       <div
         changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
@@ -2639,7 +2657,9 @@ exports[`Translator renders correctly with default columns 1`] = `
               ],
             },
           }
-        } />
+        }>
+        TranslatorRow
+      </div>
       <div
         className="tableFillerRow"
         style={
@@ -3132,7 +3152,9 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               ],
             },
           }
-        } />
+        }>
+        TranslatorRow
+      </div>
       <div
         changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
@@ -3241,7 +3263,9 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               ],
             },
           }
-        } />
+        }>
+        TranslatorRow
+      </div>
       <div
         className="tableFillerRow"
         style={
@@ -3862,7 +3886,9 @@ exports[`Translator renders correctly with fixed columns using up all available 
               ],
             },
           }
-        } />
+        }>
+        TranslatorRow
+      </div>
       <div
         changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
@@ -3972,7 +3998,9 @@ exports[`Translator renders correctly with fixed columns using up all available 
               ],
             },
           }
-        } />
+        }>
+        TranslatorRow
+      </div>
       <div
         className="tableFillerRow"
         style={
@@ -4911,7 +4939,9 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               ],
             },
           }
-        } />
+        }>
+        TranslatorRow
+      </div>
       <div
         changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
@@ -5021,7 +5051,9 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               ],
             },
           }
-        } />
+        }>
+        TranslatorRow
+      </div>
       <div
         className="tableFillerRow"
         style={
