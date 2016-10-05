@@ -30,11 +30,13 @@ export default function compileTranslations({
   story.info('compiler', `${logPrefix} Precompiling...`);
   const mf = new MessageFormat(lang);
   let fnTranslate = mf.compile(finalTranslations).toString();
-  /* eslint-disable prefer-template */
-  fnTranslate = '/* eslint-disable */\n' +
-    fnTranslate +
-    ';\nmodule.exports = anonymous();\n/* eslint-enable */\n';
-  /* eslint-enable prefer-template */
+  fnTranslate = `/* eslint-disable */
+  function anonymous() {
+    ${fnTranslate}
+  };
+  module.exports = anonymous();
+  /* eslint-enable */
+  `;
   story.debug('compiler', `${logPrefix} Precompiled`, {
     attach: fnTranslate,
     attachLevel: 'TRACE',
