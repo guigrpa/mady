@@ -112,7 +112,6 @@
     "flow-bin": "0.32.0",
     "font-awesome": "4.6.3",
     "giu": "0.8.1",
-    "ignore-styles": "4.0.0",
     "isomorphic-relay": "0.7.3",
     "jest": "16.0.0",
     "json-loader": "0.5.4",

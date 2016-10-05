@@ -247,7 +247,6 @@ const specs = {
     jest: '16.0.0',
     'react-test-renderer': '15.3.2',
     'babel-jest': '16.0.0',
-    'ignore-styles': '4.0.0',
     'moment-timezone': '0.5.5',
     nyc: '8.3.0',
     coveralls: '2.11.14',
