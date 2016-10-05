@@ -1,5 +1,17 @@
 /* eslint-disable */
 function anonymous() {
+var pluralFuncs = {
+  ca: function (n, ord) {
+    var s = String(n).split('.'), v0 = !s[1];
+    if (ord) return ((n == 1
+            || n == 3)) ? 'one'
+        : (n == 2) ? 'two'
+        : (n == 4) ? 'few'
+        : 'other';
+    return (n == 1 && v0) ? 'one' : 'other';
+  }
+};
+var fmt = {};
 var number = function (value, offset) {
   if (isNaN(value)) throw new Error("'" + value + "' isn't a number.");
   return value - (offset || 0);
@@ -15,18 +27,6 @@ var select = function (value, data) {
   if ({}.hasOwnProperty.call(data, value)) return data[value]();
   return data.other()
 };
-var pluralFuncs = {
-  ca: function (n, ord) {
-    var s = String(n).split('.'), v0 = !s[1];
-    if (ord) return ((n == 1
-            || n == 3)) ? 'one'
-        : (n == 2) ? 'two'
-        : (n == 4) ? 'few'
-        : 'other';
-    return (n == 1 && v0) ? 'one' : 'other';
-  }
-};
-var fmt = {};
 
 return {
   c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319: function(d) { return plural(d.NUM, 0, pluralFuncs.ca, { one: function() { return "1 hamburguesa";}, other: function() { return number(d.NUM) + " hamburgueses";} }); },

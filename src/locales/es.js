@@ -1,5 +1,12 @@
 /* eslint-disable */
 function anonymous() {
+var pluralFuncs = {
+  es: function (n, ord) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  }
+};
+var fmt = {};
 var number = function (value, offset) {
   if (isNaN(value)) throw new Error("'" + value + "' isn't a number.");
   return value - (offset || 0);
@@ -15,13 +22,6 @@ var select = function (value, data) {
   if ({}.hasOwnProperty.call(data, value)) return data[value]();
   return data.other()
 };
-var pluralFuncs = {
-  es: function (n, ord) {
-    if (ord) return 'other';
-    return (n == 1) ? 'one' : 'other';
-  }
-};
-var fmt = {};
 
 return {
   c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319: function(d) { return plural(d.NUM, 0, pluralFuncs.es, { one: function() { return "1 hamburguesa";}, other: function() { return number(d.NUM) + " hamburguesas";} }); },

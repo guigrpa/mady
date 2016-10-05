@@ -3,6 +3,13 @@ exports[`compileTranslations should allow minification 1`] = `"function anonymou
 exports[`compileTranslations should compile a key with plural selection 1`] = `
 "/* eslint-disable */
 function anonymous() {
+var pluralFuncs = {
+  es: function (n, ord) {
+    if (ord) return \'other\';
+    return (n == 1) ? \'one\' : \'other\';
+  }
+};
+var fmt = {};
 var number = function (value, offset) {
   if (isNaN(value)) throw new Error(\"\'\" + value + \"\' isn\'t a number.\");
   return value - (offset || 0);
@@ -18,13 +25,6 @@ var select = function (value, data) {
   if ({}.hasOwnProperty.call(data, value)) return data[value]();
   return data.other()
 };
-var pluralFuncs = {
-  es: function (n, ord) {
-    if (ord) return \'other\';
-    return (n == 1) ? \'one\' : \'other\';
-  }
-};
-var fmt = {};
 
 return {
   ID: function(d) { return plural(d.NUM, 0, pluralFuncs.es, { one: function() { return \"1 hamburguesa\";}, other: function() { return number(d.NUM) + \" hamburguesas\";} }); }
@@ -38,6 +38,13 @@ module.exports = anonymous();
 exports[`compileTranslations should include all keys for which a translation is available 1`] = `
 "/* eslint-disable */
 function anonymous() {
+var pluralFuncs = {
+  es: function (n, ord) {
+    if (ord) return \'other\';
+    return (n == 1) ? \'one\' : \'other\';
+  }
+};
+var fmt = {};
 var number = function (value, offset) {
   if (isNaN(value)) throw new Error(\"\'\" + value + \"\' isn\'t a number.\");
   return value - (offset || 0);
@@ -53,13 +60,6 @@ var select = function (value, data) {
   if ({}.hasOwnProperty.call(data, value)) return data[value]();
   return data.other()
 };
-var pluralFuncs = {
-  es: function (n, ord) {
-    if (ord) return \'other\';
-    return (n == 1) ? \'one\' : \'other\';
-  }
-};
-var fmt = {};
 
 return {
   keyId1: function(d) { return \"¡Hola!\"; },
@@ -74,6 +74,13 @@ module.exports = anonymous();
 exports[`compileTranslations should include keys with braces, even if no translation is available 1`] = `
 "/* eslint-disable */
 function anonymous() {
+var pluralFuncs = {
+  es: function (n, ord) {
+    if (ord) return \'other\';
+    return (n == 1) ? \'one\' : \'other\';
+  }
+};
+var fmt = {};
 var number = function (value, offset) {
   if (isNaN(value)) throw new Error(\"\'\" + value + \"\' isn\'t a number.\");
   return value - (offset || 0);
@@ -89,13 +96,6 @@ var select = function (value, data) {
   if ({}.hasOwnProperty.call(data, value)) return data[value]();
   return data.other()
 };
-var pluralFuncs = {
-  es: function (n, ord) {
-    if (ord) return \'other\';
-    return (n == 1) ? \'one\' : \'other\';
-  }
-};
-var fmt = {};
 
 return {
   keyId3: function(d) { return \"Hello \" + d.NAME + \"!\"; },
