@@ -273,6 +273,18 @@ const specs = {
     },
     coverageDirectory: '.nyc_output',
     coverageReporters: ['json', 'text', 'html'],
+    collectCoverageFrom: [
+      'src/**/*.js',
+      '!**/node_modules/**',
+      '!**/__tests__/**',
+      '!**/__mocks__/**',
+      '!src/locales/**',
+      '!src/localesBackup/**',
+      '!src/exampleLocales.js',
+      '!src/mady.js',
+      '!src/server/importData.js',
+      '!src/client/components/999-reactIntlExample.js',
+    ],
     setupTestFrameworkScriptFile: './test/setup.js',
   },
 };

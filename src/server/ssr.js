@@ -15,7 +15,6 @@ let mainStory;
 const SSR_CSS_PATH = path.resolve(__dirname, './ssr.bundle.css');
 const ssrCss = fs.readFileSync(SSR_CSS_PATH);
 
-
 function processQuery(queryRequest, idx) {
   mainStory.debug('ssr', `Running query #${idx}...`);
   const query = queryRequest.getQueryString();

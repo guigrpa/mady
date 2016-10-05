@@ -39,6 +39,7 @@ function init(options) {
 // Locale dir
 // ==============================================
 let _localeDir = null;
+function setLocaleDir(localeDir) { _localeDir = localeDir; }
 
 function initLocaleDir(options) {
   _localeDir = options.localeDir;
@@ -55,6 +56,8 @@ function initLocaleDir(options) {
 // ==============================================
 let _configPath = null;
 let _config = null;
+function setConfig(config) { _config = config; }
+function setConfigPath(configPath) { _configPath = configPath; }
 
 function initConfig() {
   _configPath = path.join(_localeDir, 'config.json');
@@ -99,6 +102,8 @@ function updateConfig(newAttrs, { story }) {
 // ==============================================
 let _keyPath = null;
 let _keys = {};
+function setKeys(keys) { _keys = keys; }
+function setKeyPath(keyPath) { _keyPath = keyPath; }
 
 function initKeys() {
   _keyPath = path.join(_localeDir, 'keys.json');
@@ -204,6 +209,7 @@ const getLangPath = (lang) => path.join(_localeDir, `${lang}.json`);
 const getCompiledLangPath = (lang) => path.join(_localeDir, `${lang}.js`);
 const getReactIntlLangPath = (lang) => path.join(_localeDir, `${lang}.reactIntl.json`);
 let _translations = {};
+function setTranslations(translations) { _translations = translations; }
 
 function initTranslations() {
   for (const lang of _config.langs) {
@@ -475,4 +481,13 @@ export {
   compileTranslations,
   importV0,
   saveJson,
+
+  // Only for unit tests
+  DEFAULT_CONFIG as _DEFAULT_CONFIG,
+  setLocaleDir as _setLocaleDir,
+  setKeyPath as _setKeyPath,
+  setConfigPath as _setConfigPath,
+  setConfig as _setConfig,
+  setKeys as _setKeys,
+  setTranslations as _setTranslations,
 };

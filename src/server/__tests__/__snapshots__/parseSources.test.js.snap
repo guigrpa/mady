@@ -69,3 +69,54 @@ Object {
   },
 }
 `;
+
+exports[`Source parser React Intl parser should extract messages from FormattedHTMLMessage components 1`] = `
+Object {
+  "Y29udGV4dF88aT5IZWxsbyB7TkFNRX0hPC9pPg==": Object {
+    "context": "context",
+    "description": undefined,
+    "firstUsed": null,
+    "id": "Y29udGV4dF88aT5IZWxsbyB7TkFNRX0hPC9pPg==",
+    "reactIntlId": "reactIntlId2",
+    "sources": Array [
+      "FILENAME",
+    ],
+    "text": "<i>Hello {NAME}!</i>",
+    "unusedSince": null,
+  },
+}
+`;
+
+exports[`Source parser React Intl parser should extract messages from FormattedMessage components 1`] = `
+Object {
+  "Y29udGV4dF9IZWxsbyB7TkFNRX0h": Object {
+    "context": "context",
+    "description": "Bla bla bla",
+    "firstUsed": null,
+    "id": "Y29udGV4dF9IZWxsbyB7TkFNRX0h",
+    "reactIntlId": "reactIntlId1",
+    "sources": Array [
+      "FILENAME",
+    ],
+    "text": "Hello {NAME}!",
+    "unusedSince": null,
+  },
+}
+`;
+
+exports[`Source parser React Intl parser should extract messages from defineMessages() calls 1`] = `
+Object {
+  "c29tZUNvbnRleHRfSGVsbG8sIHtOQU1FfSE=": Object {
+    "context": "someContext",
+    "description": "Message to greet the user",
+    "firstUsed": null,
+    "id": "c29tZUNvbnRleHRfSGVsbG8sIHtOQU1FfSE=",
+    "reactIntlId": "reactIntlId3",
+    "sources": Array [
+      "FILENAME",
+    ],
+    "text": "Hello, {NAME}!",
+    "unusedSince": null,
+  },
+}
+`;

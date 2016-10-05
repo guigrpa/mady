@@ -3,5 +3,10 @@
   "plugins": [
     ["./src/server/babelRelayPlugin", {}],
     "transform-flow-strip-types"
-  ]
+  ],
+  "env": {
+    "test": {
+      "presets": ["react"]
+    }
+  }
 }
