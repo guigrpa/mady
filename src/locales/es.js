@@ -1,33 +1,28 @@
 /* eslint-disable */
-function anonymous() {
-var pluralFuncs = {
-  es: function (n, ord) {
-    if (ord) return 'other';
-    return (n == 1) ? 'one' : 'other';
-  }
+  function anonymous() {
+    var es = function (n, ord) {
+  if (ord) return 'other';
+  return (n == 1) ? 'one' : 'other';
 };
-var fmt = {};
-var number = function (value, offset) {
-  if (isNaN(value)) throw new Error("'" + value + "' isn't a number.");
-  return value - (offset || 0);
+var number = function (value, name, offset) {
+  if (!offset) return value;
+  if (isNaN(value)) throw new Error('Can\'t apply offset:' + offset + ' to argument `' + name +
+                                    '` with non-numerical value ' + JSON.stringify(value) + '.');
+  return value - offset;
 };
 var plural = function (value, offset, lcfunc, data, isOrdinal) {
-  if ({}.hasOwnProperty.call(data, value)) return data[value]();
+  if ({}.hasOwnProperty.call(data, value)) return data[value];
   if (offset) value -= offset;
   var key = lcfunc(value, isOrdinal);
-  if (key in data) return data[key]();
-  return data.other();
-};
-var select = function (value, data) {
-  if ({}.hasOwnProperty.call(data, value)) return data[value]();
-  return data.other()
+  if (key in data) return data[key];
+  return data.other;
 };
 
 return {
-  c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319: function(d) { return plural(d.NUM, 0, pluralFuncs.es, { one: function() { return "1 hamburguesa";}, other: function() { return number(d.NUM) + " hamburguesas";} }); },
+  c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319: function(d) { return plural(d.NUM, 0, es, { one: "1 hamburguesa", other: number(d.NUM, "NUM") + " hamburguesas" }); },
   "c29tZUNvbnRleHRfSGVsbG8sIHtOQU1FfSE=": function(d) { return "Hola, " + d.NAME + "!"; },
-  "c29tZUNvbnRleHRfSGVsbG8ge05BTUV9LCB5b3UgaGF2ZSB7VU5SRUFEX0NPVU5ULCBudW1iZXJ9IHtVTlJFQURfQ09VTlQsIHBsdXJhbCwgb25lIHttZXNzYWdlfSBvdGhlciB7bWVzc2FnZXN9fQ==": function(d) { return "Hola " + d.NAME + ", tienes " + fmt.number(d.UNREAD_COUNT, ["es"]) + " " + plural(d.UNREAD_COUNT, 0, pluralFuncs.es, { one: function() { return "mensaje";}, other: function() { return "mensajes";} }); },
   "c29tZUNvbnRleHRfPGk+SGk8L2k+IDxiPntOQU1FfTwvYj4h": function(d) { return "<i>Hola</i> <b>" + d.NAME + "</b>!"; },
+  "c29tZUNvbnRleHRfSGVsbG8ge05BTUV9LCB5b3UgaGF2ZSB7VU5SRUFEX0NPVU5UfSB7VU5SRUFEX0NPVU5ULCBwbHVyYWwsIG9uZSB7bWVzc2FnZX0gb3RoZXIge21lc3NhZ2VzfX0=": function(d) { return "Hello " + d.NAME + ", you have " + d.UNREAD_COUNT + " " + plural(d.UNREAD_COUNT, 0, es, { one: "message", other: "messages" }); },
   dG9vbHRpcF9Db252ZXJ0IHRyYW5zbGF0aW9ucyB0byBKYXZhU2NyaXB0IGZpbGVz: function(d) { return "Convertir traducciones a ficheros JavaScript"; },
   YnV0dG9uX0NvcHkga2V5: function(d) { return ""; },
   "YnV0dG9uX0RlbGV0ZQ==": function(d) { return "Borrar"; },
@@ -70,6 +65,7 @@ return {
   "c29tZUNvbnRleHRfQSB0b29sIGZvciBpbnRlcm5hdGlvbmFsaXphdGlvbg==": function(d) { return "Una herramienta para la internacionalización"; },
   "c29tZUNvbnRleHRfPGk+SGk8L2k+IDxiPntuYW1lfTwvYj4h": function(d) { return "<i>Hola</i> <b>" + d.name + "</b>!"; }
 }
-};
-module.exports = anonymous();
-/* eslint-enable */
+  };
+  module.exports = anonymous();
+  /* eslint-enable */
+  

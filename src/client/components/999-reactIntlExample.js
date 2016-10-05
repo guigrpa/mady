@@ -24,7 +24,7 @@ const Example = ({ lang, messages }) => {
         <FormattedMessage
           id="reactIntlSample2"
           defaultMessage={
-            `someContext_Hello {NAME}, you have {UNREAD_COUNT, number} {UNREAD_COUNT, plural,
+            `someContext_Hello {NAME}, you have {UNREAD_COUNT} {UNREAD_COUNT, plural,
               one {message}
               other {messages}
             }`

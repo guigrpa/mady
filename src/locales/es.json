@@ -257,12 +257,6 @@
     "translation": "<i>Hola</i> <b>{NAME}</b>!",
     "keyId": "c29tZUNvbnRleHRfPGk+SGk8L2k+IDxiPntOQU1FfTwvYj4h"
   },
-  "7126ae5b-dedd-4c47-920e-39720b19dd6d": {
-    "id": "7126ae5b-dedd-4c47-920e-39720b19dd6d",
-    "lang": "es",
-    "translation": "Hola {NAME}, tienes {UNREAD_COUNT, number} {UNREAD_COUNT, plural, one {mensaje} other {mensajes}}",
-    "keyId": "c29tZUNvbnRleHRfSGVsbG8ge05BTUV9LCB5b3UgaGF2ZSB7VU5SRUFEX0NPVU5ULCBudW1iZXJ9IHtVTlJFQURfQ09VTlQsIHBsdXJhbCwgb25lIHttZXNzYWdlfSBvdGhlciB7bWVzc2FnZXN9fQ=="
-  },
   "b6689dcb-fcff-4fcd-b126-245770ec997a": {
     "id": "b6689dcb-fcff-4fcd-b126-245770ec997a",
     "lang": "es",
