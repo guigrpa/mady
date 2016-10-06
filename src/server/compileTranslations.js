@@ -28,12 +28,15 @@ export default function compileTranslations({
   });
 
   story.info('compiler', `${logPrefix} Precompiling...`);
-  const mf = new MessageFormat(lang);
+  const mf = new MessageFormat(lang).setIntlSupport(true);
   let fnTranslate = mf.compile(finalTranslations).toString();
   /* eslint-disable prefer-template */
   fnTranslate = '/* eslint-disable */\n' +
+    'function anonymous() {\n' +
     fnTranslate +
-    ';\nmodule.exports = anonymous();\n/* eslint-enable */\n';
+    '\n};\n' +
+    'module.exports = anonymous();\n' +
+    '/* eslint-enable */\n';
   /* eslint-enable prefer-template */
   story.debug('compiler', `${logPrefix} Precompiled`, {
     attach: fnTranslate,

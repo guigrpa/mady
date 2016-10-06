@@ -160,7 +160,7 @@ const specs = {
     bluebird: '3.4.6',
     'fs-extra': '0.30.0',
     'diveSync': '0.3.0',
-    'messageformat': '0.3.1',
+    'messageformat': '1.0.2',
     'uglify-js': '2.7.3',
     'slash': '1.0.0',
     opn: '4.0.2',

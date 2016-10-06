@@ -401,7 +401,7 @@
     "context": "someContext",
     "text": "Hello {NAME}, you have {UNREAD_COUNT, number} {UNREAD_COUNT, plural, one {message} other {messages}}",
     "reactIntlId": "reactIntlSample2",
-    "firstUsed": "2016-09-19T07:41:50.724Z",
+    "firstUsed": "2016-10-06T13:43:11.210Z",
     "unusedSince": null,
     "sources": [
       "src/client/components/999-reactIntlExample.js"

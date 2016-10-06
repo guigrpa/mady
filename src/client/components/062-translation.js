@@ -23,7 +23,7 @@ const validateTranslation = (lang) => (val) => {
   if (numOpen !== numClose) {
     return _t('validation_the number of left and right brackets does not match');
   }
-  const mf = new MessageFormat(lang);
+  const mf = new MessageFormat(lang).setIntlSupport(true);
   try {
     mf.compile(val);
   } catch (err) {
