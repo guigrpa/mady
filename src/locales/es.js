@@ -1,6 +1,6 @@
 /* eslint-disable */
-  function anonymous() {
-    var es = function (n, ord) {
+function anonymous() {
+var es = function (n, ord) {
   if (ord) return 'other';
   return (n == 1) ? 'one' : 'other';
 };
@@ -17,12 +17,22 @@ var plural = function (value, offset, lcfunc, data, isOrdinal) {
   if (key in data) return data[key];
   return data.other;
 };
+var fmt = {
+  number: function (v,lc,p
+  /**/) {
+  return new Intl.NumberFormat(lc,
+      p=='integer' ? {maximumFractionDigits:0}
+    : p=='percent' ? {style:'percent'}
+    : p=='currency' ? {style:'currency', currency:'USD', minimumFractionDigits:2, maximumFractionDigits:2}
+    : {}).format(v)
+  }
+};
 
 return {
   c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319: function(d) { return plural(d.NUM, 0, es, { one: "1 hamburguesa", other: number(d.NUM, "NUM") + " hamburguesas" }); },
   "c29tZUNvbnRleHRfSGVsbG8sIHtOQU1FfSE=": function(d) { return "Hola, " + d.NAME + "!"; },
   "c29tZUNvbnRleHRfPGk+SGk8L2k+IDxiPntOQU1FfTwvYj4h": function(d) { return "<i>Hola</i> <b>" + d.NAME + "</b>!"; },
-  "c29tZUNvbnRleHRfSGVsbG8ge05BTUV9LCB5b3UgaGF2ZSB7VU5SRUFEX0NPVU5UfSB7VU5SRUFEX0NPVU5ULCBwbHVyYWwsIG9uZSB7bWVzc2FnZX0gb3RoZXIge21lc3NhZ2VzfX0=": function(d) { return "Hello " + d.NAME + ", you have " + d.UNREAD_COUNT + " " + plural(d.UNREAD_COUNT, 0, es, { one: "message", other: "messages" }); },
+  "c29tZUNvbnRleHRfSGVsbG8ge05BTUV9LCB5b3UgaGF2ZSB7VU5SRUFEX0NPVU5ULCBudW1iZXJ9IHtVTlJFQURfQ09VTlQsIHBsdXJhbCwgb25lIHttZXNzYWdlfSBvdGhlciB7bWVzc2FnZXN9fQ==": function(d) { return "Hola " + d.NAME + ", tienes " + fmt.number(d.UNREAD_COUNT, "es") + " " + plural(d.UNREAD_COUNT, 0, es, { one: "mensaje", other: "mensajes" }); },
   dG9vbHRpcF9Db252ZXJ0IHRyYW5zbGF0aW9ucyB0byBKYXZhU2NyaXB0IGZpbGVz: function(d) { return "Convertir traducciones a ficheros JavaScript"; },
   YnV0dG9uX0NvcHkga2V5: function(d) { return ""; },
   "YnV0dG9uX0RlbGV0ZQ==": function(d) { return "Borrar"; },
@@ -65,7 +75,6 @@ return {
   "c29tZUNvbnRleHRfQSB0b29sIGZvciBpbnRlcm5hdGlvbmFsaXphdGlvbg==": function(d) { return "Una herramienta para la internacionalización"; },
   "c29tZUNvbnRleHRfPGk+SGk8L2k+IDxiPntuYW1lfTwvYj4h": function(d) { return "<i>Hola</i> <b>" + d.name + "</b>!"; }
 }
-  };
-  module.exports = anonymous();
-  /* eslint-enable */
-  
+};
+module.exports = anonymous();
+/* eslint-enable */
