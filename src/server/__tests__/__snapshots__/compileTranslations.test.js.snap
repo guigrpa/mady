@@ -2,8 +2,8 @@ exports[`compileTranslations should allow minification 1`] = `"function anonymou
 
 exports[`compileTranslations should compile a key with plural selection 1`] = `
 "/* eslint-disable */
-  function anonymous() {
-    var es = function (n, ord) {
+function anonymous() {
+var es = function (n, ord) {
   if (ord) return \'other\';
   return (n == 1) ? \'one\' : \'other\';
 };
@@ -24,37 +24,37 @@ var plural = function (value, offset, lcfunc, data, isOrdinal) {
 return {
   ID: function(d) { return plural(d.NUM, 0, es, { one: \"1 hamburguesa\", other: number(d.NUM, \"NUM\") + \" hamburguesas\" }); }
 }
-  };
-  module.exports = anonymous();
-  /* eslint-enable */
-  "
+};
+module.exports = anonymous();
+/* eslint-enable */
+"
 `;
 
 exports[`compileTranslations should include all keys for which a translation is available 1`] = `
 "/* eslint-disable */
-  function anonymous() {
-    
+function anonymous() {
+
 return {
   keyId1: function(d) { return \"¡Hola!\"; },
   keyId4: function(d) { return \"¡Adiós, \" + d.NAME + \"!\"; }
 }
-  };
-  module.exports = anonymous();
-  /* eslint-enable */
-  "
+};
+module.exports = anonymous();
+/* eslint-enable */
+"
 `;
 
 exports[`compileTranslations should include keys with braces, even if no translation is available 1`] = `
 "/* eslint-disable */
-  function anonymous() {
-    
+function anonymous() {
+
 return {
   keyId3: function(d) { return \"Hello \" + d.NAME + \"!\"; },
   keyId4: function(d) { return \"¡Adiós, \" + d.NAME + \"!\"; },
   keyId1: function(d) { return \"¡Hola!\"; }
 }
-  };
-  module.exports = anonymous();
-  /* eslint-enable */
-  "
+};
+module.exports = anonymous();
+/* eslint-enable */
+"
 `;
