@@ -44,6 +44,14 @@ Then add the following line to your `package.json` file:
 }
 ```
 
+or, if you want to store your locales in a specific folder (default: `<project root>/locales`):
+
+```json
+"scripts": {
+    "translate": "mady --dir path/to/locales"
+}
+```
+
 
 ## Usage
 
@@ -52,9 +60,7 @@ There are two main parts in Mady: the web-based translation app and the translat
 
 ### The translation app
 
-Access the translation app by running `npm run translate`. The first time you do it, Mady will ask you for some additional information (saved in `.madyrc`): the path to your locales folder and a default port for the application.
-
-Mady will automatically launch in your default browser (URL: http://localhost:8080, if you kept the default port). From the web application, you can:
+Access the translation app by running `npm run translate`. Mady will automatically launch in your default browser (default URL: http://localhost:8080). From the web application, you can:
 
 * Update the message database with new messages extracted from your source files
 * Configure your languages, source paths, file extensions, etc.
