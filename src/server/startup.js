@@ -1,11 +1,7 @@
 import Promise              from 'bluebird';
-import path                 from 'path';
-import timm                 from 'timm';
 import { mainStory, addListener } from 'storyboard';
 import consoleListener      from 'storyboard/lib/listeners/console';
-import fs                   from 'fs-extra';
 import program              from 'commander';
-import inquirer             from 'inquirer';
 import opn                  from 'opn';
 import * as db              from './db';
 import * as gqlServer       from './gqlServer';
@@ -14,8 +10,6 @@ import * as httpServer      from './httpServer';
 const pkg                   = require('../../package.json');
 
 Promise.longStackTraces();
-
-let _launchPars = null;
 
 const DEFAULT_LOCALE_PATH = 'locales';
 const DEFAULT_PORT = 8080;
@@ -31,72 +25,24 @@ process.on('SIGINT', () => {
 // ==============================================
 program
   .version(pkg.version)
-  .option('-d, --dir [dir]', 'Relative path to locale folder')
+  .option('-d, --dir [dir]', 'Relative path to locale folder', DEFAULT_LOCALE_PATH)
   .option('-p, --port [port]', 'Initial port number to use ' +
-    '(if unavailable, the next available one will be used)')
+    '(if unavailable, the next available one will be used)', Number, DEFAULT_PORT)
   .option('--recompile', 'Recompile translations upon launch')
   .option('--importV0 [dir]', 'Import a "v0" (old) locale folder')
   .parse(process.argv);
 
-Promise.resolve()
-  .then(() => _readLaunchPars())
-  .then(() => {
-    mainStory.info('startup', 'Launch parameters:', { attach: _launchPars });
-    db.init({ localeDir: _launchPars.localeDir, fRecompile: program.recompile });
-  })
-  .then(() => {
-    if (program.importV0) {
-      db.importV0(program.importV0);
-    } else {
-      gqlServer.init();
-      httpServer.init({ port: _launchPars.port });
-    }
-    opn(`http://localhost:${_launchPars.port}/`);
-  });
+const launchPars = {
+  localeDir: program.dir,
+  port: program.port,
+};
 
-
-// ==============================================
-// Helpers
-// ==============================================
-function _readLaunchPars() {
-  const launchParsPath = path.join(process.cwd(), '.madyrc');
-  let launchPars = {};
-  let fModified = false;
-
-  // Config provided by `.madyrc` file
-  try {
-    launchPars = JSON.parse(fs.readFileSync(launchParsPath));
-  } catch (err) { /* Ignore exception */ }
-
-  // Config updated by CLI arguments
-  const launchPars2 = timm.merge(launchPars, {
-    localeDir: program.dir,
-    port: program.port,
-  });
-  if (launchPars2 !== launchPars) {
-    fModified = true;
-    launchPars = launchPars2;
-  }
-
-  // Config complemented by questions to the user
-  const questions = [
-    {
-      name: 'localeDir',
-      message: 'Please specify a folder for your locales and config',
-      default: DEFAULT_LOCALE_PATH,
-      when: () => (launchPars.localeDir == null),
-    },
-    {
-      name: 'port',
-      message: 'Please specify an initial port',
-      default: DEFAULT_PORT,
-      when: () => (launchPars.port == null),
-    },
-  ];
-  return inquirer.prompt(questions)
-    .then((answers) => {
-      fModified = fModified || !!Object.keys(answers).length;
-      _launchPars = timm.merge(launchPars, answers);
-      if (fModified) db.saveJson(launchParsPath, _launchPars);
-    });
+mainStory.info('startup', 'Launch parameters:', { attach: launchPars });
+db.init({ localeDir: launchPars.localeDir, fRecompile: program.recompile });
+if (program.importV0) {
+  db.importV0(program.importV0);
+} else {
+  gqlServer.init();
+  httpServer.init({ port: launchPars.port });
 }
+opn(`http://localhost:${launchPars.port}/`);

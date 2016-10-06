@@ -75,7 +75,7 @@ const specs = {
     // Top-level
     start:                      'babel-node src/server/startup --dir src/locales',
     startAlt:                   'babel-node src/server/startup --dir tools/locales',
-    startProd:                  'node lib/mady',
+    startProd:                  'node lib/mady --dir src/locales',
     compile:                    runMultiple([
                                   'rm -rf ./lib',
                                   'mkdir lib',
@@ -154,7 +154,6 @@ const specs = {
     timm: '1.0.0',
     storyboard: '2.1.2',
     lodash: '4.16.0',
-    inquirer: '1.1.3',
     commander: '2.9.0',
     'node-uuid': '1.4.7',
     bluebird: '3.4.6',
