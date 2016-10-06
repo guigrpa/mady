@@ -36,7 +36,7 @@
     "buildSsrWatch": "rm -rf ./public/ssr && rm -rf ./lib/server/ssr && cross-env SERVER_SIDE_RENDERING=true webpack --config ./src/server/webpackConfig.cjs --progress --display-chunks --watch",
     "buildSsr": "rm -rf ./public/ssr && rm -rf ./lib/server/ssr && cross-env SERVER_SIDE_RENDERING=true NODE_ENV=production webpack --config ./src/server/webpackConfig.cjs --progress --display-chunks",
     "buildClient": "rm -rf ./public/assets && cross-env NODE_ENV=production webpack --config ./src/server/webpackConfig.cjs --progress --display-chunks",
-    "build": "node package && npm run lint && npm run flow && npm run compile && npm run buildClient && npm run buildSsr && npm run test && npm run docs && npm run xxl",
+    "build": "node package && npm run lint && npm run flow && rm -rf ./lib && npm run test && npm run compile && npm run buildClient && npm run buildSsr && npm run docs && npm run xxl",
     "travis": "npm run compile && npm run testCovFullExceptMin",
     "lint": "eslint src",
     "flow": "flow check || exit 0",
