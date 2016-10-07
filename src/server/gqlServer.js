@@ -123,6 +123,7 @@ export function init() {
     srcExtensions:    { type: new GraphQLList(GraphQLString) },
     langs:            { type: new GraphQLList(GraphQLString) },
     msgFunctionNames: { type: new GraphQLList(GraphQLString) },
+    msgRegexps:       { type: new GraphQLList(GraphQLString) },
     fMinify:          { type: GraphQLBoolean },
   });
 

@@ -30,6 +30,7 @@ const fragments = {
         srcPaths
         srcExtensions
         msgFunctionNames
+        msgRegexps
         fMinify
       }
     }
@@ -54,7 +55,7 @@ class Settings extends React.Component {
     // leave state handling entirely to `giu`, and fetch the value when the user clicks on
     // Save.
     this.state = pick(props.viewer.config, [
-      'langs', 'srcPaths', 'srcExtensions', 'msgFunctionNames',
+      'langs', 'srcPaths', 'srcExtensions', 'msgFunctionNames', 'msgRegexps',
     ]);
     bindAll(this, [
       'onCreateListItem',
@@ -138,6 +139,22 @@ class Settings extends React.Component {
           placeholder: 'e.g. _t',
           width: 60,
         })}
+        <div style={style.listLabel}>
+          {_t('settingsForm_ADVANCED: Additional regular expressions for message parsing:')}
+          {' '}
+          <Icon
+            icon="info-circle"
+            title={_t('settingsForm_Make sure your regular expression has exactly one capture group: (.*?)')}
+            style={style.info}
+          />
+        </div>
+        {this.renderList({
+          id: 'msgRegexps',
+          dir: 'column',
+          Component: TextInput,
+          placeholder: 'e.g. {{\\s*(.*?)\\s*}}',
+          width: 300,
+        })}
         <div style={style.configLine}>
           <Checkbox ref={(c) => { this.refMinify = c; }} id="fMinify" value={fMinify} />
           <label htmlFor="fMinify">
@@ -209,7 +226,7 @@ class Settings extends React.Component {
     // Save other settings
     const { viewer } = this.props;
     const set = pick(this.state, [
-      'langs', 'srcPaths', 'srcExtensions', 'msgFunctionNames',
+      'langs', 'srcPaths', 'srcExtensions', 'msgFunctionNames', 'msgRegexps',
     ]);
     set.fMinify = this.refMinify.getValue();
     mutate({
@@ -252,6 +269,9 @@ const style = {
   remove: { color: '#444' },
   configLine: {
     marginTop: 7,
+  },
+  info: {
+    cursor: 'pointer',
   },
 };
 

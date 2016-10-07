@@ -1,3 +1,50 @@
+exports[`Source parser Custom regexp parsing should work with custom regexps 1`] = `
+Object {
+  "ISE=": Object {
+    "context": null,
+    "firstUsed": null,
+    "id": "ISE=",
+    "sources": Array [
+      "FILENAME",
+    ],
+    "text": "!!",
+    "unusedSince": null,
+  },
+  "aG8=": Object {
+    "context": null,
+    "firstUsed": null,
+    "id": "aG8=",
+    "sources": Array [
+      "FILENAME",
+    ],
+    "text": "ho",
+    "unusedSince": null,
+  },
+  "aGV5": Object {
+    "context": null,
+    "firstUsed": null,
+    "id": "aGV5",
+    "sources": Array [
+      "FILENAME",
+    ],
+    "text": "hey",
+    "unusedSince": null,
+  },
+  "bGV0J3MgZ28=": Object {
+    "context": null,
+    "firstUsed": null,
+    "id": "bGV0J3MgZ28=",
+    "sources": Array [
+      "FILENAME",
+    ],
+    "text": "let\'s go",
+    "unusedSince": null,
+  },
+}
+`;
+
+exports[`Source parser Custom regexp parsing should work with custom regexps and multiline strings 1`] = `Object {}`;
+
 exports[`Source parser Function parser should extract context if available 1`] = `
 Object {
   "Y29udGV4dF9FeGFtcGxl": Object {
@@ -65,6 +112,41 @@ Object {
       "FILENAME",
     ],
     "text": "Example2",
+    "unusedSince": null,
+  },
+}
+`;
+
+exports[`Source parser Function parser should work with specially-named functions 1`] = `
+Object {
+  "aG8=": Object {
+    "context": null,
+    "firstUsed": null,
+    "id": "aG8=",
+    "sources": Array [
+      "FILENAME",
+    ],
+    "text": "ho",
+    "unusedSince": null,
+  },
+  "aGk=": Object {
+    "context": null,
+    "firstUsed": null,
+    "id": "aGk=",
+    "sources": Array [
+      "FILENAME",
+    ],
+    "text": "hi",
+    "unusedSince": null,
+  },
+  "dGhlcmU=": Object {
+    "context": null,
+    "firstUsed": null,
+    "id": "dGhlcmU=",
+    "sources": Array [
+      "FILENAME",
+    ],
+    "text": "there",
     "unusedSince": null,
   },
 }

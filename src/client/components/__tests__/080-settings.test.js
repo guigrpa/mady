@@ -16,6 +16,7 @@ describe('Settings', () => {
         srcPaths: ['src'],
         srcExtensions: ['.js', '.jsx'],
         msgFunctionNames: ['_t'],
+        msgRegexps: [],
         fMinify: false,
       },
     };

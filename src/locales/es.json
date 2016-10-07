@@ -268,5 +268,17 @@
     "lang": "es",
     "translation": "Hola, {NAME}!",
     "keyId": "c29tZUNvbnRleHRfSGVsbG8sIHtOQU1FfSE="
+  },
+  "088d56d8-3ad9-4618-8b61-2eb070389382": {
+    "id": "088d56d8-3ad9-4618-8b61-2eb070389382",
+    "lang": "es",
+    "translation": "AVANZADO: Expresiones regulares adicionales para la extracción de mensajes:",
+    "keyId": "c2V0dGluZ3NGb3JtX0FEVkFOQ0VEOiBBZGRpdGlvbmFsIHJlZ3VsYXIgZXhwcmVzc2lvbnMgZm9yIG1lc3NhZ2UgcGFyc2luZzo="
+  },
+  "7eeb87fe-65a2-47e1-be01-3483e2a13bd4": {
+    "id": "7eeb87fe-65a2-47e1-be01-3483e2a13bd4",
+    "lang": "es",
+    "translation": "Asegúrate de que la expresión regular tiene exactamente un grupo de captura: (.*?)",
+    "keyId": "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cDogKC4qPyk="
   }
 }

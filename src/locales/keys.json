@@ -417,5 +417,25 @@
     "sources": [
       "src/client/components/999-reactIntlExample.js"
     ]
+  },
+  "c2V0dGluZ3NGb3JtX0FEVkFOQ0VEOiBBZGRpdGlvbmFsIHJlZ3VsYXIgZXhwcmVzc2lvbnMgZm9yIG1lc3NhZ2UgcGFyc2luZzo=": {
+    "id": "c2V0dGluZ3NGb3JtX0FEVkFOQ0VEOiBBZGRpdGlvbmFsIHJlZ3VsYXIgZXhwcmVzc2lvbnMgZm9yIG1lc3NhZ2UgcGFyc2luZzo=",
+    "context": "settingsForm",
+    "text": "ADVANCED: Additional regular expressions for message parsing:",
+    "firstUsed": "2016-10-07T07:06:52.832Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/080-settings.js"
+    ]
+  },
+  "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cDogKC4qPyk=": {
+    "id": "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cDogKC4qPyk=",
+    "context": "settingsForm",
+    "text": "Make sure your regular expression has exactly one capture group: (.*?)",
+    "firstUsed": "2016-10-07T07:06:52.832Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/080-settings.js"
+    ]
   }
 }

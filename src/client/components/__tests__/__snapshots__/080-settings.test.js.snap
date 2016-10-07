@@ -551,6 +551,48 @@ exports[`Settings renders correctly 1`] = `
           <div
             style={
               Object {
+                "marginBottom": 3,
+                "marginTop": 7,
+              }
+            }>
+            ADVANCED: Additional regular expressions for message parsing:
+             
+            <i
+              className="giu-icon fa fa-info-circle"
+              style={
+                Object {
+                  "color": undefined,
+                  "cursor": "pointer",
+                  "letterSpacing": "normal",
+                }
+              }
+              title="Make sure your regular expression has exactly one capture group: (.*?)" />
+          </div>
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "marginLeft": 15,
+              }
+            }>
+            <i
+              className="giu-icon fa fa-plus"
+              id="msgRegexps"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#444",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "letterSpacing": "normal",
+                  "marginTop": 5,
+                }
+              } />
+          </div>
+          <div
+            style={
+              Object {
                 "marginTop": 7,
               }
             }>

@@ -38,23 +38,31 @@ try {
 //   /_t\s*\(\s*'(.*?)'/g,
 // ];
 
-const getRegexps = (msgFunctionNames) => {
+const getRegexps = (msgFunctionNames, msgRegexps) => {
   const out = [];
-  msgFunctionNames.forEach((fnName) => {
-    const escapedFnName = fnName.replace(/([\$])/g, '\\$1');
+  if (msgFunctionNames) {
+    msgFunctionNames.forEach((fnName) => {
+      // Escape $ characters, which are legal in function names
+      const escapedFnName = fnName.replace(/([\$])/g, '\\$1');
 
-    // Looking for something like:
-    // * i18n("xk s fjkl")
-    // * i18n ( "xk s fjkl")
-    // * i18n('xk s fjkl')
-    out.push(new RegExp(`${escapedFnName}\\s*\\(\\s*"([\\s\\S]*?)"`, 'gm'));
-    out.push(new RegExp(`${escapedFnName}\\s*\\(\\s*'([\\s\\S]*?)'`, 'gm'));
-  });
+      // Looking for something like:
+      // * i18n("xk s fjkl")
+      // * i18n ( "xk s fjkl")
+      // * i18n('xk s fjkl')
+      out.push(new RegExp(`${escapedFnName}\\s*\\(\\s*"([\\s\\S]*?)"`, 'gm'));
+      out.push(new RegExp(`${escapedFnName}\\s*\\(\\s*'([\\s\\S]*?)'`, 'gm'));
+    });
+  }
+  if (msgRegexps) {
+    msgRegexps.forEach((reStr) => {
+      out.push(new RegExp(reStr, 'gm'));
+    });
+  }
   return out;
 };
 
-const parse = ({ srcPaths, srcExtensions, msgFunctionNames, story }) => {
-  const regexpFunctionNames = getRegexps(msgFunctionNames);
+const parse = ({ srcPaths, srcExtensions, msgFunctionNames, msgRegexps, story }) => {
+  const regexps = getRegexps(msgFunctionNames, msgRegexps);
   const keys = {};
   const diveOptions = { filter: (filePath, fDir) => {
     if (fDir) return true;
@@ -64,15 +72,15 @@ const parse = ({ srcPaths, srcExtensions, msgFunctionNames, story }) => {
     const finalFilePath = path.normalize(filePath);
     story.info('parser', `Processing ${chalk.cyan.bold(finalFilePath)}...`);
     const fileContents = fs.readFileSync(finalFilePath);
-    parseFunctionCalls(keys, finalFilePath, fileContents, regexpFunctionNames);
+    parseWithRegexps(keys, finalFilePath, fileContents, regexps);
     if (fReactIntl) parseReactIntl(keys, finalFilePath, fileContents, story);
   };
   srcPaths.forEach((srcPath) => diveSync(srcPath, diveOptions, diveProcess));
   return keys;
 };
 
-const parseFunctionCalls = (keys, filePath, fileContents, regexpFunctionNames) => {
-  regexpFunctionNames.forEach((re) => {
+const parseWithRegexps = (keys, filePath, fileContents, regexps) => {
+  regexps.forEach((re) => {
     let match;
     while ((match = re.exec(fileContents))) {
       addMessageToKeys(keys, match[1], filePath);
@@ -127,6 +135,6 @@ export default parse;
 // Only for unit tests
 export {
   getRegexps as _getRegexps,
-  parseFunctionCalls as _parseFunctionCalls,
+  parseWithRegexps as _parseWithRegexps,
   parseReactIntl as _parseReactIntl,
 };

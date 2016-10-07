@@ -17,6 +17,7 @@ const DEFAULT_CONFIG = {
   srcExtensions: ['.js', '.jsx', '.coffee', '.cjsx'],
   langs: ['en'],
   msgFunctionNames: ['_t'],
+  msgRegexps: [],
   fMinify: false,
   dbVersion: DB_VERSION,
 };
@@ -159,8 +160,8 @@ function deleteKey(id) {
 }
 
 function parseSrcFiles({ story }) {
-  const { srcPaths, srcExtensions, msgFunctionNames } = _config;
-  const curKeys = parse({ srcPaths, srcExtensions, msgFunctionNames, story });
+  const { srcPaths, srcExtensions, msgFunctionNames, msgRegexps } = _config;
+  const curKeys = parse({ srcPaths, srcExtensions, msgFunctionNames, msgRegexps, story });
   const now = new Date().toISOString();
 
   const unusedKeys = [];

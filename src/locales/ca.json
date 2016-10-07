@@ -238,5 +238,17 @@
     "lang": "ca",
     "translation": "Una eina per la internacionalització",
     "keyId": "c29tZUNvbnRleHRfQSB0b29sIGZvciBpbnRlcm5hdGlvbmFsaXphdGlvbg=="
+  },
+  "c39c0181-810c-4727-a150-c908f8bb1375": {
+    "id": "c39c0181-810c-4727-a150-c908f8bb1375",
+    "lang": "ca",
+    "translation": "AVANÇAT: Expressions regulars addicionals per a l'extracció de missatges:",
+    "keyId": "c2V0dGluZ3NGb3JtX0FEVkFOQ0VEOiBBZGRpdGlvbmFsIHJlZ3VsYXIgZXhwcmVzc2lvbnMgZm9yIG1lc3NhZ2UgcGFyc2luZzo="
+  },
+  "0909f6a6-7147-45e4-a8a3-66a09b495139": {
+    "id": "0909f6a6-7147-45e4-a8a3-66a09b495139",
+    "lang": "ca",
+    "translation": "Assegura't que l'expressió regular té exactament un grup de captura: (.*?)",
+    "keyId": "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cDogKC4qPyk="
   }
 }
