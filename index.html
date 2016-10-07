@@ -27,7 +27,7 @@
 
 <p><img src="https://raw.githubusercontent.com/guigrpa/mady/master/docs/01-ui.png" alt="Mady UI"></p>
 
-<p><em>Yes, it's Mady's view of herself!</em> <g-emoji alias="open_mouth" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f62e.png">😮</g-emoji> For more details on the MessageFormat syntax (<em>hamburger</em> examples above), see the <a href="https://messageformat.github.io/guide/">MessageFormat guide</a>:</p>
+<p><em>Yes, it's Mady's view of herself!</em> <g-emoji alias="open_mouth" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f62e.png" ios-version="6.0">😮</g-emoji> For more details on the MessageFormat syntax (<em>hamburger</em> examples above), see the <a href="https://messageformat.github.io/guide/">MessageFormat guide</a>:</p>
 
 <div class="highlight highlight-source-js"><pre><span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-en">_t</span>(<span class="pl-s"><span class="pl-pds">"</span>someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}<span class="pl-pds">"</span></span>, { NUM<span class="pl-k">:</span> <span class="pl-c1">1</span> }));
 <span class="pl-c">// 1 hamburguesa</span>
@@ -41,11 +41,14 @@
 
 <ul>
 <li>
+<strong>Easy-to-use tool for parsing source files, adding locales, editing translations, comparing locales side-by-side, and compiling to (optionally minified) JavaScript modules</strong>.</li>
+<li>Use it also as a library: a no-frills translation function to run the compiled language modules.</li>
+<li>
+<strong><a href="https://github.com/yahoo/react-intl">React Intl</a> interoperability</strong>, both for message extraction and translation injection.</li>
+<li>
 <strong>MessageFormat messages</strong>: while it does not solve all the problems in the huge field of i18n, MessageFormat is a much more powerful tool than the conventional gettext (IMHO).</li>
 <li>
-<strong>Full UNICODE support</strong>: messages and translations can include any UNICODE character. In other words, you can now translate <g-emoji alias="+1" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44d.png">👍</g-emoji> (en) as <g-emoji alias="clap" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44f.png">👏</g-emoji> (es-ES) and then <g-emoji alias="dancer" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f483.png">💃</g-emoji> (es-ES-andalusia)!</li>
-<li>Use it as a development tool in your project: an <strong>easy-to-use UI</strong> that allows <strong>parsing source files, adding languages and translations, comparing translations side-by-side, and compiling to (optionally minified) JavaScript modules</strong>.</li>
-<li>Use it as a library: a no-frills translation function to run the compiled language modules.</li>
+<strong>Full UNICODE support</strong>: messages and translations can include any UNICODE character. In other words, you can now translate <g-emoji alias="+1" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44d.png" ios-version="6.0">👍</g-emoji> (en) as <g-emoji alias="clap" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44f.png" ios-version="6.0">👏</g-emoji> (es-ES) and then <g-emoji alias="dancer" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f483.png" ios-version="6.0">💃</g-emoji> (es-ES-andalusia)!</li>
 <li>
 <strong>BCP47 support</strong>: fetch missing translations from parent/child languages, and even sibling languages (other regions) as a last resort.</li>
 </ul>
@@ -56,39 +59,43 @@
 <pre><code>$ npm install --save mady
 </code></pre>
 
-<h2>
-<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+<p>If you use <a href="https://github.com/yahoo/react-intl">React Intl</a>, make sure you also install the following packages so that Mady can parse your React Intl components:</p>
 
-<p>There are two main parts in Mady: the web-based translation app and the translation function.</p>
+<pre><code>$ npm install --save-dev babel-plugin-react-intl babel-core
+</code></pre>
 
-<h3>
-<a id="the-translation-app" class="anchor" href="#the-translation-app" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The translation app</h3>
-
-<p>Access the translation app by running:</p>
-
-<div class="highlight highlight-source-shell"><pre>$ ./node_modules/.bin/mady</pre></div>
-
-<p>Or just add the following line to your <code>package.json</code>:</p>
+<p>Then add the following line to your <code>package.json</code> file:</p>
 
 <div class="highlight highlight-source-json"><pre><span class="pl-s"><span class="pl-pds">"</span>scripts<span class="pl-pds">"</span></span>: {
     <span class="pl-s"><span class="pl-pds">"</span>translate<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>mady<span class="pl-pds">"</span></span>
 }</pre></div>
 
-<p>and run <code>npm run translate</code>.</p>
+<p>or, if you want to store your locales in a specific folder (default: <code>&lt;project root&gt;/locales</code>):</p>
 
-<p>The first time you run it, Mady will ask you for some additional information: the path to your locales folder and a default port for the application. Now open Mady's URL in your browser (http://localhost:8080 by default) and there you go!</p>
+<div class="highlight highlight-source-json"><pre><span class="pl-s"><span class="pl-pds">"</span>scripts<span class="pl-pds">"</span></span>: {
+    <span class="pl-s"><span class="pl-pds">"</span>translate<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>mady --dir path/to/locales<span class="pl-pds">"</span></span>
+}</pre></div>
 
-<p>From the web application, you can:</p>
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>There are two main parts in Mady: the web-based translation app and the translation function. The webapp is only needed during development (for the extraction, translation and management of messages and translations), whereas the translation function can be used in your own application, and hence in production as well.</p>
+
+<h3>
+<a id="the-translation-app" class="anchor" href="#the-translation-app" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The translation app</h3>
+
+<p>Access the translation app by running <code>npm run translate</code>. Mady will automatically launch in your default browser (default URL: http://localhost:8080). From the web application, you can:</p>
 
 <ul>
-<li>Update the key database with new keys extracted from your source files</li>
+<li>Update the message database with new messages extracted from your source files</li>
 <li>Configure your languages, source paths, file extensions, etc.</li>
 <li>Translate your keys to the different supported languages</li>
-<li>[Automatically] export translations to JS files, for use by the <a href="#the-translation-function">translation function</a>
-</li>
+<li>[Automatically] export translations to JS files and other formats, for use by the <a href="#the-translation-function">translation function</a>, React Intl and other integrations</li>
 </ul>
 
-<p>Messages in your source files should have the form: <code>_t('someContext_Once upon a time...')</code> (single or double quotes are supported), where <code>_t()</code> is the default name for the translation function (see below), <code>someContext</code> is some hint for the translator and <code>Once upon a time...</code> is your untranslated <a href="#messageformat">MessageFormat</a> message.</p>
+<p>Messages in your source files might have the form: <code>_t('someContext_Once upon a time...')</code> (single or double quotes are supported), where <code>_t()</code> is the default name for the translation function (see below), <code>someContext</code> is some hint for the translator and <code>Once upon a time...</code> is your untranslated <a href="#messageformat">MessageFormat</a> message.</p>
+
+<p>Mady can also extract messages from React Intl components out of the box. Or you can specify your own regex patterns in the UI.</p>
 
 <p>Configuration looks like this:</p>
 
@@ -114,6 +121,45 @@
 <span class="pl-c">// 1 hamburguesa</span>
 <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-en">_t</span>(<span class="pl-s"><span class="pl-pds">"</span>someContext_{NUM, plural, one{1 hamburger} other{# hamburgers} }<span class="pl-pds">"</span></span>, { NUM<span class="pl-k">:</span> <span class="pl-c1">2</span> }));
 <span class="pl-c">// 2 hamburguesas</span></pre></div>
+
+<p>Alternatively, you can set up locales beforehand and then activate one or the other. In case the requested variant is not available, its closest BCP47 parent is enabled:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">import</span> <span class="pl-smi">_t</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>mady<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> <span class="pl-smi">locales</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>./locales/es<span class="pl-pds">'</span></span>;
+
+<span class="pl-smi">_t</span>.<span class="pl-en">addLocales</span>(<span class="pl-s"><span class="pl-pds">'</span>es<span class="pl-pds">'</span></span>, locales);
+<span class="pl-k">const</span> <span class="pl-c1">lang</span> <span class="pl-k">=</span> <span class="pl-smi">_t</span>.<span class="pl-en">setLocales</span>(<span class="pl-s"><span class="pl-pds">'</span>es-US<span class="pl-pds">'</span></span>);
+<span class="pl-c">// returns 'es', since we don't have the American Spanish variant</span>
+
+<span class="pl-k">const</span> <span class="pl-c1">lang</span> <span class="pl-k">=</span> <span class="pl-smi">_t</span>.<span class="pl-en">setLocales</span>(<span class="pl-s"><span class="pl-pds">'</span>fr<span class="pl-pds">'</span></span>);
+<span class="pl-c">// does nothing, since we have no French translations</span></pre></div>
+
+<h2>
+<a id="bcp47-and-translation-fallbacks" class="anchor" href="#bcp47-and-translation-fallbacks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>BCP47 and translation fallbacks</h2>
+
+<p>Mady "fills in the gaps" when <strong>building</strong> translation modules (<code>{lang.js}</code>) and React Intl message bundles (<code>{lang}.reactIntl.json</code>). In other words, when you don't provide a translation for message X for a particular language (e.g. <code>es-ES</code>), it will look for suitable fallback translations in related languages:</p>
+
+<ul>
+<li>Parent languages (e.g. <code>es</code>)</li>
+<li>Sibling languages (e.g. <code>es-MX</code>)</li>
+<li>Children languages (e.g. <code>es-ES-andalusia</code>)</li>
+</ul>
+
+<p>If you use Mady's translation function and it cannot find a suitable translation, it will just take the message key (e.g. <code>someContext_Untranslated message</code>), remove the context prefix and use it as a last-resort fallback.</p>
+
+<h2>
+<a id="the-locales-folder" class="anchor" href="#the-locales-folder" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The locales folder</h2>
+
+<p>You can find the following files in the locales folder (<code>./locales</code> by default):</p>
+
+<ul>
+<li>A configuration file: <code>config.json</code>
+</li>
+<li>A message file: <code>keys.json</code>
+</li>
+<li>A raw translation file per language, e.g. <code>fr.json</code> (this is the one you edit with the web application)</li>
+<li>Several output files per language, depending on your configuration: a compiled translation module (<code>fr.js</code>), a message bundle for React Intl (e.g. <code>fr.reactIntl.json</code>), or a generic JSON file (e.g. <code>fr.out.json</code>). All of these files are generated automatically.</li>
+</ul>
 
 <h2>
 <a id="messageformat" class="anchor" href="#messageformat" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MessageFormat</h2>
