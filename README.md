@@ -55,7 +55,7 @@ or, if you want to store your locales in a specific folder (default: `<project r
 
 ## Usage
 
-There are two main parts in Mady: the web-based translation app and the translation function.
+There are two main parts in Mady: the web-based translation app and the translation function. The webapp is only needed during development (for the extraction, translation and management of messages and translations), whereas the translation function can be used in your own application, and hence in production as well.
 
 
 ### The translation app
@@ -65,9 +65,11 @@ Access the translation app by running `npm run translate`. Mady will automatical
 * Update the message database with new messages extracted from your source files
 * Configure your languages, source paths, file extensions, etc.
 * Translate your keys to the different supported languages
-* [Automatically] export translations to JS files and message bundles, for use by the [translation function](#the-translation-function) or React Intl
+* [Automatically] export translations to JS files and other formats, for use by the [translation function](#the-translation-function), React Intl and other integrations
 
-Messages in your source files should have the form: `_t('someContext_Once upon a time...')` (single or double quotes are supported), where `_t()` is the default name for the translation function (see below), `someContext` is some hint for the translator and `Once upon a time...` is your untranslated [MessageFormat](#messageformat) message.
+Messages in your source files might have the form: `_t('someContext_Once upon a time...')` (single or double quotes are supported), where `_t()` is the default name for the translation function (see below), `someContext` is some hint for the translator and `Once upon a time...` is your untranslated [MessageFormat](#messageformat) message.
+
+Mady can also extract messages from React Intl components out of the box. Or you can specify your own regex patterns in the UI.
 
 Configuration looks like this:
 
@@ -128,7 +130,8 @@ You can find the following files in the locales folder (`./locales` by default):
 
 * A configuration file: `config.json`
 * A message file: `keys.json`
-* Several translation files for each language: a raw translation file (e.g. `fr.json`), a compiled translation module (`fr.js`) and a message bundle for React Intl (e.g. `fr.reactIntl.json`). The web application lets you edit the raw translation file, whereas all others are generated automatically.
+* A raw translation file per language, e.g. `fr.json` (this is the one you edit with the web application)
+* Several output files per language, depending on your configuration: a compiled translation module (`fr.js`), a message bundle for React Intl (e.g. `fr.reactIntl.json`), or a generic JSON file (e.g. `fr.out.json`). All of these files are generated automatically.
 
 
 ## MessageFormat
