@@ -9,14 +9,6 @@
       "src/client/components/050-header.js"
     ]
   },
-  "dG9vbHRpcF9Db252ZXJ0IHRyYW5zbGF0aW9ucyB0byBKYXZhU2NyaXB0IGZpbGVz": {
-    "id": "dG9vbHRpcF9Db252ZXJ0IHRyYW5zbGF0aW9ucyB0byBKYXZhU2NyaXB0IGZpbGVz",
-    "context": "tooltip",
-    "text": "Convert translations to JavaScript files",
-    "firstUsed": "2016-04-18T05:37:47.074Z",
-    "unusedSince": "2016-04-20T11:33:38.450Z",
-    "sources": []
-  },
   "dG9vbHRpcF9SZW1vdmUgY29sdW1uIChkb2VzIE5PVCBkZWxldGUgYW55IHRyYW5zbGF0aW9ucyk=": {
     "id": "dG9vbHRpcF9SZW1vdmUgY29sdW1uIChkb2VzIE5PVCBkZWxldGUgYW55IHRyYW5zbGF0aW9ucyk=",
     "context": "tooltip",
@@ -141,16 +133,6 @@
     "id": "c2V0dGluZ3NGb3JtX1NvdXJjZSBleHRlbnNpb25zOg==",
     "context": "settingsForm",
     "text": "Source extensions:",
-    "firstUsed": "2016-04-18T10:25:17.494Z",
-    "unusedSince": null,
-    "sources": [
-      "src/client/components/080-settings.js"
-    ]
-  },
-  "c2V0dGluZ3NGb3JtX01pbmlmeSBvdXRwdXQgSmF2YVNjcmlwdA==": {
-    "id": "c2V0dGluZ3NGb3JtX01pbmlmeSBvdXRwdXQgSmF2YVNjcmlwdA==",
-    "context": "settingsForm",
-    "text": "Minify output JavaScript",
     "firstUsed": "2016-04-18T10:25:17.494Z",
     "unusedSince": null,
     "sources": [
@@ -428,11 +410,61 @@
       "src/client/components/080-settings.js"
     ]
   },
-  "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cDogKC4qPyk=": {
-    "id": "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cDogKC4qPyk=",
+  "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cCwgcG9yIGVqZW1wbG86ICguKj8p": {
+    "id": "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cCwgcG9yIGVqZW1wbG86ICguKj8p",
     "context": "settingsForm",
-    "text": "Make sure your regular expression has exactly one capture group: (.*?)",
-    "firstUsed": "2016-10-07T07:06:52.832Z",
+    "text": "Make sure your regular expression has exactly one capture group, por ejemplo: (.*?)",
+    "firstUsed": "2016-10-07T13:27:55.521Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/080-settings.js"
+    ]
+  },
+  "c2V0dGluZ3NGb3JtX01pbmlmaWVk": {
+    "id": "c2V0dGluZ3NGb3JtX01pbmlmaWVk",
+    "context": "settingsForm",
+    "text": "Minified",
+    "firstUsed": "2016-10-07T13:27:55.521Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/080-settings.js"
+    ]
+  },
+  "c2V0dGluZ3NGb3JtX0dlbmVyaWMgSlNPTiBmaWxl": {
+    "id": "c2V0dGluZ3NGb3JtX0dlbmVyaWMgSlNPTiBmaWxl",
+    "context": "settingsForm",
+    "text": "Generic JSON file",
+    "firstUsed": "2016-10-07T13:27:55.521Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/080-settings.js"
+    ]
+  },
+  "c2V0dGluZ3NGb3JtX1JlYWN0IEludGwgSlNPTiBmaWxl": {
+    "id": "c2V0dGluZ3NGb3JtX1JlYWN0IEludGwgSlNPTiBmaWxl",
+    "context": "settingsForm",
+    "text": "React Intl JSON file",
+    "firstUsed": "2016-10-07T13:30:07.967Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/080-settings.js"
+    ]
+  },
+  "c2V0dGluZ3NGb3JtX0phdmFTY3JpcHQgbW9kdWxlIChyZXF1aXJlZCBpZiB5b3UgdXNlIE1hZHkncyB0cmFuc2xhdGlvbiBmdW5jdGlvbik=": {
+    "id": "c2V0dGluZ3NGb3JtX0phdmFTY3JpcHQgbW9kdWxlIChyZXF1aXJlZCBpZiB5b3UgdXNlIE1hZHkncyB0cmFuc2xhdGlvbiBmdW5jdGlvbik=",
+    "context": "settingsForm",
+    "text": "JavaScript module (required if you use Mady's translation function)",
+    "firstUsed": "2016-10-07T13:30:40.186Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/080-settings.js"
+    ]
+  },
+  "c2V0dGluZ3NGb3JtX091dHB1dDo=": {
+    "id": "c2V0dGluZ3NGb3JtX091dHB1dDo=",
+    "context": "settingsForm",
+    "text": "Output:",
+    "firstUsed": "2016-10-07T13:33:34.082Z",
     "unusedSince": null,
     "sources": [
       "src/client/components/080-settings.js"

@@ -280,5 +280,47 @@
     "lang": "es",
     "translation": "Asegúrate de que la expresión regular tiene exactamente un grupo de captura: (.*?)",
     "keyId": "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cDogKC4qPyk="
+  },
+  "49547fe2-3e2e-4c2b-8036-45075268db67": {
+    "id": "49547fe2-3e2e-4c2b-8036-45075268db67",
+    "lang": "es",
+    "translation": "Fichero JSON genérico",
+    "keyId": "c2V0dGluZ3NGb3JtX0dlbmVyaWMgSlNPTiBmaWxl"
+  },
+  "06e5edf0-a56f-4b0e-a43a-46b9b0b95634": {
+    "id": "06e5edf0-a56f-4b0e-a43a-46b9b0b95634",
+    "lang": "es",
+    "translation": "Módulo JavaScript",
+    "keyId": "c2V0dGluZ3NGb3JtX0phdmFTY3JpcHQgbW9kdWxl"
+  },
+  "f869eee1-a493-4b4a-a4aa-65ce8fef4179": {
+    "id": "f869eee1-a493-4b4a-a4aa-65ce8fef4179",
+    "lang": "es",
+    "translation": "Módulo JavaScript (necesario si usas la función de traducción de Mady)",
+    "keyId": "c2V0dGluZ3NGb3JtX0phdmFTY3JpcHQgbW9kdWxlIChyZXF1aXJlZCBpZiB5b3UgdXNlIE1hZHkncyB0cmFuc2xhdGlvbiBmdW5jdGlvbik="
+  },
+  "51a28bda-9afb-4a86-99c4-058fbfde3b21": {
+    "id": "51a28bda-9afb-4a86-99c4-058fbfde3b21",
+    "lang": "es",
+    "translation": "Asegúrate de que la expresión regular tiene exactamente un grupo de captura, por ejemplo: (.*?)",
+    "keyId": "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cCwgcG9yIGVqZW1wbG86ICguKj8p"
+  },
+  "6a41d539-2a6d-4f25-ae89-232e5062a659": {
+    "id": "6a41d539-2a6d-4f25-ae89-232e5062a659",
+    "lang": "es",
+    "translation": "Minificado",
+    "keyId": "c2V0dGluZ3NGb3JtX01pbmlmaWVk"
+  },
+  "77280967-13b3-43c1-8011-b0cb0aa0cbc2": {
+    "id": "77280967-13b3-43c1-8011-b0cb0aa0cbc2",
+    "lang": "es",
+    "translation": "Fichero JSON para React Intl",
+    "keyId": "c2V0dGluZ3NGb3JtX1JlYWN0IEludGwgSlNPTiBmaWxl"
+  },
+  "a3d276a1-7f63-44d0-8dc4-900e798579c7": {
+    "id": "a3d276a1-7f63-44d0-8dc4-900e798579c7",
+    "lang": "es",
+    "translation": "Ficheros de salida:",
+    "keyId": "c2V0dGluZ3NGb3JtX091dHB1dDo="
   }
 }

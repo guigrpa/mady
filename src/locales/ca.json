@@ -250,5 +250,47 @@
     "lang": "ca",
     "translation": "Assegura't que l'expressió regular té exactament un grup de captura: (.*?)",
     "keyId": "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cDogKC4qPyk="
+  },
+  "b8ad090f-1823-40d7-893f-d7947a65118c": {
+    "id": "b8ad090f-1823-40d7-893f-d7947a65118c",
+    "lang": "ca",
+    "translation": "Fitxer JSON genèric",
+    "keyId": "c2V0dGluZ3NGb3JtX0dlbmVyaWMgSlNPTiBmaWxl"
+  },
+  "6d5904ea-4c5c-495b-91f6-42e76339f1a1": {
+    "id": "6d5904ea-4c5c-495b-91f6-42e76339f1a1",
+    "lang": "ca",
+    "translation": "Mòdul JavaScript",
+    "keyId": "c2V0dGluZ3NGb3JtX0phdmFTY3JpcHQgbW9kdWxl"
+  },
+  "eee66300-95c5-45d6-94bc-eb7cebb406c6": {
+    "id": "eee66300-95c5-45d6-94bc-eb7cebb406c6",
+    "lang": "ca",
+    "translation": "Mòdul JavaScript (necessari si fas servir la funció de traducció de Mady)",
+    "keyId": "c2V0dGluZ3NGb3JtX0phdmFTY3JpcHQgbW9kdWxlIChyZXF1aXJlZCBpZiB5b3UgdXNlIE1hZHkncyB0cmFuc2xhdGlvbiBmdW5jdGlvbik="
+  },
+  "b0f14ff3-9ee6-4e71-8457-879661b66353": {
+    "id": "b0f14ff3-9ee6-4e71-8457-879661b66353",
+    "lang": "ca",
+    "translation": "Assegura't que l'expressió regular té exactament un grup de captura, per exemple: (.*?)",
+    "keyId": "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cCwgcG9yIGVqZW1wbG86ICguKj8p"
+  },
+  "4163fb6d-6478-4380-ab69-d76878c6a987": {
+    "id": "4163fb6d-6478-4380-ab69-d76878c6a987",
+    "lang": "ca",
+    "translation": "Minificat",
+    "keyId": "c2V0dGluZ3NGb3JtX01pbmlmaWVk"
+  },
+  "be607901-9c42-4a09-9731-50f502861ed2": {
+    "id": "be607901-9c42-4a09-9731-50f502861ed2",
+    "lang": "ca",
+    "translation": "Fitxer JSON per a React Intl",
+    "keyId": "c2V0dGluZ3NGb3JtX1JlYWN0IEludGwgSlNPTiBmaWxl"
+  },
+  "5f772cfe-a7cb-4c0d-90e4-8b89614adfee": {
+    "id": "5f772cfe-a7cb-4c0d-90e4-8b89614adfee",
+    "lang": "ca",
+    "translation": "Fitxers de sortida:",
+    "keyId": "c2V0dGluZ3NGb3JtX091dHB1dDo="
   }
 }

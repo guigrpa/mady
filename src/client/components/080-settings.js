@@ -32,6 +32,9 @@ const fragments = {
         msgFunctionNames
         msgRegexps
         fMinify
+        fJsOutput
+        fJsonOutput
+        fReactIntlOutput
       }
     }
   `,
@@ -51,11 +54,11 @@ class Settings extends React.Component {
   constructor(props) {
     super(props);
     // For arrays without IDs, it's better if we keep the current state at this level,
-    // rather than relying on `giu`. For other attributes (`lang`, `fMinify`), we can
+    // rather than relying on `giu`. For other attributes (`lang`, `fMinify`...), we can
     // leave state handling entirely to `giu`, and fetch the value when the user clicks on
     // Save.
     this.state = pick(props.viewer.config, [
-      'langs', 'srcPaths', 'srcExtensions', 'msgFunctionNames', 'msgRegexps',
+      'langs', 'srcPaths', 'srcExtensions', 'msgFunctionNames', 'msgRegexps', 'fJsOutput',
     ]);
     bindAll(this, [
       'onCreateListItem',
@@ -85,7 +88,8 @@ class Settings extends React.Component {
 
   renderConfig() {
     const { lang } = this.props;
-    const { fMinify } = this.props.viewer.config;
+    const { fMinify, fJsonOutput, fReactIntlOutput } = this.props.viewer.config;
+    const { fJsOutput } = this.state;
     return (
       <div>
         <div style={style.configLine}>
@@ -144,7 +148,7 @@ class Settings extends React.Component {
           {' '}
           <Icon
             icon="info-circle"
-            title={_t('settingsForm_Make sure your regular expression has exactly one capture group: (.*?)')}
+            title={_t('settingsForm_Make sure your regular expression has exactly one capture group, por ejemplo: (.*?)')}
             style={style.info}
           />
         </div>
@@ -156,10 +160,42 @@ class Settings extends React.Component {
           width: 300,
         })}
         <div style={style.configLine}>
-          <Checkbox ref={(c) => { this.refMinify = c; }} id="fMinify" value={fMinify} />
-          <label htmlFor="fMinify">
-            {_t('settingsForm_Minify output JavaScript')}
-          </label>
+          <div>{_t('settingsForm_Output:')}</div>
+          <div style={style.indented}>
+            <Checkbox
+              id="fJsOutput"
+              value={fJsOutput}
+              onChange={(ev, val) => this.setState({ fJsOutput: val })}
+            />
+            <label htmlFor="fJsOutput">
+              {_t("settingsForm_JavaScript module (required if you use Mady's translation function)")}
+            </label>
+            {' '}
+            <Checkbox
+              ref={(c) => { this.refMinify = c; }}
+              id="fMinify"
+              disabled={!fJsOutput}
+              value={fMinify}
+            />
+            <label htmlFor="fMinify">
+              {_t('settingsForm_Minified')}
+            </label>
+          </div>
+          <div style={style.indented}>
+            <Checkbox ref={(c) => { this.refReactIntlOutput = c; }}
+              id="fReactIntlOutput"
+              value={fReactIntlOutput}
+            />
+            <label htmlFor="fReactIntlOutput">
+              {_t('settingsForm_React Intl JSON file')}
+            </label>
+          </div>
+          <div style={style.indented}>
+            <Checkbox ref={(c) => { this.refJsonOutput = c; }} id="fJsonOutput" value={fJsonOutput} />
+            <label htmlFor="fJsonOutput">
+              {_t('settingsForm_Generic JSON file')}
+            </label>
+          </div>
         </div>
       </div>
     );
@@ -229,6 +265,8 @@ class Settings extends React.Component {
       'langs', 'srcPaths', 'srcExtensions', 'msgFunctionNames', 'msgRegexps',
     ]);
     set.fMinify = this.refMinify.getValue();
+    set.fReactIntlOutput = this.refReactIntlOutput.getValue();
+    set.fJsonOutput = this.refJsonOutput.getValue();
     mutate({
       description: 'Click on Save settings',
       Mutation: UpdateConfigMutation,
@@ -269,6 +307,9 @@ const style = {
   remove: { color: '#444' },
   configLine: {
     marginTop: 7,
+  },
+  indented: {
+    marginLeft: 15,
   },
   info: {
     cursor: 'pointer',

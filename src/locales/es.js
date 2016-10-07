@@ -75,7 +75,14 @@ return {
   "c29tZUNvbnRleHRfQSB0b29sIGZvciBpbnRlcm5hdGlvbmFsaXphdGlvbg==": function(d) { return "Una herramienta para la internacionalización"; },
   "c29tZUNvbnRleHRfPGk+SGk8L2k+IDxiPntuYW1lfTwvYj4h": function(d) { return "<i>Hola</i> <b>" + d.name + "</b>!"; },
   "c2V0dGluZ3NGb3JtX0FEVkFOQ0VEOiBBZGRpdGlvbmFsIHJlZ3VsYXIgZXhwcmVzc2lvbnMgZm9yIG1lc3NhZ2UgcGFyc2luZzo=": function(d) { return "AVANZADO: Expresiones regulares adicionales para la extracción de mensajes:"; },
-  "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cDogKC4qPyk=": function(d) { return "Asegúrate de que la expresión regular tiene exactamente un grupo de captura: (.*?)"; }
+  "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cDogKC4qPyk=": function(d) { return "Asegúrate de que la expresión regular tiene exactamente un grupo de captura: (.*?)"; },
+  c2V0dGluZ3NGb3JtX0dlbmVyaWMgSlNPTiBmaWxl: function(d) { return "Fichero JSON genérico"; },
+  c2V0dGluZ3NGb3JtX0phdmFTY3JpcHQgbW9kdWxl: function(d) { return "Módulo JavaScript"; },
+  "c2V0dGluZ3NGb3JtX0phdmFTY3JpcHQgbW9kdWxlIChyZXF1aXJlZCBpZiB5b3UgdXNlIE1hZHkncyB0cmFuc2xhdGlvbiBmdW5jdGlvbik=": function(d) { return "Módulo JavaScript (necesario si usas la función de traducción de Mady)"; },
+  c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cCwgcG9yIGVqZW1wbG86ICguKj8p: function(d) { return "Asegúrate de que la expresión regular tiene exactamente un grupo de captura, por ejemplo: (.*?)"; },
+  c2V0dGluZ3NGb3JtX01pbmlmaWVk: function(d) { return "Minificado"; },
+  c2V0dGluZ3NGb3JtX1JlYWN0IEludGwgSlNPTiBmaWxl: function(d) { return "Fichero JSON para React Intl"; },
+  "c2V0dGluZ3NGb3JtX091dHB1dDo=": function(d) { return "Ficheros de salida:"; }
 }
 };
 module.exports = anonymous();

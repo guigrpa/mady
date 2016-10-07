@@ -2,7 +2,7 @@
   "47362ba9-6518-4f87-823d-8f4d42560892": {
     "id": "47362ba9-6518-4f87-823d-8f4d42560892",
     "lang": "ca",
-    "translation": "Convertir traduccions a fitxers javaScript",
+    "translation": "Convertir traduccions a fitxers JavaScript",
     "keyId": "dG9vbHRpcF9Db252ZXJ0IHRyYW5zbGF0aW9ucyB0byBKYXZhU2NyaXB0IGZpbGVz"
   },
   "ede1b358-92a9-47cc-be40-022bad306252": {
@@ -226,5 +226,29 @@
     "lang": "ca",
     "translation": "Funcions de traducció de missatges a buscar:",
     "keyId": "c2V0dGluZ3NGb3JtX01lc3NhZ2UgdHJhbnNsYXRpb24gZnVuY3Rpb25zIHRvIGxvb2sgZm9yOg=="
+  },
+  "f8100fb6-3e76-423b-b2ab-57354fbe04da": {
+    "id": "f8100fb6-3e76-423b-b2ab-57354fbe04da",
+    "lang": "ca",
+    "translation": "Missatge amb emoji: 🎉",
+    "keyId": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppOiDwn46J"
+  },
+  "1a7ed819-4ded-4444-8192-213a0900bf84": {
+    "id": "1a7ed819-4ded-4444-8192-213a0900bf84",
+    "lang": "ca",
+    "translation": "Una eina per la internacionalització",
+    "keyId": "c29tZUNvbnRleHRfQSB0b29sIGZvciBpbnRlcm5hdGlvbmFsaXphdGlvbg=="
+  },
+  "c39c0181-810c-4727-a150-c908f8bb1375": {
+    "id": "c39c0181-810c-4727-a150-c908f8bb1375",
+    "lang": "ca",
+    "translation": "AVANÇAT: Expressions regulars addicionals per a l'extracció de missatges:",
+    "keyId": "c2V0dGluZ3NGb3JtX0FEVkFOQ0VEOiBBZGRpdGlvbmFsIHJlZ3VsYXIgZXhwcmVzc2lvbnMgZm9yIG1lc3NhZ2UgcGFyc2luZzo="
+  },
+  "0909f6a6-7147-45e4-a8a3-66a09b495139": {
+    "id": "0909f6a6-7147-45e4-a8a3-66a09b495139",
+    "lang": "ca",
+    "translation": "Assegura't que l'expressió regular té exactament un grup de captura: (.*?)",
+    "keyId": "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cDogKC4qPyk="
   }
 }

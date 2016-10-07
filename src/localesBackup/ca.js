@@ -1,36 +1,44 @@
 /* eslint-disable */
 function anonymous() {
-var number = function (value, offset) {
-  if (isNaN(value)) throw new Error("'" + value + "' isn't a number.");
-  return value - (offset || 0);
+var ca = function (n, ord) {
+  var s = String(n).split('.'), v0 = !s[1];
+  if (ord) return ((n == 1
+          || n == 3)) ? 'one'
+      : (n == 2) ? 'two'
+      : (n == 4) ? 'few'
+      : 'other';
+  return (n == 1 && v0) ? 'one' : 'other';
+};
+var number = function (value, name, offset) {
+  if (!offset) return value;
+  if (isNaN(value)) throw new Error('Can\'t apply offset:' + offset + ' to argument `' + name +
+                                    '` with non-numerical value ' + JSON.stringify(value) + '.');
+  return value - offset;
 };
 var plural = function (value, offset, lcfunc, data, isOrdinal) {
-  if ({}.hasOwnProperty.call(data, value)) return data[value]();
+  if ({}.hasOwnProperty.call(data, value)) return data[value];
   if (offset) value -= offset;
   var key = lcfunc(value, isOrdinal);
-  if (key in data) return data[key]();
-  return data.other();
+  if (key in data) return data[key];
+  return data.other;
 };
-var select = function (value, data) {
-  if ({}.hasOwnProperty.call(data, value)) return data[value]();
-  return data.other()
-};
-var pluralFuncs = {
-  ca: function (n, ord) {
-    var s = String(n).split('.'), v0 = !s[1];
-    if (ord) return ((n == 1
-            || n == 3)) ? 'one'
-        : (n == 2) ? 'two'
-        : (n == 4) ? 'few'
-        : 'other';
-    return (n == 1 && v0) ? 'one' : 'other';
+var fmt = {
+  number: function (v,lc,p
+  /**/) {
+  return new Intl.NumberFormat(lc,
+      p=='integer' ? {maximumFractionDigits:0}
+    : p=='percent' ? {style:'percent'}
+    : p=='currency' ? {style:'currency', currency:'USD', minimumFractionDigits:2, maximumFractionDigits:2}
+    : {}).format(v)
   }
 };
-var fmt = {};
 
 return {
-  c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319: function(d) { return plural(d.NUM, 0, pluralFuncs.ca, { one: function() { return "1 hamburguesa";}, other: function() { return number(d.NUM) + " hamburgueses";} }); },
-  dG9vbHRpcF9Db252ZXJ0IHRyYW5zbGF0aW9ucyB0byBKYXZhU2NyaXB0IGZpbGVz: function(d) { return "Convertir traduccions a fitxers javaScript"; },
+  c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319: function(d) { return plural(d.NUM, 0, ca, { one: "1 hamburguesa", other: number(d.NUM, "NUM") + " hamburgueses" }); },
+  "c29tZUNvbnRleHRfSGVsbG8sIHtOQU1FfSE=": function(d) { return "Hello, " + d.NAME + "!"; },
+  "c29tZUNvbnRleHRfSGVsbG8ge05BTUV9LCB5b3UgaGF2ZSB7VU5SRUFEX0NPVU5ULCBudW1iZXJ9IHtVTlJFQURfQ09VTlQsIHBsdXJhbCwgb25lIHttZXNzYWdlfSBvdGhlciB7bWVzc2FnZXN9fQ==": function(d) { return "Hello " + d.NAME + ", you have " + fmt.number(d.UNREAD_COUNT, "ca") + " " + plural(d.UNREAD_COUNT, 0, ca, { one: "message", other: "messages" }); },
+  "c29tZUNvbnRleHRfPGk+SGk8L2k+IDxiPntOQU1FfTwvYj4h": function(d) { return "<i>Hi</i> <b>" + d.NAME + "</b>!"; },
+  dG9vbHRpcF9Db252ZXJ0IHRyYW5zbGF0aW9ucyB0byBKYXZhU2NyaXB0IGZpbGVz: function(d) { return "Convertir traduccions a fitxers JavaScript"; },
   "dG9vbHRpcF9TZXR0aW5ncw==": function(d) { return "Ajustos"; },
   "YnV0dG9uX0RlbGV0ZQ==": function(d) { return "Esborrar"; },
   "YnV0dG9uX1JldmVydA==": function(d) { return "Cancel·lar canvis"; },
@@ -66,7 +74,11 @@ return {
   "ZXJyb3JfQ2hhbmdlcyBjb3VsZCBub3QgYmUgc2F2ZWQ=": function(d) { return "No s'han pogut guardar els canvis"; },
   "ZXJyb3JfQ29uZmlndXJhdGlvbiBjb3VsZCBub3QgYmUgc2F2ZWQ=": function(d) { return "No s'ha pogut guardar la configuració"; },
   "ZXJyb3JfSXMgdGhlIHNlcnZlciBydW5uaW5nPw==": function(d) { return "El servidor està funcionant?"; },
-  "c2V0dGluZ3NGb3JtX01lc3NhZ2UgdHJhbnNsYXRpb24gZnVuY3Rpb25zIHRvIGxvb2sgZm9yOg==": function(d) { return "Funcions de traducció de missatges a buscar:"; }
+  "c2V0dGluZ3NGb3JtX01lc3NhZ2UgdHJhbnNsYXRpb24gZnVuY3Rpb25zIHRvIGxvb2sgZm9yOg==": function(d) { return "Funcions de traducció de missatges a buscar:"; },
+  c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppOiDwn46J: function(d) { return "Missatge amb emoji: 🎉"; },
+  "c29tZUNvbnRleHRfQSB0b29sIGZvciBpbnRlcm5hdGlvbmFsaXphdGlvbg==": function(d) { return "Una eina per la internacionalització"; },
+  "c2V0dGluZ3NGb3JtX0FEVkFOQ0VEOiBBZGRpdGlvbmFsIHJlZ3VsYXIgZXhwcmVzc2lvbnMgZm9yIG1lc3NhZ2UgcGFyc2luZzo=": function(d) { return "AVANÇAT: Expressions regulars addicionals per a l'extracció de missatges:"; },
+  "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cDogKC4qPyk=": function(d) { return "Assegura't que l'expressió regular té exactament un grup de captura: (.*?)"; }
 }
 };
 module.exports = anonymous();

@@ -13,11 +13,14 @@
   "langs": [
     "en",
     "es",
-    "ca"
+    "ca",
+    "en-US",
+    "en-GB"
   ],
   "fMinify": false,
   "msgFunctionNames": [
     "_t"
   ],
-  "dbVersion": 2
+  "dbVersion": 2,
+  "msgRegexps": []
 }

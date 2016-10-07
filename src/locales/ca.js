@@ -78,7 +78,14 @@ return {
   c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppOiDwn46J: function(d) { return "Missatge amb emoji: 🎉"; },
   "c29tZUNvbnRleHRfQSB0b29sIGZvciBpbnRlcm5hdGlvbmFsaXphdGlvbg==": function(d) { return "Una eina per la internacionalització"; },
   "c2V0dGluZ3NGb3JtX0FEVkFOQ0VEOiBBZGRpdGlvbmFsIHJlZ3VsYXIgZXhwcmVzc2lvbnMgZm9yIG1lc3NhZ2UgcGFyc2luZzo=": function(d) { return "AVANÇAT: Expressions regulars addicionals per a l'extracció de missatges:"; },
-  "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cDogKC4qPyk=": function(d) { return "Assegura't que l'expressió regular té exactament un grup de captura: (.*?)"; }
+  "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cDogKC4qPyk=": function(d) { return "Assegura't que l'expressió regular té exactament un grup de captura: (.*?)"; },
+  c2V0dGluZ3NGb3JtX0dlbmVyaWMgSlNPTiBmaWxl: function(d) { return "Fitxer JSON genèric"; },
+  c2V0dGluZ3NGb3JtX0phdmFTY3JpcHQgbW9kdWxl: function(d) { return "Mòdul JavaScript"; },
+  "c2V0dGluZ3NGb3JtX0phdmFTY3JpcHQgbW9kdWxlIChyZXF1aXJlZCBpZiB5b3UgdXNlIE1hZHkncyB0cmFuc2xhdGlvbiBmdW5jdGlvbik=": function(d) { return "Mòdul JavaScript (necessari si fas servir la funció de traducció de Mady)"; },
+  c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cCwgcG9yIGVqZW1wbG86ICguKj8p: function(d) { return "Assegura't que l'expressió regular té exactament un grup de captura, per exemple: (.*?)"; },
+  c2V0dGluZ3NGb3JtX01pbmlmaWVk: function(d) { return "Minificat"; },
+  c2V0dGluZ3NGb3JtX1JlYWN0IEludGwgSlNPTiBmaWxl: function(d) { return "Fitxer JSON per a React Intl"; },
+  "c2V0dGluZ3NGb3JtX091dHB1dDo=": function(d) { return "Fitxers de sortida:"; }
 }
 };
 module.exports = anonymous();

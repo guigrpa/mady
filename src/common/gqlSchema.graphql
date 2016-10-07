@@ -14,6 +14,9 @@ type Config implements Node {
   msgFunctionNames: [String]
   msgRegexps: [String]
   fMinify: Boolean
+  fJsOutput: Boolean
+  fJsonOutput: Boolean
+  fReactIntlOutput: Boolean
 
   # The ID of an object
   id: ID!
@@ -26,6 +29,9 @@ input ConfigUpdate {
   msgFunctionNames: [String]
   msgRegexps: [String]
   fMinify: Boolean
+  fJsOutput: Boolean
+  fJsonOutput: Boolean
+  fReactIntlOutput: Boolean
 }
 
 input CreateKeyInViewerKeysInput {

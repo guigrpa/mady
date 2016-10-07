@@ -232,5 +232,53 @@
     "lang": "es",
     "translation": "Funciones de traducción de mensajes a buscar:",
     "keyId": "c2V0dGluZ3NGb3JtX01lc3NhZ2UgdHJhbnNsYXRpb24gZnVuY3Rpb25zIHRvIGxvb2sgZm9yOg=="
+  },
+  "b8f6ebb7-39bf-4590-bf14-14cb3d68340f": {
+    "id": "b8f6ebb7-39bf-4590-bf14-14cb3d68340f",
+    "lang": "es",
+    "translation": "Mensaje con emoji: 🎉",
+    "keyId": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppOiDwn46J"
+  },
+  "414fb0de-2670-4b9d-8d3d-e6a5ad2aefc4": {
+    "id": "414fb0de-2670-4b9d-8d3d-e6a5ad2aefc4",
+    "lang": "es",
+    "translation": "Una herramienta para la internacionalización",
+    "keyId": "c29tZUNvbnRleHRfQSB0b29sIGZvciBpbnRlcm5hdGlvbmFsaXphdGlvbg=="
+  },
+  "d7da0e98-7658-4c40-a264-6ceac6502490": {
+    "id": "d7da0e98-7658-4c40-a264-6ceac6502490",
+    "lang": "es",
+    "translation": "<i>Hola</i> <b>{name}</b>!",
+    "keyId": "c29tZUNvbnRleHRfPGk+SGk8L2k+IDxiPntuYW1lfTwvYj4h"
+  },
+  "061f6daa-8531-4da8-b364-73166cb35f32": {
+    "id": "061f6daa-8531-4da8-b364-73166cb35f32",
+    "lang": "es",
+    "translation": "<i>Hola</i> <b>{NAME}</b>!",
+    "keyId": "c29tZUNvbnRleHRfPGk+SGk8L2k+IDxiPntOQU1FfTwvYj4h"
+  },
+  "7126ae5b-dedd-4c47-920e-39720b19dd6d": {
+    "id": "7126ae5b-dedd-4c47-920e-39720b19dd6d",
+    "lang": "es",
+    "translation": "Hola {NAME}, tienes {UNREAD_COUNT, number} {UNREAD_COUNT, plural, one {mensaje} other {mensajes}}",
+    "keyId": "c29tZUNvbnRleHRfSGVsbG8ge05BTUV9LCB5b3UgaGF2ZSB7VU5SRUFEX0NPVU5ULCBudW1iZXJ9IHtVTlJFQURfQ09VTlQsIHBsdXJhbCwgb25lIHttZXNzYWdlfSBvdGhlciB7bWVzc2FnZXN9fQ=="
+  },
+  "b6689dcb-fcff-4fcd-b126-245770ec997a": {
+    "id": "b6689dcb-fcff-4fcd-b126-245770ec997a",
+    "lang": "es",
+    "translation": "Hola, {NAME}!",
+    "keyId": "c29tZUNvbnRleHRfSGVsbG8sIHtOQU1FfSE="
+  },
+  "088d56d8-3ad9-4618-8b61-2eb070389382": {
+    "id": "088d56d8-3ad9-4618-8b61-2eb070389382",
+    "lang": "es",
+    "translation": "AVANZADO: Expresiones regulares adicionales para la extracción de mensajes:",
+    "keyId": "c2V0dGluZ3NGb3JtX0FEVkFOQ0VEOiBBZGRpdGlvbmFsIHJlZ3VsYXIgZXhwcmVzc2lvbnMgZm9yIG1lc3NhZ2UgcGFyc2luZzo="
+  },
+  "7eeb87fe-65a2-47e1-be01-3483e2a13bd4": {
+    "id": "7eeb87fe-65a2-47e1-be01-3483e2a13bd4",
+    "lang": "es",
+    "translation": "Asegúrate de que la expresión regular tiene exactamente un grupo de captura: (.*?)",
+    "keyId": "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cDogKC4qPyk="
   }
 }

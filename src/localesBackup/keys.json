@@ -294,16 +294,6 @@
       "src/client/components/010-app.js"
     ]
   },
-  "dmFsaWRhdGlvbl90aGUgbnVtYmVyIG9mIGxlZnQgYW5kIHJpZ2h0IGJyYWNrZXRzIGRvZXMgbm90IG1hdGNo": {
-    "id": "dmFsaWRhdGlvbl90aGUgbnVtYmVyIG9mIGxlZnQgYW5kIHJpZ2h0IGJyYWNrZXRzIGRvZXMgbm90IG1hdGNo",
-    "context": "validation",
-    "text": "the number of left and right brackets does not match",
-    "firstUsed": "2016-05-22T06:18:10.874Z",
-    "unusedSince": null,
-    "sources": [
-      "src/client/components/062-translation.js"
-    ]
-  },
   "dmFsaWRhdGlvbl9NZXNzYWdlRm9ybWF0IHN5bnRheCBlcnJvcg==": {
     "id": "dmFsaWRhdGlvbl9NZXNzYWdlRm9ybWF0IHN5bnRheCBlcnJvcg==",
     "context": "validation",
@@ -359,6 +349,90 @@
     "context": "settingsForm",
     "text": "Message translation functions to look for:",
     "firstUsed": "2016-06-02T13:49:20.542Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/080-settings.js"
+    ]
+  },
+  "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppOiDwn46J": {
+    "id": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppOiDwn46J",
+    "context": "someContext",
+    "text": "Message with emoji: 🎉",
+    "firstUsed": "2016-08-01T07:44:56.872Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/010-app.js"
+    ]
+  },
+  "dmFsaWRhdGlvbl90aGUgbnVtYmVyIG9mIGxlZnQgYW5kIHJpZ2h0IGJyYWNrZXRzIGRvZXMgbm90IG1hdGNo": {
+    "id": "dmFsaWRhdGlvbl90aGUgbnVtYmVyIG9mIGxlZnQgYW5kIHJpZ2h0IGJyYWNrZXRzIGRvZXMgbm90IG1hdGNo",
+    "context": "validation",
+    "text": "the number of left and right brackets does not match",
+    "firstUsed": "2016-08-01T07:58:48.228Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/062-translation.js"
+    ]
+  },
+  "c29tZUNvbnRleHRfQSB0b29sIGZvciBpbnRlcm5hdGlvbmFsaXphdGlvbg==": {
+    "id": "c29tZUNvbnRleHRfQSB0b29sIGZvciBpbnRlcm5hdGlvbmFsaXphdGlvbg==",
+    "context": "someContext",
+    "text": "A tool for internationalization",
+    "firstUsed": "2016-08-16T14:09:39.741Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/010-app.js"
+    ]
+  },
+  "c29tZUNvbnRleHRfSGVsbG8sIHtOQU1FfSE=": {
+    "id": "c29tZUNvbnRleHRfSGVsbG8sIHtOQU1FfSE=",
+    "context": "someContext",
+    "text": "Hello, {NAME}!",
+    "reactIntlId": "reactIntlSample1",
+    "description": "Message to greet the user",
+    "firstUsed": "2016-09-19T07:41:50.724Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/999-reactIntlExample.js"
+    ]
+  },
+  "c29tZUNvbnRleHRfSGVsbG8ge05BTUV9LCB5b3UgaGF2ZSB7VU5SRUFEX0NPVU5ULCBudW1iZXJ9IHtVTlJFQURfQ09VTlQsIHBsdXJhbCwgb25lIHttZXNzYWdlfSBvdGhlciB7bWVzc2FnZXN9fQ==": {
+    "id": "c29tZUNvbnRleHRfSGVsbG8ge05BTUV9LCB5b3UgaGF2ZSB7VU5SRUFEX0NPVU5ULCBudW1iZXJ9IHtVTlJFQURfQ09VTlQsIHBsdXJhbCwgb25lIHttZXNzYWdlfSBvdGhlciB7bWVzc2FnZXN9fQ==",
+    "context": "someContext",
+    "text": "Hello {NAME}, you have {UNREAD_COUNT, number} {UNREAD_COUNT, plural, one {message} other {messages}}",
+    "reactIntlId": "reactIntlSample2",
+    "firstUsed": "2016-10-06T13:43:11.210Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/999-reactIntlExample.js"
+    ]
+  },
+  "c29tZUNvbnRleHRfPGk+SGk8L2k+IDxiPntOQU1FfTwvYj4h": {
+    "id": "c29tZUNvbnRleHRfPGk+SGk8L2k+IDxiPntOQU1FfTwvYj4h",
+    "context": "someContext",
+    "text": "<i>Hi</i> <b>{NAME}</b>!",
+    "reactIntlId": "reactIntlSample3",
+    "firstUsed": "2016-09-19T07:41:50.724Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/999-reactIntlExample.js"
+    ]
+  },
+  "c2V0dGluZ3NGb3JtX0FEVkFOQ0VEOiBBZGRpdGlvbmFsIHJlZ3VsYXIgZXhwcmVzc2lvbnMgZm9yIG1lc3NhZ2UgcGFyc2luZzo=": {
+    "id": "c2V0dGluZ3NGb3JtX0FEVkFOQ0VEOiBBZGRpdGlvbmFsIHJlZ3VsYXIgZXhwcmVzc2lvbnMgZm9yIG1lc3NhZ2UgcGFyc2luZzo=",
+    "context": "settingsForm",
+    "text": "ADVANCED: Additional regular expressions for message parsing:",
+    "firstUsed": "2016-10-07T07:06:52.832Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/080-settings.js"
+    ]
+  },
+  "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cDogKC4qPyk=": {
+    "id": "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cDogKC4qPyk=",
+    "context": "settingsForm",
+    "text": "Make sure your regular expression has exactly one capture group: (.*?)",
+    "firstUsed": "2016-10-07T07:06:52.832Z",
     "unusedSince": null,
     "sources": [
       "src/client/components/080-settings.js"

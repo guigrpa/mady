@@ -1,30 +1,38 @@
 /* eslint-disable */
 function anonymous() {
-var number = function (value, offset) {
-  if (isNaN(value)) throw new Error("'" + value + "' isn't a number.");
-  return value - (offset || 0);
+var es = function (n, ord) {
+  if (ord) return 'other';
+  return (n == 1) ? 'one' : 'other';
+};
+var number = function (value, name, offset) {
+  if (!offset) return value;
+  if (isNaN(value)) throw new Error('Can\'t apply offset:' + offset + ' to argument `' + name +
+                                    '` with non-numerical value ' + JSON.stringify(value) + '.');
+  return value - offset;
 };
 var plural = function (value, offset, lcfunc, data, isOrdinal) {
-  if ({}.hasOwnProperty.call(data, value)) return data[value]();
+  if ({}.hasOwnProperty.call(data, value)) return data[value];
   if (offset) value -= offset;
   var key = lcfunc(value, isOrdinal);
-  if (key in data) return data[key]();
-  return data.other();
+  if (key in data) return data[key];
+  return data.other;
 };
-var select = function (value, data) {
-  if ({}.hasOwnProperty.call(data, value)) return data[value]();
-  return data.other()
-};
-var pluralFuncs = {
-  es: function (n, ord) {
-    if (ord) return 'other';
-    return (n == 1) ? 'one' : 'other';
+var fmt = {
+  number: function (v,lc,p
+  /**/) {
+  return new Intl.NumberFormat(lc,
+      p=='integer' ? {maximumFractionDigits:0}
+    : p=='percent' ? {style:'percent'}
+    : p=='currency' ? {style:'currency', currency:'USD', minimumFractionDigits:2, maximumFractionDigits:2}
+    : {}).format(v)
   }
 };
-var fmt = {};
 
 return {
-  c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319: function(d) { return plural(d.NUM, 0, pluralFuncs.es, { one: function() { return "1 hamburguesa";}, other: function() { return number(d.NUM) + " hamburguesas";} }); },
+  c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319: function(d) { return plural(d.NUM, 0, es, { one: "1 hamburguesa", other: number(d.NUM, "NUM") + " hamburguesas" }); },
+  "c29tZUNvbnRleHRfSGVsbG8sIHtOQU1FfSE=": function(d) { return "Hola, " + d.NAME + "!"; },
+  "c29tZUNvbnRleHRfSGVsbG8ge05BTUV9LCB5b3UgaGF2ZSB7VU5SRUFEX0NPVU5ULCBudW1iZXJ9IHtVTlJFQURfQ09VTlQsIHBsdXJhbCwgb25lIHttZXNzYWdlfSBvdGhlciB7bWVzc2FnZXN9fQ==": function(d) { return "Hola " + d.NAME + ", tienes " + fmt.number(d.UNREAD_COUNT, "es") + " " + plural(d.UNREAD_COUNT, 0, es, { one: "mensaje", other: "mensajes" }); },
+  "c29tZUNvbnRleHRfPGk+SGk8L2k+IDxiPntOQU1FfTwvYj4h": function(d) { return "<i>Hola</i> <b>" + d.NAME + "</b>!"; },
   dG9vbHRpcF9Db252ZXJ0IHRyYW5zbGF0aW9ucyB0byBKYXZhU2NyaXB0IGZpbGVz: function(d) { return "Convertir traducciones a ficheros JavaScript"; },
   YnV0dG9uX0NvcHkga2V5: function(d) { return ""; },
   "YnV0dG9uX0RlbGV0ZQ==": function(d) { return "Borrar"; },
@@ -62,7 +70,12 @@ return {
   "ZXJyb3JfQ2hhbmdlcyBjb3VsZCBub3QgYmUgc2F2ZWQ=": function(d) { return "No se pudieron guardar los cambios"; },
   "ZXJyb3JfQ29uZmlndXJhdGlvbiBjb3VsZCBub3QgYmUgc2F2ZWQ=": function(d) { return "No se pudo guardar la configuración"; },
   "ZXJyb3JfSXMgdGhlIHNlcnZlciBydW5uaW5nPw==": function(d) { return "¿El servidor está funcionando?"; },
-  "c2V0dGluZ3NGb3JtX01lc3NhZ2UgdHJhbnNsYXRpb24gZnVuY3Rpb25zIHRvIGxvb2sgZm9yOg==": function(d) { return "Funciones de traducción de mensajes a buscar:"; }
+  "c2V0dGluZ3NGb3JtX01lc3NhZ2UgdHJhbnNsYXRpb24gZnVuY3Rpb25zIHRvIGxvb2sgZm9yOg==": function(d) { return "Funciones de traducción de mensajes a buscar:"; },
+  c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppOiDwn46J: function(d) { return "Mensaje con emoji: 🎉"; },
+  "c29tZUNvbnRleHRfQSB0b29sIGZvciBpbnRlcm5hdGlvbmFsaXphdGlvbg==": function(d) { return "Una herramienta para la internacionalización"; },
+  "c29tZUNvbnRleHRfPGk+SGk8L2k+IDxiPntuYW1lfTwvYj4h": function(d) { return "<i>Hola</i> <b>" + d.name + "</b>!"; },
+  "c2V0dGluZ3NGb3JtX0FEVkFOQ0VEOiBBZGRpdGlvbmFsIHJlZ3VsYXIgZXhwcmVzc2lvbnMgZm9yIG1lc3NhZ2UgcGFyc2luZzo=": function(d) { return "AVANZADO: Expresiones regulares adicionales para la extracción de mensajes:"; },
+  "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cDogKC4qPyk=": function(d) { return "Asegúrate de que la expresión regular tiene exactamente un grupo de captura: (.*?)"; }
 }
 };
 module.exports = anonymous();

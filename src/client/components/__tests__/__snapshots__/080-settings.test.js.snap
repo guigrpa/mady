@@ -566,7 +566,7 @@ exports[`Settings renders correctly 1`] = `
                   "letterSpacing": "normal",
                 }
               }
-              title="Make sure your regular expression has exactly one capture group: (.*?)" />
+              title="Make sure your regular expression has exactly one capture group, por ejemplo: (.*?)" />
           </div>
           <div
             style={
@@ -596,23 +596,99 @@ exports[`Settings renders correctly 1`] = `
                 "marginTop": 7,
               }
             }>
-            <input
-              checked={false}
-              className="giu-checkbox"
-              id="fMinify"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onCopy={undefined}
-              onCut={undefined}
-              onFocus={[Function]}
-              onPaste={undefined}
-              required={undefined}
-              tabIndex={undefined}
-              type="checkbox" />
-            <label
-              htmlFor="fMinify">
-              Minify output JavaScript
-            </label>
+            <div>
+              Output:
+            </div>
+            <div
+              style={
+                Object {
+                  "marginLeft": 15,
+                }
+              }>
+              <input
+                checked={false}
+                className="giu-checkbox"
+                id="fJsOutput"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onCopy={undefined}
+                onCut={undefined}
+                onFocus={[Function]}
+                onPaste={undefined}
+                required={undefined}
+                tabIndex={undefined}
+                type="checkbox" />
+              <label
+                htmlFor="fJsOutput">
+                JavaScript module (required if you use Mady\'s translation function)
+              </label>
+               
+              <input
+                checked={false}
+                className="giu-checkbox"
+                id="fMinify"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onCopy={undefined}
+                onCut={undefined}
+                onFocus={[Function]}
+                onPaste={undefined}
+                required={undefined}
+                tabIndex={-1}
+                type="checkbox" />
+              <label
+                htmlFor="fMinify">
+                Minified
+              </label>
+            </div>
+            <div
+              style={
+                Object {
+                  "marginLeft": 15,
+                }
+              }>
+              <input
+                checked={false}
+                className="giu-checkbox"
+                id="fReactIntlOutput"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onCopy={undefined}
+                onCut={undefined}
+                onFocus={[Function]}
+                onPaste={undefined}
+                required={undefined}
+                tabIndex={undefined}
+                type="checkbox" />
+              <label
+                htmlFor="fReactIntlOutput">
+                React Intl JSON file
+              </label>
+            </div>
+            <div
+              style={
+                Object {
+                  "marginLeft": 15,
+                }
+              }>
+              <input
+                checked={false}
+                className="giu-checkbox"
+                id="fJsonOutput"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onCopy={undefined}
+                onCut={undefined}
+                onFocus={[Function]}
+                onPaste={undefined}
+                required={undefined}
+                tabIndex={undefined}
+                type="checkbox" />
+              <label
+                htmlFor="fJsonOutput">
+                Generic JSON file
+              </label>
+            </div>
           </div>
         </div>
         <div

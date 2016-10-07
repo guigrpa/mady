@@ -125,6 +125,9 @@ export function init() {
     msgFunctionNames: { type: new GraphQLList(GraphQLString) },
     msgRegexps:       { type: new GraphQLList(GraphQLString) },
     fMinify:          { type: GraphQLBoolean },
+    fJsOutput:        { type: GraphQLBoolean },
+    fJsonOutput:      { type: GraphQLBoolean },
+    fReactIntlOutput: { type: GraphQLBoolean },
   });
 
   gqlTypes.Config = new GraphQLObjectType({

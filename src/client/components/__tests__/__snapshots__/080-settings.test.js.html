@@ -302,7 +302,7 @@
             <i
               class="giu-icon fa fa-info-circle"
               style="color:;cursor:pointer;letter-spacing:normal;"
-              title="Make sure your regular expression has exactly one capture group: (.*?)">
+              title="Make sure your regular expression has exactly one capture group, por ejemplo: (.*?)">
               
             </i>
           </div>
@@ -317,16 +317,59 @@
           </div>
           <div
             style="margin-top:7px;">
-            <input
-              class="giu-checkbox"
-              id="fMinify"
-              type="checkbox">
-              
-            </input>
-            <label
-              for="fMinify">
-              Minify output JavaScript
-            </label>
+            <div>
+              Output:
+            </div>
+            <div
+              style="margin-left:15px;">
+              <input
+                class="giu-checkbox"
+                id="fJsOutput"
+                type="checkbox">
+                
+              </input>
+              <label
+                for="fJsOutput">
+                JavaScript module (required if you use Mady\'s translation function)
+              </label>
+               
+              <input
+                class="giu-checkbox"
+                id="fMinify"
+                type="checkbox">
+                
+              </input>
+              <label
+                for="fMinify">
+                Minified
+              </label>
+            </div>
+            <div
+              style="margin-left:15px;">
+              <input
+                class="giu-checkbox"
+                id="fReactIntlOutput"
+                type="checkbox">
+                
+              </input>
+              <label
+                for="fReactIntlOutput">
+                React Intl JSON file
+              </label>
+            </div>
+            <div
+              style="margin-left:15px;">
+              <input
+                class="giu-checkbox"
+                id="fJsonOutput"
+                type="checkbox">
+                
+              </input>
+              <label
+                for="fJsonOutput">
+                Generic JSON file
+              </label>
+            </div>
           </div>
         </div>
         <div

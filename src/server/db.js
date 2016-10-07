@@ -8,6 +8,7 @@ import { base64ToUtf8 }     from '../common/base64';
 import parse                from './parseSources';
 import compile              from './compileTranslations';
 import collectReactIntlTranslations from './collectReactIntlTranslations';
+import collectJsonTranslations from './collectJsonTranslations';
 import * as importers       from './importData';
 
 const DB_VERSION = 2;
@@ -19,6 +20,9 @@ const DEFAULT_CONFIG = {
   msgFunctionNames: ['_t'],
   msgRegexps: [],
   fMinify: false,
+  fJsOutput: true,
+  fJsonOutput: true,
+  fReactIntlOutput: true,
   dbVersion: DB_VERSION,
 };
 
@@ -208,6 +212,7 @@ function parseSrcFiles({ story }) {
 // ==============================================
 const getLangPath = (lang) => path.join(_localeDir, `${lang}.json`);
 const getCompiledLangPath = (lang) => path.join(_localeDir, `${lang}.js`);
+const getJsonLangPath = (lang) => path.join(_localeDir, `${lang}.out.json`);
 const getReactIntlLangPath = (lang) => path.join(_localeDir, `${lang}.reactIntl.json`);
 let _translations = {};
 function setTranslations(translations) { _translations = translations; }
@@ -304,30 +309,33 @@ function deleteTranslation(id, { story }) {
 
 function compileTranslations({ story: baseStory } = {}) {
   const story = (baseStory || mainStory).child({ src: 'db', title: 'Compile translations' });
+  const keys = _keys;
   return Promise.resolve()
   .then(() => {
-    const { fMinify, langs } = _config;
+    const { fMinify, fJsOutput, fReactIntlOutput, fJsonOutput, langs } = _config;
     const allTranslations = getAllTranslations(langs, story);
     Object.keys(allTranslations).forEach((lang) => {
       const compiledLangPath = getCompiledLangPath(lang);
       const translations = allTranslations[lang];
-      const fnTranslate = compile({
-        lang,
-        keys: _keys,
-        translations,
-        fMinify,
-        story,
-      });
-      story.debug('db', `Writing file ${chalk.cyan.bold(compiledLangPath)}...`);
-      fs.writeFileSync(compiledLangPath, fnTranslate, 'utf8');
-      const reactIntlLangPath = getReactIntlLangPath(lang);
-      const reactIntlMessages = collectReactIntlTranslations({
-        lang,
-        keys: _keys,
-        translations,
-        story,
-      });
-      saveJson(reactIntlLangPath, reactIntlMessages, { story });
+      if (fJsOutput) {
+        const fnTranslate = compile({ lang, keys, translations, fMinify, story });
+        story.debug('db', `Writing file ${chalk.cyan.bold(compiledLangPath)}...`);
+        fs.writeFileSync(compiledLangPath, fnTranslate, 'utf8');
+      }
+      if (fReactIntlOutput) {
+        const reactIntlLangPath = getReactIntlLangPath(lang);
+        const reactIntlTranslations = collectReactIntlTranslations({
+          lang, keys, translations, story,
+        });
+        saveJson(reactIntlLangPath, reactIntlTranslations, { story });
+      }
+      if (fJsonOutput) {
+        const jsonLangPath = getJsonLangPath(lang);
+        const jsonTranslations = collectJsonTranslations({
+          lang, keys, translations, story,
+        });
+        saveJson(jsonLangPath, jsonTranslations, { story });
+      }
     });
   })
   .catch((err) => {
