@@ -30,13 +30,13 @@
     "start": "babel-node src/server/startup --dir src/locales",
     "startAlt": "babel-node src/server/startup --dir tools/locales",
     "startProd": "node lib/mady --dir src/locales",
-    "compile": "rm -rf ./lib && mkdir lib && babel -d lib src",
+    "compile": "rm -rf ./lib && mkdir lib && babel --out-dir lib --ignore \"**/__mocks__/**\",\"**/__tests__/**\" src",
     "updateSchemaJson": "babel-node src/server/gqlUpdateSchema",
     "docs": "extract-docs --template docs/templates/README.md --output README.md",
     "buildSsrWatch": "rm -rf ./public/ssr && rm -rf ./lib/server/ssr && cross-env SERVER_SIDE_RENDERING=true webpack --config ./src/server/webpackConfig.cjs --progress --display-chunks --watch",
     "buildSsr": "rm -rf ./public/ssr && rm -rf ./lib/server/ssr && cross-env SERVER_SIDE_RENDERING=true NODE_ENV=production webpack --config ./src/server/webpackConfig.cjs --progress --display-chunks",
     "buildClient": "rm -rf ./public/assets && cross-env NODE_ENV=production webpack --config ./src/server/webpackConfig.cjs --progress --display-chunks",
-    "build": "node package && npm run lint && npm run flow && rm -rf ./lib && npm run test && npm run compile && npm run buildClient && npm run buildSsr && npm run docs && npm run xxl",
+    "build": "node package && npm run lint && npm run flow && npm run compile && npm run buildClient && npm run buildSsr && npm run test && npm run docs && npm run xxl",
     "travis": "npm run compile && npm run testCovFullExceptMin",
     "lint": "eslint src",
     "flow": "flow check || exit 0",
@@ -138,8 +138,7 @@
     "testRegex": "src/.*__tests__/.*\\.(test|spec)\\.(js|jsx)$",
     "moduleNameMapper": {
       "^.+\\.(css|less|sass)$": "<rootDir>/test/emptyObject.js",
-      "^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/test/emptyString.js",
-      "node-uuid": "<rootDir>/test/mockUuid.js"
+      "^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/test/emptyString.js"
     },
     "coverageDirectory": ".nyc_output",
     "coverageReporters": [
