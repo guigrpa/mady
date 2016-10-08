@@ -566,7 +566,7 @@ exports[`Settings renders correctly 1`] = `
                   "letterSpacing": "normal",
                 }
               }
-              title="Make sure your regular expression has exactly one capture group, por ejemplo: (.*?)" />
+              title="Make sure your regular expression has exactly one capture group, for example: (.*?)" />
           </div>
           <div
             style={

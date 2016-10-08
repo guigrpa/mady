@@ -40,8 +40,8 @@
   "settingsForm_ADVANCED: Additional regular expressions for message parsing:": "AVANZADO: Expresiones regulares adicionales para la extracción de mensajes:",
   "settingsForm_Generic JSON file": "Fichero JSON genérico",
   "settingsForm_JavaScript module (required if you use Mady's translation function)": "Módulo JavaScript (necesario si usas la función de traducción de Mady)",
-  "settingsForm_Make sure your regular expression has exactly one capture group, por ejemplo: (.*?)": "Asegúrate de que la expresión regular tiene exactamente un grupo de captura, por ejemplo: (.*?)",
   "settingsForm_Minified": "Minificado",
   "settingsForm_React Intl JSON file": "Fichero JSON para React Intl",
-  "settingsForm_Output:": "Ficheros de salida:"
+  "settingsForm_Output:": "Ficheros de salida:",
+  "settingsForm_Make sure your regular expression has exactly one capture group, for example: (.*?)": "Asegúrate de que la expresión regular tiene exactamente un grupo de captura, por ejemplo: (.*?)"
 }

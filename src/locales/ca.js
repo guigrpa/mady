@@ -85,7 +85,8 @@ return {
   c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cCwgcG9yIGVqZW1wbG86ICguKj8p: function(d) { return "Assegura't que l'expressió regular té exactament un grup de captura, per exemple: (.*?)"; },
   c2V0dGluZ3NGb3JtX01pbmlmaWVk: function(d) { return "Minificat"; },
   c2V0dGluZ3NGb3JtX1JlYWN0IEludGwgSlNPTiBmaWxl: function(d) { return "Fitxer JSON per a React Intl"; },
-  "c2V0dGluZ3NGb3JtX091dHB1dDo=": function(d) { return "Fitxers de sortida:"; }
+  "c2V0dGluZ3NGb3JtX091dHB1dDo=": function(d) { return "Fitxers de sortida:"; },
+  c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cCwgZm9yIGV4YW1wbGU6ICguKj8p: function(d) { return "Assegura't que l'expressió regular té exactament un grup de captura, per exemple: (.*?)"; }
 }
 };
 module.exports = anonymous();

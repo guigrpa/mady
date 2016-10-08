@@ -37,8 +37,8 @@
   "settingsForm_ADVANCED: Additional regular expressions for message parsing:": "AVANÇAT: Expressions regulars addicionals per a l'extracció de missatges:",
   "settingsForm_Generic JSON file": "Fitxer JSON genèric",
   "settingsForm_JavaScript module (required if you use Mady's translation function)": "Mòdul JavaScript (necessari si fas servir la funció de traducció de Mady)",
-  "settingsForm_Make sure your regular expression has exactly one capture group, por ejemplo: (.*?)": "Assegura't que l'expressió regular té exactament un grup de captura, per exemple: (.*?)",
   "settingsForm_Minified": "Minificat",
   "settingsForm_React Intl JSON file": "Fitxer JSON per a React Intl",
-  "settingsForm_Output:": "Fitxers de sortida:"
+  "settingsForm_Output:": "Fitxers de sortida:",
+  "settingsForm_Make sure your regular expression has exactly one capture group, for example: (.*?)": "Assegura't que l'expressió regular té exactament un grup de captura, per exemple: (.*?)"
 }

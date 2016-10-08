@@ -148,7 +148,7 @@ class Settings extends React.Component {
           {' '}
           <Icon
             icon="info-circle"
-            title={_t('settingsForm_Make sure your regular expression has exactly one capture group, por ejemplo: (.*?)')}
+            title={_t('settingsForm_Make sure your regular expression has exactly one capture group, for example: (.*?)')}
             style={style.info}
           />
         </div>

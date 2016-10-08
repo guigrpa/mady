@@ -322,5 +322,11 @@
     "lang": "es",
     "translation": "Ficheros de salida:",
     "keyId": "c2V0dGluZ3NGb3JtX091dHB1dDo="
+  },
+  "0ef2aada-1e72-43c6-862e-a68d838d08f7": {
+    "id": "0ef2aada-1e72-43c6-862e-a68d838d08f7",
+    "lang": "es",
+    "translation": "Asegúrate de que la expresión regular tiene exactamente un grupo de captura, por ejemplo: (.*?)",
+    "keyId": "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cCwgZm9yIGV4YW1wbGU6ICguKj8p"
   }
 }

@@ -292,5 +292,11 @@
     "lang": "ca",
     "translation": "Fitxers de sortida:",
     "keyId": "c2V0dGluZ3NGb3JtX091dHB1dDo="
+  },
+  "dfba775b-96e8-4ce0-8a9c-dc6e53860c4f": {
+    "id": "dfba775b-96e8-4ce0-8a9c-dc6e53860c4f",
+    "lang": "ca",
+    "translation": "Assegura't que l'expressió regular té exactament un grup de captura, per exemple: (.*?)",
+    "keyId": "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cCwgZm9yIGV4YW1wbGU6ICguKj8p"
   }
 }
