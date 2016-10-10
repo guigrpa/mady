@@ -80,8 +80,6 @@ const specs = {
                                   'rm -rf ./lib',
                                   'mkdir lib',
                                   'babel --out-dir lib --ignore "**/__mocks__/**","**/__tests__/**" src',
-                                  // 'babel --no-babelrc --presets react --plugins transform-flow-strip-types -d libEs6 src',
-                                  // 'cp -r src libEs6_flow',
                                 ]),
     updateSchemaJson:           'babel-node src/server/gqlUpdateSchema',
     docs:                       'extract-docs --template docs/templates/README.md --output README.md',
@@ -151,7 +149,7 @@ const specs = {
   // Deps
   // -----------------------------------------------
   dependencies: {
-    timm: '1.0.0',
+    timm: '1.1.0',
     storyboard: '2.1.2',
     lodash: '4.16.0',
     commander: '2.9.0',
@@ -212,7 +210,6 @@ const specs = {
     // Babel + plugins (except babel-eslint)
     'babel-cli': '6.14.0',
     'babel-core': '6.14.0',
-    'babel-plugin-transform-flow-strip-types': '6.14.0',
     'babel-plugin-react-intl': '2.2.0',
     'babel-preset-es2015': '6.14.0',
     'babel-preset-stage-0': '6.5.0',
@@ -234,13 +231,13 @@ const specs = {
     'extract-text-webpack-plugin': '1.0.1',
 
     // Linting
-    eslint: '3.5.0',
-    'eslint-config-airbnb': '11.1.0',
-    'eslint-plugin-flowtype': '2.18.2',
-    'eslint-plugin-react': '6.3.0',
-    'eslint-plugin-jsx-a11y': '2.2.2',
-    'eslint-plugin-import': '1.15.0',
-    'babel-eslint': '6.1.2',
+    eslint: '3.7.1',
+    'eslint-config-airbnb': '12.0.0',
+    'eslint-plugin-flowtype': '2.20.0',
+    'eslint-plugin-import': '1.16.0',
+    'eslint-plugin-jsx-a11y': '2.2.3',
+    'eslint-plugin-react': '6.4.0',
+    'babel-eslint': '7.0.0',
 
     // Testing
     jest: '16.0.0',

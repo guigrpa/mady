@@ -1,3 +1,5 @@
+// @flow
+
 import timm                 from 'timm';
 import React                from 'react';
 import Relay                from 'react-relay';
@@ -43,15 +45,36 @@ const fragments = {
 // ==========================================
 // Component
 // ==========================================
-class Settings extends React.Component {
-  static propTypes = {
-    lang:                   React.PropTypes.string.isRequired,
-    viewer:                 React.PropTypes.object.isRequired,
-    onChangeLang:           React.PropTypes.func.isRequired,
-    onClose:                React.PropTypes.func.isRequired,
-  };
+type Props = {
+  lang: string,
+  viewer: Object,
+  onChangeLang: (str: string) => void,
+  onClose: () => void,
+};
 
-  constructor(props) {
+class Settings extends React.Component {
+  props: Props;
+  state: {
+    langs: Array<string>,
+    srcPaths: Array<string>,
+    srcExtensions: Array<string>,
+    msgFunctionNames: Array<string>,
+    msgRegexps: Array<string>,
+    fJsOutput: boolean,
+  };
+  refLang: any;
+  refMinify: any;
+  refReactIntlOutput: any;
+  refJsonOutput: any;
+
+  // static propTypes = {
+  //   lang:                   React.PropTypes.string.isRequired,
+  //   viewer:                 React.PropTypes.object.isRequired,
+  //   onChangeLang:           React.PropTypes.func.isRequired,
+  //   onClose:                React.PropTypes.func.isRequired,
+  // };
+  //
+  constructor(props: Props) {
     super(props);
     // For arrays without IDs, it's better if we keep the current state at this level,
     // rather than relying on `giu`. For other attributes (`lang`, `fMinify`...), we can
@@ -201,7 +224,15 @@ class Settings extends React.Component {
     );
   }
 
-  renderList({ id, dir, Component, placeholder, width }) {
+  /* eslint-disable react/no-unused-prop-types */
+  renderList({ id, dir, Component, placeholder, width }: {
+    id: string,
+    dir: string,
+    Component: any,
+    placeholder: string,
+    width: number,
+  }) {
+  /* eslint-enable react/no-unused-prop-types */
     const values = this.state[id];
     return (
       <div style={style.list(dir)}>
@@ -234,19 +265,19 @@ class Settings extends React.Component {
   }
 
   // ------------------------------------------
-  onCreateListItem(ev) {
+  onCreateListItem(ev: Object) {
     const { id } = ev.currentTarget;
     const newList = timm.addLast(this.state[id], '');
     this.setState({ [id]: newList });
   }
 
-  onRemoveListItem(ev) {
+  onRemoveListItem(ev: Object) {
     const [id, idx] = ev.currentTarget.id.split('.');
     const newList = timm.removeAt(this.state[id], Number(idx));
     this.setState({ [id]: newList });
   }
 
-  onUpdateListItem(ev) {
+  onUpdateListItem(ev: Object) {
     const [id, idx] = ev.currentTarget.id.split('.');
     const value = ev.currentTarget.value;
     const newList = timm.replaceAt(this.state[id], idx, value);
@@ -267,10 +298,11 @@ class Settings extends React.Component {
     set.fMinify = this.refMinify.getValue();
     set.fReactIntlOutput = this.refReactIntlOutput.getValue();
     set.fJsonOutput = this.refJsonOutput.getValue();
+    /* eslint-disable object-shorthand */
     mutate({
       description: 'Click on Save settings',
       Mutation: UpdateConfigMutation,
-      props: { viewerId: viewer.id, set, unset: [] },
+      props: { viewerId: viewer.id, set: set, unset: [] },
       onSuccess: () => this.props.onClose(),
       onFailure: () => notify({
         msg: _t('error_Configuration could not be saved'),
@@ -278,6 +310,7 @@ class Settings extends React.Component {
         icon: 'save',
       }),
     });
+    /* eslint-enable object-shorthand */
   }
 }
 

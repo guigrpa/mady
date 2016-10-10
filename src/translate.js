@@ -1,14 +1,31 @@
+// @flow
+
+/*!
+ * Mady
+ *
+ * Easy-to-use tool to manage and translate ICU MessageFormat messages.
+ *
+ * @copyright Guillermo Grau Panea 2016
+ * @license MIT
+ */
+
 import { utf8ToBase64 } from './common/base64';
 
+type LocaleFunction = (data: any) => string;
+type MapOf<T> = { [key: string]: T };
+type MapOfLocaleFunctions = MapOf<LocaleFunction>;
+type MapOfStrings = MapOf<string>;
+type MapOfMapOfLocaleFunctions = MapOf<MapOfLocaleFunctions>;
+
 // Current locales
-let _locales = {};
+let _locales: MapOfLocaleFunctions = {};
 
 // Caches
-const allLocales = {};
-const allLocaleCode = {};
-const keyCache = {};
+const allLocales: MapOfMapOfLocaleFunctions = {};
+const allLocaleCode: MapOfStrings = {};
+const keyCache: MapOfStrings = {};
 
-const translate = (utf8, data) => {
+const translate = (utf8: string, data: ?Object): string => {
   let base64 = keyCache[utf8];
   if (base64 == null) base64 = keyCache[utf8] = utf8ToBase64(utf8);
   const fnTranslate = _locales[base64];
@@ -26,7 +43,10 @@ const translate = (utf8, data) => {
   return out;
 };
 
-const getLocaleOrLocaleCode = (cache, initialLang) => {
+const getLocaleOrLocaleCode = <T>(
+  cache: MapOf<T>,
+  initialLang: string
+): { lang: ?string, result: ?T } => {
   let result = null;
   let lang = initialLang;
   while (!(result = cache[lang])) {
@@ -38,14 +58,18 @@ const getLocaleOrLocaleCode = (cache, initialLang) => {
 
 const _t = translate;
 
-_t.addLocales = (lang, locales) => { allLocales[lang] = locales; };
-_t.addLocaleCode = (lang, localeCode) => { allLocaleCode[lang] = localeCode; };
+_t.addLocales = (lang: string, locales: MapOfLocaleFunctions): void => {
+  allLocales[lang] = locales;
+};
+_t.addLocaleCode = (lang: string, localeCode: string): void => {
+  allLocaleCode[lang] = localeCode;
+};
 
-_t.setLocales = (langOrLocales) => {
+_t.setLocales = (langOrLocales: string | MapOfLocaleFunctions): ?string => {
   let out = null;
   if (typeof langOrLocales === 'string') {
     const { lang, result } = getLocaleOrLocaleCode(allLocales, langOrLocales);
-    if (lang) _locales = result;
+    if (lang && result) _locales = result;
     out = lang;
   } else {
     _locales = langOrLocales;
@@ -53,10 +77,12 @@ _t.setLocales = (langOrLocales) => {
   return out;
 };
 
-_t.getLocales = (lang) => getLocaleOrLocaleCode(allLocales, lang);
-_t.getLocaleCode = (lang) => getLocaleOrLocaleCode(allLocaleCode, lang);
+_t.getLocales = (lang: string): { lang: ?string, result: ?MapOfLocaleFunctions } =>
+  getLocaleOrLocaleCode(allLocales, lang);
+_t.getLocaleCode = (lang: string): { lang: ?string, result: ?string } =>
+  getLocaleOrLocaleCode(allLocaleCode, lang);
 
-_t.getParentBcp47 = (bcp47) => {
+_t.getParentBcp47 = (bcp47: string): ?string => {
   const tokens = bcp47.replace(/_/g, '-').split('-');
   if (tokens.length <= 1) return null;
   return tokens.slice(0, tokens.length - 1).join('-');
