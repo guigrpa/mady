@@ -1,3 +1,5 @@
+// @flow
+
 import React                from 'react';
 import { merge }            from 'timm';
 import {
@@ -11,11 +13,15 @@ import { COLORS }           from '../gral/constants';
 // ==========================================
 // Component
 // ==========================================
-const PROP_TYPES = {
-  onShowSettings:         React.PropTypes.func.isRequired,
+type Props = {
+  onShowSettings: (ev: Object) => void;
 };
 
-const Header = ({ onShowSettings }) => (
+// const PROP_TYPES = {
+//   onShowSettings:         React.PropTypes.func.isRequired,
+// };
+
+const Header = ({ onShowSettings }: Props) => (
   <div style={style.outer}>
     <div style={style.spacer} />
     <div style={style.title}>
@@ -34,7 +40,7 @@ const Header = ({ onShowSettings }) => (
   </div>
 );
 
-Header.propTypes = PROP_TYPES;
+// Header.propTypes = PROP_TYPES;
 
 // ==========================================
 // Styles

@@ -62,10 +62,10 @@ class Settings extends React.Component {
     msgRegexps: Array<string>,
     fJsOutput: boolean,
   };
-  refLang: any;
-  refMinify: any;
-  refReactIntlOutput: any;
-  refJsonOutput: any;
+  refLang: ?Object;
+  refMinify: ?Object;
+  refReactIntlOutput: ?Object;
+  refJsonOutput: ?Object;
 
   // static propTypes = {
   //   lang:                   React.PropTypes.string.isRequired,
@@ -287,6 +287,7 @@ class Settings extends React.Component {
   onCancel() { this.props.onClose(); }
   onSave() {
     // Save lang
+    if (this.refLang == null) return;
     const lang = this.refLang.getValue();
     if (lang !== this.props.lang) this.props.onChangeLang(lang);
 
@@ -295,8 +296,11 @@ class Settings extends React.Component {
     const set = pick(this.state, [
       'langs', 'srcPaths', 'srcExtensions', 'msgFunctionNames', 'msgRegexps',
     ]);
+    if (this.refMinify == null) return;
     set.fMinify = this.refMinify.getValue();
+    if (this.refReactIntlOutput == null) return;
     set.fReactIntlOutput = this.refReactIntlOutput.getValue();
+    if (this.refJsonOutput == null) return;
     set.fJsonOutput = this.refJsonOutput.getValue();
     /* eslint-disable object-shorthand */
     mutate({

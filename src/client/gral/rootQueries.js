@@ -1,3 +1,5 @@
+// @flow
+
 import Relay                from 'react-relay';
 
 export class ViewerQuery extends Relay.Route {

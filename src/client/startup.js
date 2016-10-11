@@ -1,3 +1,5 @@
+// @flow
+
 /* eslint-env browser */
 import 'babel-polyfill';
 import Promise              from 'bluebird';

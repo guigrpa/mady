@@ -1,3 +1,5 @@
+// @flow
+
 import React                from 'react';
 import Relay                from 'react-relay';
 import moment               from 'moment';
@@ -29,15 +31,25 @@ const fragments = {
 // ==========================================
 // Component
 // ==========================================
-class Details extends React.Component {
-  static propTypes = {
-    // lang:                   React.PropTypes.string.isRequired,
-    relay:                  React.PropTypes.object.isRequired,
-    viewer:                 React.PropTypes.object.isRequired,
-    selectedKeyId:          React.PropTypes.string,
-  };
+type Props = {
+  // lang: string,
+  relay: Object,
+  viewer: Object,
+  selectedKeyId: ?string,
+};
 
-  componentWillReceiveProps(nextProps) {
+class Details extends React.Component {
+  props: Props;
+  theKey: Object;
+
+  // static propTypes = {
+  //   // lang:                   React.PropTypes.string.isRequired,
+  //   relay:                  React.PropTypes.object.isRequired,
+  //   viewer:                 React.PropTypes.object.isRequired,
+  //   selectedKeyId:          React.PropTypes.string,
+  // };
+
+  componentWillReceiveProps(nextProps: Props) {
     this.props.relay.setVariables({ details_selectedKeyId: nextProps.selectedKeyId });
   }
 
@@ -79,7 +91,7 @@ class Details extends React.Component {
     );
   }
 
-  renderDate(d) {
+  renderDate(d: string) {
     return (
       <span title={moment(d).format('LLLL')} style={style.date}>
         {moment(d).fromNow()}

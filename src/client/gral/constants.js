@@ -1,3 +1,5 @@
+// @flow
+
 import tinycolor from 'tinycolor2';
 
 const BASE_COLOR = tinycolor('aliceblue').spin(40).toHexString();

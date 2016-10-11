@@ -1,3 +1,5 @@
+// @flow
+
 /* eslint-disable class-methods-use-this */
 
 import Relay                from 'react-relay';

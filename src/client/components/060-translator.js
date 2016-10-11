@@ -1,3 +1,5 @@
+// @flow
+
 /* eslint-env browser */
 import timm                 from 'timm';
 import React                from 'react';
@@ -27,8 +29,12 @@ import TranslatorRow        from './061-translatorRow';
 // ==========================================
 // Translator
 // ==========================================
-const comparator = (a, b) => (a < b ? -1 : (a > b ? 1 : 0));
-const keyComparator = (a, b) => {
+type Key = {context: ?string, text: string, id: string};
+type LangOptions = Array<{ value: string, label: string }>;
+
+const comparator = (a: string, b: string): number =>
+  (a < b ? -1 : (a > b ? 1 : 0));
+const keyComparator = (a: Key, b: Key) => {
   const aStr = `${a.context || ''}${a.text}${a.id}`;
   const bStr = `${b.context || ''}${b.text}${b.id}`;
   return comparator(aStr, bStr);
@@ -58,15 +64,33 @@ const fragments = {
 // ------------------------------------------
 // Component
 // ------------------------------------------
+type Props = {
+  // lang: string,
+  viewer: Object,
+  selectedKeyId: ?string,
+  changeSelectedKey: (keyId: ?string) => void,
+};
+
 class Translator extends React.PureComponent {
-  static propTypes = {
-    // lang:                   React.PropTypes.string.isRequired,
-    viewer:                 React.PropTypes.object.isRequired,
-    selectedKeyId:          React.PropTypes.string,
-    changeSelectedKey:      React.PropTypes.func.isRequired,
+  props: Props;
+  state: {
+    langs: Array<string>,
+    fParsing: boolean,
+  };
+  forceRender: () => void;
+  stats: {
+    numUsedKeys: number,
+    numTranslations: { [key: string]: number },
   };
 
-  constructor(props) {
+  // static propTypes = {
+  //   // lang:                   React.PropTypes.string.isRequired,
+  //   viewer:                 React.PropTypes.object.isRequired,
+  //   selectedKeyId:          React.PropTypes.string,
+  //   changeSelectedKey:      React.PropTypes.func.isRequired,
+  // };
+
+  constructor(props: Props) {
     super(props);
     this.state = {
       langs: this.readLangs(),
@@ -136,7 +160,7 @@ class Translator extends React.PureComponent {
     );
   }
 
-  renderLangHeader(lang, idx, langOptions) {
+  renderLangHeader(lang: string, idx: number, langOptions: LangOptions) {
     return (
       <div key={lang}
         className="madyLangHeader"
@@ -190,7 +214,7 @@ class Translator extends React.PureComponent {
     );
   }
 
-  renderKeyRow(key) {
+  renderKeyRow(key: Key) {
     const fSelected = this.props.selectedKeyId === key.id;
     return (
       <TranslatorRow key={key.id}
@@ -240,7 +264,7 @@ class Translator extends React.PureComponent {
   // ------------------------------------------
   // Langs
   // ------------------------------------------
-  readLangs() {
+  readLangs(): Array<string> {
     const availableLangs = this.props.viewer.config.langs;
     let langs = cookieGet('langs') || [];
     langs = filter(langs, (o) => availableLangs.indexOf(o) >= 0);
@@ -249,7 +273,7 @@ class Translator extends React.PureComponent {
     return langs;
   }
 
-  writeLangs(langs) { cookieSet('langs', langs); }
+  writeLangs(langs: Array<string>) { cookieSet('langs', langs); }
 
   onAddLang() {
     const prevLangs = this.state.langs;
@@ -260,13 +284,13 @@ class Translator extends React.PureComponent {
     this.updateLangs(nextLangs);
   }
 
-  onRemoveLang(ev) { this.removeLang(Number(ev.currentTarget.id)); }
-  removeLang(idx) {
+  onRemoveLang(ev: Object) { this.removeLang(Number(ev.currentTarget.id)); }
+  removeLang(idx: number) {
     const nextLangs = timm.removeAt(this.state.langs, idx);
     this.updateLangs(nextLangs);
   }
 
-  onChangeLang(ev, lang) {
+  onChangeLang(ev: Object, lang: string) {
     const prevLangs = this.state.langs;
     const idx = Number(ev.currentTarget.id);
     let fFound = false;
@@ -285,7 +309,7 @@ class Translator extends React.PureComponent {
     this.updateLangs(nextLangs);
   }
 
-  updateLangs(langs) {
+  updateLangs(langs: Array<string>) {
     this.writeLangs(langs);
     this.setState({ langs });
   }
