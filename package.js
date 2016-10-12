@@ -190,6 +190,9 @@ const specs = {
     'babel-polyfill': '6.13.0',
     giu: '0.8.1',
 
+    // Bug yarn #629
+    chokidar: '1.6.0',
+
     // React
     react:                            '15.3.2',
     'react-dom':                      '15.3.2',
