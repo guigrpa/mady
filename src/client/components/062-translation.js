@@ -1,3 +1,5 @@
+// @flow
+
 import React                from 'react';
 import Relay                from 'react-relay';
 import MessageFormat        from 'messageformat';
@@ -8,6 +10,12 @@ import {
   KEYS,
   hoverable,
 }                           from 'giu';
+import type {
+  Key,
+  TranslationT,
+  RelayContainer,
+  HoverableProps,
+}                           from '../../common/types';
 import _t                   from '../../translate';
 import {
   CreateTranslationMutation,
@@ -17,7 +25,7 @@ import {
 import { COLORS }           from '../gral/constants';
 import { mutate }           from './helpers';
 
-const validateTranslation = (lang) => (val) => {
+const validateTranslation = (lang: string) => (val: string) => {
   const numOpen = val.split('{').length - 1;
   const numClose = val.split('}').length - 1;
   if (numOpen !== numClose) {
@@ -54,21 +62,36 @@ const fragments = {
 // ==========================================
 // Component
 // ==========================================
-class Translation extends React.Component {
-  static propTypes = {
-    // relay:                  React.PropTypes.object.isRequired,
-    theKey:                 React.PropTypes.object.isRequired,
-    lang:                   React.PropTypes.string.isRequired,
-    translation:            React.PropTypes.object,
-    changeSelectedKey:      React.PropTypes.func.isRequired,
-    // fUnused:                React.PropTypes.bool.isRequired,
-    // From hoverable
-    hovering:               React.PropTypes.bool,
-    onHoverStart:           React.PropTypes.func.isRequired,
-    onHoverStop:            React.PropTypes.func.isRequired,
-  };
+type PublicProps = {
+  theKey: Key,
+  lang: string,
+  translation: ?TranslationT,
+  changeSelectedKey: (keyId: ?string) => void,
+};
+type Props = PublicProps & HoverableProps;
 
-  constructor(props) {
+class Translation extends React.Component {
+  props: Props;
+  state: {
+    fEditing: boolean,
+    cmds: Array<Object>,
+  };
+  refInput: ?Object;
+
+  // static propTypes = {
+  //   // relay:                  React.PropTypes.object.isRequired,
+  //   theKey:                 React.PropTypes.object.isRequired,
+  //   lang:                   React.PropTypes.string.isRequired,
+  //   translation:            React.PropTypes.object,
+  //   changeSelectedKey:      React.PropTypes.func.isRequired,
+  //   // fUnused:                React.PropTypes.bool.isRequired,
+  //   // From hoverable
+  //   hovering:               React.PropTypes.bool,
+  //   onHoverStart:           React.PropTypes.func.isRequired,
+  //   onHoverStop:            React.PropTypes.func.isRequired,
+  // };
+
+  constructor(props: Props) {
     super(props);
     this.state = {
       fEditing: false,
@@ -162,7 +185,7 @@ class Translation extends React.Component {
 
   // RETURN + modifier key (unmodified RETURNs are accepted in the textarea): ignore (will
   // be processed on keyup)
-  onKeyDown(ev) {
+  onKeyDown(ev: Object) {
     if (ev.which === KEYS.enter &&
         (ev.ctrlKey || ev.altKey || ev.metaKey || ev.shiftKey)) {
       cancelEvent(ev);
@@ -171,7 +194,7 @@ class Translation extends React.Component {
 
   // ESC: revert and blur
   // RETURN + modifier key (unmodified RETURNs are accepted in the textarea): blur (and save)
-  onKeyUp(ev) {
+  onKeyUp(ev: Object) {
     if (ev.which === KEYS.esc) {
       this.setState({ cmds: [{ type: 'REVERT' }, { type: 'BLUR' }] });
     } else if (ev.which === KEYS.enter &&
@@ -225,6 +248,7 @@ class Translation extends React.Component {
   }
 
   onClickDelete() {
+    if (!this.props.translation) return;
     mutate({
       description: 'Click on Delete translation',
       Mutation: DeleteTranslationMutation,
@@ -238,8 +262,9 @@ class Translation extends React.Component {
   // ==========================================
   // Helpers
   // ==========================================
-  getInitialTranslation(props = this.props) {
-    return props.translation ? props.translation.translation : null;
+  getInitialTranslation(props: ?Props) {
+    const finalProps = props != null ? props : this.props;
+    return finalProps.translation ? finalProps.translation.translation : null;
   }
 }
 
@@ -278,5 +303,7 @@ const style = {
 // Public API
 // ==========================================
 const HoverableTranslation = hoverable(Translation);
-export default Relay.createContainer(HoverableTranslation, { fragments });
+const Container: RelayContainer<{}, PublicProps, any> =
+  Relay.createContainer(HoverableTranslation, { fragments });
+export default Container;
 export { HoverableTranslation as _HoverableTranslation };

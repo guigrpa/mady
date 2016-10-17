@@ -14,6 +14,11 @@ import {
   flexItem, flexContainer,
   Icon, Select, LargeMessage,
 }                           from 'giu';
+import type {
+  Viewer,
+  Key,
+  RelayContainer,
+}                           from '../../common/types';
 import _t                   from '../../translate';
 import {
   ParseSrcFilesMutation,
@@ -29,7 +34,6 @@ import TranslatorRow        from './061-translatorRow';
 // ==========================================
 // Translator
 // ==========================================
-type Key = {context: ?string, text: string, id: string};
 type LangOptions = Array<{ value: string, label: string }>;
 
 const comparator = (a: string, b: string): number =>
@@ -64,12 +68,13 @@ const fragments = {
 // ------------------------------------------
 // Component
 // ------------------------------------------
-type Props = {
+type PublicProps = {
   // lang: string,
-  viewer: Object,
+  viewer: Viewer,
   selectedKeyId: ?string,
   changeSelectedKey: (keyId: ?string) => void,
 };
+type Props = PublicProps;
 
 class Translator extends React.PureComponent {
   props: Props;
@@ -421,5 +426,7 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-export default Relay.createContainer(Translator, { fragments });
+const Container: RelayContainer<{}, PublicProps, any> =
+  Relay.createContainer(Translator, { fragments });
+export default Container;
 export { Translator as _Translator };

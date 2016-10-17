@@ -1,3 +1,5 @@
+// @flow
+
 /* eslint-env browser */
 import React                from 'react';
 import Relay                from 'react-relay';
@@ -7,6 +9,10 @@ import {
   Floats, Hints, Notifications,
   hintDefine, hintShow,
 }                           from 'giu';
+import type {
+  Viewer,
+  RelayContainer,
+}                           from '../../common/types';
 import _t                   from '../../translate';
 import {
   cookieGet,
@@ -43,12 +49,24 @@ const fragments = {
 // ==========================================
 // Component
 // ==========================================
+type PublicProps = {
+  viewer: Viewer,
+};
+type Props = PublicProps;
+
 class App extends React.Component {
-  static propTypes = {
-    viewer:                 React.PropTypes.object.isRequired,
+  props: Props;
+  state: {
+    selectedKeyId: ?string,
+    fSettingsShown: boolean,
+    lang: string,
   };
 
-  constructor(props) {
+  // static propTypes = {
+  //   viewer:                 React.PropTypes.object.isRequired,
+  // };
+
+  constructor(props: Props) {
     super(props);
     this.state = {
       selectedKeyId: null,
@@ -97,10 +115,10 @@ class App extends React.Component {
   }
 
   // ------------------------------------------
-  changeSelectedKey(selectedKeyId) { this.setState({ selectedKeyId }); }
+  changeSelectedKey(selectedKeyId: ?string) { this.setState({ selectedKeyId }); }
   showSettings() { this.setState({ fSettingsShown: true }); }
   hideSettings() { this.setState({ fSettingsShown: false }); }
-  onChangeLang(lang) {
+  onChangeLang(lang: string) {
     cookieSet('lang', lang);
     fetchLangBundle(lang, (locales) => {
       _t.setLocales(locales);
@@ -110,7 +128,7 @@ class App extends React.Component {
   }
 
   // ------------------------------------------
-  showHint(fForce) {
+  showHint(fForce: ?boolean) {
     const elements = () => {
       const out = [];
       const nodeSettings = document.getElementById('madyBtnSettings');
@@ -164,5 +182,7 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-export default Relay.createContainer(App, { fragments });
+const Container: RelayContainer<{}, PublicProps, any> =
+  Relay.createContainer(App, { fragments });
+export default Container;
 export { App as _App };

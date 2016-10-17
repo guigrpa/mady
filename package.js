@@ -187,11 +187,11 @@ const specs = {
 
     // Packaged in the client app (or SSR)
     // --------------------------
-    'babel-polyfill': '6.13.0',
+    'babel-polyfill': '6.16.0',
     giu: '0.8.1',
 
     // Bug yarn #629
-    chokidar: '1.6.0',
+    chokidar: '1.6.1',
 
     // React
     react:                            '15.3.2',
@@ -211,18 +211,18 @@ const specs = {
     // Pure dev dependencies
     // ---------------------
     // Babel + plugins (except babel-eslint)
-    'babel-cli': '6.14.0',
-    'babel-core': '6.14.0',
+    'babel-cli': '6.16.0',
+    'babel-core': '6.17.0',
     'babel-plugin-react-intl': '2.2.0',
-    'babel-preset-es2015': '6.14.0',
-    'babel-preset-stage-0': '6.5.0',
-    'babel-preset-react': '6.11.1',
-    'babel-preset-react-hmre': '1.1.1', // to use Hot Module Replacement
+    'babel-preset-es2015': '6.16.0',
+    'babel-preset-stage-0': '6.16.0',
+    'babel-preset-react': '6.16.0',
+    // 'babel-preset-react-hmre': '1.1.1', // to use Hot Module Replacement
 
     // Webpack + loaders (+ related stuff)
     webpack: '1.13.2',
-    'webpack-dev-middleware': '1.8.1',
-    'webpack-hot-middleware': '2.12.2',
+    'webpack-dev-middleware': '1.8.4',
+    'webpack-hot-middleware': '2.13.0',
     'babel-loader': '6.2.5',
     'file-loader': '0.9.0',
     'css-loader': '0.25.0',
@@ -230,16 +230,16 @@ const specs = {
     'json-loader': '0.5.4',
     'bundle-loader': '0.5.4',
     'sass-loader': '4.0.2',
-    'node-sass': '3.10.0',
+    'node-sass': '3.10.1',
     'extract-text-webpack-plugin': '1.0.1',
 
     // Linting
-    eslint: '3.7.1',
+    eslint: '3.8.0',
     'eslint-config-airbnb': '12.0.0',
     'eslint-plugin-flowtype': '2.20.0',
     'eslint-plugin-import': '1.16.0',
     'eslint-plugin-jsx-a11y': '2.2.3',
-    'eslint-plugin-react': '6.4.0',
+    'eslint-plugin-react': '6.4.1',
     'babel-eslint': '7.0.0',
 
     // Testing
@@ -254,7 +254,7 @@ const specs = {
     'extract-docs': '1.3.0',
     'xxl': '0.1.1',
     'cross-env': '2.0.1',
-    'flow-bin': '0.32.0',
+    'flow-bin': '0.33.0',
   },
 
   // -----------------------------------------------

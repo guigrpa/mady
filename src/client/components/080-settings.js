@@ -12,12 +12,16 @@ import {
   Modal,
   notify,
 }                           from 'giu';
+import type {
+  Viewer,
+  RelayContainer,
+}                           from '../../common/types';
 import _t                   from '../../translate';
 import {
   UpdateConfigMutation,
 }                           from '../gral/mutations';
-import { mutate }           from './helpers';
 import { LANG_OPTIONS }     from '../gral/constants';
+import { mutate }           from './helpers';
 
 
 // ==========================================
@@ -45,12 +49,13 @@ const fragments = {
 // ==========================================
 // Component
 // ==========================================
-type Props = {
+type PublicProps = {
   lang: string,
-  viewer: Object,
+  viewer: Viewer,
   onChangeLang: (str: string) => void,
   onClose: () => void,
 };
+type Props = PublicProps;
 
 class Settings extends React.Component {
   props: Props;
@@ -356,5 +361,7 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-export default Relay.createContainer(Settings, { fragments });
+const Container: RelayContainer<{}, PublicProps, any> =
+  Relay.createContainer(Settings, { fragments });
+export default Container;
 export { Settings as _Settings };

@@ -8,6 +8,11 @@ import {
   Icon,
   LargeMessage,
 }                           from 'giu';
+import type {
+  Viewer,
+  Key,
+  RelayContainer,
+}                           from '../../common/types';
 import _t                   from '../../translate';
 import { COLORS }           from '../gral/constants';
 
@@ -31,16 +36,16 @@ const fragments = {
 // ==========================================
 // Component
 // ==========================================
-type Props = {
+type PublicProps = {
   // lang: string,
-  relay: Object,
-  viewer: Object,
+  viewer: Viewer,
   selectedKeyId: ?string,
 };
+type Props = PublicProps & { relay: Object };
 
 class Details extends React.Component {
   props: Props;
-  theKey: Object;
+  theKey: Key;
 
   // static propTypes = {
   //   // lang:                   React.PropTypes.string.isRequired,
@@ -128,8 +133,10 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-export default Relay.createContainer(Details, {
-  fragments,
-  initialVariables: { details_selectedKeyId: null },
-});
+const Container: RelayContainer<{}, PublicProps, any> =
+  Relay.createContainer(Details, {
+    fragments,
+    initialVariables: { details_selectedKeyId: null },
+  });
+export default Container;
 export { Details as _Details };
