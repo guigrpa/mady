@@ -10,7 +10,7 @@ import {
   hintDefine, hintShow,
 }                           from 'giu';
 import type {
-  Viewer,
+  ViewerT,
   RelayContainer,
 }                           from '../../common/types';
 import _t                   from '../../translate';
@@ -34,7 +34,7 @@ require('./010-app.sass');
 // _t("someContext_A tool for internationalization")
 
 // ==========================================
-// Relay fragments
+// Component declarations
 // ==========================================
 const fragments = {
   viewer: () => Relay.QL`
@@ -46,27 +46,23 @@ const fragments = {
   `,
 };
 
+type PublicPropsT = {
+  viewer: ViewerT,
+};
+type PropsT = PublicPropsT;
+
 // ==========================================
 // Component
 // ==========================================
-type PublicProps = {
-  viewer: Viewer,
-};
-type Props = PublicProps;
-
 class App extends React.Component {
-  props: Props;
+  props: PropsT;
   state: {
     selectedKeyId: ?string,
     fSettingsShown: boolean,
     lang: string,
   };
 
-  // static propTypes = {
-  //   viewer:                 React.PropTypes.object.isRequired,
-  // };
-
-  constructor(props: Props) {
+  constructor(props: PropsT) {
     super(props);
     this.state = {
       selectedKeyId: null,
@@ -166,9 +162,7 @@ class App extends React.Component {
   }
 }
 
-// ==========================================
-// Styles
-// ==========================================
+// ------------------------------------------
 const style = {
   outer: {
     minHeight: '100%',
@@ -182,7 +176,7 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-const Container: RelayContainer<{}, PublicProps, any> =
+const Container: RelayContainer<{}, PublicPropsT, any> =
   Relay.createContainer(App, { fragments });
 export default Container;
 export { App as _App };

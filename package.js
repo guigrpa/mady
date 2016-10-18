@@ -149,7 +149,7 @@ const specs = {
   // Deps
   // -----------------------------------------------
   dependencies: {
-    timm: '1.1.0',
+    timm: '1.1.1',
     storyboard: '2.1.2',
     lodash: '4.16.0',
     commander: '2.9.0',
@@ -234,7 +234,7 @@ const specs = {
     'extract-text-webpack-plugin': '1.0.1',
 
     // Linting
-    eslint: '3.8.0',
+    eslint: '3.8.1',
     'eslint-config-airbnb': '12.0.0',
     'eslint-plugin-flowtype': '2.20.0',
     'eslint-plugin-import': '1.16.0',
@@ -246,7 +246,7 @@ const specs = {
     jest: '16.0.0',
     'react-test-renderer': '15.3.2',
     'babel-jest': '16.0.0',
-    'moment-timezone': '0.5.5',
+    'moment-timezone': '0.5.6',
     nyc: '8.3.0',
     coveralls: '2.11.14',
 

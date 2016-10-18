@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import {
   addLocaleData, defineMessages,
@@ -15,7 +17,10 @@ defineMessages({
   },
 });
 
-const Example = ({ lang, messages }) => {
+const Example = ({ lang, messages }: {
+  lang: string,
+  messages: Object,
+}) => {
   const name = 'Eric';
   const unreadCount = 1000;
   return (
@@ -40,11 +45,6 @@ const Example = ({ lang, messages }) => {
       </p>
     </IntlProvider>
   );
-};
-
-Example.propTypes = {
-  lang:                   React.PropTypes.string.isRequired,
-  messages:               React.PropTypes.object.isRequired,
 };
 
 export default Example;

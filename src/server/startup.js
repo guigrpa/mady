@@ -1,3 +1,5 @@
+// @flow
+
 import Promise              from 'bluebird';
 import { mainStory, addListener } from 'storyboard';
 import consoleListener      from 'storyboard/lib/listeners/console';
@@ -32,17 +34,14 @@ program
   .option('--importV0 [dir]', 'Import a "v0" (old) locale folder')
   .parse(process.argv);
 
-const launchPars = {
-  localeDir: program.dir,
-  port: program.port,
-};
+const cliOptions = program.opts();
 
-mainStory.info('startup', 'Launch parameters:', { attach: launchPars });
-db.init({ localeDir: launchPars.localeDir, fRecompile: program.recompile });
-if (program.importV0) {
-  db.importV0(program.importV0);
+mainStory.info('startup', 'CLI options:', { attach: cliOptions });
+db.init({ localeDir: cliOptions.dir, fRecompile: cliOptions.recompile });
+if (cliOptions.importV0) {
+  db.importV0(cliOptions.importV0);
 } else {
   gqlServer.init();
-  httpServer.init({ port: launchPars.port });
+  httpServer.init({ port: cliOptions.port });
 }
-opn(`http://localhost:${launchPars.port}/`);
+opn(`http://localhost:${cliOptions.port}/`);

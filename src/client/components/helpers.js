@@ -1,3 +1,5 @@
+// @flow
+
 import timm                 from 'timm';
 import Relay                from 'react-relay';
 import { mainStory }        from 'storyboard';
@@ -5,13 +7,19 @@ import { notify }           from 'giu';
 import _t                   from '../../translate';
 
 // Runs a Relay mutation inside a Storyboard story
-function mutate(options) {
-  const {
-    description,
-    Mutation,
-    props,
-    onFailure, onSuccess, onFinish,
-  } = options;
+function mutate({
+  description,
+  Mutation,
+  props,
+  onFailure, onSuccess, onFinish,
+}: {|
+  description: string,
+  Mutation: any,
+  props: Object,
+  onFailure?: (failure: Object) => void,
+  onSuccess?: (response: Object) => void,
+  onFinish?: () => void,
+|}) {
   const story = mainStory.child({
     src: 'views',
     title: description,
@@ -19,7 +27,7 @@ function mutate(options) {
   const finalProps = timm.set(props, 'storyId', story.storyId);
   const mutation = new Mutation(finalProps);
   Relay.Store.commitUpdate(mutation, {
-    onFailure: (transaction) => {
+    onFailure: (transaction: Object) => {
       const error = transaction.getError() || new Error('Mutation failed');
       story.error('views', 'Transaction error:', { attach: error });
       story.close();
@@ -35,7 +43,7 @@ function mutate(options) {
       }
       if (onFinish) onFinish();
     },
-    onSuccess: (response) => {
+    onSuccess: (response: Object) => {
       story.debug('views', 'Transaction result:', {
         attach: response,
         attachLevel: 'trace',

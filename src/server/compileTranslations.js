@@ -1,6 +1,13 @@
+// @flow
+
 import MessageFormat        from 'messageformat';
 import UglifyJS             from 'uglify-js';
 import { chalk }            from 'storyboard';
+import type {
+  MapOf,
+  InternalKeyT,
+  InternalTranslationT,
+}                           from '../common/types';
 
 export default function compileTranslations({
   lang,
@@ -8,7 +15,13 @@ export default function compileTranslations({
   translations,
   fMinify = false,
   story,
-}) {
+}: {|
+  lang: string,
+  keys: MapOf<InternalKeyT>,
+  translations: Array<InternalTranslationT>,
+  fMinify?: boolean,
+  story: Object,
+|}): string {
   const logPrefix = `Lang ${chalk.magenta.bold(lang)}`;
 
   story.info('compiler', `${logPrefix} Preparing translations...`);

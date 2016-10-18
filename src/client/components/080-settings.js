@@ -13,7 +13,7 @@ import {
   notify,
 }                           from 'giu';
 import type {
-  Viewer,
+  ViewerT,
   RelayContainer,
 }                           from '../../common/types';
 import _t                   from '../../translate';
@@ -25,7 +25,7 @@ import { mutate }           from './helpers';
 
 
 // ==========================================
-// Relay fragments
+// Component declarations
 // ==========================================
 const fragments = {
   viewer: () => Relay.QL`
@@ -46,19 +46,19 @@ const fragments = {
   `,
 };
 
-// ==========================================
-// Component
-// ==========================================
-type PublicProps = {
+type PublicPropsT = {
   lang: string,
-  viewer: Viewer,
+  viewer: ViewerT,
   onChangeLang: (str: string) => void,
   onClose: () => void,
 };
-type Props = PublicProps;
+type PropsT = PublicPropsT;
 
+// ==========================================
+// Component
+// ==========================================
 class Settings extends React.Component {
-  props: Props;
+  props: PropsT;
   state: {
     langs: Array<string>,
     srcPaths: Array<string>,
@@ -72,14 +72,7 @@ class Settings extends React.Component {
   refReactIntlOutput: ?Object;
   refJsonOutput: ?Object;
 
-  // static propTypes = {
-  //   lang:                   React.PropTypes.string.isRequired,
-  //   viewer:                 React.PropTypes.object.isRequired,
-  //   onChangeLang:           React.PropTypes.func.isRequired,
-  //   onClose:                React.PropTypes.func.isRequired,
-  // };
-  //
-  constructor(props: Props) {
+  constructor(props: PropsT) {
     super(props);
     // For arrays without IDs, it's better if we keep the current state at this level,
     // rather than relying on `giu`. For other attributes (`lang`, `fMinify`...), we can
@@ -270,22 +263,25 @@ class Settings extends React.Component {
   }
 
   // ------------------------------------------
-  onCreateListItem(ev: Object) {
+  onCreateListItem(ev: Event) {
+    if (!(ev.currentTarget instanceof HTMLElement)) return;
     const { id } = ev.currentTarget;
     const newList = timm.addLast(this.state[id], '');
     this.setState({ [id]: newList });
   }
 
-  onRemoveListItem(ev: Object) {
+  onRemoveListItem(ev: Event) {
+    if (!(ev.currentTarget instanceof HTMLElement)) return;
     const [id, idx] = ev.currentTarget.id.split('.');
     const newList = timm.removeAt(this.state[id], Number(idx));
     this.setState({ [id]: newList });
   }
 
-  onUpdateListItem(ev: Object) {
-    const [id, idx] = ev.currentTarget.id.split('.');
+  onUpdateListItem(ev: Event) {
+    if (!(ev.currentTarget instanceof HTMLInputElement)) return;
     const value = ev.currentTarget.value;
-    const newList = timm.replaceAt(this.state[id], idx, value);
+    const [id, idx] = ev.currentTarget.id.split('.');
+    const newList = timm.replaceAt(this.state[id], Number(idx), value);
     this.setState({ [id]: newList });
   }
 
@@ -323,9 +319,7 @@ class Settings extends React.Component {
   }
 }
 
-// ==========================================
-// Styles
-// ==========================================
+// ------------------------------------------
 const style = {
   listLabel: {
     marginTop: 7,
@@ -361,7 +355,7 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-const Container: RelayContainer<{}, PublicProps, any> =
+const Container: RelayContainer<{}, PublicPropsT, any> =
   Relay.createContainer(Settings, { fragments });
 export default Container;
 export { Settings as _Settings };

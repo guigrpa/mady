@@ -1,3 +1,5 @@
+// @flow
+
 import path                 from 'path';
 import http                 from 'http';
 import Promise              from 'bluebird';
@@ -100,11 +102,14 @@ function sendIndexHtml(req, res) {
     });
 }
 
-function init(options: Object) {
+function init(options: {|
+  port: number,
+|}): void {
   // TODO: webpack SSR if not pre-compiled
   ssr && ssr.init({ gqlServer, mainStory });
 
-  const expressApp = express();
+  // Disable flow on Express
+  const expressApp: any = express();
 
   // Webpack middleware (for development)
   if (process.env.NODE_ENV !== 'production') {

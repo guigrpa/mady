@@ -9,15 +9,15 @@ import {
   LargeMessage,
 }                           from 'giu';
 import type {
-  Viewer,
-  Key,
+  ViewerT,
+  KeyT,
   RelayContainer,
 }                           from '../../common/types';
 import _t                   from '../../translate';
 import { COLORS }           from '../gral/constants';
 
 // ==========================================
-// Relay fragments
+// Component declarations
 // ==========================================
 const fragments = {
   viewer: () => Relay.QL`
@@ -33,28 +33,21 @@ const fragments = {
   `,
 };
 
+type PublicPropsT = {
+  // lang: string,
+  viewer: ViewerT,
+  selectedKeyId: ?string,
+};
+type PropsT = PublicPropsT & { relay: Object };
+
 // ==========================================
 // Component
 // ==========================================
-type PublicProps = {
-  // lang: string,
-  viewer: Viewer,
-  selectedKeyId: ?string,
-};
-type Props = PublicProps & { relay: Object };
-
 class Details extends React.Component {
-  props: Props;
-  theKey: Key;
+  props: PropsT;
+  theKey: KeyT;
 
-  // static propTypes = {
-  //   // lang:                   React.PropTypes.string.isRequired,
-  //   relay:                  React.PropTypes.object.isRequired,
-  //   viewer:                 React.PropTypes.object.isRequired,
-  //   selectedKeyId:          React.PropTypes.string,
-  // };
-
-  componentWillReceiveProps(nextProps: Props) {
+  componentWillReceiveProps(nextProps: PropsT) {
     this.props.relay.setVariables({ details_selectedKeyId: nextProps.selectedKeyId });
   }
 
@@ -105,9 +98,7 @@ class Details extends React.Component {
   }
 }
 
-// ==========================================
-// Styles
-// ==========================================
+// ------------------------------------------
 const style = {
   outer: flexItem('none', {
     minHeight: 110,
@@ -133,7 +124,7 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-const Container: RelayContainer<{}, PublicProps, any> =
+const Container: RelayContainer<{}, PublicPropsT, any> =
   Relay.createContainer(Details, {
     fragments,
     initialVariables: { details_selectedKeyId: null },

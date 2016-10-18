@@ -1,4 +1,5 @@
 /* eslint-env jest */
+/* global document: false */
 /* eslint-disable global-require, import/newline-after-import */
 import React from 'react';
 import renderer from 'react-test-renderer';
@@ -122,7 +123,9 @@ describe('Translator', () => {
     expect(langHeader).not.toBeNull();
     const removeBtn = $(langHeader, '.fa-remove');
     expect(removeBtn).not.toBeNull();
-    removeBtn.props.onClick({ currentTarget: { id: '0' } });
+    const removeBtnNode = document.createElement('div');
+    removeBtnNode.id = '0';
+    removeBtn.props.onClick({ currentTarget: removeBtnNode });
     tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -143,12 +146,15 @@ describe('Translator', () => {
     let langHeader;
     let selectEl;
 
+    const selectElNode = document.createElement('select');
+    selectElNode.id = '0';
+
     // Change the language ca -> es: keeps just one column, 'es'
     langHeader = $(tree, '.madyLangHeader');
     expect(langHeader).not.toBeNull();
     selectEl = $(langHeader, '.giu-select');
     expect(selectEl).not.toBeNull();
-    selectEl.props.onChange({ currentTarget: { id: '0' } }, '"es"');
+    selectEl.props.onChange({ currentTarget: selectElNode }, '"es"');
     tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 
@@ -157,7 +163,7 @@ describe('Translator', () => {
     expect(langHeader).not.toBeNull();
     selectEl = $(langHeader, '.giu-select');
     expect(selectEl).not.toBeNull();
-    selectEl.props.onChange({ currentTarget: { id: '0' } }, '"en"');
+    selectEl.props.onChange({ currentTarget: selectElNode }, '"en"');
     tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });

@@ -11,17 +11,16 @@ import _t                   from '../../translate';
 import { COLORS }           from '../gral/constants';
 
 // ==========================================
-// Component
+// Component declarations
 // ==========================================
-type Props = {
-  onShowSettings: (ev: Object) => void;
+type PropsT = {
+  onShowSettings: (ev?: Event) => void;
 };
 
-// const PROP_TYPES = {
-//   onShowSettings:         React.PropTypes.func.isRequired,
-// };
-
-const Header = ({ onShowSettings }: Props) => (
+// ==========================================
+// Component
+// ==========================================
+const Header = ({ onShowSettings }: PropsT) => (
   <div style={style.outer}>
     <div style={style.spacer} />
     <div style={style.title}>
@@ -40,11 +39,7 @@ const Header = ({ onShowSettings }: Props) => (
   </div>
 );
 
-// Header.propTypes = PROP_TYPES;
-
-// ==========================================
-// Styles
-// ==========================================
+// ------------------------------------------
 const style = {
   outer: flexItem('0 0 2.5em', flexContainer('row', {
     backgroundColor: COLORS.medium,

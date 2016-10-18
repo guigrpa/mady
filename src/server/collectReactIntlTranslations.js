@@ -1,11 +1,23 @@
+// @flow
+
 import { chalk }            from 'storyboard';
+import type {
+  MapOf,
+  InternalKeyT,
+  InternalTranslationT,
+}                           from '../common/types';
 
 export default function collectReactIntlTranslations({
   lang,
   keys,
   translations,
   story,
-}) {
+}: {|
+  lang: string,
+  keys: MapOf<InternalKeyT>,
+  translations: Array<InternalTranslationT>,
+  story: Object,
+|}): MapOf<InternalTranslationT> {
   const logPrefix = `Lang ${chalk.magenta.bold(lang)}`;
 
   story.info('compiler', `${logPrefix} Preparing translations for React Intl...`);

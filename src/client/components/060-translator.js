@@ -15,8 +15,8 @@ import {
   Icon, Select, LargeMessage,
 }                           from 'giu';
 import type {
-  Viewer,
-  Key,
+  ViewerT,
+  KeyT,
   RelayContainer,
 }                           from '../../common/types';
 import _t                   from '../../translate';
@@ -31,22 +31,17 @@ import {
 import { mutate }           from './helpers';
 import TranslatorRow        from './061-translatorRow';
 
-// ==========================================
-// Translator
-// ==========================================
-type LangOptions = Array<{ value: string, label: string }>;
-
 const comparator = (a: string, b: string): number =>
   (a < b ? -1 : (a > b ? 1 : 0));
-const keyComparator = (a: Key, b: Key) => {
+const keyComparator = (a: KeyT, b: KeyT) => {
   const aStr = `${a.context || ''}${a.text}${a.id}`;
   const bStr = `${b.context || ''}${b.text}${b.id}`;
   return comparator(aStr, bStr);
 };
 
-// ------------------------------------------
-// Relay fragments
-// ------------------------------------------
+// ==========================================
+// Component declarations
+// ==========================================
 const fragments = {
   viewer: () => Relay.QL`
     fragment on Viewer {
@@ -65,19 +60,21 @@ const fragments = {
   `,
 };
 
-// ------------------------------------------
-// Component
-// ------------------------------------------
-type PublicProps = {
+type LangOptionsT = Array<{ value: string, label: string }>;
+
+type PublicPropsT = {
   // lang: string,
-  viewer: Viewer,
+  viewer: ViewerT,
   selectedKeyId: ?string,
   changeSelectedKey: (keyId: ?string) => void,
 };
-type Props = PublicProps;
+type PropsT = PublicPropsT;
 
+// ==========================================
+// Component
+// ==========================================
 class Translator extends React.PureComponent {
-  props: Props;
+  props: PropsT;
   state: {
     langs: Array<string>,
     fParsing: boolean,
@@ -88,14 +85,7 @@ class Translator extends React.PureComponent {
     numTranslations: { [key: string]: number },
   };
 
-  // static propTypes = {
-  //   // lang:                   React.PropTypes.string.isRequired,
-  //   viewer:                 React.PropTypes.object.isRequired,
-  //   selectedKeyId:          React.PropTypes.string,
-  //   changeSelectedKey:      React.PropTypes.func.isRequired,
-  // };
-
-  constructor(props: Props) {
+  constructor(props: PropsT) {
     super(props);
     this.state = {
       langs: this.readLangs(),
@@ -165,7 +155,7 @@ class Translator extends React.PureComponent {
     );
   }
 
-  renderLangHeader(lang: string, idx: number, langOptions: LangOptions) {
+  renderLangHeader(lang: string, idx: number, langOptions: LangOptionsT) {
     return (
       <div key={lang}
         className="madyLangHeader"
@@ -219,7 +209,7 @@ class Translator extends React.PureComponent {
     );
   }
 
-  renderKeyRow(key: Key) {
+  renderKeyRow(key: KeyT) {
     const fSelected = this.props.selectedKeyId === key.id;
     return (
       <TranslatorRow key={key.id}
@@ -289,14 +279,18 @@ class Translator extends React.PureComponent {
     this.updateLangs(nextLangs);
   }
 
-  onRemoveLang(ev: Object) { this.removeLang(Number(ev.currentTarget.id)); }
+  onRemoveLang(ev: Event) {
+    if (!(ev.currentTarget instanceof HTMLElement)) return;
+    this.removeLang(Number(ev.currentTarget.id));
+  }
   removeLang(idx: number) {
     const nextLangs = timm.removeAt(this.state.langs, idx);
     this.updateLangs(nextLangs);
   }
 
-  onChangeLang(ev: Object, lang: string) {
+  onChangeLang(ev: Event, lang: string) {
     const prevLangs = this.state.langs;
+    if (!(ev.currentTarget instanceof HTMLElement)) return;
     const idx = Number(ev.currentTarget.id);
     let fFound = false;
     for (let i = 0; i < prevLangs.length; i++) {
@@ -426,7 +420,7 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-const Container: RelayContainer<{}, PublicProps, any> =
+const Container: RelayContainer<{}, PublicPropsT, any> =
   Relay.createContainer(Translator, { fragments });
 export default Container;
 export { Translator as _Translator };

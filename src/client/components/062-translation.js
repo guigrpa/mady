@@ -11,10 +11,10 @@ import {
   hoverable,
 }                           from 'giu';
 import type {
-  Key,
+  KeyT,
   TranslationT,
   RelayContainer,
-  HoverableProps,
+  HoverablePropsT,
 }                           from '../../common/types';
 import _t                   from '../../translate';
 import {
@@ -42,7 +42,7 @@ const validateTranslation = (lang: string) => (val: string) => {
 };
 
 // ==========================================
-// Relay fragments
+// Component declarations
 // ==========================================
 const fragments = {
   theKey: () => Relay.QL`
@@ -59,39 +59,26 @@ const fragments = {
   `,
 };
 
-// ==========================================
-// Component
-// ==========================================
-type PublicProps = {
-  theKey: Key,
+type PublicPropsT = {
+  theKey: KeyT,
   lang: string,
   translation: ?TranslationT,
   changeSelectedKey: (keyId: ?string) => void,
 };
-type Props = PublicProps & HoverableProps;
+type PropsT = PublicPropsT & HoverablePropsT;
 
+// ==========================================
+// Component
+// ==========================================
 class Translation extends React.Component {
-  props: Props;
+  props: PropsT;
   state: {
     fEditing: boolean,
     cmds: Array<Object>,
   };
   refInput: ?Object;
 
-  // static propTypes = {
-  //   // relay:                  React.PropTypes.object.isRequired,
-  //   theKey:                 React.PropTypes.object.isRequired,
-  //   lang:                   React.PropTypes.string.isRequired,
-  //   translation:            React.PropTypes.object,
-  //   changeSelectedKey:      React.PropTypes.func.isRequired,
-  //   // fUnused:                React.PropTypes.bool.isRequired,
-  //   // From hoverable
-  //   hovering:               React.PropTypes.bool,
-  //   onHoverStart:           React.PropTypes.func.isRequired,
-  //   onHoverStop:            React.PropTypes.func.isRequired,
-  // };
-
-  constructor(props: Props) {
+  constructor(props: PropsT) {
     super(props);
     this.state = {
       fEditing: false,
@@ -107,9 +94,9 @@ class Translation extends React.Component {
     ]);
   }
 
-  // ==========================================
+  // ------------------------------------------
   // Render
-  // ==========================================
+  // ------------------------------------------
   render() {
     return (
       <div
@@ -175,9 +162,9 @@ class Translation extends React.Component {
     );
   }
 
-  // ==========================================
+  // ------------------------------------------
   // Handlers
-  // ==========================================
+  // ------------------------------------------
   onFocus() {
     this.setState({ fEditing: true });
     this.props.changeSelectedKey(this.props.theKey.id);
@@ -185,7 +172,8 @@ class Translation extends React.Component {
 
   // RETURN + modifier key (unmodified RETURNs are accepted in the textarea): ignore (will
   // be processed on keyup)
-  onKeyDown(ev: Object) {
+  onKeyDown(ev: Event) {
+    if (!(ev instanceof KeyboardEvent)) return;
     if (ev.which === KEYS.enter &&
         (ev.ctrlKey || ev.altKey || ev.metaKey || ev.shiftKey)) {
       cancelEvent(ev);
@@ -194,7 +182,8 @@ class Translation extends React.Component {
 
   // ESC: revert and blur
   // RETURN + modifier key (unmodified RETURNs are accepted in the textarea): blur (and save)
-  onKeyUp(ev: Object) {
+  onKeyUp(ev: Event) {
+    if (!(ev instanceof KeyboardEvent)) return;
     if (ev.which === KEYS.esc) {
       this.setState({ cmds: [{ type: 'REVERT' }, { type: 'BLUR' }] });
     } else if (ev.which === KEYS.enter &&
@@ -259,18 +248,18 @@ class Translation extends React.Component {
     });
   }
 
-  // ==========================================
+  // ------------------------------------------
   // Helpers
-  // ==========================================
-  getInitialTranslation(props: ?Props) {
-    const finalProps = props != null ? props : this.props;
+  // ------------------------------------------
+  getInitialTranslation(props?: PropsT) {
+    const finalProps = props || this.props;
     return finalProps.translation ? finalProps.translation.translation : null;
   }
 }
 
-// ==========================================
+// ------------------------------------------
 // Styles
-// ==========================================
+// ------------------------------------------
 const style = {
   outer: {
     paddingRight: 40,
@@ -303,7 +292,7 @@ const style = {
 // Public API
 // ==========================================
 const HoverableTranslation = hoverable(Translation);
-const Container: RelayContainer<{}, PublicProps, any> =
+const Container: RelayContainer<{}, PublicPropsT, any> =
   Relay.createContainer(HoverableTranslation, { fragments });
 export default Container;
 export { HoverableTranslation as _HoverableTranslation };

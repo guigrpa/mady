@@ -1,5 +1,3 @@
-// @flow
-
 /*!
  * Mady
  *
@@ -9,21 +7,25 @@
  * @license MIT
  */
 
-import { utf8ToBase64 } from './common/base64';
+// @flow
 
-type LocaleFunction = (data: any) => string;
-type MapOf<T> = { [key: string]: T };
-type MapOfLocaleFunctions = MapOf<LocaleFunction>;
-type MapOfStrings = MapOf<string>;
-type MapOfMapOfLocaleFunctions = MapOf<MapOfLocaleFunctions>;
+import { utf8ToBase64 } from './common/base64';
+import type {
+  MapOf,
+  LocaleFunctionT,
+} from './common/types';
+
+type MapOfLocaleFunctionsT = MapOf<LocaleFunctionT>;
+type MapOfStringsT = MapOf<string>;
+type MapOfMapOfLocaleFunctionsT = MapOf<MapOfLocaleFunctionsT>;
 
 // Current locales
-let _locales: MapOfLocaleFunctions = {};
+let _locales: MapOfLocaleFunctionsT = {};
 
 // Caches
-const allLocales: MapOfMapOfLocaleFunctions = {};
-const allLocaleCode: MapOfStrings = {};
-const keyCache: MapOfStrings = {};
+const allLocales: MapOfMapOfLocaleFunctionsT = {};
+const allLocaleCode: MapOfStringsT = {};
+const keyCache: MapOfStringsT = {};
 
 const translate = (utf8: string, data: ?Object): string => {
   let base64 = keyCache[utf8];
@@ -58,14 +60,14 @@ const getLocaleOrLocaleCode = <T>(
 
 const _t = translate;
 
-_t.addLocales = (lang: string, locales: MapOfLocaleFunctions): void => {
+_t.addLocales = (lang: string, locales: MapOfLocaleFunctionsT): void => {
   allLocales[lang] = locales;
 };
 _t.addLocaleCode = (lang: string, localeCode: string): void => {
   allLocaleCode[lang] = localeCode;
 };
 
-_t.setLocales = (langOrLocales: string | MapOfLocaleFunctions): ?string => {
+_t.setLocales = (langOrLocales: string | MapOfLocaleFunctionsT): ?string => {
   let out = null;
   if (typeof langOrLocales === 'string') {
     const { lang, result } = getLocaleOrLocaleCode(allLocales, langOrLocales);
@@ -77,7 +79,7 @@ _t.setLocales = (langOrLocales: string | MapOfLocaleFunctions): ?string => {
   return out;
 };
 
-_t.getLocales = (lang: string): { lang: ?string, result: ?MapOfLocaleFunctions } =>
+_t.getLocales = (lang: string): { lang: ?string, result: ?MapOfLocaleFunctionsT } =>
   getLocaleOrLocaleCode(allLocales, lang);
 _t.getLocaleCode = (lang: string): { lang: ?string, result: ?string } =>
   getLocaleOrLocaleCode(allLocaleCode, lang);

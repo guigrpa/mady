@@ -1,9 +1,15 @@
 // @flow
 
+/* eslint-disable no-unused-vars, no-undef */
+
 // ========================================
-// Relay interoperability
+// Libraries
 // ========================================
-interface _RelayContainer<DefaultProps, Props, State> extends React$Component<DefaultProps, Props, State> {
+// ----------------------------------------
+// Relay
+// ----------------------------------------
+class _RelayContainer<DefaultProps, Props, State>
+extends React$Component<DefaultProps, Props, State> {
   // TODO: Due to bugs in Flow's handling of React.createClass, some fields
   // already declared in the base class need to be redeclared below. Ideally
   // they should simply be inherited.
@@ -12,25 +18,29 @@ interface _RelayContainer<DefaultProps, Props, State> extends React$Component<De
   state: $Abstract<State>;
 
   // Bonus tracks added by Relay...
-  static getFragment(...args: any): any;
-};
+  static getFragment(name: string): any {}
+}
 
 export type RelayContainer<DefaultProps, Props, State> =
   Class<_RelayContainer<DefaultProps, Props, State>>;
 
-// ========================================
+// ----------------------------------------
 // Giu
-// ========================================
-export type HoverableProps = {
+// ----------------------------------------
+export type HoverablePropsT = {
   hovering: ?boolean,
-  onHoverStart: (ev: Object) => void,
-  onHoverStop: (ev: Object) => void,
+  onHoverStart: (ev: Event) => void,
+  onHoverStop: (ev: Event) => void,
 };
 
 // ========================================
 // Other
 // ========================================
-export type Config = {
+export type MapOf<T> = { [key: string]: T };
+
+export type LocaleFunctionT = (data: any) => string;
+
+export type ConfigT = {
   srcPaths: Array<string>,
   srcExtensions: Array<string>,
   langs: Array<string>,
@@ -42,19 +52,32 @@ export type Config = {
   fReactIntlOutput: boolean,
 };
 
-interface Node {
-  id: string;
+export type InternalConfigT = ConfigT & {
+  dbVersion: number,
 };
 
-export type Key = {
-  id: string,
+interface NodeT {
+  id: string;
+}
+
+type CoreKeyT = {
   context: ?string,
   text: string,
-  description: ?string,
-  firstUsed: string,
   unusedSince: ?string,
   sources: Array<string>,
+};
+
+export type KeyT = CoreKeyT & {
+  id: string,
+  firstUsed: string,
+  description: ?string,
   translations: Object,
+};
+
+export type InternalKeyT = CoreKeyT & {
+  id: string,
+  firstUsed: ?string,
+  reactIntlId?: string,
 };
 
 export type TranslationT = {
@@ -64,9 +87,11 @@ export type TranslationT = {
   keyId: string,
 };
 
-export type Viewer = {
+export type InternalTranslationT = TranslationT;
+
+export type ViewerT = {
   id: string,
-  config: Config,
-  anyNode: Key,
+  config: ConfigT,
+  anyNode: KeyT,
   keys: Object,
 };

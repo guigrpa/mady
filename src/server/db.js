@@ -1,3 +1,5 @@
+// @flow
+
 import path                 from 'path';
 import fs                   from 'fs-extra';
 import Promise              from 'bluebird';
@@ -5,6 +7,12 @@ import timm                 from 'timm';
 import { mainStory, chalk } from 'storyboard';
 import uuid                 from 'node-uuid';
 import { base64ToUtf8 }     from '../common/base64';
+import type {
+  MapOf,
+  InternalConfigT,
+  InternalKeyT,
+  InternalTranslationT,
+}                           from '../common/types';
 import parse                from './parseSources';
 import compile              from './compileTranslations';
 import collectReactIntlTranslations from './collectReactIntlTranslations';
@@ -31,7 +39,10 @@ const RESPONSE_DELAY = 0;
 // ==============================================
 // Init
 // ==============================================
-function init(options) {
+function init(options: {
+  fRecompile: boolean,
+  localeDir: string,
+}) {
   initLocaleDir(options);
   const fMigrated = initConfig();
   initKeys();
@@ -43,10 +54,12 @@ function init(options) {
 // ==============================================
 // Locale dir
 // ==============================================
-let _localeDir = null;
-function setLocaleDir(localeDir) { _localeDir = localeDir; }
+let _localeDir: string;
+function setLocaleDir(localeDir: string) { _localeDir = localeDir; }
 
-function initLocaleDir(options) {
+function initLocaleDir(options: {
+  localeDir: string,
+}) {
   _localeDir = options.localeDir;
   try {
     fs.statSync(_localeDir);
@@ -59,12 +72,13 @@ function initLocaleDir(options) {
 // ==============================================
 // Config
 // ==============================================
-let _configPath = null;
-let _config = null;
-function setConfig(config) { _config = config; }
-function setConfigPath(configPath) { _configPath = configPath; }
+let _configPath: string;
+let _config: InternalConfigT;
 
-function initConfig() {
+function setConfigPath(configPath: string) { _configPath = configPath; }
+function setConfig(config: InternalConfigT) { _config = config; }
+
+function initConfig(): boolean {
   _configPath = path.join(_localeDir, 'config.json');
   let fMigrated = false;
   try {
@@ -89,11 +103,14 @@ function initConfig() {
 }
 
 function readConfig() { _config = readJson(_configPath); }
-function saveConfig(options) { saveJson(_configPath, _config, options); }
+function saveConfig(options?: Object) { saveJson(_configPath, _config, options); }
 
-function getConfig() { return _config; }
+function getConfig(): InternalConfigT { return _config; }
 
-function updateConfig(newAttrs, { story }) {
+function updateConfig(
+  newAttrs: Object,
+  { story }: { story: Object },
+): Promise {
   _config = timm.merge(_config, newAttrs);
   story.debug('db', 'New config:', { attach: _config });
   saveConfig({ story });
@@ -105,10 +122,11 @@ function updateConfig(newAttrs, { story }) {
 // ==============================================
 // Keys
 // ==============================================
-let _keyPath = null;
-let _keys = {};
-function setKeys(keys) { _keys = keys; }
-function setKeyPath(keyPath) { _keyPath = keyPath; }
+let _keyPath: string;
+let _keys: MapOf<InternalKeyT> = {};
+
+function setKeyPath(keyPath: string) { _keyPath = keyPath; }
+function setKeys(keys: MapOf<InternalKeyT>) { _keys = keys; }
 
 function initKeys() {
   _keyPath = path.join(_localeDir, 'keys.json');
@@ -123,14 +141,17 @@ function initKeys() {
 }
 
 function readKeys() { _keys = readJson(_keyPath); }
+function saveKeys(options?: Object) { saveJson(_keyPath, _keys, options); }
 
-function saveKeys(options) { saveJson(_keyPath, _keys, options); }
+function getKeys(): Array<InternalKeyT> {
+  return Object.keys(_keys).map((id) => _keys[id]);
+}
 
-function getKeys() { return Object.keys(_keys).map((id) => _keys[id]); }
+function getKey(id: string): ?InternalKeyT {
+  return _keys[id];
+}
 
-function getKey(id) { return _keys[id]; }
-
-function createKey(newAttrs) {
+function createKey(newAttrs: Object): Promise {
   const id = newAttrs.context != null
     ? `${newAttrs.context}_${newAttrs.text}`
     : newAttrs.text;
@@ -147,14 +168,14 @@ function createKey(newAttrs) {
   .then(() => _keys[id]);
 }
 
-function updateKey(id, newAttrs) {
+function updateKey(id: string, newAttrs: Object): Promise {
   _keys[id] = timm.merge(_keys[id], newAttrs);
   saveKeys();
   return compileTranslations()
   .then(() => _keys[id]);
 }
 
-function deleteKey(id) {
+function deleteKey(id: string): Promise {
   const item = _keys[id];
   delete _keys[id];
   saveKeys();
@@ -163,7 +184,7 @@ function deleteKey(id) {
   .then(() => item);
 }
 
-function parseSrcFiles({ story }) {
+function parseSrcFiles({ story }: { story: Object }) {
   const { srcPaths, srcExtensions, msgFunctionNames, msgRegexps } = _config;
   const curKeys = parse({ srcPaths, srcExtensions, msgFunctionNames, msgRegexps, story });
   const now = new Date().toISOString();
@@ -210,12 +231,19 @@ function parseSrcFiles({ story }) {
 // ==============================================
 // Translations
 // ==============================================
-const getLangPath = (lang) => path.join(_localeDir, `${lang}.json`);
-const getCompiledLangPath = (lang) => path.join(_localeDir, `${lang}.js`);
-const getJsonLangPath = (lang) => path.join(_localeDir, `${lang}.out.json`);
-const getReactIntlLangPath = (lang) => path.join(_localeDir, `${lang}.reactIntl.json`);
-let _translations = {};
-function setTranslations(translations) { _translations = translations; }
+let _translations: MapOf<InternalTranslationT> = {};
+
+const getLangPath = (lang: string): string =>
+  path.join(_localeDir, `${lang}.json`);
+const getCompiledLangPath = (lang: string): string =>
+  path.join(_localeDir, `${lang}.js`);
+const getJsonLangPath = (lang: string): string =>
+  path.join(_localeDir, `${lang}.out.json`);
+const getReactIntlLangPath = (lang: string): string =>
+  path.join(_localeDir, `${lang}.reactIntl.json`);
+function setTranslations(translations: MapOf<InternalTranslationT>) {
+  _translations = translations;
+}
 
 function initTranslations() {
   for (const lang of _config.langs) {
@@ -231,14 +259,14 @@ function initTranslations() {
   }
 }
 
-function readTranslations(lang) {
+function readTranslations(lang: string) {
   const translations = readJson(getLangPath(lang));
   if (translations) {
     _translations = timm.merge(_translations, translations);
   }
 }
 
-function saveTranslations(lang, options) {
+function saveTranslations(lang: string, options: Object) {
   const langTranslations = {};
   Object.keys(_translations).forEach((translationId) => {
     const translation = _translations[translationId];
@@ -253,7 +281,7 @@ function getTranslations() {
   return Object.keys(_translations).map((id) => _translations[id]);
 }
 
-function getLangTranslations(lang) {
+function getLangTranslations(lang: string): Array<InternalTranslationT> {
   const out = [];
   Object.keys(_translations).forEach((translationId) => {
     const translation = _translations[translationId];
@@ -264,7 +292,7 @@ function getLangTranslations(lang) {
   return out;
 }
 
-function getKeyTranslations(keyId) {
+function getKeyTranslations(keyId: string): Array<InternalTranslationT> {
   const out = [];
   Object.keys(_translations).forEach((translationId) => {
     const translation = _translations[translationId];
@@ -275,9 +303,14 @@ function getKeyTranslations(keyId) {
   return out;
 }
 
-function getTranslation(id) { return _translations[id]; }
+function getTranslation(id: string): ?InternalTranslationT {
+  return _translations[id];
+}
 
-function createTranslation(newAttrs, { story }) {
+function createTranslation(
+  newAttrs: Object,
+  { story }: { story: Object },
+): Promise {
   const { lang, translation, keyId } = newAttrs;
   if (!lang) throw new Error('Translation language must be specified');
   if (keyId == null) throw new Error('Translation key must be specified');
@@ -289,7 +322,11 @@ function createTranslation(newAttrs, { story }) {
   .then(() => _translations[id]);
 }
 
-function updateTranslation(id, newAttrs, { story }) {
+function updateTranslation(
+  id: string,
+  newAttrs: Object,
+  { story }: { story: Object },
+): Promise {
   _translations[id] = timm.merge(_translations[id], newAttrs);
   saveTranslations(_translations[id].lang, { story });
   return compileTranslations({ story })
@@ -297,7 +334,10 @@ function updateTranslation(id, newAttrs, { story }) {
   .then(() => _translations[id]);
 }
 
-function deleteTranslation(id, { story }) {
+function deleteTranslation(
+  id: string,
+  { story }: { story: Object },
+): Promise {
   const item = _translations[id];
   const { lang } = _translations[id];
   delete _translations[id];
@@ -307,7 +347,9 @@ function deleteTranslation(id, { story }) {
   .then(() => item);
 }
 
-function compileTranslations({ story: baseStory } = {}) {
+function compileTranslations(
+  { story: baseStory }: { story?: Object } = {},
+): Promise {
   const story = (baseStory || mainStory).child({ src: 'db', title: 'Compile translations' });
   const keys = _keys;
   return Promise.resolve()
@@ -353,7 +395,10 @@ function compileTranslations({ story: baseStory } = {}) {
 //   return out;
 // }
 
-function getAllTranslations(langs /* , story */) {
+function getAllTranslations(
+  langs: Array<string>,
+  /* story: Object, */
+): MapOf<Array<InternalTranslationT>> {
   // Determine lang structure
   const langStructure = {};
   const sortedLangs = langs.slice().sort();
@@ -402,7 +447,11 @@ function getAllTranslations(langs /* , story */) {
   return out;
 }
 
-function getChildrenTranslations(langStructure, lang, translations0) {
+function getChildrenTranslations(
+  langStructure: MapOf<Object>,
+  lang: string,
+  translations0: Array<InternalTranslationT>,
+): Array<InternalTranslationT> {
   let translations = translations0;
   langStructure[lang].children.forEach((childLang) => {
     translations = translations.concat(getLangTranslations(childLang));
@@ -411,7 +460,10 @@ function getChildrenTranslations(langStructure, lang, translations0) {
   return translations;
 }
 
-function getParentTranslations(langStructure, lang) {
+function getParentTranslations(
+  langStructure: MapOf<Object>,
+  lang: string,
+): Array<InternalTranslationT> {
   let out = [];
   const tokens = lang.split(/[_-]/);
   if (tokens.length < 1) return out;
@@ -425,7 +477,7 @@ function getParentTranslations(langStructure, lang) {
 // ==============================================
 // Merge keys and translations from old stores
 // ==============================================
-function importV0(dir) {
+function importV0(dir: string) {
   const story = mainStory.child({ src: 'db', title: 'Import v0' });
   const { langs, keys, translations } = importers.importV0({
     langs: _config.langs,
@@ -448,7 +500,7 @@ function importV0(dir) {
   story.close();
 }
 
-function migrateDatabase(prevDbVersion) {
+function migrateDatabase(prevDbVersion: number) {
   const story = mainStory.child({
     src: 'db',
     title: `Upgrade DB ${prevDbVersion} -> ${DB_VERSION}`,
@@ -462,14 +514,14 @@ function migrateDatabase(prevDbVersion) {
 // ==============================================
 // Helpers
 // ==============================================
-function readJson(filePath) {
+function readJson(filePath: string): any {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
 
 function saveJson(
-  filePath,
-  obj,
-  { story = mainStory } = {}
+  filePath: string,
+  obj: any,
+  { story = mainStory }: { story?: Object } = {}
 ) {
   story.debug('db', `Writing file ${chalk.cyan.bold(filePath)}...`);
   fs.writeFileSync(filePath, JSON.stringify(obj, null, '  '), 'utf8');

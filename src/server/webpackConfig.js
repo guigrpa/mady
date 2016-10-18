@@ -81,6 +81,7 @@ export default {
         'process.env.NODE_ENV': JSON.stringify(fProduction ? 'production' : 'development'),
         'process.env.SERVER_SIDE_RENDERING': JSON.stringify(fSsr),
       }),
+      /* eslint-disable no-useless-escape */
       // Replace moment's dynamic require regex: ^\.\/.*$    by...
       // new webpack.ContextReplacementPlugin(
       //   /moment[\\\/]locale$/,
@@ -91,6 +92,7 @@ export default {
         /src[\\\/]locales$/,
         new RegExp(`.[\\\/](${ourOwnLocaleFiles.join('|')})$`)
       ),
+      /* eslint-enable no-useless-escape */
     ];
     if (fSsr) {
       ret.push(new ExtractTextPlugin('[name].bundle.css'));

@@ -10,10 +10,10 @@ import {
   hoverable,
 }                           from 'giu';
 import type {
-  Viewer,
-  Key,
+  ViewerT,
+  KeyT,
   RelayContainer,
-  HoverableProps,
+  HoverablePropsT,
 }                           from '../../common/types';
 import _t                   from '../../translate';
 import { COLORS }           from '../gral/constants';
@@ -23,9 +23,9 @@ import {
 import { mutate }           from './helpers';
 import Translation          from './062-translation';
 
-// ------------------------------------------
-// Relay fragments
-// ------------------------------------------
+// ==========================================
+// Component declarations
+// ==========================================
 const fragments = {
   theKey: () => Relay.QL`
     fragment on Key {
@@ -45,38 +45,24 @@ const fragments = {
   `,
 };
 
-// ------------------------------------------
-// Component
-// ------------------------------------------
-type PublicProps = {
-  theKey: Key,
-  viewer: Viewer,
+type PublicPropsT = {
+  theKey: KeyT,
+  viewer: ViewerT,
   langs: Array<string>,
   fSelected: boolean,
   changeSelectedKey: (keyId: ?string) => void,
   styleKeyCol: Object,
   styleLangCol: Object,
 };
-type Props = PublicProps & HoverableProps;
+type PropsT = PublicPropsT & HoverablePropsT;
 
+// ==========================================
+// Component
+// ==========================================
 class TranslatorRow extends React.PureComponent {
-  props: Props;
+  props: PropsT;
 
-  // static propTypes = {
-  //   theKey:                 React.PropTypes.object.isRequired,
-  //   viewer:                 React.PropTypes.object.isRequired,
-  //   langs:                  React.PropTypes.array.isRequired,
-  //   fSelected:              React.PropTypes.bool.isRequired,
-  //   changeSelectedKey:      React.PropTypes.func.isRequired,
-  //   styleKeyCol:            React.PropTypes.object.isRequired,
-  //   styleLangCol:           React.PropTypes.object.isRequired,
-  //   // From hoverable
-  //   hovering:               React.PropTypes.bool,
-  //   onHoverStart:           React.PropTypes.func.isRequired,
-  //   onHoverStop:            React.PropTypes.func.isRequired,
-  // };
-
-  constructor(props: Props) {
+  constructor(props: PropsT) {
     super(props);
     bindAll(this, [
       'renderTranslation',
@@ -155,7 +141,7 @@ class TranslatorRow extends React.PureComponent {
   // ------------------------------------------
   onClickKeyRow() { this.props.changeSelectedKey(this.props.theKey.id); }
 
-  onClickDeleteKey(ev: Object) {
+  onClickDeleteKey(ev: Event) {
     const { viewer, theKey, fSelected, changeSelectedKey } = this.props;
     cancelEvent(ev);
     if (fSelected) changeSelectedKey(null);
@@ -211,7 +197,7 @@ const style = {
 // Public API
 // ==========================================
 const HoverableTranslatorRow = hoverable(TranslatorRow);
-const Container: RelayContainer<{}, PublicProps, any> =
+const Container: RelayContainer<{}, PublicPropsT, any> =
   Relay.createContainer(HoverableTranslatorRow, { fragments });
 export default Container;
 export { HoverableTranslatorRow as _HoverableTranslatorRow };

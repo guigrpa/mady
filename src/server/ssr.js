@@ -1,3 +1,5 @@
+// @flow
+
 import path                 from 'path';
 import fs                   from 'fs';
 import Promise              from 'bluebird';
@@ -9,52 +11,55 @@ import App                  from '../client/components/010-app';
 import { ViewerQuery }      from '../client/gral/rootQueries';
 import _t                   from '../translate';
 
-let gqlServer;
-let mainStory;
+let gqlServer: Object;
+let mainStory: Object;
 
 const SSR_CSS_PATH = path.resolve(__dirname, './ssr.bundle.css');
 const ssrCss = fs.readFileSync(SSR_CSS_PATH);
 
-function processQuery(queryRequest, idx) {
+function processQuery(queryRequest: Object, idx: number): Promise {
   mainStory.debug('ssr', `Running query #${idx}...`);
   const query = queryRequest.getQueryString();
   const vars = queryRequest.getVariables();
   return gqlServer.runQuery(query, null, null, vars)
-    .then((result) => {
-      let out;
-      if (result.errors) {
-        mainStory.error('ssr', 'SSR query failed', { attach: result.errors });
-        out = queryRequest.reject(new Error('SSR_ERROR'));
-      } else {
-        mainStory.debug('ssr', 'SSR query succeeded');
-        out = queryRequest.resolve({ response: result.data });
-      }
-      return out;
-    })
-    .catch((err) => {
-      mainStory.error('ssr', 'SSR query failed', { attach: err });
-    });
+  .then((result) => {
+    let out;
+    if (result.errors) {
+      mainStory.error('ssr', 'SSR query failed', { attach: result.errors });
+      out = queryRequest.reject(new Error('SSR_ERROR'));
+    } else {
+      mainStory.debug('ssr', 'SSR query succeeded');
+      out = queryRequest.resolve({ response: result.data });
+    }
+    return out;
+  })
+  .catch((err) => {
+    mainStory.error('ssr', 'SSR query failed', { attach: err });
+  });
 }
 
 const networkLayer = {
   sendMutation: () => Promise.resolve(),
-  sendQueries: (queryReqs) => {
+  sendQueries: (queryReqs: Array<any>): Promise => {
     mainStory.debug('ssr', `Received ${queryReqs.length} queries`);
     return Promise.all(queryReqs.map(processQuery));
   },
   supports: () => false,
 };
 
-export function init(options = {}) {
+function init(options: {
+  gqlServer: Object,
+  mainStory: Object,
+}) {
   gqlServer = options.gqlServer;
   mainStory = options.mainStory;
-  if (!gqlServer || !mainStory) {
-    throw new Error('Missing dependencies');
-  }
   mainStory.info('ssr', 'Initialised');
 }
 
-export function render(req, { fnLocales }) {
+function render(
+  req: Object,
+  { fnLocales }: { fnLocales: string },
+): Promise {
   return Promise.resolve()
   .then(() => {
     mainStory.info('ssr', 'Rendering...');
@@ -75,3 +80,11 @@ export function render(req, { fnLocales }) {
     return { ssrHtml, ssrCss, relayData };
   });
 }
+
+// ==============================================
+// Public API
+// ==============================================
+export {
+  init,
+  render,
+};
