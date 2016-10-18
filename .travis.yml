@@ -4,10 +4,12 @@ node_js:
 install:
   - npm -g install yarn
   - yarn
+before_script:
+  - export TZ=Europe/Madrid
+script: npm run travis
+after_success:
+  - 'cat ./coverage/lcov.info | ./node_modules/.bin/coveralls'
 cache:
   directories:
     - ~/.yarn
     - ~/.nvm
-script: npm run travis
-after_success:
-  - 'cat ./coverage/lcov.info | ./node_modules/.bin/coveralls'
