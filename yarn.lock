@@ -3166,7 +3166,7 @@ jest-changed-files@^16.0.0:
   version "16.0.0"
   resolved "https://registry.yarnpkg.com/jest-changed-files/-/jest-changed-files-16.0.0.tgz#7931deff4424182b8173d80e06800d7363b19c45"
 
-jest-cli@^16.0.0:
+jest-cli@^16.0.1:
   version "16.0.1"
   resolved "https://registry.yarnpkg.com/jest-cli/-/jest-cli-16.0.1.tgz#c8c48ce0d1ece34d470562105b236f4f34f39f9d"
   dependencies:
@@ -3337,11 +3337,11 @@ jest-util@^16.0.0:
     jest-mock "^16.0.0"
     mkdirp "^0.5.1"
 
-jest@16.0.0:
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/jest/-/jest-16.0.0.tgz#148a3b6b99ea8e86f72811356ac63c54808f459e"
+jest@16.0.1:
+  version "16.0.1"
+  resolved "https://registry.yarnpkg.com/jest/-/jest-16.0.1.tgz#538af80e55a96140f55a2e7d3190157eba806d61"
   dependencies:
-    jest-cli "^16.0.0"
+    jest-cli "^16.0.1"
 
 jodid25519@^1.0.0:
   version "1.0.2"
@@ -3908,16 +3908,6 @@ mkdirp@^0.5.0, mkdirp@^0.5.1, "mkdirp@>=0.5 0", mkdirp@~0.5.0, mkdirp@~0.5.1, mk
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   dependencies:
     minimist "0.0.8"
-
-moment-timezone@0.5.6:
-  version "0.5.6"
-  resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.5.6.tgz#8dcf7bb648d5dcd0f387d6bfd8f3dd9bbba16a86"
-  dependencies:
-    moment ">= 2.6.0"
-
-"moment@>= 2.6.0":
-  version "2.15.1"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.15.1.tgz#e979c2a29e22888e60f396f2220a6118f85cd94c"
 
 moment@2.14.0:
   version "2.14.0"

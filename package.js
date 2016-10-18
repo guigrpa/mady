@@ -1,4 +1,5 @@
 /* eslint-disable strict, indent, max-len, quote-props */
+
 'use strict';
 
 // ===============================================
@@ -243,10 +244,9 @@ const specs = {
     'babel-eslint': '7.0.0',
 
     // Testing
-    jest: '16.0.0',
+    jest: '16.0.1',
     'react-test-renderer': '15.3.2',
     'babel-jest': '16.0.0',
-    'moment-timezone': '0.5.6',
     nyc: '8.3.0',
     coveralls: '2.11.14',
 
