@@ -9,6 +9,7 @@ import uuid                 from 'node-uuid';
 import { base64ToUtf8 }     from '../common/base64';
 import type {
   MapOf,
+  MyPromise,
   InternalConfigT,
   InternalKeyT,
   InternalTranslationT,
@@ -110,7 +111,7 @@ function getConfig(): InternalConfigT { return _config; }
 function updateConfig(
   newAttrs: Object,
   { story }: { story: Object },
-): Promise {
+): MyPromise<InternalConfigT> {
   _config = timm.merge(_config, newAttrs);
   story.debug('db', 'New config:', { attach: _config });
   saveConfig({ story });
@@ -151,7 +152,7 @@ function getKey(id: string): ?InternalKeyT {
   return _keys[id];
 }
 
-function createKey(newAttrs: Object): Promise {
+function createKey(newAttrs: Object): MyPromise<?InternalKeyT> {
   const id = newAttrs.context != null
     ? `${newAttrs.context}_${newAttrs.text}`
     : newAttrs.text;
@@ -168,14 +169,14 @@ function createKey(newAttrs: Object): Promise {
   .then(() => _keys[id]);
 }
 
-function updateKey(id: string, newAttrs: Object): Promise {
+function updateKey(id: string, newAttrs: Object): MyPromise<?InternalKeyT> {
   _keys[id] = timm.merge(_keys[id], newAttrs);
   saveKeys();
   return compileTranslations()
   .then(() => _keys[id]);
 }
 
-function deleteKey(id: string): Promise {
+function deleteKey(id: string): MyPromise<?InternalKeyT> {
   const item = _keys[id];
   delete _keys[id];
   saveKeys();
@@ -310,7 +311,7 @@ function getTranslation(id: string): ?InternalTranslationT {
 function createTranslation(
   newAttrs: Object,
   { story }: { story: Object },
-): Promise {
+): MyPromise<?InternalTranslationT> {
   const { lang, translation, keyId } = newAttrs;
   if (!lang) throw new Error('Translation language must be specified');
   if (keyId == null) throw new Error('Translation key must be specified');
@@ -326,7 +327,7 @@ function updateTranslation(
   id: string,
   newAttrs: Object,
   { story }: { story: Object },
-): Promise {
+): MyPromise<?InternalTranslationT> {
   _translations[id] = timm.merge(_translations[id], newAttrs);
   saveTranslations(_translations[id].lang, { story });
   return compileTranslations({ story })
@@ -337,7 +338,7 @@ function updateTranslation(
 function deleteTranslation(
   id: string,
   { story }: { story: Object },
-): Promise {
+): MyPromise<?InternalTranslationT> {
   const item = _translations[id];
   const { lang } = _translations[id];
   delete _translations[id];
@@ -349,7 +350,7 @@ function deleteTranslation(
 
 function compileTranslations(
   { story: baseStory }: { story?: Object } = {},
-): Promise {
+): MyPromise<*> {
   const story = (baseStory || mainStory).child({ src: 'db', title: 'Compile translations' });
   const keys = _keys;
   return Promise.resolve()
