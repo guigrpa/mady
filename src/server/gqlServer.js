@@ -1,3 +1,5 @@
+// @flow
+
 import { mainStory }        from 'storyboard';
 import timm                 from 'timm';
 import Promise              from 'bluebird';
@@ -36,6 +38,9 @@ import {
   isUndefined,
   pick,
 }                           from 'lodash';
+import type {
+  MyPromise,
+}                           from '../common/types';
 import * as db              from './db';
 
 // ==============================================
@@ -53,10 +58,15 @@ let viewerRootField   = null;
 // ==============================================
 export function getSchema() { return gqlSchema; }
 export function getSchemaShorthand() { return printSchema(gqlSchema); }
-export function runQuery(query, operation, rootValue, variables) {
+export function runQuery(
+  query: any,
+  operation: any,
+  rootValue: any,
+  variables: any,
+) {
   return graphql(gqlSchema, query, rootValue, null, variables, operation);
 }
-export function runIntrospect() {
+export function runIntrospect(): MyPromise<Object> {
   return Promise.resolve()
   .then(() => graphql(gqlSchema, introspectionQuery))
   .then((result) => {
@@ -335,18 +345,18 @@ export function init() {
 // ==============================================
 // Relay-related helpers
 // ==============================================
-function getNodeType(node) {
+function getNodeType(node: ?Object): ?Object {
   if (!node) return null;
   return gqlTypes[node._type];
 }
 
-function getNodeFromGlobalId(globalId) {
+function getNodeFromGlobalId(globalId: ?string): ?Object {
   if (globalId == null) return null;
   const { type, id } = fromGlobalId(globalId);
   return getNodeFromTypeAndLocalId(type, id);
 }
 
-function getNodeFromTypeAndLocalId(type, localId) {
+function getNodeFromTypeAndLocalId(type: string, localId: string): ?Object {
   let out;
   switch (type) {
     case 'Viewer':
@@ -368,13 +378,13 @@ function getNodeFromTypeAndLocalId(type, localId) {
   return addTypeAttr(out, type);
 }
 
-function addTypeAttr(obj, type) {
+function addTypeAttr(obj: ?Object, type: string): ?Object {
   return obj
     ? timm.set(obj, '_type', type)
     : obj;
 }
 
-function addConnectionType(name) {
+function addConnectionType(name: string): void {
   const { connectionType, edgeType } = connectionDefinitions({
     name,
     nodeType: gqlTypes[name],
@@ -383,7 +393,29 @@ function addConnectionType(name) {
   gqlTypes[`${name}Edge`] = edgeType;
 }
 
-function addMutation(type, op, options = {}) {
+type MutationOperationT = 'CREATE' | 'UPDATE' | 'DELETE';
+type MutationParentT = {
+  type: string,
+  connection: string,
+  resolveConnection: (base: Object) => Array<Object>,
+};
+type MutationRelationT = {
+  type: string,
+  name: string,
+  resolve: (base: Object) => any,
+};
+type MutationOptionsT = {
+  fSingleton?: boolean,
+  globalIds?: Array<string>,
+  parent?: MutationParentT,
+  relations?: Array<MutationRelationT>,
+};
+
+function addMutation(
+  type: string,
+  op: MutationOperationT,
+  options?: MutationOptionsT = {},
+): void {
   const { parent } = options;
   let name;
   if (parent) {
@@ -423,7 +455,7 @@ function addMutation(type, op, options = {}) {
   // - `deletedTypeNameId` [DELETE]
   // - `typeName` [non-DELETE]
   // - `parent` [if in args, typically in CREATE/DELETE]
-  const outputFields = { viewer: viewerRootField };
+  const outputFields: Object = { viewer: viewerRootField };
   if (op === 'DELETE') {
     outputFields[`deleted${type}Id`] = {
       type: GraphQLID,
@@ -470,13 +502,40 @@ function addMutation(type, op, options = {}) {
   });
 }
 
-function mutate(type, op, mutationArgs, options, story) {
+type InnerMutationArgsT = {
+  id: string,
+  parentId: string,
+  set?: Object,
+  unset?: Array<string>,
+};
+
+type InnerMutationResultT = {
+  globalId: string,
+  localId: ?string,
+  globalParentId: string,
+  parentNode: ?Object,
+  node: ?Object,
+};
+
+function mutate(
+  type: string,
+  op: MutationOperationT,
+  mutationArgs: InnerMutationArgsT,
+  options: MutationOptionsT,
+  story: Object,
+): MyPromise<InnerMutationResultT> {
   const { id: globalId, parentId: globalParentId, set, unset } = mutationArgs;
   const localId = (op !== 'CREATE' && !options.fSingleton)
     ? fromGlobalId(globalId).id
     : null;
   const parentNode = getNodeFromGlobalId(globalParentId);
-  const result = { globalId, localId, globalParentId, parentNode };
+  const result: InnerMutationResultT = {
+    globalId,
+    localId,
+    globalParentId,
+    parentNode,
+    node: null,
+  };
   let promise;
   if (op === 'DELETE') {
     promise = db[`delete${type}`](localId, { story })
@@ -506,7 +565,10 @@ function mutate(type, op, mutationArgs, options, story) {
   return promise;
 }
 
-function mergeSetUnset(set = {}, unset = []) {
+function mergeSetUnset(
+  set: Object = {},
+  unset: Array<string> = [],
+): Object {
   const attrs = omitBy(set, isUndefined);
   for (const attr of unset) {
     attrs[attr] = null;
@@ -514,7 +576,10 @@ function mergeSetUnset(set = {}, unset = []) {
   return attrs;
 }
 
-function resolveGlobalIds(prevAttrs, globalIds = []) {
+function resolveGlobalIds(
+  prevAttrs: Object,
+  globalIds: Array<string> = [],
+): Object {
   let attrs = prevAttrs;
   if (attrs == null || !globalIds.length) return attrs;
   for (const locatorPath of globalIds) {
@@ -538,4 +603,4 @@ function resolveGlobalIds(prevAttrs, globalIds = []) {
   return attrs;
 }
 
-// function getTypePlural(type) { return `${type}s`; } // obviously, a stub
+// function getTypePlural(type: string): string { return `${type}s`; } // obviously, a stub
