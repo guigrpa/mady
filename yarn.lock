@@ -5681,9 +5681,9 @@ timm@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/timm/-/timm-1.0.0.tgz#bef2179ecc129d4004bc546c5dcb2416b5295ef8"
 
-timm@1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/timm/-/timm-1.1.1.tgz#e430f50de707842673efb83a45473eb25403f043"
+timm@1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/timm/-/timm-1.1.2.tgz#0c02cad50605c0614c068420f40f87de45e501a4"
 
 tiny-cookie@0.5.5:
   version "0.5.5"

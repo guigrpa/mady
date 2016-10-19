@@ -151,7 +151,7 @@ const specs = {
   // Deps
   // -----------------------------------------------
   dependencies: {
-    timm: '1.1.1',
+    timm: '1.1.2',
     storyboard: '2.1.2',
     lodash: '4.16.0',
     commander: '2.9.0',
