@@ -152,7 +152,7 @@ const specs = {
   // -----------------------------------------------
   dependencies: {
     timm: '1.1.2',
-    storyboard: '2.1.2',
+    storyboard: '2.2.0',
     lodash: '4.16.0',
     commander: '2.9.0',
     'node-uuid': '1.4.7',

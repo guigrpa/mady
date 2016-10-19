@@ -5493,9 +5493,9 @@ storyboard@^1.0.0, storyboard@^1.1.0:
     split "1.0.0"
     timm "0.6.1"
 
-storyboard@2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/storyboard/-/storyboard-2.1.2.tgz#04d28257d17f5e5d4b8b43176761b87b5dd7e4f5"
+storyboard@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/storyboard/-/storyboard-2.2.0.tgz#c529166ce4f93253c2a2554360e53ff07f2e4b52"
   dependencies:
     bluebird "3.4.1"
     chalk "1.x"
@@ -5510,7 +5510,7 @@ storyboard@2.1.2:
     socket.io "1.4.8"
     socket.io-client "1.4.8"
     split "1.0.0"
-    timm "1.0.0"
+    timm "1.1.2"
 
 stream-browserify@^1.0.0:
   version "1.0.0"

@@ -71,7 +71,7 @@
     "node-uuid": "1.4.7",
     "opn": "4.0.2",
     "slash": "1.0.0",
-    "storyboard": "2.1.2",
+    "storyboard": "2.2.0",
     "timm": "1.1.2",
     "uglify-js": "2.7.3"
   },
