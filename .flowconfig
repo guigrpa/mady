@@ -7,4 +7,3 @@
 
 [options]
 module.name_mapper='^\(.*\)\.sass$' -> '<PROJECT_ROOT>/tools/sass.js.flow'
-suppress_comment= \\(.\\|\n\\)*\\$FlowIssue

@@ -5,6 +5,7 @@ import UglifyJS             from 'uglify-js';
 import { chalk }            from 'storyboard';
 import type {
   MapOf,
+  StoryT,
   InternalKeyT,
   InternalTranslationT,
 }                           from '../common/types';
@@ -20,7 +21,7 @@ export default function compileTranslations({
   keys: MapOf<InternalKeyT>,
   translations: Array<InternalTranslationT>,
   fMinify?: boolean,
-  story: Object,
+  story: StoryT,
 |}): string {
   const logPrefix = `Lang ${chalk.magenta.bold(lang)}`;
 

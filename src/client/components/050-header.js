@@ -14,7 +14,7 @@ import { COLORS }           from '../gral/constants';
 // Component declarations
 // ==========================================
 type PropsT = {
-  onShowSettings: (ev?: Event) => void;
+  onShowSettings: (ev?: SyntheticEvent) => void;
 };
 
 // ==========================================

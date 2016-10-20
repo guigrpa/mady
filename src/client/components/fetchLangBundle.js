@@ -10,7 +10,7 @@ const fetchLangBundle = (
   lang: string,
   cb: (locales: MapOf<LocaleFunctionT>) => void,
 ) =>
-  // $FlowIssue Flow hates dynamic requires
+  // $FlowFixMe Flow hates dynamic requires
   require(`bundle!../../locales/${lang}.js`)(cb);
 
 export default fetchLangBundle;

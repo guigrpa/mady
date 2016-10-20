@@ -3,6 +3,7 @@
 import { chalk }            from 'storyboard';
 import type {
   MapOf,
+  StoryT,
   InternalKeyT,
   InternalTranslationT,
 }                           from '../common/types';
@@ -16,7 +17,7 @@ export default function collectJsonTranslations({
   lang: string,
   keys: MapOf<InternalKeyT>,
   translations: Array<InternalTranslationT>,
-  story: Object,
+  story: StoryT,
 |}): MapOf<InternalTranslationT> {
   const logPrefix = `Lang ${chalk.magenta.bold(lang)}`;
 

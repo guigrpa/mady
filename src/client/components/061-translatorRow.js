@@ -141,7 +141,7 @@ class TranslatorRow extends React.PureComponent {
   // ------------------------------------------
   onClickKeyRow() { this.props.changeSelectedKey(this.props.theKey.id); }
 
-  onClickDeleteKey(ev: Event) {
+  onClickDeleteKey(ev: SyntheticKeyboardEvent) {
     const { viewer, theKey, fSelected, changeSelectedKey } = this.props;
     cancelEvent(ev);
     if (fSelected) changeSelectedKey(null);

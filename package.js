@@ -81,7 +81,7 @@ const specs = {
                                   'rm -rf ./lib',
                                   'mkdir lib',
                                   'babel --out-dir lib --ignore "**/__mocks__/**","**/__tests__/**" src',
-                                  'cp src/translate.js.flow lib/'
+                                  'cp src/api.js.flow lib/'
                                 ]),
     updateSchemaJson:           'babel-node src/server/gqlUpdateSchema',
     docs:                       'extract-docs --template docs/templates/README.md --output README.md',
@@ -151,7 +151,7 @@ const specs = {
   // Deps
   // -----------------------------------------------
   dependencies: {
-    timm: '1.1.2',
+    timm: '1.1.3',
     storyboard: '2.2.0',
     lodash: '4.16.0',
     commander: '2.9.0',

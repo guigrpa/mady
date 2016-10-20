@@ -1,0 +1,6 @@
+// @flow
+
+import typeof {
+  default as Translate,
+} from '../src/translate';  // this file will be used from <PROJECT>/lib
+declare export default Translate;

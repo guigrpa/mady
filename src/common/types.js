@@ -6,9 +6,16 @@
 // Libraries
 // ========================================
 // ----------------------------------------
+// Storyboard
+// ----------------------------------------
+import type { StoryT as _StoryT } from 'storyboard/lib/storyboard.js.flow';
+
+export type StoryT = _StoryT;
+
+// ----------------------------------------
 // Bluebird
 // ----------------------------------------
-export type MyPromise<T> = Bluebird$Promise<T>;
+export type BluebirdPromise<T> = Bluebird$Promise<T>;
 
 // ----------------------------------------
 // Relay
@@ -34,8 +41,8 @@ export type RelayContainer<DefaultProps, Props, State> =
 // ----------------------------------------
 export type HoverablePropsT = {
   hovering: ?boolean,
-  onHoverStart: (ev: Event) => void,
-  onHoverStop: (ev: Event) => void,
+  onHoverStart: (ev: SyntheticEvent) => void,
+  onHoverStop: (ev: SyntheticEvent) => void,
 };
 
 // ========================================

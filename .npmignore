@@ -29,7 +29,6 @@ node_modules
 /.gitignore
 /.npmignore
 /docs/templates
-/src
 /tools
 /test
 /package.js

@@ -172,8 +172,7 @@ class Translation extends React.Component {
 
   // RETURN + modifier key (unmodified RETURNs are accepted in the textarea): ignore (will
   // be processed on keyup)
-  onKeyDown(ev: Event) {
-    if (!(ev instanceof KeyboardEvent)) return;
+  onKeyDown(ev: SyntheticKeyboardEvent) {
     if (ev.which === KEYS.enter &&
         (ev.ctrlKey || ev.altKey || ev.metaKey || ev.shiftKey)) {
       cancelEvent(ev);
@@ -182,8 +181,7 @@ class Translation extends React.Component {
 
   // ESC: revert and blur
   // RETURN + modifier key (unmodified RETURNs are accepted in the textarea): blur (and save)
-  onKeyUp(ev: Event) {
-    if (!(ev instanceof KeyboardEvent)) return;
+  onKeyUp(ev: SyntheticKeyboardEvent) {
     if (ev.which === KEYS.esc) {
       this.setState({ cmds: [{ type: 'REVERT' }, { type: 'BLUR' }] });
     } else if (ev.which === KEYS.enter &&

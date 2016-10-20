@@ -9,7 +9,8 @@ import uuid                 from 'node-uuid';
 import { base64ToUtf8 }     from '../common/base64';
 import type {
   MapOf,
-  MyPromise,
+  StoryT,
+  BluebirdPromise,
   InternalConfigT,
   InternalKeyT,
   InternalTranslationT,
@@ -110,8 +111,8 @@ function getConfig(): InternalConfigT { return _config; }
 
 function updateConfig(
   newAttrs: Object,
-  { story }: { story: Object },
-): MyPromise<InternalConfigT> {
+  { story }: { story: StoryT },
+): BluebirdPromise<InternalConfigT> {
   _config = timm.merge(_config, newAttrs);
   story.debug('db', 'New config:', { attach: _config });
   saveConfig({ story });
@@ -152,7 +153,7 @@ function getKey(id: string): ?InternalKeyT {
   return _keys[id];
 }
 
-function createKey(newAttrs: Object): MyPromise<?InternalKeyT> {
+function createKey(newAttrs: Object): BluebirdPromise<?InternalKeyT> {
   const id = newAttrs.context != null
     ? `${newAttrs.context}_${newAttrs.text}`
     : newAttrs.text;
@@ -169,14 +170,14 @@ function createKey(newAttrs: Object): MyPromise<?InternalKeyT> {
   .then(() => _keys[id]);
 }
 
-function updateKey(id: string, newAttrs: Object): MyPromise<?InternalKeyT> {
+function updateKey(id: string, newAttrs: Object): BluebirdPromise<?InternalKeyT> {
   _keys[id] = timm.merge(_keys[id], newAttrs);
   saveKeys();
   return compileTranslations()
   .then(() => _keys[id]);
 }
 
-function deleteKey(id: string): MyPromise<?InternalKeyT> {
+function deleteKey(id: string): BluebirdPromise<?InternalKeyT> {
   const item = _keys[id];
   delete _keys[id];
   saveKeys();
@@ -185,7 +186,7 @@ function deleteKey(id: string): MyPromise<?InternalKeyT> {
   .then(() => item);
 }
 
-function parseSrcFiles({ story }: { story: Object }) {
+function parseSrcFiles({ story }: { story: StoryT }) {
   const { srcPaths, srcExtensions, msgFunctionNames, msgRegexps } = _config;
   const curKeys = parse({ srcPaths, srcExtensions, msgFunctionNames, msgRegexps, story });
   const now = new Date().toISOString();
@@ -310,8 +311,8 @@ function getTranslation(id: string): ?InternalTranslationT {
 
 function createTranslation(
   newAttrs: Object,
-  { story }: { story: Object },
-): MyPromise<?InternalTranslationT> {
+  { story }: { story: StoryT },
+): BluebirdPromise<?InternalTranslationT> {
   const { lang, translation, keyId } = newAttrs;
   if (!lang) throw new Error('Translation language must be specified');
   if (keyId == null) throw new Error('Translation key must be specified');
@@ -326,8 +327,8 @@ function createTranslation(
 function updateTranslation(
   id: string,
   newAttrs: Object,
-  { story }: { story: Object },
-): MyPromise<?InternalTranslationT> {
+  { story }: { story: StoryT },
+): BluebirdPromise<?InternalTranslationT> {
   _translations[id] = timm.merge(_translations[id], newAttrs);
   saveTranslations(_translations[id].lang, { story });
   return compileTranslations({ story })
@@ -337,8 +338,8 @@ function updateTranslation(
 
 function deleteTranslation(
   id: string,
-  { story }: { story: Object },
-): MyPromise<?InternalTranslationT> {
+  { story }: { story: StoryT },
+): BluebirdPromise<?InternalTranslationT> {
   const item = _translations[id];
   const { lang } = _translations[id];
   delete _translations[id];
@@ -349,8 +350,8 @@ function deleteTranslation(
 }
 
 function compileTranslations(
-  { story: baseStory }: { story?: Object } = {},
-): MyPromise<*> {
+  { story: baseStory }: { story?: StoryT } = {},
+): BluebirdPromise<*> {
   const story = (baseStory || mainStory).child({ src: 'db', title: 'Compile translations' });
   const keys = _keys;
   return Promise.resolve()
@@ -398,7 +399,7 @@ function compileTranslations(
 
 function getAllTranslations(
   langs: Array<string>,
-  /* story: Object, */
+  /* story: StoryT, */
 ): MapOf<Array<InternalTranslationT>> {
   // Determine lang structure
   const langStructure = {};
@@ -522,7 +523,7 @@ function readJson(filePath: string): any {
 function saveJson(
   filePath: string,
   obj: any,
-  { story = mainStory }: { story?: Object } = {}
+  { story = mainStory }: { story?: StoryT } = {}
 ) {
   story.debug('db', `Writing file ${chalk.cyan.bold(filePath)}...`);
   fs.writeFileSync(filePath, JSON.stringify(obj, null, '  '), 'utf8');

@@ -263,21 +263,21 @@ class Settings extends React.Component {
   }
 
   // ------------------------------------------
-  onCreateListItem(ev: Event) {
+  onCreateListItem(ev: SyntheticEvent) {
     if (!(ev.currentTarget instanceof HTMLElement)) return;
     const { id } = ev.currentTarget;
     const newList = timm.addLast(this.state[id], '');
     this.setState({ [id]: newList });
   }
 
-  onRemoveListItem(ev: Event) {
+  onRemoveListItem(ev: SyntheticEvent) {
     if (!(ev.currentTarget instanceof HTMLElement)) return;
     const [id, idx] = ev.currentTarget.id.split('.');
     const newList = timm.removeAt(this.state[id], Number(idx));
     this.setState({ [id]: newList });
   }
 
-  onUpdateListItem(ev: Event) {
+  onUpdateListItem(ev: SyntheticEvent) {
     if (!(ev.currentTarget instanceof HTMLInputElement)) return;
     const value = ev.currentTarget.value;
     const [id, idx] = ev.currentTarget.id.split('.');

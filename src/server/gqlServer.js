@@ -39,7 +39,8 @@ import {
   pick,
 }                           from 'lodash';
 import type {
-  MyPromise,
+  StoryT,
+  BluebirdPromise,
 }                           from '../common/types';
 import * as db              from './db';
 
@@ -66,7 +67,7 @@ export function runQuery(
 ) {
   return graphql(gqlSchema, query, rootValue, null, variables, operation);
 }
-export function runIntrospect(): MyPromise<Object> {
+export function runIntrospect(): BluebirdPromise<Object> {
   return Promise.resolve()
   .then(() => graphql(gqlSchema, introspectionQuery))
   .then((result) => {
@@ -522,8 +523,8 @@ function mutate(
   op: MutationOperationT,
   mutationArgs: InnerMutationArgsT,
   options: MutationOptionsT,
-  story: Object,
-): MyPromise<InnerMutationResultT> {
+  story: StoryT,
+): BluebirdPromise<InnerMutationResultT> {
   const { id: globalId, parentId: globalParentId, set, unset } = mutationArgs;
   const localId = (op !== 'CREATE' && !options.fSingleton)
     ? fromGlobalId(globalId).id

@@ -9,6 +9,7 @@ import diveSync             from 'diveSync';
 import { utf8ToBase64 }     from '../common/base64';
 import type {
   MapOf,
+  StoryT,
   InternalKeyT,
 }                           from '../common/types';
 
@@ -75,7 +76,7 @@ const parse = ({ srcPaths, srcExtensions, msgFunctionNames, msgRegexps, story }:
   srcExtensions: Array<string>,
   msgFunctionNames: Array<string>,
   msgRegexps: Array<string>,
-  story: Object,
+  story: StoryT,
 |}): MapOf<InternalKeyT> => {
   const regexps = getRegexps(msgFunctionNames, msgRegexps);
   const keys = {};
@@ -112,7 +113,7 @@ const parseReactIntl = (
   keys: MapOf<InternalKeyT>,
   filePath: string,
   fileContents: string,
-  story: Object,
+  story: StoryT,
 ): void => {
   try {
     const { messages } = babelCore.transform(fileContents, babelConfig).metadata['react-intl'];

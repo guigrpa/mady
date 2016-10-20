@@ -279,7 +279,7 @@ class Translator extends React.PureComponent {
     this.updateLangs(nextLangs);
   }
 
-  onRemoveLang(ev: Event) {
+  onRemoveLang(ev: SyntheticEvent) {
     if (!(ev.currentTarget instanceof HTMLElement)) return;
     this.removeLang(Number(ev.currentTarget.id));
   }
@@ -288,7 +288,7 @@ class Translator extends React.PureComponent {
     this.updateLangs(nextLangs);
   }
 
-  onChangeLang(ev: Event, lang: string) {
+  onChangeLang(ev: SyntheticEvent, lang: string) {
     const prevLangs = this.state.langs;
     if (!(ev.currentTarget instanceof HTMLElement)) return;
     const idx = Number(ev.currentTarget.id);
