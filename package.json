@@ -30,7 +30,7 @@
     "start": "babel-node src/server/startup --dir src/locales",
     "startAlt": "babel-node src/server/startup --dir tools/locales",
     "startProd": "node lib/mady --dir src/locales",
-    "compile": "rm -rf ./lib && mkdir lib && babel --out-dir lib --ignore \"**/__mocks__/**\",\"**/__tests__/**\" src && cp src/api.js.flow lib/",
+    "compile": "rm -rf ./lib && mkdir lib && babel --out-dir lib --ignore \"**/__mocks__/**\",\"**/__tests__/**\" src && cp src/api.js.flow lib/translate.js.flow",
     "updateSchemaJson": "babel-node src/server/gqlUpdateSchema",
     "docs": "extract-docs --template docs/templates/README.md --output README.md",
     "buildSsrWatch": "rm -rf ./public/ssr && rm -rf ./lib/server/ssr && cross-env SERVER_SIDE_RENDERING=true webpack --config ./src/server/webpackConfig.cjs --progress --display-chunks --watch",

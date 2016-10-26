@@ -81,7 +81,7 @@ const specs = {
                                   'rm -rf ./lib',
                                   'mkdir lib',
                                   'babel --out-dir lib --ignore "**/__mocks__/**","**/__tests__/**" src',
-                                  'cp src/api.js.flow lib/'
+                                  'cp src/api.js.flow lib/translate.js.flow',
                                 ]),
     updateSchemaJson:           'babel-node src/server/gqlUpdateSchema',
     docs:                       'extract-docs --template docs/templates/README.md --output README.md',
