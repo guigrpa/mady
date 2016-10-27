@@ -54,6 +54,8 @@ type PublicPropsT = {
 };
 type PropsT = PublicPropsT;
 
+type FlexDirT = 'row' | 'column';
+
 // ==========================================
 // Component
 // ==========================================
@@ -225,7 +227,7 @@ class Settings extends React.Component {
   /* eslint-disable react/no-unused-prop-types */
   renderList({ id, dir, Component, placeholder, width }: {
     id: string,
-    dir: string,
+    dir: FlexDirT,
     Component: any,
     placeholder: string,
     width: number,
@@ -309,11 +311,13 @@ class Settings extends React.Component {
       Mutation: UpdateConfigMutation,
       props: { viewerId: viewer.id, set: set, unset: [] },
       onSuccess: () => this.props.onClose(),
-      onFailure: () => notify({
-        msg: _t('error_Configuration could not be saved'),
-        type: 'error',
-        icon: 'save',
-      }),
+      onFailure: () => {
+        notify({
+          msg: _t('error_Configuration could not be saved'),
+          type: 'error',
+          icon: 'save',
+        });
+      },
     });
     /* eslint-enable object-shorthand */
   }
@@ -325,10 +329,10 @@ const style = {
     marginTop: 7,
     marginBottom: 3,
   },
-  list: (dir) => flexContainer(dir, {
+  list: (dir: FlexDirT) => flexContainer(dir, {
     marginLeft: 15,
   }),
-  listItem: (dir) => ({
+  listItem: (dir: FlexDirT) => ({
     padding: '0px 2px',
     marginTop: dir === 'column' ? 1 : undefined,
     marginRight: 10,

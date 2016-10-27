@@ -124,7 +124,7 @@ class App extends React.Component {
   }
 
   // ------------------------------------------
-  showHint(fForce: ?boolean) {
+  showHint(fForce: boolean = false) {
     const elements = () => {
       const out = [];
       const nodeSettings = document.getElementById('madyBtnSettings');
