@@ -132,6 +132,7 @@ const specs = {
 
     // Testing - steps
     jest:                       'jest --watch --coverage',
+    'jest-html':                'jest-html',
     jestDebug:                  'node --debug-brk --inspect node_modules/.bin/jest -i',
     testCovPrepare:             runMultiple([
                                   'rm -rf ./coverage .nyc_output .nyc_tmp',
@@ -246,6 +247,7 @@ const specs = {
 
     // Testing
     jest: '16.0.1',
+    'jest-html': '0.2.1',
     'react-test-renderer': '15.3.2',
     'babel-jest': '16.0.0',
     nyc: '8.3.0',
