@@ -247,7 +247,7 @@ const specs = {
 
     // Testing
     jest: '16.0.1',
-    'jest-html': '0.2.1',
+    'jest-html': '^0.3.0',
     'react-test-renderer': '15.3.2',
     'babel-jest': '16.0.0',
     nyc: '8.3.0',
@@ -274,6 +274,7 @@ const specs = {
     },
     coverageDirectory: '.nyc_output',
     coverageReporters: ['json', 'text', 'html'],
+    snapshotSerializers: ['<rootDir>/node_modules/jest-html'],
     collectCoverageFrom: [
       'src/**/*.js',
       '!**/node_modules/**',
