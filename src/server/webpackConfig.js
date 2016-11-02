@@ -2,12 +2,14 @@ import path                 from 'path';
 import { mainStory }        from 'storyboard';
 import webpack              from 'webpack';
 import ExtractTextPlugin    from 'extract-text-webpack-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { SUPPORTED_LOCALES } from '../locales/all';
 
 const pkg                   = require('../../package.json');
 
 const fProduction = (process.env.NODE_ENV === 'production');
 const fSsr = (!!process.env.SERVER_SIDE_RENDERING);
+const fAnalyze = !!process.env.ANALYZE_BUNDLE;
 
 mainStory.info('webpack', 'Webpack configuration:', {
   attach: {
@@ -108,6 +110,9 @@ export default {
     } else if (!fSsr) {
       ret.push(new webpack.HotModuleReplacementPlugin());
       ret.push(new webpack.NoErrorsPlugin());
+    }
+    if (fAnalyze) {
+      ret.push(new BundleAnalyzerPlugin());
     }
     return ret;
   })(),

@@ -26,12 +26,13 @@ const WEBPACK_OPTIONS = '--config ./src/server/webpackConfig.cjs ' +
   '--progress ' +
   // '--display-modules ' +
   '--display-chunks';
-const runWebpack = ({ fProduction, fSsr, fWatch } = {}) => {
+const runWebpack = ({ fProduction, fSsr, fWatch, fAnalyze } = {}) => {
   const out = [`rm -rf ./public/${fSsr ? 'ssr' : 'assets'}`];
   if (fSsr) out.push('rm -rf ./lib/server/ssr');
   const env = [];
   if (fSsr) env.push('SERVER_SIDE_RENDERING=true');
   if (fProduction) env.push('NODE_ENV=production');
+  if (fAnalyze) env.push('ANALYZE_BUNDLE=true');
   const envStr = env.length ? `cross-env ${env.join(' ')} ` : '';
   const webpackOpts = `${WEBPACK_OPTIONS}${fWatch ? ' --watch' : ''}`;
   out.push(`${envStr}webpack ${webpackOpts}`);
@@ -88,6 +89,8 @@ const specs = {
     buildSsrWatch:              runWebpack({ fSsr: true, fWatch: true }),
     buildSsr:                   runWebpack({ fSsr: true, fProduction: true }),
     buildClient:                runWebpack({ fProduction: true }),
+    buildAnalysis:              runWebpack({ fAnalyze: true }),
+    buildAnalysisProd:          runWebpack({ fAnalyze: true, fProduction: true }),
     build:                      runMultiple([
                                   'node package',
                                   'npm run lint',
@@ -132,7 +135,7 @@ const specs = {
 
     // Testing - steps
     jest:                       'jest --watch --coverage',
-    'jest-html':                'jest-html',
+    'jest-html':                'jest-html --snapshot-patterns "src/**/*.snap"',
     jestDebug:                  'node --debug-brk --inspect node_modules/.bin/jest -i',
     testCovPrepare:             runMultiple([
                                   'rm -rf ./coverage .nyc_output .nyc_tmp',
@@ -226,6 +229,7 @@ const specs = {
     webpack: '1.13.2',
     'webpack-dev-middleware': '1.8.4',
     'webpack-hot-middleware': '2.13.0',
+    'webpack-bundle-analyzer': '1.3.0',
     'babel-loader': '6.2.5',
     'file-loader': '0.9.0',
     'css-loader': '0.25.0',
@@ -247,7 +251,7 @@ const specs = {
 
     // Testing
     jest: '16.0.1',
-    'jest-html': '^0.3.0',
+    'jest-html': '^0.3.3',
     'react-test-renderer': '15.3.2',
     'babel-jest': '16.0.0',
     nyc: '8.3.0',

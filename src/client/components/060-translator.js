@@ -4,10 +4,8 @@
 import timm                 from 'timm';
 import React                from 'react';
 import Relay                from 'react-relay';
-import {
-  throttle,
-  filter,
-}                           from 'lodash';
+import throttle             from 'lodash/throttle';
+import filter               from 'lodash/filter';
 import {
   bindAll,
   getScrollbarWidth,

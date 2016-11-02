@@ -3,7 +3,7 @@
 import timm                 from 'timm';
 import React                from 'react';
 import Relay                from 'react-relay';
-import { pick }             from 'lodash';
+import pick                 from 'lodash/pick';
 import {
   bindAll,
   flexContainer,
