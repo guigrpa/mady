@@ -250,10 +250,10 @@ const specs = {
     'babel-eslint': '7.0.0',
 
     // Testing
-    jest: '16.0.1',
-    'jest-html': '^0.3.3',
-    'react-test-renderer': '15.3.2',
+    jest: '16.0.2',
     'babel-jest': '16.0.0',
+    'jest-html': '^1.2.0',
+    'react-test-renderer': '15.3.2',
     nyc: '8.3.0',
     coveralls: '2.11.14',
 
