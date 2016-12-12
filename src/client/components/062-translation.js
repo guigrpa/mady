@@ -2,6 +2,7 @@
 
 import React                from 'react';
 import Relay                from 'react-relay';
+// $FlowFixMe
 import MessageFormat        from 'messageformat';
 import { mainStory }        from 'storyboard';
 import {

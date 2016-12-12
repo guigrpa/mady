@@ -5,7 +5,7 @@ import fs                   from 'fs-extra';
 import Promise              from 'bluebird';
 import timm                 from 'timm';
 import { mainStory, chalk } from 'storyboard';
-import uuid                 from 'node-uuid';
+import uuid                 from 'uuid';
 import { base64ToUtf8 }     from '../common/base64';
 import type {
   MapOf,

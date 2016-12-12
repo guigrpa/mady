@@ -3,7 +3,7 @@ import path                 from 'path';
 import timm                 from 'timm';
 import { chalk }            from 'storyboard';
 import diveSync             from 'diveSync';
-import uuid                 from 'node-uuid';
+import uuid                 from 'uuid';
 import { utf8ToBase64 }     from '../common/base64';
 
 function duplicatedTranslation(translations, newKeyId, newLang, newTranslation) {

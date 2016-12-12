@@ -1,5 +1,6 @@
 // @flow
 
+// $FlowFixMe
 import MessageFormat        from 'messageformat';
 import UglifyJS             from 'uglify-js';
 import { chalk }            from 'storyboard';

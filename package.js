@@ -155,11 +155,11 @@ const specs = {
   // Deps
   // -----------------------------------------------
   dependencies: {
-    timm: '1.1.3',
-    storyboard: '2.2.0',
+    timm: '1.2.1',
+    storyboard: '2.3.0',
     lodash: '4.16.0',
     commander: '2.9.0',
-    'node-uuid': '1.4.7',
+    'uuid': '3.0.1',
     bluebird: '3.4.6',
     'fs-extra': '0.30.0',
     'diveSync': '0.3.0',
@@ -194,16 +194,12 @@ const specs = {
     // Packaged in the client app (or SSR)
     // --------------------------
     'babel-polyfill': '6.16.0',
-    giu: '0.8.1',
-
-    // Bug yarn #629
-    chokidar: '1.6.1',
+    giu: '0.9.0',
 
     // React
-    react:                            '15.3.2',
-    'react-dom':                      '15.3.2',
-    'react-addons-perf':              '15.3.2',
-    'react-addons-pure-render-mixin': '15.3.2',  // remove when giu is upgraded!
+    react:                            '15.4.1',
+    'react-dom':                      '15.4.1',
+    'react-addons-perf':              '15.4.1',
     'react-relay': '0.9.3',
     'isomorphic-relay': '0.7.3',
     'react-intl': '2.1.5',
@@ -218,12 +214,11 @@ const specs = {
     // ---------------------
     // Babel + plugins (except babel-eslint)
     'babel-cli': '6.16.0',
-    'babel-core': '6.17.0',
+    'babel-core': '6.18.2',
     'babel-plugin-react-intl': '2.2.0',
     'babel-preset-es2015': '6.16.0',
     'babel-preset-stage-0': '6.16.0',
     'babel-preset-react': '6.16.0',
-    // 'babel-preset-react-hmre': '1.1.1', // to use Hot Module Replacement
 
     // Webpack + loaders (+ related stuff)
     webpack: '1.13.2',
@@ -250,10 +245,10 @@ const specs = {
     'babel-eslint': '7.0.0',
 
     // Testing
-    jest: '16.0.2',
-    'babel-jest': '16.0.0',
-    'jest-html': '^1.2.0',
-    'react-test-renderer': '15.3.2',
+    jest: '17.0.3',
+    'babel-jest': '17.0.2',
+    'jest-html': '^1.3.2',
+    'react-test-renderer': '15.4.1',
     nyc: '8.3.0',
     coveralls: '2.11.14',
 
@@ -261,7 +256,7 @@ const specs = {
     'extract-docs': '1.3.0',
     'xxl': '0.1.1',
     'cross-env': '2.0.1',
-    'flow-bin': '0.33.0',
+    'flow-bin': '0.36.0',
   },
 
   // -----------------------------------------------

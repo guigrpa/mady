@@ -8,7 +8,7 @@
 // ----------------------------------------
 // Storyboard
 // ----------------------------------------
-import type { StoryT as _StoryT } from 'storyboard/lib/storyboard.js.flow';
+import type { StoryT as _StoryT } from 'storyboard';
 
 export type StoryT = _StoryT;
 
@@ -41,8 +41,8 @@ export type RelayContainer<DefaultProps, Props, State> =
 // ----------------------------------------
 export type HoverablePropsT = {
   hovering: ?boolean,
-  onHoverStart: (ev: SyntheticEvent) => void,
-  onHoverStop: (ev: SyntheticEvent) => void,
+  onHoverStart: (ev: SyntheticMouseEvent) => void,
+  onHoverStop: (ev: SyntheticMouseEvent) => void,
 };
 
 // ========================================
