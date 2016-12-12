@@ -43,7 +43,22 @@ Object {
 }
 `;
 
-exports[`Source parser Custom regexp parsing should work with custom regexps and multiline strings 1`] = `Object {}`;
+exports[`Source parser Custom regexp parsing should work with custom regexps and multiline strings 1`] = `
+Object {
+  "QSB2ZXJ5CmxvbmcKc3RyaW5n": Object {
+    "context": null,
+    "firstUsed": null,
+    "id": "QSB2ZXJ5CmxvbmcKc3RyaW5n",
+    "sources": Array [
+      "FILENAME",
+    ],
+    "text": "A very
+long
+string",
+    "unusedSince": null,
+  },
+}
+`;
 
 exports[`Source parser Function parser should extract context if available 1`] = `
 Object {

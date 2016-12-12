@@ -74,7 +74,7 @@ string');
 
     it('should work with custom regexps and multiline strings', () => {
       const keys = {};
-      const regexps = getRegexps([], ['===(.*?)===']);
+      const regexps = getRegexps([], ['===([\\s\\S]*?)===']);
       parseWithRegexps(keys, 'FILENAME', `
         ===A very
 long

@@ -56,9 +56,9 @@ const getRegexps = (
       const escapedFnName = fnName.replace(/([\$])/g, '\\$1');
 
       // Looking for something like:
-      // * i18n("xk s fjkl")
-      // * i18n ( "xk s fjkl")
-      // * i18n('xk s fjkl')
+      // * i18n("xk s fjkl"   [other arguments to the function are not parsed]
+      // * i18n ( "xk s fjkl"
+      // * i18n('xk s fjkl'
       out.push(new RegExp(`${escapedFnName}\\s*\\(\\s*"([\\s\\S]*?)"`, 'gm'));
       out.push(new RegExp(`${escapedFnName}\\s*\\(\\s*'([\\s\\S]*?)'`, 'gm'));
     });

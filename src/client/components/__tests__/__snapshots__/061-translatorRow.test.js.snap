@@ -158,6 +158,37 @@ exports[`HoverableTranslatorRow renders correctly a key with translations 1`] = 
     </div>
   </div>
 </div>
+------------HTML PREVIEW---------------
+<div
+  class="tableBodyRow"
+  id="keyId2"
+  style="-webkit-flex:none;display:flex;flex:none;flex-direction:row;min-height:21px;"
+>
+  <div style="-webkit-flex:1 1 0px;background-color:white;border-bottom:1px solid #c6bdff;flex:1 1 0px;margin-right:5px;padding-bottom:1px;padding-left:5px;padding-right:17px;padding-top:1px;position:relative;">
+    <span style="font-weight:900;margin-right:10px;">
+      someContext
+    </span>
+    <span style="white-space:pre-wrap;">
+      A message
+    </span>
+  </div>
+  <div style="-webkit-flex:1 1 0px;background-color:white;border-bottom:1px solid #c6bdff;flex:1 1 0px;margin-right:5px;padding-bottom:1px;padding-left:5px;padding-right:5px;padding-top:1px;position:relative;">
+    <div
+      dataMockType="Translation"
+      lang="es"
+    >
+      Translation
+    </div>
+  </div>
+  <div style="-webkit-flex:1 1 0px;background-color:white;border-bottom:1px solid #c6bdff;flex:1 1 0px;margin-right:5px;padding-bottom:1px;padding-left:5px;padding-right:5px;padding-top:1px;position:relative;">
+    <div
+      dataMockType="Translation"
+      lang="ca"
+    >
+      Translation
+    </div>
+  </div>
+</div>
 `;
 
 exports[`HoverableTranslatorRow renders correctly a key without translations 1`] = `
@@ -278,6 +309,37 @@ exports[`HoverableTranslatorRow renders correctly a key without translations 1`]
     </div>
   </div>
 </div>
+------------HTML PREVIEW---------------
+<div
+  class="tableBodyRow"
+  id="keyId1"
+  style="-webkit-flex:none;display:flex;flex:none;flex-direction:row;min-height:21px;"
+>
+  <div style="-webkit-flex:1 1 0px;background-color:white;border-bottom:1px solid #c6bdff;flex:1 1 0px;margin-right:5px;padding-bottom:1px;padding-left:5px;padding-right:17px;padding-top:1px;position:relative;">
+    <span style="font-weight:900;margin-right:10px;">
+      someContext
+    </span>
+    <span style="white-space:pre-wrap;">
+      A message
+    </span>
+  </div>
+  <div style="-webkit-flex:1 1 0px;background-color:#d6e4ff;border-bottom:1px solid #c6bdff;flex:1 1 0px;margin-right:5px;padding-bottom:1px;padding-left:5px;padding-right:5px;padding-top:1px;position:relative;">
+    <div
+      dataMockType="Translation"
+      lang="es"
+    >
+      Translation
+    </div>
+  </div>
+  <div style="-webkit-flex:1 1 0px;background-color:#d6e4ff;border-bottom:1px solid #c6bdff;flex:1 1 0px;margin-right:5px;padding-bottom:1px;padding-left:5px;padding-right:5px;padding-top:1px;position:relative;">
+    <div
+      dataMockType="Translation"
+      lang="ca"
+    >
+      Translation
+    </div>
+  </div>
+</div>
 `;
 
 exports[`HoverableTranslatorRow renders correctly a selected key 1`] = `
@@ -394,6 +456,37 @@ exports[`HoverableTranslatorRow renders correctly a selected key 1`] = `
         }
       }
       translation={null}>
+      Translation
+    </div>
+  </div>
+</div>
+------------HTML PREVIEW---------------
+<div
+  class="tableBodyRow"
+  id="keyId1"
+  style="-webkit-flex:none;display:flex;flex:none;flex-direction:row;min-height:21px;"
+>
+  <div style="-webkit-flex:1 1 0px;background-color:#dcd6ff;border-bottom:1px solid #c6bdff;flex:1 1 0px;margin-right:5px;padding-bottom:1px;padding-left:5px;padding-right:17px;padding-top:1px;position:relative;">
+    <span style="font-weight:900;margin-right:10px;">
+      someContext
+    </span>
+    <span style="white-space:pre-wrap;">
+      A message
+    </span>
+  </div>
+  <div style="-webkit-flex:1 1 0px;background-color:#dcd6ff;border-bottom:1px solid #c6bdff;flex:1 1 0px;margin-right:5px;padding-bottom:1px;padding-left:5px;padding-right:5px;padding-top:1px;position:relative;">
+    <div
+      dataMockType="Translation"
+      lang="es"
+    >
+      Translation
+    </div>
+  </div>
+  <div style="-webkit-flex:1 1 0px;background-color:#dcd6ff;border-bottom:1px solid #c6bdff;flex:1 1 0px;margin-right:5px;padding-bottom:1px;padding-left:5px;padding-right:5px;padding-top:1px;position:relative;">
+    <div
+      dataMockType="Translation"
+      lang="ca"
+    >
       Translation
     </div>
   </div>

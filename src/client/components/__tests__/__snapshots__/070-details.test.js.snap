@@ -43,6 +43,22 @@ exports[`Details renders correctly with a selection but no data yet 1`] = `
       } />
   </div>
 </div>
+------------HTML PREVIEW---------------
+<div style="-webkit-flex:none;background-color:#dcd6ff;flex:none;margin-top:5px;min-height:110px;padding:5px;">
+  <div style="font-weight:900;letter-spacing:3px;margin-bottom:10px;text-align:center;">
+    DETAILS
+  </div>
+  <div
+    class="giu-large-message"
+    style="color:#999999;font-size:1.4em;font-weight:700;padding:0.8em;text-align:center;"
+  >
+    <i
+      class="giu-icon fa fa-circle-o-notch fa-spin"
+      style="cursor:pointer;letter-spacing:normal;"
+    >
+    </i>
+  </div>
+</div>
 `;
 
 exports[`Details renders correctly without a selection 1`] = `
@@ -79,6 +95,18 @@ exports[`Details renders correctly without a selection 1`] = `
         "textAlign": "center",
       }
     }>
+    No message selected
+  </div>
+</div>
+------------HTML PREVIEW---------------
+<div style="-webkit-flex:none;background-color:#dcd6ff;flex:none;margin-top:5px;min-height:110px;padding:5px;">
+  <div style="font-weight:900;letter-spacing:3px;margin-bottom:10px;text-align:center;">
+    DETAILS
+  </div>
+  <div
+    class="giu-large-message"
+    style="color:#999999;font-size:1.4em;font-weight:700;padding:0.8em;text-align:center;"
+  >
     No message selected
   </div>
 </div>
@@ -121,7 +149,7 @@ exports[`Details when the details for the selection are available renders correc
         }
       }
       title="Monday, April 18, 2016 7:37 AM">
-      7 months ago
+      8 months ago
     </span>
     <span>
        
@@ -135,7 +163,37 @@ exports[`Details when the details for the selection are available renders correc
           }
         }
         title="Thursday, April 21, 2016 7:37 AM">
-        7 months ago
+        8 months ago
+      </span>
+    </span>
+  </div>
+</div>
+------------HTML PREVIEW---------------
+<div style="-webkit-flex:none;background-color:#dcd6ff;flex:none;margin-top:5px;min-height:110px;padding:5px;">
+  <div style="font-weight:900;letter-spacing:3px;margin-bottom:10px;text-align:center;">
+    DETAILS
+  </div>
+  <div>
+    <div>
+      Some details
+    </div>
+    Used since
+     
+    <span
+      style="color:#444;font-weight:bold;"
+      title="Monday, April 18, 2016 7:37 AM"
+    >
+      8 months ago
+    </span>
+    <span>
+       
+      until
+       
+      <span
+        style="color:#444;font-weight:bold;"
+        title="Thursday, April 21, 2016 7:37 AM"
+      >
+        8 months ago
       </span>
     </span>
   </div>
@@ -179,7 +237,7 @@ exports[`Details when the details for the selection are available renders correc
         }
       }
       title="Monday, April 18, 2016 7:37 AM">
-      7 months ago
+      8 months ago
     </span>
     :
     <ul
@@ -188,6 +246,31 @@ exports[`Details when the details for the selection are available renders correc
           "marginTop": 0,
         }
       }>
+      <li>
+        src/client/components/060-translator.js
+      </li>
+    </ul>
+  </div>
+</div>
+------------HTML PREVIEW---------------
+<div style="-webkit-flex:none;background-color:#dcd6ff;flex:none;margin-top:5px;min-height:110px;padding:5px;">
+  <div style="font-weight:900;letter-spacing:3px;margin-bottom:10px;text-align:center;">
+    DETAILS
+  </div>
+  <div>
+    <div>
+      Some details
+    </div>
+    Used since
+     
+    <span
+      style="color:#444;font-weight:bold;"
+      title="Monday, April 18, 2016 7:37 AM"
+    >
+      8 months ago
+    </span>
+    :
+    <ul style="margin-top:0;">
       <li>
         src/client/components/060-translator.js
       </li>

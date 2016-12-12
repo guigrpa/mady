@@ -194,7 +194,7 @@ const specs = {
     // Packaged in the client app (or SSR)
     // --------------------------
     'babel-polyfill': '6.16.0',
-    giu: '0.9.0',
+    giu: '0.9.1',
 
     // React
     react:                            '15.4.1',
