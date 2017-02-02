@@ -1,7 +1,8 @@
 {
   "presets": ["es2015", "stage-0", "react"],
   "plugins": [
-    ["./src/server/babelRelayPlugin", {}]
+    ["./src/server/babelRelayPlugin", {}],
+    "syntax-dynamic-import"
   ],
   "env": {
     "test": {

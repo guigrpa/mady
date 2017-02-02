@@ -1,4 +1,5 @@
-// @flow
+// Flow is disabled, since it doesn't support import() yet.
+// Track: https://github.com/facebook/flow/issues/2968
 
 /* eslint-disable global-require, import/no-dynamic-require */
 import type {
@@ -9,8 +10,8 @@ import type {
 const fetchLangBundle = (
   lang: string,
   cb: (locales: MapOf<LocaleFunctionT>) => void,
-) =>
-  // $FlowFixMe Flow hates dynamic requires
-  require(`bundle!../../locales/${lang}.js`)(cb);
+) => {
+  import(`../../locales/${lang}.js`).then(cb);
+};
 
 export default fetchLangBundle;

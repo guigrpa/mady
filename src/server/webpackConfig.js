@@ -1,11 +1,11 @@
-import path                 from 'path';
-import { mainStory }        from 'storyboard';
-import webpack              from 'webpack';
-import ExtractTextPlugin    from 'extract-text-webpack-plugin';
+import path from 'path';
+import { mainStory } from 'storyboard';
+import webpack from 'webpack';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { SUPPORTED_LOCALES } from '../locales/all';
 
-const pkg                   = require('../../package.json');
+const pkg = require('../../package.json');
 
 const fProduction = (process.env.NODE_ENV === 'production');
 const fSsr = (!!process.env.SERVER_SIDE_RENDERING);
@@ -19,23 +19,33 @@ mainStory.info('webpack', 'Webpack configuration:', {
   },
 });
 
-const _entry = (file) => (
+const entry = (file) => (
   (fProduction || fSsr) ? [file]
                         : ['webpack-hot-middleware/client?reload=true', file]
 );
 
-const _styleLoader = (loaderDesc) => (
-  fSsr ? ExtractTextPlugin.extract('style-loader', loaderDesc)
-       : `style!${loaderDesc}`
-);
+const cssLoader = {
+  loader: 'css-loader',
+  options: { minimize: fProduction },
+};
+
+const sassLoader = {
+  loader: 'sass-loader',
+  options: { indentedSyntax: true },
+};
+
+const styleRules = (loaders) => {
+  if (fSsr) return ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: loaders });
+  return [{ loader: 'style-loader' }].concat(loaders);
+};
 
 export default {
 
   // -------------------------------------------------
   // Input (entry point)
   // -------------------------------------------------
-  entry: fSsr ? { ssr: _entry('./src/server/ssr.js') }
-              : { app: _entry('./src/client/startup.js') },
+  entry: fSsr ? { ssr: entry('./src/server/ssr.js') }
+              : { app: entry('./src/client/startup.js') },
 
   // -------------------------------------------------
   // Output
@@ -66,7 +76,7 @@ export default {
 
   resolve: {
     // Add automatically the following extensions to required modules
-    extensions: ['', '.jsx', '.js'],
+    extensions: ['.jsx', '.js'],
   },
 
   plugins: (() => {
@@ -99,17 +109,11 @@ export default {
     if (fSsr) {
       ret.push(new ExtractTextPlugin('[name].bundle.css'));
     }
-    const langsDesc = SUPPORTED_LOCALES.join(', ');
-    mainStory.warn('webpack',
-      `Please check that the supported langs for moment.js are correct: ${langsDesc}`);
     if (fProduction) {
-      ret.push(new webpack.optimize.UglifyJsPlugin({
-        compress: { warnings: false },
-        sourceMap: false,
-      }));
+      ret.push(new webpack.optimize.UglifyJsPlugin());
     } else if (!fSsr) {
       ret.push(new webpack.HotModuleReplacementPlugin());
-      ret.push(new webpack.NoErrorsPlugin());
+      ret.push(new webpack.NoEmitOnErrorsPlugin());
     }
     if (fAnalyze) {
       ret.push(new BundleAnalyzerPlugin());
@@ -118,25 +122,22 @@ export default {
   })(),
 
   module: {
-    loaders: [{
+    rules: [{
       test: /\.(js|jsx)$/,
-      loader: 'babel',
+      loader: 'babel-loader',
       exclude: path.resolve(process.cwd(), 'node_modules'),
     }, {
       test: /\.(otf|eot|svg|ttf|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      loader: 'file',
+      loader: 'file-loader',
     }, {
       test: /\.css$/,
-      loader: _styleLoader('css'),
+      use: styleRules([cssLoader]),
     }, {
       test: /\.sass$/,
-      loader: _styleLoader('css!sass?indentedSyntax'),
+      use: styleRules([cssLoader, sassLoader]),
     }, {
       test: /\.png$/,
-      loader: 'file',
-    }, {
-      test: /\.json$/,
-      loader: 'json',
+      loader: 'file-loader',
     }],
   },
 };

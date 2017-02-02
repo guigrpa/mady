@@ -110,7 +110,7 @@ const specs = {
     // Static analysis
     lint:                       'eslint src',
     flow:                       'flow check || exit 0',
-    xxl:                        "xxl --src \"[\\\"src\\\"]\"",  // eslint-disable-line quotes
+    xxl:                        'xxl',
 
     // Testing - general
     test:                       'npm run testCovFull',
@@ -156,7 +156,7 @@ const specs = {
   // -----------------------------------------------
   dependencies: {
     timm: '1.2.1',
-    storyboard: '2.3.0',
+    storyboard: '2.3.1',
     lodash: '4.16.0',
     commander: '2.9.0',
     'uuid': '3.0.1',
@@ -194,7 +194,7 @@ const specs = {
     // Packaged in the client app (or SSR)
     // --------------------------
     'babel-polyfill': '6.16.0',
-    giu: '0.9.1',
+    giu: '0.9.2',
 
     // React
     react:                            '15.4.1',
@@ -213,27 +213,28 @@ const specs = {
     // Pure dev dependencies
     // ---------------------
     // Babel + plugins (except babel-eslint)
-    'babel-cli': '6.16.0',
-    'babel-core': '6.18.2',
+    'babel-cli': '6.22.2',
+    'babel-core': '6.22.1',
     'babel-plugin-react-intl': '2.2.0',
-    'babel-preset-es2015': '6.16.0',
-    'babel-preset-stage-0': '6.16.0',
-    'babel-preset-react': '6.16.0',
+    'babel-plugin-syntax-dynamic-import': '6.18.0',
+    'babel-preset-es2015': '6.22.0',
+    'babel-preset-stage-0': '6.22.0',
+    'babel-preset-react': '6.22.0',
 
     // Webpack + loaders (+ related stuff)
-    webpack: '1.13.2',
-    'webpack-dev-middleware': '1.8.4',
-    'webpack-hot-middleware': '2.13.0',
-    'webpack-bundle-analyzer': '1.3.0',
-    'babel-loader': '6.2.5',
-    'file-loader': '0.9.0',
-    'css-loader': '0.25.0',
+    webpack: '2.2.1',
+    'webpack-dev-middleware': '1.9.0',
+    'webpack-hot-middleware': '2.16.1',
+    'webpack-bundle-analyzer': '2.2.1',
+    'babel-loader': '6.2.10',
+    'file-loader': '0.10.0',
+    'css-loader': '0.26.1',
     'style-loader': '0.13.1',
-    'json-loader': '0.5.4',
+    // 'json-loader': '0.5.4',
     'bundle-loader': '0.5.4',
-    'sass-loader': '4.0.2',
-    'node-sass': '3.10.1',
-    'extract-text-webpack-plugin': '1.0.1',
+    'sass-loader': '4.1.1',
+    'node-sass': '4.5.0',
+    'extract-text-webpack-plugin': '2.0.0-rc.2',
 
     // Linting
     eslint: '3.8.1',
@@ -242,19 +243,19 @@ const specs = {
     'eslint-plugin-import': '1.16.0',
     'eslint-plugin-jsx-a11y': '2.2.3',
     'eslint-plugin-react': '6.4.1',
-    'babel-eslint': '7.0.0',
+    'babel-eslint': '7.1.1',
 
     // Testing
-    jest: '17.0.3',
-    'babel-jest': '17.0.2',
+    jest: '18.1.0',
+    'babel-jest': '18.0.0',
     'jest-html': '^1.3.2',
     'react-test-renderer': '15.4.1',
     nyc: '8.3.0',
     coveralls: '2.11.14',
 
     // Other tools
-    'extract-docs': '1.3.0',
-    'xxl': '0.1.1',
+    'extract-docs': '1.4.0',
+    'xxl': '1.0.0',
     'cross-env': '2.0.1',
     'flow-bin': '0.36.0',
   },
@@ -285,6 +286,7 @@ const specs = {
       '!src/mady.js',
       '!src/server/importData.js',
       '!src/client/components/999-reactIntlExample.js',
+      '!src/client/components/fetchLangBundle.js',
     ],
     setupTestFrameworkScriptFile: './test/setup.js',
   },
