@@ -2,6 +2,10 @@
 
 [M] major, [m] minor
 
+## 2.1.0 (February 2, 2017)
+
+* [Internal] Now built with Webpack 2
+
 ## 2.0.0 (October 7, 2016)
 
 * **(Minor) breaking change**: Mady no longer looks for a `.madyrc` file at your project root. This file only contained two parameters (the rest of Mady's configuration being stored in the `<locales>/config.json` file): a port number (which for Mady's purposes is not so important) and the relative path to the locales folder. The relative path should now be passed in with the CLI `--dir` argument, instead of via `.madyrc`.
