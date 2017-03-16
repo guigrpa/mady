@@ -1,6 +1,6 @@
 {
   "name": "mady",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Easy-to-use tool to manage and translate ICU MessageFormat messages",
   "bin": {
     "mady": "lib/mady.js"
@@ -73,7 +73,9 @@
     "messageformat": "1.0.2",
     "opn": "4.0.2",
     "slash": "1.0.0",
-    "storyboard": "2.3.1",
+    "storyboard": "^3.0.0",
+    "storyboard-listener-console": "^3.0.0",
+    "storyboard-listener-ws-server": "^3.0.0",
     "timm": "1.2.1",
     "uglify-js": "2.7.3",
     "uuid": "3.0.1"
@@ -126,6 +128,8 @@
     "react-relay": "0.9.3",
     "react-test-renderer": "15.4.1",
     "sass-loader": "4.1.1",
+    "storyboard-listener-browser-extension": "^3.0.0",
+    "storyboard-listener-ws-client": "^3.0.0",
     "style-loader": "0.13.1",
     "tiny-cookie": "0.5.5",
     "tinycolor2": "1.4.1",

@@ -4,8 +4,8 @@ import path                 from 'path';
 import http                 from 'http';
 import Promise              from 'bluebird';
 import { cloneDeep }        from 'lodash';
-import storyboard           from 'storyboard';
-import wsServerListener     from 'storyboard/lib/listeners/wsServer';
+import { mainStory, chalk, addListener } from 'storyboard';
+import wsServerListener     from 'storyboard-listener-ws-server';
 import express              from 'express';
 import graphqlHttp          from 'express-graphql';
 import ejs                  from 'ejs';
@@ -15,7 +15,6 @@ import addAllLocales, { getReactIntlMessages } from '../locales/all';
 import _t                   from '../translate';
 import * as gqlServer       from './gqlServer';
 
-const { mainStory, chalk } = storyboard;
 let webpack;
 let webpackDevMiddleware;
 let webpackHotMiddleware;
@@ -151,7 +150,7 @@ function init(options: {|
   const httpServer = http.createServer(expressApp);
 
   // Storyboard
-  storyboard.addListener(wsServerListener, { httpServer });
+  addListener(wsServerListener, { httpServer });
 
   // Look for a suitable port and start listening
   let port = options.port;

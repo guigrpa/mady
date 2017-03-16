@@ -6,7 +6,7 @@
 // Basic config
 // ===============================================
 const NAME = 'mady';
-const VERSION = '2.1.0';
+const VERSION = '2.2.0';
 const DESCRIPTION = 'Easy-to-use tool to manage and translate ICU MessageFormat messages';
 const KEYWORDS = ['i18n', 'MessageFormat', 'translation', 'locales', 'translator'];
 
@@ -156,7 +156,9 @@ const specs = {
   // -----------------------------------------------
   dependencies: {
     timm: '1.2.1',
-    storyboard: '2.3.1',
+    storyboard: '^3.0.0',
+    'storyboard-listener-console': '^3.0.0',
+    'storyboard-listener-ws-server': '^3.0.0',
     lodash: '4.16.0',
     commander: '2.9.0',
     'uuid': '3.0.1',
@@ -195,6 +197,9 @@ const specs = {
     // --------------------------
     'babel-polyfill': '6.16.0',
     giu: '0.9.2',
+
+    'storyboard-listener-browser-extension': '^3.0.0',
+    'storyboard-listener-ws-client': '^3.0.0',
 
     // React
     react:                            '15.4.1',

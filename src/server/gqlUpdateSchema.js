@@ -3,7 +3,7 @@
 import fs                   from 'fs-extra';
 import path                 from 'path';
 import { addListener, mainStory, chalk } from 'storyboard';
-import consoleListener      from 'storyboard/lib/listeners/console';
+import consoleListener      from 'storyboard-listener-console';
 import Promise              from 'bluebird';
 import * as gqlServer       from './gqlServer';
 

@@ -8,8 +8,8 @@ import {
   mainStory,
   addListener,
 }                           from 'storyboard';
-import wsClient             from 'storyboard/lib/listeners/wsClient';
-import browserExtension     from 'storyboard/lib/listeners/browserExtension';
+import wsClient             from 'storyboard-listener-ws-client';
+import browserExtension     from 'storyboard-listener-browser-extension';
 import React                from 'react';
 import ReactDOM             from 'react-dom';
 import Relay                from 'react-relay';

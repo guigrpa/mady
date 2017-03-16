@@ -2,7 +2,7 @@
 
 import Promise              from 'bluebird';
 import { mainStory, addListener } from 'storyboard';
-import consoleListener      from 'storyboard/lib/listeners/console';
+import consoleListener      from 'storyboard-listener-console';
 import program              from 'commander';
 import opn                  from 'opn';
 import * as db              from './db';
