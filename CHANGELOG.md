@@ -1,6 +1,4 @@
-# Changelog
-
-[M] major, [m] minor
+* Allow selection of message keys.
 
 ## 2.1.0 (February 2, 2017)
 
