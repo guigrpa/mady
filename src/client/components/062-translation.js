@@ -262,6 +262,7 @@ const style = {
   outer: {
     paddingRight: 40,
     marginBottom: -2,
+    position: 'relative',
   },
   textareaBase: ({ fEditing }) => ({
     padding: 0,
@@ -279,10 +280,16 @@ const style = {
     marginLeft: 5,
   },
   help: {
-    marginTop: 1,
-    marginBottom: 2,
-    fontStyle: 'italic',
-    color: COLORS.dim,
+    position: 'absolute',
+    bottom: '100%',
+    right: -5,
+    margin: '0 0 2px 0',
+    padding: '0px 4px',
+    background: COLORS.darkest,
+    maxWidth: 190,
+    fontSize: '0.9em',
+    color: 'white',
+    textAlign: 'right',
   },
 };
 
