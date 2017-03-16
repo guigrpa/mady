@@ -469,5 +469,15 @@
     "sources": [
       "src/client/components/080-settings.js"
     ]
+  },
+  "dG9vbHRpcF9EdWJpb3VzIHRyYW5zbGF0aW9uIChjbGljayB0byB0b2dnbGUp": {
+    "id": "dG9vbHRpcF9EdWJpb3VzIHRyYW5zbGF0aW9uIChjbGljayB0byB0b2dnbGUp",
+    "context": "tooltip",
+    "text": "Dubious translation (click to toggle)",
+    "firstUsed": "2017-03-16T10:27:42.449Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/062-translation.js"
+    ]
   }
 }

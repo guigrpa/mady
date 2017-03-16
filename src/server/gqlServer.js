@@ -255,6 +255,7 @@ export function init() {
       id:             globalIdField('Translation'),
       lang:           { type: GraphQLString },
       translation:    { type: GraphQLString },
+      fuzzy:          { type: GraphQLBoolean },
       keyId:          { type: GraphQLID, resolve: (o) => toGlobalId('Key', o.keyId) },
     }),
   });
@@ -264,6 +265,7 @@ export function init() {
     fields: () => ({
       lang:           { type: GraphQLString },
       translation:    { type: GraphQLString },
+      fuzzy:          { type: GraphQLBoolean },
       keyId:          { type: GraphQLID },
     }),
   });
@@ -272,6 +274,7 @@ export function init() {
     name: 'TranslationUpdate',
     fields: () => ({
       translation:    { type: GraphQLString },
+      fuzzy:          { type: GraphQLBoolean },
     }),
   });
 

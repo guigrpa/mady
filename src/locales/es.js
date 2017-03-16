@@ -83,7 +83,8 @@ return {
   c2V0dGluZ3NGb3JtX01pbmlmaWVk: function(d) { return "Minificado"; },
   c2V0dGluZ3NGb3JtX1JlYWN0IEludGwgSlNPTiBmaWxl: function(d) { return "Fichero JSON para React Intl"; },
   "c2V0dGluZ3NGb3JtX091dHB1dDo=": function(d) { return "Ficheros de salida:"; },
-  c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cCwgZm9yIGV4YW1wbGU6ICguKj8p: function(d) { return "Asegúrate de que la expresión regular tiene exactamente un grupo de captura, por ejemplo: (.*?)"; }
+  c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cCwgZm9yIGV4YW1wbGU6ICguKj8p: function(d) { return "Asegúrate de que la expresión regular tiene exactamente un grupo de captura, por ejemplo: (.*?)"; },
+  dG9vbHRpcF9EdWJpb3VzIHRyYW5zbGF0aW9uIChjbGljayB0byB0b2dnbGUp: function(d) { return "Traducción dudosa (haz clic para cambiar)"; }
 }
 };
 module.exports = anonymous();

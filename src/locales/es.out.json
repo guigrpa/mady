@@ -43,5 +43,6 @@
   "settingsForm_Minified": "Minificado",
   "settingsForm_React Intl JSON file": "Fichero JSON para React Intl",
   "settingsForm_Output:": "Ficheros de salida:",
-  "settingsForm_Make sure your regular expression has exactly one capture group, for example: (.*?)": "Asegúrate de que la expresión regular tiene exactamente un grupo de captura, por ejemplo: (.*?)"
+  "settingsForm_Make sure your regular expression has exactly one capture group, for example: (.*?)": "Asegúrate de que la expresión regular tiene exactamente un grupo de captura, por ejemplo: (.*?)",
+  "tooltip_Dubious translation (click to toggle)": "Traducción dudosa (haz clic para cambiar)"
 }

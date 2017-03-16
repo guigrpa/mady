@@ -45,6 +45,7 @@
     "id": "b65dd268-dfd0-4782-a714-2be834737fb3",
     "lang": "ca",
     "translation": "Esborrar missatge (NO esborra cap traducció)",
+    "fuzzy": false,
     "keyId": "dG9vbHRpcF9EZWxldGUgbWVzc2FnZSAoZG9lcyBOT1QgZGVsZXRlIGFueSB0cmFuc2xhdGlvbnMp"
   },
   "ca1e9119-70ec-4355-b26e-dca5dd6860bb": {
@@ -225,7 +226,8 @@
     "id": "ae2c5503-3f04-45c2-a2ba-f1ea6958c88d",
     "lang": "ca",
     "translation": "Funcions de traducció de missatges a buscar:",
-    "keyId": "c2V0dGluZ3NGb3JtX01lc3NhZ2UgdHJhbnNsYXRpb24gZnVuY3Rpb25zIHRvIGxvb2sgZm9yOg=="
+    "keyId": "c2V0dGluZ3NGb3JtX01lc3NhZ2UgdHJhbnNsYXRpb24gZnVuY3Rpb25zIHRvIGxvb2sgZm9yOg==",
+    "fuzzy": false
   },
   "f8100fb6-3e76-423b-b2ab-57354fbe04da": {
     "id": "f8100fb6-3e76-423b-b2ab-57354fbe04da",
@@ -279,7 +281,8 @@
     "id": "4163fb6d-6478-4380-ab69-d76878c6a987",
     "lang": "ca",
     "translation": "Minificat",
-    "keyId": "c2V0dGluZ3NGb3JtX01pbmlmaWVk"
+    "keyId": "c2V0dGluZ3NGb3JtX01pbmlmaWVk",
+    "fuzzy": false
   },
   "be607901-9c42-4a09-9731-50f502861ed2": {
     "id": "be607901-9c42-4a09-9731-50f502861ed2",
@@ -298,5 +301,12 @@
     "lang": "ca",
     "translation": "Assegura't que l'expressió regular té exactament un grup de captura, per exemple: (.*?)",
     "keyId": "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cCwgZm9yIGV4YW1wbGU6ICguKj8p"
+  },
+  "2d35994c-d5bb-4677-b2ef-4caad3d05b2b": {
+    "id": "2d35994c-d5bb-4677-b2ef-4caad3d05b2b",
+    "lang": "ca",
+    "translation": "Traducció dubtosa (fes clic per canviar)",
+    "keyId": "dG9vbHRpcF9EdWJpb3VzIHRyYW5zbGF0aW9uIChjbGljayB0byB0b2dnbGUp",
+    "fuzzy": true
   }
 }

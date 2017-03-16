@@ -54,7 +54,7 @@ const fragments = {
   translation: () => Relay.QL`
     fragment on Translation {
       id
-      lang, translation
+      lang, translation, fuzzy
     }
   `,
 };
@@ -123,8 +123,19 @@ class Translation extends React.Component {
   }
 
   renderButtons() {
-    if (!this.state.fEditing && !this.props.hovering) return null;
     const { translation } = this.props;
+    const interactedWith = this.state.fEditing || this.props.hovering;
+    const elFuzzy = translation && (interactedWith || translation.fuzzy)
+      ? (
+        <Icon
+          icon="warning"
+          title={_t('tooltip_Dubious translation (click to toggle)')}
+          onClick={translation ? this.onClickFuzzy : undefined}
+          style={style.iconFuzzy({ button: interactedWith, active: translation.fuzzy })}
+        />
+      )
+      : null;
+    if (!interactedWith) return elFuzzy ? <div style={style.buttons}>{elFuzzy}</div> : null;
     const elDelete = translation
       ? <Icon
           icon="remove"
@@ -142,6 +153,7 @@ class Translation extends React.Component {
           style={style.iconButton}
         />
         {elDelete}
+        {elFuzzy}
       </div>
     );
   }
@@ -239,6 +251,18 @@ class Translation extends React.Component {
     });
   }
 
+  onClickFuzzy = () => {
+    if (!this.props.translation) return;
+    mutate({
+      description: 'Toggle translation fuzziness',
+      Mutation: UpdateTranslationMutation,
+      props: {
+        id: this.props.translation.id,
+        set: { fuzzy: !this.props.translation.fuzzy },
+      },
+    });
+  }
+
   onHoverHelp = () => {
     this.setState({ dismissedHelp: true });
   }
@@ -257,7 +281,7 @@ class Translation extends React.Component {
 // ------------------------------------------
 const style = {
   outer: {
-    paddingRight: 40,
+    paddingRight: 56,
     marginBottom: -2,
     position: 'relative',
   },
@@ -276,6 +300,12 @@ const style = {
   iconButton: {
     marginLeft: 5,
   },
+  iconFuzzy: ({ button, active }) => ({
+    marginLeft: 5,
+    color: button
+      ? (active ? 'black' : COLORS.dim)
+      : 'orange',
+  }),
   help: {
     position: 'absolute',
     bottom: '100%',

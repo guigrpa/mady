@@ -313,11 +313,11 @@ function createTranslation(
   newAttrs: Object,
   { story }: { story: StoryT },
 ): BluebirdPromise<?InternalTranslationT> {
-  const { lang, translation, keyId } = newAttrs;
+  const { lang, translation, fuzzy, keyId } = newAttrs;
   if (!lang) throw new Error('Translation language must be specified');
   if (keyId == null) throw new Error('Translation key must be specified');
   const id = uuid.v4();
-  _translations[id] = { id, lang, translation, keyId };
+  _translations[id] = { id, lang, translation, fuzzy, keyId };
   saveTranslations(lang, { story });
   return compileTranslations({ story })
   .delay(RESPONSE_DELAY)

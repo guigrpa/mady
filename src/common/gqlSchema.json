@@ -921,6 +921,18 @@
               "deprecationReason": null
             },
             {
+              "name": "fuzzy",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "keyId",
               "description": null,
               "args": [],
@@ -2112,6 +2124,16 @@
               "defaultValue": null
             },
             {
+              "name": "fuzzy",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "keyId",
               "description": null,
               "type": {
@@ -2396,6 +2418,16 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "fuzzy",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
                 "ofType": null
               },
               "defaultValue": null

@@ -40,5 +40,6 @@
   "settingsForm_Minified": "Minificat",
   "settingsForm_React Intl JSON file": "Fitxer JSON per a React Intl",
   "settingsForm_Output:": "Fitxers de sortida:",
-  "settingsForm_Make sure your regular expression has exactly one capture group, for example: (.*?)": "Assegura't que l'expressió regular té exactament un grup de captura, per exemple: (.*?)"
+  "settingsForm_Make sure your regular expression has exactly one capture group, for example: (.*?)": "Assegura't que l'expressió regular té exactament un grup de captura, per exemple: (.*?)",
+  "tooltip_Dubious translation (click to toggle)": "Traducció dubtosa (fes clic per canviar)"
 }

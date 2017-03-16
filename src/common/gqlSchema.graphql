@@ -196,6 +196,7 @@ type Translation implements Node {
   id: ID!
   lang: String
   translation: String
+  fuzzy: Boolean
   keyId: ID
 }
 
@@ -211,6 +212,7 @@ type TranslationConnection {
 input TranslationCreate {
   lang: String
   translation: String
+  fuzzy: Boolean
   keyId: ID
 }
 
@@ -225,6 +227,7 @@ type TranslationEdge {
 
 input TranslationUpdate {
   translation: String
+  fuzzy: Boolean
 }
 
 input UpdateConfigInput {

@@ -96,6 +96,7 @@ export type TranslationT = {
   id: string,
   lang: string,
   translation: string,
+  fuzzy: ?boolean,
   keyId: string,
 };
 
