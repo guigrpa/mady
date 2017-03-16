@@ -255,7 +255,7 @@ const specs = {
 
     // Other tools
     'extract-docs': '1.4.0',
-    'xxl': '1.0.0',
+    'xxl': '^1.2.0',
     'cross-env': '2.0.1',
     'flow-bin': '0.36.0',
   },
