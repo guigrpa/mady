@@ -1,4 +1,5 @@
 * Allow selection of message keys.
+* Improve usability of Translation help (float instead of inline; hide on hover).
 
 ## 2.1.0 (February 2, 2017)
 

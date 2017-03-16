@@ -5,7 +5,7 @@ import Relay                from 'react-relay';
 import MessageFormat        from 'messageformat';
 import { mainStory }        from 'storyboard';
 import {
-  bindAll, cancelEvent,
+  cancelEvent,
   Icon, Textarea,
   KEYS,
   hoverable,
@@ -82,16 +82,9 @@ class Translation extends React.Component {
     super(props);
     this.state = {
       fEditing: false,
+      dismissedHelp: false,
       cmds: [],
     };
-    bindAll(this, [
-      'onFocus',
-      'onBlur',
-      'onKeyDown',
-      'onKeyUp',
-      'onMouseDownCopyKey',
-      'onClickDelete',
-    ]);
   }
 
   // ------------------------------------------
@@ -154,9 +147,9 @@ class Translation extends React.Component {
   }
 
   renderHelp() {
-    if (!this.state.fEditing) return null;
+    if (!this.state.fEditing || this.state.dismissedHelp) return null;
     return (
-      <div style={style.help}>
+      <div onMouseEnter={this.onHoverHelp} style={style.help}>
         {_t('translationHelp_Click outside or TAB to save. ESC to undo.')}
       </div>
     );
@@ -165,14 +158,14 @@ class Translation extends React.Component {
   // ------------------------------------------
   // Handlers
   // ------------------------------------------
-  onFocus() {
-    this.setState({ fEditing: true });
+  onFocus = () => {
+    this.setState({ fEditing: true, dismissedHelp: false });
     this.props.changeSelectedKey(this.props.theKey.id);
   }
 
   // RETURN + modifier key (unmodified RETURNs are accepted in the textarea): ignore (will
   // be processed on keyup)
-  onKeyDown(ev: SyntheticKeyboardEvent) {
+  onKeyDown = (ev: SyntheticKeyboardEvent) => {
     if (ev.which === KEYS.enter &&
         (ev.ctrlKey || ev.altKey || ev.metaKey || ev.shiftKey)) {
       cancelEvent(ev);
@@ -181,7 +174,7 @@ class Translation extends React.Component {
 
   // ESC: revert and blur
   // RETURN + modifier key (unmodified RETURNs are accepted in the textarea): blur (and save)
-  onKeyUp(ev: SyntheticKeyboardEvent) {
+  onKeyUp = (ev: SyntheticKeyboardEvent) => {
     if (ev.which === KEYS.esc) {
       this.setState({ cmds: [{ type: 'REVERT' }, { type: 'BLUR' }] });
     } else if (ev.which === KEYS.enter &&
@@ -190,7 +183,7 @@ class Translation extends React.Component {
     }
   }
 
-  onBlur() {
+  onBlur = () => {
     this.setState({ fEditing: false });
     if (!this.refInput) {
       mainStory.warn('translation', 'Could not save translation');
@@ -225,7 +218,7 @@ class Translation extends React.Component {
     });
   }
 
-  onMouseDownCopyKey() {
+  onMouseDownCopyKey = () => {
     this.setState({
       cmds: [
         { type: 'SET_VALUE', value: this.props.theKey.text },
@@ -234,7 +227,7 @@ class Translation extends React.Component {
     });
   }
 
-  onClickDelete() {
+  onClickDelete = () => {
     if (!this.props.translation) return;
     mutate({
       description: 'Click on Delete translation',
@@ -244,6 +237,10 @@ class Translation extends React.Component {
         keyId: this.props.theKey.id,
       },
     });
+  }
+
+  onHoverHelp = () => {
+    this.setState({ dismissedHelp: true });
   }
 
   // ------------------------------------------
