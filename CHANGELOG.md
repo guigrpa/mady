@@ -1,3 +1,5 @@
+## 2.2.0 (March 16, 2017)
+
 * **Flag translations as dubious**.
 * Allow selection of message keys.
 * Improve usability of Translation help (float instead of inline; hide on hover).
