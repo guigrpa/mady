@@ -17,7 +17,8 @@ exports[`HoverableTranslation renders correctly with translation 1`] = `
     style={
       Object {
         "marginBottom": -2,
-        "paddingRight": 40,
+        "paddingRight": 56,
+        "position": "relative",
       }
     }>
     <div
@@ -89,7 +90,7 @@ exports[`HoverableTranslation renders correctly with translation 1`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
-  <div style="margin-bottom:-2px;padding-right:40px;">
+  <div style="margin-bottom:-2px;padding-right:56px;position:relative;">
     <div
       class="giu-textarea"
       style="position:relative;"
@@ -125,7 +126,8 @@ exports[`HoverableTranslation renders correctly without translation 1`] = `
     style={
       Object {
         "marginBottom": -2,
-        "paddingRight": 40,
+        "paddingRight": 56,
+        "position": "relative",
       }
     }>
     <div
@@ -197,7 +199,7 @@ exports[`HoverableTranslation renders correctly without translation 1`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
-  <div style="margin-bottom:-2px;padding-right:40px;">
+  <div style="margin-bottom:-2px;padding-right:56px;position:relative;">
     <div
       class="giu-textarea"
       style="position:relative;"

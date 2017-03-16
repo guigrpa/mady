@@ -149,7 +149,7 @@ exports[`Details when the details for the selection are available renders correc
         }
       }
       title="Monday, April 18, 2016 7:37 AM">
-      10 months ago
+      a year ago
     </span>
     <span>
        
@@ -163,7 +163,7 @@ exports[`Details when the details for the selection are available renders correc
           }
         }
         title="Thursday, April 21, 2016 7:37 AM">
-        9 months ago
+        a year ago
       </span>
     </span>
   </div>
@@ -183,7 +183,7 @@ exports[`Details when the details for the selection are available renders correc
       style="color:#444;font-weight:bold;"
       title="Monday, April 18, 2016 7:37 AM"
     >
-      10 months ago
+      a year ago
     </span>
     <span>
        
@@ -193,7 +193,7 @@ exports[`Details when the details for the selection are available renders correc
         style="color:#444;font-weight:bold;"
         title="Thursday, April 21, 2016 7:37 AM"
       >
-        9 months ago
+        a year ago
       </span>
     </span>
   </div>
@@ -237,7 +237,7 @@ exports[`Details when the details for the selection are available renders correc
         }
       }
       title="Monday, April 18, 2016 7:37 AM">
-      10 months ago
+      a year ago
     </span>
     :
     <ul
@@ -267,7 +267,7 @@ exports[`Details when the details for the selection are available renders correc
       style="color:#444;font-weight:bold;"
       title="Monday, April 18, 2016 7:37 AM"
     >
-      10 months ago
+      a year ago
     </span>
     :
     <ul style="margin-top:0;">
