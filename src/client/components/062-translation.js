@@ -74,6 +74,7 @@ class Translation extends React.Component {
   props: PropsT;
   state: {
     fEditing: boolean,
+    fDismissedHelp: boolean,
     cmds: Array<Object>,
   };
   refInput: ?Object;
@@ -82,7 +83,7 @@ class Translation extends React.Component {
     super(props);
     this.state = {
       fEditing: false,
-      dismissedHelp: false,
+      fDismissedHelp: false,
       cmds: [],
     };
   }
@@ -159,7 +160,7 @@ class Translation extends React.Component {
   }
 
   renderHelp() {
-    if (!this.state.fEditing || this.state.dismissedHelp) return null;
+    if (!this.state.fEditing || this.state.fDismissedHelp) return null;
     return (
       <div onMouseEnter={this.onHoverHelp} style={style.help}>
         {_t('translationHelp_Click outside or TAB to save. ESC to undo.')}
@@ -171,7 +172,7 @@ class Translation extends React.Component {
   // Handlers
   // ------------------------------------------
   onFocus = () => {
-    this.setState({ fEditing: true, dismissedHelp: false });
+    this.setState({ fEditing: true, fDismissedHelp: false });
     this.props.changeSelectedKey(this.props.theKey.id);
   }
 
@@ -264,7 +265,7 @@ class Translation extends React.Component {
   }
 
   onHoverHelp = () => {
-    this.setState({ dismissedHelp: true });
+    this.setState({ fDismissedHelp: true });
   }
 
   // ------------------------------------------
