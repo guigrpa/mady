@@ -7,7 +7,6 @@ import Relay                from 'react-relay';
 import throttle             from 'lodash/throttle';
 import filter               from 'lodash/filter';
 import {
-  bindAll,
   getScrollbarWidth,
   flexItem, flexContainer,
   Icon, Select, LargeMessage,
@@ -89,15 +88,6 @@ class Translator extends React.PureComponent {
       langs: this.readLangs(),
       fParsing: false,
     };
-    bindAll(this, [
-      'renderKeyRow',
-
-      'onAddLang',
-      'onRemoveLang',
-      'onChangeLang',
-
-      'onParseSrcFiles',
-    ]);
     this.forceRender = throttle(this.forceRender.bind(this), 200);
   }
 
@@ -207,7 +197,7 @@ class Translator extends React.PureComponent {
     );
   }
 
-  renderKeyRow(key: KeyT) {
+  renderKeyRow = (key: KeyT) => {
     const fSelected = this.props.selectedKeyId === key.id;
     return (
       <TranslatorRow key={key.id}
@@ -268,7 +258,7 @@ class Translator extends React.PureComponent {
 
   writeLangs(langs: Array<string>) { cookieSet('langs', langs); }
 
-  onAddLang() {
+  onAddLang = () => {
     const prevLangs = this.state.langs;
     const availableLangs = this.props.viewer.config.langs;
     const newLang = availableLangs.find((o) => prevLangs.indexOf(o) < 0);
@@ -277,7 +267,7 @@ class Translator extends React.PureComponent {
     this.updateLangs(nextLangs);
   }
 
-  onRemoveLang(ev: SyntheticEvent) {
+  onRemoveLang = (ev: SyntheticEvent) => {
     if (!(ev.currentTarget instanceof HTMLElement)) return;
     this.removeLang(Number(ev.currentTarget.id));
   }
@@ -286,7 +276,7 @@ class Translator extends React.PureComponent {
     this.updateLangs(nextLangs);
   }
 
-  onChangeLang(ev: SyntheticEvent, lang: string) {
+  onChangeLang = (ev: SyntheticEvent, lang: string) => {
     const prevLangs = this.state.langs;
     if (!(ev.currentTarget instanceof HTMLElement)) return;
     const idx = Number(ev.currentTarget.id);
@@ -314,7 +304,7 @@ class Translator extends React.PureComponent {
   // ------------------------------------------
   // Other handlers
   // ------------------------------------------
-  onParseSrcFiles() {
+  onParseSrcFiles = () => {
     this.setState({ fParsing: true });
     mutate({
       description: 'Click on Parse source files',

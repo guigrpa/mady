@@ -15,24 +15,12 @@ const COLORS = {
 };
 
 const LANG_OPTIONS = [
-  {
-    value: 'en',
-    label: 'English',
-  },
-  {
-    value: 'es',
-    label: 'Español',
-  },
-  {
-    value: 'ca',
-    label: 'Català',
-  },
+  { value: 'en', label: 'English' },
+  { value: 'es', label: 'Español' },
+  { value: 'ca', label: 'Català' },
 ];
 
 // ==========================================
 // Public API
 // ==========================================
-export {
-  COLORS,
-  LANG_OPTIONS,
-};
+export { COLORS, LANG_OPTIONS };

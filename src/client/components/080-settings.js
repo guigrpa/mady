@@ -5,7 +5,6 @@ import React                from 'react';
 import Relay                from 'react-relay';
 import pick                 from 'lodash/pick';
 import {
-  bindAll,
   flexContainer,
   Icon,
   Select, Checkbox, TextInput,
@@ -82,13 +81,6 @@ class Settings extends React.Component {
     // Save.
     this.state = pick(props.viewer.config, [
       'langs', 'srcPaths', 'srcExtensions', 'msgFunctionNames', 'msgRegexps', 'fJsOutput',
-    ]);
-    bindAll(this, [
-      'onCreateListItem',
-      'onRemoveListItem',
-      'onUpdateListItem',
-      'onCancel',
-      'onSave',
     ]);
   }
 
@@ -265,21 +257,21 @@ class Settings extends React.Component {
   }
 
   // ------------------------------------------
-  onCreateListItem(ev: SyntheticEvent) {
+  onCreateListItem = (ev: SyntheticEvent) => {
     if (!(ev.currentTarget instanceof HTMLElement)) return;
     const { id } = ev.currentTarget;
     const newList = timm.addLast(this.state[id], '');
     this.setState({ [id]: newList });
   }
 
-  onRemoveListItem(ev: SyntheticEvent) {
+  onRemoveListItem = (ev: SyntheticEvent) => {
     if (!(ev.currentTarget instanceof HTMLElement)) return;
     const [id, idx] = ev.currentTarget.id.split('.');
     const newList = timm.removeAt(this.state[id], Number(idx));
     this.setState({ [id]: newList });
   }
 
-  onUpdateListItem(ev: SyntheticEvent) {
+  onUpdateListItem = (ev: SyntheticEvent) => {
     if (!(ev.currentTarget instanceof HTMLInputElement)) return;
     const value = ev.currentTarget.value;
     const [id, idx] = ev.currentTarget.id.split('.');
@@ -287,8 +279,8 @@ class Settings extends React.Component {
     this.setState({ [id]: newList });
   }
 
-  onCancel() { this.props.onClose(); }
-  onSave() {
+  onCancel = () => { this.props.onClose(); }
+  onSave = () => {
     // Save lang
     if (this.refLang == null) return;
     const lang = this.refLang.getValue();

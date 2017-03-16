@@ -4,7 +4,7 @@ import timm                 from 'timm';
 import React                from 'react';
 import Relay                from 'react-relay';
 import {
-  bindAll, cancelEvent,
+  cancelEvent,
   flexContainer, flexItem,
   Icon,
   hoverable,
@@ -62,15 +62,6 @@ type PropsT = PublicPropsT & HoverablePropsT;
 class TranslatorRow extends React.PureComponent {
   props: PropsT;
 
-  constructor(props: PropsT) {
-    super(props);
-    bindAll(this, [
-      'renderTranslation',
-      'onClickKeyRow',
-      'onClickDeleteKey',
-    ]);
-  }
-
   // ------------------------------------------
   // Render
   // ------------------------------------------
@@ -116,7 +107,7 @@ class TranslatorRow extends React.PureComponent {
     );
   }
 
-  renderTranslation(lang: string) {
+  renderTranslation = (lang: string) => {
     const { theKey: key, fSelected, styleLangCol } = this.props;
     const edge = key.translations.edges.find(({ node }) => node.lang === lang);
     const translation = edge ? edge.node : null;
@@ -139,9 +130,9 @@ class TranslatorRow extends React.PureComponent {
   // ------------------------------------------
   // Handlers
   // ------------------------------------------
-  onClickKeyRow() { this.props.changeSelectedKey(this.props.theKey.id); }
+  onClickKeyRow = () => { this.props.changeSelectedKey(this.props.theKey.id); }
 
-  onClickDeleteKey(ev: SyntheticKeyboardEvent) {
+  onClickDeleteKey = (ev: SyntheticKeyboardEvent) => {
     const { viewer, theKey, fSelected, changeSelectedKey } = this.props;
     cancelEvent(ev);
     if (fSelected) changeSelectedKey(null);

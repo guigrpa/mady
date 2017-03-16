@@ -5,7 +5,6 @@ import React                from 'react';
 import Relay                from 'react-relay';
 import moment               from 'moment';
 import {
-  bindAll,
   Floats, Hints, Notifications,
   hintDefine, hintShow,
 }                           from 'giu';
@@ -69,12 +68,6 @@ class App extends React.Component {
       fSettingsShown: false,
       lang: cookieGet('lang', { defaultValue: 'en' }),
     };
-    bindAll(this, [
-      'changeSelectedKey',
-      'showSettings',
-      'hideSettings',
-      'onChangeLang',
-    ]);
   }
 
   componentDidMount() { this.showHint(); }
@@ -111,10 +104,10 @@ class App extends React.Component {
   }
 
   // ------------------------------------------
-  changeSelectedKey(selectedKeyId: ?string) { this.setState({ selectedKeyId }); }
-  showSettings() { this.setState({ fSettingsShown: true }); }
-  hideSettings() { this.setState({ fSettingsShown: false }); }
-  onChangeLang(lang: string) {
+  changeSelectedKey = (selectedKeyId: ?string) => { this.setState({ selectedKeyId }); }
+  showSettings = () => { this.setState({ fSettingsShown: true }); }
+  hideSettings = () => { this.setState({ fSettingsShown: false }); }
+  onChangeLang = (lang: string) => {
     cookieSet('lang', lang);
     fetchLangBundle(lang, (locales) => {
       _t.setLocales(locales);
