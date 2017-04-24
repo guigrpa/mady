@@ -229,8 +229,6 @@ const specs = {
 
     // Webpack + loaders (+ related stuff)
     webpack: '2.4.1',
-    'webpack-dev-middleware': '1.10.2',
-    'webpack-hot-middleware': '2.18.0',
     'webpack-bundle-analyzer': '2.4.0',
     'babel-loader': '6.2.10',
     'file-loader': '0.11.1',
