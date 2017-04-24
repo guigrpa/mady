@@ -33,9 +33,6 @@ extends React$Component<DefaultProps, Props, State> {
   static getFragment(name: string): any {}
 }
 
-export type RelayContainer<DefaultProps, Props, State> =
-  Class<_RelayContainer<DefaultProps, Props, State>>;
-
 // ----------------------------------------
 // Giu
 // ----------------------------------------

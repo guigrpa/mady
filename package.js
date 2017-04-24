@@ -81,10 +81,14 @@ const specs = {
     compile:                    runMultiple([
                                   'rm -rf ./lib',
                                   'mkdir lib',
+                                  'yarn compile:schema',
+                                  'yarn compile:relay',
                                   'babel --out-dir lib --ignore "**/__mocks__/**","**/__tests__/**" src',
                                   'cp src/api.js.flow lib/translate.js.flow',
                                 ]),
-    updateSchemaJson:           'babel-node src/server/gqlUpdateSchema',
+    'compile:relay':            'relay-compiler --src ./src --schema ./src/common/gqlSchema.graphql',
+    'compile:relayWatch':       'relay-compiler --src ./src --schema ./src/common/gqlSchema.graphql --watch',
+    'compile:schema':           'babel-node src/server/gqlUpdateSchema',
     docs:                       'extract-docs --template docs/templates/README.md --output README.md',
     buildSsrWatch:              runWebpack({ fSsr: true, fWatch: true }),
     buildSsr:                   runWebpack({ fSsr: true, fProduction: true }),
@@ -178,10 +182,9 @@ const specs = {
     compression: '1.6.2',
 
     // GraphQL
-    graphql: '0.7.0',
-    'graphql-relay': '0.4.3',
+    graphql: '0.9.3',
+    'graphql-relay': '0.5.1',
     'express-graphql': '0.6.4',
-    'babel-relay-plugin': '0.9.3',
   },
 
   peerDependencies: {
@@ -205,8 +208,10 @@ const specs = {
     // React
     react:                            '15.5.4',
     'react-dom':                      '15.5.4',
-    'react-relay': '0.9.3',
-    'isomorphic-relay': '0.7.4',
+    'react-relay': '1.0.0-rc.2',
+    'relay-compiler': '1.0.0-rc.2',
+    'relay-runtime': '1.0.0-rc.2',
+    'babel-plugin-relay': '1.0.1-rc.2',
     'react-intl': '2.2.3',
 
     // Miscellaneous

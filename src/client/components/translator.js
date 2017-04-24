@@ -1,35 +1,29 @@
 // @flow
 
 /* eslint-env browser */
-import timm                 from 'timm';
-import React                from 'react';
-import Relay                from 'react-relay';
-import throttle             from 'lodash/throttle';
-import filter               from 'lodash/filter';
+import timm from 'timm';
+import React from 'react';
+import { createFragmentContainer, graphql } from 'react-relay';
+import throttle from 'lodash/throttle';
+import filter from 'lodash/filter';
 import {
   getScrollbarWidth,
-  flexItem, flexContainer,
-  Icon, Select, LargeMessage,
-}                           from 'giu';
-import type {
-  ViewerT,
-  KeyT,
-  RelayContainer,
-}                           from '../../common/types';
-import _t                   from '../../translate';
-import {
-  ParseSrcFilesMutation,
-}                           from '../gral/mutations';
-import { COLORS }           from '../gral/constants';
-import {
-  cookieGet,
-  cookieSet,
-}                           from '../gral/storage';
-import { mutate }           from './helpers';
-import TranslatorRow        from './061-translatorRow';
+  flexItem,
+  flexContainer,
+  Icon,
+  Select,
+  LargeMessage,
+} from 'giu';
+import type { ViewerT, KeyT } from '../../common/types';
+import _t from '../../translate';
+// import { ParseSrcFilesMutation } from '../gral/mutations';
+import { COLORS } from '../gral/constants';
+import { cookieGet, cookieSet } from '../gral/storage';
+import { mutate } from './helpers';
+import TranslatorRow from './translatorRow';
 
 const comparator = (a: string, b: string): number =>
-  (a < b ? -1 : (a > b ? 1 : 0));
+  (a < b ? -1 : a > b ? 1 : 0);
 const keyComparator = (a: KeyT, b: KeyT) => {
   const aStr = `${a.context || ''}${a.text}${a.id}`;
   const bStr = `${b.context || ''}${b.text}${b.id}`;
@@ -39,39 +33,20 @@ const keyComparator = (a: KeyT, b: KeyT) => {
 // ==========================================
 // Component declarations
 // ==========================================
-const fragments = {
-  viewer: () => Relay.QL`
-    fragment on Viewer {
-      id
-      config { langs }
-      keys(first: 100000) { edges { node {
-        id unusedSince
-        context text     # for sorting
-        ${TranslatorRow.getFragment('theKey')}
-        translations(first: 100000) { edges { node {
-          lang
-        }}}
-      }}}
-      ${TranslatorRow.getFragment('viewer')}
-    }
-  `,
-};
+type LangOptions = Array<{ value: string, label: string }>;
 
-type LangOptionsT = Array<{ value: string, label: string }>;
-
-type PublicPropsT = {
+type Props = {
   // lang: string,
   viewer: ViewerT,
   selectedKeyId: ?string,
   changeSelectedKey: (keyId: ?string) => void,
 };
-type PropsT = PublicPropsT;
 
 // ==========================================
 // Component
 // ==========================================
 class Translator extends React.PureComponent {
-  props: PropsT;
+  props: Props;
   state: {
     langs: Array<string>,
     fParsing: boolean,
@@ -82,7 +57,7 @@ class Translator extends React.PureComponent {
     numTranslations: { [key: string]: number },
   };
 
-  constructor(props: PropsT) {
+  constructor(props: Props) {
     super(props);
     this.state = {
       langs: this.readLangs(),
@@ -91,9 +66,15 @@ class Translator extends React.PureComponent {
     this.forceRender = throttle(this.forceRender.bind(this), 200);
   }
 
-  componentDidMount() { window.addEventListener('resize', this.forceRender); }
-  componentWillUnmount() { window.removeEventListener('resize', this.forceRender); }
-  forceRender() { this.forceUpdate(); }
+  componentDidMount() {
+    window.addEventListener('resize', this.forceRender);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.forceRender);
+  }
+  forceRender() {
+    this.forceUpdate();
+  }
 
   // ------------------------------------------
   // Render
@@ -110,7 +91,10 @@ class Translator extends React.PureComponent {
 
   renderHeader() {
     const { keys, config } = this.props.viewer;
-    const langOptions = config.langs.map((lang) => ({ value: lang, label: lang }));
+    const langOptions = config.langs.map(lang => ({
+      value: lang,
+      label: lang,
+    }));
     return (
       <div
         className="tableHeaderRow"
@@ -121,9 +105,13 @@ class Translator extends React.PureComponent {
           {' '}
           <span style={style.numItems}>
             [
-            <span title={_t('tooltip_Used messages')}>{this.stats.numUsedKeys}</span>
+            <span title={_t('tooltip_Used messages')}>
+              {this.stats.numUsedKeys}
+            </span>
             {' / '}
-            <span title={_t('tooltip_Total messages')}>{keys.edges.length}</span>
+            <span title={_t('tooltip_Total messages')}>
+              {keys.edges.length}
+            </span>
             ]
           </span>
           {' '}
@@ -135,7 +123,7 @@ class Translator extends React.PureComponent {
           />
         </div>
         {this.state.langs.map((lang, idx) =>
-          this.renderLangHeader(lang, idx, langOptions)
+          this.renderLangHeader(lang, idx, langOptions),
         )}
         {this.renderAdd()}
         <div style={style.scrollbarSpacer()} />
@@ -143,9 +131,10 @@ class Translator extends React.PureComponent {
     );
   }
 
-  renderLangHeader(lang: string, idx: number, langOptions: LangOptionsT) {
+  renderLangHeader(lang: string, idx: number, langOptions: LangOptions) {
     return (
-      <div key={lang}
+      <div
+        key={lang}
         className="madyLangHeader"
         style={timm.merge(style.headerCell, style.langCol)}
       >
@@ -167,9 +156,13 @@ class Translator extends React.PureComponent {
         {' '}
         <span style={style.numItems}>
           [
-          <span title={_t('tooltip_Translations')}>{this.stats.numTranslations[lang] || 0}</span>
+          <span title={_t('tooltip_Translations')}>
+            {this.stats.numTranslations[lang] || 0}
+          </span>
           {' / '}
-          <span title={_t('tooltip_Used messages')}>{this.stats.numUsedKeys}</span>
+          <span title={_t('tooltip_Used messages')}>
+            {this.stats.numUsedKeys}
+          </span>
           ]
         </span>
         {' '}
@@ -184,13 +177,10 @@ class Translator extends React.PureComponent {
   }
 
   renderBody() {
-    let keys = this.props.viewer.keys.edges.map((o) => o.node);
+    let keys = this.props.viewer.keys.edges.map(o => o.node);
     keys = keys.sort(keyComparator);
     return (
-      <div
-        className="tableBody"
-        style={style.body}
-      >
+      <div className="tableBody" style={style.body}>
         {keys.map(this.renderKeyRow)}
         {this.renderFillerRow()}
       </div>
@@ -200,7 +190,8 @@ class Translator extends React.PureComponent {
   renderKeyRow = (key: KeyT) => {
     const fSelected = this.props.selectedKeyId === key.id;
     return (
-      <TranslatorRow key={key.id}
+      <TranslatorRow
+        key={key.id}
         theKey={key}
         viewer={this.props.viewer}
         langs={this.state.langs}
@@ -210,28 +201,25 @@ class Translator extends React.PureComponent {
         styleLangCol={style.langCol}
       />
     );
-  }
+  };
 
   renderFillerRow() {
-    const noKeys = this.props.viewer.keys.edges.length > 0 ? '' :
-      <LargeMessage>
-        No messages. Click on <Icon icon="refresh" disabled /> to refresh
-      </LargeMessage>;
+    const noKeys = this.props.viewer.keys.edges.length > 0
+      ? ''
+      : <LargeMessage>
+          No messages. Click on <Icon icon="refresh" disabled /> to refresh
+        </LargeMessage>;
     return (
-      <div
-        className="tableFillerRow"
-        style={style.fillerRow}
-      >
+      <div className="tableFillerRow" style={style.fillerRow}>
         <div style={style.keyCol}>{noKeys}</div>
-        {this.state.langs.map((lang) => (
-          <div key={lang} style={style.langCol} />
-        ))}
+        {this.state.langs.map(lang => <div key={lang} style={style.langCol} />)}
       </div>
     );
   }
 
   renderAdd() {
-    const fDisabled = this.state.langs.length === this.props.viewer.config.langs.length;
+    const fDisabled =
+      this.state.langs.length === this.props.viewer.config.langs.length;
     return (
       <div
         id="madyBtnAddLang"
@@ -250,27 +238,29 @@ class Translator extends React.PureComponent {
   readLangs(): Array<string> {
     const availableLangs = this.props.viewer.config.langs;
     let langs = cookieGet('langs') || [];
-    langs = filter(langs, (o) => availableLangs.indexOf(o) >= 0);
+    langs = filter(langs, o => availableLangs.indexOf(o) >= 0);
     if (!langs.length && availableLangs.length) langs.push(availableLangs[0]);
     this.writeLangs(langs);
     return langs;
   }
 
-  writeLangs(langs: Array<string>) { cookieSet('langs', langs); }
+  writeLangs(langs: Array<string>) {
+    cookieSet('langs', langs);
+  }
 
   onAddLang = () => {
     const prevLangs = this.state.langs;
     const availableLangs = this.props.viewer.config.langs;
-    const newLang = availableLangs.find((o) => prevLangs.indexOf(o) < 0);
+    const newLang = availableLangs.find(o => prevLangs.indexOf(o) < 0);
     if (newLang == null) return;
     const nextLangs = timm.addLast(prevLangs, newLang);
     this.updateLangs(nextLangs);
-  }
+  };
 
   onRemoveLang = (ev: SyntheticEvent) => {
     if (!(ev.currentTarget instanceof HTMLElement)) return;
     this.removeLang(Number(ev.currentTarget.id));
-  }
+  };
   removeLang(idx: number) {
     const nextLangs = timm.removeAt(this.state.langs, idx);
     this.updateLangs(nextLangs);
@@ -294,7 +284,7 @@ class Translator extends React.PureComponent {
     }
     const nextLangs = timm.replaceAt(this.state.langs, idx, lang);
     this.updateLangs(nextLangs);
-  }
+  };
 
   updateLangs(langs: Array<string>) {
     this.writeLangs(langs);
@@ -312,7 +302,7 @@ class Translator extends React.PureComponent {
       props: { viewerId: this.props.viewer.id },
       onFinish: () => this.setState({ fParsing: false }),
     });
-  }
+  };
 
   // ------------------------------------------
   // Helpers
@@ -337,9 +327,12 @@ class Translator extends React.PureComponent {
 // Styles
 // ------------------------------------------
 const style = {
-  outer: flexItem('1 0 10em', flexContainer('column', {
-    marginTop: 5,
-  })),
+  outer: flexItem(
+    '1 0 10em',
+    flexContainer('column', {
+      marginTop: 5,
+    }),
+  ),
 
   body: flexItem(1, flexContainer('column', { overflowY: 'scroll' })),
 
@@ -389,7 +382,7 @@ const style = {
     opacity: 0,
     cursor: 'pointer',
   },
-  addLang: (fDisabled) => {
+  addLang: fDisabled => {
     const scrollbarWidth = getScrollbarWidth();
     return {
       position: 'absolute',
@@ -408,7 +401,20 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-const Container: RelayContainer<{}, PublicPropsT, any> =
-  Relay.createContainer(Translator, { fragments });
+const Container = createFragmentContainer(Translator, graphql`
+  fragment translator_viewer on Viewer {
+    id
+    config { langs }
+    keys(first: 100000) { edges { node {
+      id unusedSince
+      context text     # for sorting
+      ...translatorRow_theKey
+      translations(first: 100000) { edges { node {
+        lang
+      }}}
+    }}}
+    ...translatorRow_viewer
+  }
+`);
 export default Container;
 export { Translator as _Translator };

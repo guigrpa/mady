@@ -1,51 +1,20 @@
 // @flow
 
-import timm                 from 'timm';
-import React                from 'react';
-import Relay                from 'react-relay';
-import {
-  cancelEvent,
-  flexContainer, flexItem,
-  Icon,
-  hoverable,
-}                           from 'giu';
-import type {
-  ViewerT,
-  KeyT,
-  RelayContainer,
-  HoverablePropsT,
-}                           from '../../common/types';
-import _t                   from '../../translate';
-import { COLORS }           from '../gral/constants';
-import {
-  DeleteKeyMutation,
-}                           from '../gral/mutations';
-import { mutate }           from './helpers';
-import Translation          from './062-translation';
+import timm from 'timm';
+import React from 'react';
+import { createFragmentContainer, graphql } from 'react-relay';
+import { cancelEvent, flexContainer, flexItem, Icon, hoverable } from 'giu';
+import type { ViewerT, KeyT, HoverablePropsT } from '../../common/types';
+import _t from '../../translate';
+import { COLORS } from '../gral/constants';
+// import { DeleteKeyMutation } from '../gral/mutations';
+import { mutate } from './helpers';
+import Translation from './translation';
 
 // ==========================================
 // Component declarations
 // ==========================================
-const fragments = {
-  theKey: () => Relay.QL`
-    fragment on Key {
-      id
-      context text
-      unusedSince
-      ${Translation.getFragment('theKey')}
-      translations(first: 100000) { edges { node {
-        id
-        lang
-        ${Translation.getFragment('translation')}
-      }}}
-    }
-  `,
-  viewer: () => Relay.QL`
-    fragment on Viewer { id }
-  `,
-};
-
-type PublicPropsT = {
+type PublicProps = {
   theKey: KeyT,
   viewer: ViewerT,
   langs: Array<string>,
@@ -54,21 +23,25 @@ type PublicPropsT = {
   styleKeyCol: Object,
   styleLangCol: Object,
 };
-type PropsT = PublicPropsT & HoverablePropsT;
+type Props = PublicProps & HoverablePropsT;
 
 // ==========================================
 // Component
 // ==========================================
 class TranslatorRow extends React.PureComponent {
-  props: PropsT;
+  props: Props;
 
   // ------------------------------------------
   // Render
   // ------------------------------------------
   render() {
     const {
-      theKey: key, fSelected, styleKeyCol,
-      hovering, onHoverStart, onHoverStop,
+      theKey: key,
+      fSelected,
+      styleKeyCol,
+      hovering,
+      onHoverStart,
+      onHoverStop,
     } = this.props;
     const fUnused = !!key.unusedSince;
     const elContext = key.context
@@ -76,14 +49,14 @@ class TranslatorRow extends React.PureComponent {
       : undefined;
     const elText = <span style={style.text}>{key.text}</span>;
     const elDeleteKey = hovering
-      ? (
-        <Icon
+      ? <Icon
           icon="remove"
-          title={_t('tooltip_Delete message (does NOT delete any translations)')}
+          title={_t(
+            'tooltip_Delete message (does NOT delete any translations)',
+          )}
           onClick={this.onClickDeleteKey}
           style={style.removeIcon}
         />
-      )
       : undefined;
     let cellStyle = timm.merge(style.bodyCell, styleKeyCol, style.keyCell);
     if (fSelected) cellStyle = style.selected(cellStyle);
@@ -125,12 +98,14 @@ class TranslatorRow extends React.PureComponent {
         />
       </div>
     );
-  }
+  };
 
   // ------------------------------------------
   // Handlers
   // ------------------------------------------
-  onClickKeyRow = () => { this.props.changeSelectedKey(this.props.theKey.id); }
+  onClickKeyRow = () => {
+    this.props.changeSelectedKey(this.props.theKey.id);
+  };
 
   onClickDeleteKey = (ev: SyntheticKeyboardEvent) => {
     const { viewer, theKey, fSelected, changeSelectedKey } = this.props;
@@ -141,16 +116,19 @@ class TranslatorRow extends React.PureComponent {
       Mutation: DeleteKeyMutation,
       props: { viewerId: viewer.id, id: theKey.id },
     });
-  }
+  };
 }
 
 // ------------------------------------------
 // Styles
 // ------------------------------------------
 const style = {
-  row: flexItem('none', flexContainer('row', {
-    minHeight: 21,
-  })),
+  row: flexItem(
+    'none',
+    flexContainer('row', {
+      minHeight: 21,
+    }),
+  ),
   bodyCell: {
     position: 'relative',
     paddingTop: 1,
@@ -160,15 +138,18 @@ const style = {
   keyCell: {
     paddingRight: 17,
   },
-  selected: (base) => timm.merge(base, {
-    backgroundColor: COLORS.medium,
-  }),
-  unused: (base) => timm.merge(base, {
-    color: COLORS.dim,
-  }),
-  untranslated: (base) => timm.merge(base, {
-    backgroundColor: COLORS.mediumAlt,
-  }),
+  selected: base =>
+    timm.merge(base, {
+      backgroundColor: COLORS.medium,
+    }),
+  unused: base =>
+    timm.merge(base, {
+      color: COLORS.dim,
+    }),
+  untranslated: base =>
+    timm.merge(base, {
+      backgroundColor: COLORS.mediumAlt,
+    }),
   context: {
     fontWeight: 900,
     marginRight: 10,
@@ -188,7 +169,19 @@ const style = {
 // Public API
 // ==========================================
 const HoverableTranslatorRow = hoverable(TranslatorRow);
-const Container: RelayContainer<{}, PublicPropsT, any> =
-  Relay.createContainer(HoverableTranslatorRow, { fragments });
+const Container = createFragmentContainer(HoverableTranslatorRow, graphql`
+  fragment translatorRow_theKey on Key {
+    id
+    context text
+    unusedSince
+    ...translation_theKey
+    translations(first: 100000) { edges { node {
+      id
+      lang
+      ...translation_translation
+    }}}
+  }
+  fragment translatorRow_viewer on Viewer { id }
+`);
 export default Container;
 export { HoverableTranslatorRow as _HoverableTranslatorRow };

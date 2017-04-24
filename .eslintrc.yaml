@@ -23,13 +23,14 @@ rules:
       mode: 'minimum'
   object-property-newline: off
   class-methods-use-this: off
-  arrow-parens: ['error', 'always']
+  arrow-parens: off
   react/sort-comp: off
   react/jsx-first-prop-new-line: off
   react/jsx-indent: off
   react/jsx-indent-props: off
   react/jsx-closing-bracket-location: off
   react/jsx-filename-extension: off
+  react/jsx-wrap-multilines: off
   react/forbid-prop-types: off
   react/prop-types: off
   react/require-extension: off

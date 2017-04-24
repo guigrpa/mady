@@ -1,7 +1,7 @@
 // @flow
 
 import React                from 'react';
-import Relay                from 'react-relay';
+import { createFragmentContainer, graphql } from 'react-relay';
 import MessageFormat        from 'messageformat';
 import { mainStory }        from 'storyboard';
 import {
@@ -13,15 +13,14 @@ import {
 import type {
   KeyT,
   TranslationT,
-  RelayContainer,
   HoverablePropsT,
 }                           from '../../common/types';
 import _t                   from '../../translate';
-import {
-  CreateTranslationMutation,
-  UpdateTranslationMutation,
-  DeleteTranslationMutation,
-}                           from '../gral/mutations';
+// import {
+//   CreateTranslationMutation,
+//   UpdateTranslationMutation,
+//   DeleteTranslationMutation,
+// }                           from '../gral/mutations';
 import { COLORS }           from '../gral/constants';
 import { mutate }           from './helpers';
 
@@ -44,34 +43,19 @@ const validateTranslation = (lang: string) => (val: string) => {
 // ==========================================
 // Component declarations
 // ==========================================
-const fragments = {
-  theKey: () => Relay.QL`
-    fragment on Key {
-      id
-      text
-    }
-  `,
-  translation: () => Relay.QL`
-    fragment on Translation {
-      id
-      lang, translation, fuzzy
-    }
-  `,
-};
-
-type PublicPropsT = {
+type PublicProps = {
   theKey: KeyT,
   lang: string,
   translation: ?TranslationT,
   changeSelectedKey: (keyId: ?string) => void,
 };
-type PropsT = PublicPropsT & HoverablePropsT;
+type Props = PublicProps & HoverablePropsT;
 
 // ==========================================
 // Component
 // ==========================================
 class Translation extends React.Component {
-  props: PropsT;
+  props: Props;
   state: {
     fEditing: boolean,
     fDismissedHelp: boolean,
@@ -79,7 +63,7 @@ class Translation extends React.Component {
   };
   refInput: ?Object;
 
-  constructor(props: PropsT) {
+  constructor(props: Props) {
     super(props);
     this.state = {
       fEditing: false,
@@ -271,7 +255,7 @@ class Translation extends React.Component {
   // ------------------------------------------
   // Helpers
   // ------------------------------------------
-  getInitialTranslation(props?: PropsT) {
+  getInitialTranslation(props?: Props) {
     const finalProps = props || this.props;
     return finalProps.translation ? finalProps.translation.translation : null;
   }
@@ -325,7 +309,15 @@ const style = {
 // Public API
 // ==========================================
 const HoverableTranslation = hoverable(Translation);
-const Container: RelayContainer<{}, PublicPropsT, any> =
-  Relay.createContainer(HoverableTranslation, { fragments });
+const Container = createFragmentContainer(HoverableTranslation, graphql`
+  fragment translation_theKey on Key {
+    id
+    text
+  }
+  fragment translation_translation on Translation {
+    id
+    lang, translation, fuzzy
+  }
+`);
 export default Container;
 export { HoverableTranslation as _HoverableTranslation };
