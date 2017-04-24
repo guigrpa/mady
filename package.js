@@ -180,7 +180,7 @@ const specs = {
     // GraphQL
     graphql: '0.7.0',
     'graphql-relay': '0.4.3',
-    'express-graphql': '0.5.4',
+    'express-graphql': '0.6.4',
     'babel-relay-plugin': '0.9.3',
   },
 
@@ -189,7 +189,7 @@ const specs = {
     'babel-preset-es2015': '^6.0.0',
     'babel-preset-stage-0': '^6.0.0',
     'babel-preset-react': '^6.0.0',
-    'babel-plugin-react-intl': '^2.2.0',
+    'babel-plugin-react-intl': '^2.3.1',
   },
 
   devDependencies: {
@@ -243,8 +243,8 @@ const specs = {
     'eslint-plugin-flowtype': '2.32.1',
     'eslint-plugin-import': '1.16.0',
     'eslint-plugin-jsx-a11y': '2.2.3',
-    'eslint-plugin-react': '6.4.1',
-    'babel-eslint': '7.1.1',
+    'eslint-plugin-react': '6.10.3',
+    'babel-eslint': '7.2.3',
 
     // Testing
     jest: '19.0.2',
