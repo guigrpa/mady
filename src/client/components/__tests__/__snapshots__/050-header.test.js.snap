@@ -40,6 +40,7 @@ exports[`Header renders correctly 1`] = `
         Object {
           "color": undefined,
           "cursor": "pointer",
+          "fontSize": undefined,
           "letterSpacing": "normal",
           "marginLeft": 10,
         }
@@ -67,6 +68,7 @@ exports[`Header renders correctly 1`] = `
         Object {
           "color": undefined,
           "cursor": "pointer",
+          "fontSize": undefined,
           "letterSpacing": "normal",
         }
       }
@@ -140,6 +142,7 @@ exports[`Header shows hints when the info button is clicked 1`] = `
           Object {
             "color": undefined,
             "cursor": "pointer",
+            "fontSize": undefined,
             "letterSpacing": "normal",
             "marginLeft": 10,
           }
@@ -167,6 +170,7 @@ exports[`Header shows hints when the info button is clicked 1`] = `
           Object {
             "color": undefined,
             "cursor": "pointer",
+            "fontSize": undefined,
             "letterSpacing": "normal",
           }
         }
@@ -301,6 +305,7 @@ exports[`Header shows hints when the info button is clicked 2`] = `
           Object {
             "color": undefined,
             "cursor": "pointer",
+            "fontSize": undefined,
             "letterSpacing": "normal",
             "marginLeft": 10,
           }
@@ -328,6 +333,7 @@ exports[`Header shows hints when the info button is clicked 2`] = `
           Object {
             "color": undefined,
             "cursor": "pointer",
+            "fontSize": undefined,
             "letterSpacing": "normal",
           }
         }

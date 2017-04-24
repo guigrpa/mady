@@ -87,6 +87,7 @@ exports[`Translator allows changing the language of a column 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -128,6 +129,7 @@ exports[`Translator allows changing the language of a column 1`] = `
               Object {
                 "color": undefined,
                 "cursor": "pointer",
+                "fontSize": undefined,
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
@@ -213,6 +215,7 @@ exports[`Translator allows changing the language of a column 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -241,6 +244,7 @@ exports[`Translator allows changing the language of a column 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -732,6 +736,7 @@ exports[`Translator allows changing the language of a column 2`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -773,6 +778,7 @@ exports[`Translator allows changing the language of a column 2`] = `
               Object {
                 "color": undefined,
                 "cursor": "pointer",
+                "fontSize": undefined,
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
@@ -858,6 +864,7 @@ exports[`Translator allows changing the language of a column 2`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -886,6 +893,7 @@ exports[`Translator allows changing the language of a column 2`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -1377,6 +1385,7 @@ exports[`Translator allows removing columns 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -1418,6 +1427,7 @@ exports[`Translator allows removing columns 1`] = `
               Object {
                 "color": undefined,
                 "cursor": "pointer",
+                "fontSize": undefined,
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
@@ -1503,6 +1513,7 @@ exports[`Translator allows removing columns 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -1531,6 +1542,7 @@ exports[`Translator allows removing columns 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -2022,6 +2034,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -2063,6 +2076,7 @@ exports[`Translator renders correctly with a selection 1`] = `
               Object {
                 "color": undefined,
                 "cursor": "pointer",
+                "fontSize": undefined,
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
@@ -2148,6 +2162,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -2189,6 +2204,7 @@ exports[`Translator renders correctly with a selection 1`] = `
               Object {
                 "color": undefined,
                 "cursor": "pointer",
+                "fontSize": undefined,
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
@@ -2274,6 +2290,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -2315,6 +2332,7 @@ exports[`Translator renders correctly with a selection 1`] = `
               Object {
                 "color": undefined,
                 "cursor": "pointer",
+                "fontSize": undefined,
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
@@ -2400,6 +2418,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -2429,6 +2448,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             Object {
               "color": "#999999",
               "cursor": undefined,
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -3071,6 +3091,7 @@ exports[`Translator renders correctly with default columns 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -3112,6 +3133,7 @@ exports[`Translator renders correctly with default columns 1`] = `
               Object {
                 "color": undefined,
                 "cursor": "pointer",
+                "fontSize": undefined,
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
@@ -3197,6 +3219,7 @@ exports[`Translator renders correctly with default columns 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -3225,6 +3248,7 @@ exports[`Translator renders correctly with default columns 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -3716,6 +3740,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -3757,6 +3782,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               Object {
                 "color": undefined,
                 "cursor": "pointer",
+                "fontSize": undefined,
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
@@ -3842,6 +3868,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -3883,6 +3910,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               Object {
                 "color": undefined,
                 "cursor": "pointer",
+                "fontSize": undefined,
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
@@ -3968,6 +3996,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -3996,6 +4025,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -4561,6 +4591,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -4602,6 +4633,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
               Object {
                 "color": undefined,
                 "cursor": "pointer",
+                "fontSize": undefined,
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
@@ -4687,6 +4719,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -4728,6 +4761,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
               Object {
                 "color": undefined,
                 "cursor": "pointer",
+                "fontSize": undefined,
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
@@ -4813,6 +4847,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -4854,6 +4889,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
               Object {
                 "color": undefined,
                 "cursor": "pointer",
+                "fontSize": undefined,
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
@@ -4939,6 +4975,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -4968,6 +5005,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             Object {
               "color": "#999999",
               "cursor": undefined,
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -5607,6 +5645,7 @@ exports[`Translator renders correctly with no content 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -5648,6 +5687,7 @@ exports[`Translator renders correctly with no content 1`] = `
               Object {
                 "color": undefined,
                 "cursor": "pointer",
+                "fontSize": undefined,
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
@@ -5733,6 +5773,7 @@ exports[`Translator renders correctly with no content 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -5761,6 +5802,7 @@ exports[`Translator renders correctly with no content 1`] = `
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -5830,6 +5872,7 @@ exports[`Translator renders correctly with no content 1`] = `
                 Object {
                   "color": "#999999",
                   "cursor": undefined,
+                  "fontSize": undefined,
                   "letterSpacing": "normal",
                 }
               }
@@ -6075,6 +6118,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -6116,6 +6160,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               Object {
                 "color": undefined,
                 "cursor": "pointer",
+                "fontSize": undefined,
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
@@ -6201,6 +6246,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -6242,6 +6288,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               Object {
                 "color": undefined,
                 "cursor": "pointer",
+                "fontSize": undefined,
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
@@ -6327,6 +6374,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -6368,6 +6416,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               Object {
                 "color": undefined,
                 "cursor": "pointer",
+                "fontSize": undefined,
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
@@ -6453,6 +6502,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             Object {
               "color": undefined,
               "cursor": "pointer",
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }
@@ -6482,6 +6532,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             Object {
               "color": "#999999",
               "cursor": undefined,
+              "fontSize": undefined,
               "letterSpacing": "normal",
             }
           }

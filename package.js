@@ -197,7 +197,7 @@ const specs = {
     // Packaged in the client app (or SSR)
     // --------------------------
     'babel-polyfill': '6.23.0',
-    giu: '0.9.2',
+    giu: '0.10.2',
 
     'storyboard-listener-browser-extension': '^3.0.0',
     'storyboard-listener-ws-client': '^3.0.0',
@@ -269,8 +269,9 @@ const specs = {
     // testRegex: '(/__tests__/.*|\\.(test|spec))\\.(js|jsx)$',
     testRegex: 'src/.*__tests__/.*\\.(test|spec)\\.(js|jsx)$',
     moduleNameMapper: {
-      '^.+\\.(css|less|sass)$': '<rootDir>/test/emptyObject.js',
-      '^.+\\.(gif|ttf|eot|svg)$': '<rootDir>/test/emptyString.js',
+      '^typeface-.*': '<rootDir>/test/emptyObject.js',
+      '\\.(css|less|sass)$': '<rootDir>/test/emptyObject.js',
+      '\\.(gif|ttf|eot|svg)$': '<rootDir>/test/emptyString.js',
       // 'node-uuid': '<rootDir>/test/mockUuid.js',
     },
     coverageDirectory: '.nyc_output',

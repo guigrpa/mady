@@ -43,6 +43,7 @@ exports[`Details renders correctly with a selection but no data yet 1`] = `
         Object {
           "color": undefined,
           "cursor": "pointer",
+          "fontSize": undefined,
           "letterSpacing": "normal",
         }
       }

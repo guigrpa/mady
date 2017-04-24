@@ -65,7 +65,6 @@ exports[`HoverableTranslation renders correctly with translation 1`] = `
         onKeyDown={[Function]}
         onKeyUp={[Function]}
         onPaste={undefined}
-        required={undefined}
         style={
           Object {
             "backgroundColor": "transparent",
@@ -179,7 +178,6 @@ exports[`HoverableTranslation renders correctly without translation 1`] = `
         onKeyDown={[Function]}
         onKeyUp={[Function]}
         onPaste={undefined}
-        required={undefined}
         style={
           Object {
             "backgroundColor": "transparent",

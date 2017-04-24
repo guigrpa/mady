@@ -220,6 +220,7 @@ exports[`Settings renders correctly 1`] = `
                   Object {
                     "color": "#444",
                     "cursor": "pointer",
+                    "fontSize": undefined,
                     "letterSpacing": "normal",
                   }
                 }
@@ -270,6 +271,7 @@ exports[`Settings renders correctly 1`] = `
                   Object {
                     "color": "#444",
                     "cursor": "pointer",
+                    "fontSize": undefined,
                     "letterSpacing": "normal",
                   }
                 }
@@ -284,6 +286,7 @@ exports[`Settings renders correctly 1`] = `
                   "color": "#444",
                   "cursor": "pointer",
                   "display": "inline-block",
+                  "fontSize": undefined,
                   "letterSpacing": "normal",
                   "marginTop": 5,
                 }
@@ -354,6 +357,7 @@ exports[`Settings renders correctly 1`] = `
                   Object {
                     "color": "#444",
                     "cursor": "pointer",
+                    "fontSize": undefined,
                     "letterSpacing": "normal",
                   }
                 }
@@ -368,6 +372,7 @@ exports[`Settings renders correctly 1`] = `
                   "color": "#444",
                   "cursor": "pointer",
                   "display": "inline-block",
+                  "fontSize": undefined,
                   "letterSpacing": "normal",
                   "marginTop": 5,
                 }
@@ -438,6 +443,7 @@ exports[`Settings renders correctly 1`] = `
                   Object {
                     "color": "#444",
                     "cursor": "pointer",
+                    "fontSize": undefined,
                     "letterSpacing": "normal",
                   }
                 }
@@ -488,6 +494,7 @@ exports[`Settings renders correctly 1`] = `
                   Object {
                     "color": "#444",
                     "cursor": "pointer",
+                    "fontSize": undefined,
                     "letterSpacing": "normal",
                   }
                 }
@@ -502,6 +509,7 @@ exports[`Settings renders correctly 1`] = `
                   "color": "#444",
                   "cursor": "pointer",
                   "display": "inline-block",
+                  "fontSize": undefined,
                   "letterSpacing": "normal",
                   "marginTop": 5,
                 }
@@ -572,6 +580,7 @@ exports[`Settings renders correctly 1`] = `
                   Object {
                     "color": "#444",
                     "cursor": "pointer",
+                    "fontSize": undefined,
                     "letterSpacing": "normal",
                   }
                 }
@@ -586,6 +595,7 @@ exports[`Settings renders correctly 1`] = `
                   "color": "#444",
                   "cursor": "pointer",
                   "display": "inline-block",
+                  "fontSize": undefined,
                   "letterSpacing": "normal",
                   "marginTop": 5,
                 }
@@ -608,6 +618,7 @@ exports[`Settings renders correctly 1`] = `
                 Object {
                   "color": undefined,
                   "cursor": "pointer",
+                  "fontSize": undefined,
                   "letterSpacing": "normal",
                 }
               }
@@ -632,6 +643,7 @@ exports[`Settings renders correctly 1`] = `
                   "color": "#444",
                   "cursor": "pointer",
                   "display": "inline-block",
+                  "fontSize": undefined,
                   "letterSpacing": "normal",
                   "marginTop": 5,
                 }
