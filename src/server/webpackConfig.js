@@ -3,7 +3,6 @@ import { mainStory } from 'storyboard';
 import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import { SUPPORTED_LOCALES } from '../locales/all';
 
 const pkg = require('../../package.json');
 
@@ -75,8 +74,6 @@ export default {
   },
 
   plugins: (() => {
-    // const momentLocaleFiles = SUPPORTED_LOCALES.map(o => `${o.toLowerCase()}.js`);
-    const ourOwnLocaleFiles = SUPPORTED_LOCALES.map((o) => `${o}.js`);
     const ret = [
       function pluginCompile() {
         this.plugin('compile', () => mainStory.debug('webpack', 'Bundling...'));
@@ -88,18 +85,6 @@ export default {
         'process.env.NODE_ENV': JSON.stringify(fProduction ? 'production' : 'development'),
         'process.env.SERVER_SIDE_RENDERING': JSON.stringify(fSsr),
       }),
-      /* eslint-disable no-useless-escape */
-      // Replace moment's dynamic require regex: ^\.\/.*$    by...
-      // new webpack.ContextReplacementPlugin(
-      //   /moment[\\\/]locale$/,
-      //   new RegExp(`.[\\\/](${momentLocaleFiles.join('|')})$`)
-      // ),
-      // Replace mady's dynamic require regex: ./~/bundle-loader!^\.\/.*\.js$    by...
-      new webpack.ContextReplacementPlugin(
-        /src[\\\/]locales$/,
-        new RegExp(`.[\\\/](${ourOwnLocaleFiles.join('|')})$`)
-      ),
-      /* eslint-enable no-useless-escape */
     ];
     if (fSsr) {
       ret.push(new ExtractTextPlugin('[name].bundle.css'));

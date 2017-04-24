@@ -230,12 +230,10 @@ const specs = {
     // Webpack + loaders (+ related stuff)
     webpack: '2.4.1',
     'webpack-bundle-analyzer': '2.4.0',
-    'babel-loader': '6.2.10',
+    'babel-loader': '7.0.0',
     'file-loader': '0.11.1',
     'css-loader': '0.28.0',
     'style-loader': '0.16.1',
-    // 'json-loader': '0.5.4',
-    'bundle-loader': '0.5.4',
     'sass-loader': '4.1.1',
     'node-sass': '4.5.0',
     'extract-text-webpack-plugin': '2.0.0-rc.2',

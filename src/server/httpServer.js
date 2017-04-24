@@ -11,7 +11,7 @@ import graphqlHttp          from 'express-graphql';
 import ejs                  from 'ejs';
 import cookieParser         from 'cookie-parser';
 import compression          from 'compression';
-import addAllLocales, { getReactIntlMessages } from '../locales/all';
+import addAllLocales, { getReactIntlMessages } from './allLocales';
 import _t                   from '../translate';
 import * as gqlServer       from './gqlServer';
 
