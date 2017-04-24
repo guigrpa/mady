@@ -15,17 +15,6 @@ import addAllLocales, { getReactIntlMessages } from '../locales/all';
 import _t                   from '../translate';
 import * as gqlServer       from './gqlServer';
 
-let webpack;
-let webpackDevMiddleware;
-let webpackHotMiddleware;
-let webpackConfig;
-/* eslint-disable global-require */
-if (process.env.NODE_ENV !== 'production') {
-  webpack              = require('webpack');
-  webpackDevMiddleware = require('webpack-dev-middleware');
-  webpackHotMiddleware = require('webpack-hot-middleware');
-  webpackConfig        = require('./webpackConfig').default;
-}
 let ssr = null;
 try {
   /* eslint-disable import/no-unresolved */
@@ -104,23 +93,10 @@ function sendIndexHtml(req, res) {
 function init(options: {|
   port: number,
 |}): void {
-  // TODO: webpack SSR if not pre-compiled
   ssr && ssr.init({ gqlServer, mainStory });
 
   // Disable flow on Express
   const expressApp: any = express();
-
-  // Webpack middleware (for development)
-  if (process.env.NODE_ENV !== 'production') {
-    const compiler = webpack(webpackConfig);
-    expressApp.use(webpackDevMiddleware(compiler, {
-      noInfo: true,
-      quiet: false,
-      publicPath: webpackConfig.output.publicPath,
-      stats: { colors: true },
-    }));
-    expressApp.use(webpackHotMiddleware(compiler));
-  }
 
   // Templating and other middleware
   expressApp.engine('html', ejs.renderFile);

@@ -19,11 +19,6 @@ mainStory.info('webpack', 'Webpack configuration:', {
   },
 });
 
-const entry = (file) => (
-  (fProduction || fSsr) ? [file]
-                        : ['webpack-hot-middleware/client?reload=true', file]
-);
-
 const cssLoader = {
   loader: 'css-loader',
   options: { minimize: fProduction },
@@ -44,8 +39,8 @@ export default {
   // -------------------------------------------------
   // Input (entry point)
   // -------------------------------------------------
-  entry: fSsr ? { ssr: entry('./src/server/ssr.js') }
-              : { app: entry('./src/client/startup.js') },
+  entry: fSsr ? { ssr: ['./src/server/ssr.js'] }
+              : { app: ['./src/client/startup.js'] },
 
   // -------------------------------------------------
   // Output
