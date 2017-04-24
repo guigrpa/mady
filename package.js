@@ -251,8 +251,8 @@ const specs = {
     'babel-eslint': '7.1.1',
 
     // Testing
-    jest: '18.1.0',
-    'babel-jest': '18.0.0',
+    jest: '19.0.2',
+    'babel-jest': '19.0.0',
     'jest-html': '^1.3.2',
     'react-test-renderer': '15.4.1',
     nyc: '8.3.0',

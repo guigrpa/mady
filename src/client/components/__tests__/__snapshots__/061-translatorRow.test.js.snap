@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`HoverableTranslatorRow renders correctly a key with translations 1`] = `
 <div
   className="tableBodyRow"
@@ -11,7 +13,8 @@ exports[`HoverableTranslatorRow renders correctly a key with translations 1`] = 
       "flexDirection": "row",
       "minHeight": 21,
     }
-  }>
+  }
+>
   <div
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
@@ -28,14 +31,16 @@ exports[`HoverableTranslatorRow renders correctly a key with translations 1`] = 
         "paddingTop": 1,
         "position": "relative",
       }
-    }>
+    }
+  >
     <span
       style={
         Object {
           "fontWeight": 900,
           "marginRight": 10,
         }
-      }>
+      }
+    >
       someContext
     </span>
     <span
@@ -43,7 +48,8 @@ exports[`HoverableTranslatorRow renders correctly a key with translations 1`] = 
         Object {
           "whiteSpace": "pre-wrap",
         }
-      }>
+      }
+    >
       A message
     </span>
   </div>
@@ -61,7 +67,8 @@ exports[`HoverableTranslatorRow renders correctly a key with translations 1`] = 
         "paddingTop": 1,
         "position": "relative",
       }
-    }>
+    }
+  >
     <div
       changeSelectedKey={[Function]}
       dataMockType="Translation"
@@ -98,7 +105,8 @@ exports[`HoverableTranslatorRow renders correctly a key with translations 1`] = 
           "lang": "es",
           "translation": "Un mensaje",
         }
-      }>
+      }
+    >
       Translation
     </div>
   </div>
@@ -116,7 +124,8 @@ exports[`HoverableTranslatorRow renders correctly a key with translations 1`] = 
         "paddingTop": 1,
         "position": "relative",
       }
-    }>
+    }
+  >
     <div
       changeSelectedKey={[Function]}
       dataMockType="Translation"
@@ -153,7 +162,8 @@ exports[`HoverableTranslatorRow renders correctly a key with translations 1`] = 
           "lang": "ca",
           "translation": "Un missatge",
         }
-      }>
+      }
+    >
       Translation
     </div>
   </div>
@@ -204,7 +214,8 @@ exports[`HoverableTranslatorRow renders correctly a key without translations 1`]
       "flexDirection": "row",
       "minHeight": 21,
     }
-  }>
+  }
+>
   <div
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
@@ -221,14 +232,16 @@ exports[`HoverableTranslatorRow renders correctly a key without translations 1`]
         "paddingTop": 1,
         "position": "relative",
       }
-    }>
+    }
+  >
     <span
       style={
         Object {
           "fontWeight": 900,
           "marginRight": 10,
         }
-      }>
+      }
+    >
       someContext
     </span>
     <span
@@ -236,7 +249,8 @@ exports[`HoverableTranslatorRow renders correctly a key without translations 1`]
         Object {
           "whiteSpace": "pre-wrap",
         }
-      }>
+      }
+    >
       A message
     </span>
   </div>
@@ -254,7 +268,8 @@ exports[`HoverableTranslatorRow renders correctly a key without translations 1`]
         "paddingTop": 1,
         "position": "relative",
       }
-    }>
+    }
+  >
     <div
       changeSelectedKey={[Function]}
       dataMockType="Translation"
@@ -270,7 +285,8 @@ exports[`HoverableTranslatorRow renders correctly a key without translations 1`]
           "unusedSince": null,
         }
       }
-      translation={null}>
+      translation={null}
+    >
       Translation
     </div>
   </div>
@@ -288,7 +304,8 @@ exports[`HoverableTranslatorRow renders correctly a key without translations 1`]
         "paddingTop": 1,
         "position": "relative",
       }
-    }>
+    }
+  >
     <div
       changeSelectedKey={[Function]}
       dataMockType="Translation"
@@ -304,7 +321,8 @@ exports[`HoverableTranslatorRow renders correctly a key without translations 1`]
           "unusedSince": null,
         }
       }
-      translation={null}>
+      translation={null}
+    >
       Translation
     </div>
   </div>
@@ -355,7 +373,8 @@ exports[`HoverableTranslatorRow renders correctly a selected key 1`] = `
       "flexDirection": "row",
       "minHeight": 21,
     }
-  }>
+  }
+>
   <div
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
@@ -372,14 +391,16 @@ exports[`HoverableTranslatorRow renders correctly a selected key 1`] = `
         "paddingTop": 1,
         "position": "relative",
       }
-    }>
+    }
+  >
     <span
       style={
         Object {
           "fontWeight": 900,
           "marginRight": 10,
         }
-      }>
+      }
+    >
       someContext
     </span>
     <span
@@ -387,7 +408,8 @@ exports[`HoverableTranslatorRow renders correctly a selected key 1`] = `
         Object {
           "whiteSpace": "pre-wrap",
         }
-      }>
+      }
+    >
       A message
     </span>
   </div>
@@ -405,7 +427,8 @@ exports[`HoverableTranslatorRow renders correctly a selected key 1`] = `
         "paddingTop": 1,
         "position": "relative",
       }
-    }>
+    }
+  >
     <div
       changeSelectedKey={[Function]}
       dataMockType="Translation"
@@ -421,7 +444,8 @@ exports[`HoverableTranslatorRow renders correctly a selected key 1`] = `
           "unusedSince": null,
         }
       }
-      translation={null}>
+      translation={null}
+    >
       Translation
     </div>
   </div>
@@ -439,7 +463,8 @@ exports[`HoverableTranslatorRow renders correctly a selected key 1`] = `
         "paddingTop": 1,
         "position": "relative",
       }
-    }>
+    }
+  >
     <div
       changeSelectedKey={[Function]}
       dataMockType="Translation"
@@ -455,7 +480,8 @@ exports[`HoverableTranslatorRow renders correctly a selected key 1`] = `
           "unusedSince": null,
         }
       }
-      translation={null}>
+      translation={null}
+    >
       Translation
     </div>
   </div>

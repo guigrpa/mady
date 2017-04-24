@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Translator allows changing the language of a column 1`] = `
 <div>
   <div
@@ -10,7 +12,8 @@ exports[`Translator allows changing the language of a column 1`] = `
         "top": 0,
         "width": 0,
       }
-    } />
+    }
+  />
   <div
     style={
       Object {
@@ -20,7 +23,8 @@ exports[`Translator allows changing the language of a column 1`] = `
         "flexDirection": "column",
         "marginTop": 5,
       }
-    }>
+    }
+  >
     <div
       className="tableHeaderRow"
       style={
@@ -32,7 +36,8 @@ exports[`Translator allows changing the language of a column 1`] = `
           "fontWeight": "bold",
           "position": "relative",
         }
-      }>
+      }
+    >
       <div
         style={
           Object {
@@ -49,7 +54,8 @@ exports[`Translator allows changing the language of a column 1`] = `
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         MESSAGES
          
         <span
@@ -57,15 +63,18 @@ exports[`Translator allows changing the language of a column 1`] = `
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             2
           </span>
            / 
           <span
-            title="Total messages">
+            title="Total messages"
+          >
             2
           </span>
           ]
@@ -81,7 +90,8 @@ exports[`Translator allows changing the language of a column 1`] = `
               "letterSpacing": "normal",
             }
           }
-          title="Parse source files to update the message list" />
+          title="Parse source files to update the message list"
+        />
       </div>
       <div
         className="madyLangHeader"
@@ -100,7 +110,8 @@ exports[`Translator allows changing the language of a column 1`] = `
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -109,7 +120,8 @@ exports[`Translator allows changing the language of a column 1`] = `
               "position": "relative",
             }
           }
-          title="Change language">
+          title="Change language"
+        >
           <i
             className="giu-icon fa fa-caret-down"
             style={
@@ -119,7 +131,8 @@ exports[`Translator allows changing the language of a column 1`] = `
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
-            } />
+            }
+          />
           es
           <select
             className="giu-select-native"
@@ -147,20 +160,24 @@ exports[`Translator allows changing the language of a column 1`] = `
               }
             }
             tabIndex={undefined}
-            value="\"es\"">
+            value="\\"es\\""
+          >
             <option
-              id="\"es\""
-              value="\"es\"">
+              id="\\"es\\""
+              value="\\"es\\""
+            >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\"">
+              id="\\"ca\\""
+              value="\\"ca\\""
+            >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\"">
+              id="\\"en\\""
+              value="\\"en\\""
+            >
               en
             </option>
           </select>
@@ -171,15 +188,18 @@ exports[`Translator allows changing the language of a column 1`] = `
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Translations">
+            title="Translations"
+          >
             1
           </span>
            / 
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             2
           </span>
           ]
@@ -196,7 +216,8 @@ exports[`Translator allows changing the language of a column 1`] = `
               "letterSpacing": "normal",
             }
           }
-          title="Remove column (does NOT delete any translations)" />
+          title="Remove column (does NOT delete any translations)"
+        />
       </div>
       <div
         id="madyBtnAddLang"
@@ -212,7 +233,8 @@ exports[`Translator allows changing the language of a column 1`] = `
             "top": 0,
           }
         }
-        title="Add column">
+        title="Add column"
+      >
         <i
           className="giu-icon fa fa-plus"
           style={
@@ -221,7 +243,8 @@ exports[`Translator allows changing the language of a column 1`] = `
               "cursor": "pointer",
               "letterSpacing": "normal",
             }
-          } />
+          }
+        />
       </div>
       <div
         style={
@@ -229,7 +252,8 @@ exports[`Translator allows changing the language of a column 1`] = `
             "WebkitFlex": "0 0 0px",
             "flex": "0 0 0px",
           }
-        } />
+        }
+      />
     </div>
     <div
       className="tableBody"
@@ -241,7 +265,8 @@ exports[`Translator allows changing the language of a column 1`] = `
           "flexDirection": "column",
           "overflowY": "scroll",
         }
-      }>
+      }
+    >
       <div
         changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
@@ -334,7 +359,8 @@ exports[`Translator allows changing the language of a column 1`] = `
               ],
             },
           }
-        }>
+        }
+      >
         TranslatorRow
       </div>
       <div
@@ -444,7 +470,8 @@ exports[`Translator allows changing the language of a column 1`] = `
               ],
             },
           }
-        }>
+        }
+      >
         TranslatorRow
       </div>
       <div
@@ -456,7 +483,8 @@ exports[`Translator allows changing the language of a column 1`] = `
             "flex": "1 1 0px",
             "flexDirection": "row",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -467,7 +495,8 @@ exports[`Translator allows changing the language of a column 1`] = `
               "paddingLeft": 5,
               "paddingRight": 17,
             }
-          }>
+          }
+        >
           
         </div>
         <div
@@ -480,7 +509,8 @@ exports[`Translator allows changing the language of a column 1`] = `
               "paddingLeft": 5,
               "paddingRight": 5,
             }
-          } />
+          }
+        />
       </div>
     </div>
   </div>
@@ -536,23 +566,23 @@ exports[`Translator allows changing the language of a column 1`] = `
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
-            value="\"es\""
+            value="\\"es\\""
           >
             <option
-              id="\"es\""
-              value="\"es\""
+              id="\\"es\\""
+              value="\\"es\\""
             >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\""
+              id="\\"ca\\""
+              value="\\"ca\\""
             >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\""
+              id="\\"en\\""
+              value="\\"en\\""
             >
               en
             </option>
@@ -627,7 +657,8 @@ exports[`Translator allows changing the language of a column 2`] = `
         "top": 0,
         "width": 0,
       }
-    } />
+    }
+  />
   <div
     style={
       Object {
@@ -637,7 +668,8 @@ exports[`Translator allows changing the language of a column 2`] = `
         "flexDirection": "column",
         "marginTop": 5,
       }
-    }>
+    }
+  >
     <div
       className="tableHeaderRow"
       style={
@@ -649,7 +681,8 @@ exports[`Translator allows changing the language of a column 2`] = `
           "fontWeight": "bold",
           "position": "relative",
         }
-      }>
+      }
+    >
       <div
         style={
           Object {
@@ -666,7 +699,8 @@ exports[`Translator allows changing the language of a column 2`] = `
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         MESSAGES
          
         <span
@@ -674,15 +708,18 @@ exports[`Translator allows changing the language of a column 2`] = `
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             2
           </span>
            / 
           <span
-            title="Total messages">
+            title="Total messages"
+          >
             2
           </span>
           ]
@@ -698,7 +735,8 @@ exports[`Translator allows changing the language of a column 2`] = `
               "letterSpacing": "normal",
             }
           }
-          title="Parse source files to update the message list" />
+          title="Parse source files to update the message list"
+        />
       </div>
       <div
         className="madyLangHeader"
@@ -717,7 +755,8 @@ exports[`Translator allows changing the language of a column 2`] = `
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -726,7 +765,8 @@ exports[`Translator allows changing the language of a column 2`] = `
               "position": "relative",
             }
           }
-          title="Change language">
+          title="Change language"
+        >
           <i
             className="giu-icon fa fa-caret-down"
             style={
@@ -736,7 +776,8 @@ exports[`Translator allows changing the language of a column 2`] = `
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
-            } />
+            }
+          />
           en
           <select
             className="giu-select-native"
@@ -764,20 +805,24 @@ exports[`Translator allows changing the language of a column 2`] = `
               }
             }
             tabIndex={undefined}
-            value="\"en\"">
+            value="\\"en\\""
+          >
             <option
-              id="\"es\""
-              value="\"es\"">
+              id="\\"es\\""
+              value="\\"es\\""
+            >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\"">
+              id="\\"ca\\""
+              value="\\"ca\\""
+            >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\"">
+              id="\\"en\\""
+              value="\\"en\\""
+            >
               en
             </option>
           </select>
@@ -788,15 +833,18 @@ exports[`Translator allows changing the language of a column 2`] = `
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Translations">
+            title="Translations"
+          >
             0
           </span>
            / 
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             2
           </span>
           ]
@@ -813,7 +861,8 @@ exports[`Translator allows changing the language of a column 2`] = `
               "letterSpacing": "normal",
             }
           }
-          title="Remove column (does NOT delete any translations)" />
+          title="Remove column (does NOT delete any translations)"
+        />
       </div>
       <div
         id="madyBtnAddLang"
@@ -829,7 +878,8 @@ exports[`Translator allows changing the language of a column 2`] = `
             "top": 0,
           }
         }
-        title="Add column">
+        title="Add column"
+      >
         <i
           className="giu-icon fa fa-plus"
           style={
@@ -838,7 +888,8 @@ exports[`Translator allows changing the language of a column 2`] = `
               "cursor": "pointer",
               "letterSpacing": "normal",
             }
-          } />
+          }
+        />
       </div>
       <div
         style={
@@ -846,7 +897,8 @@ exports[`Translator allows changing the language of a column 2`] = `
             "WebkitFlex": "0 0 0px",
             "flex": "0 0 0px",
           }
-        } />
+        }
+      />
     </div>
     <div
       className="tableBody"
@@ -858,7 +910,8 @@ exports[`Translator allows changing the language of a column 2`] = `
           "flexDirection": "column",
           "overflowY": "scroll",
         }
-      }>
+      }
+    >
       <div
         changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
@@ -951,7 +1004,8 @@ exports[`Translator allows changing the language of a column 2`] = `
               ],
             },
           }
-        }>
+        }
+      >
         TranslatorRow
       </div>
       <div
@@ -1061,7 +1115,8 @@ exports[`Translator allows changing the language of a column 2`] = `
               ],
             },
           }
-        }>
+        }
+      >
         TranslatorRow
       </div>
       <div
@@ -1073,7 +1128,8 @@ exports[`Translator allows changing the language of a column 2`] = `
             "flex": "1 1 0px",
             "flexDirection": "row",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -1084,7 +1140,8 @@ exports[`Translator allows changing the language of a column 2`] = `
               "paddingLeft": 5,
               "paddingRight": 17,
             }
-          }>
+          }
+        >
           
         </div>
         <div
@@ -1097,7 +1154,8 @@ exports[`Translator allows changing the language of a column 2`] = `
               "paddingLeft": 5,
               "paddingRight": 5,
             }
-          } />
+          }
+        />
       </div>
     </div>
   </div>
@@ -1153,23 +1211,23 @@ exports[`Translator allows changing the language of a column 2`] = `
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
-            value="\"en\""
+            value="\\"en\\""
           >
             <option
-              id="\"es\""
-              value="\"es\""
+              id="\\"es\\""
+              value="\\"es\\""
             >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\""
+              id="\\"ca\\""
+              value="\\"ca\\""
             >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\""
+              id="\\"en\\""
+              value="\\"en\\""
             >
               en
             </option>
@@ -1244,7 +1302,8 @@ exports[`Translator allows removing columns 1`] = `
         "top": 0,
         "width": 0,
       }
-    } />
+    }
+  />
   <div
     style={
       Object {
@@ -1254,7 +1313,8 @@ exports[`Translator allows removing columns 1`] = `
         "flexDirection": "column",
         "marginTop": 5,
       }
-    }>
+    }
+  >
     <div
       className="tableHeaderRow"
       style={
@@ -1266,7 +1326,8 @@ exports[`Translator allows removing columns 1`] = `
           "fontWeight": "bold",
           "position": "relative",
         }
-      }>
+      }
+    >
       <div
         style={
           Object {
@@ -1283,7 +1344,8 @@ exports[`Translator allows removing columns 1`] = `
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         MESSAGES
          
         <span
@@ -1291,15 +1353,18 @@ exports[`Translator allows removing columns 1`] = `
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             2
           </span>
            / 
           <span
-            title="Total messages">
+            title="Total messages"
+          >
             2
           </span>
           ]
@@ -1315,7 +1380,8 @@ exports[`Translator allows removing columns 1`] = `
               "letterSpacing": "normal",
             }
           }
-          title="Parse source files to update the message list" />
+          title="Parse source files to update the message list"
+        />
       </div>
       <div
         className="madyLangHeader"
@@ -1334,7 +1400,8 @@ exports[`Translator allows removing columns 1`] = `
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -1343,7 +1410,8 @@ exports[`Translator allows removing columns 1`] = `
               "position": "relative",
             }
           }
-          title="Change language">
+          title="Change language"
+        >
           <i
             className="giu-icon fa fa-caret-down"
             style={
@@ -1353,7 +1421,8 @@ exports[`Translator allows removing columns 1`] = `
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
-            } />
+            }
+          />
           es
           <select
             className="giu-select-native"
@@ -1381,20 +1450,24 @@ exports[`Translator allows removing columns 1`] = `
               }
             }
             tabIndex={undefined}
-            value="\"es\"">
+            value="\\"es\\""
+          >
             <option
-              id="\"es\""
-              value="\"es\"">
+              id="\\"es\\""
+              value="\\"es\\""
+            >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\"">
+              id="\\"ca\\""
+              value="\\"ca\\""
+            >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\"">
+              id="\\"en\\""
+              value="\\"en\\""
+            >
               en
             </option>
           </select>
@@ -1405,15 +1478,18 @@ exports[`Translator allows removing columns 1`] = `
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Translations">
+            title="Translations"
+          >
             1
           </span>
            / 
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             2
           </span>
           ]
@@ -1430,7 +1506,8 @@ exports[`Translator allows removing columns 1`] = `
               "letterSpacing": "normal",
             }
           }
-          title="Remove column (does NOT delete any translations)" />
+          title="Remove column (does NOT delete any translations)"
+        />
       </div>
       <div
         id="madyBtnAddLang"
@@ -1446,7 +1523,8 @@ exports[`Translator allows removing columns 1`] = `
             "top": 0,
           }
         }
-        title="Add column">
+        title="Add column"
+      >
         <i
           className="giu-icon fa fa-plus"
           style={
@@ -1455,7 +1533,8 @@ exports[`Translator allows removing columns 1`] = `
               "cursor": "pointer",
               "letterSpacing": "normal",
             }
-          } />
+          }
+        />
       </div>
       <div
         style={
@@ -1463,7 +1542,8 @@ exports[`Translator allows removing columns 1`] = `
             "WebkitFlex": "0 0 0px",
             "flex": "0 0 0px",
           }
-        } />
+        }
+      />
     </div>
     <div
       className="tableBody"
@@ -1475,7 +1555,8 @@ exports[`Translator allows removing columns 1`] = `
           "flexDirection": "column",
           "overflowY": "scroll",
         }
-      }>
+      }
+    >
       <div
         changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
@@ -1568,7 +1649,8 @@ exports[`Translator allows removing columns 1`] = `
               ],
             },
           }
-        }>
+        }
+      >
         TranslatorRow
       </div>
       <div
@@ -1678,7 +1760,8 @@ exports[`Translator allows removing columns 1`] = `
               ],
             },
           }
-        }>
+        }
+      >
         TranslatorRow
       </div>
       <div
@@ -1690,7 +1773,8 @@ exports[`Translator allows removing columns 1`] = `
             "flex": "1 1 0px",
             "flexDirection": "row",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -1701,7 +1785,8 @@ exports[`Translator allows removing columns 1`] = `
               "paddingLeft": 5,
               "paddingRight": 17,
             }
-          }>
+          }
+        >
           
         </div>
         <div
@@ -1714,7 +1799,8 @@ exports[`Translator allows removing columns 1`] = `
               "paddingLeft": 5,
               "paddingRight": 5,
             }
-          } />
+          }
+        />
       </div>
     </div>
   </div>
@@ -1770,23 +1856,23 @@ exports[`Translator allows removing columns 1`] = `
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
-            value="\"es\""
+            value="\\"es\\""
           >
             <option
-              id="\"es\""
-              value="\"es\""
+              id="\\"es\\""
+              value="\\"es\\""
             >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\""
+              id="\\"ca\\""
+              value="\\"ca\\""
             >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\""
+              id="\\"en\\""
+              value="\\"en\\""
             >
               en
             </option>
@@ -1861,7 +1947,8 @@ exports[`Translator renders correctly with a selection 1`] = `
         "top": 0,
         "width": 0,
       }
-    } />
+    }
+  />
   <div
     style={
       Object {
@@ -1871,7 +1958,8 @@ exports[`Translator renders correctly with a selection 1`] = `
         "flexDirection": "column",
         "marginTop": 5,
       }
-    }>
+    }
+  >
     <div
       className="tableHeaderRow"
       style={
@@ -1883,7 +1971,8 @@ exports[`Translator renders correctly with a selection 1`] = `
           "fontWeight": "bold",
           "position": "relative",
         }
-      }>
+      }
+    >
       <div
         style={
           Object {
@@ -1900,7 +1989,8 @@ exports[`Translator renders correctly with a selection 1`] = `
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         MESSAGES
          
         <span
@@ -1908,15 +1998,18 @@ exports[`Translator renders correctly with a selection 1`] = `
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             2
           </span>
            / 
           <span
-            title="Total messages">
+            title="Total messages"
+          >
             2
           </span>
           ]
@@ -1932,7 +2025,8 @@ exports[`Translator renders correctly with a selection 1`] = `
               "letterSpacing": "normal",
             }
           }
-          title="Parse source files to update the message list" />
+          title="Parse source files to update the message list"
+        />
       </div>
       <div
         className="madyLangHeader"
@@ -1951,7 +2045,8 @@ exports[`Translator renders correctly with a selection 1`] = `
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -1960,7 +2055,8 @@ exports[`Translator renders correctly with a selection 1`] = `
               "position": "relative",
             }
           }
-          title="Change language">
+          title="Change language"
+        >
           <i
             className="giu-icon fa fa-caret-down"
             style={
@@ -1970,7 +2066,8 @@ exports[`Translator renders correctly with a selection 1`] = `
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
-            } />
+            }
+          />
           ca
           <select
             className="giu-select-native"
@@ -1998,20 +2095,24 @@ exports[`Translator renders correctly with a selection 1`] = `
               }
             }
             tabIndex={undefined}
-            value="\"ca\"">
+            value="\\"ca\\""
+          >
             <option
-              id="\"es\""
-              value="\"es\"">
+              id="\\"es\\""
+              value="\\"es\\""
+            >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\"">
+              id="\\"ca\\""
+              value="\\"ca\\""
+            >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\"">
+              id="\\"en\\""
+              value="\\"en\\""
+            >
               en
             </option>
           </select>
@@ -2022,15 +2123,18 @@ exports[`Translator renders correctly with a selection 1`] = `
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Translations">
+            title="Translations"
+          >
             1
           </span>
            / 
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             2
           </span>
           ]
@@ -2047,7 +2151,8 @@ exports[`Translator renders correctly with a selection 1`] = `
               "letterSpacing": "normal",
             }
           }
-          title="Remove column (does NOT delete any translations)" />
+          title="Remove column (does NOT delete any translations)"
+        />
       </div>
       <div
         className="madyLangHeader"
@@ -2066,7 +2171,8 @@ exports[`Translator renders correctly with a selection 1`] = `
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -2075,7 +2181,8 @@ exports[`Translator renders correctly with a selection 1`] = `
               "position": "relative",
             }
           }
-          title="Change language">
+          title="Change language"
+        >
           <i
             className="giu-icon fa fa-caret-down"
             style={
@@ -2085,7 +2192,8 @@ exports[`Translator renders correctly with a selection 1`] = `
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
-            } />
+            }
+          />
           es
           <select
             className="giu-select-native"
@@ -2113,20 +2221,24 @@ exports[`Translator renders correctly with a selection 1`] = `
               }
             }
             tabIndex={undefined}
-            value="\"es\"">
+            value="\\"es\\""
+          >
             <option
-              id="\"es\""
-              value="\"es\"">
+              id="\\"es\\""
+              value="\\"es\\""
+            >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\"">
+              id="\\"ca\\""
+              value="\\"ca\\""
+            >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\"">
+              id="\\"en\\""
+              value="\\"en\\""
+            >
               en
             </option>
           </select>
@@ -2137,15 +2249,18 @@ exports[`Translator renders correctly with a selection 1`] = `
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Translations">
+            title="Translations"
+          >
             1
           </span>
            / 
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             2
           </span>
           ]
@@ -2162,7 +2277,8 @@ exports[`Translator renders correctly with a selection 1`] = `
               "letterSpacing": "normal",
             }
           }
-          title="Remove column (does NOT delete any translations)" />
+          title="Remove column (does NOT delete any translations)"
+        />
       </div>
       <div
         className="madyLangHeader"
@@ -2181,7 +2297,8 @@ exports[`Translator renders correctly with a selection 1`] = `
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -2190,7 +2307,8 @@ exports[`Translator renders correctly with a selection 1`] = `
               "position": "relative",
             }
           }
-          title="Change language">
+          title="Change language"
+        >
           <i
             className="giu-icon fa fa-caret-down"
             style={
@@ -2200,7 +2318,8 @@ exports[`Translator renders correctly with a selection 1`] = `
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
-            } />
+            }
+          />
           en
           <select
             className="giu-select-native"
@@ -2228,20 +2347,24 @@ exports[`Translator renders correctly with a selection 1`] = `
               }
             }
             tabIndex={undefined}
-            value="\"en\"">
+            value="\\"en\\""
+          >
             <option
-              id="\"es\""
-              value="\"es\"">
+              id="\\"es\\""
+              value="\\"es\\""
+            >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\"">
+              id="\\"ca\\""
+              value="\\"ca\\""
+            >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\"">
+              id="\\"en\\""
+              value="\\"en\\""
+            >
               en
             </option>
           </select>
@@ -2252,15 +2375,18 @@ exports[`Translator renders correctly with a selection 1`] = `
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Translations">
+            title="Translations"
+          >
             0
           </span>
            / 
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             2
           </span>
           ]
@@ -2277,7 +2403,8 @@ exports[`Translator renders correctly with a selection 1`] = `
               "letterSpacing": "normal",
             }
           }
-          title="Remove column (does NOT delete any translations)" />
+          title="Remove column (does NOT delete any translations)"
+        />
       </div>
       <div
         id="madyBtnAddLang"
@@ -2293,7 +2420,8 @@ exports[`Translator renders correctly with a selection 1`] = `
             "top": 0,
           }
         }
-        title="Add column">
+        title="Add column"
+      >
         <i
           className="giu-icon fa fa-plus"
           onClick={undefined}
@@ -2303,7 +2431,8 @@ exports[`Translator renders correctly with a selection 1`] = `
               "cursor": undefined,
               "letterSpacing": "normal",
             }
-          } />
+          }
+        />
       </div>
       <div
         style={
@@ -2311,7 +2440,8 @@ exports[`Translator renders correctly with a selection 1`] = `
             "WebkitFlex": "0 0 0px",
             "flex": "0 0 0px",
           }
-        } />
+        }
+      />
     </div>
     <div
       className="tableBody"
@@ -2323,7 +2453,8 @@ exports[`Translator renders correctly with a selection 1`] = `
           "flexDirection": "column",
           "overflowY": "scroll",
         }
-      }>
+      }
+    >
       <div
         changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
@@ -2418,7 +2549,8 @@ exports[`Translator renders correctly with a selection 1`] = `
               ],
             },
           }
-        }>
+        }
+      >
         TranslatorRow
       </div>
       <div
@@ -2530,7 +2662,8 @@ exports[`Translator renders correctly with a selection 1`] = `
               ],
             },
           }
-        }>
+        }
+      >
         TranslatorRow
       </div>
       <div
@@ -2542,7 +2675,8 @@ exports[`Translator renders correctly with a selection 1`] = `
             "flex": "1 1 0px",
             "flexDirection": "row",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -2553,7 +2687,8 @@ exports[`Translator renders correctly with a selection 1`] = `
               "paddingLeft": 5,
               "paddingRight": 17,
             }
-          }>
+          }
+        >
           
         </div>
         <div
@@ -2566,7 +2701,8 @@ exports[`Translator renders correctly with a selection 1`] = `
               "paddingLeft": 5,
               "paddingRight": 5,
             }
-          } />
+          }
+        />
         <div
           style={
             Object {
@@ -2577,7 +2713,8 @@ exports[`Translator renders correctly with a selection 1`] = `
               "paddingLeft": 5,
               "paddingRight": 5,
             }
-          } />
+          }
+        />
         <div
           style={
             Object {
@@ -2588,7 +2725,8 @@ exports[`Translator renders correctly with a selection 1`] = `
               "paddingLeft": 5,
               "paddingRight": 5,
             }
-          } />
+          }
+        />
       </div>
     </div>
   </div>
@@ -2644,23 +2782,23 @@ exports[`Translator renders correctly with a selection 1`] = `
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
-            value="\"ca\""
+            value="\\"ca\\""
           >
             <option
-              id="\"es\""
-              value="\"es\""
+              id="\\"es\\""
+              value="\\"es\\""
             >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\""
+              id="\\"ca\\""
+              value="\\"ca\\""
             >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\""
+              id="\\"en\\""
+              value="\\"en\\""
             >
               en
             </option>
@@ -2703,23 +2841,23 @@ exports[`Translator renders correctly with a selection 1`] = `
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
-            value="\"es\""
+            value="\\"es\\""
           >
             <option
-              id="\"es\""
-              value="\"es\""
+              id="\\"es\\""
+              value="\\"es\\""
             >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\""
+              id="\\"ca\\""
+              value="\\"ca\\""
             >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\""
+              id="\\"en\\""
+              value="\\"en\\""
             >
               en
             </option>
@@ -2762,23 +2900,23 @@ exports[`Translator renders correctly with a selection 1`] = `
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
-            value="\"en\""
+            value="\\"en\\""
           >
             <option
-              id="\"es\""
-              value="\"es\""
+              id="\\"es\\""
+              value="\\"es\\""
             >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\""
+              id="\\"ca\\""
+              value="\\"ca\\""
             >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\""
+              id="\\"en\\""
+              value="\\"en\\""
             >
               en
             </option>
@@ -2858,7 +2996,8 @@ exports[`Translator renders correctly with default columns 1`] = `
         "top": 0,
         "width": 0,
       }
-    } />
+    }
+  />
   <div
     style={
       Object {
@@ -2868,7 +3007,8 @@ exports[`Translator renders correctly with default columns 1`] = `
         "flexDirection": "column",
         "marginTop": 5,
       }
-    }>
+    }
+  >
     <div
       className="tableHeaderRow"
       style={
@@ -2880,7 +3020,8 @@ exports[`Translator renders correctly with default columns 1`] = `
           "fontWeight": "bold",
           "position": "relative",
         }
-      }>
+      }
+    >
       <div
         style={
           Object {
@@ -2897,7 +3038,8 @@ exports[`Translator renders correctly with default columns 1`] = `
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         MESSAGES
          
         <span
@@ -2905,15 +3047,18 @@ exports[`Translator renders correctly with default columns 1`] = `
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             2
           </span>
            / 
           <span
-            title="Total messages">
+            title="Total messages"
+          >
             2
           </span>
           ]
@@ -2929,7 +3074,8 @@ exports[`Translator renders correctly with default columns 1`] = `
               "letterSpacing": "normal",
             }
           }
-          title="Parse source files to update the message list" />
+          title="Parse source files to update the message list"
+        />
       </div>
       <div
         className="madyLangHeader"
@@ -2948,7 +3094,8 @@ exports[`Translator renders correctly with default columns 1`] = `
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -2957,7 +3104,8 @@ exports[`Translator renders correctly with default columns 1`] = `
               "position": "relative",
             }
           }
-          title="Change language">
+          title="Change language"
+        >
           <i
             className="giu-icon fa fa-caret-down"
             style={
@@ -2967,7 +3115,8 @@ exports[`Translator renders correctly with default columns 1`] = `
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
-            } />
+            }
+          />
           es
           <select
             className="giu-select-native"
@@ -2995,20 +3144,24 @@ exports[`Translator renders correctly with default columns 1`] = `
               }
             }
             tabIndex={undefined}
-            value="\"es\"">
+            value="\\"es\\""
+          >
             <option
-              id="\"es\""
-              value="\"es\"">
+              id="\\"es\\""
+              value="\\"es\\""
+            >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\"">
+              id="\\"ca\\""
+              value="\\"ca\\""
+            >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\"">
+              id="\\"en\\""
+              value="\\"en\\""
+            >
               en
             </option>
           </select>
@@ -3019,15 +3172,18 @@ exports[`Translator renders correctly with default columns 1`] = `
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Translations">
+            title="Translations"
+          >
             1
           </span>
            / 
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             2
           </span>
           ]
@@ -3044,7 +3200,8 @@ exports[`Translator renders correctly with default columns 1`] = `
               "letterSpacing": "normal",
             }
           }
-          title="Remove column (does NOT delete any translations)" />
+          title="Remove column (does NOT delete any translations)"
+        />
       </div>
       <div
         id="madyBtnAddLang"
@@ -3060,7 +3217,8 @@ exports[`Translator renders correctly with default columns 1`] = `
             "top": 0,
           }
         }
-        title="Add column">
+        title="Add column"
+      >
         <i
           className="giu-icon fa fa-plus"
           style={
@@ -3069,7 +3227,8 @@ exports[`Translator renders correctly with default columns 1`] = `
               "cursor": "pointer",
               "letterSpacing": "normal",
             }
-          } />
+          }
+        />
       </div>
       <div
         style={
@@ -3077,7 +3236,8 @@ exports[`Translator renders correctly with default columns 1`] = `
             "WebkitFlex": "0 0 0px",
             "flex": "0 0 0px",
           }
-        } />
+        }
+      />
     </div>
     <div
       className="tableBody"
@@ -3089,7 +3249,8 @@ exports[`Translator renders correctly with default columns 1`] = `
           "flexDirection": "column",
           "overflowY": "scroll",
         }
-      }>
+      }
+    >
       <div
         changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
@@ -3182,7 +3343,8 @@ exports[`Translator renders correctly with default columns 1`] = `
               ],
             },
           }
-        }>
+        }
+      >
         TranslatorRow
       </div>
       <div
@@ -3292,7 +3454,8 @@ exports[`Translator renders correctly with default columns 1`] = `
               ],
             },
           }
-        }>
+        }
+      >
         TranslatorRow
       </div>
       <div
@@ -3304,7 +3467,8 @@ exports[`Translator renders correctly with default columns 1`] = `
             "flex": "1 1 0px",
             "flexDirection": "row",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -3315,7 +3479,8 @@ exports[`Translator renders correctly with default columns 1`] = `
               "paddingLeft": 5,
               "paddingRight": 17,
             }
-          }>
+          }
+        >
           
         </div>
         <div
@@ -3328,7 +3493,8 @@ exports[`Translator renders correctly with default columns 1`] = `
               "paddingLeft": 5,
               "paddingRight": 5,
             }
-          } />
+          }
+        />
       </div>
     </div>
   </div>
@@ -3384,23 +3550,23 @@ exports[`Translator renders correctly with default columns 1`] = `
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
-            value="\"es\""
+            value="\\"es\\""
           >
             <option
-              id="\"es\""
-              value="\"es\""
+              id="\\"es\\""
+              value="\\"es\\""
             >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\""
+              id="\\"ca\\""
+              value="\\"ca\\""
             >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\""
+              id="\\"en\\""
+              value="\\"en\\""
             >
               en
             </option>
@@ -3475,7 +3641,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
         "top": 0,
         "width": 0,
       }
-    } />
+    }
+  />
   <div
     style={
       Object {
@@ -3485,7 +3652,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
         "flexDirection": "column",
         "marginTop": 5,
       }
-    }>
+    }
+  >
     <div
       className="tableHeaderRow"
       style={
@@ -3497,7 +3665,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
           "fontWeight": "bold",
           "position": "relative",
         }
-      }>
+      }
+    >
       <div
         style={
           Object {
@@ -3514,7 +3683,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         MESSAGES
          
         <span
@@ -3522,15 +3692,18 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             2
           </span>
            / 
           <span
-            title="Total messages">
+            title="Total messages"
+          >
             2
           </span>
           ]
@@ -3546,7 +3719,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               "letterSpacing": "normal",
             }
           }
-          title="Parse source files to update the message list" />
+          title="Parse source files to update the message list"
+        />
       </div>
       <div
         className="madyLangHeader"
@@ -3565,7 +3739,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -3574,7 +3749,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               "position": "relative",
             }
           }
-          title="Change language">
+          title="Change language"
+        >
           <i
             className="giu-icon fa fa-caret-down"
             style={
@@ -3584,7 +3760,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
-            } />
+            }
+          />
           ca
           <select
             className="giu-select-native"
@@ -3612,20 +3789,24 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               }
             }
             tabIndex={undefined}
-            value="\"ca\"">
+            value="\\"ca\\""
+          >
             <option
-              id="\"es\""
-              value="\"es\"">
+              id="\\"es\\""
+              value="\\"es\\""
+            >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\"">
+              id="\\"ca\\""
+              value="\\"ca\\""
+            >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\"">
+              id="\\"en\\""
+              value="\\"en\\""
+            >
               en
             </option>
           </select>
@@ -3636,15 +3817,18 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Translations">
+            title="Translations"
+          >
             1
           </span>
            / 
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             2
           </span>
           ]
@@ -3661,7 +3845,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               "letterSpacing": "normal",
             }
           }
-          title="Remove column (does NOT delete any translations)" />
+          title="Remove column (does NOT delete any translations)"
+        />
       </div>
       <div
         className="madyLangHeader"
@@ -3680,7 +3865,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -3689,7 +3875,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               "position": "relative",
             }
           }
-          title="Change language">
+          title="Change language"
+        >
           <i
             className="giu-icon fa fa-caret-down"
             style={
@@ -3699,7 +3886,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
-            } />
+            }
+          />
           es
           <select
             className="giu-select-native"
@@ -3727,20 +3915,24 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               }
             }
             tabIndex={undefined}
-            value="\"es\"">
+            value="\\"es\\""
+          >
             <option
-              id="\"es\""
-              value="\"es\"">
+              id="\\"es\\""
+              value="\\"es\\""
+            >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\"">
+              id="\\"ca\\""
+              value="\\"ca\\""
+            >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\"">
+              id="\\"en\\""
+              value="\\"en\\""
+            >
               en
             </option>
           </select>
@@ -3751,15 +3943,18 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Translations">
+            title="Translations"
+          >
             1
           </span>
            / 
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             2
           </span>
           ]
@@ -3776,7 +3971,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               "letterSpacing": "normal",
             }
           }
-          title="Remove column (does NOT delete any translations)" />
+          title="Remove column (does NOT delete any translations)"
+        />
       </div>
       <div
         id="madyBtnAddLang"
@@ -3792,7 +3988,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             "top": 0,
           }
         }
-        title="Add column">
+        title="Add column"
+      >
         <i
           className="giu-icon fa fa-plus"
           style={
@@ -3801,7 +3998,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               "cursor": "pointer",
               "letterSpacing": "normal",
             }
-          } />
+          }
+        />
       </div>
       <div
         style={
@@ -3809,7 +4007,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             "WebkitFlex": "0 0 0px",
             "flex": "0 0 0px",
           }
-        } />
+        }
+      />
     </div>
     <div
       className="tableBody"
@@ -3821,7 +4020,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
           "flexDirection": "column",
           "overflowY": "scroll",
         }
-      }>
+      }
+    >
       <div
         changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
@@ -3915,7 +4115,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               ],
             },
           }
-        }>
+        }
+      >
         TranslatorRow
       </div>
       <div
@@ -4026,7 +4227,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               ],
             },
           }
-        }>
+        }
+      >
         TranslatorRow
       </div>
       <div
@@ -4038,7 +4240,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             "flex": "1 1 0px",
             "flexDirection": "row",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -4049,7 +4252,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               "paddingLeft": 5,
               "paddingRight": 17,
             }
-          }>
+          }
+        >
           
         </div>
         <div
@@ -4062,7 +4266,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               "paddingLeft": 5,
               "paddingRight": 5,
             }
-          } />
+          }
+        />
         <div
           style={
             Object {
@@ -4073,7 +4278,8 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               "paddingLeft": 5,
               "paddingRight": 5,
             }
-          } />
+          }
+        />
       </div>
     </div>
   </div>
@@ -4129,23 +4335,23 @@ exports[`Translator renders correctly with fixed columns 1`] = `
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
-            value="\"ca\""
+            value="\\"ca\\""
           >
             <option
-              id="\"es\""
-              value="\"es\""
+              id="\\"es\\""
+              value="\\"es\\""
             >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\""
+              id="\\"ca\\""
+              value="\\"ca\\""
             >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\""
+              id="\\"en\\""
+              value="\\"en\\""
             >
               en
             </option>
@@ -4188,23 +4394,23 @@ exports[`Translator renders correctly with fixed columns 1`] = `
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
-            value="\"es\""
+            value="\\"es\\""
           >
             <option
-              id="\"es\""
-              value="\"es\""
+              id="\\"es\\""
+              value="\\"es\\""
             >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\""
+              id="\\"ca\\""
+              value="\\"ca\\""
             >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\""
+              id="\\"en\\""
+              value="\\"en\\""
             >
               en
             </option>
@@ -4280,7 +4486,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
         "top": 0,
         "width": 0,
       }
-    } />
+    }
+  />
   <div
     style={
       Object {
@@ -4290,7 +4497,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
         "flexDirection": "column",
         "marginTop": 5,
       }
-    }>
+    }
+  >
     <div
       className="tableHeaderRow"
       style={
@@ -4302,7 +4510,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
           "fontWeight": "bold",
           "position": "relative",
         }
-      }>
+      }
+    >
       <div
         style={
           Object {
@@ -4319,7 +4528,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         MESSAGES
          
         <span
@@ -4327,15 +4537,18 @@ exports[`Translator renders correctly with fixed columns using up all available 
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             2
           </span>
            / 
           <span
-            title="Total messages">
+            title="Total messages"
+          >
             2
           </span>
           ]
@@ -4351,7 +4564,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
               "letterSpacing": "normal",
             }
           }
-          title="Parse source files to update the message list" />
+          title="Parse source files to update the message list"
+        />
       </div>
       <div
         className="madyLangHeader"
@@ -4370,7 +4584,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -4379,7 +4594,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
               "position": "relative",
             }
           }
-          title="Change language">
+          title="Change language"
+        >
           <i
             className="giu-icon fa fa-caret-down"
             style={
@@ -4389,7 +4605,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
-            } />
+            }
+          />
           ca
           <select
             className="giu-select-native"
@@ -4417,20 +4634,24 @@ exports[`Translator renders correctly with fixed columns using up all available 
               }
             }
             tabIndex={undefined}
-            value="\"ca\"">
+            value="\\"ca\\""
+          >
             <option
-              id="\"es\""
-              value="\"es\"">
+              id="\\"es\\""
+              value="\\"es\\""
+            >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\"">
+              id="\\"ca\\""
+              value="\\"ca\\""
+            >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\"">
+              id="\\"en\\""
+              value="\\"en\\""
+            >
               en
             </option>
           </select>
@@ -4441,15 +4662,18 @@ exports[`Translator renders correctly with fixed columns using up all available 
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Translations">
+            title="Translations"
+          >
             1
           </span>
            / 
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             2
           </span>
           ]
@@ -4466,7 +4690,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
               "letterSpacing": "normal",
             }
           }
-          title="Remove column (does NOT delete any translations)" />
+          title="Remove column (does NOT delete any translations)"
+        />
       </div>
       <div
         className="madyLangHeader"
@@ -4485,7 +4710,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -4494,7 +4720,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
               "position": "relative",
             }
           }
-          title="Change language">
+          title="Change language"
+        >
           <i
             className="giu-icon fa fa-caret-down"
             style={
@@ -4504,7 +4731,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
-            } />
+            }
+          />
           es
           <select
             className="giu-select-native"
@@ -4532,20 +4760,24 @@ exports[`Translator renders correctly with fixed columns using up all available 
               }
             }
             tabIndex={undefined}
-            value="\"es\"">
+            value="\\"es\\""
+          >
             <option
-              id="\"es\""
-              value="\"es\"">
+              id="\\"es\\""
+              value="\\"es\\""
+            >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\"">
+              id="\\"ca\\""
+              value="\\"ca\\""
+            >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\"">
+              id="\\"en\\""
+              value="\\"en\\""
+            >
               en
             </option>
           </select>
@@ -4556,15 +4788,18 @@ exports[`Translator renders correctly with fixed columns using up all available 
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Translations">
+            title="Translations"
+          >
             1
           </span>
            / 
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             2
           </span>
           ]
@@ -4581,7 +4816,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
               "letterSpacing": "normal",
             }
           }
-          title="Remove column (does NOT delete any translations)" />
+          title="Remove column (does NOT delete any translations)"
+        />
       </div>
       <div
         className="madyLangHeader"
@@ -4600,7 +4836,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -4609,7 +4846,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
               "position": "relative",
             }
           }
-          title="Change language">
+          title="Change language"
+        >
           <i
             className="giu-icon fa fa-caret-down"
             style={
@@ -4619,7 +4857,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
-            } />
+            }
+          />
           en
           <select
             className="giu-select-native"
@@ -4647,20 +4886,24 @@ exports[`Translator renders correctly with fixed columns using up all available 
               }
             }
             tabIndex={undefined}
-            value="\"en\"">
+            value="\\"en\\""
+          >
             <option
-              id="\"es\""
-              value="\"es\"">
+              id="\\"es\\""
+              value="\\"es\\""
+            >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\"">
+              id="\\"ca\\""
+              value="\\"ca\\""
+            >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\"">
+              id="\\"en\\""
+              value="\\"en\\""
+            >
               en
             </option>
           </select>
@@ -4671,15 +4914,18 @@ exports[`Translator renders correctly with fixed columns using up all available 
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Translations">
+            title="Translations"
+          >
             0
           </span>
            / 
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             2
           </span>
           ]
@@ -4696,7 +4942,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
               "letterSpacing": "normal",
             }
           }
-          title="Remove column (does NOT delete any translations)" />
+          title="Remove column (does NOT delete any translations)"
+        />
       </div>
       <div
         id="madyBtnAddLang"
@@ -4712,7 +4959,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
             "top": 0,
           }
         }
-        title="Add column">
+        title="Add column"
+      >
         <i
           className="giu-icon fa fa-plus"
           onClick={undefined}
@@ -4722,7 +4970,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
               "cursor": undefined,
               "letterSpacing": "normal",
             }
-          } />
+          }
+        />
       </div>
       <div
         style={
@@ -4730,7 +4979,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
             "WebkitFlex": "0 0 0px",
             "flex": "0 0 0px",
           }
-        } />
+        }
+      />
     </div>
     <div
       className="tableBody"
@@ -4742,7 +4992,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
           "flexDirection": "column",
           "overflowY": "scroll",
         }
-      }>
+      }
+    >
       <div
         changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
@@ -4837,7 +5088,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
               ],
             },
           }
-        }>
+        }
+      >
         TranslatorRow
       </div>
       <div
@@ -4949,7 +5201,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
               ],
             },
           }
-        }>
+        }
+      >
         TranslatorRow
       </div>
       <div
@@ -4961,7 +5214,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
             "flex": "1 1 0px",
             "flexDirection": "row",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -4972,7 +5226,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
               "paddingLeft": 5,
               "paddingRight": 17,
             }
-          }>
+          }
+        >
           
         </div>
         <div
@@ -4985,7 +5240,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
               "paddingLeft": 5,
               "paddingRight": 5,
             }
-          } />
+          }
+        />
         <div
           style={
             Object {
@@ -4996,7 +5252,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
               "paddingLeft": 5,
               "paddingRight": 5,
             }
-          } />
+          }
+        />
         <div
           style={
             Object {
@@ -5007,7 +5264,8 @@ exports[`Translator renders correctly with fixed columns using up all available 
               "paddingLeft": 5,
               "paddingRight": 5,
             }
-          } />
+          }
+        />
       </div>
     </div>
   </div>
@@ -5063,23 +5321,23 @@ exports[`Translator renders correctly with fixed columns using up all available 
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
-            value="\"ca\""
+            value="\\"ca\\""
           >
             <option
-              id="\"es\""
-              value="\"es\""
+              id="\\"es\\""
+              value="\\"es\\""
             >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\""
+              id="\\"ca\\""
+              value="\\"ca\\""
             >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\""
+              id="\\"en\\""
+              value="\\"en\\""
             >
               en
             </option>
@@ -5122,23 +5380,23 @@ exports[`Translator renders correctly with fixed columns using up all available 
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
-            value="\"es\""
+            value="\\"es\\""
           >
             <option
-              id="\"es\""
-              value="\"es\""
+              id="\\"es\\""
+              value="\\"es\\""
             >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\""
+              id="\\"ca\\""
+              value="\\"ca\\""
             >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\""
+              id="\\"en\\""
+              value="\\"en\\""
             >
               en
             </option>
@@ -5181,23 +5439,23 @@ exports[`Translator renders correctly with fixed columns using up all available 
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
-            value="\"en\""
+            value="\\"en\\""
           >
             <option
-              id="\"es\""
-              value="\"es\""
+              id="\\"es\\""
+              value="\\"es\\""
             >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\""
+              id="\\"ca\\""
+              value="\\"ca\\""
             >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\""
+              id="\\"en\\""
+              value="\\"en\\""
             >
               en
             </option>
@@ -5274,7 +5532,8 @@ exports[`Translator renders correctly with no content 1`] = `
         "top": 0,
         "width": 0,
       }
-    } />
+    }
+  />
   <div
     style={
       Object {
@@ -5284,7 +5543,8 @@ exports[`Translator renders correctly with no content 1`] = `
         "flexDirection": "column",
         "marginTop": 5,
       }
-    }>
+    }
+  >
     <div
       className="tableHeaderRow"
       style={
@@ -5296,7 +5556,8 @@ exports[`Translator renders correctly with no content 1`] = `
           "fontWeight": "bold",
           "position": "relative",
         }
-      }>
+      }
+    >
       <div
         style={
           Object {
@@ -5313,7 +5574,8 @@ exports[`Translator renders correctly with no content 1`] = `
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         MESSAGES
          
         <span
@@ -5321,15 +5583,18 @@ exports[`Translator renders correctly with no content 1`] = `
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             0
           </span>
            / 
           <span
-            title="Total messages">
+            title="Total messages"
+          >
             0
           </span>
           ]
@@ -5345,7 +5610,8 @@ exports[`Translator renders correctly with no content 1`] = `
               "letterSpacing": "normal",
             }
           }
-          title="Parse source files to update the message list" />
+          title="Parse source files to update the message list"
+        />
       </div>
       <div
         className="madyLangHeader"
@@ -5364,7 +5630,8 @@ exports[`Translator renders correctly with no content 1`] = `
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -5373,7 +5640,8 @@ exports[`Translator renders correctly with no content 1`] = `
               "position": "relative",
             }
           }
-          title="Change language">
+          title="Change language"
+        >
           <i
             className="giu-icon fa fa-caret-down"
             style={
@@ -5383,7 +5651,8 @@ exports[`Translator renders correctly with no content 1`] = `
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
-            } />
+            }
+          />
           es
           <select
             className="giu-select-native"
@@ -5411,20 +5680,24 @@ exports[`Translator renders correctly with no content 1`] = `
               }
             }
             tabIndex={undefined}
-            value="\"es\"">
+            value="\\"es\\""
+          >
             <option
-              id="\"es\""
-              value="\"es\"">
+              id="\\"es\\""
+              value="\\"es\\""
+            >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\"">
+              id="\\"ca\\""
+              value="\\"ca\\""
+            >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\"">
+              id="\\"en\\""
+              value="\\"en\\""
+            >
               en
             </option>
           </select>
@@ -5435,15 +5708,18 @@ exports[`Translator renders correctly with no content 1`] = `
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Translations">
+            title="Translations"
+          >
             0
           </span>
            / 
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             0
           </span>
           ]
@@ -5460,7 +5736,8 @@ exports[`Translator renders correctly with no content 1`] = `
               "letterSpacing": "normal",
             }
           }
-          title="Remove column (does NOT delete any translations)" />
+          title="Remove column (does NOT delete any translations)"
+        />
       </div>
       <div
         id="madyBtnAddLang"
@@ -5476,7 +5753,8 @@ exports[`Translator renders correctly with no content 1`] = `
             "top": 0,
           }
         }
-        title="Add column">
+        title="Add column"
+      >
         <i
           className="giu-icon fa fa-plus"
           style={
@@ -5485,7 +5763,8 @@ exports[`Translator renders correctly with no content 1`] = `
               "cursor": "pointer",
               "letterSpacing": "normal",
             }
-          } />
+          }
+        />
       </div>
       <div
         style={
@@ -5493,7 +5772,8 @@ exports[`Translator renders correctly with no content 1`] = `
             "WebkitFlex": "0 0 0px",
             "flex": "0 0 0px",
           }
-        } />
+        }
+      />
     </div>
     <div
       className="tableBody"
@@ -5505,7 +5785,8 @@ exports[`Translator renders correctly with no content 1`] = `
           "flexDirection": "column",
           "overflowY": "scroll",
         }
-      }>
+      }
+    >
       <div
         className="tableFillerRow"
         style={
@@ -5515,7 +5796,8 @@ exports[`Translator renders correctly with no content 1`] = `
             "flex": "1 1 0px",
             "flexDirection": "row",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -5526,7 +5808,8 @@ exports[`Translator renders correctly with no content 1`] = `
               "paddingLeft": 5,
               "paddingRight": 17,
             }
-          }>
+          }
+        >
           <div
             className="giu-large-message"
             style={
@@ -5537,7 +5820,8 @@ exports[`Translator renders correctly with no content 1`] = `
                 "padding": "0.8em",
                 "textAlign": "center",
               }
-            }>
+            }
+          >
             No messages. Click on 
             <i
               className="giu-icon fa fa-refresh"
@@ -5548,7 +5832,8 @@ exports[`Translator renders correctly with no content 1`] = `
                   "cursor": undefined,
                   "letterSpacing": "normal",
                 }
-              } />
+              }
+            />
              to refresh
           </div>
         </div>
@@ -5562,7 +5847,8 @@ exports[`Translator renders correctly with no content 1`] = `
               "paddingLeft": 5,
               "paddingRight": 5,
             }
-          } />
+          }
+        />
       </div>
     </div>
   </div>
@@ -5618,23 +5904,23 @@ exports[`Translator renders correctly with no content 1`] = `
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
-            value="\"es\""
+            value="\\"es\\""
           >
             <option
-              id="\"es\""
-              value="\"es\""
+              id="\\"es\\""
+              value="\\"es\\""
             >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\""
+              id="\\"ca\\""
+              value="\\"ca\\""
             >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\""
+              id="\\"en\\""
+              value="\\"en\\""
             >
               en
             </option>
@@ -5714,7 +6000,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
         "top": 0,
         "width": 0,
       }
-    } />
+    }
+  />
   <div
     style={
       Object {
@@ -5724,7 +6011,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
         "flexDirection": "column",
         "marginTop": 5,
       }
-    }>
+    }
+  >
     <div
       className="tableHeaderRow"
       style={
@@ -5736,7 +6024,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
           "fontWeight": "bold",
           "position": "relative",
         }
-      }>
+      }
+    >
       <div
         style={
           Object {
@@ -5753,7 +6042,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         MESSAGES
          
         <span
@@ -5761,15 +6051,18 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             2
           </span>
            / 
           <span
-            title="Total messages">
+            title="Total messages"
+          >
             2
           </span>
           ]
@@ -5785,7 +6078,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               "letterSpacing": "normal",
             }
           }
-          title="Parse source files to update the message list" />
+          title="Parse source files to update the message list"
+        />
       </div>
       <div
         className="madyLangHeader"
@@ -5804,7 +6098,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -5813,7 +6108,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               "position": "relative",
             }
           }
-          title="Change language">
+          title="Change language"
+        >
           <i
             className="giu-icon fa fa-caret-down"
             style={
@@ -5823,7 +6119,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
-            } />
+            }
+          />
           ca
           <select
             className="giu-select-native"
@@ -5851,20 +6148,24 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               }
             }
             tabIndex={undefined}
-            value="\"ca\"">
+            value="\\"ca\\""
+          >
             <option
-              id="\"es\""
-              value="\"es\"">
+              id="\\"es\\""
+              value="\\"es\\""
+            >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\"">
+              id="\\"ca\\""
+              value="\\"ca\\""
+            >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\"">
+              id="\\"en\\""
+              value="\\"en\\""
+            >
               en
             </option>
           </select>
@@ -5875,15 +6176,18 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Translations">
+            title="Translations"
+          >
             1
           </span>
            / 
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             2
           </span>
           ]
@@ -5900,7 +6204,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               "letterSpacing": "normal",
             }
           }
-          title="Remove column (does NOT delete any translations)" />
+          title="Remove column (does NOT delete any translations)"
+        />
       </div>
       <div
         className="madyLangHeader"
@@ -5919,7 +6224,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -5928,7 +6234,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               "position": "relative",
             }
           }
-          title="Change language">
+          title="Change language"
+        >
           <i
             className="giu-icon fa fa-caret-down"
             style={
@@ -5938,7 +6245,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
-            } />
+            }
+          />
           es
           <select
             className="giu-select-native"
@@ -5966,20 +6274,24 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               }
             }
             tabIndex={undefined}
-            value="\"es\"">
+            value="\\"es\\""
+          >
             <option
-              id="\"es\""
-              value="\"es\"">
+              id="\\"es\\""
+              value="\\"es\\""
+            >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\"">
+              id="\\"ca\\""
+              value="\\"ca\\""
+            >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\"">
+              id="\\"en\\""
+              value="\\"en\\""
+            >
               en
             </option>
           </select>
@@ -5990,15 +6302,18 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Translations">
+            title="Translations"
+          >
             1
           </span>
            / 
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             2
           </span>
           ]
@@ -6015,7 +6330,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               "letterSpacing": "normal",
             }
           }
-          title="Remove column (does NOT delete any translations)" />
+          title="Remove column (does NOT delete any translations)"
+        />
       </div>
       <div
         className="madyLangHeader"
@@ -6034,7 +6350,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             "paddingTop": 3,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -6043,7 +6360,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               "position": "relative",
             }
           }
-          title="Change language">
+          title="Change language"
+        >
           <i
             className="giu-icon fa fa-caret-down"
             style={
@@ -6053,7 +6371,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
                 "letterSpacing": "normal",
                 "marginRight": 5,
               }
-            } />
+            }
+          />
           en
           <select
             className="giu-select-native"
@@ -6081,20 +6400,24 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               }
             }
             tabIndex={undefined}
-            value="\"en\"">
+            value="\\"en\\""
+          >
             <option
-              id="\"es\""
-              value="\"es\"">
+              id="\\"es\\""
+              value="\\"es\\""
+            >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\"">
+              id="\\"ca\\""
+              value="\\"ca\\""
+            >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\"">
+              id="\\"en\\""
+              value="\\"en\\""
+            >
               en
             </option>
           </select>
@@ -6105,15 +6428,18 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             Object {
               "color": "darkgrey",
             }
-          }>
+          }
+        >
           [
           <span
-            title="Translations">
+            title="Translations"
+          >
             0
           </span>
            / 
           <span
-            title="Used messages">
+            title="Used messages"
+          >
             2
           </span>
           ]
@@ -6130,7 +6456,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               "letterSpacing": "normal",
             }
           }
-          title="Remove column (does NOT delete any translations)" />
+          title="Remove column (does NOT delete any translations)"
+        />
       </div>
       <div
         id="madyBtnAddLang"
@@ -6146,7 +6473,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             "top": 0,
           }
         }
-        title="Add column">
+        title="Add column"
+      >
         <i
           className="giu-icon fa fa-plus"
           onClick={undefined}
@@ -6156,7 +6484,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               "cursor": undefined,
               "letterSpacing": "normal",
             }
-          } />
+          }
+        />
       </div>
       <div
         style={
@@ -6164,7 +6493,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             "WebkitFlex": "0 0 0px",
             "flex": "0 0 0px",
           }
-        } />
+        }
+      />
     </div>
     <div
       className="tableBody"
@@ -6176,7 +6506,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
           "flexDirection": "column",
           "overflowY": "scroll",
         }
-      }>
+      }
+    >
       <div
         changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
@@ -6271,7 +6602,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               ],
             },
           }
-        }>
+        }
+      >
         TranslatorRow
       </div>
       <div
@@ -6383,7 +6715,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               ],
             },
           }
-        }>
+        }
+      >
         TranslatorRow
       </div>
       <div
@@ -6395,7 +6728,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             "flex": "1 1 0px",
             "flexDirection": "row",
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -6406,7 +6740,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               "paddingLeft": 5,
               "paddingRight": 17,
             }
-          }>
+          }
+        >
           
         </div>
         <div
@@ -6419,7 +6754,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               "paddingLeft": 5,
               "paddingRight": 5,
             }
-          } />
+          }
+        />
         <div
           style={
             Object {
@@ -6430,7 +6766,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               "paddingLeft": 5,
               "paddingRight": 5,
             }
-          } />
+          }
+        />
         <div
           style={
             Object {
@@ -6441,7 +6778,8 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               "paddingLeft": 5,
               "paddingRight": 5,
             }
-          } />
+          }
+        />
       </div>
     </div>
   </div>
@@ -6497,23 +6835,23 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
-            value="\"ca\""
+            value="\\"ca\\""
           >
             <option
-              id="\"es\""
-              value="\"es\""
+              id="\\"es\\""
+              value="\\"es\\""
             >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\""
+              id="\\"ca\\""
+              value="\\"ca\\""
             >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\""
+              id="\\"en\\""
+              value="\\"en\\""
             >
               en
             </option>
@@ -6556,23 +6894,23 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
-            value="\"es\""
+            value="\\"es\\""
           >
             <option
-              id="\"es\""
-              value="\"es\""
+              id="\\"es\\""
+              value="\\"es\\""
             >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\""
+              id="\\"ca\\""
+              value="\\"ca\\""
             >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\""
+              id="\\"en\\""
+              value="\\"en\\""
             >
               en
             </option>
@@ -6615,23 +6953,23 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
-            value="\"en\""
+            value="\\"en\\""
           >
             <option
-              id="\"es\""
-              value="\"es\""
+              id="\\"es\\""
+              value="\\"es\\""
             >
               es
             </option>
             <option
-              id="\"ca\""
-              value="\"ca\""
+              id="\\"ca\\""
+              value="\\"ca\\""
             >
               ca
             </option>
             <option
-              id="\"en\""
-              value="\"en\""
+              id="\\"en\\""
+              value="\\"en\\""
             >
               en
             </option>

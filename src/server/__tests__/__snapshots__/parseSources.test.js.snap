@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Source parser Custom regexp parsing should work with custom regexps 1`] = `
 Object {
   "ISE=": Object {
@@ -37,7 +39,7 @@ Object {
     "sources": Array [
       "FILENAME",
     ],
-    "text": "let\'s go",
+    "text": "let's go",
     "unusedSince": null,
   },
 }

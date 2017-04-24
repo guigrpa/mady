@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Details renders correctly with a selection but no data yet 1`] = `
 <div
   style={
@@ -9,7 +11,8 @@ exports[`Details renders correctly with a selection but no data yet 1`] = `
       "minHeight": 110,
       "padding": 5,
     }
-  }>
+  }
+>
   <div
     style={
       Object {
@@ -18,7 +21,8 @@ exports[`Details renders correctly with a selection but no data yet 1`] = `
         "marginBottom": 10,
         "textAlign": "center",
       }
-    }>
+    }
+  >
     DETAILS
   </div>
   <div
@@ -31,7 +35,8 @@ exports[`Details renders correctly with a selection but no data yet 1`] = `
         "padding": "0.8em",
         "textAlign": "center",
       }
-    }>
+    }
+  >
     <i
       className="giu-icon fa fa-circle-o-notch fa-spin"
       style={
@@ -40,7 +45,8 @@ exports[`Details renders correctly with a selection but no data yet 1`] = `
           "cursor": "pointer",
           "letterSpacing": "normal",
         }
-      } />
+      }
+    />
   </div>
 </div>
 ------------HTML PREVIEW---------------
@@ -72,7 +78,8 @@ exports[`Details renders correctly without a selection 1`] = `
       "minHeight": 110,
       "padding": 5,
     }
-  }>
+  }
+>
   <div
     style={
       Object {
@@ -81,7 +88,8 @@ exports[`Details renders correctly without a selection 1`] = `
         "marginBottom": 10,
         "textAlign": "center",
       }
-    }>
+    }
+  >
     DETAILS
   </div>
   <div
@@ -94,7 +102,8 @@ exports[`Details renders correctly without a selection 1`] = `
         "padding": "0.8em",
         "textAlign": "center",
       }
-    }>
+    }
+  >
     No message selected
   </div>
 </div>
@@ -123,7 +132,8 @@ exports[`Details when the details for the selection are available renders correc
       "minHeight": 110,
       "padding": 5,
     }
-  }>
+  }
+>
   <div
     style={
       Object {
@@ -132,7 +142,8 @@ exports[`Details when the details for the selection are available renders correc
         "marginBottom": 10,
         "textAlign": "center",
       }
-    }>
+    }
+  >
     DETAILS
   </div>
   <div>
@@ -148,7 +159,8 @@ exports[`Details when the details for the selection are available renders correc
           "fontWeight": "bold",
         }
       }
-      title="Monday, April 18, 2016 7:37 AM">
+      title="Monday, April 18, 2016 7:37 AM"
+    >
       a year ago
     </span>
     <span>
@@ -162,7 +174,8 @@ exports[`Details when the details for the selection are available renders correc
             "fontWeight": "bold",
           }
         }
-        title="Thursday, April 21, 2016 7:37 AM">
+        title="Thursday, April 21, 2016 7:37 AM"
+      >
         a year ago
       </span>
     </span>
@@ -211,7 +224,8 @@ exports[`Details when the details for the selection are available renders correc
       "minHeight": 110,
       "padding": 5,
     }
-  }>
+  }
+>
   <div
     style={
       Object {
@@ -220,7 +234,8 @@ exports[`Details when the details for the selection are available renders correc
         "marginBottom": 10,
         "textAlign": "center",
       }
-    }>
+    }
+  >
     DETAILS
   </div>
   <div>
@@ -236,7 +251,8 @@ exports[`Details when the details for the selection are available renders correc
           "fontWeight": "bold",
         }
       }
-      title="Monday, April 18, 2016 7:37 AM">
+      title="Monday, April 18, 2016 7:37 AM"
+    >
       a year ago
     </span>
     :
@@ -245,7 +261,8 @@ exports[`Details when the details for the selection are available renders correc
         Object {
           "marginTop": 0,
         }
-      }>
+      }
+    >
       <li>
         src/client/components/060-translator.js
       </li>

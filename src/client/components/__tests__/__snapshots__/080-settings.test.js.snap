@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Settings renders correctly 1`] = `
 <div>
   <div
@@ -10,7 +12,8 @@ exports[`Settings renders correctly 1`] = `
         "top": 0,
         "width": 0,
       }
-    } />
+    }
+  />
   <div
     className="giu-modal"
     id={undefined}
@@ -25,7 +28,8 @@ exports[`Settings renders correctly 1`] = `
         "width": "100vw",
         "zIndex": 50,
       }
-    }>
+    }
+  >
     <div
       className="giu-backdrop"
       onClick={[Function]}
@@ -40,7 +44,8 @@ exports[`Settings renders correctly 1`] = `
           "top": 0,
           "width": "100vw",
         }
-      } />
+      }
+    />
     <div
       style={
         Object {
@@ -51,7 +56,8 @@ exports[`Settings renders correctly 1`] = `
           "top": "5vh",
           "width": "100%",
         }
-      }>
+      }
+    >
       <div
         onClick={[Function]}
         onTouchMove={[Function]}
@@ -61,7 +67,8 @@ exports[`Settings renders correctly 1`] = `
             "WebkitFlex": 1,
             "flex": 1,
           }
-        } />
+        }
+      />
       <div
         onScroll={[Function]}
         onWheel={[Function]}
@@ -74,7 +81,8 @@ exports[`Settings renders correctly 1`] = `
             "overflowY": "auto",
             "padding": 20,
           }
-        }>
+        }
+      >
         <input
           autoFocus={true}
           style={
@@ -91,16 +99,19 @@ exports[`Settings renders correctly 1`] = `
               "zIndex": -80,
             }
           }
-          tabIndex={undefined} />
+          tabIndex={undefined}
+        />
         <div>
           <div
             style={
               Object {
                 "marginTop": 7,
               }
-            }>
+            }
+          >
             <label
-              htmlFor="lang">
+              htmlFor="lang"
+            >
               Mady language:
             </label>
              
@@ -123,20 +134,24 @@ exports[`Settings renders correctly 1`] = `
                 }
               }
               tabIndex={undefined}
-              value="\"en\"">
+              value="\\"en\\""
+            >
               <option
-                id="\"en\""
-                value="\"en\"">
+                id="\\"en\\""
+                value="\\"en\\""
+              >
                 English
               </option>
               <option
-                id="\"es\""
-                value="\"es\"">
+                id="\\"es\\""
+                value="\\"es\\""
+              >
                 Español
               </option>
               <option
-                id="\"ca\""
-                value="\"ca\"">
+                id="\\"ca\\""
+                value="\\"ca\\""
+              >
                 Català
               </option>
             </select>
@@ -147,7 +162,8 @@ exports[`Settings renders correctly 1`] = `
                 "marginBottom": 3,
                 "marginTop": 7,
               }
-            }>
+            }
+          >
             Languages (BCP47 codes):
           </div>
           <div
@@ -157,7 +173,8 @@ exports[`Settings renders correctly 1`] = `
                 "flexDirection": "row",
                 "marginLeft": 15,
               }
-            }>
+            }
+          >
             <div
               style={
                 Object {
@@ -166,7 +183,8 @@ exports[`Settings renders correctly 1`] = `
                   "padding": "0px 2px",
                   "whiteSpace": "nowrap",
                 }
-              }>
+              }
+            >
               <input
                 className="giu-text-input"
                 id="langs.0"
@@ -191,7 +209,8 @@ exports[`Settings renders correctly 1`] = `
                 }
                 tabIndex={undefined}
                 type="text"
-                value="en" />
+                value="en"
+              />
                
               <i
                 className="giu-icon fa fa-remove"
@@ -203,7 +222,8 @@ exports[`Settings renders correctly 1`] = `
                     "cursor": "pointer",
                     "letterSpacing": "normal",
                   }
-                } />
+                }
+              />
             </div>
             <div
               style={
@@ -213,7 +233,8 @@ exports[`Settings renders correctly 1`] = `
                   "padding": "0px 2px",
                   "whiteSpace": "nowrap",
                 }
-              }>
+              }
+            >
               <input
                 className="giu-text-input"
                 id="langs.1"
@@ -238,7 +259,8 @@ exports[`Settings renders correctly 1`] = `
                 }
                 tabIndex={undefined}
                 type="text"
-                value="es" />
+                value="es"
+              />
                
               <i
                 className="giu-icon fa fa-remove"
@@ -250,7 +272,8 @@ exports[`Settings renders correctly 1`] = `
                     "cursor": "pointer",
                     "letterSpacing": "normal",
                   }
-                } />
+                }
+              />
             </div>
             <i
               className="giu-icon fa fa-plus"
@@ -264,7 +287,8 @@ exports[`Settings renders correctly 1`] = `
                   "letterSpacing": "normal",
                   "marginTop": 5,
                 }
-              } />
+              }
+            />
           </div>
           <div
             style={
@@ -272,7 +296,8 @@ exports[`Settings renders correctly 1`] = `
                 "marginBottom": 3,
                 "marginTop": 7,
               }
-            }>
+            }
+          >
             Source paths:
           </div>
           <div
@@ -282,7 +307,8 @@ exports[`Settings renders correctly 1`] = `
                 "flexDirection": "column",
                 "marginLeft": 15,
               }
-            }>
+            }
+          >
             <div
               style={
                 Object {
@@ -291,7 +317,8 @@ exports[`Settings renders correctly 1`] = `
                   "padding": "0px 2px",
                   "whiteSpace": "nowrap",
                 }
-              }>
+              }
+            >
               <input
                 className="giu-text-input"
                 id="srcPaths.0"
@@ -316,7 +343,8 @@ exports[`Settings renders correctly 1`] = `
                 }
                 tabIndex={undefined}
                 type="text"
-                value="src" />
+                value="src"
+              />
                
               <i
                 className="giu-icon fa fa-remove"
@@ -328,7 +356,8 @@ exports[`Settings renders correctly 1`] = `
                     "cursor": "pointer",
                     "letterSpacing": "normal",
                   }
-                } />
+                }
+              />
             </div>
             <i
               className="giu-icon fa fa-plus"
@@ -342,7 +371,8 @@ exports[`Settings renders correctly 1`] = `
                   "letterSpacing": "normal",
                   "marginTop": 5,
                 }
-              } />
+              }
+            />
           </div>
           <div
             style={
@@ -350,7 +380,8 @@ exports[`Settings renders correctly 1`] = `
                 "marginBottom": 3,
                 "marginTop": 7,
               }
-            }>
+            }
+          >
             Source extensions:
           </div>
           <div
@@ -360,7 +391,8 @@ exports[`Settings renders correctly 1`] = `
                 "flexDirection": "row",
                 "marginLeft": 15,
               }
-            }>
+            }
+          >
             <div
               style={
                 Object {
@@ -369,7 +401,8 @@ exports[`Settings renders correctly 1`] = `
                   "padding": "0px 2px",
                   "whiteSpace": "nowrap",
                 }
-              }>
+              }
+            >
               <input
                 className="giu-text-input"
                 id="srcExtensions.0"
@@ -394,7 +427,8 @@ exports[`Settings renders correctly 1`] = `
                 }
                 tabIndex={undefined}
                 type="text"
-                value=".js" />
+                value=".js"
+              />
                
               <i
                 className="giu-icon fa fa-remove"
@@ -406,7 +440,8 @@ exports[`Settings renders correctly 1`] = `
                     "cursor": "pointer",
                     "letterSpacing": "normal",
                   }
-                } />
+                }
+              />
             </div>
             <div
               style={
@@ -416,7 +451,8 @@ exports[`Settings renders correctly 1`] = `
                   "padding": "0px 2px",
                   "whiteSpace": "nowrap",
                 }
-              }>
+              }
+            >
               <input
                 className="giu-text-input"
                 id="srcExtensions.1"
@@ -441,7 +477,8 @@ exports[`Settings renders correctly 1`] = `
                 }
                 tabIndex={undefined}
                 type="text"
-                value=".jsx" />
+                value=".jsx"
+              />
                
               <i
                 className="giu-icon fa fa-remove"
@@ -453,7 +490,8 @@ exports[`Settings renders correctly 1`] = `
                     "cursor": "pointer",
                     "letterSpacing": "normal",
                   }
-                } />
+                }
+              />
             </div>
             <i
               className="giu-icon fa fa-plus"
@@ -467,7 +505,8 @@ exports[`Settings renders correctly 1`] = `
                   "letterSpacing": "normal",
                   "marginTop": 5,
                 }
-              } />
+              }
+            />
           </div>
           <div
             style={
@@ -475,7 +514,8 @@ exports[`Settings renders correctly 1`] = `
                 "marginBottom": 3,
                 "marginTop": 7,
               }
-            }>
+            }
+          >
             Message translation functions to look for:
           </div>
           <div
@@ -485,7 +525,8 @@ exports[`Settings renders correctly 1`] = `
                 "flexDirection": "row",
                 "marginLeft": 15,
               }
-            }>
+            }
+          >
             <div
               style={
                 Object {
@@ -494,7 +535,8 @@ exports[`Settings renders correctly 1`] = `
                   "padding": "0px 2px",
                   "whiteSpace": "nowrap",
                 }
-              }>
+              }
+            >
               <input
                 className="giu-text-input"
                 id="msgFunctionNames.0"
@@ -519,7 +561,8 @@ exports[`Settings renders correctly 1`] = `
                 }
                 tabIndex={undefined}
                 type="text"
-                value="_t" />
+                value="_t"
+              />
                
               <i
                 className="giu-icon fa fa-remove"
@@ -531,7 +574,8 @@ exports[`Settings renders correctly 1`] = `
                     "cursor": "pointer",
                     "letterSpacing": "normal",
                   }
-                } />
+                }
+              />
             </div>
             <i
               className="giu-icon fa fa-plus"
@@ -545,7 +589,8 @@ exports[`Settings renders correctly 1`] = `
                   "letterSpacing": "normal",
                   "marginTop": 5,
                 }
-              } />
+              }
+            />
           </div>
           <div
             style={
@@ -553,7 +598,8 @@ exports[`Settings renders correctly 1`] = `
                 "marginBottom": 3,
                 "marginTop": 7,
               }
-            }>
+            }
+          >
             ADVANCED: Additional regular expressions for message parsing:
              
             <i
@@ -565,7 +611,8 @@ exports[`Settings renders correctly 1`] = `
                   "letterSpacing": "normal",
                 }
               }
-              title="Make sure your regular expression has exactly one capture group, for example: (.*?)" />
+              title="Make sure your regular expression has exactly one capture group, for example: (.*?)"
+            />
           </div>
           <div
             style={
@@ -574,7 +621,8 @@ exports[`Settings renders correctly 1`] = `
                 "flexDirection": "column",
                 "marginLeft": 15,
               }
-            }>
+            }
+          >
             <i
               className="giu-icon fa fa-plus"
               id="msgRegexps"
@@ -587,14 +635,16 @@ exports[`Settings renders correctly 1`] = `
                   "letterSpacing": "normal",
                   "marginTop": 5,
                 }
-              } />
+              }
+            />
           </div>
           <div
             style={
               Object {
                 "marginTop": 7,
               }
-            }>
+            }
+          >
             <div>
               Output:
             </div>
@@ -603,7 +653,8 @@ exports[`Settings renders correctly 1`] = `
                 Object {
                   "marginLeft": 15,
                 }
-              }>
+              }
+            >
               <input
                 checked={false}
                 className="giu-checkbox"
@@ -617,10 +668,12 @@ exports[`Settings renders correctly 1`] = `
                 onPaste={undefined}
                 required={undefined}
                 tabIndex={undefined}
-                type="checkbox" />
+                type="checkbox"
+              />
               <label
-                htmlFor="fJsOutput">
-                JavaScript module (required if you use Mady\'s translation function)
+                htmlFor="fJsOutput"
+              >
+                JavaScript module (required if you use Mady's translation function)
               </label>
                
               <input
@@ -636,9 +689,11 @@ exports[`Settings renders correctly 1`] = `
                 onPaste={undefined}
                 required={undefined}
                 tabIndex={-1}
-                type="checkbox" />
+                type="checkbox"
+              />
               <label
-                htmlFor="fMinify">
+                htmlFor="fMinify"
+              >
                 Minified
               </label>
             </div>
@@ -647,7 +702,8 @@ exports[`Settings renders correctly 1`] = `
                 Object {
                   "marginLeft": 15,
                 }
-              }>
+              }
+            >
               <input
                 checked={false}
                 className="giu-checkbox"
@@ -661,9 +717,11 @@ exports[`Settings renders correctly 1`] = `
                 onPaste={undefined}
                 required={undefined}
                 tabIndex={undefined}
-                type="checkbox" />
+                type="checkbox"
+              />
               <label
-                htmlFor="fReactIntlOutput">
+                htmlFor="fReactIntlOutput"
+              >
                 React Intl JSON file
               </label>
             </div>
@@ -672,7 +730,8 @@ exports[`Settings renders correctly 1`] = `
                 Object {
                   "marginLeft": 15,
                 }
-              }>
+              }
+            >
               <input
                 checked={false}
                 className="giu-checkbox"
@@ -686,9 +745,11 @@ exports[`Settings renders correctly 1`] = `
                 onPaste={undefined}
                 required={undefined}
                 tabIndex={undefined}
-                type="checkbox" />
+                type="checkbox"
+              />
               <label
-                htmlFor="fJsonOutput">
+                htmlFor="fJsonOutput"
+              >
                 Generic JSON file
               </label>
             </div>
@@ -703,7 +764,8 @@ exports[`Settings renders correctly 1`] = `
               "marginTop": 10,
               "paddingTop": 10,
             }
-          }>
+          }
+        >
           <span
             className="giu-button"
             onClick={[Function]}
@@ -718,7 +780,8 @@ exports[`Settings renders correctly 1`] = `
                 "padding": "1px 5px",
                 "userSelect": "none",
               }
-            }>
+            }
+          >
             Cancel
           </span>
           <div
@@ -727,7 +790,8 @@ exports[`Settings renders correctly 1`] = `
                 "WebkitFlex": 1,
                 "flex": 1,
               }
-            } />
+            }
+          />
           <span
             className="giu-button"
             onClick={[Function]}
@@ -742,7 +806,8 @@ exports[`Settings renders correctly 1`] = `
                 "padding": "1px 5px",
                 "userSelect": "none",
               }
-            }>
+            }
+          >
             Save
           </span>
         </div>
@@ -756,7 +821,8 @@ exports[`Settings renders correctly 1`] = `
             "WebkitFlex": 1,
             "flex": 1,
           }
-        } />
+        }
+      />
     </div>
   </div>
 </div>
@@ -792,23 +858,23 @@ exports[`Settings renders correctly 1`] = `
             <select
               class="giu-select-native"
               style="background-color:default;border:default;color:inherit;font-family:inherit;font-size:inherit;font-weight:inherit;"
-              value="\"en\""
+              value="\\"en\\""
             >
               <option
-                id="\"en\""
-                value="\"en\""
+                id="\\"en\\""
+                value="\\"en\\""
               >
                 English
               </option>
               <option
-                id="\"es\""
-                value="\"es\""
+                id="\\"es\\""
+                value="\\"es\\""
               >
                 Español
               </option>
               <option
-                id="\"ca\""
-                value="\"ca\""
+                id="\\"ca\\""
+                value="\\"ca\\""
               >
                 Català
               </option>

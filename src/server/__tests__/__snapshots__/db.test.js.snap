@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`db should allow creating keys 1`] = `
 Object {
   "context": "someContext",

@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`HoverableTranslation renders correctly with translation 1`] = `
 <div>
   <div
@@ -10,7 +12,8 @@ exports[`HoverableTranslation renders correctly with translation 1`] = `
         "top": 0,
         "width": 0,
       }
-    } />
+    }
+  />
   <div
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
@@ -20,14 +23,16 @@ exports[`HoverableTranslation renders correctly with translation 1`] = `
         "paddingRight": 56,
         "position": "relative",
       }
-    }>
+    }
+  >
     <div
       className="giu-textarea"
       style={
         Object {
           "position": "relative",
         }
-      }>
+      }
+    >
       <div
         style={
           Object {
@@ -46,7 +51,8 @@ exports[`HoverableTranslation renders correctly with translation 1`] = `
             "width": "100%",
             "zIndex": -50,
           }
-        }>
+        }
+      >
         Un mensaje
       </div>
       <textarea
@@ -79,7 +85,8 @@ exports[`HoverableTranslation renders correctly with translation 1`] = `
           }
         }
         tabIndex={undefined}
-        value="Un mensaje" />
+        value="Un mensaje"
+      />
     </div>
   </div>
 </div>
@@ -119,7 +126,8 @@ exports[`HoverableTranslation renders correctly without translation 1`] = `
         "top": 0,
         "width": 0,
       }
-    } />
+    }
+  />
   <div
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
@@ -129,14 +137,16 @@ exports[`HoverableTranslation renders correctly without translation 1`] = `
         "paddingRight": 56,
         "position": "relative",
       }
-    }>
+    }
+  >
     <div
       className="giu-textarea"
       style={
         Object {
           "position": "relative",
         }
-      }>
+      }
+    >
       <div
         style={
           Object {
@@ -155,7 +165,8 @@ exports[`HoverableTranslation renders correctly without translation 1`] = `
             "width": "100%",
             "zIndex": -50,
           }
-        }>
+        }
+      >
         x
       </div>
       <textarea
@@ -188,7 +199,8 @@ exports[`HoverableTranslation renders correctly without translation 1`] = `
           }
         }
         tabIndex={undefined}
-        value="" />
+        value=""
+      />
     </div>
   </div>
 </div>

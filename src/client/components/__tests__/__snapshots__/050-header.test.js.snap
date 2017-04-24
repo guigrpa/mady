@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Header renders correctly 1`] = `
 <div
   style={
@@ -10,14 +12,16 @@ exports[`Header renders correctly 1`] = `
       "flexDirection": "row",
       "padding": "5px 8px",
     }
-  }>
+  }
+>
   <div
     style={
       Object {
         "WebkitFlex": "1",
         "flex": "1",
       }
-    } />
+    }
+  />
   <div
     style={
       Object {
@@ -25,7 +29,8 @@ exports[`Header renders correctly 1`] = `
         "fontWeight": 900,
         "letterSpacing": 3,
       }
-    }>
+    }
+  >
     MADY
     <i
       className="giu-icon fa fa-cog"
@@ -39,7 +44,8 @@ exports[`Header renders correctly 1`] = `
           "marginLeft": 10,
         }
       }
-      title="Settings" />
+      title="Settings"
+    />
   </div>
   <div
     style={
@@ -52,7 +58,8 @@ exports[`Header renders correctly 1`] = `
         "marginRight": 10,
         "textAlign": "right",
       }
-    }>
+    }
+  >
     <i
       className="giu-icon fa fa-question-circle"
       onClick={[Function]}
@@ -62,7 +69,8 @@ exports[`Header renders correctly 1`] = `
           "cursor": "pointer",
           "letterSpacing": "normal",
         }
-      } />
+      }
+    />
   </div>
 </div>
 ------------HTML PREVIEW---------------
@@ -91,7 +99,8 @@ exports[`Header renders correctly 1`] = `
 exports[`Header shows hints when the info button is clicked 1`] = `
 <div>
   <div
-    className="giu-hints" />
+    className="giu-hints"
+  />
   <div
     style={
       Object {
@@ -103,14 +112,16 @@ exports[`Header shows hints when the info button is clicked 1`] = `
         "flexDirection": "row",
         "padding": "5px 8px",
       }
-    }>
+    }
+  >
     <div
       style={
         Object {
           "WebkitFlex": "1",
           "flex": "1",
         }
-      } />
+      }
+    />
     <div
       style={
         Object {
@@ -118,7 +129,8 @@ exports[`Header shows hints when the info button is clicked 1`] = `
           "fontWeight": 900,
           "letterSpacing": 3,
         }
-      }>
+      }
+    >
       MADY
       <i
         className="giu-icon fa fa-cog"
@@ -132,7 +144,8 @@ exports[`Header shows hints when the info button is clicked 1`] = `
             "marginLeft": 10,
           }
         }
-        title="Settings" />
+        title="Settings"
+      />
     </div>
     <div
       style={
@@ -145,7 +158,8 @@ exports[`Header shows hints when the info button is clicked 1`] = `
           "marginRight": 10,
           "textAlign": "right",
         }
-      }>
+      }
+    >
       <i
         className="giu-icon fa fa-question-circle"
         onClick={[Function]}
@@ -155,7 +169,8 @@ exports[`Header shows hints when the info button is clicked 1`] = `
             "cursor": "pointer",
             "letterSpacing": "normal",
           }
-        } />
+        }
+      />
     </div>
   </div>
 </div>
@@ -188,7 +203,8 @@ exports[`Header shows hints when the info button is clicked 1`] = `
 exports[`Header shows hints when the info button is clicked 2`] = `
 <div>
   <div
-    className="giu-hints">
+    className="giu-hints"
+  >
     <div
       className="giu-hint-screen"
       onClick={[Function]}
@@ -201,7 +217,8 @@ exports[`Header shows hints when the info button is clicked 2`] = `
           "width": "100vw",
           "zIndex": 50,
         }
-      }>
+      }
+    >
       <div
         className="giu-backdrop"
         onTouchMove={[Function]}
@@ -216,15 +233,17 @@ exports[`Header shows hints when the info button is clicked 2`] = `
             "top": 0,
             "width": "100vw",
           }
-        } />
+        }
+      />
       <div
         style={
           Object {
             "color": "white",
-            "fontFamily": "\"Gloria Hallelujah\", sans-serif",
+            "fontFamily": "\\"Gloria Hallelujah\\", sans-serif",
             "fontSize": 20,
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -236,7 +255,8 @@ exports[`Header shows hints when the info button is clicked 2`] = `
               "position": "fixed",
               "right": 20,
             }
-          }>
+          }
+        >
           Got it!
         </div>
       </div>
@@ -253,14 +273,16 @@ exports[`Header shows hints when the info button is clicked 2`] = `
         "flexDirection": "row",
         "padding": "5px 8px",
       }
-    }>
+    }
+  >
     <div
       style={
         Object {
           "WebkitFlex": "1",
           "flex": "1",
         }
-      } />
+      }
+    />
     <div
       style={
         Object {
@@ -268,7 +290,8 @@ exports[`Header shows hints when the info button is clicked 2`] = `
           "fontWeight": 900,
           "letterSpacing": 3,
         }
-      }>
+      }
+    >
       MADY
       <i
         className="giu-icon fa fa-cog"
@@ -282,7 +305,8 @@ exports[`Header shows hints when the info button is clicked 2`] = `
             "marginLeft": 10,
           }
         }
-        title="Settings" />
+        title="Settings"
+      />
     </div>
     <div
       style={
@@ -295,7 +319,8 @@ exports[`Header shows hints when the info button is clicked 2`] = `
           "marginRight": 10,
           "textAlign": "right",
         }
-      }>
+      }
+    >
       <i
         className="giu-icon fa fa-question-circle"
         onClick={[Function]}
@@ -305,7 +330,8 @@ exports[`Header shows hints when the info button is clicked 2`] = `
             "cursor": "pointer",
             "letterSpacing": "normal",
           }
-        } />
+        }
+      />
     </div>
   </div>
 </div>
@@ -321,7 +347,7 @@ exports[`Header shows hints when the info button is clicked 2`] = `
         style="background-color:black;cursor:pointer;height:100vh;left:0;position:fixed;top:0;width:100vw;"
       >
       </div>
-      <div style="color:white;font-family:\"Gloria Hallelujah\", sans-serif;font-size:20px;">
+      <div style="color:white;font-family:\\"Gloria Hallelujah\\", sans-serif;font-size:20px;">
         <div style="border:1px solid white;border-radius:8px;bottom:20px;cursor:pointer;padding:5px 25px;position:fixed;right:20px;">
           Got it!
         </div>

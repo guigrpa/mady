@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`App changes the selected key when clicked 1`] = `
 <div
   style={
@@ -8,7 +10,8 @@ exports[`App changes the selected key when clicked 1`] = `
       "minHeight": "100%",
       "padding": "0px 10px",
     }
-  }>
+  }
+>
   <div
     className="giu-floats"
     style={
@@ -19,7 +22,8 @@ exports[`App changes the selected key when clicked 1`] = `
         "top": 0,
         "width": 0,
       }
-    } />
+    }
+  />
   <div
     className="giu-notifications"
     style={
@@ -30,9 +34,11 @@ exports[`App changes the selected key when clicked 1`] = `
         "right": 20,
         "zIndex": 9000,
       }
-    } />
+    }
+  />
   <div
-    className="giu-hints">
+    className="giu-hints"
+  >
     <div
       className="giu-hint-screen"
       onClick={[Function]}
@@ -45,7 +51,8 @@ exports[`App changes the selected key when clicked 1`] = `
           "width": "100vw",
           "zIndex": 50,
         }
-      }>
+      }
+    >
       <div
         className="giu-backdrop"
         onTouchMove={[Function]}
@@ -60,15 +67,17 @@ exports[`App changes the selected key when clicked 1`] = `
             "top": 0,
             "width": "100vw",
           }
-        } />
+        }
+      />
       <div
         style={
           Object {
             "color": "white",
-            "fontFamily": "\"Gloria Hallelujah\", sans-serif",
+            "fontFamily": "\\"Gloria Hallelujah\\", sans-serif",
             "fontSize": 20,
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -80,7 +89,8 @@ exports[`App changes the selected key when clicked 1`] = `
               "position": "fixed",
               "right": 20,
             }
-          }>
+          }
+        >
           Enjoy translating!
         </div>
       </div>
@@ -88,7 +98,8 @@ exports[`App changes the selected key when clicked 1`] = `
   </div>
   <div
     dataMockType="Header"
-    onShowSettings={[Function]}>
+    onShowSettings={[Function]}
+  >
     Header
   </div>
   <div
@@ -110,7 +121,8 @@ exports[`App changes the selected key when clicked 1`] = `
           "edges": Array [],
         },
       }
-    }>
+    }
+  >
     Translator
   </div>
   <div
@@ -131,7 +143,8 @@ exports[`App changes the selected key when clicked 1`] = `
           "edges": Array [],
         },
       }
-    }>
+    }
+  >
     Details
   </div>
 </div>
@@ -157,7 +170,7 @@ exports[`App changes the selected key when clicked 1`] = `
         style="background-color:black;cursor:pointer;height:100vh;left:0;position:fixed;top:0;width:100vw;"
       >
       </div>
-      <div style="color:white;font-family:\"Gloria Hallelujah\", sans-serif;font-size:20px;">
+      <div style="color:white;font-family:\\"Gloria Hallelujah\\", sans-serif;font-size:20px;">
         <div style="border:1px solid white;border-radius:8px;bottom:20px;cursor:pointer;padding:5px 25px;position:fixed;right:20px;">
           Enjoy translating!
         </div>
@@ -194,7 +207,8 @@ exports[`App renders correctly with no content 1`] = `
       "minHeight": "100%",
       "padding": "0px 10px",
     }
-  }>
+  }
+>
   <div
     className="giu-floats"
     style={
@@ -205,7 +219,8 @@ exports[`App renders correctly with no content 1`] = `
         "top": 0,
         "width": 0,
       }
-    } />
+    }
+  />
   <div
     className="giu-notifications"
     style={
@@ -216,9 +231,11 @@ exports[`App renders correctly with no content 1`] = `
         "right": 20,
         "zIndex": 9000,
       }
-    } />
+    }
+  />
   <div
-    className="giu-hints">
+    className="giu-hints"
+  >
     <div
       className="giu-hint-screen"
       onClick={[Function]}
@@ -231,7 +248,8 @@ exports[`App renders correctly with no content 1`] = `
           "width": "100vw",
           "zIndex": 50,
         }
-      }>
+      }
+    >
       <div
         className="giu-backdrop"
         onTouchMove={[Function]}
@@ -246,15 +264,17 @@ exports[`App renders correctly with no content 1`] = `
             "top": 0,
             "width": "100vw",
           }
-        } />
+        }
+      />
       <div
         style={
           Object {
             "color": "white",
-            "fontFamily": "\"Gloria Hallelujah\", sans-serif",
+            "fontFamily": "\\"Gloria Hallelujah\\", sans-serif",
             "fontSize": 20,
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -266,7 +286,8 @@ exports[`App renders correctly with no content 1`] = `
               "position": "fixed",
               "right": 20,
             }
-          }>
+          }
+        >
           Enjoy translating!
         </div>
       </div>
@@ -274,7 +295,8 @@ exports[`App renders correctly with no content 1`] = `
   </div>
   <div
     dataMockType="Header"
-    onShowSettings={[Function]}>
+    onShowSettings={[Function]}
+  >
     Header
   </div>
   <div
@@ -296,7 +318,8 @@ exports[`App renders correctly with no content 1`] = `
           "edges": Array [],
         },
       }
-    }>
+    }
+  >
     Translator
   </div>
   <div
@@ -317,7 +340,8 @@ exports[`App renders correctly with no content 1`] = `
           "edges": Array [],
         },
       }
-    }>
+    }
+  >
     Details
   </div>
 </div>
@@ -343,7 +367,7 @@ exports[`App renders correctly with no content 1`] = `
         style="background-color:black;cursor:pointer;height:100vh;left:0;position:fixed;top:0;width:100vw;"
       >
       </div>
-      <div style="color:white;font-family:\"Gloria Hallelujah\", sans-serif;font-size:20px;">
+      <div style="color:white;font-family:\\"Gloria Hallelujah\\", sans-serif;font-size:20px;">
         <div style="border:1px solid white;border-radius:8px;bottom:20px;cursor:pointer;padding:5px 25px;position:fixed;right:20px;">
           Enjoy translating!
         </div>
@@ -378,7 +402,8 @@ exports[`App shows the settings when clicked 1`] = `
       "minHeight": "100%",
       "padding": "0px 10px",
     }
-  }>
+  }
+>
   <div
     className="giu-floats"
     style={
@@ -389,7 +414,8 @@ exports[`App shows the settings when clicked 1`] = `
         "top": 0,
         "width": 0,
       }
-    } />
+    }
+  />
   <div
     className="giu-notifications"
     style={
@@ -400,9 +426,11 @@ exports[`App shows the settings when clicked 1`] = `
         "right": 20,
         "zIndex": 9000,
       }
-    } />
+    }
+  />
   <div
-    className="giu-hints">
+    className="giu-hints"
+  >
     <div
       className="giu-hint-screen"
       onClick={[Function]}
@@ -415,7 +443,8 @@ exports[`App shows the settings when clicked 1`] = `
           "width": "100vw",
           "zIndex": 50,
         }
-      }>
+      }
+    >
       <div
         className="giu-backdrop"
         onTouchMove={[Function]}
@@ -430,15 +459,17 @@ exports[`App shows the settings when clicked 1`] = `
             "top": 0,
             "width": "100vw",
           }
-        } />
+        }
+      />
       <div
         style={
           Object {
             "color": "white",
-            "fontFamily": "\"Gloria Hallelujah\", sans-serif",
+            "fontFamily": "\\"Gloria Hallelujah\\", sans-serif",
             "fontSize": 20,
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -450,7 +481,8 @@ exports[`App shows the settings when clicked 1`] = `
               "position": "fixed",
               "right": 20,
             }
-          }>
+          }
+        >
           Enjoy translating!
         </div>
       </div>
@@ -458,7 +490,8 @@ exports[`App shows the settings when clicked 1`] = `
   </div>
   <div
     dataMockType="Header"
-    onShowSettings={[Function]}>
+    onShowSettings={[Function]}
+  >
     Header
   </div>
   <div
@@ -480,7 +513,8 @@ exports[`App shows the settings when clicked 1`] = `
           "edges": Array [],
         },
       }
-    }>
+    }
+  >
     Translator
   </div>
   <div
@@ -501,7 +535,8 @@ exports[`App shows the settings when clicked 1`] = `
           "edges": Array [],
         },
       }
-    }>
+    }
+  >
     Details
   </div>
   <div
@@ -523,7 +558,8 @@ exports[`App shows the settings when clicked 1`] = `
           "edges": Array [],
         },
       }
-    }>
+    }
+  >
     Settings
   </div>
 </div>
@@ -549,7 +585,7 @@ exports[`App shows the settings when clicked 1`] = `
         style="background-color:black;cursor:pointer;height:100vh;left:0;position:fixed;top:0;width:100vw;"
       >
       </div>
-      <div style="color:white;font-family:\"Gloria Hallelujah\", sans-serif;font-size:20px;">
+      <div style="color:white;font-family:\\"Gloria Hallelujah\\", sans-serif;font-size:20px;">
         <div style="border:1px solid white;border-radius:8px;bottom:20px;cursor:pointer;padding:5px 25px;position:fixed;right:20px;">
           Enjoy translating!
         </div>
@@ -590,7 +626,8 @@ exports[`App shows the settings when clicked 2`] = `
       "minHeight": "100%",
       "padding": "0px 10px",
     }
-  }>
+  }
+>
   <div
     className="giu-floats"
     style={
@@ -601,7 +638,8 @@ exports[`App shows the settings when clicked 2`] = `
         "top": 0,
         "width": 0,
       }
-    } />
+    }
+  />
   <div
     className="giu-notifications"
     style={
@@ -612,9 +650,11 @@ exports[`App shows the settings when clicked 2`] = `
         "right": 20,
         "zIndex": 9000,
       }
-    } />
+    }
+  />
   <div
-    className="giu-hints">
+    className="giu-hints"
+  >
     <div
       className="giu-hint-screen"
       onClick={[Function]}
@@ -627,7 +667,8 @@ exports[`App shows the settings when clicked 2`] = `
           "width": "100vw",
           "zIndex": 50,
         }
-      }>
+      }
+    >
       <div
         className="giu-backdrop"
         onTouchMove={[Function]}
@@ -642,15 +683,17 @@ exports[`App shows the settings when clicked 2`] = `
             "top": 0,
             "width": "100vw",
           }
-        } />
+        }
+      />
       <div
         style={
           Object {
             "color": "white",
-            "fontFamily": "\"Gloria Hallelujah\", sans-serif",
+            "fontFamily": "\\"Gloria Hallelujah\\", sans-serif",
             "fontSize": 20,
           }
-        }>
+        }
+      >
         <div
           style={
             Object {
@@ -662,7 +705,8 @@ exports[`App shows the settings when clicked 2`] = `
               "position": "fixed",
               "right": 20,
             }
-          }>
+          }
+        >
           Enjoy translating!
         </div>
       </div>
@@ -670,7 +714,8 @@ exports[`App shows the settings when clicked 2`] = `
   </div>
   <div
     dataMockType="Header"
-    onShowSettings={[Function]}>
+    onShowSettings={[Function]}
+  >
     Header
   </div>
   <div
@@ -692,7 +737,8 @@ exports[`App shows the settings when clicked 2`] = `
           "edges": Array [],
         },
       }
-    }>
+    }
+  >
     Translator
   </div>
   <div
@@ -713,7 +759,8 @@ exports[`App shows the settings when clicked 2`] = `
           "edges": Array [],
         },
       }
-    }>
+    }
+  >
     Details
   </div>
 </div>
@@ -739,7 +786,7 @@ exports[`App shows the settings when clicked 2`] = `
         style="background-color:black;cursor:pointer;height:100vh;left:0;position:fixed;top:0;width:100vw;"
       >
       </div>
-      <div style="color:white;font-family:\"Gloria Hallelujah\", sans-serif;font-size:20px;">
+      <div style="color:white;font-family:\\"Gloria Hallelujah\\", sans-serif;font-size:20px;">
         <div style="border:1px solid white;border-radius:8px;bottom:20px;cursor:pointer;padding:5px 25px;position:fixed;right:20px;">
           Enjoy translating!
         </div>
