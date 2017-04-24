@@ -156,7 +156,7 @@ const specs = {
   // Deps
   // -----------------------------------------------
   dependencies: {
-    timm: '1.2.1',
+    timm: '1.2.5',
     storyboard: '^3.0.0',
     'storyboard-listener-console': '^3.0.0',
     'storyboard-listener-ws-server': '^3.0.0',
@@ -173,7 +173,7 @@ const specs = {
 
     // Express + plugins
     express: '4.14.0',
-    ejs: '2.5.2',
+    ejs: '2.5.6',
     'cookie-parser': '1.4.3',
     compression: '1.6.2',
 
@@ -205,7 +205,6 @@ const specs = {
     // React
     react:                            '15.4.1',
     'react-dom':                      '15.4.1',
-    'react-addons-perf':              '15.4.1',
     'react-relay': '0.9.3',
     'isomorphic-relay': '0.7.3',
     'react-intl': '2.1.5',
@@ -234,14 +233,14 @@ const specs = {
     'file-loader': '0.11.1',
     'css-loader': '0.28.0',
     'style-loader': '0.16.1',
-    'sass-loader': '4.1.1',
+    'sass-loader': '6.0.3',
     'node-sass': '4.5.0',
     'extract-text-webpack-plugin': '2.0.0-rc.2',
 
     // Linting
-    eslint: '3.8.1',
+    eslint: '3.19.0',
     'eslint-config-airbnb': '12.0.0',
-    'eslint-plugin-flowtype': '2.20.0',
+    'eslint-plugin-flowtype': '2.32.1',
     'eslint-plugin-import': '1.16.0',
     'eslint-plugin-jsx-a11y': '2.2.3',
     'eslint-plugin-react': '6.4.1',
@@ -253,7 +252,7 @@ const specs = {
     'jest-html': '^1.3.2',
     'react-test-renderer': '15.4.1',
     nyc: '8.3.0',
-    coveralls: '2.11.14',
+    coveralls: '2.13.0',
 
     // Other tools
     'extract-docs': '1.4.0',
