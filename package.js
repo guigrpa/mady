@@ -172,7 +172,7 @@ const specs = {
     opn: '4.0.2',
 
     // Express + plugins
-    express: '4.14.0',
+    express: '4.15.2',
     ejs: '2.5.6',
     'cookie-parser': '1.4.3',
     compression: '1.6.2',
@@ -196,7 +196,7 @@ const specs = {
 
     // Packaged in the client app (or SSR)
     // --------------------------
-    'babel-polyfill': '6.16.0',
+    'babel-polyfill': '6.23.0',
     giu: '0.9.2',
 
     'storyboard-listener-browser-extension': '^3.0.0',
@@ -218,13 +218,13 @@ const specs = {
     // Pure dev dependencies
     // ---------------------
     // Babel + plugins (except babel-eslint)
-    'babel-cli': '6.22.2',
-    'babel-core': '6.22.1',
+    'babel-cli': '6.24.1',
+    'babel-core': '6.24.1',
     'babel-plugin-react-intl': '2.2.0',
     'babel-plugin-syntax-dynamic-import': '6.18.0',
-    'babel-preset-es2015': '6.22.0',
-    'babel-preset-stage-0': '6.22.0',
-    'babel-preset-react': '6.22.0',
+    'babel-preset-es2015': '6.24.1',
+    'babel-preset-stage-0': '6.24.1',
+    'babel-preset-react': '6.24.1',
 
     // Webpack + loaders (+ related stuff)
     webpack: '2.4.1',
