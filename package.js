@@ -203,8 +203,8 @@ const specs = {
     'storyboard-listener-ws-client': '^3.0.0',
 
     // React
-    react:                            '15.4.1',
-    'react-dom':                      '15.4.1',
+    react:                            '15.5.4',
+    'react-dom':                      '15.5.4',
     'react-relay': '0.9.3',
     'isomorphic-relay': '0.7.3',
     'react-intl': '2.1.5',
@@ -250,7 +250,7 @@ const specs = {
     jest: '19.0.2',
     'babel-jest': '19.0.0',
     'jest-html': '^1.3.2',
-    'react-test-renderer': '15.4.1',
+    'react-test-renderer': '15.5.4',
     nyc: '8.3.0',
     coveralls: '2.13.0',
 
