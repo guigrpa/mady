@@ -160,7 +160,7 @@ const specs = {
     storyboard: '^3.0.0',
     'storyboard-listener-console': '^3.0.0',
     'storyboard-listener-ws-server': '^3.0.0',
-    lodash: '4.16.0',
+    lodash: '4.17.4',
     commander: '2.9.0',
     'uuid': '3.0.1',
     bluebird: '3.4.6',
@@ -189,7 +189,7 @@ const specs = {
     'babel-preset-es2015': '^6.0.0',
     'babel-preset-stage-0': '^6.0.0',
     'babel-preset-react': '^6.0.0',
-    'babel-plugin-react-intl': '^2.3.1',
+    'babel-plugin-react-intl': '^2.2.0',
   },
 
   devDependencies: {
@@ -206,12 +206,12 @@ const specs = {
     react:                            '15.5.4',
     'react-dom':                      '15.5.4',
     'react-relay': '0.9.3',
-    'isomorphic-relay': '0.7.3',
-    'react-intl': '2.1.5',
+    'isomorphic-relay': '0.7.4',
+    'react-intl': '2.2.3',
 
     // Miscellaneous
     'font-awesome': '4.6.3',
-    moment: '2.14.0',
+    moment: '2.18.1',
     tinycolor2: '1.4.1',
     'tiny-cookie': '0.5.5',
 
@@ -220,7 +220,7 @@ const specs = {
     // Babel + plugins (except babel-eslint)
     'babel-cli': '6.24.1',
     'babel-core': '6.24.1',
-    'babel-plugin-react-intl': '2.2.0',
+    'babel-plugin-react-intl': '2.3.1',
     'babel-plugin-syntax-dynamic-import': '6.18.0',
     'babel-preset-es2015': '6.24.1',
     'babel-preset-stage-0': '6.24.1',
@@ -234,7 +234,7 @@ const specs = {
     'css-loader': '0.28.0',
     'style-loader': '0.16.1',
     'sass-loader': '6.0.3',
-    'node-sass': '4.5.0',
+    'node-sass': '4.5.2',
     'extract-text-webpack-plugin': '2.0.0-rc.2',
 
     // Linting
