@@ -5,7 +5,9 @@ import Relay from 'relay-runtime';
 const fetchQuery = async (operation, variables) => {
   const response = await fetch('/graphql', {
     method: 'POST',
-    headers: {}, // Add authentication and other headers here
+    headers: {
+      'Content-Type': 'application/json',
+    }, // Add authentication and other headers here
     body: JSON.stringify({
       query: operation.text, // GraphQL text from input
       variables,
