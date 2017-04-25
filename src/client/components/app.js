@@ -5,7 +5,14 @@
 import React from 'react';
 import { QueryRenderer, graphql } from 'react-relay';
 import moment from 'moment';
-import { Floats, Hints, Notifications, hintDefine, hintShow } from 'giu';
+import {
+  Spinner,
+  Floats,
+  Hints,
+  Notifications,
+  hintDefine,
+  hintShow,
+} from 'giu';
 import type { ViewerT } from '../../common/types';
 import _t from '../../translate';
 import relayEnvironment from '../gral/relayEnvironment';
@@ -31,8 +38,7 @@ require('./010-app.sass');
 const query = graphql`
   query appQuery {
     viewer {
-      id
-      # ...translator_viewer
+      ...translator_viewer
       # ...Settings_viewer
       # ...Details_viewer
     }
@@ -75,13 +81,13 @@ class App extends React.Component {
         <Notifications />
         <Hints />
         <Header onShowSettings={this.showSettings} />
+        <Translator
+          lang={this.state.lang}
+          viewer={this.props.viewer}
+          selectedKeyId={this.state.selectedKeyId}
+          changeSelectedKey={this.changeSelectedKey}
+        />
         {/*
-          <Translator
-            lang={this.state.lang}
-            viewer={this.props.viewer}
-            selectedKeyId={this.state.selectedKeyId}
-            changeSelectedKey={this.changeSelectedKey}
-          />
           <Details
             lang={this.state.lang}
             viewer={this.props.viewer}
@@ -183,7 +189,14 @@ const Container = () => (
   <QueryRenderer
     environment={relayEnvironment}
     query={query}
-    render={() => <App />}
+    render={({ error, props }) => {
+      if (error) {
+        return <div>{error.message}</div>;
+      } else if (props) {
+        return <App {...props} />;
+      }
+      return <Spinner />;
+    }}
   />
 );
 export default Container;

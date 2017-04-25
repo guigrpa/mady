@@ -20,7 +20,7 @@ import _t from '../../translate';
 import { COLORS } from '../gral/constants';
 import { cookieGet, cookieSet } from '../gral/storage';
 import { mutate } from './helpers';
-import TranslatorRow from './translatorRow';
+// import TranslatorRow from './translatorRow';
 
 const comparator = (a: string, b: string): number =>
   (a < b ? -1 : a > b ? 1 : 0);
@@ -188,6 +188,7 @@ class Translator extends React.PureComponent {
   }
 
   renderKeyRow = (key: KeyT) => {
+    return null;
     const fSelected = this.props.selectedKeyId === key.id;
     return (
       <TranslatorRow
@@ -401,20 +402,22 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-const Container = createFragmentContainer(Translator, graphql`
-  fragment translator_viewer on Viewer {
-    id
-    config { langs }
-    keys(first: 100000) { edges { node {
-      id unusedSince
-      context text     # for sorting
-      ...translatorRow_theKey
-      translations(first: 100000) { edges { node {
-        lang
+const Container = createFragmentContainer(Translator, {
+  viewer: graphql`
+    fragment translator_viewer on Viewer {
+      id
+      config { langs }
+      keys(first: 100000) { edges { node {
+        id unusedSince
+        context text     # for sorting
+        # ...translatorRow_theKey
+        translations(first: 100000) { edges { node {
+          lang
+        }}}
       }}}
-    }}}
-    ...translatorRow_viewer
-  }
-`);
+      # ...translatorRow_viewer
+    }
+  `,
+});
 export default Container;
 export { Translator as _Translator };

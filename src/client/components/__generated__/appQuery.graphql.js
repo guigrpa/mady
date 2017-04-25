@@ -3,8 +3,8 @@
  *   relay-compiler
  *
  * @providesModule appQuery.graphql
- * @generated SignedSource<<3877bbc23b02d0473f3446b452795395>>
- * @relayHash 8b70ad31befab0eac7d280623e57bcb2
+ * @generated SignedSource<<ac120a8f5115c5f5312c5446dd1fcb6e>>
+ * @relayHash 1fc615f75c3503ebcf08bd26b875f70f
  * @flow
  * @nogrep
  */
@@ -39,7 +39,6 @@ fragment translator_viewer on Viewer {
         unusedSince
         context
         text
-        ...translatorRow_theKey
         translations(first: 100000) {
           edges {
             node {
@@ -51,40 +50,6 @@ fragment translator_viewer on Viewer {
       }
     }
   }
-  ...translatorRow_viewer
-}
-
-fragment translatorRow_theKey on Key {
-  id
-  context
-  text
-  unusedSince
-  ...translation_theKey
-  translations(first: 100000) {
-    edges {
-      node {
-        id
-        lang
-        ...translation_translation
-      }
-    }
-  }
-}
-
-fragment translatorRow_viewer on Viewer {
-  id
-}
-
-fragment translation_theKey on Key {
-  id
-  text
-}
-
-fragment translation_translation on Translation {
-  id
-  lang
-  translation
-  fuzzy
 }
 */
 
@@ -258,13 +223,6 @@ const batch /*: ConcreteBatch*/ = {
                                     "kind": "ScalarField",
                                     "alias": null,
                                     "args": null,
-                                    "name": "id",
-                                    "storageKey": null
-                                  },
-                                  {
-                                    "kind": "ScalarField",
-                                    "alias": null,
-                                    "args": null,
                                     "name": "lang",
                                     "storageKey": null
                                   },
@@ -272,14 +230,7 @@ const batch /*: ConcreteBatch*/ = {
                                     "kind": "ScalarField",
                                     "alias": null,
                                     "args": null,
-                                    "name": "translation",
-                                    "storageKey": null
-                                  },
-                                  {
-                                    "kind": "ScalarField",
-                                    "alias": null,
-                                    "args": null,
-                                    "name": "fuzzy",
+                                    "name": "id",
                                     "storageKey": null
                                   }
                                 ],
@@ -314,7 +265,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query appQuery {\n  viewer {\n    ...translator_viewer\n    id\n  }\n}\n\nfragment translator_viewer on Viewer {\n  id\n  config {\n    langs\n    id\n  }\n  keys(first: 100000) {\n    edges {\n      node {\n        id\n        unusedSince\n        context\n        text\n        ...translatorRow_theKey\n        translations(first: 100000) {\n          edges {\n            node {\n              lang\n              id\n            }\n          }\n        }\n      }\n    }\n  }\n  ...translatorRow_viewer\n}\n\nfragment translatorRow_theKey on Key {\n  id\n  context\n  text\n  unusedSince\n  ...translation_theKey\n  translations(first: 100000) {\n    edges {\n      node {\n        id\n        lang\n        ...translation_translation\n      }\n    }\n  }\n}\n\nfragment translatorRow_viewer on Viewer {\n  id\n}\n\nfragment translation_theKey on Key {\n  id\n  text\n}\n\nfragment translation_translation on Translation {\n  id\n  lang\n  translation\n  fuzzy\n}\n"
+  "text": "query appQuery {\n  viewer {\n    ...translator_viewer\n    id\n  }\n}\n\nfragment translator_viewer on Viewer {\n  id\n  config {\n    langs\n    id\n  }\n  keys(first: 100000) {\n    edges {\n      node {\n        id\n        unusedSince\n        context\n        text\n        translations(first: 100000) {\n          edges {\n            node {\n              lang\n              id\n            }\n          }\n        }\n      }\n    }\n  }\n}\n"
 };
 
 module.exports = batch;

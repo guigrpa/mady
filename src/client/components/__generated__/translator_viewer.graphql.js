@@ -3,7 +3,7 @@
  *   relay-compiler
  *
  * @providesModule translator_viewer.graphql
- * @generated SignedSource<<ec83f814cbe463d82531a959ddd603ed>>
+ * @generated SignedSource<<caaa6a1bbeb34ee9b41a1f5b7b9e9fd0>>
  * @flow
  * @nogrep
  */
@@ -144,11 +144,6 @@ const fragment /*: ConcreteFragment*/ = {
                   "storageKey": null
                 },
                 {
-                  "kind": "FragmentSpread",
-                  "name": "translatorRow_theKey",
-                  "args": null
-                },
-                {
                   "kind": "LinkedField",
                   "alias": null,
                   "args": [
@@ -203,11 +198,6 @@ const fragment /*: ConcreteFragment*/ = {
         }
       ],
       "storageKey": "keys{\"first\":100000}"
-    },
-    {
-      "kind": "FragmentSpread",
-      "name": "translatorRow_viewer",
-      "args": null
     }
   ],
   "type": "Viewer"
