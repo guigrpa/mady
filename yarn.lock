@@ -522,9 +522,9 @@ babel-plugin-react-intl@2.3.1:
     intl-messageformat-parser "^1.2.0"
     mkdirp "^0.5.1"
 
-babel-plugin-relay@1.0.1-rc.2:
-  version "1.0.1-rc.2"
-  resolved "https://registry.yarnpkg.com/babel-plugin-relay/-/babel-plugin-relay-1.0.1-rc.2.tgz#e5a6e57ade96929019db36caf3993c7e1ea5c4d2"
+babel-plugin-relay@1.0.1-rc.3:
+  version "1.0.1-rc.3"
+  resolved "https://registry.yarnpkg.com/babel-plugin-relay/-/babel-plugin-relay-1.0.1-rc.3.tgz#06cb3f7fc30a033aa8c0bb31b9dc85d6ba7d31ca"
   dependencies:
     babel-runtime "^6.23.0"
     graphql "^0.9.1"
@@ -5070,15 +5070,15 @@ react-intl@2.2.3:
     intl-relativeformat "^1.3.0"
     invariant "^2.1.1"
 
-react-relay@1.0.0-rc.2:
-  version "1.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/react-relay/-/react-relay-1.0.0-rc.2.tgz#652796949cb58f14b39542b9977882ecccd53aa2"
+react-relay@1.0.0-rc.3:
+  version "1.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/react-relay/-/react-relay-1.0.0-rc.3.tgz#72b5c478c294aa28c6f42dae24fe666b0f3b9487"
   dependencies:
     babel-runtime "^6.23.0"
     fbjs "^0.8.1"
     prop-types "^15.5.8"
     react-static-container "^1.0.1"
-    relay-runtime "1.0.0-rc.2"
+    relay-runtime "1.0.0-rc.3"
 
 react-sortable-hoc@0.0.8:
   version "0.0.8"
@@ -5256,9 +5256,9 @@ regjsparser@^0.1.4:
   dependencies:
     jsesc "~0.5.0"
 
-relay-compiler@1.0.0-rc.2:
-  version "1.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/relay-compiler/-/relay-compiler-1.0.0-rc.2.tgz#f9ff5254bfb04c7a2320ad3bd5bd9ee1931028c0"
+relay-compiler@1.0.0-rc.3:
+  version "1.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/relay-compiler/-/relay-compiler-1.0.0-rc.3.tgz#cbac0db63ac88dda7dedcd116652a3a9a2edecef"
   dependencies:
     babel-generator "6.24.0"
     babel-runtime "^6.23.0"
@@ -5269,13 +5269,13 @@ relay-compiler@1.0.0-rc.2:
     fbjs "^0.8.1"
     graphql "^0.9.1"
     immutable "^3.8.1"
-    relay-runtime "1.0.0-rc.2"
+    relay-runtime "1.0.0-rc.3"
     signedsource "^1.0.0"
     yargs "^7.0.2"
 
-relay-runtime@1.0.0-rc.2:
-  version "1.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/relay-runtime/-/relay-runtime-1.0.0-rc.2.tgz#3a90c5912aca3c40cd976e689fda5001f8241827"
+relay-runtime@1.0.0-rc.3:
+  version "1.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/relay-runtime/-/relay-runtime-1.0.0-rc.3.tgz#710b02f43050e581808bc6551f6f4ae7d17d248d"
   dependencies:
     babel-runtime "^6.23.0"
     fbjs "^0.8.1"

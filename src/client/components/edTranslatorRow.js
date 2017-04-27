@@ -9,7 +9,7 @@ import _t from '../../translate';
 import { COLORS } from '../gral/constants';
 // import { DeleteKeyMutation } from '../gral/mutations';
 import { mutate } from './helpers';
-import Translation from './translation';
+import Translation from './eeTranslation';
 
 // ==========================================
 // Component declarations
@@ -169,19 +169,22 @@ const style = {
 // Public API
 // ==========================================
 const HoverableTranslatorRow = hoverable(TranslatorRow);
-const Container = createFragmentContainer(HoverableTranslatorRow, graphql`
-  fragment translatorRow_theKey on Key {
+const Container = createFragmentContainer(
+  HoverableTranslatorRow,
+  graphql`
+  fragment edTranslatorRow_viewer on Viewer { id }
+  fragment edTranslatorRow_theKey on Key {
     id
     context text
     unusedSince
-    ...translation_theKey
+    ...eeTranslation_theKey
     translations(first: 100000) { edges { node {
       id
       lang
-      ...translation_translation
+      ...eeTranslation_translation
     }}}
   }
-  fragment translatorRow_viewer on Viewer { id }
-`);
+`,
+);
 export default Container;
 export { HoverableTranslatorRow as _HoverableTranslatorRow };

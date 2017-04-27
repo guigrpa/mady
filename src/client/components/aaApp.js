@@ -3,10 +3,9 @@
 /* eslint-env browser */
 
 import React from 'react';
-import { QueryRenderer, graphql } from 'react-relay';
+import { graphql } from 'react-relay';
 import moment from 'moment';
 import {
-  Spinner,
   Floats,
   Hints,
   Notifications,
@@ -15,15 +14,15 @@ import {
 } from 'giu';
 import type { ViewerT } from '../../common/types';
 import _t from '../../translate';
-import relayEnvironment from '../gral/relayEnvironment';
 import { cookieGet, cookieSet } from '../gral/storage';
-import Header from './050-header';
-import Translator from './translator';
-// import Details from './070-details';
-// import Settings from './080-settings';
+import Header from './abHeader';
+import Translator from './adTranslator';
+import Details from './afDetails';
+import Settings from './aeSettings';
+import QueryRendererWrapper from './uuQueryRendererWrapper';
 import fetchLangBundle from './fetchLangBundle';
 
-require('./010-app.sass');
+require('./aaApp.sass');
 
 // Example MessageFormat message with plural, so that it appears in the screenshot:
 // _t("someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}", { NUM: 1 })
@@ -36,11 +35,10 @@ require('./010-app.sass');
 // Component declarations
 // ==========================================
 const query = graphql`
-  query appQuery {
+  query aaAppQuery {
     viewer {
-      ...translator_viewer
-      # ...Settings_viewer
-      # ...Details_viewer
+      ...adTranslator_viewer
+      ...aeSettings_viewer
     }
   }
 `;
@@ -87,20 +85,19 @@ class App extends React.Component {
           selectedKeyId={this.state.selectedKeyId}
           changeSelectedKey={this.changeSelectedKey}
         />
-        {/*
+        {this.state.selectedKeyId &&
           <Details
             lang={this.state.lang}
-            viewer={this.props.viewer}
             selectedKeyId={this.state.selectedKeyId}
           />
-          {this.state.fSettingsShown &&
-            <Settings
-              lang={this.state.lang}
-              viewer={this.props.viewer}
-              onChangeLang={this.onChangeLang}
-              onClose={this.hideSettings}
-            />}
-        */}
+        }
+        {this.state.fSettingsShown &&
+          <Settings
+            lang={this.state.lang}
+            viewer={this.props.viewer}
+            onChangeLang={this.onChangeLang}
+            onClose={this.hideSettings}
+          />}
       </div>
     );
   }
@@ -185,19 +182,6 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-const Container = () => (
-  <QueryRenderer
-    environment={relayEnvironment}
-    query={query}
-    render={({ error, props }) => {
-      if (error) {
-        return <div>{error.message}</div>;
-      } else if (props) {
-        return <App {...props} />;
-      }
-      return <Spinner />;
-    }}
-  />
-);
+const Container = () => <QueryRendererWrapper query={query} Component={App} />;
 export default Container;
 export { App as _App };

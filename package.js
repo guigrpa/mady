@@ -208,10 +208,10 @@ const specs = {
     // React
     react:                            '15.5.4',
     'react-dom':                      '15.5.4',
-    'react-relay': '1.0.0-rc.2',
-    'relay-compiler': '1.0.0-rc.2',
-    'relay-runtime': '1.0.0-rc.2',
-    'babel-plugin-relay': '1.0.1-rc.2',
+    'react-relay': '1.0.0-rc.3',
+    'relay-compiler': '1.0.0-rc.3',
+    'relay-runtime': '1.0.0-rc.3',
+    'babel-plugin-relay': '1.0.1-rc.3',
     'react-intl': '2.2.3',
 
     // Miscellaneous
@@ -292,7 +292,7 @@ const specs = {
       '!src/exampleLocales.js',
       '!src/mady.js',
       '!src/server/importData.js',
-      '!src/client/components/999-reactIntlExample.js',
+      '!src/client/components/zzReactIntlExample.js',
       '!src/client/components/fetchLangBundle.js',
     ],
     setupTestFrameworkScriptFile: './test/setup.js',

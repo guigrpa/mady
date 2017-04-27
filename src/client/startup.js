@@ -9,7 +9,7 @@ import wsClient from 'storyboard-listener-ws-client';
 import browserExtension from 'storyboard-listener-browser-extension';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app';
+import App from './components/aaApp';
 import _t from '../translate';
 
 addListener(wsClient);

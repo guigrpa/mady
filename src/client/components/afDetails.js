@@ -1,41 +1,34 @@
 // @flow
 
 import React                from 'react';
-import Relay                from 'react-relay';
+import { graphql } from 'react-relay';
 import moment               from 'moment';
 import {
   flexItem,
   Icon,
   LargeMessage,
 }                           from 'giu';
-import type {
-  ViewerT,
-  KeyT,
-  RelayContainer,
-}                           from '../../common/types';
 import _t                   from '../../translate';
 import { COLORS }           from '../gral/constants';
+import QueryRendererWrapper from './uuQueryRendererWrapper';
 
 // ==========================================
 // Component declarations
 // ==========================================
-const fragments = {
-  viewer: () => Relay.QL`
-    fragment on Viewer {
-      anyNode(id: $details_selectedKeyId) {
-        ... on Key {
-          firstUsed unusedSince
-          description
-          sources
-        }
+const query = graphql`
+  query afDetailsQuery($selectedKeyId: ID!) {
+    node(id: $selectedKeyId) {
+      ... on Key {
+        firstUsed unusedSince
+        description
+        sources
       }
     }
-  `,
-};
+  }
+`;
 
 type PublicPropsT = {
   // lang: string,
-  viewer: ViewerT,
   selectedKeyId: ?string,
 };
 type PropsT = PublicPropsT & { relay: Object };
@@ -45,14 +38,20 @@ type PropsT = PublicPropsT & { relay: Object };
 // ==========================================
 class Details extends React.Component {
   props: PropsT;
-  theKey: KeyT;
 
-  componentWillReceiveProps(nextProps: PropsT) {
-    this.props.relay.setVariables({ details_selectedKeyId: nextProps.selectedKeyId });
+  constructor(props) {
+    super(props);
+    this.state = {
+      key: props.node,
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.node) this.setState({ key: nextProps.node });
   }
 
   render() {
-    this.theKey = this.props.viewer.anyNode;
+    this.key = this.props.node;
     return (
       <div style={style.outer}>
         <div style={style.title}>
@@ -67,10 +66,10 @@ class Details extends React.Component {
     if (this.props.selectedKeyId == null) {
       return <LargeMessage>{_t('msgDetailsView_No message selected')}</LargeMessage>;
     }
-    if (!this.theKey) {
+    if (!this.state.key) {
       return <LargeMessage><Icon icon="circle-o-notch" /></LargeMessage>;
     }
-    const { description, sources, firstUsed, unusedSince } = this.theKey;
+    const { description, sources, firstUsed, unusedSince } = this.state.key;
     const since = this.renderDate(firstUsed);
     const until = unusedSince
       ? <span> {_t('msgDetailsView_until')} {this.renderDate(unusedSince)}</span>
@@ -124,10 +123,15 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-const Container: RelayContainer<{}, PublicPropsT, any> =
-  Relay.createContainer(Details, {
-    fragments,
-    initialVariables: { details_selectedKeyId: null },
-  });
+const Container = ({ selectedKeyId, ...otherProps }) => (
+  <QueryRendererWrapper
+    query={query}
+    vars={{ selectedKeyId }}
+    Component={Details}
+    renderDuringLoad
+    selectedKeyId={selectedKeyId}
+    {...otherProps}
+  />
+);
 export default Container;
 export { Details as _Details };

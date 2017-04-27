@@ -310,11 +310,8 @@ const style = {
 // ==========================================
 const HoverableTranslation = hoverable(Translation);
 const Container = createFragmentContainer(HoverableTranslation, graphql`
-  fragment translation_theKey on Key {
-    id
-    text
-  }
-  fragment translation_translation on Translation {
+  fragment eeTranslation_theKey on Key { id text }
+  fragment eeTranslation_translation on Translation {
     id
     lang, translation, fuzzy
   }

@@ -1,57 +1,34 @@
 // @flow
 
-import timm                 from 'timm';
-import React                from 'react';
-import Relay                from 'react-relay';
-import pick                 from 'lodash/pick';
+import timm from 'timm';
+import React from 'react';
+import { createFragmentContainer, graphql } from 'react-relay';
+import pick from 'lodash/pick';
 import {
   flexContainer,
   Icon,
-  Select, Checkbox, TextInput,
+  Select,
+  Checkbox,
+  TextInput,
   Modal,
   notify,
-}                           from 'giu';
-import type {
-  ViewerT,
-  RelayContainer,
-}                           from '../../common/types';
-import _t                   from '../../translate';
-import {
-  UpdateConfigMutation,
-}                           from '../gral/mutations';
-import { LANG_OPTIONS }     from '../gral/constants';
-import { mutate }           from './helpers';
-
+} from 'giu';
+import type { ViewerT } from '../../common/types';
+import _t from '../../translate';
+// import { UpdateConfigMutation } from '../gral/mutations';
+import { LANG_OPTIONS } from '../gral/constants';
+import { mutate } from './helpers';
 
 // ==========================================
 // Component declarations
 // ==========================================
-const fragments = {
-  viewer: () => Relay.QL`
-    fragment on Viewer {
-      id
-      config {
-        langs
-        srcPaths
-        srcExtensions
-        msgFunctionNames
-        msgRegexps
-        fMinify
-        fJsOutput
-        fJsonOutput
-        fReactIntlOutput
-      }
-    }
-  `,
-};
-
-type PublicPropsT = {
+type PublicProps = {
   lang: string,
   viewer: ViewerT,
   onChangeLang: (str: string) => void,
   onClose: () => void,
 };
-type PropsT = PublicPropsT;
+type Props = PublicProps;
 
 type FlexDirT = 'row' | 'column';
 
@@ -59,7 +36,7 @@ type FlexDirT = 'row' | 'column';
 // Component
 // ==========================================
 class Settings extends React.Component {
-  props: PropsT;
+  props: Props;
   state: {
     langs: Array<string>,
     srcPaths: Array<string>,
@@ -73,14 +50,19 @@ class Settings extends React.Component {
   refReactIntlOutput: ?Object;
   refJsonOutput: ?Object;
 
-  constructor(props: PropsT) {
+  constructor(props: Props) {
     super(props);
     // For arrays without IDs, it's better if we keep the current state at this level,
     // rather than relying on `giu`. For other attributes (`lang`, `fMinify`...), we can
     // leave state handling entirely to `giu`, and fetch the value when the user clicks on
     // Save.
     this.state = pick(props.viewer.config, [
-      'langs', 'srcPaths', 'srcExtensions', 'msgFunctionNames', 'msgRegexps', 'fJsOutput',
+      'langs',
+      'srcPaths',
+      'srcExtensions',
+      'msgFunctionNames',
+      'msgRegexps',
+      'fJsOutput',
     ]);
   }
 
@@ -112,7 +94,10 @@ class Settings extends React.Component {
             {_t('settingsForm_Mady language:')}
           </label>
           {' '}
-          <Select ref={(c) => { this.refLang = c; }}
+          <Select
+            ref={c => {
+              this.refLang = c;
+            }}
             value={lang}
             items={LANG_OPTIONS}
             required
@@ -159,11 +144,15 @@ class Settings extends React.Component {
           width: 60,
         })}
         <div style={style.listLabel}>
-          {_t('settingsForm_ADVANCED: Additional regular expressions for message parsing:')}
+          {_t(
+            'settingsForm_ADVANCED: Additional regular expressions for message parsing:',
+          )}
           {' '}
           <Icon
             icon="info-circle"
-            title={_t('settingsForm_Make sure your regular expression has exactly one capture group, for example: (.*?)')}
+            title={_t(
+              'settingsForm_Make sure your regular expression has exactly one capture group, for example: (.*?)',
+            )}
             style={style.info}
           />
         </div>
@@ -183,11 +172,15 @@ class Settings extends React.Component {
               onChange={(ev, val) => this.setState({ fJsOutput: val })}
             />
             <label htmlFor="fJsOutput">
-              {_t("settingsForm_JavaScript module (required if you use Mady's translation function)")}
+              {_t(
+                "settingsForm_JavaScript module (required if you use Mady's translation function)",
+              )}
             </label>
             {' '}
             <Checkbox
-              ref={(c) => { this.refMinify = c; }}
+              ref={c => {
+                this.refMinify = c;
+              }}
               id="fMinify"
               disabled={!fJsOutput}
               value={fMinify}
@@ -197,7 +190,10 @@ class Settings extends React.Component {
             </label>
           </div>
           <div style={style.indented}>
-            <Checkbox ref={(c) => { this.refReactIntlOutput = c; }}
+            <Checkbox
+              ref={c => {
+                this.refReactIntlOutput = c;
+              }}
               id="fReactIntlOutput"
               value={fReactIntlOutput}
             />
@@ -206,7 +202,13 @@ class Settings extends React.Component {
             </label>
           </div>
           <div style={style.indented}>
-            <Checkbox ref={(c) => { this.refJsonOutput = c; }} id="fJsonOutput" value={fJsonOutput} />
+            <Checkbox
+              ref={c => {
+                this.refJsonOutput = c;
+              }}
+              id="fJsonOutput"
+              value={fJsonOutput}
+            />
             <label htmlFor="fJsonOutput">
               {_t('settingsForm_Generic JSON file')}
             </label>
@@ -217,25 +219,32 @@ class Settings extends React.Component {
   }
 
   /* eslint-disable react/no-unused-prop-types */
-  renderList({ id, dir, Component, placeholder, width }: {
+  renderList({
+    id,
+    dir,
+    Component,
+    placeholder,
+    width,
+  }: {
     id: string,
     dir: FlexDirT,
     Component: any,
     placeholder: string,
     width: number,
   }) {
-  /* eslint-enable react/no-unused-prop-types */
+    /* eslint-enable react/no-unused-prop-types */
     const values = this.state[id];
     return (
       <div style={style.list(dir)}>
-        {values.map((value, idx) =>
+        {values.map((value, idx) => (
           <div key={idx} style={style.listItem(dir)}>
             <Component
               id={`${id}.${idx}`}
               value={value}
               placeholder={placeholder}
               onChange={this.onUpdateListItem}
-              required errorZ={52}
+              required
+              errorZ={52}
               style={style.input(width)}
             />&nbsp;
             <Icon
@@ -245,7 +254,7 @@ class Settings extends React.Component {
               style={style.remove}
             />
           </div>
-        )}
+        ))}
         <Icon
           id={id}
           icon="plus"
@@ -262,14 +271,14 @@ class Settings extends React.Component {
     const { id } = ev.currentTarget;
     const newList = timm.addLast(this.state[id], '');
     this.setState({ [id]: newList });
-  }
+  };
 
   onRemoveListItem = (ev: SyntheticEvent) => {
     if (!(ev.currentTarget instanceof HTMLElement)) return;
     const [id, idx] = ev.currentTarget.id.split('.');
     const newList = timm.removeAt(this.state[id], Number(idx));
     this.setState({ [id]: newList });
-  }
+  };
 
   onUpdateListItem = (ev: SyntheticEvent) => {
     if (!(ev.currentTarget instanceof HTMLInputElement)) return;
@@ -277,9 +286,11 @@ class Settings extends React.Component {
     const [id, idx] = ev.currentTarget.id.split('.');
     const newList = timm.replaceAt(this.state[id], Number(idx), value);
     this.setState({ [id]: newList });
-  }
+  };
 
-  onCancel = () => { this.props.onClose(); }
+  onCancel = () => {
+    this.props.onClose();
+  };
   onSave = () => {
     // Save lang
     if (this.refLang == null) return;
@@ -289,7 +300,11 @@ class Settings extends React.Component {
     // Save other settings
     const { viewer } = this.props;
     const set = pick(this.state, [
-      'langs', 'srcPaths', 'srcExtensions', 'msgFunctionNames', 'msgRegexps',
+      'langs',
+      'srcPaths',
+      'srcExtensions',
+      'msgFunctionNames',
+      'msgRegexps',
     ]);
     if (this.refMinify == null) return;
     set.fMinify = this.refMinify.getValue();
@@ -312,7 +327,7 @@ class Settings extends React.Component {
       },
     });
     /* eslint-enable object-shorthand */
-  }
+  };
 }
 
 // ------------------------------------------
@@ -321,16 +336,17 @@ const style = {
     marginTop: 7,
     marginBottom: 3,
   },
-  list: (dir: FlexDirT) => flexContainer(dir, {
-    marginLeft: 15,
-  }),
+  list: (dir: FlexDirT) =>
+    flexContainer(dir, {
+      marginLeft: 15,
+    }),
   listItem: (dir: FlexDirT) => ({
     padding: '0px 2px',
     marginTop: dir === 'column' ? 1 : undefined,
     marginRight: 10,
     whiteSpace: 'nowrap',
   }),
-  input: (width) => ({ width }),
+  input: width => ({ width }),
   add: {
     display: 'inline-block',
     marginTop: 5,
@@ -351,7 +367,24 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-const Container: RelayContainer<{}, PublicPropsT, any> =
-  Relay.createContainer(Settings, { fragments });
+const Container = createFragmentContainer(
+  Settings,
+  graphql`
+  fragment aeSettings_viewer on Viewer {
+    id
+    config {
+      langs
+      srcPaths
+      srcExtensions
+      msgFunctionNames
+      msgRegexps
+      fMinify
+      fJsOutput
+      fJsonOutput
+      fReactIntlOutput
+    }
+  }
+`,
+);
 export default Container;
 export { Settings as _Settings };
