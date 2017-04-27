@@ -16,7 +16,7 @@ import {
 } from 'giu';
 import type { ViewerT, KeyT } from '../../common/types';
 import _t from '../../translate';
-// import { ParseSrcFilesMutation } from '../gral/mutations';
+import parseSrcFiles from '../mutations/parseSrcFiles';
 import { COLORS } from '../gral/constants';
 import { cookieGet, cookieSet } from '../gral/storage';
 import { mutate } from './helpers';
@@ -298,8 +298,7 @@ class Translator extends React.PureComponent {
     this.setState({ fParsing: true });
     mutate({
       description: 'Click on Parse source files',
-      Mutation: ParseSrcFilesMutation,
-      props: { viewerId: this.props.viewer.id },
+      mutation: parseSrcFiles,
       onFinish: () => this.setState({ fParsing: false }),
     });
   };

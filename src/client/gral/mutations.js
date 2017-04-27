@@ -1,23 +1,33 @@
+import { graphql } from 'react-relay';
+import { merge, set as timmSet } from 'timm';
+// import relayEnvironment from '../gral/relayEnvironment';
+
+const applySetUnset = (item, set, unset = []) => {
+  let out;
+  out = merge({}, item, set);
+  // delete out.__dataID__;
+  for (const unsetAttr of unset) {
+    out = timmSet(out, unsetAttr, null);
+  }
+  return out;
+}
+
+// =======================================================
+// ParseSrcFilesMutation
+// =======================================================
+
+// const parseSrcFiles = (storyId) => {
+//   commitMutation(relayEnvironment, {
+//     mutation: parseSrcFilesMutation,
+//     variables: { input: { storyId } },
+//   });
+// };
+
 // // @flow
 //
 // /* eslint-disable class-methods-use-this */
 //
-// import Relay                from 'react-relay';
-// import timm                 from 'timm';
 //
-// function applySetUnset(item, set, unset = []) {
-//   let out;
-//   out = timm.merge({}, item, set);
-//   // delete out.__dataID__;
-//   for (const unsetAttr of unset) {
-//     out = timm.set(out, unsetAttr, null);
-//   }
-//   return out;
-// }
-//
-// // =======================================================
-// // ParseSrcFilesMutation
-// // =======================================================
 // class ParseSrcFilesMutation extends Relay.Mutation {
 //   static fragments = {};
 //   getMutation() {
@@ -67,9 +77,9 @@
 //   getCollisionKey() { return 'compileTranslations'; }
 // }
 //
-// // =======================================================
+// =======================================================
 // // UpdateConfigMutation
-// // =======================================================
+// =======================================================
 // class UpdateConfigMutation extends Relay.Mutation {
 //   static fragments = {};
 //   getMutation() {
@@ -101,9 +111,9 @@
 // }
 //
 //
-// // =======================================================
+// =======================================================
 // // Key mutations
-// // =======================================================
+// =======================================================
 // class DeleteKeyMutation extends Relay.Mutation {
 //   static fragments = {};
 //   getMutation() {
@@ -144,9 +154,9 @@
 // }
 //
 //
-// // =======================================================
+// =======================================================
 // // Translation mutations
-// // =======================================================
+// =======================================================
 // class UpdateTranslationMutation extends Relay.Mutation {
 //   static fragments = {};
 //   getMutation() {
@@ -275,18 +285,18 @@
 //   getCollisionKey() { return this.props.id; }
 // }
 //
-// // ==============================================
-// // Public API
-// // ==============================================
-// export {
-//   ParseSrcFilesMutation,
-//   CompileTranslationsMutation,
+// ==============================================
+// Public API
+// ==============================================
+export {
+  parseSrcFiles,
+//   compileTranslations,
 //
-//   UpdateConfigMutation,
+//   updateConfig,
 //
-//   DeleteKeyMutation,
+//   deleteKey,
 //
-//   UpdateTranslationMutation,
-//   CreateTranslationMutation,
-//   DeleteTranslationMutation,
-// };
+//   updateTranslation,
+//   createTranslation,
+//   deleteTranslation,
+};

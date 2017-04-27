@@ -1,38 +1,51 @@
 // @flow
 
-import timm                 from 'timm';
-import Relay                from 'react-relay';
-import { mainStory }        from 'storyboard';
-import { notify }           from 'giu';
-import _t                   from '../../translate';
+import { set as timmSet } from 'timm';
+import { commitMutation } from 'react-relay';
+import { mainStory } from 'storyboard';
+import { notify } from 'giu';
+import _t from '../../translate';
+import relayEnvironment from '../gral/relayEnvironment';
 
 // Runs a Relay mutation inside a Storyboard story
-function mutate({
+const mutate = ({
   description,
-  Mutation,
-  props,
-  onFailure, onSuccess, onFinish,
+  mutation,
+  input = {},
+  onFailure,
+  onSuccess,
+  onFinish,
 }: {|
   description: string,
-  Mutation: any,
-  props: Object,
+  mutation: Function,
+  input?: Object,
   onFailure?: (failure: Object) => void,
   onSuccess?: (response: Object) => void,
   onFinish?: () => void,
-|}) {
+|}) => {
   const story = mainStory.child({
     src: 'views',
     title: description,
   });
-  const finalProps = timm.set(props, 'storyId', story.storyId);
-  const mutation = new Mutation(finalProps);
-  Relay.Store.commitUpdate(mutation, {
-    onFailure: (transaction: Object) => {
-      const error = transaction.getError() || new Error('Mutation failed');
+  const finalInput = timmSet(input, 'storyId', story.storyId);
+  commitMutation(relayEnvironment, {
+    mutation,
+    variables: { input: finalInput },
+    onCompleted: response => {
+      story.debug('views', 'Transaction result:', {
+        attach: response,
+        attachLevel: 'trace',
+      });
+      story.close();
+      if (onSuccess) onSuccess(response);
+      if (onFinish) onFinish();
+    },
+    onError: err => {
+      const error = err.message || new Error('Mutation failed');
       story.error('views', 'Transaction error:', { attach: error });
       story.close();
       if (onFailure) {
-        onFailure(transaction);
+        onFailure(err);
       } else {
         notify({
           title: _t('error_Changes could not be saved'),
@@ -43,18 +56,7 @@ function mutate({
       }
       if (onFinish) onFinish();
     },
-    onSuccess: (response: Object) => {
-      story.debug('views', 'Transaction result:', {
-        attach: response,
-        attachLevel: 'trace',
-      });
-      story.close();
-      if (onSuccess) onSuccess(response);
-      if (onFinish) onFinish();
-    },
   });
-}
-
-export {
-  mutate,
 };
+
+export { mutate };
