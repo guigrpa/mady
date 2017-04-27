@@ -2,7 +2,7 @@
 /* eslint-disable global-require, import/newline-after-import */
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { _App as App } from '../010-app';
+import { _App as App } from '../aaApp';
 import {
   VIEWER_WITH_NO_CONTENT,
 } from './fixtures';
@@ -10,10 +10,10 @@ import $ from './jestQuery';
 
 // https://github.com/facebook/react/issues/7386#issuecomment-238091398
 jest.mock('react-dom');
-jest.mock('../050-header', () => require('./mockComponent')('Header'));
-jest.mock('../060-translator', () => require('./mockComponent')('Translator'));
-jest.mock('../070-details', () => require('./mockComponent')('Details'));
-jest.mock('../080-settings', () => require('./mockComponent')('Settings'));
+jest.mock('../abHeader', () => require('./mockComponent')('Header'));
+jest.mock('../adTranslator', () => require('./mockComponent')('Translator'));
+jest.mock('../aeSettings', () => require('./mockComponent')('Settings'));
+jest.mock('../afDetails', () => require('./mockComponent')('Details'));
 jest.mock('../../gral/storage');
 jest.mock('../fetchLangBundle');
 

@@ -129,21 +129,6 @@ exports[`App changes the selected key when clicked 1`] = `
     dataMockType="Details"
     lang="en"
     selectedKeyId="SELECTED_KEY"
-    viewer={
-      Object {
-        "config": Object {
-          "langs": Array [
-            "es",
-            "ca",
-            "en",
-          ],
-        },
-        "id": "me",
-        "keys": Object {
-          "edges": Array [],
-        },
-      }
-    }
   >
     Details
   </div>
@@ -322,28 +307,6 @@ exports[`App renders correctly with no content 1`] = `
   >
     Translator
   </div>
-  <div
-    dataMockType="Details"
-    lang="en"
-    selectedKeyId={null}
-    viewer={
-      Object {
-        "config": Object {
-          "langs": Array [
-            "es",
-            "ca",
-            "en",
-          ],
-        },
-        "id": "me",
-        "keys": Object {
-          "edges": Array [],
-        },
-      }
-    }
-  >
-    Details
-  </div>
 </div>
 ------------HTML PREVIEW---------------
 <div style="background-color:white;display:flex;flex-direction:column;min-height:100%;padding:0px 10px;">
@@ -382,12 +345,6 @@ exports[`App renders correctly with no content 1`] = `
     lang="en"
   >
     Translator
-  </div>
-  <div
-    dataMockType="Details"
-    lang="en"
-  >
-    Details
   </div>
 </div>
 `;
@@ -518,28 +475,6 @@ exports[`App shows the settings when clicked 1`] = `
     Translator
   </div>
   <div
-    dataMockType="Details"
-    lang="en"
-    selectedKeyId={null}
-    viewer={
-      Object {
-        "config": Object {
-          "langs": Array [
-            "es",
-            "ca",
-            "en",
-          ],
-        },
-        "id": "me",
-        "keys": Object {
-          "edges": Array [],
-        },
-      }
-    }
-  >
-    Details
-  </div>
-  <div
     dataMockType="Settings"
     lang="en"
     onChangeLang={[Function]}
@@ -600,12 +535,6 @@ exports[`App shows the settings when clicked 1`] = `
     lang="en"
   >
     Translator
-  </div>
-  <div
-    dataMockType="Details"
-    lang="en"
-  >
-    Details
   </div>
   <div
     dataMockType="Settings"
@@ -741,28 +670,6 @@ exports[`App shows the settings when clicked 2`] = `
   >
     Translator
   </div>
-  <div
-    dataMockType="Details"
-    lang="en"
-    selectedKeyId={null}
-    viewer={
-      Object {
-        "config": Object {
-          "langs": Array [
-            "es",
-            "ca",
-            "en",
-          ],
-        },
-        "id": "me",
-        "keys": Object {
-          "edges": Array [],
-        },
-      }
-    }
-  >
-    Details
-  </div>
 </div>
 ------------HTML PREVIEW---------------
 <div style="background-color:white;display:flex;flex-direction:column;min-height:100%;padding:0px 10px;">
@@ -801,12 +708,6 @@ exports[`App shows the settings when clicked 2`] = `
     lang="en"
   >
     Translator
-  </div>
-  <div
-    dataMockType="Details"
-    lang="en"
-  >
-    Details
   </div>
 </div>
 `;

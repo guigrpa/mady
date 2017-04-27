@@ -1,13 +1,13 @@
 // @flow
 
-import Relay                from 'react-relay';
-
-export class ViewerQuery extends Relay.Route {
-  static routeName = 'ViewerQuery';
-  static queries = {
-    viewer: () => Relay.QL`query {viewer}`,
-  };
-}
+// import Relay                from 'react-relay';
+//
+// export class ViewerQuery extends Relay.Route {
+//   static routeName = 'ViewerQuery';
+//   static queries = {
+//     viewer: () => Relay.QL`query {viewer}`,
+//   };
+// }
 
 /*
 export class NodeQuery extends Relay.Route {

@@ -1,34 +1,27 @@
 // @flow
 
-import React                from 'react';
+import React from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
-import MessageFormat        from 'messageformat';
-import { mainStory }        from 'storyboard';
-import {
-  cancelEvent,
-  Icon, Textarea,
-  KEYS,
-  hoverable,
-}                           from 'giu';
-import type {
-  KeyT,
-  TranslationT,
-  HoverablePropsT,
-}                           from '../../common/types';
-import _t                   from '../../translate';
+import MessageFormat from 'messageformat';
+import { mainStory } from 'storyboard';
+import { cancelEvent, Icon, Textarea, KEYS, hoverable } from 'giu';
+import type { KeyT, TranslationT, HoverablePropsT } from '../../common/types';
+import _t from '../../translate';
 // import {
 //   CreateTranslationMutation,
 //   UpdateTranslationMutation,
 //   DeleteTranslationMutation,
 // }                           from '../gral/mutations';
-import { COLORS }           from '../gral/constants';
-import { mutate }           from './helpers';
+import { COLORS } from '../gral/constants';
+import { mutate } from './helpers';
 
 const validateTranslation = (lang: string) => (val: string) => {
   const numOpen = val.split('{').length - 1;
   const numClose = val.split('}').length - 1;
   if (numOpen !== numClose) {
-    return _t('validation_the number of left and right brackets does not match');
+    return _t(
+      'validation_the number of left and right brackets does not match',
+    );
   }
   const mf = new MessageFormat(lang).setIntlSupport(true);
   try {
@@ -94,7 +87,10 @@ class Translation extends React.Component {
     const { cmds } = this.state;
     // const fUpdating = translation && relay.hasOptimisticUpdate(translation);
     return (
-      <Textarea ref={(c) => { this.refInput = c; }}
+      <Textarea
+        ref={c => {
+          this.refInput = c;
+        }}
         value={translation ? translation.translation : null}
         validators={[validateTranslation(lang)]}
         onFocus={this.onFocus}
@@ -111,16 +107,18 @@ class Translation extends React.Component {
     const { translation } = this.props;
     const interactedWith = this.state.fEditing || this.props.hovering;
     const elFuzzy = translation && (interactedWith || translation.fuzzy)
-      ? (
-        <Icon
+      ? <Icon
           icon="warning"
           title={_t('tooltip_Dubious translation (click to toggle)')}
           onClick={translation ? this.onClickFuzzy : undefined}
-          style={style.iconFuzzy({ button: interactedWith, active: translation.fuzzy })}
+          style={style.iconFuzzy({
+            button: interactedWith,
+            active: translation.fuzzy,
+          })}
         />
-      )
       : null;
-    if (!interactedWith) return elFuzzy ? <div style={style.buttons}>{elFuzzy}</div> : null;
+    if (!interactedWith)
+      return elFuzzy ? <div style={style.buttons}>{elFuzzy}</div> : null;
     const elDelete = translation
       ? <Icon
           icon="remove"
@@ -158,27 +156,31 @@ class Translation extends React.Component {
   onFocus = () => {
     this.setState({ fEditing: true, fDismissedHelp: false });
     this.props.changeSelectedKey(this.props.theKey.id);
-  }
+  };
 
   // RETURN + modifier key (unmodified RETURNs are accepted in the textarea): ignore (will
   // be processed on keyup)
   onKeyDown = (ev: SyntheticKeyboardEvent) => {
-    if (ev.which === KEYS.enter &&
-        (ev.ctrlKey || ev.altKey || ev.metaKey || ev.shiftKey)) {
+    if (
+      ev.which === KEYS.enter &&
+      (ev.ctrlKey || ev.altKey || ev.metaKey || ev.shiftKey)
+    ) {
       cancelEvent(ev);
     }
-  }
+  };
 
   // ESC: revert and blur
   // RETURN + modifier key (unmodified RETURNs are accepted in the textarea): blur (and save)
   onKeyUp = (ev: SyntheticKeyboardEvent) => {
     if (ev.which === KEYS.esc) {
       this.setState({ cmds: [{ type: 'REVERT' }, { type: 'BLUR' }] });
-    } else if (ev.which === KEYS.enter &&
-               (ev.ctrlKey || ev.altKey || ev.metaKey || ev.shiftKey)) {
+    } else if (
+      ev.which === KEYS.enter &&
+      (ev.ctrlKey || ev.altKey || ev.metaKey || ev.shiftKey)
+    ) {
       this.setState({ cmds: [{ type: 'BLUR' }] });
     }
-  }
+  };
 
   onBlur = () => {
     this.setState({ fEditing: false });
@@ -186,8 +188,7 @@ class Translation extends React.Component {
       mainStory.warn('translation', 'Could not save translation');
       return;
     }
-    this.refInput.validateAndGetValue()
-    .then((text) => {
+    this.refInput.validateAndGetValue().then(text => {
       if (text === this.getInitialTranslation()) return;
       const description = 'Commit translation edit';
       let Mutation;
@@ -213,7 +214,7 @@ class Translation extends React.Component {
       }
       mutate({ description, Mutation, props });
     });
-  }
+  };
 
   onMouseDownCopyKey = () => {
     this.setState({
@@ -222,7 +223,7 @@ class Translation extends React.Component {
         { type: 'FOCUS' },
       ],
     });
-  }
+  };
 
   onClickDelete = () => {
     if (!this.props.translation) return;
@@ -234,7 +235,7 @@ class Translation extends React.Component {
         keyId: this.props.theKey.id,
       },
     });
-  }
+  };
 
   onClickFuzzy = () => {
     if (!this.props.translation) return;
@@ -246,11 +247,11 @@ class Translation extends React.Component {
         set: { fuzzy: !this.props.translation.fuzzy },
       },
     });
-  }
+  };
 
   onHoverHelp = () => {
     this.setState({ fDismissedHelp: true });
-  }
+  };
 
   // ------------------------------------------
   // Helpers
@@ -287,9 +288,7 @@ const style = {
   },
   iconFuzzy: ({ button, active }) => ({
     marginLeft: 5,
-    color: button
-      ? (active ? 'black' : COLORS.dim)
-      : 'orange',
+    color: button ? active ? 'black' : COLORS.dim : 'orange',
   }),
   help: {
     position: 'absolute',
@@ -309,12 +308,15 @@ const style = {
 // Public API
 // ==========================================
 const HoverableTranslation = hoverable(Translation);
-const Container = createFragmentContainer(HoverableTranslation, graphql`
+const Container = createFragmentContainer(
+  HoverableTranslation,
+  graphql`
   fragment eeTranslation_theKey on Key { id text }
   fragment eeTranslation_translation on Translation {
     id
     lang, translation, fuzzy
   }
-`);
+`,
+);
 export default Container;
 export { HoverableTranslation as _HoverableTranslation };

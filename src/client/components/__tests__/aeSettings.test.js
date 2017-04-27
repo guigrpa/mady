@@ -2,7 +2,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Floats } from 'giu';
-import { _Settings as Settings } from '../080-settings';
+import { _Settings as Settings } from '../aeSettings';
 
 // https://github.com/facebook/react/issues/7386#issuecomment-238091398
 jest.mock('react-dom');

@@ -1,20 +1,16 @@
 // @flow
 
-import React                from 'react';
-import { merge }            from 'timm';
-import {
-  Icon,
-  flexContainer, flexItem,
-  hintShow,
-}                           from 'giu';
-import _t                   from '../../translate';
-import { COLORS }           from '../gral/constants';
+import React from 'react';
+import { merge } from 'timm';
+import { Icon, flexContainer, flexItem, hintShow } from 'giu';
+import _t from '../../translate';
+import { COLORS } from '../gral/constants';
 
 // ==========================================
 // Component declarations
 // ==========================================
 type PropsT = {
-  onShowSettings: (ev?: SyntheticEvent) => void;
+  onShowSettings: (ev?: SyntheticEvent) => void,
 };
 
 // ==========================================
@@ -41,11 +37,14 @@ const Header = ({ onShowSettings }: PropsT) => (
 
 // ------------------------------------------
 const style = {
-  outer: flexItem('0 0 2.5em', flexContainer('row', {
-    backgroundColor: COLORS.medium,
-    padding: '5px 8px',
-    alignItems: 'center',
-  })),
+  outer: flexItem(
+    '0 0 2.5em',
+    flexContainer('row', {
+      backgroundColor: COLORS.medium,
+      padding: '5px 8px',
+      alignItems: 'center',
+    }),
+  ),
   title: {
     fontWeight: 900,
     letterSpacing: 3,

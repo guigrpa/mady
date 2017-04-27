@@ -3,7 +3,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { flexItem } from 'giu';
-import { _HoverableTranslatorRow as HoverableTranslatorRow } from '../061-translatorRow';
+import { _HoverableTranslatorRow as HoverableTranslatorRow } from '../edTranslatorRow';
 import {
   VIEWER,
   KEY_WITHOUT_TRANSLATIONS, KEY_WITH_TRANSLATIONS,
@@ -11,7 +11,7 @@ import {
 
 // https://github.com/facebook/react/issues/7386#issuecomment-238091398
 jest.mock('react-dom');
-jest.mock('../062-translation', () => require('./mockComponent')('Translation'));
+jest.mock('../eeTranslation', () => require('./mockComponent')('Translation'));
 
 // ======================================================
 // Fixtures

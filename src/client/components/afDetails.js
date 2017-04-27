@@ -1,15 +1,11 @@
 // @flow
 
-import React                from 'react';
+import React from 'react';
 import { graphql } from 'react-relay';
-import moment               from 'moment';
-import {
-  flexItem,
-  Icon,
-  LargeMessage,
-}                           from 'giu';
-import _t                   from '../../translate';
-import { COLORS }           from '../gral/constants';
+import moment from 'moment';
+import { flexItem, Icon, LargeMessage } from 'giu';
+import _t from '../../translate';
+import { COLORS } from '../gral/constants';
 import QueryRendererWrapper from './uuQueryRendererWrapper';
 
 // ==========================================
@@ -64,7 +60,9 @@ class Details extends React.Component {
 
   renderContents() {
     if (this.props.selectedKeyId == null) {
-      return <LargeMessage>{_t('msgDetailsView_No message selected')}</LargeMessage>;
+      return (
+        <LargeMessage>{_t('msgDetailsView_No message selected')}</LargeMessage>
+      );
     }
     if (!this.state.key) {
       return <LargeMessage><Icon icon="circle-o-notch" /></LargeMessage>;
@@ -72,7 +70,9 @@ class Details extends React.Component {
     const { description, sources, firstUsed, unusedSince } = this.state.key;
     const since = this.renderDate(firstUsed);
     const until = unusedSince
-      ? <span> {_t('msgDetailsView_until')} {this.renderDate(unusedSince)}</span>
+      ? <span>
+          {' '}{_t('msgDetailsView_until')} {this.renderDate(unusedSince)}
+        </span>
       : ':';
     const elSources = sources.length
       ? <ul style={style.srcList}>

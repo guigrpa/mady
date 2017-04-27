@@ -2,7 +2,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Hints } from 'giu';
-import Header from '../050-header';
+import Header from '../abHeader';
 import $ from './jestQuery';
 
 // https://github.com/facebook/react/issues/7386#issuecomment-238091398

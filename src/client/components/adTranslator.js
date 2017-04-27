@@ -401,7 +401,9 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-const Container = createFragmentContainer(Translator, graphql`
+const Container = createFragmentContainer(
+  Translator,
+  graphql`
   fragment adTranslator_viewer on Viewer {
     id
     config { langs }
@@ -415,6 +417,7 @@ const Container = createFragmentContainer(Translator, graphql`
     }}}
     ...edTranslatorRow_viewer
   }
-`);
+`,
+);
 export default Container;
 export { Translator as _Translator };

@@ -5,13 +5,7 @@
 import React from 'react';
 import { graphql } from 'react-relay';
 import moment from 'moment';
-import {
-  Floats,
-  Hints,
-  Notifications,
-  hintDefine,
-  hintShow,
-} from 'giu';
+import { Floats, Hints, Notifications, hintDefine, hintShow } from 'giu';
 import type { ViewerT } from '../../common/types';
 import _t from '../../translate';
 import { cookieGet, cookieSet } from '../gral/storage';
@@ -89,8 +83,7 @@ class App extends React.Component {
           <Details
             lang={this.state.lang}
             selectedKeyId={this.state.selectedKeyId}
-          />
-        }
+          />}
         {this.state.fSettingsShown &&
           <Settings
             lang={this.state.lang}

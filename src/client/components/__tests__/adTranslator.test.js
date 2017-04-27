@@ -4,7 +4,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Floats } from 'giu';
-import { _Translator as Translator } from '../060-translator';
+import { _Translator as Translator } from '../adTranslator';
 import {
   VIEWER, VIEWER_WITH_NO_CONTENT,
   KEY_WITH_TRANSLATIONS,
@@ -13,7 +13,7 @@ import $ from './jestQuery';
 
 // https://github.com/facebook/react/issues/7386#issuecomment-238091398
 jest.mock('react-dom');
-jest.mock('../061-translatorRow', () => require('./mockComponent')('TranslatorRow'));
+jest.mock('../edTranslatorRow', () => require('./mockComponent')('TranslatorRow'));
 jest.mock('../../gral/storage');
 
 // ======================================================
