@@ -1,3 +1,7 @@
+## 2.3.0 (May 2, 2017)
+
+* Add React Native compatibility (#9)
+
 ## 2.2.0 (March 16, 2017)
 
 * **Flag translations as dubious**.
