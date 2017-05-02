@@ -1,5 +1,6 @@
 // @flow
 
+// $FlowFixMe
 const Buffer = require('buffer').Buffer;
 
 const utf8ToBase64 = (str: string): string =>
