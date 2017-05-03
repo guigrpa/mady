@@ -6,7 +6,7 @@
 // Basic config
 // ===============================================
 const NAME = 'mady';
-const VERSION = '2.3.0';
+const VERSION = '2.3.1';
 const DESCRIPTION =
   'Easy-to-use tool to manage and translate ICU MessageFormat messages';
 const KEYWORDS = [
@@ -172,6 +172,7 @@ const specs = {
     'uglify-js': '2.7.3',
     slash: '1.0.0',
     opn: '4.0.2',
+    buffer: '5.0.6',
 
     // Express + plugins
     express: '4.15.2',

@@ -1,6 +1,6 @@
 {
   "name": "mady",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "Easy-to-use tool to manage and translate ICU MessageFormat messages",
   "bin": {
     "mady": "lib/mady.js"
@@ -60,6 +60,7 @@
   "dependencies": {
     "babel-relay-plugin": "0.9.3",
     "bluebird": "3.4.6",
+    "buffer": "5.0.6",
     "commander": "2.9.0",
     "compression": "1.6.2",
     "cookie-parser": "1.4.3",

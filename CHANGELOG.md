@@ -1,3 +1,7 @@
+## 2.3.1 (May 3, 2017)
+
+* Fix missing `buffer` dependency.
+
 ## 2.3.0 (May 2, 2017)
 
 * Add React Native compatibility (#9)
