@@ -171,11 +171,11 @@ Object {
 
 exports[`Source parser React Intl parser should extract messages from FormattedHTMLMessage components 1`] = `
 Object {
-  "Y29udGV4dF88aT5IZWxsbyB7TkFNRX0hPC9pPg==": Object {
-    "context": "context",
+  "PGk+SGVsbG8ge05BTUV9ITwvaT4=": Object {
+    "context": "reactIntlId2",
     "description": undefined,
     "firstUsed": null,
-    "id": "Y29udGV4dF88aT5IZWxsbyB7TkFNRX0hPC9pPg==",
+    "id": "PGk+SGVsbG8ge05BTUV9ITwvaT4=",
     "reactIntlId": "reactIntlId2",
     "sources": Array [
       "FILENAME",
@@ -188,11 +188,11 @@ Object {
 
 exports[`Source parser React Intl parser should extract messages from FormattedMessage components 1`] = `
 Object {
-  "Y29udGV4dF9IZWxsbyB7TkFNRX0h": Object {
-    "context": "context",
+  "SGVsbG8ge05BTUV9IQ==": Object {
+    "context": "reactIntlId1",
     "description": "Bla bla bla",
     "firstUsed": null,
-    "id": "Y29udGV4dF9IZWxsbyB7TkFNRX0h",
+    "id": "SGVsbG8ge05BTUV9IQ==",
     "reactIntlId": "reactIntlId1",
     "sources": Array [
       "FILENAME",
@@ -205,11 +205,11 @@ Object {
 
 exports[`Source parser React Intl parser should extract messages from defineMessages() calls 1`] = `
 Object {
-  "c29tZUNvbnRleHRfSGVsbG8sIHtOQU1FfSE=": Object {
-    "context": "someContext",
+  "SGVsbG8sIHtOQU1FfSE=": Object {
+    "context": "reactIntlId3",
     "description": "Message to greet the user",
     "firstUsed": null,
-    "id": "c29tZUNvbnRleHRfSGVsbG8sIHtOQU1FfSE=",
+    "id": "SGVsbG8sIHtOQU1FfSE=",
     "reactIntlId": "reactIntlId3",
     "sources": Array [
       "FILENAME",

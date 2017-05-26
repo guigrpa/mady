@@ -93,7 +93,7 @@ string===
         const Component = () => (
           <FormattedMessage
             id="reactIntlId1"
-            defaultMessage={\`context_Hello {NAME}!\`}
+            defaultMessage={\`Hello {NAME}!\`}
             values={{ NAME: <b>{name}</b> }}
             description="Bla bla bla"
           />
@@ -110,7 +110,7 @@ string===
         const Component = () => (
           <FormattedHTMLMessage
             id="reactIntlId2"
-            defaultMessage={\`context_<i>Hello {NAME}!</i>\`}
+            defaultMessage={\`<i>Hello {NAME}!</i>\`}
             values={{ NAME: name }}
           />
         );
@@ -126,7 +126,7 @@ string===
           reactIntlId3: {
             id: 'reactIntlId3',
             description: 'Message to greet the user',
-            defaultMessage: 'someContext_Hello, {NAME}!',
+            defaultMessage: 'Hello, {NAME}!',
           },
         });
       `);
