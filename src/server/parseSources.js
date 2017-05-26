@@ -120,13 +120,16 @@ const parseReactIntl = (
     if (messages) {
       messages.forEach((message) => {
         const { defaultMessage: utf8, description, id: reactIntlId, start, end } = message;
-        addMessageToKeys(keys, utf8, filePath, {
+        const extras = {
           reactIntlId,
           description,
           context: reactIntlId,
-          start,
-          end,
-        });
+        };
+        if (start && end) {
+          extras.start = start;
+          extras.end = end;
+        }
+        addMessageToKeys(keys, utf8, filePath, extras);
       });
     }
   } catch (err2) {
