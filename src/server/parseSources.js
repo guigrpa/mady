@@ -123,6 +123,7 @@ const parseReactIntl = (
         addMessageToKeys(keys, utf8, filePath, {
           reactIntlId,
           description,
+          context: reactIntlId,
           start,
           end,
         });
