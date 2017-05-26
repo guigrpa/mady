@@ -119,8 +119,13 @@ const parseReactIntl = (
     const { messages } = babelCore.transform(fileContents, babelConfig).metadata['react-intl'];
     if (messages) {
       messages.forEach((message) => {
-        const { defaultMessage: utf8, description, id: reactIntlId } = message;
-        addMessageToKeys(keys, utf8, filePath, { reactIntlId, description });
+        const { defaultMessage: utf8, description, id: reactIntlId, start, end } = message;
+        addMessageToKeys(keys, utf8, filePath, {
+          reactIntlId,
+          description,
+          start,
+          end,
+        });
       });
     }
   } catch (err2) {
@@ -155,7 +160,14 @@ const addMessageToKeys = (
     unusedSince: null,
     sources: [],
   };
-  keys[base64].sources.push(slash(filePath));
+  // TODO: if we have start/end, add that to the filePath in a nicer way
+  // maybe making the sources array an object: { file, start, end }
+  let sourceString = slash(filePath);
+  const { start, end } = extras;
+  if (start && end) {
+    sourceString += ` (${start.line}:${start.column}-${end.line}:${end.column})`;
+  }
+  keys[base64].sources.push(sourceString);
 };
 
 // ======================================================
