@@ -82,7 +82,11 @@ class Details extends React.Component {
       : null;
     return (
       <div>
-        {description && <div>{description}</div>}
+        {description &&
+          <div style={style.description}>
+            <span style={style.descriptionTitle}>{_t('msgDetailsView_Description:')}</span>
+            {description}
+          </div>}
         {_t('msgDetailsView_Used since')} {since}{until}
         {elSources}
       </div>
@@ -119,6 +123,13 @@ const style = {
   srcList: {
     marginTop: 0,
   },
+  description: {
+    marginBottom: 10,
+  },
+  descriptionTitle: {
+    fontWeight: 900,
+    marginRight: 10,
+  }
 };
 
 // ==========================================

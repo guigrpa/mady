@@ -148,7 +148,23 @@ exports[`Details when the details for the selection are available renders correc
     DETAILS
   </div>
   <div>
-    <div>
+    <div
+      style={
+        Object {
+          "marginBottom": 10,
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "fontWeight": 900,
+            "marginRight": 10,
+          }
+        }
+      >
+        Description:
+      </span>
       Some details
     </div>
     Used since
@@ -188,7 +204,10 @@ exports[`Details when the details for the selection are available renders correc
     DETAILS
   </div>
   <div>
-    <div>
+    <div style="margin-bottom:10px;">
+      <span style="font-weight:900;margin-right:10px;">
+        Description:
+      </span>
       Some details
     </div>
     Used since
@@ -240,7 +259,23 @@ exports[`Details when the details for the selection are available renders correc
     DETAILS
   </div>
   <div>
-    <div>
+    <div
+      style={
+        Object {
+          "marginBottom": 10,
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "fontWeight": 900,
+            "marginRight": 10,
+          }
+        }
+      >
+        Description:
+      </span>
       Some details
     </div>
     Used since
@@ -276,7 +311,10 @@ exports[`Details when the details for the selection are available renders correc
     DETAILS
   </div>
   <div>
-    <div>
+    <div style="margin-bottom:10px;">
+      <span style="font-weight:900;margin-right:10px;">
+        Description:
+      </span>
       Some details
     </div>
     Used since
