@@ -12,18 +12,24 @@ const KEY_WITH_TRANSLATIONS = {
   context: 'someContext',
   text: 'A message',
   unusedSince: null,
-  translations: { edges: [
-    { node: {
-      id: 'translationId1',
-      lang: 'es',
-      translation: 'Un mensaje',
-    } },
-    { node: {
-      id: 'translationId2',
-      lang: 'ca',
-      translation: 'Un missatge',
-    } },
-  ] },
+  translations: {
+    edges: [
+      {
+        node: {
+          id: 'translationId1',
+          lang: 'es',
+          translation: 'Un mensaje',
+        },
+      },
+      {
+        node: {
+          id: 'translationId2',
+          lang: 'ca',
+          translation: 'Un missatge',
+        },
+      },
+    ],
+  },
 };
 
 const VIEWER = {
@@ -31,10 +37,12 @@ const VIEWER = {
   config: {
     langs: ['es', 'ca', 'en'],
   },
-  keys: { edges: [
-    { node: KEY_WITHOUT_TRANSLATIONS },
-    { node: KEY_WITH_TRANSLATIONS },
-  ] },
+  keys: {
+    edges: [
+      { node: KEY_WITHOUT_TRANSLATIONS },
+      { node: KEY_WITH_TRANSLATIONS },
+    ],
+  },
 };
 
 const VIEWER_WITH_NO_CONTENT = {

@@ -62,224 +62,225 @@ mutation parseSrcFilesMutation(
 */
 
 const batch /*: ConcreteBatch*/ = {
-  "fragment": {
-    "argumentDefinitions": [
+  fragment: {
+    argumentDefinitions: [
       {
-        "kind": "LocalArgument",
-        "name": "input",
-        "type": "ParseSrcFilesInput!",
-        "defaultValue": null
-      }
+        kind: 'LocalArgument',
+        name: 'input',
+        type: 'ParseSrcFilesInput!',
+        defaultValue: null,
+      },
     ],
-    "kind": "Fragment",
-    "metadata": null,
-    "name": "parseSrcFilesMutation",
-    "selections": [
+    kind: 'Fragment',
+    metadata: null,
+    name: 'parseSrcFilesMutation',
+    selections: [
       {
-        "kind": "LinkedField",
-        "alias": null,
-        "args": [
+        kind: 'LinkedField',
+        alias: null,
+        args: [
           {
-            "kind": "Variable",
-            "name": "input",
-            "variableName": "input",
-            "type": "ParseSrcFilesInput!"
-          }
+            kind: 'Variable',
+            name: 'input',
+            variableName: 'input',
+            type: 'ParseSrcFilesInput!',
+          },
         ],
-        "concreteType": "ParseSrcFilesPayload",
-        "name": "parseSrcFiles",
-        "plural": false,
-        "selections": [
+        concreteType: 'ParseSrcFilesPayload',
+        name: 'parseSrcFiles',
+        plural: false,
+        selections: [
           {
-            "kind": "LinkedField",
-            "alias": "viewer",
-            "args": null,
-            "concreteType": "Viewer",
-            "name": "__viewer_viewer",
-            "plural": false,
-            "selections": [
+            kind: 'LinkedField',
+            alias: 'viewer',
+            args: null,
+            concreteType: 'Viewer',
+            name: '__viewer_viewer',
+            plural: false,
+            selections: [
               {
-                "kind": "LinkedField",
-                "alias": null,
-                "args": [
+                kind: 'LinkedField',
+                alias: null,
+                args: [
                   {
-                    "kind": "Literal",
-                    "name": "first",
-                    "value": 100000,
-                    "type": "Int"
-                  }
+                    kind: 'Literal',
+                    name: 'first',
+                    value: 100000,
+                    type: 'Int',
+                  },
                 ],
-                "concreteType": "KeyConnection",
-                "name": "keys",
-                "plural": false,
-                "selections": [
+                concreteType: 'KeyConnection',
+                name: 'keys',
+                plural: false,
+                selections: [
                   {
-                    "kind": "LinkedField",
-                    "alias": null,
-                    "args": null,
-                    "concreteType": "KeyEdge",
-                    "name": "edges",
-                    "plural": true,
-                    "selections": [
+                    kind: 'LinkedField',
+                    alias: null,
+                    args: null,
+                    concreteType: 'KeyEdge',
+                    name: 'edges',
+                    plural: true,
+                    selections: [
                       {
-                        "kind": "LinkedField",
-                        "alias": null,
-                        "args": null,
-                        "concreteType": "Key",
-                        "name": "node",
-                        "plural": false,
-                        "selections": [
+                        kind: 'LinkedField',
+                        alias: null,
+                        args: null,
+                        concreteType: 'Key',
+                        name: 'node',
+                        plural: false,
+                        selections: [
                           {
-                            "kind": "ScalarField",
-                            "alias": null,
-                            "args": null,
-                            "name": "id",
-                            "storageKey": null
+                            kind: 'ScalarField',
+                            alias: null,
+                            args: null,
+                            name: 'id',
+                            storageKey: null,
                           },
                           {
-                            "kind": "ScalarField",
-                            "alias": null,
-                            "args": null,
-                            "name": "unusedSince",
-                            "storageKey": null
-                          }
+                            kind: 'ScalarField',
+                            alias: null,
+                            args: null,
+                            name: 'unusedSince',
+                            storageKey: null,
+                          },
                         ],
-                        "storageKey": null
-                      }
+                        storageKey: null,
+                      },
                     ],
-                    "storageKey": null
-                  }
+                    storageKey: null,
+                  },
                 ],
-                "storageKey": "keys{\"first\":100000}"
-              }
+                storageKey: 'keys{"first":100000}',
+              },
             ],
-            "storageKey": null
-          }
+            storageKey: null,
+          },
         ],
-        "storageKey": null
-      }
+        storageKey: null,
+      },
     ],
-    "type": "Mutation"
+    type: 'Mutation',
   },
-  "id": null,
-  "kind": "Batch",
-  "metadata": {},
-  "name": "parseSrcFilesMutation",
-  "query": {
-    "argumentDefinitions": [
+  id: null,
+  kind: 'Batch',
+  metadata: {},
+  name: 'parseSrcFilesMutation',
+  query: {
+    argumentDefinitions: [
       {
-        "kind": "LocalArgument",
-        "name": "input",
-        "type": "ParseSrcFilesInput!",
-        "defaultValue": null
-      }
+        kind: 'LocalArgument',
+        name: 'input',
+        type: 'ParseSrcFilesInput!',
+        defaultValue: null,
+      },
     ],
-    "kind": "Root",
-    "name": "parseSrcFilesMutation",
-    "operation": "mutation",
-    "selections": [
+    kind: 'Root',
+    name: 'parseSrcFilesMutation',
+    operation: 'mutation',
+    selections: [
       {
-        "kind": "LinkedField",
-        "alias": null,
-        "args": [
+        kind: 'LinkedField',
+        alias: null,
+        args: [
           {
-            "kind": "Variable",
-            "name": "input",
-            "variableName": "input",
-            "type": "ParseSrcFilesInput!"
-          }
+            kind: 'Variable',
+            name: 'input',
+            variableName: 'input',
+            type: 'ParseSrcFilesInput!',
+          },
         ],
-        "concreteType": "ParseSrcFilesPayload",
-        "name": "parseSrcFiles",
-        "plural": false,
-        "selections": [
+        concreteType: 'ParseSrcFilesPayload',
+        name: 'parseSrcFiles',
+        plural: false,
+        selections: [
           {
-            "kind": "LinkedField",
-            "alias": null,
-            "args": null,
-            "concreteType": "Viewer",
-            "name": "viewer",
-            "plural": false,
-            "selections": [
+            kind: 'LinkedField',
+            alias: null,
+            args: null,
+            concreteType: 'Viewer',
+            name: 'viewer',
+            plural: false,
+            selections: [
               {
-                "kind": "LinkedField",
-                "alias": null,
-                "args": [
+                kind: 'LinkedField',
+                alias: null,
+                args: [
                   {
-                    "kind": "Literal",
-                    "name": "first",
-                    "value": 100000,
-                    "type": "Int"
-                  }
+                    kind: 'Literal',
+                    name: 'first',
+                    value: 100000,
+                    type: 'Int',
+                  },
                 ],
-                "concreteType": "KeyConnection",
-                "name": "keys",
-                "plural": false,
-                "selections": [
+                concreteType: 'KeyConnection',
+                name: 'keys',
+                plural: false,
+                selections: [
                   {
-                    "kind": "LinkedField",
-                    "alias": null,
-                    "args": null,
-                    "concreteType": "KeyEdge",
-                    "name": "edges",
-                    "plural": true,
-                    "selections": [
+                    kind: 'LinkedField',
+                    alias: null,
+                    args: null,
+                    concreteType: 'KeyEdge',
+                    name: 'edges',
+                    plural: true,
+                    selections: [
                       {
-                        "kind": "LinkedField",
-                        "alias": null,
-                        "args": null,
-                        "concreteType": "Key",
-                        "name": "node",
-                        "plural": false,
-                        "selections": [
+                        kind: 'LinkedField',
+                        alias: null,
+                        args: null,
+                        concreteType: 'Key',
+                        name: 'node',
+                        plural: false,
+                        selections: [
                           {
-                            "kind": "ScalarField",
-                            "alias": null,
-                            "args": null,
-                            "name": "id",
-                            "storageKey": null
+                            kind: 'ScalarField',
+                            alias: null,
+                            args: null,
+                            name: 'id',
+                            storageKey: null,
                           },
                           {
-                            "kind": "ScalarField",
-                            "alias": null,
-                            "args": null,
-                            "name": "unusedSince",
-                            "storageKey": null
-                          }
+                            kind: 'ScalarField',
+                            alias: null,
+                            args: null,
+                            name: 'unusedSince',
+                            storageKey: null,
+                          },
                         ],
-                        "storageKey": null
-                      }
+                        storageKey: null,
+                      },
                     ],
-                    "storageKey": null
-                  }
+                    storageKey: null,
+                  },
                 ],
-                "storageKey": "keys{\"first\":100000}"
+                storageKey: 'keys{"first":100000}',
               },
               {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "id",
-                "storageKey": null
-              }
+                kind: 'ScalarField',
+                alias: null,
+                args: null,
+                name: 'id',
+                storageKey: null,
+              },
             ],
-            "storageKey": null
+            storageKey: null,
           },
           {
-            "kind": "LinkedHandle",
-            "alias": null,
-            "args": null,
-            "handle": "viewer",
-            "name": "viewer",
-            "key": "",
-            "filters": null
-          }
+            kind: 'LinkedHandle',
+            alias: null,
+            args: null,
+            handle: 'viewer',
+            name: 'viewer',
+            key: '',
+            filters: null,
+          },
         ],
-        "storageKey": null
-      }
-    ]
+        storageKey: null,
+      },
+    ],
   },
-  "text": "mutation parseSrcFilesMutation(\n  $input: ParseSrcFilesInput!\n) {\n  parseSrcFiles(input: $input) {\n    viewer {\n      keys(first: 100000) {\n        edges {\n          node {\n            id\n            unusedSince\n          }\n        }\n      }\n      id\n    }\n  }\n}\n"
+  text:
+    'mutation parseSrcFilesMutation(\n  $input: ParseSrcFilesInput!\n) {\n  parseSrcFiles(input: $input) {\n    viewer {\n      keys(first: 100000) {\n        edges {\n          node {\n            id\n            unusedSince\n          }\n        }\n      }\n      id\n    }\n  }\n}\n',
 };
 
 module.exports = batch;

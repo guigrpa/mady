@@ -5,8 +5,12 @@ function cookieGet(key, options = {}) {
   if (out == null) out = options.defaultValue;
   return out;
 }
-function cookieSet(key, val) { data[key] = val; }
-function __cookieUnset(key) { delete data[key]; }
+function cookieSet(key, val) {
+  data[key] = val;
+}
+function __cookieUnset(key) {
+  delete data[key];
+}
 
 module.exports = {
   cookieGet,

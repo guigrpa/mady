@@ -1,15 +1,15 @@
 // @flow
 
-import Promise              from 'bluebird';
+import Promise from 'bluebird';
 import { mainStory, addListener } from 'storyboard';
-import consoleListener      from 'storyboard-listener-console';
-import program              from 'commander';
-import opn                  from 'opn';
-import * as db              from './db';
-import * as gqlServer       from './gqlServer';
-import * as httpServer      from './httpServer';
+import consoleListener from 'storyboard-listener-console';
+import program from 'commander';
+import opn from 'opn';
+import * as db from './db';
+import * as gqlServer from './gqlServer';
+import * as httpServer from './httpServer';
 
-const pkg                   = require('../../package.json');
+const pkg = require('../../package.json');
 
 Promise.longStackTraces();
 
@@ -27,9 +27,18 @@ process.on('SIGINT', () => {
 // ==============================================
 program
   .version(pkg.version)
-  .option('-d, --dir [dir]', 'Relative path to locale folder', DEFAULT_LOCALE_PATH)
-  .option('-p, --port [port]', 'Initial port number to use ' +
-    '(if unavailable, the next available one will be used)', Number, DEFAULT_PORT)
+  .option(
+    '-d, --dir [dir]',
+    'Relative path to locale folder',
+    DEFAULT_LOCALE_PATH
+  )
+  .option(
+    '-p, --port [port]',
+    'Initial port number to use ' +
+      '(if unavailable, the next available one will be used)',
+    Number,
+    DEFAULT_PORT
+  )
   .option('--recompile', 'Recompile translations upon launch')
   .option('--importV0 [dir]', 'Import a "v0" (old) locale folder')
   .parse(process.argv);

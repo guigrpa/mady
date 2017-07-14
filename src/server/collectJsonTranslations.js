@@ -1,12 +1,12 @@
 // @flow
 
-import { chalk }            from 'storyboard';
+import { chalk } from 'storyboard';
 import type {
   MapOf,
   StoryT,
   InternalKeyT,
   InternalTranslationT,
-}                           from '../common/types';
+} from '../common/types';
 
 export default function collectJsonTranslations({
   lang,
@@ -21,9 +21,12 @@ export default function collectJsonTranslations({
 |}): MapOf<InternalTranslationT> {
   const logPrefix = `Lang ${chalk.magenta.bold(lang)}`;
 
-  story.info('compiler', `${logPrefix} Preparing translations for generic JSON...`);
+  story.info(
+    'compiler',
+    `${logPrefix} Preparing translations for generic JSON...`
+  );
   const finalTranslations = {};
-  translations.forEach((translation) => {
+  translations.forEach(translation => {
     const key = keys[translation.keyId];
     if (!key) return;
     const { context, text } = key;

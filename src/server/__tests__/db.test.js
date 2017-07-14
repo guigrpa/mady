@@ -60,9 +60,15 @@ describe('db', () => {
     writeFileSync.mockClear();
     await db.updateConfig({ fMinify: true }, { story: mainStory });
     expect(db.getConfig().fMinify).toBe(true);
-    expect(writeFileSync.mock.calls[0][0]).toEqual(path.join(BASE_PATH, 'config.json'));
-    expect(writeFileSync.mock.calls[1][0]).toEqual(path.join(BASE_PATH, 'en.js'));
-    expect(writeFileSync.mock.calls[2][0]).toEqual(path.join(BASE_PATH, 'en.reactIntl.json'));
+    expect(writeFileSync.mock.calls[0][0]).toEqual(
+      path.join(BASE_PATH, 'config.json')
+    );
+    expect(writeFileSync.mock.calls[1][0]).toEqual(
+      path.join(BASE_PATH, 'en.js')
+    );
+    expect(writeFileSync.mock.calls[2][0]).toEqual(
+      path.join(BASE_PATH, 'en.reactIntl.json')
+    );
     db.updateConfig({ langs: ['en', 'es'] }, { story: mainStory });
   });
 
@@ -71,7 +77,9 @@ describe('db', () => {
   // ==========================================
   it('should allow querying for a key', () => {
     db._setKeys(INITIAL_KEYS);
-    expect(db.getKey('someContext_someText')).toEqual(INITIAL_KEYS.someContext_someText);
+    expect(db.getKey('someContext_someText')).toEqual(
+      INITIAL_KEYS.someContext_someText
+    );
   });
 
   it('should allow querying for all keys', () => {
@@ -90,9 +98,15 @@ describe('db', () => {
     });
     expect(newKey).toMatchSnapshot();
     expect(db.getKeys()).toMatchSnapshot();
-    expect(writeFileSync.mock.calls[0][0]).toEqual(path.join(BASE_PATH, 'keys.json'));
-    expect(writeFileSync.mock.calls[1][0]).toEqual(path.join(BASE_PATH, 'en.js'));
-    expect(writeFileSync.mock.calls[2][0]).toEqual(path.join(BASE_PATH, 'en.reactIntl.json'));
+    expect(writeFileSync.mock.calls[0][0]).toEqual(
+      path.join(BASE_PATH, 'keys.json')
+    );
+    expect(writeFileSync.mock.calls[1][0]).toEqual(
+      path.join(BASE_PATH, 'en.js')
+    );
+    expect(writeFileSync.mock.calls[2][0]).toEqual(
+      path.join(BASE_PATH, 'en.reactIntl.json')
+    );
   });
 
   it('should allow updating keys', async () => {
@@ -118,20 +132,28 @@ describe('db', () => {
   it('should allow querying for a translation', () => {
     db._setKeys(INITIAL_KEYS);
     db._setTranslations(INITIAL_TRANSLATIONS);
-    expect(db.getTranslation('translationId1')).toEqual(INITIAL_TRANSLATIONS.translationId1);
+    expect(db.getTranslation('translationId1')).toEqual(
+      INITIAL_TRANSLATIONS.translationId1
+    );
   });
 
   it('should allow querying for all translations', () => {
     db._setKeys(INITIAL_KEYS);
     db._setTranslations(INITIAL_TRANSLATIONS);
-    expect(db.getTranslations().length).toEqual(Object.keys(INITIAL_TRANSLATIONS).length);
+    expect(db.getTranslations().length).toEqual(
+      Object.keys(INITIAL_TRANSLATIONS).length
+    );
   });
 
   it('should allow querying for all translations in a language', () => {
     db._setKeys(INITIAL_KEYS);
     db._setTranslations(INITIAL_TRANSLATIONS);
-    expect(db.getLangTranslations('es')).toEqual([INITIAL_TRANSLATIONS.translationId1]);
-    expect(db.getLangTranslations('ca')).toEqual([INITIAL_TRANSLATIONS.translationId2]);
+    expect(db.getLangTranslations('es')).toEqual([
+      INITIAL_TRANSLATIONS.translationId1,
+    ]);
+    expect(db.getLangTranslations('ca')).toEqual([
+      INITIAL_TRANSLATIONS.translationId2,
+    ]);
   });
 
   it('should allow querying for all translations for a certain key', () => {
@@ -146,31 +168,46 @@ describe('db', () => {
     writeFileSync.mockClear();
     db._setKeys(INITIAL_KEYS);
     db._setTranslations({});
-    const newTranslation = await db.createTranslation({
-      keyId: 'someContext_someText',
-      lang: 'es',
-      translation: 'algúnTexto',
-    }, { story: mainStory });
+    const newTranslation = await db.createTranslation(
+      {
+        keyId: 'someContext_someText',
+        lang: 'es',
+        translation: 'algúnTexto',
+      },
+      { story: mainStory }
+    );
     expect(newTranslation.id).toBeTruthy();
     newTranslation.id = 'deterministicId';
     expect(newTranslation).toMatchSnapshot();
     expect(db.getTranslations()).toMatchSnapshot();
-    expect(writeFileSync.mock.calls[0][0]).toEqual(path.join(BASE_PATH, 'es.json'));
-    expect(writeFileSync.mock.calls[1][0]).toEqual(path.join(BASE_PATH, 'en.js'));
-    expect(writeFileSync.mock.calls[2][0]).toEqual(path.join(BASE_PATH, 'en.reactIntl.json'));
+    expect(writeFileSync.mock.calls[0][0]).toEqual(
+      path.join(BASE_PATH, 'es.json')
+    );
+    expect(writeFileSync.mock.calls[1][0]).toEqual(
+      path.join(BASE_PATH, 'en.js')
+    );
+    expect(writeFileSync.mock.calls[2][0]).toEqual(
+      path.join(BASE_PATH, 'en.reactIntl.json')
+    );
   });
 
   it('should not allow the creation of incomplete translations', async () => {
     expect(() => db.createTranslation({}, { story: mainStory })).toThrow();
-    expect(() => db.createTranslation({ lang: 'es' }, { story: mainStory })).toThrow();
+    expect(() =>
+      db.createTranslation({ lang: 'es' }, { story: mainStory })
+    ).toThrow();
   });
 
   it('should allow updating translations', async () => {
     db._setKeys(INITIAL_KEYS);
     db._setTranslations(INITIAL_TRANSLATIONS);
-    const updatedTranslation = await db.updateTranslation('translationId2', {
-      translation: 'Una traducción mejor',
-    }, { story: mainStory });
+    const updatedTranslation = await db.updateTranslation(
+      'translationId2',
+      {
+        translation: 'Una traducción mejor',
+      },
+      { story: mainStory }
+    );
     expect(updatedTranslation).toMatchSnapshot();
     expect(db.getTranslations()).toMatchSnapshot();
   });
@@ -178,8 +215,9 @@ describe('db', () => {
   it('should allow deleting translations', async () => {
     db._setTranslations(INITIAL_KEYS);
     db._setTranslations(INITIAL_TRANSLATIONS);
-    const deletedTranslation = await db.deleteTranslation('translationId2',
-      { story: mainStory });
+    const deletedTranslation = await db.deleteTranslation('translationId2', {
+      story: mainStory,
+    });
     expect(deletedTranslation).toMatchSnapshot();
     expect(db.getTranslations()).toMatchSnapshot();
   });

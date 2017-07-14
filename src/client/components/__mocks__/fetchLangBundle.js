@@ -1,1 +1,3 @@
-module.exports = (lang, cb) => { cb({}); };
+module.exports = (lang, cb) => {
+  cb({});
+};

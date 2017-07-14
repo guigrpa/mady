@@ -158,6 +158,9 @@ const specs = {
       'cp .nyc_tmp/* .nyc_output/',
       'nyc report --reporter=html --reporter=lcov --reporter=text',
     ]),
+
+    prettier:
+      'prettier --single-quote --trailing-comma es5 --write "src/**/*.js"',
   },
 
   // -----------------------------------------------
@@ -267,7 +270,7 @@ const specs = {
     xxl: '^1.2.0',
     'cross-env': '2.0.1',
     'flow-bin': '0.44.2',
-    // 'prettier': '1.5.2',
+    prettier: '1.5.2',
   },
 
   // -----------------------------------------------

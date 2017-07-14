@@ -10,7 +10,7 @@ const applySetUnset = (item, set, unset = []) => {
     out = timmSet(out, unsetAttr, null);
   }
   return out;
-}
+};
 
 // =======================================================
 // ParseSrcFilesMutation
@@ -290,13 +290,13 @@ const applySetUnset = (item, set, unset = []) => {
 // ==============================================
 export {
   parseSrcFiles,
-//   compileTranslations,
-//
-//   updateConfig,
-//
-//   deleteKey,
-//
-//   updateTranslation,
-//   createTranslation,
-//   deleteTranslation,
+  //   compileTranslations,
+  //
+  //   updateConfig,
+  //
+  //   deleteKey,
+  //
+  //   updateTranslation,
+  //   createTranslation,
+  //   deleteTranslation,
 };

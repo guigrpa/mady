@@ -26,32 +26,36 @@ const TRANSLATION = {
 // ======================================================
 describe('HoverableTranslation', () => {
   it('renders correctly without translation', () => {
-    const tree = renderer.create(
-      <div>
-        <Floats />
-        <HoverableTranslation
-          theKey={KEY}
-          lang="es"
-          translation={null}
-          changeSelectedKey={() => {}}
-        />
-      </div>
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <div>
+          <Floats />
+          <HoverableTranslation
+            theKey={KEY}
+            lang="es"
+            translation={null}
+            changeSelectedKey={() => {}}
+          />
+        </div>
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('renders correctly with translation', () => {
-    const tree = renderer.create(
-      <div>
-        <Floats />
-        <HoverableTranslation
-          theKey={KEY}
-          lang="es"
-          translation={TRANSLATION}
-          changeSelectedKey={() => {}}
-        />
-      </div>
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <div>
+          <Floats />
+          <HoverableTranslation
+            theKey={KEY}
+            lang="es"
+            translation={TRANSLATION}
+            changeSelectedKey={() => {}}
+          />
+        </div>
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

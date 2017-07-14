@@ -20,7 +20,7 @@ const validateTranslation = (lang: string) => (val: string) => {
   const numClose = val.split('}').length - 1;
   if (numOpen !== numClose) {
     return _t(
-      'validation_the number of left and right brackets does not match',
+      'validation_the number of left and right brackets does not match'
     );
   }
   const mf = new MessageFormat(lang).setIntlSupport(true);
@@ -45,11 +45,17 @@ type PublicProps = {
 type Props = PublicProps & HoverablePropsT;
 
 const gqlFragments = graphql`
-fragment eeTranslation_theKey on Key { id text }
-fragment eeTranslation_translation on Translation {
-  id
-  lang, translation, fuzzy
-}
+  fragment eeTranslation_theKey on Key {
+    id
+    text
+  }
+
+  fragment eeTranslation_translation on Translation {
+    id
+    lang
+    translation
+    fuzzy
+  }
 `;
 
 // ==========================================
@@ -114,19 +120,24 @@ class Translation extends React.Component {
   renderButtons() {
     const { translation } = this.props;
     const interactedWith = this.state.fEditing || this.props.hovering;
-    const elFuzzy = translation && (interactedWith || translation.fuzzy)
-      ? <Icon
-          icon="warning"
-          title={_t('tooltip_Dubious translation (click to toggle)')}
-          onClick={translation ? this.onClickFuzzy : undefined}
-          style={style.iconFuzzy({
-            button: interactedWith,
-            active: translation.fuzzy,
-          })}
-        />
-      : null;
+    const elFuzzy =
+      translation && (interactedWith || translation.fuzzy)
+        ? <Icon
+            icon="warning"
+            title={_t('tooltip_Dubious translation (click to toggle)')}
+            onClick={translation ? this.onClickFuzzy : undefined}
+            style={style.iconFuzzy({
+              button: interactedWith,
+              active: translation.fuzzy,
+            })}
+          />
+        : null;
     if (!interactedWith)
-      return elFuzzy ? <div style={style.buttons}>{elFuzzy}</div> : null;
+      return elFuzzy
+        ? <div style={style.buttons}>
+            {elFuzzy}
+          </div>
+        : null;
     const elDelete = translation
       ? <Icon
           icon="remove"
@@ -296,7 +307,7 @@ const style = {
   },
   iconFuzzy: ({ button, active }) => ({
     marginLeft: 5,
-    color: button ? active ? 'black' : COLORS.dim : 'orange',
+    color: button ? (active ? 'black' : COLORS.dim) : 'orange',
   }),
   help: {
     position: 'absolute',
@@ -318,7 +329,7 @@ const style = {
 const HoverableTranslation = hoverable(Translation);
 const Container = Relay.createFragmentContainer(
   HoverableTranslation,
-  gqlFragments,
+  gqlFragments
 );
 export default Container;
 export { HoverableTranslation as _HoverableTranslation };

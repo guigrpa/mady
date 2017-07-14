@@ -16,7 +16,7 @@ type PropsT = {
 // ==========================================
 // Component
 // ==========================================
-const Header = ({ onShowSettings }: PropsT) => (
+const Header = ({ onShowSettings }: PropsT) =>
   <div style={style.outer}>
     <div style={style.spacer} />
     <div style={style.title}>
@@ -32,8 +32,7 @@ const Header = ({ onShowSettings }: PropsT) => (
     <div style={merge(style.spacer, style.help)}>
       <Icon icon="question-circle" onClick={() => hintShow('main', true)} />
     </div>
-  </div>
-);
+  </div>;
 
 // ------------------------------------------
 const style = {
@@ -43,7 +42,7 @@ const style = {
       backgroundColor: COLORS.medium,
       padding: '5px 8px',
       alignItems: 'center',
-    }),
+    })
   ),
   title: {
     fontWeight: 900,

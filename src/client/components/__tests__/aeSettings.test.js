@@ -20,17 +20,19 @@ describe('Settings', () => {
         fMinify: false,
       },
     };
-    const tree = renderer.create(
-      <div>
-        <Floats />
-        <Settings
-          lang="en"
-          viewer={viewer}
-          onChangeLang={() => {}}
-          onClose={() => {}}
-        />
-      </div>
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <div>
+          <Floats />
+          <Settings
+            lang="en"
+            viewer={viewer}
+            onChangeLang={() => {}}
+            onClose={() => {}}
+          />
+        </div>
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

@@ -10,10 +10,7 @@
 // @flow
 
 import { utf8ToBase64 } from './common/base64';
-import type {
-  MapOf,
-  LocaleFunctionT,
-} from './common/types';
+import type { MapOf, LocaleFunctionT } from './common/types';
 
 type MapOfLocaleFunctionsT = MapOf<LocaleFunctionT>;
 type MapOfStringsT = MapOf<string>;
@@ -79,7 +76,9 @@ _t.setLocales = (langOrLocales: string | MapOfLocaleFunctionsT): ?string => {
   return out;
 };
 
-_t.getLocales = (lang: string): { lang: ?string, result: ?MapOfLocaleFunctionsT } =>
+_t.getLocales = (
+  lang: string
+): { lang: ?string, result: ?MapOfLocaleFunctionsT } =>
   getLocaleOrLocaleCode(allLocales, lang);
 _t.getLocaleCode = (lang: string): { lang: ?string, result: ?string } =>
   getLocaleOrLocaleCode(allLocaleCode, lang);

@@ -32,20 +32,22 @@ type Props = PublicProps;
 
 type FlexDirT = 'row' | 'column';
 
-const gqlFragments = graphql`fragment aeSettings_viewer on Viewer {
-  id
-  config {
-    langs
-    srcPaths
-    srcExtensions
-    msgFunctionNames
-    msgRegexps
-    fMinify
-    fJsOutput
-    fJsonOutput
-    fReactIntlOutput
+const gqlFragments = graphql`
+  fragment aeSettings_viewer on Viewer {
+    id
+    config {
+      langs
+      srcPaths
+      srcExtensions
+      msgFunctionNames
+      msgRegexps
+      fMinify
+      fJsOutput
+      fJsonOutput
+      fReactIntlOutput
+    }
   }
-}`;
+`;
 
 // ==========================================
 // Component
@@ -105,10 +107,7 @@ class Settings extends React.Component {
     return (
       <div>
         <div style={style.configLine}>
-          <label htmlFor="lang">
-            {_t('settingsForm_Mady language:')}
-          </label>
-          {' '}
+          <label htmlFor="lang">{_t('settingsForm_Mady language:')}</label>{' '}
           <Select
             ref={c => {
               this.refLang = c;
@@ -160,13 +159,12 @@ class Settings extends React.Component {
         })}
         <div style={style.listLabel}>
           {_t(
-            'settingsForm_ADVANCED: Additional regular expressions for message parsing:',
-          )}
-          {' '}
+            'settingsForm_ADVANCED: Additional regular expressions for message parsing:'
+          )}{' '}
           <Icon
             icon="info-circle"
             title={_t(
-              'settingsForm_Make sure your regular expression has exactly one capture group, for example: (.*?)',
+              'settingsForm_Make sure your regular expression has exactly one capture group, for example: (.*?)'
             )}
             style={style.info}
           />
@@ -179,7 +177,9 @@ class Settings extends React.Component {
           width: 300,
         })}
         <div style={style.configLine}>
-          <div>{_t('settingsForm_Output:')}</div>
+          <div>
+            {_t('settingsForm_Output:')}
+          </div>
           <div style={style.indented}>
             <Checkbox
               id="fJsOutput"
@@ -188,10 +188,9 @@ class Settings extends React.Component {
             />
             <label htmlFor="fJsOutput">
               {_t(
-                "settingsForm_JavaScript module (required if you use Mady's translation function)",
+                "settingsForm_JavaScript module (required if you use Mady's translation function)"
               )}
-            </label>
-            {' '}
+            </label>{' '}
             <Checkbox
               ref={c => {
                 this.refMinify = c;
@@ -200,9 +199,7 @@ class Settings extends React.Component {
               disabled={!fJsOutput}
               value={fMinify}
             />
-            <label htmlFor="fMinify">
-              {_t('settingsForm_Minified')}
-            </label>
+            <label htmlFor="fMinify">{_t('settingsForm_Minified')}</label>
           </div>
           <div style={style.indented}>
             <Checkbox
@@ -251,7 +248,7 @@ class Settings extends React.Component {
     const values = this.state[id];
     return (
       <div style={style.list(dir)}>
-        {values.map((value, idx) => (
+        {values.map((value, idx) =>
           <div key={idx} style={style.listItem(dir)}>
             <Component
               id={`${id}.${idx}`}
@@ -269,7 +266,7 @@ class Settings extends React.Component {
               style={style.remove}
             />
           </div>
-        ))}
+        )}
         <Icon
           id={id}
           icon="plus"
@@ -382,9 +379,6 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-const Container = Relay.createFragmentContainer(
-  Settings,
-  gqlFragments,
-);
+const Container = Relay.createFragmentContainer(Settings, gqlFragments);
 export default Container;
 export { Settings as _Settings };

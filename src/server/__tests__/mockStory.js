@@ -1,5 +1,5 @@
 const mockStory = {};
-['trace', 'debug', 'info', 'warn', 'error'].forEach((level) => {
+['trace', 'debug', 'info', 'warn', 'error'].forEach(level => {
   mockStory[level] = () => {};
 });
 

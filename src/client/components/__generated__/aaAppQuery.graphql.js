@@ -106,293 +106,294 @@ fragment eeTranslation_translation on Translation {
 */
 
 const batch /*: ConcreteBatch*/ = {
-  "fragment": {
-    "argumentDefinitions": [],
-    "kind": "Fragment",
-    "metadata": null,
-    "name": "aaAppQuery",
-    "selections": [
+  fragment: {
+    argumentDefinitions: [],
+    kind: 'Fragment',
+    metadata: null,
+    name: 'aaAppQuery',
+    selections: [
       {
-        "kind": "LinkedField",
-        "alias": "viewer",
-        "args": null,
-        "concreteType": "Viewer",
-        "name": "__viewer_viewer",
-        "plural": false,
-        "selections": [
+        kind: 'LinkedField',
+        alias: 'viewer',
+        args: null,
+        concreteType: 'Viewer',
+        name: '__viewer_viewer',
+        plural: false,
+        selections: [
           {
-            "kind": "FragmentSpread",
-            "name": "adTranslator_viewer",
-            "args": null
+            kind: 'FragmentSpread',
+            name: 'adTranslator_viewer',
+            args: null,
           },
           {
-            "kind": "FragmentSpread",
-            "name": "aeSettings_viewer",
-            "args": null
-          }
+            kind: 'FragmentSpread',
+            name: 'aeSettings_viewer',
+            args: null,
+          },
         ],
-        "storageKey": null
-      }
+        storageKey: null,
+      },
     ],
-    "type": "Query"
+    type: 'Query',
   },
-  "id": null,
-  "kind": "Batch",
-  "metadata": {},
-  "name": "aaAppQuery",
-  "query": {
-    "argumentDefinitions": [],
-    "kind": "Root",
-    "name": "aaAppQuery",
-    "operation": "query",
-    "selections": [
+  id: null,
+  kind: 'Batch',
+  metadata: {},
+  name: 'aaAppQuery',
+  query: {
+    argumentDefinitions: [],
+    kind: 'Root',
+    name: 'aaAppQuery',
+    operation: 'query',
+    selections: [
       {
-        "kind": "LinkedField",
-        "alias": null,
-        "args": null,
-        "concreteType": "Viewer",
-        "name": "viewer",
-        "plural": false,
-        "selections": [
+        kind: 'LinkedField',
+        alias: null,
+        args: null,
+        concreteType: 'Viewer',
+        name: 'viewer',
+        plural: false,
+        selections: [
           {
-            "kind": "ScalarField",
-            "alias": null,
-            "args": null,
-            "name": "id",
-            "storageKey": null
+            kind: 'ScalarField',
+            alias: null,
+            args: null,
+            name: 'id',
+            storageKey: null,
           },
           {
-            "kind": "LinkedField",
-            "alias": null,
-            "args": null,
-            "concreteType": "Config",
-            "name": "config",
-            "plural": false,
-            "selections": [
+            kind: 'LinkedField',
+            alias: null,
+            args: null,
+            concreteType: 'Config',
+            name: 'config',
+            plural: false,
+            selections: [
               {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "langs",
-                "storageKey": null
+                kind: 'ScalarField',
+                alias: null,
+                args: null,
+                name: 'langs',
+                storageKey: null,
               },
               {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "id",
-                "storageKey": null
+                kind: 'ScalarField',
+                alias: null,
+                args: null,
+                name: 'id',
+                storageKey: null,
               },
               {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "srcPaths",
-                "storageKey": null
+                kind: 'ScalarField',
+                alias: null,
+                args: null,
+                name: 'srcPaths',
+                storageKey: null,
               },
               {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "srcExtensions",
-                "storageKey": null
+                kind: 'ScalarField',
+                alias: null,
+                args: null,
+                name: 'srcExtensions',
+                storageKey: null,
               },
               {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "msgFunctionNames",
-                "storageKey": null
+                kind: 'ScalarField',
+                alias: null,
+                args: null,
+                name: 'msgFunctionNames',
+                storageKey: null,
               },
               {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "msgRegexps",
-                "storageKey": null
+                kind: 'ScalarField',
+                alias: null,
+                args: null,
+                name: 'msgRegexps',
+                storageKey: null,
               },
               {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "fMinify",
-                "storageKey": null
+                kind: 'ScalarField',
+                alias: null,
+                args: null,
+                name: 'fMinify',
+                storageKey: null,
               },
               {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "fJsOutput",
-                "storageKey": null
+                kind: 'ScalarField',
+                alias: null,
+                args: null,
+                name: 'fJsOutput',
+                storageKey: null,
               },
               {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "fJsonOutput",
-                "storageKey": null
+                kind: 'ScalarField',
+                alias: null,
+                args: null,
+                name: 'fJsonOutput',
+                storageKey: null,
               },
               {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "fReactIntlOutput",
-                "storageKey": null
-              }
+                kind: 'ScalarField',
+                alias: null,
+                args: null,
+                name: 'fReactIntlOutput',
+                storageKey: null,
+              },
             ],
-            "storageKey": null
+            storageKey: null,
           },
           {
-            "kind": "LinkedField",
-            "alias": null,
-            "args": [
+            kind: 'LinkedField',
+            alias: null,
+            args: [
               {
-                "kind": "Literal",
-                "name": "first",
-                "value": 100000,
-                "type": "Int"
-              }
+                kind: 'Literal',
+                name: 'first',
+                value: 100000,
+                type: 'Int',
+              },
             ],
-            "concreteType": "KeyConnection",
-            "name": "keys",
-            "plural": false,
-            "selections": [
+            concreteType: 'KeyConnection',
+            name: 'keys',
+            plural: false,
+            selections: [
               {
-                "kind": "LinkedField",
-                "alias": null,
-                "args": null,
-                "concreteType": "KeyEdge",
-                "name": "edges",
-                "plural": true,
-                "selections": [
+                kind: 'LinkedField',
+                alias: null,
+                args: null,
+                concreteType: 'KeyEdge',
+                name: 'edges',
+                plural: true,
+                selections: [
                   {
-                    "kind": "LinkedField",
-                    "alias": null,
-                    "args": null,
-                    "concreteType": "Key",
-                    "name": "node",
-                    "plural": false,
-                    "selections": [
+                    kind: 'LinkedField',
+                    alias: null,
+                    args: null,
+                    concreteType: 'Key',
+                    name: 'node',
+                    plural: false,
+                    selections: [
                       {
-                        "kind": "ScalarField",
-                        "alias": null,
-                        "args": null,
-                        "name": "id",
-                        "storageKey": null
+                        kind: 'ScalarField',
+                        alias: null,
+                        args: null,
+                        name: 'id',
+                        storageKey: null,
                       },
                       {
-                        "kind": "ScalarField",
-                        "alias": null,
-                        "args": null,
-                        "name": "unusedSince",
-                        "storageKey": null
+                        kind: 'ScalarField',
+                        alias: null,
+                        args: null,
+                        name: 'unusedSince',
+                        storageKey: null,
                       },
                       {
-                        "kind": "ScalarField",
-                        "alias": null,
-                        "args": null,
-                        "name": "context",
-                        "storageKey": null
+                        kind: 'ScalarField',
+                        alias: null,
+                        args: null,
+                        name: 'context',
+                        storageKey: null,
                       },
                       {
-                        "kind": "ScalarField",
-                        "alias": null,
-                        "args": null,
-                        "name": "text",
-                        "storageKey": null
+                        kind: 'ScalarField',
+                        alias: null,
+                        args: null,
+                        name: 'text',
+                        storageKey: null,
                       },
                       {
-                        "kind": "LinkedField",
-                        "alias": null,
-                        "args": [
+                        kind: 'LinkedField',
+                        alias: null,
+                        args: [
                           {
-                            "kind": "Literal",
-                            "name": "first",
-                            "value": 100000,
-                            "type": "Int"
-                          }
+                            kind: 'Literal',
+                            name: 'first',
+                            value: 100000,
+                            type: 'Int',
+                          },
                         ],
-                        "concreteType": "TranslationConnection",
-                        "name": "translations",
-                        "plural": false,
-                        "selections": [
+                        concreteType: 'TranslationConnection',
+                        name: 'translations',
+                        plural: false,
+                        selections: [
                           {
-                            "kind": "LinkedField",
-                            "alias": null,
-                            "args": null,
-                            "concreteType": "TranslationEdge",
-                            "name": "edges",
-                            "plural": true,
-                            "selections": [
+                            kind: 'LinkedField',
+                            alias: null,
+                            args: null,
+                            concreteType: 'TranslationEdge',
+                            name: 'edges',
+                            plural: true,
+                            selections: [
                               {
-                                "kind": "LinkedField",
-                                "alias": null,
-                                "args": null,
-                                "concreteType": "Translation",
-                                "name": "node",
-                                "plural": false,
-                                "selections": [
+                                kind: 'LinkedField',
+                                alias: null,
+                                args: null,
+                                concreteType: 'Translation',
+                                name: 'node',
+                                plural: false,
+                                selections: [
                                   {
-                                    "kind": "ScalarField",
-                                    "alias": null,
-                                    "args": null,
-                                    "name": "id",
-                                    "storageKey": null
+                                    kind: 'ScalarField',
+                                    alias: null,
+                                    args: null,
+                                    name: 'id',
+                                    storageKey: null,
                                   },
                                   {
-                                    "kind": "ScalarField",
-                                    "alias": null,
-                                    "args": null,
-                                    "name": "lang",
-                                    "storageKey": null
+                                    kind: 'ScalarField',
+                                    alias: null,
+                                    args: null,
+                                    name: 'lang',
+                                    storageKey: null,
                                   },
                                   {
-                                    "kind": "ScalarField",
-                                    "alias": null,
-                                    "args": null,
-                                    "name": "translation",
-                                    "storageKey": null
+                                    kind: 'ScalarField',
+                                    alias: null,
+                                    args: null,
+                                    name: 'translation',
+                                    storageKey: null,
                                   },
                                   {
-                                    "kind": "ScalarField",
-                                    "alias": null,
-                                    "args": null,
-                                    "name": "fuzzy",
-                                    "storageKey": null
-                                  }
+                                    kind: 'ScalarField',
+                                    alias: null,
+                                    args: null,
+                                    name: 'fuzzy',
+                                    storageKey: null,
+                                  },
                                 ],
-                                "storageKey": null
-                              }
+                                storageKey: null,
+                              },
                             ],
-                            "storageKey": null
-                          }
+                            storageKey: null,
+                          },
                         ],
-                        "storageKey": "translations{\"first\":100000}"
-                      }
+                        storageKey: 'translations{"first":100000}',
+                      },
                     ],
-                    "storageKey": null
-                  }
+                    storageKey: null,
+                  },
                 ],
-                "storageKey": null
-              }
+                storageKey: null,
+              },
             ],
-            "storageKey": "keys{\"first\":100000}"
-          }
+            storageKey: 'keys{"first":100000}',
+          },
         ],
-        "storageKey": null
+        storageKey: null,
       },
       {
-        "kind": "LinkedHandle",
-        "alias": null,
-        "args": null,
-        "handle": "viewer",
-        "name": "viewer",
-        "key": "",
-        "filters": null
-      }
-    ]
+        kind: 'LinkedHandle',
+        alias: null,
+        args: null,
+        handle: 'viewer',
+        name: 'viewer',
+        key: '',
+        filters: null,
+      },
+    ],
   },
-  "text": "query aaAppQuery {\n  viewer {\n    ...adTranslator_viewer\n    ...aeSettings_viewer\n    id\n  }\n}\n\nfragment adTranslator_viewer on Viewer {\n  id\n  config {\n    langs\n    id\n  }\n  keys(first: 100000) {\n    edges {\n      node {\n        id\n        unusedSince\n        context\n        text\n        ...edTranslatorRow_theKey\n        translations(first: 100000) {\n          edges {\n            node {\n              lang\n              id\n            }\n          }\n        }\n      }\n    }\n  }\n  ...edTranslatorRow_viewer\n}\n\nfragment aeSettings_viewer on Viewer {\n  id\n  config {\n    langs\n    srcPaths\n    srcExtensions\n    msgFunctionNames\n    msgRegexps\n    fMinify\n    fJsOutput\n    fJsonOutput\n    fReactIntlOutput\n    id\n  }\n}\n\nfragment edTranslatorRow_theKey on Key {\n  id\n  context\n  text\n  unusedSince\n  ...eeTranslation_theKey\n  translations(first: 100000) {\n    edges {\n      node {\n        id\n        lang\n        ...eeTranslation_translation\n      }\n    }\n  }\n}\n\nfragment edTranslatorRow_viewer on Viewer {\n  id\n}\n\nfragment eeTranslation_theKey on Key {\n  id\n  text\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  lang\n  translation\n  fuzzy\n}\n"
+  text:
+    'query aaAppQuery {\n  viewer {\n    ...adTranslator_viewer\n    ...aeSettings_viewer\n    id\n  }\n}\n\nfragment adTranslator_viewer on Viewer {\n  id\n  config {\n    langs\n    id\n  }\n  keys(first: 100000) {\n    edges {\n      node {\n        id\n        unusedSince\n        context\n        text\n        ...edTranslatorRow_theKey\n        translations(first: 100000) {\n          edges {\n            node {\n              lang\n              id\n            }\n          }\n        }\n      }\n    }\n  }\n  ...edTranslatorRow_viewer\n}\n\nfragment aeSettings_viewer on Viewer {\n  id\n  config {\n    langs\n    srcPaths\n    srcExtensions\n    msgFunctionNames\n    msgRegexps\n    fMinify\n    fJsOutput\n    fJsonOutput\n    fReactIntlOutput\n    id\n  }\n}\n\nfragment edTranslatorRow_theKey on Key {\n  id\n  context\n  text\n  unusedSince\n  ...eeTranslation_theKey\n  translations(first: 100000) {\n    edges {\n      node {\n        id\n        lang\n        ...eeTranslation_translation\n      }\n    }\n  }\n}\n\nfragment edTranslatorRow_viewer on Viewer {\n  id\n}\n\nfragment eeTranslation_theKey on Key {\n  id\n  text\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  lang\n  translation\n  fuzzy\n}\n',
 };
 
 module.exports = batch;

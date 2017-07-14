@@ -11,13 +11,7 @@
   },
   "author": "Guillermo Grau Panea",
   "license": "MIT",
-  "keywords": [
-    "i18n",
-    "MessageFormat",
-    "translation",
-    "locales",
-    "translator"
-  ],
+  "keywords": ["i18n", "MessageFormat", "translation", "locales", "translator"],
   "homepage": "https://github.com/guigrpa/mady#readme",
   "bugs": {
     "url": "https://github.com/guigrpa/mady/issues"
@@ -57,7 +51,8 @@
     "testDev": "cross-env NODE_ENV=development jest --coverage && mv .nyc_output/coverage-final.json .nyc_tmp/coverage-dev.json",
     "testProd": "cross-env NODE_ENV=production jest --coverage && mv .nyc_output/coverage-final.json .nyc_tmp/coverage-prod.json",
     "testMin": "cross-env TEST_MINIFIED_LIB=1 jest --coverage && mv .nyc_output/coverage-final.json .nyc_tmp/coverage-min.json",
-    "testCovReport": "cp .nyc_tmp/* .nyc_output/ && nyc report --reporter=html --reporter=lcov --reporter=text"
+    "testCovReport": "cp .nyc_tmp/* .nyc_output/ && nyc report --reporter=html --reporter=lcov --reporter=text",
+    "prettier": "prettier --single-quote --trailing-comma es5 --write \"src/**/*.js\""
   },
   "dependencies": {
     "bluebird": "3.4.6",
@@ -122,6 +117,7 @@
     "moment": "2.18.1",
     "node-sass": "4.5.3",
     "nyc": "8.3.0",
+    "prettier": "1.5.2",
     "react": "15.5.4",
     "react-dom": "15.5.4",
     "react-intl": "2.2.3",
@@ -147,14 +143,8 @@
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/test/emptyString.js"
     },
     "coverageDirectory": ".nyc_output",
-    "coverageReporters": [
-      "json",
-      "text",
-      "html"
-    ],
-    "snapshotSerializers": [
-      "<rootDir>/node_modules/jest-html"
-    ],
+    "coverageReporters": ["json", "text", "html"],
+    "snapshotSerializers": ["<rootDir>/node_modules/jest-html"],
     "collectCoverageFrom": [
       "src/**/*.js",
       "!**/node_modules/**",

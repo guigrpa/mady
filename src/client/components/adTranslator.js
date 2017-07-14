@@ -23,7 +23,7 @@ import { mutate } from './helpers';
 import TranslatorRow from './edTranslatorRow';
 
 const comparator = (a: string, b: string): number =>
-  (a < b ? -1 : a > b ? 1 : 0);
+  a < b ? -1 : a > b ? 1 : 0;
 const keyComparator = (a: KeyT, b: KeyT) => {
   const aStr = `${a.context || ''}${a.text}${a.id}`;
   const bStr = `${b.context || ''}${b.text}${b.id}`;
@@ -43,19 +43,31 @@ type Props = {
 };
 
 const fragment = graphql`
-fragment adTranslator_viewer on Viewer {
-  id
-  config { langs }
-  keys(first: 100000) { edges { node {
-    id unusedSince
-    context text     # for sorting
-    ...edTranslatorRow_theKey
-    translations(first: 100000) { edges { node {
-      lang
-    }}}
-  }}}
-  ...edTranslatorRow_viewer
-}
+  fragment adTranslator_viewer on Viewer {
+    id
+    config {
+      langs
+    }
+    keys(first: 100000) {
+      edges {
+        node {
+          id
+          unusedSince
+          context
+          text # for sorting
+          ...edTranslatorRow_theKey
+          translations(first: 100000) {
+            edges {
+              node {
+                lang
+              }
+            }
+          }
+        }
+      }
+    }
+    ...edTranslatorRow_viewer
+  }
 `;
 
 // ==========================================
@@ -117,8 +129,7 @@ class Translator extends React.PureComponent {
         style={timm.merge(style.row, style.headerRow)}
       >
         <div style={timm.merge(style.headerCell, style.keyCol)}>
-          {_t('columnTitle_Messages').toUpperCase()}
-          {' '}
+          {_t('columnTitle_Messages').toUpperCase()}{' '}
           <span style={style.numItems}>
             [
             <span title={_t('tooltip_Used messages')}>
@@ -129,8 +140,7 @@ class Translator extends React.PureComponent {
               {keys.edges.length}
             </span>
             ]
-          </span>
-          {' '}
+          </span>{' '}
           <Icon
             icon="refresh"
             title={_t('tooltip_Parse source files to update the message list')}
@@ -139,7 +149,7 @@ class Translator extends React.PureComponent {
           />
         </div>
         {this.state.langs.map((lang, idx) =>
-          this.renderLangHeader(lang, idx, langOptions),
+          this.renderLangHeader(lang, idx, langOptions)
         )}
         {this.renderAdd()}
         <div style={style.scrollbarSpacer()} />
@@ -168,8 +178,7 @@ class Translator extends React.PureComponent {
             items={langOptions}
             style={style.langSelector}
           />
-        </div>
-        {' '}
+        </div>{' '}
         <span style={style.numItems}>
           [
           <span title={_t('tooltip_Translations')}>
@@ -180,8 +189,7 @@ class Translator extends React.PureComponent {
             {this.stats.numUsedKeys}
           </span>
           ]
-        </span>
-        {' '}
+        </span>{' '}
         <Icon
           id={idx}
           icon="remove"
@@ -220,14 +228,17 @@ class Translator extends React.PureComponent {
   };
 
   renderFillerRow() {
-    const noKeys = this.props.viewer.keys.edges.length > 0
-      ? ''
-      : <LargeMessage>
-          No messages. Click on <Icon icon="refresh" disabled /> to refresh
-        </LargeMessage>;
+    const noKeys =
+      this.props.viewer.keys.edges.length > 0
+        ? ''
+        : <LargeMessage>
+            No messages. Click on <Icon icon="refresh" disabled /> to refresh
+          </LargeMessage>;
     return (
       <div className="tableFillerRow" style={style.fillerRow}>
-        <div style={style.keyCol}>{noKeys}</div>
+        <div style={style.keyCol}>
+          {noKeys}
+        </div>
         {this.state.langs.map(lang => <div key={lang} style={style.langCol} />)}
       </div>
     );
@@ -346,7 +357,7 @@ const style = {
     '1 0 10em',
     flexContainer('column', {
       marginTop: 5,
-    }),
+    })
   ),
 
   body: flexItem(1, flexContainer('column', { overflowY: 'scroll' })),
@@ -416,9 +427,6 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-const Container = Relay.createFragmentContainer(
-  Translator,
-  fragment,
-);
+const Container = Relay.createFragmentContainer(Translator, fragment);
 export default Container;
 export { Translator as _Translator };

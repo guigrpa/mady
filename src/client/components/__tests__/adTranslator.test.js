@@ -6,14 +6,17 @@ import renderer from 'react-test-renderer';
 import { Floats } from 'giu';
 import { _Translator as Translator } from '../adTranslator';
 import {
-  VIEWER, VIEWER_WITH_NO_CONTENT,
+  VIEWER,
+  VIEWER_WITH_NO_CONTENT,
   KEY_WITH_TRANSLATIONS,
 } from './fixtures';
 import $ from './jestQuery';
 
 // https://github.com/facebook/react/issues/7386#issuecomment-238091398
 jest.mock('react-dom');
-jest.mock('../edTranslatorRow', () => require('./mockComponent')('TranslatorRow'));
+jest.mock('../edTranslatorRow', () =>
+  require('./mockComponent')('TranslatorRow')
+);
 jest.mock('../../gral/storage');
 
 // ======================================================
@@ -21,70 +24,71 @@ jest.mock('../../gral/storage');
 // ======================================================
 describe('Translator', () => {
   it('renders correctly with no content', () => {
-    const tree = renderer.create(
-      <div>
-        <Floats />
-        <Translator
-          viewer={VIEWER_WITH_NO_CONTENT}
-          changeSelectedKey={() => {}}
-        />
-      </div>
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <div>
+          <Floats />
+          <Translator
+            viewer={VIEWER_WITH_NO_CONTENT}
+            changeSelectedKey={() => {}}
+          />
+        </div>
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('renders correctly with default columns', () => {
-    const tree = renderer.create(
-      <div>
-        <Floats />
-        <Translator
-          viewer={VIEWER}
-          changeSelectedKey={() => {}}
-        />
-      </div>
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <div>
+          <Floats />
+          <Translator viewer={VIEWER} changeSelectedKey={() => {}} />
+        </div>
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('renders correctly with fixed columns', () => {
     require('../../gral/storage').cookieSet('langs', ['ca', 'es']);
-    const tree = renderer.create(
-      <div>
-        <Floats />
-        <Translator
-          viewer={VIEWER}
-          changeSelectedKey={() => {}}
-        />
-      </div>
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <div>
+          <Floats />
+          <Translator viewer={VIEWER} changeSelectedKey={() => {}} />
+        </div>
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('renders correctly with fixed columns using up all available options', () => {
     require('../../gral/storage').cookieSet('langs', ['ca', 'es', 'en']);
-    const tree = renderer.create(
-      <div>
-        <Floats />
-        <Translator
-          viewer={VIEWER}
-          changeSelectedKey={() => {}}
-        />
-      </div>
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <div>
+          <Floats />
+          <Translator viewer={VIEWER} changeSelectedKey={() => {}} />
+        </div>
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('renders correctly with a selection', () => {
-    const tree = renderer.create(
-      <div>
-        <Floats />
-        <Translator
-          viewer={VIEWER}
-          selectedKeyId={KEY_WITH_TRANSLATIONS.id}
-          changeSelectedKey={() => {}}
-        />
-      </div>
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <div>
+          <Floats />
+          <Translator
+            viewer={VIEWER}
+            selectedKeyId={KEY_WITH_TRANSLATIONS.id}
+            changeSelectedKey={() => {}}
+          />
+        </div>
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -93,10 +97,7 @@ describe('Translator', () => {
     const component = renderer.create(
       <div>
         <Floats />
-        <Translator
-          viewer={VIEWER}
-          changeSelectedKey={() => {}}
-        />
+        <Translator viewer={VIEWER} changeSelectedKey={() => {}} />
       </div>
     );
     let tree = component.toJSON();
@@ -112,10 +113,7 @@ describe('Translator', () => {
     const component = renderer.create(
       <div>
         <Floats />
-        <Translator
-          viewer={VIEWER}
-          changeSelectedKey={() => {}}
-        />
+        <Translator viewer={VIEWER} changeSelectedKey={() => {}} />
       </div>
     );
     let tree = component.toJSON();
@@ -135,10 +133,7 @@ describe('Translator', () => {
     const component = renderer.create(
       <div>
         <Floats />
-        <Translator
-          viewer={VIEWER}
-          changeSelectedKey={() => {}}
-        />
+        <Translator viewer={VIEWER} changeSelectedKey={() => {}} />
       </div>
     );
     let tree = component.toJSON();

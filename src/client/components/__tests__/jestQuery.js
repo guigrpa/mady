@@ -18,17 +18,18 @@ const $ = (root, options0, fnMatch0) => {
   return visitElement(root, options, fnMatch);
 };
 
-const getMatcher = (selector0) => {
+const getMatcher = selector0 => {
   const selector = selector0.trim();
   let out;
   if (selector[0] === '.') {
     const className = selector.slice(1);
-    out = (el) => el.props.className && el.props.className.indexOf(className) >= 0;
+    out = el =>
+      el.props.className && el.props.className.indexOf(className) >= 0;
   } else if (selector[0] === '#') {
     const id = selector.slice(1);
-    out = (el) => el.props.id && String(el.props.id) === id;
+    out = el => el.props.id && String(el.props.id) === id;
   } else {
-    out = (el) => el.type === selector;
+    out = el => el.type === selector;
   }
   return out;
 };

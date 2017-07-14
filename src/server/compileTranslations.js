@@ -1,14 +1,14 @@
 // @flow
 
-import MessageFormat        from 'messageformat';
-import UglifyJS             from 'uglify-js';
-import { chalk }            from 'storyboard';
+import MessageFormat from 'messageformat';
+import UglifyJS from 'uglify-js';
+import { chalk } from 'storyboard';
 import type {
   MapOf,
   StoryT,
   InternalKeyT,
   InternalTranslationT,
-}                           from '../common/types';
+} from '../common/types';
 
 export default function compileTranslations({
   lang,
@@ -28,12 +28,12 @@ export default function compileTranslations({
   story.info('compiler', `${logPrefix} Preparing translations...`);
   const finalTranslations = {};
   // We must always include those keys using curly braces, even if there is no translation
-  Object.keys(keys).forEach((keyId) => {
+  Object.keys(keys).forEach(keyId => {
     if (keys[keyId].text.indexOf('{') >= 0) {
       finalTranslations[keyId] = keys[keyId].text;
     }
   });
-  translations.forEach((translation) => {
+  translations.forEach(translation => {
     finalTranslations[translation.keyId] = translation.translation;
   });
   story.debug('compiler', `${logPrefix} Translations prepared`, {
@@ -45,7 +45,8 @@ export default function compileTranslations({
   const mf = new MessageFormat(lang).setIntlSupport(true);
   let fnTranslate = mf.compile(finalTranslations).toString();
   /* eslint-disable prefer-template */
-  fnTranslate = '/* eslint-disable */\n' +
+  fnTranslate =
+    '/* eslint-disable */\n' +
     'function anonymous() {\n' +
     fnTranslate +
     '\n};\n' +

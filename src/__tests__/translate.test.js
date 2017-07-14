@@ -5,12 +5,12 @@ import _t from '../translate';
 const ES_LOCALES = {
   'c29tZUNvbnRleHRfSGVsbG8=' /* someContext_Hello */: () => 'Hola',
   'c29tZUNvbnRleHRfUsOpc3Vtw6k=' /* someContext_Résumé */: () => 'Currículum',
-  'RnJpZW5k' /* Friend */: () => 'Amigo',
+  RnJpZW5k /* Friend */: () => 'Amigo',
 };
 
 const ES_MX_LOCALES = {
   'c29tZUNvbnRleHRfSGVsbG8=' /* someContext_Hello */: () => 'Hola',
-  'RnJpZW5k' /* Friend */: () => 'Cuate',
+  RnJpZW5k /* Friend */: () => 'Cuate',
 };
 
 describe('Translate library', () => {
@@ -47,7 +47,10 @@ describe('Translate library', () => {
 
     it('should allow to retrieve locale objects following inheritance', () => {
       expect(_t.getLocales('es')).toEqual({ lang: 'es', result: ES_LOCALES });
-      expect(_t.getLocales('es-ES')).toEqual({ lang: 'es', result: ES_LOCALES });
+      expect(_t.getLocales('es-ES')).toEqual({
+        lang: 'es',
+        result: ES_LOCALES,
+      });
       expect(_t.getLocales('fr')).toEqual({ lang: null, result: undefined });
     });
 
@@ -85,7 +88,10 @@ describe('Translate library', () => {
     _t.addLocaleCode('es', 'ES CODE');
     _t.addLocaleCode('es-MX', 'ES-MX CODE');
     expect(_t.getLocaleCode('es')).toEqual({ lang: 'es', result: 'ES CODE' });
-    expect(_t.getLocaleCode('es-ES')).toEqual({ lang: 'es', result: 'ES CODE' });
+    expect(_t.getLocaleCode('es-ES')).toEqual({
+      lang: 'es',
+      result: 'ES CODE',
+    });
     expect(_t.getLocaleCode('fr')).toEqual({ lang: null, result: undefined });
   });
 });

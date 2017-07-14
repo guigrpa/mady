@@ -11,20 +11,24 @@ const QueryRendererWrapper = ({
   Component,
   renderDuringLoad,
   ...props
-}) => (
+}) =>
   <QueryRenderer
     environment={relayEnvironment}
     query={query}
     variables={vars}
     render={({ error, props: relayData }) => {
-      if (error) return <div>{error.message}</div>;
+      if (error)
+        return (
+          <div>
+            {error.message}
+          </div>
+        );
       if (relayData) {
         return <Component {...props} {...relayData} />;
       }
       if (renderDuringLoad) return <Component {...props} />;
       return <Spinner />;
     }}
-  />
-);
+  />;
 
 export default QueryRendererWrapper;

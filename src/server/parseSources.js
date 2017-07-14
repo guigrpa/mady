@@ -1,17 +1,13 @@
 // @flow
 
 /* eslint-disable global-require */
-import fs                   from 'fs';
-import path                 from 'path';
-import slash                from 'slash';
+import fs from 'fs';
+import path from 'path';
+import slash from 'slash';
 import { mainStory, chalk } from 'storyboard';
-import diveSync             from 'diveSync';
-import { utf8ToBase64 }     from '../common/base64';
-import type {
-  MapOf,
-  StoryT,
-  InternalKeyT,
-}                           from '../common/types';
+import diveSync from 'diveSync';
+import { utf8ToBase64 } from '../common/base64';
+import type { MapOf, StoryT, InternalKeyT } from '../common/types';
 
 // Enable react-intl integration only when we have the necessary packages
 let fReactIntl = false;
@@ -27,17 +23,23 @@ try {
   fReactIntl = true;
   try {
     const babelrc = JSON.parse(fs.readFileSync('.babelrc', 'utf8'));
-    if (babelrc.presets) babelConfig.presets = babelConfig.presets.concat(babelrc.presets);
-    if (babelrc.plugins) babelConfig.plugins = babelrc.plugins.concat(babelConfig.plugins);
+    if (babelrc.presets)
+      babelConfig.presets = babelConfig.presets.concat(babelrc.presets);
+    if (babelrc.plugins)
+      babelConfig.plugins = babelrc.plugins.concat(babelConfig.plugins);
   } catch (err) {
-    mainStory.warn('parser',
-      'Could not find your .babelrc file; using default config for React Intl integration');
+    mainStory.warn(
+      'parser',
+      'Could not find your .babelrc file; using default config for React Intl integration'
+    );
   }
 } catch (err) {
   mainStory.warn('parser', 'Disabled React Intl integration');
   // eslint-disable-line max-len
-  mainStory.warn('parser',
-    'If you need it, make sure you install babel-core and babel-plugin-react-intl');
+  mainStory.warn(
+    'parser',
+    'If you need it, make sure you install babel-core and babel-plugin-react-intl'
+  );
 }
 
 // const REGEXP_TRANSLATE_CMDS = [
@@ -47,11 +49,11 @@ try {
 
 const getRegexps = (
   msgFunctionNames: Array<string>,
-  msgRegexps: Array<string>,
+  msgRegexps: Array<string>
 ): Array<RegExp> => {
   const out = [];
   if (msgFunctionNames) {
-    msgFunctionNames.forEach((fnName) => {
+    msgFunctionNames.forEach(fnName => {
       // Escape $ characters, which are legal in function names
       const escapedFnName = fnName.replace(/([\$])/g, '\\$1');
 
@@ -64,14 +66,20 @@ const getRegexps = (
     });
   }
   if (msgRegexps) {
-    msgRegexps.forEach((reStr) => {
+    msgRegexps.forEach(reStr => {
       out.push(new RegExp(reStr, 'gm'));
     });
   }
   return out;
 };
 
-const parse = ({ srcPaths, srcExtensions, msgFunctionNames, msgRegexps, story }: {|
+const parse = ({
+  srcPaths,
+  srcExtensions,
+  msgFunctionNames,
+  msgRegexps,
+  story,
+}: {|
   srcPaths: Array<string>,
   srcExtensions: Array<string>,
   msgFunctionNames: Array<string>,
@@ -80,10 +88,12 @@ const parse = ({ srcPaths, srcExtensions, msgFunctionNames, msgRegexps, story }:
 |}): MapOf<InternalKeyT> => {
   const regexps = getRegexps(msgFunctionNames, msgRegexps);
   const keys = {};
-  const diveOptions = { filter: (filePath, fDir) => {
-    if (fDir) return true;
-    return (srcExtensions.indexOf(path.extname(filePath)) >= 0);
-  } };
+  const diveOptions = {
+    filter: (filePath, fDir) => {
+      if (fDir) return true;
+      return srcExtensions.indexOf(path.extname(filePath)) >= 0;
+    },
+  };
   const diveProcess = (err, filePath) => {
     const finalFilePath = path.normalize(filePath);
     story.info('parser', `Processing ${chalk.cyan.bold(finalFilePath)}...`);
@@ -91,7 +101,7 @@ const parse = ({ srcPaths, srcExtensions, msgFunctionNames, msgRegexps, story }:
     parseWithRegexps(keys, finalFilePath, fileContents, regexps);
     if (fReactIntl) parseReactIntl(keys, finalFilePath, fileContents, story);
   };
-  srcPaths.forEach((srcPath) => diveSync(srcPath, diveOptions, diveProcess));
+  srcPaths.forEach(srcPath => diveSync(srcPath, diveOptions, diveProcess));
   return keys;
 };
 
@@ -99,9 +109,9 @@ const parseWithRegexps = (
   keys: MapOf<InternalKeyT>,
   filePath: string,
   fileContents: string,
-  regexps: Array<RegExp>,
+  regexps: Array<RegExp>
 ): void => {
-  regexps.forEach((re) => {
+  regexps.forEach(re => {
     let match;
     while ((match = re.exec(fileContents))) {
       addMessageToKeys(keys, match[1], filePath);
@@ -113,18 +123,23 @@ const parseReactIntl = (
   keys: MapOf<InternalKeyT>,
   filePath: string,
   fileContents: string,
-  story: StoryT,
+  story: StoryT
 ): void => {
   try {
-    const { messages } = babelCore.transform(fileContents, babelConfig).metadata['react-intl'];
+    const { messages } = babelCore.transform(
+      fileContents,
+      babelConfig
+    ).metadata['react-intl'];
     if (messages) {
-      messages.forEach((message) => {
+      messages.forEach(message => {
         const { defaultMessage: utf8, description, id: reactIntlId } = message;
         addMessageToKeys(keys, utf8, filePath, { reactIntlId, description });
       });
     }
   } catch (err2) {
-    story.error('parser', 'Error extracting React Intl messages', { attach: err2 });
+    story.error('parser', 'Error extracting React Intl messages', {
+      attach: err2,
+    });
   }
 };
 
@@ -132,7 +147,7 @@ const addMessageToKeys = (
   keys: MapOf<InternalKeyT>,
   utf8: string,
   filePath: string,
-  extras?: {} = {},
+  extras?: {} = {}
 ): void => {
   const tokens = utf8.split('_');
   let context;

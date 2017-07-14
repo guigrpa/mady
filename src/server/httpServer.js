@@ -1,19 +1,19 @@
 // @flow
 
-import path                 from 'path';
-import http                 from 'http';
-import Promise              from 'bluebird';
-import { cloneDeep }        from 'lodash';
+import path from 'path';
+import http from 'http';
+import Promise from 'bluebird';
+import { cloneDeep } from 'lodash';
 import { mainStory, chalk, addListener } from 'storyboard';
-import wsServerListener     from 'storyboard-listener-ws-server';
-import express              from 'express';
-import graphqlHttp          from 'express-graphql';
-import ejs                  from 'ejs';
-import cookieParser         from 'cookie-parser';
-import compression          from 'compression';
+import wsServerListener from 'storyboard-listener-ws-server';
+import express from 'express';
+import graphqlHttp from 'express-graphql';
+import ejs from 'ejs';
+import cookieParser from 'cookie-parser';
+import compression from 'compression';
 import addAllLocales, { getReactIntlMessages } from './allLocales';
-import _t                   from '../translate';
-import * as gqlServer       from './gqlServer';
+import _t from '../translate';
+import * as gqlServer from './gqlServer';
 
 let ssr = null;
 try {
@@ -44,55 +44,64 @@ addAllLocales();
 
 function sendIndexHtml(req, res) {
   mainStory.info('http', 'Preparing index.html...');
-  const userLang = req.query.lang || req.cookies[`${COOKIE_NAMESPACE}_lang`] || 'en';
+  const userLang =
+    req.query.lang || req.cookies[`${COOKIE_NAMESPACE}_lang`] || 'en';
   const bootstrap = cloneDeep(DEFAULT_BOOTSTRAP);
-  return Promise.resolve()
-
-    // Locales
-    .then(() => {
-      mainStory.debug('http', `Getting locale code for lang ${chalk.cyan.bold(userLang)}...`);
-      const { lang, result } = _t.getLocaleCode(userLang);
-      bootstrap.fnLocales = result;
-      bootstrap.jsonData.lang = lang;
-      bootstrap.jsonData.reactIntlMessages = getReactIntlMessages(lang);
-      if (lang && lang !== userLang) {
-        mainStory.info('http',
-          `Serving locales for ${chalk.cyan.bold(lang)} instead of ${chalk.cyan.bold(userLang)}`);
-      }
-    })
-
-    // SSR
-    .then(() => {
-      if (!ssr) return null;
-      mainStory.debug('http', 'Rendering...');
-      return ssr.render(req, {
-        lang: bootstrap.jsonData.lang,
-        reactIntlMessages: bootstrap.jsonData.reactIntlMessages,
-        fnLocales: bootstrap.fnLocales,
+  return (
+    Promise.resolve()
+      // Locales
+      .then(() => {
+        mainStory.debug(
+          'http',
+          `Getting locale code for lang ${chalk.cyan.bold(userLang)}...`
+        );
+        const { lang, result } = _t.getLocaleCode(userLang);
+        bootstrap.fnLocales = result;
+        bootstrap.jsonData.lang = lang;
+        bootstrap.jsonData.reactIntlMessages = getReactIntlMessages(lang);
+        if (lang && lang !== userLang) {
+          mainStory.info(
+            'http',
+            `Serving locales for ${chalk.cyan.bold(
+              lang
+            )} instead of ${chalk.cyan.bold(userLang)}`
+          );
+        }
       })
-      .then((results) => {
-        mainStory.debug('http', 'Finished rendering');
-        const { ssrHtml, ssrCss, relayData } = results;
-        bootstrap.ssrHtml = ssrHtml;
-        bootstrap.ssrCss = ssrCss;
-        bootstrap.jsonData.relayData = relayData;
+      // SSR
+      .then(() => {
+        if (!ssr) return null;
+        mainStory.debug('http', 'Rendering...');
+        return ssr
+          .render(req, {
+            lang: bootstrap.jsonData.lang,
+            reactIntlMessages: bootstrap.jsonData.reactIntlMessages,
+            fnLocales: bootstrap.fnLocales,
+          })
+          .then(results => {
+            mainStory.debug('http', 'Finished rendering');
+            const { ssrHtml, ssrCss, relayData } = results;
+            bootstrap.ssrHtml = ssrHtml;
+            bootstrap.ssrCss = ssrCss;
+            bootstrap.jsonData.relayData = relayData;
+          })
+          .catch(err =>
+            mainStory.error('http', 'Error rendering', { attach: err })
+          );
       })
-      .catch((err) => mainStory.error('http', 'Error rendering', { attach: err }));
-    })
-
-    .catch((err) => mainStory.error('http', 'Error preparing bootstrap', { attach: err }))
-
-    // Render the result!
-    .finally(() => {
-      bootstrap.jsonData = JSON.stringify(bootstrap.jsonData);
-      res.render('index.html', bootstrap);
-      return;
-    });
+      .catch(err =>
+        mainStory.error('http', 'Error preparing bootstrap', { attach: err })
+      )
+      // Render the result!
+      .finally(() => {
+        bootstrap.jsonData = JSON.stringify(bootstrap.jsonData);
+        res.render('index.html', bootstrap);
+        return;
+      })
+  );
 }
 
-function init(options: {|
-  port: number,
-|}): void {
+function init(options: {| port: number |}): void {
   ssr && ssr.init({ gqlServer, mainStory });
 
   // Disable flow on Express
@@ -105,10 +114,13 @@ function init(options: {|
   expressApp.use(cookieParser());
 
   // GraphQL + GraphiQL
-  expressApp.use('/graphql', graphqlHttp({
-    schema: gqlServer.getSchema(),
-    graphiql: true,
-  }));
+  expressApp.use(
+    '/graphql',
+    graphqlHttp({
+      schema: gqlServer.getSchema(),
+      graphiql: true,
+    })
+  );
 
   // Index
   expressApp.use('/', (req, res, next) => {

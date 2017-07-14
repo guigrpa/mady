@@ -26,18 +26,26 @@ type PublicProps = {
 type Props = PublicProps & HoverablePropsT;
 
 const gqlFragments = graphql`
-fragment edTranslatorRow_viewer on Viewer { id }
-fragment edTranslatorRow_theKey on Key {
-  id
-  context text
-  unusedSince
-  ...eeTranslation_theKey
-  translations(first: 100000) { edges { node {
+  fragment edTranslatorRow_viewer on Viewer {
     id
-    lang
-    ...eeTranslation_translation
-  }}}
-}
+  }
+
+  fragment edTranslatorRow_theKey on Key {
+    id
+    context
+    text
+    unusedSince
+    ...eeTranslation_theKey
+    translations(first: 100000) {
+      edges {
+        node {
+          id
+          lang
+          ...eeTranslation_translation
+        }
+      }
+    }
+  }
 `;
 
 // ==========================================
@@ -60,14 +68,20 @@ class TranslatorRow extends React.PureComponent {
     } = this.props;
     const fUnused = !!key.unusedSince;
     const elContext = key.context
-      ? <span style={style.context}>{key.context}</span>
+      ? <span style={style.context}>
+          {key.context}
+        </span>
       : undefined;
-    const elText = <span style={style.text}>{key.text}</span>;
+    const elText = (
+      <span style={style.text}>
+        {key.text}
+      </span>
+    );
     const elDeleteKey = hovering
       ? <Icon
           icon="remove"
           title={_t(
-            'tooltip_Delete message (does NOT delete any translations)',
+            'tooltip_Delete message (does NOT delete any translations)'
           )}
           onClick={this.onClickDeleteKey}
           style={style.removeIcon}
@@ -88,7 +102,9 @@ class TranslatorRow extends React.PureComponent {
           onMouseLeave={onHoverStop}
           style={cellStyle}
         >
-          {elContext}{elText}{elDeleteKey}
+          {elContext}
+          {elText}
+          {elDeleteKey}
         </div>
         {this.props.langs.map(this.renderTranslation)}
       </div>
@@ -142,7 +158,7 @@ const style = {
     'none',
     flexContainer('row', {
       minHeight: 21,
-    }),
+    })
   ),
   bodyCell: {
     position: 'relative',
@@ -186,7 +202,7 @@ const style = {
 const HoverableTranslatorRow = hoverable(TranslatorRow);
 const Container = Relay.createFragmentContainer(
   HoverableTranslatorRow,
-  gqlFragments,
+  gqlFragments
 );
 export default Container;
 export { HoverableTranslatorRow as _HoverableTranslatorRow };

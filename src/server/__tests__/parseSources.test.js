@@ -10,52 +10,77 @@ describe('Source parser', () => {
     it('should work in a simple case', () => {
       const keys = {};
       const regexps = getRegexps(['FOO']);
-      parseWithRegexps(keys, 'FILENAME', `
+      parseWithRegexps(
+        keys,
+        'FILENAME',
+        `
         const a = 3;
         const str = FOO('Example');
-      `, regexps);
+      `,
+        regexps
+      );
       expect(keys).toMatchSnapshot();
     });
 
     it('should work with single and double quotes', () => {
       const keys = {};
       const regexps = getRegexps(['FOO']);
-      parseWithRegexps(keys, 'FILENAME', `
+      parseWithRegexps(
+        keys,
+        'FILENAME',
+        `
         const a = 3;
         const str = FOO('Example');
         const str2 = FOO("Example2");
-      `, regexps);
+      `,
+        regexps
+      );
       expect(keys).toMatchSnapshot();
     });
 
     it('should extract context if available', () => {
       const keys = {};
       const regexps = getRegexps(['FOO']);
-      parseWithRegexps(keys, 'FILENAME', `
+      parseWithRegexps(
+        keys,
+        'FILENAME',
+        `
         const a = 3;
         const str = FOO('context_Example');
-      `, regexps);
+      `,
+        regexps
+      );
       expect(keys).toMatchSnapshot();
     });
 
     it('should work with multiline strings', () => {
       const keys = {};
       const regexps = getRegexps(['FOO']);
-      parseWithRegexps(keys, 'FILENAME', `
+      parseWithRegexps(
+        keys,
+        'FILENAME',
+        `
         const a = 3;
         const str = FOO('context_This is a very
 long
 string');
-      `, regexps);
+      `,
+        regexps
+      );
       expect(keys).toMatchSnapshot();
     });
 
     it('should work with specially-named functions', () => {
       const keys = {};
       const regexps = getRegexps(['$t']);
-      parseWithRegexps(keys, 'FILENAME', `
+      parseWithRegexps(
+        keys,
+        'FILENAME',
+        `
         $t('hi') $t ('ho') $t( "there")
-      `, regexps);
+      `,
+        regexps
+      );
       expect(keys).toMatchSnapshot();
     });
   });
@@ -64,22 +89,32 @@ string');
     it('should work with custom regexps', () => {
       const keys = {};
       const regexps = getRegexps([], ['{{\\s*(.*?)\\s*}}']);
-      parseWithRegexps(keys, 'FILENAME', `
+      parseWithRegexps(
+        keys,
+        'FILENAME',
+        `
         whatever
         {{ hey }}
         whatever {{ho}} {{   let's go }} and {{ !! }}
-      `, regexps);
+      `,
+        regexps
+      );
       expect(keys).toMatchSnapshot();
     });
 
     it('should work with custom regexps and multiline strings', () => {
       const keys = {};
       const regexps = getRegexps([], ['===([\\s\\S]*?)===']);
-      parseWithRegexps(keys, 'FILENAME', `
+      parseWithRegexps(
+        keys,
+        'FILENAME',
+        `
         ===A very
 long
 string===
-      `, regexps);
+      `,
+        regexps
+      );
       expect(keys).toMatchSnapshot();
     });
   });
@@ -87,7 +122,10 @@ string===
   describe('React Intl parser', () => {
     it('should extract messages from FormattedMessage components', () => {
       const keys = {};
-      parseReactIntl(keys, 'FILENAME', `
+      parseReactIntl(
+        keys,
+        'FILENAME',
+        `
         import { FormattedMessage } from 'react-intl';
         const name = 'Guille';
         const Component = () => (
@@ -98,13 +136,17 @@ string===
             description="Bla bla bla"
           />
         );
-      `);
+      `
+      );
       expect(keys).toMatchSnapshot();
     });
 
     it('should extract messages from FormattedHTMLMessage components', () => {
       const keys = {};
-      parseReactIntl(keys, 'FILENAME', `
+      parseReactIntl(
+        keys,
+        'FILENAME',
+        `
         import { FormattedHTMLMessage } from 'react-intl';
         const name = 'Guille';
         const Component = () => (
@@ -114,13 +156,17 @@ string===
             values={{ NAME: name }}
           />
         );
-      `);
+      `
+      );
       expect(keys).toMatchSnapshot();
     });
 
     it('should extract messages from defineMessages() calls', () => {
       const keys = {};
-      parseReactIntl(keys, 'FILENAME', `
+      parseReactIntl(
+        keys,
+        'FILENAME',
+        `
         import { defineMessages } from 'react-intl';
         defineMessages({
           reactIntlId3: {
@@ -129,7 +175,8 @@ string===
             defaultMessage: 'someContext_Hello, {NAME}!',
           },
         });
-      `);
+      `
+      );
       expect(keys).toMatchSnapshot();
     });
   });

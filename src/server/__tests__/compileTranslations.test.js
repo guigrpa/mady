@@ -66,8 +66,20 @@ describe('compileTranslations', () => {
   it('should compile a key with plural selection', () => {
     const result = compileTranslations({
       lang: 'es',
-      keys: { ID: { id: 'ID', text: '{NUM, plural, one{1 hamburger} other{# hamburgers}}' } },
-      translations: [{ keyId: 'ID', lang: 'es', translation: '{NUM, plural, one{1 hamburguesa} other{# hamburguesas}}' }],
+      keys: {
+        ID: {
+          id: 'ID',
+          text: '{NUM, plural, one{1 hamburger} other{# hamburgers}}',
+        },
+      },
+      translations: [
+        {
+          keyId: 'ID',
+          lang: 'es',
+          translation:
+            '{NUM, plural, one{1 hamburguesa} other{# hamburguesas}}',
+        },
+      ],
       story: mainStory,
     });
     expect(result).toMatchSnapshot();

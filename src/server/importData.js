@@ -1,17 +1,26 @@
-import fs                   from 'fs';
-import path                 from 'path';
-import timm                 from 'timm';
-import { chalk }            from 'storyboard';
-import diveSync             from 'diveSync';
-import uuid                 from 'uuid';
-import { utf8ToBase64 }     from '../common/base64';
+import fs from 'fs';
+import path from 'path';
+import timm from 'timm';
+import { chalk } from 'storyboard';
+import diveSync from 'diveSync';
+import uuid from 'uuid';
+import { utf8ToBase64 } from '../common/base64';
 
-function duplicatedTranslation(translations, newKeyId, newLang, newTranslation) {
+function duplicatedTranslation(
+  translations,
+  newKeyId,
+  newLang,
+  newTranslation
+) {
   let fFound = false;
   const ids = Object.keys(translations);
   for (const id of ids) {
     const { keyId, lang, translation } = translations[id];
-    if (newKeyId === keyId && newLang === lang && newTranslation === translation) {
+    if (
+      newKeyId === keyId &&
+      newLang === lang &&
+      newTranslation === translation
+    ) {
       fFound = true;
       break;
     }
@@ -38,20 +47,26 @@ function importV0({ langs, keys, translations, dir, story }) {
     const js = JSON.parse(fs.readFileSync(finalFilePath));
     let numNewK = 0;
     let numNewT = 0;
-    Object.keys(js).forEach((keyId) => {
+    Object.keys(js).forEach(keyId => {
       const newTranslation = js[keyId];
       const {
         fTranslated,
-        context, original: text, translation,
-        firstUsed, unusedSince, sources,
+        context,
+        original: text,
+        translation,
+        firstUsed,
+        unusedSince,
+        sources,
       } = newTranslation;
 
       // Add key if new
       if (!outK[keyId]) {
         outK = timm.set(outK, keyId, {
           id: keyId,
-          context, text,
-          firstUsed, unusedSince,
+          context,
+          text,
+          firstUsed,
+          unusedSince,
           sources,
         });
         numNewK += 1;
@@ -73,11 +88,18 @@ function importV0({ langs, keys, translations, dir, story }) {
         }
       }
     });
-    story.info('importData',
-      `Lang ${chalk.magenta.bold(lang)}: new keys ${numNewK}, new translations ${numNewT}`);
+    story.info(
+      'importData',
+      `Lang ${chalk.magenta.bold(
+        lang
+      )}: new keys ${numNewK}, new translations ${numNewT}`
+    );
   };
   diveSync(dir, diveOptions, diveProcess);
-  story.info('importData', `Total: new keys ${totNewK}, new translations ${totNewT}`);
+  story.info(
+    'importData',
+    `Total: new keys ${totNewK}, new translations ${totNewT}`
+  );
   return { keys: outK, translations: outT, langs: outLangs };
 }
 
@@ -87,7 +109,7 @@ function importToV2({ langs, dir, story }) {
   const keyPath = path.join(dir, 'keys.json');
   const prevKeys = JSON.parse(fs.readFileSync(keyPath));
   const nextKeys = {};
-  Object.keys(prevKeys).forEach((id) => {
+  Object.keys(prevKeys).forEach(id => {
     const keyData = prevKeys[id];
     const nextId = utf8ToBase64(id);
     nextKeys[nextId] = timm.set(keyData, 'id', nextId);
@@ -95,22 +117,23 @@ function importToV2({ langs, dir, story }) {
   fs.writeFileSync(keyPath, JSON.stringify(nextKeys, null, '  '), 'utf8');
 
   // Import translations
-  langs.forEach((lang) => {
+  langs.forEach(lang => {
     story.info('importData', `Processing translations: ${lang}...`);
     const translationPath = path.join(dir, `${lang}.json`);
     const translations = JSON.parse(fs.readFileSync(translationPath));
-    Object.keys(translations).forEach((id) => {
+    Object.keys(translations).forEach(id => {
       const translation = translations[id];
       translation.keyId = utf8ToBase64(translation.keyId);
     });
-    fs.writeFileSync(translationPath, JSON.stringify(translations, null, '  '), 'utf8');
+    fs.writeFileSync(
+      translationPath,
+      JSON.stringify(translations, null, '  '),
+      'utf8'
+    );
   });
 }
 
 // ==============================================
 // Public API
 // ==============================================
-export {
-  importV0,
-  importToV2,
-};
+export { importV0, importToV2 };

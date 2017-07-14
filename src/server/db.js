@@ -1,12 +1,12 @@
 // @flow
 
-import path                 from 'path';
-import fs                   from 'fs-extra';
-import Promise              from 'bluebird';
-import timm                 from 'timm';
+import path from 'path';
+import fs from 'fs-extra';
+import Promise from 'bluebird';
+import timm from 'timm';
 import { mainStory, chalk } from 'storyboard';
-import uuid                 from 'uuid';
-import { base64ToUtf8 }     from '../common/base64';
+import uuid from 'uuid';
+import { base64ToUtf8 } from '../common/base64';
 import type {
   MapOf,
   StoryT,
@@ -14,12 +14,12 @@ import type {
   InternalConfigT,
   InternalKeyT,
   InternalTranslationT,
-}                           from '../common/types';
-import parse                from './parseSources';
-import compile              from './compileTranslations';
+} from '../common/types';
+import parse from './parseSources';
+import compile from './compileTranslations';
 import collectReactIntlTranslations from './collectReactIntlTranslations';
 import collectJsonTranslations from './collectJsonTranslations';
-import * as importers       from './importData';
+import * as importers from './importData';
 
 const DB_VERSION = 2;
 
@@ -41,10 +41,7 @@ const RESPONSE_DELAY = 0;
 // ==============================================
 // Init
 // ==============================================
-function init(options: {
-  fRecompile: boolean,
-  localeDir: string,
-}) {
+function init(options: { fRecompile: boolean, localeDir: string }) {
   initLocaleDir(options);
   const fMigrated = initConfig();
   initKeys();
@@ -52,16 +49,15 @@ function init(options: {
   if (fMigrated || options.fRecompile) compileTranslations();
 }
 
-
 // ==============================================
 // Locale dir
 // ==============================================
 let _localeDir: string;
-function setLocaleDir(localeDir: string) { _localeDir = localeDir; }
+function setLocaleDir(localeDir: string) {
+  _localeDir = localeDir;
+}
 
-function initLocaleDir(options: {
-  localeDir: string,
-}) {
+function initLocaleDir(options: { localeDir: string }) {
   _localeDir = options.localeDir;
   try {
     fs.statSync(_localeDir);
@@ -77,8 +73,12 @@ function initLocaleDir(options: {
 let _configPath: string;
 let _config: InternalConfigT;
 
-function setConfigPath(configPath: string) { _configPath = configPath; }
-function setConfig(config: InternalConfigT) { _config = config; }
+function setConfigPath(configPath: string) {
+  _configPath = configPath;
+}
+function setConfig(config: InternalConfigT) {
+  _config = config;
+}
 
 function initConfig(): boolean {
   _configPath = path.join(_localeDir, 'config.json');
@@ -96,30 +96,36 @@ function initConfig(): boolean {
     saveConfig();
     return fMigrated;
   } catch (err) {
-    mainStory.error('db', `Error reading config: ${err.message}`,
-      { attach: err, attachLevel: 'trace' });
+    mainStory.error('db', `Error reading config: ${err.message}`, {
+      attach: err,
+      attachLevel: 'trace',
+    });
     _config = DEFAULT_CONFIG;
     saveConfig();
     return fMigrated;
   }
 }
 
-function readConfig() { _config = readJson(_configPath); }
-function saveConfig(options?: Object) { saveJson(_configPath, _config, options); }
+function readConfig() {
+  _config = readJson(_configPath);
+}
+function saveConfig(options?: Object) {
+  saveJson(_configPath, _config, options);
+}
 
-function getConfig(): InternalConfigT { return _config; }
+function getConfig(): InternalConfigT {
+  return _config;
+}
 
 function updateConfig(
   newAttrs: Object,
-  { story }: { story: StoryT },
+  { story }: { story: StoryT }
 ): BluebirdPromise<InternalConfigT> {
   _config = timm.merge(_config, newAttrs);
   story.debug('db', 'New config:', { attach: _config });
   saveConfig({ story });
-  return compileTranslations({ story })
-  .then(() => _config);
+  return compileTranslations({ story }).then(() => _config);
 }
-
 
 // ==============================================
 // Keys
@@ -127,8 +133,12 @@ function updateConfig(
 let _keyPath: string;
 let _keys: MapOf<InternalKeyT> = {};
 
-function setKeyPath(keyPath: string) { _keyPath = keyPath; }
-function setKeys(keys: MapOf<InternalKeyT>) { _keys = keys; }
+function setKeyPath(keyPath: string) {
+  _keyPath = keyPath;
+}
+function setKeys(keys: MapOf<InternalKeyT>) {
+  _keys = keys;
+}
 
 function initKeys() {
   _keyPath = path.join(_localeDir, 'keys.json');
@@ -142,11 +152,15 @@ function initKeys() {
   }
 }
 
-function readKeys() { _keys = readJson(_keyPath); }
-function saveKeys(options?: Object) { saveJson(_keyPath, _keys, options); }
+function readKeys() {
+  _keys = readJson(_keyPath);
+}
+function saveKeys(options?: Object) {
+  saveJson(_keyPath, _keys, options);
+}
 
 function getKeys(): Array<InternalKeyT> {
-  return Object.keys(_keys).map((id) => _keys[id]);
+  return Object.keys(_keys).map(id => _keys[id]);
 }
 
 function getKey(id: string): ?InternalKeyT {
@@ -154,9 +168,10 @@ function getKey(id: string): ?InternalKeyT {
 }
 
 function createKey(newAttrs: Object): BluebirdPromise<?InternalKeyT> {
-  const id = newAttrs.context != null
-    ? `${newAttrs.context}_${newAttrs.text}`
-    : newAttrs.text;
+  const id =
+    newAttrs.context != null
+      ? `${newAttrs.context}_${newAttrs.text}`
+      : newAttrs.text;
   _keys[id] = {
     id,
     context: newAttrs.context || null,
@@ -166,33 +181,38 @@ function createKey(newAttrs: Object): BluebirdPromise<?InternalKeyT> {
     sources: [],
   };
   saveKeys();
-  return compileTranslations()
-  .then(() => _keys[id]);
+  return compileTranslations().then(() => _keys[id]);
 }
 
-function updateKey(id: string, newAttrs: Object): BluebirdPromise<?InternalKeyT> {
+function updateKey(
+  id: string,
+  newAttrs: Object
+): BluebirdPromise<?InternalKeyT> {
   _keys[id] = timm.merge(_keys[id], newAttrs);
   saveKeys();
-  return compileTranslations()
-  .then(() => _keys[id]);
+  return compileTranslations().then(() => _keys[id]);
 }
 
 function deleteKey(id: string): BluebirdPromise<?InternalKeyT> {
   const item = _keys[id];
   delete _keys[id];
   saveKeys();
-  return compileTranslations()
-  .delay(RESPONSE_DELAY)
-  .then(() => item);
+  return compileTranslations().delay(RESPONSE_DELAY).then(() => item);
 }
 
 function parseSrcFiles({ story }: { story: StoryT }) {
   const { srcPaths, srcExtensions, msgFunctionNames, msgRegexps } = _config;
-  const curKeys = parse({ srcPaths, srcExtensions, msgFunctionNames, msgRegexps, story });
+  const curKeys = parse({
+    srcPaths,
+    srcExtensions,
+    msgFunctionNames,
+    msgRegexps,
+    story,
+  });
   const now = new Date().toISOString();
 
   const unusedKeys = [];
-  Object.keys(_keys).forEach((id) => {
+  Object.keys(_keys).forEach(id => {
     const key = _keys[id];
     if (curKeys[id]) {
       curKeys[id].firstUsed = key.firstUsed;
@@ -210,7 +230,7 @@ function parseSrcFiles({ story }: { story: StoryT }) {
   }
 
   const newKeys = [];
-  Object.keys(curKeys).forEach((id) => {
+  Object.keys(curKeys).forEach(id => {
     const key = curKeys[id];
     if (!key.firstUsed) {
       newKeys.push(id);
@@ -225,10 +245,8 @@ function parseSrcFiles({ story }: { story: StoryT }) {
   }
 
   saveKeys({ story });
-  return compileTranslations({ story })
-  .then(() => _keys);
+  return compileTranslations({ story }).then(() => _keys);
 }
-
 
 // ==============================================
 // Translations
@@ -270,7 +288,7 @@ function readTranslations(lang: string) {
 
 function saveTranslations(lang: string, options: Object) {
   const langTranslations = {};
-  Object.keys(_translations).forEach((translationId) => {
+  Object.keys(_translations).forEach(translationId => {
     const translation = _translations[translationId];
     if (translation.lang === lang) {
       langTranslations[translation.id] = translation;
@@ -280,12 +298,12 @@ function saveTranslations(lang: string, options: Object) {
 }
 
 function getTranslations() {
-  return Object.keys(_translations).map((id) => _translations[id]);
+  return Object.keys(_translations).map(id => _translations[id]);
 }
 
 function getLangTranslations(lang: string): Array<InternalTranslationT> {
   const out = [];
-  Object.keys(_translations).forEach((translationId) => {
+  Object.keys(_translations).forEach(translationId => {
     const translation = _translations[translationId];
     if (translation.lang === lang) {
       out.push(translation);
@@ -296,7 +314,7 @@ function getLangTranslations(lang: string): Array<InternalTranslationT> {
 
 function getKeyTranslations(keyId: string): Array<InternalTranslationT> {
   const out = [];
-  Object.keys(_translations).forEach((translationId) => {
+  Object.keys(_translations).forEach(translationId => {
     const translation = _translations[translationId];
     if (translation.keyId === keyId) {
       out.push(translation);
@@ -311,7 +329,7 @@ function getTranslation(id: string): ?InternalTranslationT {
 
 function createTranslation(
   newAttrs: Object,
-  { story }: { story: StoryT },
+  { story }: { story: StoryT }
 ): BluebirdPromise<?InternalTranslationT> {
   const { lang, translation, fuzzy, keyId } = newAttrs;
   if (!lang) throw new Error('Translation language must be specified');
@@ -320,73 +338,93 @@ function createTranslation(
   _translations[id] = { id, lang, translation, fuzzy, keyId };
   saveTranslations(lang, { story });
   return compileTranslations({ story })
-  .delay(RESPONSE_DELAY)
-  .then(() => _translations[id]);
+    .delay(RESPONSE_DELAY)
+    .then(() => _translations[id]);
 }
 
 function updateTranslation(
   id: string,
   newAttrs: Object,
-  { story }: { story: StoryT },
+  { story }: { story: StoryT }
 ): BluebirdPromise<?InternalTranslationT> {
   _translations[id] = timm.merge(_translations[id], newAttrs);
   saveTranslations(_translations[id].lang, { story });
   return compileTranslations({ story })
-  .delay(RESPONSE_DELAY)
-  .then(() => _translations[id]);
+    .delay(RESPONSE_DELAY)
+    .then(() => _translations[id]);
 }
 
 function deleteTranslation(
   id: string,
-  { story }: { story: StoryT },
+  { story }: { story: StoryT }
 ): BluebirdPromise<?InternalTranslationT> {
   const item = _translations[id];
   const { lang } = _translations[id];
   delete _translations[id];
   saveTranslations(lang, { story });
-  return compileTranslations({ story })
-  .delay(RESPONSE_DELAY)
-  .then(() => item);
+  return compileTranslations({ story }).delay(RESPONSE_DELAY).then(() => item);
 }
 
 function compileTranslations(
-  { story: baseStory }: { story?: StoryT } = {},
+  { story: baseStory }: { story?: StoryT } = {}
 ): BluebirdPromise<*> {
-  const story = (baseStory || mainStory).child({ src: 'db', title: 'Compile translations' });
+  const story = (baseStory || mainStory)
+    .child({ src: 'db', title: 'Compile translations' });
   const keys = _keys;
   return Promise.resolve()
-  .then(() => {
-    const { fMinify, fJsOutput, fReactIntlOutput, fJsonOutput, langs } = _config;
-    const allTranslations = getAllTranslations(langs, story);
-    Object.keys(allTranslations).forEach((lang) => {
-      const compiledLangPath = getCompiledLangPath(lang);
-      const translations = allTranslations[lang];
-      if (fJsOutput) {
-        const fnTranslate = compile({ lang, keys, translations, fMinify, story });
-        story.debug('db', `Writing file ${chalk.cyan.bold(compiledLangPath)}...`);
-        fs.writeFileSync(compiledLangPath, fnTranslate, 'utf8');
-      }
-      if (fReactIntlOutput) {
-        const reactIntlLangPath = getReactIntlLangPath(lang);
-        const reactIntlTranslations = collectReactIntlTranslations({
-          lang, keys, translations, story,
-        });
-        saveJson(reactIntlLangPath, reactIntlTranslations, { story });
-      }
-      if (fJsonOutput) {
-        const jsonLangPath = getJsonLangPath(lang);
-        const jsonTranslations = collectJsonTranslations({
-          lang, keys, translations, story,
-        });
-        saveJson(jsonLangPath, jsonTranslations, { story });
-      }
-    });
-  })
-  .catch((err) => {
-    story.error('db', 'Could not compile translations:', { attach: err });
-    throw err;
-  })
-  .finally(() => story.close());
+    .then(() => {
+      const {
+        fMinify,
+        fJsOutput,
+        fReactIntlOutput,
+        fJsonOutput,
+        langs,
+      } = _config;
+      const allTranslations = getAllTranslations(langs, story);
+      Object.keys(allTranslations).forEach(lang => {
+        const compiledLangPath = getCompiledLangPath(lang);
+        const translations = allTranslations[lang];
+        if (fJsOutput) {
+          const fnTranslate = compile({
+            lang,
+            keys,
+            translations,
+            fMinify,
+            story,
+          });
+          story.debug(
+            'db',
+            `Writing file ${chalk.cyan.bold(compiledLangPath)}...`
+          );
+          fs.writeFileSync(compiledLangPath, fnTranslate, 'utf8');
+        }
+        if (fReactIntlOutput) {
+          const reactIntlLangPath = getReactIntlLangPath(lang);
+          const reactIntlTranslations = collectReactIntlTranslations({
+            lang,
+            keys,
+            translations,
+            story,
+          });
+          saveJson(reactIntlLangPath, reactIntlTranslations, { story });
+        }
+        if (fJsonOutput) {
+          const jsonLangPath = getJsonLangPath(lang);
+          const jsonTranslations = collectJsonTranslations({
+            lang,
+            keys,
+            translations,
+            story,
+          });
+          saveJson(jsonLangPath, jsonTranslations, { story });
+        }
+      });
+    })
+    .catch(err => {
+      story.error('db', 'Could not compile translations:', { attach: err });
+      throw err;
+    })
+    .finally(() => story.close());
 }
 
 // function objToArray(obj) {
@@ -398,19 +436,20 @@ function compileTranslations(
 // }
 
 function getAllTranslations(
-  langs: Array<string>,
+  langs: Array<string>
   /* story: StoryT, */
 ): MapOf<Array<InternalTranslationT>> {
   // Determine lang structure
   const langStructure = {};
   const sortedLangs = langs.slice().sort();
   // story.debug('db', 'Sorted languages', { attach: sortedLangs });
-  sortedLangs.forEach((lang) => {
+  sortedLangs.forEach(lang => {
     langStructure[lang] = { parent: null, children: [] };
     const tokens = lang.split(/[_-]/);
     for (let i = 0; i < tokens.length; i++) {
       const tmpLang = tokens.slice(0, i + 1).join('-');
-      if (!langStructure[tmpLang]) langStructure[tmpLang] = { parent: null, children: [] };
+      if (!langStructure[tmpLang])
+        langStructure[tmpLang] = { parent: null, children: [] };
       if (i > 0) {
         const parentLang = tokens.slice(0, i).join('-');
         langStructure[parentLang].children.push(tmpLang);
@@ -429,20 +468,26 @@ function getAllTranslations(
   // Higher priority is guaranteed by the order in which languages are processed,
   // and the order in which translations are added to the array.
   const allLangs = Object.keys(langStructure).sort();
-  allLangs.forEach((lang) => {
-    const childrenTranslations = getChildrenTranslations(langStructure, lang, []);
+  allLangs.forEach(lang => {
+    const childrenTranslations = getChildrenTranslations(
+      langStructure,
+      lang,
+      []
+    );
     // story.debug('db', `Children translations for ${lang}`, { attach: childrenTranslations });
     const parentTranslations = getParentTranslations(langStructure, lang);
     // story.debug('db', `Parent translations for ${lang}`, { attach: parentTranslations });
     const ownTranslations = getLangTranslations(lang);
     // story.debug('db', `Own translations for ${lang}`, { attach: ownTranslations });
-    langStructure[lang].translations = childrenTranslations
-      .concat(parentTranslations, ownTranslations);
+    langStructure[lang].translations = childrenTranslations.concat(
+      parentTranslations,
+      ownTranslations
+    );
   });
 
   // Replace lang structure by the translations themselves
   const out = {};
-  Object.keys(langStructure).forEach((lang) => {
+  Object.keys(langStructure).forEach(lang => {
     out[lang] = langStructure[lang].translations;
   });
   // story.debug('db', 'All translations', { attach: out });
@@ -452,19 +497,23 @@ function getAllTranslations(
 function getChildrenTranslations(
   langStructure: MapOf<Object>,
   lang: string,
-  translations0: Array<InternalTranslationT>,
+  translations0: Array<InternalTranslationT>
 ): Array<InternalTranslationT> {
   let translations = translations0;
-  langStructure[lang].children.forEach((childLang) => {
+  langStructure[lang].children.forEach(childLang => {
     translations = translations.concat(getLangTranslations(childLang));
-    translations = getChildrenTranslations(langStructure, childLang, translations);
+    translations = getChildrenTranslations(
+      langStructure,
+      childLang,
+      translations
+    );
   });
   return translations;
 }
 
 function getParentTranslations(
   langStructure: MapOf<Object>,
-  lang: string,
+  lang: string
 ): Array<InternalTranslationT> {
   let out = [];
   const tokens = lang.split(/[_-]/);
@@ -485,7 +534,8 @@ function importV0(dir: string) {
     langs: _config.langs,
     keys: _keys,
     translations: _translations,
-    dir, story,
+    dir,
+    story,
   });
   if (langs !== _config.langs) updateConfig({ langs }, { story });
   if (keys !== _keys) {
@@ -534,17 +584,24 @@ function saveJson(
 // ==============================================
 export {
   init,
-
-  getConfig, updateConfig,
-  getKeys, getKey, createKey, updateKey, deleteKey,
-  getTranslations, getLangTranslations, getKeyTranslations, getTranslation,
-  createTranslation, updateTranslation, deleteTranslation,
-
+  getConfig,
+  updateConfig,
+  getKeys,
+  getKey,
+  createKey,
+  updateKey,
+  deleteKey,
+  getTranslations,
+  getLangTranslations,
+  getKeyTranslations,
+  getTranslation,
+  createTranslation,
+  updateTranslation,
+  deleteTranslation,
   parseSrcFiles,
   compileTranslations,
   importV0,
   saveJson,
-
   // Only for unit tests
   DEFAULT_CONFIG as _DEFAULT_CONFIG,
   setLocaleDir as _setLocaleDir,

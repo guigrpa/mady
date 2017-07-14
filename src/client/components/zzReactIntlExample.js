@@ -2,8 +2,11 @@
 
 import React from 'react';
 import {
-  addLocaleData, defineMessages,
-  IntlProvider, FormattedMessage, FormattedHTMLMessage,
+  addLocaleData,
+  defineMessages,
+  IntlProvider,
+  FormattedMessage,
+  FormattedHTMLMessage,
 } from 'react-intl';
 import esLocaleData from 'react-intl/locale-data/es';
 
@@ -17,10 +20,7 @@ defineMessages({
   },
 });
 
-const Example = ({ lang, messages }: {
-  lang: string,
-  messages: Object,
-}) => {
+const Example = ({ lang, messages }: { lang: string, messages: Object }) => {
   const name = 'Eric';
   const unreadCount = 1000;
   return (
@@ -28,13 +28,18 @@ const Example = ({ lang, messages }: {
       <p>
         <FormattedMessage
           id="reactIntlSample2"
-          defaultMessage={
-            `someContext_Hello {NAME}, you have {UNREAD_COUNT, number} {UNREAD_COUNT, plural,
+          defaultMessage={`someContext_Hello {NAME}, you have {UNREAD_COUNT, number} {UNREAD_COUNT, plural,
               one {message}
               other {messages}
-            }`
-          }
-          values={{ NAME: <b>{name}</b>, UNREAD_COUNT: unreadCount }}
+            }`}
+          values={{
+            NAME: (
+              <b>
+                {name}
+              </b>
+            ),
+            UNREAD_COUNT: unreadCount,
+          }}
         />
         <br />
         <FormattedHTMLMessage

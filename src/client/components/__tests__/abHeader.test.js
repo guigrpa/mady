@@ -10,9 +10,7 @@ jest.mock('react-dom');
 
 describe('Header', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(
-      <Header onShowSettings={() => {}} />
-    ).toJSON();
+    const tree = renderer.create(<Header onShowSettings={() => {}} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
