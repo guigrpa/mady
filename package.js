@@ -189,9 +189,9 @@ const specs = {
     compression: '1.6.2',
 
     // GraphQL
-    graphql: '0.9.3',
-    'graphql-relay': '0.5.1',
-    'express-graphql': '0.6.4',
+    graphql: '0.10.3',
+    'graphql-relay': '0.5.2',
+    'express-graphql': '0.6.6',
   },
 
   peerDependencies: {
@@ -214,10 +214,10 @@ const specs = {
     // React
     react: '15.5.4',
     'react-dom': '15.5.4',
-    'react-relay': '1.0.0-rc.3',
-    'relay-compiler': '1.0.0-rc.3',
-    'relay-runtime': '1.0.0-rc.3',
-    'babel-plugin-relay': '1.0.1-rc.3',
+    'react-relay': '1.1.0',
+    'relay-compiler': '1.1.0',
+    'relay-runtime': '1.1.0',
+    'babel-plugin-relay': '1.1.0',
     'react-intl': '2.2.3',
 
     // Miscellaneous
