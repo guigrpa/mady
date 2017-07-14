@@ -3,7 +3,7 @@
 /* eslint-env browser */
 import timm from 'timm';
 import React from 'react';
-import { createFragmentContainer, graphql } from 'react-relay';
+import Relay, { graphql } from 'react-relay';
 import throttle from 'lodash/throttle';
 import filter from 'lodash/filter';
 import {
@@ -41,6 +41,22 @@ type Props = {
   selectedKeyId: ?string,
   changeSelectedKey: (keyId: ?string) => void,
 };
+
+const fragment = graphql`
+fragment adTranslator_viewer on Viewer {
+  id
+  config { langs }
+  keys(first: 100000) { edges { node {
+    id unusedSince
+    context text     # for sorting
+    ...edTranslatorRow_theKey
+    translations(first: 100000) { edges { node {
+      lang
+    }}}
+  }}}
+  ...edTranslatorRow_viewer
+}
+`;
 
 // ==========================================
 // Component
@@ -400,23 +416,9 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-const Container = createFragmentContainer(
+const Container = Relay.createFragmentContainer(
   Translator,
-  graphql`
-  fragment adTranslator_viewer on Viewer {
-    id
-    config { langs }
-    keys(first: 100000) { edges { node {
-      id unusedSince
-      context text     # for sorting
-      ...edTranslatorRow_theKey
-      translations(first: 100000) { edges { node {
-        lang
-      }}}
-    }}}
-    ...edTranslatorRow_viewer
-  }
-`,
+  fragment,
 );
 export default Container;
 export { Translator as _Translator };

@@ -15,7 +15,8 @@ const query = graphql`
   query afDetailsQuery($selectedKeyId: ID!) {
     node(id: $selectedKeyId) {
       ... on Key {
-        firstUsed unusedSince
+        firstUsed
+        unusedSince
         description
         sources
       }
@@ -61,11 +62,17 @@ class Details extends React.Component {
   renderContents() {
     if (this.props.selectedKeyId == null) {
       return (
-        <LargeMessage>{_t('msgDetailsView_No message selected')}</LargeMessage>
+        <LargeMessage>
+          {_t('msgDetailsView_No message selected')}
+        </LargeMessage>
       );
     }
     if (!this.state.key) {
-      return <LargeMessage><Icon icon="circle-o-notch" /></LargeMessage>;
+      return (
+        <LargeMessage>
+          <Icon icon="circle-o-notch" />
+        </LargeMessage>
+      );
     }
     const { description, sources, firstUsed, unusedSince } = this.state.key;
     const since = this.renderDate(firstUsed);
@@ -76,13 +83,21 @@ class Details extends React.Component {
       : ':';
     const elSources = sources.length
       ? <ul style={style.srcList}>
-          {sources.map((src, idx) => <li key={idx}>{src}</li>)}
+          {sources.map((src, idx) =>
+            <li key={idx}>
+              {src}
+            </li>
+          )}
         </ul>
       : null;
     return (
       <div>
-        {description && <div>{description}</div>}
-        {_t('msgDetailsView_Used since')} {since}{until}
+        {description &&
+          <div>
+            {description}
+          </div>}
+        {_t('msgDetailsView_Used since')} {since}
+        {until}
         {elSources}
       </div>
     );
@@ -123,7 +138,7 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-const Container = ({ selectedKeyId, ...otherProps }) => (
+const Container = ({ selectedKeyId, ...otherProps }) =>
   <QueryRendererWrapper
     query={query}
     vars={{ selectedKeyId }}
@@ -131,7 +146,6 @@ const Container = ({ selectedKeyId, ...otherProps }) => (
     renderDuringLoad
     selectedKeyId={selectedKeyId}
     {...otherProps}
-  />
-);
+  />;
 export default Container;
 export { Details as _Details };

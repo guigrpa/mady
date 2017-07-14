@@ -2,7 +2,7 @@
 
 import timm from 'timm';
 import React from 'react';
-import { createFragmentContainer, graphql } from 'react-relay';
+import Relay, { graphql } from 'react-relay';
 import pick from 'lodash/pick';
 import {
   flexContainer,
@@ -31,6 +31,21 @@ type PublicProps = {
 type Props = PublicProps;
 
 type FlexDirT = 'row' | 'column';
+
+const gqlFragments = graphql`fragment aeSettings_viewer on Viewer {
+  id
+  config {
+    langs
+    srcPaths
+    srcExtensions
+    msgFunctionNames
+    msgRegexps
+    fMinify
+    fJsOutput
+    fJsonOutput
+    fReactIntlOutput
+  }
+}`;
 
 // ==========================================
 // Component
@@ -367,24 +382,9 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-const Container = createFragmentContainer(
+const Container = Relay.createFragmentContainer(
   Settings,
-  graphql`
-  fragment aeSettings_viewer on Viewer {
-    id
-    config {
-      langs
-      srcPaths
-      srcExtensions
-      msgFunctionNames
-      msgRegexps
-      fMinify
-      fJsOutput
-      fJsonOutput
-      fReactIntlOutput
-    }
-  }
-`,
+  gqlFragments,
 );
 export default Container;
 export { Settings as _Settings };

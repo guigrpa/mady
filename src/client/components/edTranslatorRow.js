@@ -2,7 +2,7 @@
 
 import timm from 'timm';
 import React from 'react';
-import { createFragmentContainer, graphql } from 'react-relay';
+import Relay, { graphql } from 'react-relay';
 import { cancelEvent, flexContainer, flexItem, Icon, hoverable } from 'giu';
 import type { ViewerT, KeyT, HoverablePropsT } from '../../common/types';
 import _t from '../../translate';
@@ -24,6 +24,21 @@ type PublicProps = {
   styleLangCol: Object,
 };
 type Props = PublicProps & HoverablePropsT;
+
+const gqlFragments = graphql`
+fragment edTranslatorRow_viewer on Viewer { id }
+fragment edTranslatorRow_theKey on Key {
+  id
+  context text
+  unusedSince
+  ...eeTranslation_theKey
+  translations(first: 100000) { edges { node {
+    id
+    lang
+    ...eeTranslation_translation
+  }}}
+}
+`;
 
 // ==========================================
 // Component
@@ -169,22 +184,9 @@ const style = {
 // Public API
 // ==========================================
 const HoverableTranslatorRow = hoverable(TranslatorRow);
-const Container = createFragmentContainer(
+const Container = Relay.createFragmentContainer(
   HoverableTranslatorRow,
-  graphql`
-  fragment edTranslatorRow_viewer on Viewer { id }
-  fragment edTranslatorRow_theKey on Key {
-    id
-    context text
-    unusedSince
-    ...eeTranslation_theKey
-    translations(first: 100000) { edges { node {
-      id
-      lang
-      ...eeTranslation_translation
-    }}}
-  }
-`,
+  gqlFragments,
 );
 export default Container;
 export { HoverableTranslatorRow as _HoverableTranslatorRow };

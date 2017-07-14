@@ -120,7 +120,7 @@
     "jest": "19.0.2",
     "jest-html": "^1.3.2",
     "moment": "2.18.1",
-    "node-sass": "4.5.2",
+    "node-sass": "4.5.3",
     "nyc": "8.3.0",
     "react": "15.5.4",
     "react-dom": "15.5.4",
@@ -165,7 +165,7 @@
       "!src/exampleLocales.js",
       "!src/mady.js",
       "!src/server/importData.js",
-      "!src/client/components/999-reactIntlExample.js",
+      "!src/client/components/zzReactIntlExample.js",
       "!src/client/components/fetchLangBundle.js"
     ],
     "setupTestFrameworkScriptFile": "./test/setup.js"

@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import { createFragmentContainer, graphql } from 'react-relay';
+import Relay, { graphql } from 'react-relay';
 import MessageFormat from 'messageformat';
 import { mainStory } from 'storyboard';
 import { cancelEvent, Icon, Textarea, KEYS, hoverable } from 'giu';
@@ -43,6 +43,14 @@ type PublicProps = {
   changeSelectedKey: (keyId: ?string) => void,
 };
 type Props = PublicProps & HoverablePropsT;
+
+const gqlFragments = graphql`
+fragment eeTranslation_theKey on Key { id text }
+fragment eeTranslation_translation on Translation {
+  id
+  lang, translation, fuzzy
+}
+`;
 
 // ==========================================
 // Component
@@ -308,15 +316,9 @@ const style = {
 // Public API
 // ==========================================
 const HoverableTranslation = hoverable(Translation);
-const Container = createFragmentContainer(
+const Container = Relay.createFragmentContainer(
   HoverableTranslation,
-  graphql`
-  fragment eeTranslation_theKey on Key { id text }
-  fragment eeTranslation_translation on Translation {
-    id
-    lang, translation, fuzzy
-  }
-`,
+  gqlFragments,
 );
 export default Container;
 export { HoverableTranslation as _HoverableTranslation };
