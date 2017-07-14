@@ -1124,7 +1124,7 @@
               "deprecationReason": null
             },
             {
-              "name": "deleteTranslationInKeyTranslations",
+              "name": "deleteTranslation",
               "description": null,
               "args": [
                 {
@@ -1135,7 +1135,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "INPUT_OBJECT",
-                      "name": "DeleteTranslationInKeyTranslationsInput",
+                      "name": "DeleteTranslationInput",
                       "ofType": null
                     }
                   },
@@ -1144,7 +1144,7 @@
               ],
               "type": {
                 "kind": "OBJECT",
-                "name": "DeleteTranslationInKeyTranslationsPayload",
+                "name": "DeleteTranslationPayload",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -2221,26 +2221,12 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "DeleteTranslationInKeyTranslationsInput",
+          "name": "DeleteTranslationInput",
           "description": null,
           "fields": null,
           "inputFields": [
             {
               "name": "id",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "ID",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "parentId",
               "description": null,
               "type": {
                 "kind": "NON_NULL",
@@ -2280,7 +2266,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "DeleteTranslationInKeyTranslationsPayload",
+          "name": "DeleteTranslationPayload",
           "description": null,
           "fields": [
             {
@@ -2302,18 +2288,6 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "ID",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "parent",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Key",
                 "ofType": null
               },
               "isDeprecated": false,

@@ -2,6 +2,8 @@ import { graphql } from 'react-relay';
 import { merge, set as timmSet } from 'timm';
 // import relayEnvironment from '../gral/relayEnvironment';
 
+// FIXME: OLD MUTATIONS -- remove when we're done!
+
 const applySetUnset = (item, set, unset = []) => {
   let out;
   out = merge({}, item, set);

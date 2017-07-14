@@ -12,6 +12,7 @@ const mutate = ({
   description,
   mutation,
   input = {},
+  configs,
   onFailure,
   onSuccess,
   onFinish,
@@ -19,6 +20,7 @@ const mutate = ({
   description: string,
   mutation: Function,
   input?: Object,
+  configs?: Array<Object>,
   onFailure?: (failure: Object) => void,
   onSuccess?: (response: Object) => void,
   onFinish?: () => void,
@@ -31,6 +33,7 @@ const mutate = ({
   commitMutation(relayEnvironment, {
     mutation,
     variables: { input: finalInput },
+    configs,
     onCompleted: response => {
       story.debug('views', 'Transaction result:', {
         attach: response,

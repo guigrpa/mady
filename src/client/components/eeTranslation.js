@@ -9,9 +9,9 @@ import type { KeyT, TranslationT, HoverablePropsT } from '../../common/types';
 import _t from '../../translate';
 // import {
 //   CreateTranslationMutation,
-//   UpdateTranslationMutation,
-//   DeleteTranslationMutation,
 // }                           from '../gral/mutations';
+import updateTranslation from '../mutations/updateTranslation';
+import deleteTranslation from '../mutations/deleteTranslation';
 import { COLORS } from '../gral/constants';
 import { mutate } from './helpers';
 
@@ -132,12 +132,13 @@ class Translation extends React.Component {
             })}
           />
         : null;
-    if (!interactedWith)
+    if (!interactedWith) {
       return elFuzzy
         ? <div style={style.buttons}>
             {elFuzzy}
           </div>
         : null;
+    }
     const elDelete = translation
       ? <Icon
           icon="remove"
@@ -209,29 +210,26 @@ class Translation extends React.Component {
     }
     this.refInput.validateAndGetValue().then(text => {
       if (text === this.getInitialTranslation()) return;
-      const description = 'Commit translation edit';
-      let Mutation;
-      let props;
-      if (this.props.translation) {
-        Mutation = UpdateTranslationMutation;
-        props = {
-          id: this.props.translation.id,
-          set: {
-            translation: text,
-          },
-        };
-      } else {
-        Mutation = CreateTranslationMutation;
-        props = {
-          set: {
-            lang: this.props.lang,
-            keyId: this.props.theKey.id,
-            translation: text,
-          },
-          keyId: this.props.theKey.id,
-        };
-      }
-      mutate({ description, Mutation, props });
+      const { translation } = this.props;
+      mutate({
+        description: 'Commit translation edit',
+        mutation: translation ? updateTranslation : CreateTranslationMutation,
+        input: translation
+          ? {
+              id: this.props.translation.id,
+              set: {
+                translation: text,
+              },
+            }
+          : {
+              set: {
+                lang: this.props.lang,
+                keyId: this.props.theKey.id,
+                translation: text,
+              },
+              keyId: this.props.theKey.id,
+            },
+      });
     });
   };
 
@@ -248,11 +246,14 @@ class Translation extends React.Component {
     if (!this.props.translation) return;
     mutate({
       description: 'Click on Delete translation',
-      Mutation: DeleteTranslationMutation,
-      props: {
-        id: this.props.translation.id,
-        keyId: this.props.theKey.id,
-      },
+      mutation: deleteTranslation,
+      input: { id: this.props.translation.id },
+      configs: [
+        {
+          type: 'NODE_DELETE',
+          deletedIDFieldName: 'deletedTranslationId',
+        },
+      ],
     });
   };
 
@@ -260,8 +261,8 @@ class Translation extends React.Component {
     if (!this.props.translation) return;
     mutate({
       description: 'Toggle translation fuzziness',
-      Mutation: UpdateTranslationMutation,
-      props: {
+      mutation: updateTranslation,
+      input: {
         id: this.props.translation.id,
         set: { fuzzy: !this.props.translation.fuzzy },
       },

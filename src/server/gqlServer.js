@@ -299,7 +299,7 @@ export function init() {
     };
     addMutation('Translation', 'CREATE', { globalIds, parent });
     addMutation('Translation', 'UPDATE', { globalIds });
-    addMutation('Translation', 'DELETE', { globalIds, parent });
+    addMutation('Translation', 'DELETE', { globalIds });
   }
 
   gqlMutations.compileTranslations = mutationWithClientMutationId({
@@ -344,7 +344,7 @@ export function init() {
           'updateKey',
           'parseSrcFiles',
           'createTranslationInKeyTranslations',
-          'deleteTranslationInKeyTranslations',
+          'deleteTranslation',
           'updateTranslation',
           'compileTranslations',
         ]),

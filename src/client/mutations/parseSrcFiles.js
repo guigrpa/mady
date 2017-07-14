@@ -1,5 +1,7 @@
 import { graphql } from 'react-relay';
 
+/* FIXME: CHECK THAT THIS WORKS CORRECTLY */
+
 const parseSrcFiles = graphql`
   mutation parseSrcFilesMutation($input: ParseSrcFilesInput!) {
     parseSrcFiles(input: $input) {
