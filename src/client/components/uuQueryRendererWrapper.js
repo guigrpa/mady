@@ -17,12 +17,13 @@ const QueryRendererWrapper = ({
     query={query}
     variables={vars}
     render={({ error, props: relayData }) => {
-      if (error)
+      if (error) {
         return (
           <div>
             {error.message}
           </div>
         );
+      }
       if (relayData) {
         return <Component {...props} {...relayData} />;
       }

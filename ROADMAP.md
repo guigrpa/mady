@@ -2,6 +2,7 @@
 * Bump deps (incl. Giu, React)
 * Remove package.js
 * Fix webpack config (reference: giu-examples)
+* Fix SSR
 
 Someday:
 
