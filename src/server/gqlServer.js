@@ -114,11 +114,6 @@ export function init() {
       config: configBaseField,
       keys: keysBaseField,
       translations: translationsBaseField,
-      anyNode: {
-        type: gqlInterfaces.Node,
-        args: { id: { type: GraphQLID } },
-        resolve: (base, args) => getNodeFromGlobalId(args.id),
-      },
     }),
   });
 

@@ -107,6 +107,5 @@ export type InternalTranslationT = TranslationT;
 export type ViewerT = {
   id: string,
   config: ConfigT,
-  anyNode: KeyT,
   keys: Object,
 };
