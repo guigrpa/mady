@@ -1,6 +1,17 @@
 {
   "presets": ["es2015", "stage-0", "react"],
-  "plugins": ["relay", "syntax-dynamic-import"],
+  "plugins": [
+    "relay",
+    "syntax-dynamic-import",
+    [
+      "transform-runtime",
+      {
+        "helpers": false,
+        "polyfill": false,
+        "regenerator": true
+      }
+    ]
+  ],
   "env": {
     "test": {
       "presets": ["react"]

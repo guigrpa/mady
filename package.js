@@ -181,6 +181,7 @@ const specs = {
     'uglify-js': '2.7.3',
     slash: '1.0.0',
     opn: '4.0.2',
+    'babel-runtime': '6.23.0',
 
     // Express + plugins
     express: '4.15.2',
@@ -205,7 +206,6 @@ const specs = {
   devDependencies: {
     // Packaged in the client app (or SSR)
     // --------------------------
-    'babel-polyfill': '6.23.0',
     giu: '0.10.2',
 
     'storyboard-listener-browser-extension': '^3.0.0',
@@ -233,6 +233,7 @@ const specs = {
     'babel-core': '6.24.1',
     'babel-plugin-react-intl': '2.3.1',
     'babel-plugin-syntax-dynamic-import': '6.18.0',
+    'babel-plugin-transform-runtime': '6.23.0',
     'babel-preset-es2015': '6.24.1',
     'babel-preset-stage-0': '6.24.1',
     'babel-preset-react': '6.24.1',

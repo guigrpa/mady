@@ -1,6 +1,5 @@
 // @flow
 
-import Promise from 'bluebird';
 import { mainStory, addListener } from 'storyboard';
 import consoleListener from 'storyboard-listener-console';
 import program from 'commander';
@@ -10,8 +9,6 @@ import * as gqlServer from './gqlServer';
 import * as httpServer from './httpServer';
 
 const pkg = require('../../package.json');
-
-Promise.longStackTraces();
 
 const DEFAULT_LOCALE_PATH = 'locales';
 const DEFAULT_PORT = 8080;

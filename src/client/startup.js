@@ -1,8 +1,6 @@
 // @flow
 
 /* eslint-env browser */
-import 'babel-polyfill';
-import Promise from 'bluebird';
 import moment from 'moment';
 import { mainStory, addListener } from 'storyboard';
 import wsClient from 'storyboard-listener-ws-client';
@@ -14,8 +12,6 @@ import _t from '../translate';
 
 addListener(wsClient);
 addListener(browserExtension);
-
-if (process.env.NODE_ENV !== 'production') Promise.longStackTraces();
 
 mainStory.info('startup', 'Launching...');
 

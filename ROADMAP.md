@@ -3,7 +3,6 @@
     * Refactor schema: remove unnecessary arguments in mutations
     * Fix tests
     - Change mutation API (remove set, unset)
-    - SSR
     - Subscriptions?
     - Investigate Apollo client
     * Merge changes in master!

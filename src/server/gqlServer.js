@@ -2,13 +2,10 @@
 
 import { mainStory } from 'storyboard';
 import timm from 'timm';
-import Promise from 'bluebird';
 import {
   GraphQLID,
   GraphQLString,
   GraphQLBoolean,
-  // GraphQLInt,
-  // GraphQLFloat,
   GraphQLObjectType,
   GraphQLInputObjectType,
   GraphQLList,
@@ -36,7 +33,7 @@ import {
   isUndefined,
   pick,
 } from 'lodash';
-import type { StoryT, BluebirdPromise } from '../common/types';
+import type { StoryT } from '../common/types';
 import * as db from './db';
 
 // ==============================================
@@ -52,36 +49,25 @@ let viewerRootField = null;
 // ==============================================
 // Public API
 // ==============================================
-export function getSchema() {
-  return gqlSchema;
-}
-export function getSchemaShorthand() {
-  return printSchema(gqlSchema);
-}
-export function runQuery(
-  query: any,
-  operation: any,
-  rootValue: any,
-  variables: any
-) {
-  return graphql(gqlSchema, query, rootValue, null, variables, operation);
-}
-export function runIntrospect(): BluebirdPromise<Object> {
-  return Promise.resolve()
-    .then(() => graphql(gqlSchema, introspectionQuery))
-    .then(result => {
-      if (result.errors) {
-        for (const error of result.errors) {
-          mainStory.error('gql', 'Error introspecting schema:', {
-            attach: error,
-          });
-        }
-      }
-      return result;
-    });
-}
+const getSchema = () => gqlSchema;
+const getSchemaShorthand = () => printSchema(gqlSchema);
 
-export function init() {
+const runQuery = (query: any, operation: any, rootValue: any, variables: any) =>
+  graphql(gqlSchema, query, rootValue, null, variables, operation);
+
+const runIntrospect = async (): Promise<Object> => {
+  const result = await graphql(gqlSchema, introspectionQuery);
+  if (result.errors) {
+    result.errors.forEach(error => {
+      mainStory.error('gql', 'Error introspecting schema:', {
+        attach: error,
+      });
+    });
+  }
+  return result;
+};
+
+const init = () => {
   // ==============================================
   // Interfaces
   // ==============================================
@@ -209,16 +195,18 @@ export function init() {
     inputFields: {
       storyId: { type: GraphQLString },
     },
-    mutateAndGetPayload: ({ storyId }) => {
+    mutateAndGetPayload: async ({ storyId }) => {
       const story = mainStory.child({
         src: 'gql',
         title: 'Mutation: parse source files',
         extraParents: storyId,
       });
-      return db
-        .parseSrcFiles({ story })
-        .then(() => ({})) // empty object as a result
-        .finally(() => story.close());
+      try {
+        await db.parseSrcFiles({ story });
+        return {};
+      } finally {
+        story.close();
+      }
     },
     outputFields: {
       keys: keysBaseField,
@@ -306,7 +294,7 @@ export function init() {
         ]),
     }),
   });
-}
+};
 
 // ==============================================
 // Relay-related helpers
@@ -405,16 +393,18 @@ function addMutation(
   inputFields.storyId = { type: GraphQLString };
 
   // The operation
-  const mutateAndGetPayload = mutationArgs => {
+  const mutateAndGetPayload = async mutationArgs => {
     const { id: globalId, storyId } = mutationArgs;
     const story = mainStory.child({
       src: 'gql',
       title: `Mutation: ${name} ${globalId || ''}`,
       extraParents: storyId,
     });
-    return mutate(type, op, mutationArgs, options, story).finally(() =>
-      story.close()
-    );
+    try {
+      return mutate(type, op, mutationArgs, options, story);
+    } finally {
+      story.close();
+    }
   };
 
   // Output fields
@@ -484,13 +474,13 @@ type InnerMutationResultT = {
   node: ?Object,
 };
 
-function mutate(
+async function mutate(
   type: string,
   op: MutationOperationT,
   mutationArgs: InnerMutationArgsT,
   options: MutationOptionsT,
   story: StoryT
-): BluebirdPromise<InnerMutationResultT> {
+): Promise<InnerMutationResultT> {
   const { id: globalId, parentId: globalParentId, set, unset } = mutationArgs;
   const localId =
     op !== 'CREATE' && !options.fSingleton ? fromGlobalId(globalId).id : null;
@@ -502,42 +492,29 @@ function mutate(
     parentNode,
     node: null,
   };
-  let promise;
   if (op === 'DELETE') {
-    promise = db[`delete${type}`](localId, { story }).then(node => {
-      result.node = node;
-    });
+    result.node = await db[`delete${type}`](localId, { story });
   } else {
     let newAttrs = mergeSetUnset(set, unset);
     newAttrs = resolveGlobalIds(newAttrs, options.globalIds);
     if (op === 'CREATE') {
-      promise = db[`create${type}`](newAttrs, { story }).then(node => {
-        result.node = node;
-        result.localId = result.node.id;
-      });
+      result.node = await db[`create${type}`](newAttrs, { story });
+      result.localId = result.node.id;
     } else {
-      if (options.fSingleton) {
-        promise = db[`update${type}`](newAttrs, { story });
-      } else {
-        promise = db[`update${type}`](localId, newAttrs, { story });
-      }
-      promise = promise.then(node => {
-        result.node = node;
-      });
+      result.node = options.fSingleton
+        ? await db[`update${type}`](newAttrs, { story })
+        : await db[`update${type}`](localId, newAttrs, { story });
     }
   }
-  promise = promise.then(() => {
-    result.node = addTypeAttr(result.node, type);
-    return result;
-  });
-  return promise;
+  result.node = addTypeAttr(result.node, type);
+  return result;
 }
 
 function mergeSetUnset(set: Object = {}, unset: Array<string> = []): Object {
   const attrs = omitBy(set, isUndefined);
-  for (const attr of unset) {
+  unset.forEach(attr => {
     attrs[attr] = null;
-  }
+  });
   return attrs;
 }
 
@@ -577,3 +554,8 @@ function resolveGlobalIds(
 }
 
 // function getTypePlural(type: string): string { return `${type}s`; } // obviously, a stub
+
+// ==============================================
+// Public
+// ==============================================
+export { getSchema, getSchemaShorthand, runQuery, runIntrospect, init };

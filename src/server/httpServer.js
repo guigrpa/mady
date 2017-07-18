@@ -1,9 +1,10 @@
 // @flow
 
+/* eslint-disable global-require, import/prefer-default-export */
+
 import path from 'path';
 import http from 'http';
-import Promise from 'bluebird';
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 import { mainStory, chalk, addListener } from 'storyboard';
 import wsServerListener from 'storyboard-listener-ws-server';
 import express from 'express';
@@ -42,63 +43,56 @@ const COOKIE_NAMESPACE = 'mady';
 
 addAllLocales();
 
-function sendIndexHtml(req, res) {
+async function sendIndexHtml(req, res) {
   mainStory.info('http', 'Preparing index.html...');
   const userLang =
     req.query.lang || req.cookies[`${COOKIE_NAMESPACE}_lang`] || 'en';
   const bootstrap = cloneDeep(DEFAULT_BOOTSTRAP);
-  return (
-    Promise.resolve()
-      // Locales
-      .then(() => {
-        mainStory.debug(
-          'http',
-          `Getting locale code for lang ${chalk.cyan.bold(userLang)}...`
-        );
-        const { lang, result } = _t.getLocaleCode(userLang);
-        bootstrap.fnLocales = result;
-        bootstrap.jsonData.lang = lang;
-        bootstrap.jsonData.reactIntlMessages = getReactIntlMessages(lang);
-        if (lang && lang !== userLang) {
-          mainStory.info(
-            'http',
-            `Serving locales for ${chalk.cyan.bold(
-              lang
-            )} instead of ${chalk.cyan.bold(userLang)}`
-          );
-        }
-      })
-      // SSR
-      .then(() => {
-        if (!ssr) return null;
-        mainStory.debug('http', 'Rendering...');
-        return ssr
-          .render(req, {
-            lang: bootstrap.jsonData.lang,
-            reactIntlMessages: bootstrap.jsonData.reactIntlMessages,
-            fnLocales: bootstrap.fnLocales,
-          })
-          .then(results => {
-            mainStory.debug('http', 'Finished rendering');
-            const { ssrHtml, ssrCss, relayData } = results;
-            bootstrap.ssrHtml = ssrHtml;
-            bootstrap.ssrCss = ssrCss;
-            bootstrap.jsonData.relayData = relayData;
-          })
-          .catch(err =>
-            mainStory.error('http', 'Error rendering', { attach: err })
-          );
-      })
-      .catch(err =>
-        mainStory.error('http', 'Error preparing bootstrap', { attach: err })
-      )
-      // Render the result!
-      .finally(() => {
-        bootstrap.jsonData = JSON.stringify(bootstrap.jsonData);
-        res.render('index.html', bootstrap);
-        return;
-      })
-  );
+
+  try {
+    // Locales
+    mainStory.debug(
+      'http',
+      `Getting locale code for lang ${chalk.cyan.bold(userLang)}...`
+    );
+    const { lang, result } = _t.getLocaleCode(userLang);
+    bootstrap.fnLocales = result;
+    bootstrap.jsonData.lang = lang;
+    bootstrap.jsonData.reactIntlMessages = getReactIntlMessages(lang);
+    if (lang && lang !== userLang) {
+      mainStory.info(
+        'http',
+        `Serving locales for ${chalk.cyan.bold(
+          lang
+        )} instead of ${chalk.cyan.bold(userLang)}`
+      );
+    }
+
+    // SSR
+    if (ssr) {
+      mainStory.debug('http', 'Rendering...');
+      try {
+        const results = await ssr.render(req, {
+          lang: bootstrap.jsonData.lang,
+          reactIntlMessages: bootstrap.jsonData.reactIntlMessages,
+          fnLocales: bootstrap.fnLocales,
+        });
+        mainStory.debug('http', 'Finished rendering');
+        const { ssrHtml, ssrCss, relayData } = results;
+        bootstrap.ssrHtml = ssrHtml;
+        bootstrap.ssrCss = ssrCss;
+        bootstrap.jsonData.relayData = relayData;
+      } catch (err2) {
+        mainStory.error('http', 'Error rendering', { attach: err2 });
+      }
+    }
+  } catch (err) {
+    mainStory.error('http', 'Error preparing bootstrap', { attach: err });
+  } finally {
+    // Render the result!
+    bootstrap.jsonData = JSON.stringify(bootstrap.jsonData);
+    res.render('index.html', bootstrap);
+  }
 }
 
 function init(options: {| port: number |}): void {
@@ -160,5 +154,4 @@ function init(options: {| port: number |}): void {
 // ==============================================
 // Public API
 // ==============================================
-// eslint-disable-next-line import/prefer-default-export
 export { init };
