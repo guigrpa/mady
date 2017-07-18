@@ -7,11 +7,8 @@ import { mainStory } from 'storyboard';
 import { cancelEvent, Icon, Textarea, KEYS, hoverable } from 'giu';
 import type { KeyT, TranslationT, HoverablePropsT } from '../../common/types';
 import _t from '../../translate';
-// import {
-//   CreateTranslationMutation,
-// }                           from '../gral/mutations';
+import createTranslation from '../mutations/createTranslation';
 import updateTranslation from '../mutations/updateTranslation';
-import deleteTranslation from '../mutations/deleteTranslation';
 import { COLORS } from '../gral/constants';
 import { mutate } from './helpers';
 
@@ -52,6 +49,7 @@ const gqlFragments = graphql`
 
   fragment eeTranslation_translation on Translation {
     id
+    isDeleted
     lang
     translation
     fuzzy
@@ -105,7 +103,9 @@ class Translation extends React.Component {
         ref={c => {
           this.refInput = c;
         }}
-        value={translation ? translation.translation : null}
+        value={
+          translation && !translation.isDeleted ? translation.translation : null
+        }
         validators={[validateTranslation(lang)]}
         onFocus={this.onFocus}
         onBlur={this.onBlur}
@@ -121,7 +121,9 @@ class Translation extends React.Component {
     const { translation } = this.props;
     const interactedWith = this.state.fEditing || this.props.hovering;
     const elFuzzy =
-      translation && (interactedWith || translation.fuzzy)
+      translation &&
+      !translation.isDeleted &&
+      (interactedWith || translation.fuzzy)
         ? <Icon
             icon="warning"
             title={_t('tooltip_Dubious translation (click to toggle)')}
@@ -139,14 +141,15 @@ class Translation extends React.Component {
           </div>
         : null;
     }
-    const elDelete = translation
-      ? <Icon
-          icon="remove"
-          title={_t('tooltip_Delete translation')}
-          onClick={this.onClickDelete}
-          style={style.iconButton}
-        />
-      : null;
+    const elDelete =
+      translation && !translation.isDeleted
+        ? <Icon
+            icon="remove"
+            title={_t('tooltip_Delete translation')}
+            onClick={this.onClickDelete}
+            style={style.iconButton}
+          />
+        : null;
     return (
       <div style={style.buttons}>
         <Icon
@@ -211,25 +214,28 @@ class Translation extends React.Component {
     this.refInput.validateAndGetValue().then(text => {
       if (text === this.getInitialTranslation()) return;
       const { translation } = this.props;
-      mutate({
-        description: 'Commit translation edit',
-        mutation: translation ? updateTranslation : CreateTranslationMutation,
-        input: translation
-          ? {
-              id: this.props.translation.id,
-              set: {
-                translation: text,
-              },
-            }
-          : {
-              set: {
-                lang: this.props.lang,
-                keyId: this.props.theKey.id,
-                translation: text,
-              },
+      if (translation && translation.isDeleted) return;
+      if (translation) {
+        mutate({
+          description: 'Commit translation edit',
+          mutationOptions: updateTranslation({
+            translation,
+            set: { translation: text },
+          }),
+        });
+      } else {
+        mutate({
+          description: 'Commit translation creation',
+          mutationOptions: createTranslation({
+            set: {
+              lang: this.props.lang,
               keyId: this.props.theKey.id,
+              translation: text,
             },
-      });
+            theKey: this.props.theKey,
+          }),
+        });
+      }
     });
   };
 
@@ -243,29 +249,26 @@ class Translation extends React.Component {
   };
 
   onClickDelete = () => {
-    if (!this.props.translation) return;
+    const { translation } = this.props;
+    if (!translation || translation.isDeleted) return;
     mutate({
       description: 'Click on Delete translation',
-      mutation: deleteTranslation,
-      input: { id: this.props.translation.id },
-      configs: [
-        {
-          type: 'NODE_DELETE',
-          deletedIDFieldName: 'deletedTranslationId',
-        },
-      ],
+      mutationOptions: updateTranslation({
+        translation,
+        set: { isDeleted: true },
+      }),
     });
   };
 
   onClickFuzzy = () => {
-    if (!this.props.translation) return;
+    const { translation } = this.props;
+    if (!translation || translation.isDeleted) return;
     mutate({
       description: 'Toggle translation fuzziness',
-      mutation: updateTranslation,
-      input: {
-        id: this.props.translation.id,
-        set: { fuzzy: !this.props.translation.fuzzy },
-      },
+      mutationOptions: updateTranslation({
+        translation,
+        set: { fuzzy: !translation.fuzzy },
+      }),
     });
   };
 

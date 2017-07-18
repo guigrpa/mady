@@ -21,4 +21,14 @@ const store = new Relay.Store(source);
 const network = Relay.Network.create(fetchQuery);
 const environment = new Relay.Environment({ network, store });
 
+// Debugging
+const inspector =
+  process.env.NODE_ENV !== 'production'
+    ? new Relay.RecordSourceInspector(source)
+    : null;
+
+// ===================================================
+// Public
+// ===================================================
 export default environment;
+export { inspector };

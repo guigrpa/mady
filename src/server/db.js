@@ -160,7 +160,7 @@ function saveKeys(options?: Object) {
 }
 
 function getKeys(): Array<InternalKeyT> {
-  return Object.keys(_keys).map(id => _keys[id]);
+  return Object.keys(_keys).map(id => _keys[id]).filter(o => !o.isDeleted);
 }
 
 function getKey(id: string): ?InternalKeyT {
@@ -305,7 +305,7 @@ function getLangTranslations(lang: string): Array<InternalTranslationT> {
   const out = [];
   Object.keys(_translations).forEach(translationId => {
     const translation = _translations[translationId];
-    if (translation.lang === lang) {
+    if (!translation.isDeleted && translation.lang === lang) {
       out.push(translation);
     }
   });
@@ -316,7 +316,7 @@ function getKeyTranslations(keyId: string): Array<InternalTranslationT> {
   const out = [];
   Object.keys(_translations).forEach(translationId => {
     const translation = _translations[translationId];
-    if (translation.keyId === keyId) {
+    if (!translation.isDeleted && translation.keyId === keyId) {
       out.push(translation);
     }
   });
@@ -335,7 +335,7 @@ function createTranslation(
   if (!lang) throw new Error('Translation language must be specified');
   if (keyId == null) throw new Error('Translation key must be specified');
   const id = uuid.v4();
-  _translations[id] = { id, lang, translation, fuzzy, keyId };
+  _translations[id] = { id, isDeleted: false, lang, translation, fuzzy, keyId };
   saveTranslations(lang, { story });
   return compileTranslations({ story })
     .delay(RESPONSE_DELAY)
@@ -354,23 +354,17 @@ function updateTranslation(
     .then(() => _translations[id]);
 }
 
-function deleteTranslation(
-  id: string,
-  { story }: { story: StoryT }
-): BluebirdPromise<?InternalTranslationT> {
-  const item = _translations[id];
-  const { lang } = _translations[id];
-  delete _translations[id];
-  saveTranslations(lang, { story });
-  return compileTranslations({ story }).delay(RESPONSE_DELAY).then(() => item);
-}
-
 function compileTranslations(
   { story: baseStory }: { story?: StoryT } = {}
 ): BluebirdPromise<*> {
   const story = (baseStory || mainStory)
     .child({ src: 'db', title: 'Compile translations' });
-  const keys = _keys;
+  const keys = {};
+  Object.keys(_keys).forEach(name => {
+    const key = _keys[name];
+    if (key.isDeleted) return;
+    keys[name] = key;
+  });
   return Promise.resolve()
     .then(() => {
       const {
@@ -427,14 +421,6 @@ function compileTranslations(
     .finally(() => story.close());
 }
 
-// function objToArray(obj) {
-//   const out = [];
-//   Object.keys(obj).forEach(key => {
-//     out.push(obj[key]);
-//   });
-//   return out;
-// }
-
 function getAllTranslations(
   langs: Array<string>
   /* story: StoryT, */
@@ -448,8 +434,9 @@ function getAllTranslations(
     const tokens = lang.split(/[_-]/);
     for (let i = 0; i < tokens.length; i++) {
       const tmpLang = tokens.slice(0, i + 1).join('-');
-      if (!langStructure[tmpLang])
+      if (!langStructure[tmpLang]) {
         langStructure[tmpLang] = { parent: null, children: [] };
+      }
       if (i > 0) {
         const parentLang = tokens.slice(0, i).join('-');
         langStructure[parentLang].children.push(tmpLang);
@@ -597,7 +584,6 @@ export {
   getTranslation,
   createTranslation,
   updateTranslation,
-  deleteTranslation,
   parseSrcFiles,
   compileTranslations,
   importV0,

@@ -173,6 +173,7 @@ export function init() {
     isTypeOf: () => true,
     fields: () => ({
       id: globalIdField('Key'),
+      isDeleted: { type: GraphQLBoolean },
       context: { type: GraphQLString },
       text: { type: GraphQLString },
       description: { type: GraphQLString },
@@ -188,19 +189,10 @@ export function init() {
     }),
   });
 
-  gqlTypes.KeyCreate = new GraphQLInputObjectType({
-    name: 'KeyCreate',
-    fields: () => ({
-      context: { type: GraphQLString },
-      text: { type: GraphQLString },
-      firstUsed: { type: GraphQLString },
-      unusedSince: { type: GraphQLString },
-    }),
-  });
-
   gqlTypes.KeyUpdate = new GraphQLInputObjectType({
     name: 'KeyUpdate',
     fields: () => ({
+      isDeleted: { type: GraphQLBoolean },
       context: { type: GraphQLString },
       text: { type: GraphQLString },
       firstUsed: { type: GraphQLString },
@@ -216,16 +208,7 @@ export function init() {
     resolve: (base, args) => connectionFromArray(db.getKeys(), args),
   };
 
-  {
-    const parent = {
-      type: 'Viewer',
-      connection: 'keys',
-      resolveConnection: () => db.getKeys(),
-    };
-    addMutation('Key', 'CREATE', { parent });
-    addMutation('Key', 'UPDATE');
-    addMutation('Key', 'DELETE', { parent });
-  }
+  addMutation('Key', 'UPDATE');
   gqlMutations.parseSrcFiles = mutationWithClientMutationId({
     name: 'ParseSrcFiles',
     inputFields: {
@@ -257,6 +240,7 @@ export function init() {
     isTypeOf: () => true,
     fields: () => ({
       id: globalIdField('Translation'),
+      isDeleted: { type: GraphQLBoolean },
       lang: { type: GraphQLString },
       translation: { type: GraphQLString },
       fuzzy: { type: GraphQLBoolean },
@@ -277,6 +261,7 @@ export function init() {
   gqlTypes.TranslationUpdate = new GraphQLInputObjectType({
     name: 'TranslationUpdate',
     fields: () => ({
+      isDeleted: { type: GraphQLBoolean },
       translation: { type: GraphQLString },
       fuzzy: { type: GraphQLBoolean },
     }),
@@ -299,27 +284,7 @@ export function init() {
     };
     addMutation('Translation', 'CREATE', { globalIds, parent });
     addMutation('Translation', 'UPDATE', { globalIds });
-    addMutation('Translation', 'DELETE', { globalIds });
   }
-
-  gqlMutations.compileTranslations = mutationWithClientMutationId({
-    name: 'CompileTranslations',
-    inputFields: {
-      storyId: { type: GraphQLString },
-    },
-    mutateAndGetPayload: ({ storyId }) => {
-      const story = mainStory.child({
-        src: 'gql',
-        title: 'Mutation: compile translations',
-        extraParents: storyId,
-      });
-      return db
-        .compileTranslations({ story })
-        .then(() => ({})) // empty object as a result
-        .finally(() => story.close());
-    },
-    outputFields: {},
-  });
 
   // ==============================================
   // Schema
@@ -339,14 +304,10 @@ export function init() {
       fields: () =>
         pick(gqlMutations, [
           'updateConfig',
-          'createKeyInViewerKeys',
-          'deleteKeyInViewerKeys',
           'updateKey',
           'parseSrcFiles',
           'createTranslationInKeyTranslations',
-          'deleteTranslation',
           'updateTranslation',
-          'compileTranslations',
         ]),
     }),
   });

@@ -52,6 +52,7 @@ const fragment = graphql`
       edges {
         node {
           id
+          isDeleted
           unusedSince
           context
           text # for sorting
@@ -73,7 +74,7 @@ const fragment = graphql`
 // ==========================================
 // Component
 // ==========================================
-class Translator extends React.PureComponent {
+class Translator extends React.Component {
   props: Props;
   state: {
     langs: Array<string>,
@@ -202,7 +203,7 @@ class Translator extends React.PureComponent {
 
   renderBody() {
     let keys = this.props.viewer.keys.edges.map(o => o.node);
-    keys = keys.sort(keyComparator);
+    keys = keys.filter(o => !o.isDeleted).sort(keyComparator);
     return (
       <div className="tableBody" style={style.body}>
         {keys.map(this.renderKeyRow)}
@@ -325,7 +326,7 @@ class Translator extends React.PureComponent {
     this.setState({ fParsing: true });
     mutate({
       description: 'Click on Parse source files',
-      mutation: parseSrcFiles,
+      mutationOptions: parseSrcFiles(),
       onFinish: () => this.setState({ fParsing: false }),
     });
   };

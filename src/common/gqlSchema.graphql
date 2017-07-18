@@ -1,12 +1,3 @@
-input CompileTranslationsInput {
-  storyId: String
-  clientMutationId: String
-}
-
-type CompileTranslationsPayload {
-  clientMutationId: String
-}
-
 type Config implements Node {
   srcPaths: [String]
   srcExtensions: [String]
@@ -34,22 +25,6 @@ input ConfigUpdate {
   fReactIntlOutput: Boolean
 }
 
-input CreateKeyInViewerKeysInput {
-  set: KeyCreate
-  unset: [String]
-  parentId: ID!
-  storyId: String
-  clientMutationId: String
-}
-
-type CreateKeyInViewerKeysPayload {
-  viewer: Viewer
-  key: Key
-  parent: Viewer
-  createdKeyEdge: KeyEdge
-  clientMutationId: String
-}
-
 input CreateTranslationInKeyTranslationsInput {
   set: TranslationCreate
   unset: [String]
@@ -66,35 +41,10 @@ type CreateTranslationInKeyTranslationsPayload {
   clientMutationId: String
 }
 
-input DeleteKeyInViewerKeysInput {
-  id: ID!
-  parentId: ID!
-  storyId: String
-  clientMutationId: String
-}
-
-type DeleteKeyInViewerKeysPayload {
-  viewer: Viewer
-  deletedKeyId: ID
-  parent: Viewer
-  clientMutationId: String
-}
-
-input DeleteTranslationInput {
-  id: ID!
-  storyId: String
-  clientMutationId: String
-}
-
-type DeleteTranslationPayload {
-  viewer: Viewer
-  deletedTranslationId: ID
-  clientMutationId: String
-}
-
 type Key implements Node {
   # The ID of an object
   id: ID!
+  isDeleted: Boolean
   context: String
   text: String
   description: String
@@ -113,13 +63,6 @@ type KeyConnection {
   edges: [KeyEdge]
 }
 
-input KeyCreate {
-  context: String
-  text: String
-  firstUsed: String
-  unusedSince: String
-}
-
 # An edge in a connection.
 type KeyEdge {
   # The item at the end of the edge
@@ -130,6 +73,7 @@ type KeyEdge {
 }
 
 input KeyUpdate {
+  isDeleted: Boolean
   context: String
   text: String
   firstUsed: String
@@ -138,14 +82,10 @@ input KeyUpdate {
 
 type Mutation {
   updateConfig(input: UpdateConfigInput!): UpdateConfigPayload
-  createKeyInViewerKeys(input: CreateKeyInViewerKeysInput!): CreateKeyInViewerKeysPayload
-  deleteKeyInViewerKeys(input: DeleteKeyInViewerKeysInput!): DeleteKeyInViewerKeysPayload
   updateKey(input: UpdateKeyInput!): UpdateKeyPayload
   parseSrcFiles(input: ParseSrcFilesInput!): ParseSrcFilesPayload
   createTranslationInKeyTranslations(input: CreateTranslationInKeyTranslationsInput!): CreateTranslationInKeyTranslationsPayload
-  deleteTranslation(input: DeleteTranslationInput!): DeleteTranslationPayload
   updateTranslation(input: UpdateTranslationInput!): UpdateTranslationPayload
-  compileTranslations(input: CompileTranslationsInput!): CompileTranslationsPayload
 }
 
 # An object with an ID
@@ -192,6 +132,7 @@ type Query {
 type Translation implements Node {
   # The ID of an object
   id: ID!
+  isDeleted: Boolean
   lang: String
   translation: String
   fuzzy: Boolean
@@ -224,6 +165,7 @@ type TranslationEdge {
 }
 
 input TranslationUpdate {
+  isDeleted: Boolean
   translation: String
   fuzzy: Boolean
 }

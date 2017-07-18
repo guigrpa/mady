@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 176b3e7826c9b30c9bb49f564c9f938e
+ * @relayHash e7cdf209e516f2acd07174f905f4974e
  */
 
 /* eslint-disable */
@@ -9,13 +9,15 @@
 
 /*::
 import type {ConcreteBatch} from 'relay-runtime';
-export type updateTranslationMutationVariables = {|
+export type updateKeyMutationVariables = {|
   input: {
     id: string;
     set?: ?{
       isDeleted?: ?boolean;
-      translation?: ?string;
-      fuzzy?: ?boolean;
+      context?: ?string;
+      text?: ?string;
+      firstUsed?: ?string;
+      unusedSince?: ?string;
     };
     unset?: ?$ReadOnlyArray<?string>;
     storyId?: ?string;
@@ -23,9 +25,9 @@ export type updateTranslationMutationVariables = {|
   };
 |};
 
-export type updateTranslationMutationResponse = {|
-  +updateTranslation: ?{|
-    +translation: ?{|
+export type updateKeyMutationResponse = {|
+  +updateKey: ?{|
+    +key: ?{|
       +isDeleted: ?boolean;
     |};
   |};
@@ -34,24 +36,15 @@ export type updateTranslationMutationResponse = {|
 
 
 /*
-mutation updateTranslationMutation(
-  $input: UpdateTranslationInput!
+mutation updateKeyMutation(
+  $input: UpdateKeyInput!
 ) {
-  updateTranslation(input: $input) {
-    translation {
+  updateKey(input: $input) {
+    key {
       isDeleted
-      ...eeTranslation_translation
       id
     }
   }
-}
-
-fragment eeTranslation_translation on Translation {
-  id
-  isDeleted
-  lang
-  translation
-  fuzzy
 }
 */
 
@@ -61,13 +54,13 @@ const batch /*: ConcreteBatch*/ = {
       {
         "kind": "LocalArgument",
         "name": "input",
-        "type": "UpdateTranslationInput!",
+        "type": "UpdateKeyInput!",
         "defaultValue": null
       }
     ],
     "kind": "Fragment",
     "metadata": null,
-    "name": "updateTranslationMutation",
+    "name": "updateKeyMutation",
     "selections": [
       {
         "kind": "LinkedField",
@@ -77,19 +70,19 @@ const batch /*: ConcreteBatch*/ = {
             "kind": "Variable",
             "name": "input",
             "variableName": "input",
-            "type": "UpdateTranslationInput!"
+            "type": "UpdateKeyInput!"
           }
         ],
-        "concreteType": "UpdateTranslationPayload",
-        "name": "updateTranslation",
+        "concreteType": "UpdateKeyPayload",
+        "name": "updateKey",
         "plural": false,
         "selections": [
           {
             "kind": "LinkedField",
             "alias": null,
             "args": null,
-            "concreteType": "Translation",
-            "name": "translation",
+            "concreteType": "Key",
+            "name": "key",
             "plural": false,
             "selections": [
               {
@@ -98,11 +91,6 @@ const batch /*: ConcreteBatch*/ = {
                 "args": null,
                 "name": "isDeleted",
                 "storageKey": null
-              },
-              {
-                "kind": "FragmentSpread",
-                "name": "eeTranslation_translation",
-                "args": null
               }
             ],
             "storageKey": null
@@ -116,18 +104,18 @@ const batch /*: ConcreteBatch*/ = {
   "id": null,
   "kind": "Batch",
   "metadata": {},
-  "name": "updateTranslationMutation",
+  "name": "updateKeyMutation",
   "query": {
     "argumentDefinitions": [
       {
         "kind": "LocalArgument",
         "name": "input",
-        "type": "UpdateTranslationInput!",
+        "type": "UpdateKeyInput!",
         "defaultValue": null
       }
     ],
     "kind": "Root",
-    "name": "updateTranslationMutation",
+    "name": "updateKeyMutation",
     "operation": "mutation",
     "selections": [
       {
@@ -138,19 +126,19 @@ const batch /*: ConcreteBatch*/ = {
             "kind": "Variable",
             "name": "input",
             "variableName": "input",
-            "type": "UpdateTranslationInput!"
+            "type": "UpdateKeyInput!"
           }
         ],
-        "concreteType": "UpdateTranslationPayload",
-        "name": "updateTranslation",
+        "concreteType": "UpdateKeyPayload",
+        "name": "updateKey",
         "plural": false,
         "selections": [
           {
             "kind": "LinkedField",
             "alias": null,
             "args": null,
-            "concreteType": "Translation",
-            "name": "translation",
+            "concreteType": "Key",
+            "name": "key",
             "plural": false,
             "selections": [
               {
@@ -166,27 +154,6 @@ const batch /*: ConcreteBatch*/ = {
                 "args": null,
                 "name": "id",
                 "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "lang",
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "translation",
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "fuzzy",
-                "storageKey": null
               }
             ],
             "storageKey": null
@@ -196,7 +163,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "mutation updateTranslationMutation(\n  $input: UpdateTranslationInput!\n) {\n  updateTranslation(input: $input) {\n    translation {\n      isDeleted\n      ...eeTranslation_translation\n      id\n    }\n  }\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  isDeleted\n  lang\n  translation\n  fuzzy\n}\n"
+  "text": "mutation updateKeyMutation(\n  $input: UpdateKeyInput!\n) {\n  updateKey(input: $input) {\n    key {\n      isDeleted\n      id\n    }\n  }\n}\n"
 };
 
 module.exports = batch;

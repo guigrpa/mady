@@ -17,6 +17,7 @@ export type edTranslatorRow_theKey = {|
     +edges: ?$ReadOnlyArray<?{|
       +node: ?{|
         +id: string;
+        +isDeleted: ?boolean;
         +lang: ?string;
       |};
     |}>;
@@ -28,7 +29,18 @@ export type edTranslatorRow_theKey = {|
 const fragment /*: ConcreteFragment*/ = {
   "argumentDefinitions": [],
   "kind": "Fragment",
-  "metadata": null,
+  "metadata": {
+    "connection": [
+      {
+        "count": null,
+        "cursor": null,
+        "direction": "forward",
+        "path": [
+          "translations"
+        ]
+      }
+    ]
+  },
   "name": "edTranslatorRow_theKey",
   "selections": [
     {
@@ -66,17 +78,10 @@ const fragment /*: ConcreteFragment*/ = {
     },
     {
       "kind": "LinkedField",
-      "alias": null,
-      "args": [
-        {
-          "kind": "Literal",
-          "name": "first",
-          "value": 100000,
-          "type": "Int"
-        }
-      ],
+      "alias": "translations",
+      "args": null,
       "concreteType": "TranslationConnection",
-      "name": "translations",
+      "name": "__TranslatorRow_theKey_translations_connection",
       "plural": false,
       "selections": [
         {
@@ -106,6 +111,13 @@ const fragment /*: ConcreteFragment*/ = {
                   "kind": "ScalarField",
                   "alias": null,
                   "args": null,
+                  "name": "isDeleted",
+                  "storageKey": null
+                },
+                {
+                  "kind": "ScalarField",
+                  "alias": null,
+                  "args": null,
                   "name": "lang",
                   "storageKey": null
                 },
@@ -121,7 +133,7 @@ const fragment /*: ConcreteFragment*/ = {
           "storageKey": null
         }
       ],
-      "storageKey": "translations{\"first\":100000}"
+      "storageKey": null
     }
   ],
   "type": "Key"

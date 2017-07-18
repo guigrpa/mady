@@ -17,6 +17,7 @@ export type adTranslator_viewer = {|
     +edges: ?$ReadOnlyArray<?{|
       +node: ?{|
         +id: string;
+        +isDeleted: ?boolean;
         +unusedSince: ?string;
         +context: ?string;
         +text: ?string;
@@ -101,6 +102,13 @@ const fragment /*: ConcreteFragment*/ = {
                   "alias": null,
                   "args": null,
                   "name": "id",
+                  "storageKey": null
+                },
+                {
+                  "kind": "ScalarField",
+                  "alias": null,
+                  "args": null,
+                  "name": "isDeleted",
                   "storageKey": null
                 },
                 {

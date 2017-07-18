@@ -6,8 +6,8 @@ import Relay, { graphql } from 'react-relay';
 import { cancelEvent, flexContainer, flexItem, Icon, hoverable } from 'giu';
 import type { ViewerT, KeyT, HoverablePropsT } from '../../common/types';
 import _t from '../../translate';
+import updateKey from '../mutations/updateKey';
 import { COLORS } from '../gral/constants';
-// import { DeleteKeyMutation } from '../gral/mutations';
 import { mutate } from './helpers';
 import Translation from './eeTranslation';
 
@@ -36,10 +36,12 @@ const gqlFragments = graphql`
     text
     unusedSince
     ...eeTranslation_theKey
-    translations(first: 100000) {
+    translations(first: 100000)
+      @connection(key: "TranslatorRow_theKey_translations") {
       edges {
         node {
           id
+          isDeleted
           lang
           ...eeTranslation_translation
         }
@@ -51,7 +53,7 @@ const gqlFragments = graphql`
 // ==========================================
 // Component
 // ==========================================
-class TranslatorRow extends React.PureComponent {
+class TranslatorRow extends React.Component {
   props: Props;
 
   // ------------------------------------------
@@ -113,7 +115,9 @@ class TranslatorRow extends React.PureComponent {
 
   renderTranslation = (lang: string) => {
     const { theKey: key, fSelected, styleLangCol } = this.props;
-    const edge = key.translations.edges.find(({ node }) => node.lang === lang);
+    const edge = key.translations.edges.find(
+      ({ node }) => node.lang === lang && !node.isDeleted
+    );
     const translation = edge ? edge.node : null;
     const fUnused = !!key.unusedSince;
     let cellStyle = timm.merge(style.bodyCell, styleLangCol);
@@ -139,13 +143,15 @@ class TranslatorRow extends React.PureComponent {
   };
 
   onClickDeleteKey = (ev: SyntheticKeyboardEvent) => {
-    const { viewer, theKey, fSelected, changeSelectedKey } = this.props;
+    const { theKey, fSelected, changeSelectedKey } = this.props;
     cancelEvent(ev);
     if (fSelected) changeSelectedKey(null);
     mutate({
       description: 'Click on Delete key',
-      Mutation: DeleteKeyMutation,
-      props: { viewerId: viewer.id, id: theKey.id },
+      mutationOptions: updateKey({
+        theKey,
+        set: { isDeleted: true },
+      }),
     });
   };
 }

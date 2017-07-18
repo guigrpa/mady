@@ -15,7 +15,7 @@ import {
 } from 'giu';
 import type { ViewerT } from '../../common/types';
 import _t from '../../translate';
-// import { UpdateConfigMutation } from '../gral/mutations';
+import updateConfig from '../mutations/updateConfig';
 import { LANG_OPTIONS } from '../gral/constants';
 import { mutate } from './helpers';
 
@@ -310,7 +310,6 @@ class Settings extends React.Component {
     if (lang !== this.props.lang) this.props.onChangeLang(lang);
 
     // Save other settings
-    const { viewer } = this.props;
     const set = pick(this.state, [
       'langs',
       'srcPaths',
@@ -327,8 +326,7 @@ class Settings extends React.Component {
     /* eslint-disable object-shorthand */
     mutate({
       description: 'Click on Save settings',
-      Mutation: UpdateConfigMutation,
-      props: { viewerId: viewer.id, set: set, unset: [] },
+      mutationOptions: updateConfig({ set }),
       onSuccess: () => this.props.onClose(),
       onFailure: () => {
         notify({

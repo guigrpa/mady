@@ -73,6 +73,7 @@ interface NodeT {
 }
 
 type CoreKeyT = {
+  isDeleted: boolean,
   context: ?string,
   text: string,
   unusedSince: ?string,
@@ -94,6 +95,7 @@ export type InternalKeyT = CoreKeyT & {
 
 export type TranslationT = {
   id: string,
+  isDeleted: boolean,
   lang: string,
   translation: string,
   fuzzy: ?boolean,

@@ -10,6 +10,7 @@
 import type {ConcreteFragment} from 'relay-runtime';
 export type eeTranslation_translation = {|
   +id: string;
+  +isDeleted: ?boolean;
   +lang: ?string;
   +translation: ?string;
   +fuzzy: ?boolean;
@@ -28,6 +29,13 @@ const fragment /*: ConcreteFragment*/ = {
       "alias": null,
       "args": null,
       "name": "id",
+      "storageKey": null
+    },
+    {
+      "kind": "ScalarField",
+      "alias": null,
+      "args": null,
+      "name": "isDeleted",
       "storageKey": null
     },
     {
