@@ -1,8 +1,3 @@
-* Optimistic updates
-* Improve perf!!
-    - Parsing takes too long!
-    - Avoid unnecessary re-renders when changing selection
-    - Avoid unnecessary re-renders in general
 * Remove package.js
 * Fix tests
 - Subscriptions?
@@ -10,6 +5,7 @@
 * Bump deps (incl. Giu, React)
 * Fix webpack config (reference: giu-examples)
 * Fix SSR
+* Improve parsing perf
 
 Someday:
 

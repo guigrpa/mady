@@ -53,7 +53,7 @@ const gqlFragments = graphql`
 // ==========================================
 // Component
 // ==========================================
-class TranslatorRow extends React.Component {
+class TranslatorRow extends React.PureComponent {
   props: Props;
 
   // ------------------------------------------

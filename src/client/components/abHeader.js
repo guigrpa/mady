@@ -1,5 +1,7 @@
 // @flow
 
+/* eslint-disable react/prefer-stateless-function */
+
 import React from 'react';
 import { merge } from 'timm';
 import { Icon, flexContainer, flexItem, hintShow } from 'giu';
@@ -7,32 +9,34 @@ import _t from '../../translate';
 import { COLORS } from '../gral/constants';
 
 // ==========================================
-// Component declarations
-// ==========================================
-type PropsT = {
-  onShowSettings: (ev?: SyntheticEvent) => void,
-};
-
-// ==========================================
 // Component
 // ==========================================
-const Header = ({ onShowSettings }: PropsT) =>
-  <div style={style.outer}>
-    <div style={style.spacer} />
-    <div style={style.title}>
-      MADY
-      <Icon
-        id="madyBtnSettings"
-        icon="cog"
-        title={_t('tooltip_Settings')}
-        onClick={onShowSettings}
-        style={style.icon}
-      />
-    </div>
-    <div style={merge(style.spacer, style.help)}>
-      <Icon icon="question-circle" onClick={() => hintShow('main', true)} />
-    </div>
-  </div>;
+class Header extends React.PureComponent {
+  props: {
+    onShowSettings: (ev?: SyntheticEvent) => void,
+  };
+
+  render() {
+    return (
+      <div style={style.outer}>
+        <div style={style.spacer} />
+        <div style={style.title}>
+          MADY
+          <Icon
+            id="madyBtnSettings"
+            icon="cog"
+            title={_t('tooltip_Settings')}
+            onClick={this.props.onShowSettings}
+            style={style.icon}
+          />
+        </div>
+        <div style={merge(style.spacer, style.help)}>
+          <Icon icon="question-circle" onClick={() => hintShow('main', true)} />
+        </div>
+      </div>
+    );
+  }
+}
 
 // ------------------------------------------
 const style = {

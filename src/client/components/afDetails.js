@@ -33,7 +33,7 @@ type PropsT = PublicPropsT & { relay: Object };
 // ==========================================
 // Component
 // ==========================================
-class Details extends React.Component {
+class Details extends React.PureComponent {
   props: PropsT;
 
   constructor(props) {
