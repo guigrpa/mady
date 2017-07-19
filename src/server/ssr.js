@@ -2,7 +2,7 @@
 
 import path from 'path';
 import fs from 'fs';
-import Promise from 'bluebird';
+import Promise from 'bluebird'; // eslint-disable-line
 import React from 'react';
 import IsomorphicRelay from 'isomorphic-relay'; // eslint-disable-line
 import ReactDOMServer from 'react-dom/server';
