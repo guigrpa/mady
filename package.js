@@ -6,7 +6,7 @@
 // Basic config
 // ===============================================
 const NAME = 'mady';
-const VERSION = '2.2.0';
+const VERSION = '2.3.1';
 const DESCRIPTION =
   'Easy-to-use tool to manage and translate ICU MessageFormat messages';
 const KEYWORDS = [
@@ -182,6 +182,7 @@ const specs = {
     slash: '1.0.0',
     opn: '4.0.2',
     'babel-runtime': '6.23.0',
+    buffer: '5.0.6',
 
     // Express + plugins
     express: '4.15.2',
@@ -197,10 +198,10 @@ const specs = {
 
   peerDependencies: {
     'babel-core': '^6.0.0',
+    'babel-plugin-react-intl': '^2.2.0',
     'babel-preset-es2015': '^6.0.0',
     'babel-preset-stage-0': '^6.0.0',
     'babel-preset-react': '^6.0.0',
-    'babel-plugin-react-intl': '^2.2.0',
   },
 
   devDependencies: {

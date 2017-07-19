@@ -1,11 +1,10 @@
-* Complete migration to Relay Modern:
-    * Fix tests
-    - Subscriptions?
-    - Investigate Apollo client
-    * Merge changes in master!
+* Optimistic updates
+* Improve perf!! (parsing takes too long!)
+* Remove package.js
+* Fix tests
+- Subscriptions?
 * Update Flow types: naming
 * Bump deps (incl. Giu, React)
-* Remove package.js
 * Fix webpack config (reference: giu-examples)
 * Fix SSR
 
