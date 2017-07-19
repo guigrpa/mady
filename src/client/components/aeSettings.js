@@ -233,7 +233,7 @@ class Settings extends React.Component {
     );
   }
 
-  /* eslint-disable react/no-unused-prop-types */
+  /* eslint-disable react/no-unused-prop-types, react/no-array-index-key */
   renderList({
     id,
     dir,
@@ -247,7 +247,6 @@ class Settings extends React.Component {
     placeholder: string,
     width: number,
   }) {
-    /* eslint-enable react/no-unused-prop-types */
     const values = this.state[id];
     return (
       <div style={style.list(dir)}>
@@ -279,6 +278,7 @@ class Settings extends React.Component {
       </div>
     );
   }
+  /* eslint-enable react/no-unused-prop-types,react/no-array-index-key */
 
   // ------------------------------------------
   onCreateListItem = (ev: SyntheticEvent) => {

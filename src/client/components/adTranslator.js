@@ -340,10 +340,14 @@ class Translator extends React.Component {
   calcStats() {
     let numUsedKeys = 0;
     const numTranslations = {};
-    for (const { node: key } of this.props.viewer.keys.edges) {
+    const keyEdges = this.props.viewer.keys.edges;
+    for (let i = 0; i < keyEdges.length; i++) {
+      const key = keyEdges[i].node;
       if (key.unusedSince) continue;
       numUsedKeys += 1;
-      for (const { node: translation } of key.translations.edges) {
+      const translationEdges = key.translations.edges;
+      for (let k = 0; k < translationEdges; k++) {
+        const translation = translationEdges[k].node;
         const { lang } = translation;
         if (numTranslations[lang] == null) numTranslations[lang] = 0;
         numTranslations[lang] += 1;

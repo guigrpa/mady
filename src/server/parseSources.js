@@ -55,7 +55,7 @@ const getRegexps = (
   if (msgFunctionNames) {
     msgFunctionNames.forEach(fnName => {
       // Escape $ characters, which are legal in function names
-      const escapedFnName = fnName.replace(/([\$])/g, '\\$1');
+      const escapedFnName = fnName.replace(/([\$])/g, '\\$1'); // eslint-disable-line
 
       // Looking for something like:
       // * i18n("xk s fjkl"   [other arguments to the function are not parsed]

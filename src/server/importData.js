@@ -14,7 +14,8 @@ function duplicatedTranslation(
 ) {
   let fFound = false;
   const ids = Object.keys(translations);
-  for (const id of ids) {
+  for (let i = 0; i < ids.length; i++) {
+    const id = ids[i];
     const { keyId, lang, translation } = translations[id];
     if (
       newKeyId === keyId &&

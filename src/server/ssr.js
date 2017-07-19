@@ -4,11 +4,11 @@ import path from 'path';
 import fs from 'fs';
 import Promise from 'bluebird';
 import React from 'react';
-import IsomorphicRelay from 'isomorphic-relay';
+import IsomorphicRelay from 'isomorphic-relay'; // eslint-disable-line
 import ReactDOMServer from 'react-dom/server';
 import { setCurrentCookies } from '../client/gral/storage';
-import App from '../client/components/010-app';
-import { ViewerQuery } from '../client/gral/rootQueries';
+import App from '../client/components/aaApp';
+import { ViewerQuery } from '../client/gral/rootQueries'; // eslint-disable-line
 import _t from '../translate';
 
 let gqlServer: Object;

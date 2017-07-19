@@ -435,12 +435,12 @@ function addMutation(
     }
   }
   const relations = options.relations != null ? options.relations : [];
-  for (const relation of relations) {
+  relations.forEach(relation => {
     outputFields[relation.name] = {
       type: gqlTypes[relation.type],
       resolve: ({ node }) => relation.resolve(node),
     };
-  }
+  });
 
   // Save mutation
   gqlMutations[lowerFirst(name)] = mutationWithClientMutationId({
@@ -507,7 +507,8 @@ function resolveGlobalIds(
 ): Object {
   let attrs = prevAttrs;
   if (attrs == null || !globalIds.length) return attrs;
-  for (const locatorPath of globalIds) {
+  for (let i = 0; i < globalIds.length; i++) {
+    const locatorPath = globalIds[i];
     const tokens = locatorPath.split('.');
     const curToken = tokens[0];
     if (tokens.length === 1) {

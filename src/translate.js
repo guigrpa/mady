@@ -3,7 +3,7 @@
  *
  * Easy-to-use tool to manage and translate ICU MessageFormat messages.
  *
- * @copyright Guillermo Grau Panea 2016
+ * @copyright Guillermo Grau Panea 2016-present
  * @license MIT
  */
 
@@ -26,7 +26,10 @@ const keyCache: MapOfStringsT = {};
 
 const translate = (utf8: string, data: ?Object): string => {
   let base64 = keyCache[utf8];
-  if (base64 == null) base64 = keyCache[utf8] = utf8ToBase64(utf8);
+  if (base64 == null) {
+    base64 = utf8ToBase64(utf8);
+    keyCache[utf8] = base64;
+  }
   const fnTranslate = _locales[base64];
   let out;
   if (fnTranslate) {

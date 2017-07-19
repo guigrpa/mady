@@ -526,9 +526,9 @@ function importV0(dir: string) {
   }
   if (translations !== _translations) {
     _translations = translations;
-    for (const lang of _config.langs) {
+    _config.langs.forEach(lang => {
       saveTranslations(lang, { story });
-    }
+    });
   }
   compileTranslations();
   story.close();
