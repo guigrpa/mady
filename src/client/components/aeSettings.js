@@ -49,6 +49,15 @@ const gqlFragments = graphql`
   }
 `;
 
+const STATE_ATTRS = [
+  'langs',
+  'srcPaths',
+  'srcExtensions',
+  'msgFunctionNames',
+  'msgRegexps',
+  'fJsOutput',
+];
+
 // ==========================================
 // Component
 // ==========================================
@@ -69,18 +78,13 @@ class Settings extends React.Component {
 
   constructor(props: Props) {
     super(props);
-    // For arrays without IDs, it's better if we keep the current state at this level,
-    // rather than relying on `giu`. For other attributes (`lang`, `fMinify`...), we can
+    // - For arrays without IDs, it's better if we keep the current state at this level,
+    // rather than relying on `giu`.
+    // - For `fJsOutput`, we need to track it since more than one input depend on it.
+    // - For other attributes (`lang`, `fMinify`...), we can
     // leave state handling entirely to `giu`, and fetch the value when the user clicks on
     // Save.
-    this.state = pick(props.viewer.config, [
-      'langs',
-      'srcPaths',
-      'srcExtensions',
-      'msgFunctionNames',
-      'msgRegexps',
-      'fJsOutput',
-    ]);
+    this.state = pick(props.viewer.config, STATE_ATTRS);
   }
 
   // ------------------------------------------
@@ -310,13 +314,7 @@ class Settings extends React.Component {
     if (lang !== this.props.lang) this.props.onChangeLang(lang);
 
     // Save other settings
-    const attrs = pick(this.state, [
-      'langs',
-      'srcPaths',
-      'srcExtensions',
-      'msgFunctionNames',
-      'msgRegexps',
-    ]);
+    const attrs = pick(this.state, STATE_ATTRS);
     if (this.refMinify == null) return;
     attrs.fMinify = this.refMinify.getValue();
     if (this.refReactIntlOutput == null) return;
