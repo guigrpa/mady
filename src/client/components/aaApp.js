@@ -28,6 +28,10 @@ require('./aaApp.sass');
 // ==========================================
 // Component declarations
 // ==========================================
+type Props = {
+  viewer: ViewerT,
+};
+
 const query = graphql`
   query aaAppQuery {
     viewer {
@@ -36,10 +40,6 @@ const query = graphql`
     }
   }
 `;
-
-type Props = {
-  viewer: ViewerT,
-};
 
 // ==========================================
 // Component
@@ -52,8 +52,8 @@ class App extends React.Component {
     lang: string,
   };
 
-  constructor(props: Props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       selectedKeyId: null,
       fSettingsShown: false,

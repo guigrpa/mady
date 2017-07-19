@@ -5,7 +5,7 @@ import Relay, { graphql } from 'react-relay';
 import MessageFormat from 'messageformat';
 import { mainStory } from 'storyboard';
 import { cancelEvent, Icon, Textarea, KEYS, hoverable } from 'giu';
-import type { KeyT, TranslationT, HoverablePropsT } from '../../common/types';
+import type { KeyT, TranslationT, HoverableProps } from '../../common/types';
 import _t from '../../translate';
 import createTranslation from '../mutations/createTranslation';
 import updateTranslation from '../mutations/updateTranslation';
@@ -33,13 +33,17 @@ const validateTranslation = (lang: string) => (val: string) => {
 // ==========================================
 // Component declarations
 // ==========================================
-type PublicProps = {
+type PublicProps = {|
   theKey: KeyT,
   lang: string,
   translation: ?TranslationT,
   changeSelectedKey: (keyId: ?string) => void,
+|};
+
+type Props = {
+  ...PublicProps,
+  ...$Exact<HoverableProps>,
 };
-type Props = PublicProps & HoverablePropsT;
 
 const gqlFragments = graphql`
   fragment eeTranslation_theKey on Key {

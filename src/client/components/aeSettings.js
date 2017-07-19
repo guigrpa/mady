@@ -19,18 +19,24 @@ import updateConfig from '../mutations/updateConfig';
 import { LANG_OPTIONS } from '../gral/constants';
 import { mutate } from './helpers';
 
+const STATE_ATTRS = [
+  'langs',
+  'srcPaths',
+  'srcExtensions',
+  'msgFunctionNames',
+  'msgRegexps',
+  'fJsOutput',
+];
+
 // ==========================================
 // Component declarations
 // ==========================================
-type PublicProps = {
+type Props = {
   lang: string,
   viewer: ViewerT,
   onChangeLang: (str: string) => void,
   onClose: () => void,
 };
-type Props = PublicProps;
-
-type FlexDirT = 'row' | 'column';
 
 const gqlFragments = graphql`
   fragment aeSettings_viewer on Viewer {
@@ -49,14 +55,7 @@ const gqlFragments = graphql`
   }
 `;
 
-const STATE_ATTRS = [
-  'langs',
-  'srcPaths',
-  'srcExtensions',
-  'msgFunctionNames',
-  'msgRegexps',
-  'fJsOutput',
-];
+type FlexDirection = 'row' | 'column';
 
 // ==========================================
 // Component
@@ -243,7 +242,7 @@ class Settings extends React.Component {
     width,
   }: {
     id: string,
-    dir: FlexDirT,
+    dir: FlexDirection,
     Component: any,
     placeholder: string,
     width: number,
@@ -342,11 +341,11 @@ const style = {
     marginTop: 7,
     marginBottom: 3,
   },
-  list: (dir: FlexDirT) =>
+  list: (dir: FlexDirection) =>
     flexContainer(dir, {
       marginLeft: 15,
     }),
-  listItem: (dir: FlexDirT) => ({
+  listItem: (dir: FlexDirection) => ({
     padding: '0px 2px',
     marginTop: dir === 'column' ? 1 : undefined,
     marginRight: 10,

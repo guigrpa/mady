@@ -13,33 +13,9 @@ import type { StoryT as _StoryT } from 'storyboard';
 export type StoryT = _StoryT;
 
 // ----------------------------------------
-// Bluebird
-// ----------------------------------------
-export type BluebirdPromise<T> = Bluebird$Promise<T>;
-
-// ----------------------------------------
-// Relay
-// ----------------------------------------
-class _RelayContainer<DefaultProps, Props, State> extends React$Component<
-  DefaultProps,
-  Props,
-  State
-> {
-  // TODO: Due to bugs in Flow's handling of React.createClass, some fields
-  // already declared in the base class need to be redeclared below. Ideally
-  // they should simply be inherited.
-  static defaultProps: $Abstract<DefaultProps>;
-  props: Props;
-  state: $Abstract<State>;
-
-  // Bonus tracks added by Relay...
-  static getFragment(name: string): any {}
-}
-
-// ----------------------------------------
 // Giu
 // ----------------------------------------
-export type HoverablePropsT = {
+export type HoverableProps = {
   hovering: ?boolean,
   onHoverStart: (ev: SyntheticMouseEvent) => void,
   onHoverStop: (ev: SyntheticMouseEvent) => void,

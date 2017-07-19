@@ -36,8 +36,6 @@ const keyComparator = (a: KeyT, b: KeyT) => {
 // ==========================================
 // Component declarations
 // ==========================================
-type LangOptions = Array<{ value: string, label: string }>;
-
 type Props = {
   // lang: string,
   viewer: ViewerT,
@@ -73,6 +71,8 @@ const fragment = graphql`
     ...edTranslatorRow_viewer
   }
 `;
+
+type LangOptions = Array<{ value: string, label: string }>;
 
 // ==========================================
 // Component

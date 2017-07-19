@@ -11,6 +11,11 @@ import QueryRendererWrapper from './uuQueryRendererWrapper';
 // ==========================================
 // Component declarations
 // ==========================================
+type Props = {
+  // lang: string,
+  selectedKeyId: ?string,
+};
+
 const query = graphql`
   query afDetailsQuery($selectedKeyId: ID!) {
     node(id: $selectedKeyId) {
@@ -24,17 +29,11 @@ const query = graphql`
   }
 `;
 
-type PublicPropsT = {
-  // lang: string,
-  selectedKeyId: ?string,
-};
-type PropsT = PublicPropsT & { relay: Object };
-
 // ==========================================
 // Component
 // ==========================================
 class Details extends React.PureComponent {
-  props: PropsT;
+  props: Props;
 
   constructor(props) {
     super(props);

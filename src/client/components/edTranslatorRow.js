@@ -4,7 +4,7 @@ import timm from 'timm';
 import React from 'react';
 import Relay, { graphql } from 'react-relay';
 import { cancelEvent, flexContainer, flexItem, Icon, hoverable } from 'giu';
-import type { ViewerT, KeyT, HoverablePropsT } from '../../common/types';
+import type { ViewerT, KeyT, HoverableProps } from '../../common/types';
 import _t from '../../translate';
 import updateKey from '../mutations/updateKey';
 import { COLORS } from '../gral/constants';
@@ -14,7 +14,7 @@ import Translation from './eeTranslation';
 // ==========================================
 // Component declarations
 // ==========================================
-type PublicProps = {
+type PublicProps = {|
   theKey: KeyT,
   viewer: ViewerT,
   langs: Array<string>,
@@ -22,8 +22,12 @@ type PublicProps = {
   changeSelectedKey: (keyId: ?string) => void,
   styleKeyCol: Object,
   styleLangCol: Object,
+|};
+
+type Props = {
+  ...PublicProps,
+  ...$Exact<HoverableProps>,
 };
-type Props = PublicProps & HoverablePropsT;
 
 const gqlFragments = graphql`
   fragment edTranslatorRow_viewer on Viewer {
@@ -60,14 +64,7 @@ class TranslatorRow extends React.PureComponent {
   // Render
   // ------------------------------------------
   render() {
-    const {
-      theKey: key,
-      fSelected,
-      styleKeyCol,
-      hovering,
-      onHoverStart,
-      onHoverStop,
-    } = this.props;
+    const { theKey: key } = this.props;
     const fUnused = !!key.unusedSince;
     const elContext = key.context
       ? <span style={style.context}>
@@ -79,7 +76,7 @@ class TranslatorRow extends React.PureComponent {
         {key.text}
       </span>
     );
-    const elDeleteKey = hovering
+    const elDeleteKey = this.props.hovering
       ? <Icon
           icon="remove"
           title={_t(
@@ -89,8 +86,12 @@ class TranslatorRow extends React.PureComponent {
           style={style.removeIcon}
         />
       : undefined;
-    let cellStyle = timm.merge(style.bodyCell, styleKeyCol, style.keyCell);
-    if (fSelected) cellStyle = style.selected(cellStyle);
+    let cellStyle = timm.merge(
+      style.bodyCell,
+      this.props.styleKeyCol,
+      style.keyCell
+    );
+    if (this.props.fSelected) cellStyle = style.selected(cellStyle);
     if (fUnused) cellStyle = style.unused(cellStyle);
     return (
       <div
@@ -100,8 +101,8 @@ class TranslatorRow extends React.PureComponent {
         style={style.row}
       >
         <div
-          onMouseEnter={onHoverStart}
-          onMouseLeave={onHoverStop}
+          onMouseEnter={this.props.onHoverStart}
+          onMouseLeave={this.props.onHoverStop}
           style={cellStyle}
         >
           {elContext}
@@ -114,15 +115,15 @@ class TranslatorRow extends React.PureComponent {
   }
 
   renderTranslation = (lang: string) => {
-    const { theKey: key, fSelected, styleLangCol } = this.props;
+    const { theKey: key } = this.props;
     const edge = key.translations.edges.find(
       ({ node }) => node.lang === lang && !node.isDeleted
     );
     const translation = edge ? edge.node : null;
     const fUnused = !!key.unusedSince;
-    let cellStyle = timm.merge(style.bodyCell, styleLangCol);
+    let cellStyle = timm.merge(style.bodyCell, this.props.styleLangCol);
     if (!edge && !fUnused) cellStyle = style.untranslated(cellStyle);
-    if (fSelected) cellStyle = style.selected(cellStyle);
+    if (this.props.fSelected) cellStyle = style.selected(cellStyle);
     return (
       <div key={lang} style={cellStyle}>
         <Translation
@@ -143,13 +144,14 @@ class TranslatorRow extends React.PureComponent {
   };
 
   onClickDeleteKey = (ev: SyntheticKeyboardEvent) => {
-    const { theKey, fSelected, changeSelectedKey } = this.props;
     cancelEvent(ev);
-    if (fSelected) changeSelectedKey(null);
+    if (this.props.fSelected) {
+      this.props.changeSelectedKey(null);
+    }
     mutate({
       description: 'Click on Delete key',
       mutationOptions: updateKey({
-        theKey,
+        theKey: this.props.theKey,
         attrs: { isDeleted: true },
       }),
     });
