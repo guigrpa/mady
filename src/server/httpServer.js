@@ -19,6 +19,7 @@ import * as gqlServer from './gqlServer';
 let ssr = null;
 try {
   /* eslint-disable import/no-unresolved */
+  // $FlowFixMe: SSR is not yet flow-covered
   ssr = require('../../public/ssr/ssr.bundle');
   /* eslint-disable import/no-unresolved */
   mainStory.info('http', 'Loaded SSR module successfully');

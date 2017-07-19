@@ -2,9 +2,11 @@
 
 import React from 'react';
 import Relay, { graphql } from 'react-relay';
+// $FlowFixMe: messageformat specifies 'main' in its package.json in a way flow doesn't like
 import MessageFormat from 'messageformat';
 import { mainStory } from 'storyboard';
 import { cancelEvent, Icon, Textarea, KEYS, hoverable } from 'giu';
+import type { Command } from 'giu/lib/gral/types';
 import type { KeyT, TranslationT, HoverableProps } from '../../common/types';
 import _t from '../../translate';
 import createTranslation from '../mutations/createTranslation';
@@ -12,7 +14,7 @@ import updateTranslation from '../mutations/updateTranslation';
 import { COLORS } from '../gral/constants';
 import { mutate } from './helpers';
 
-const validateTranslation = (lang: string) => (val: string) => {
+const validateTranslation = (lang: string) => (val: string): ?string => {
   const numOpen = val.split('{').length - 1;
   const numClose = val.split('}').length - 1;
   if (numOpen !== numClose) {
@@ -68,7 +70,7 @@ class Translation extends React.Component {
   state: {
     fEditing: boolean,
     fDismissedHelp: boolean,
-    cmds: Array<Object>,
+    cmds: Array<Command>,
   };
   refInput: ?Object;
 
@@ -244,8 +246,10 @@ class Translation extends React.Component {
   };
 
   onMouseDownCopyKey = () => {
+    // $FlowFixMe: SET_VALUE not supported yet in Giu's Flow API
     this.setState({
       cmds: [
+        // $FlowFixMe: SET_VALUE not supported yet in Giu's Flow API
         { type: 'SET_VALUE', value: this.props.theKey.text },
         { type: 'FOCUS' },
       ],

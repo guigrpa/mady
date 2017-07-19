@@ -1,5 +1,6 @@
 // @flow
 
+// $FlowFixMe
 import { Buffer } from 'buffer';
 
 const utf8ToBase64 = (str: string): string =>

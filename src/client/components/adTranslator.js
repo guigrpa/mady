@@ -14,6 +14,7 @@ import {
   Select,
   LargeMessage,
 } from 'giu';
+import type { Choice } from 'giu/lib/gral/types';
 import type { ViewerT, KeyT } from '../../common/types';
 import _t from '../../translate';
 import parseSrcFiles from '../mutations/parseSrcFiles';
@@ -71,8 +72,6 @@ const fragment = graphql`
     ...edTranslatorRow_viewer
   }
 `;
-
-type LangOptions = Array<{ value: string, label: string }>;
 
 // ==========================================
 // Component
@@ -161,7 +160,7 @@ class Translator extends React.Component {
     );
   }
 
-  renderLangHeader(lang: string, idx: number, langOptions: LangOptions) {
+  renderLangHeader(lang: string, idx: number, langOptions: Array<Choice>) {
     return (
       <div
         key={lang}

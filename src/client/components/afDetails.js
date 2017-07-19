@@ -13,9 +13,15 @@ import QueryRendererWrapper from './uuQueryRendererWrapper';
 // ==========================================
 // Component declarations
 // ==========================================
-type Props = {
+type PublicProps = {
   // lang: string,
   selectedKeyId: ?string,
+};
+
+type Props = {
+  ...$Exact<PublicProps>,
+  // Relay
+  node: ?Object,
 };
 
 const query = graphql`
@@ -36,20 +42,20 @@ const query = graphql`
 // ==========================================
 class Details extends React.PureComponent {
   props: Props;
+  state: { key: ?Object };
 
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
     this.state = {
       key: props.node,
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: Props) {
     if (nextProps.node) this.setState({ key: nextProps.node });
   }
 
   render() {
-    this.key = this.props.node;
     return (
       <div style={style.outer}>
         <div style={style.title}>
@@ -139,14 +145,14 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-const Container = ({ selectedKeyId, ...otherProps }) =>
+const Container = (props: PublicProps) =>
   <QueryRendererWrapper
     query={query}
-    vars={{ selectedKeyId }}
+    vars={{ selectedKeyId: props.selectedKeyId }}
     Component={Details}
     renderDuringLoad
-    selectedKeyId={selectedKeyId}
-    {...otherProps}
+    {...props}
   />;
+
 export default Container;
 export { Details as _Details };

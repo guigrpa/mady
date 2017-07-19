@@ -1,5 +1,6 @@
 // @flow
 
+// $FlowFixMe: messageformat specifies 'main' in its package.json in a way flow doesn't like
 import MessageFormat from 'messageformat';
 import UglifyJS from 'uglify-js';
 import { chalk } from 'storyboard';

@@ -36,6 +36,7 @@ rules:
   react/forbid-prop-types: off
   react/prop-types: off
   react/require-extension: off
+  react/require-default-props: off
   import/no-extraneous-dependencies:
     - error
     - devDependencies: true
@@ -52,3 +53,4 @@ globals:
   HTMLElement: false
   HTMLInputElement: false
   $Exact: false
+  ReactClass: false

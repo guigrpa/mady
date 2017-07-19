@@ -35,7 +35,7 @@ import * as db from './db';
 const gqlInterfaces = {};
 const gqlTypes = {};
 const gqlMutations = {};
-let gqlSchema = null;
+let gqlSchema;
 const viewer = { _type: 'Viewer', id: 'me' };
 let viewerRootField = null;
 

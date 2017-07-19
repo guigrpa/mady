@@ -5,13 +5,20 @@ import { QueryRenderer } from 'react-relay';
 import { Spinner } from 'giu';
 import relayEnvironment from '../gral/relayEnvironment';
 
+type Props = {
+  query: Object,
+  vars?: Object,
+  Component: ReactClass<*>,
+  renderDuringLoad?: boolean,
+};
+
 const QueryRendererWrapper = ({
   query,
   vars,
   Component,
   renderDuringLoad,
   ...props
-}) =>
+}: Props) =>
   <QueryRenderer
     environment={relayEnvironment}
     query={query}

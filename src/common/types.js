@@ -49,7 +49,7 @@ interface NodeT {
 }
 
 type CoreKeyT = {
-  isDeleted: boolean,
+  isDeleted?: boolean,
   context: ?string,
   text: string,
   unusedSince: ?string,
