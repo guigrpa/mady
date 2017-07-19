@@ -11,13 +11,7 @@
   },
   "author": "Guillermo Grau Panea",
   "license": "MIT",
-  "keywords": [
-    "i18n",
-    "MessageFormat",
-    "translation",
-    "locales",
-    "translator"
-  ],
+  "keywords": ["i18n", "MessageFormat", "translation", "locales", "translator"],
   "homepage": "https://github.com/guigrpa/mady#readme",
   "bugs": {
     "url": "https://github.com/guigrpa/mady/issues"
@@ -41,15 +35,15 @@
     "buildClientWatch": "rm -rf ./public/assets && webpack --config ./src/server/webpackConfig.cjs --progress --display-chunks --watch",
     "buildAnalysis": "rm -rf ./public/assets && cross-env ANALYZE_BUNDLE=true webpack --config ./src/server/webpackConfig.cjs --progress --display-chunks",
     "buildAnalysisProd": "rm -rf ./public/assets && cross-env NODE_ENV=production ANALYZE_BUNDLE=true webpack --config ./src/server/webpackConfig.cjs --progress --display-chunks",
-    "build": "node package && npm run lint && npm run flow && npm run compile && npm run buildClient && npm run buildSsr && npm run test && npm run docs && npm run xxl",
-    "travis": "npm run compile && npm run testCovFullExceptMin",
+    "build": "yarn lint && yarn flow && yarn compile && yarn buildClient && yarn buildSsr && yarn test && yarn docs && yarn xxl",
+    "travis": "yarn compile && yarn testCovFullExceptMin",
     "lint": "eslint src",
     "flow": "flow check || exit 0",
     "xxl": "xxl",
-    "test": "npm run testCovFull",
-    "testCovFull": "npm run testCovPrepare && npm run testDev && npm run testProd && npm run testCovReport",
-    "testCovFullExceptMin": "npm run testCovPrepare && npm run testDev && npm run testProd && npm run testCovReport",
-    "testCovFast": "npm run testCovPrepare && npm run testDev && npm run testCovReport",
+    "test": "yarn testCovFull",
+    "testCovFull": "yarn testCovPrepare && yarn testDev && yarn testProd && yarn testCovReport",
+    "testCovFullExceptMin": "yarn testCovPrepare && yarn testDev && yarn testProd && yarn testCovReport",
+    "testCovFast": "yarn testCovPrepare && yarn testDev && yarn testCovReport",
     "jest": "jest --watch --coverage",
     "jest-html": "jest-html --snapshot-patterns \"src/**/*.snap\"",
     "jestDebug": "node --debug-brk --inspect node_modules/.bin/jest -i",
@@ -152,14 +146,8 @@
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/test/emptyString.js"
     },
     "coverageDirectory": ".nyc_output",
-    "coverageReporters": [
-      "json",
-      "text",
-      "html"
-    ],
-    "snapshotSerializers": [
-      "<rootDir>/node_modules/jest-html"
-    ],
+    "coverageReporters": ["json", "text", "html"],
+    "snapshotSerializers": ["<rootDir>/node_modules/jest-html"],
     "collectCoverageFrom": [
       "src/**/*.js",
       "!**/node_modules/**",

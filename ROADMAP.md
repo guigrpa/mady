@@ -1,4 +1,3 @@
-* Remove package.js
 * Fix tests
 - Subscriptions?
 * Update Flow types: naming
