@@ -38,6 +38,9 @@ const RESPONSE_DELAY = 0;
 
 const delay = ms =>
   new Promise(resolve => {
+    if (RESPONSE_DELAY) {
+      mainStory.debug('db', `Waiting (${RESPONSE_DELAY} ms)...`);
+    }
     setTimeout(resolve, ms);
   });
 
@@ -128,6 +131,7 @@ async function updateConfig(
   story.debug('db', 'New config:', { attach: _config });
   saveConfig({ story });
   await compileTranslations({ story });
+  await delay(RESPONSE_DELAY);
   return _config;
 }
 
@@ -193,6 +197,7 @@ async function updateKey(id: string, newAttrs: Object): Promise<?InternalKeyT> {
   _keys[id] = timm.merge(_keys[id], newAttrs);
   saveKeys();
   await compileTranslations();
+  await delay(RESPONSE_DELAY);
   return _keys[id];
 }
 

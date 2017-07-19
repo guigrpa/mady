@@ -323,8 +323,7 @@ class Settings extends React.Component {
     attrs.fJsonOutput = this.refJsonOutput.getValue();
     mutate({
       description: 'Click on Save settings',
-      mutationOptions: updateConfig({ attrs }),
-      onSuccess: () => this.props.onClose(),
+      mutationOptions: updateConfig({ viewer: this.props.viewer, attrs }),
       onFailure: () => {
         notify({
           msg: _t('error_Configuration could not be saved'),
@@ -333,6 +332,7 @@ class Settings extends React.Component {
         });
       },
     });
+    this.props.onClose();
   };
 }
 

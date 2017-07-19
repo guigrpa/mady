@@ -1,5 +1,8 @@
 * Optimistic updates
-* Improve perf!! (parsing takes too long!)
+* Improve perf!!
+    - Parsing takes too long!
+    - Avoid unnecessary re-renders when changing selection
+    - Avoid unnecessary re-renders in general
 * Remove package.js
 * Fix tests
 - Subscriptions?

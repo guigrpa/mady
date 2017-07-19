@@ -11,6 +11,11 @@ const updateKey = ({ theKey, attrs }) => ({
     }
   `,
   variables: { input: { id: theKey.id, attrs } },
+  optimisticResponse: {
+    updateKey: {
+      key: { ...theKey, ...attrs },
+    },
+  },
 });
 
 export default updateKey;

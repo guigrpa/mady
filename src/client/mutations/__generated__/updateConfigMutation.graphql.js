@@ -11,7 +11,7 @@
 import type {ConcreteBatch} from 'relay-runtime';
 export type updateConfigMutationVariables = {|
   input: {
-    set?: ?{
+    attrs?: ?{
       srcPaths?: ?$ReadOnlyArray<?string>;
       srcExtensions?: ?$ReadOnlyArray<?string>;
       langs?: ?$ReadOnlyArray<?string>;
@@ -22,7 +22,6 @@ export type updateConfigMutationVariables = {|
       fJsonOutput?: ?boolean;
       fReactIntlOutput?: ?boolean;
     };
-    unset?: ?$ReadOnlyArray<?string>;
     storyId?: ?string;
     clientMutationId?: ?string;
   };
