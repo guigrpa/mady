@@ -251,12 +251,13 @@ const specs = {
     'extract-text-webpack-plugin': '2.0.0-rc.2',
 
     // Linting
-    eslint: '3.19.0',
-    'eslint-config-airbnb': '12.0.0',
-    'eslint-plugin-flowtype': '2.32.1',
-    'eslint-plugin-import': '1.16.0',
-    'eslint-plugin-jsx-a11y': '2.2.3',
-    'eslint-plugin-react': '6.10.3',
+    eslint: '4.2.0',
+    'eslint-config-airbnb': '15.0.2',
+    'eslint-config-prettier': '2.3.0',
+    'eslint-plugin-flowtype': '2.35.0',
+    'eslint-plugin-import': '2.7.0',
+    'eslint-plugin-jsx-a11y': '6.0.2',
+    'eslint-plugin-react': '7.1.0',
     'babel-eslint': '7.2.3',
 
     // Testing

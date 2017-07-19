@@ -1,5 +1,7 @@
 parser: babel-eslint
-extends: airbnb
+extends:
+  - airbnb
+  - prettier
 plugins:
   - flowtype
 rules:
@@ -41,9 +43,12 @@ rules:
       optionalDependencies: false
   import/prefer-default-export: off
   jsx-a11y/no-static-element-interactions: off
+  jsx-a11y/href-no-hash: off
+  jsx-a11y/label-has-for: off
 globals:
   # Flow
   SyntheticEvent: false
   SyntheticKeyboardEvent: false
   HTMLElement: false
   HTMLInputElement: false
+  $Exact: false
