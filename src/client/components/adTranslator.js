@@ -22,8 +22,11 @@ import { cookieGet, cookieSet } from '../gral/storage';
 import { mutate } from './helpers';
 import TranslatorRow from './edTranslatorRow';
 
-const comparator = (a: string, b: string): number =>
-  a < b ? -1 : a > b ? 1 : 0;
+/* eslint-disable arrow-body-style */
+const comparator = (a: string, b: string): number => {
+  return a < b ? -1 : a > b ? 1 : 0;
+};
+/* eslint-enable arrow-body-style */
 const keyComparator = (a: KeyT, b: KeyT) => {
   const aStr = `${a.context || ''}${a.text}${a.id}`;
   const bStr = `${b.context || ''}${b.text}${b.id}`;

@@ -1110,26 +1110,12 @@
           "fields": null,
           "inputFields": [
             {
-              "name": "set",
+              "name": "attrs",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
                 "name": "ConfigUpdate",
                 "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "unset",
-              "description": null,
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
               },
               "defaultValue": null
             },
@@ -1347,26 +1333,12 @@
               "defaultValue": null
             },
             {
-              "name": "set",
+              "name": "attrs",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
                 "name": "KeyUpdate",
                 "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "unset",
-              "description": null,
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
               },
               "defaultValue": null
             },
@@ -1629,26 +1601,12 @@
           "fields": null,
           "inputFields": [
             {
-              "name": "set",
+              "name": "attrs",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
                 "name": "TranslationCreate",
                 "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "unset",
-              "description": null,
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
               },
               "defaultValue": null
             },
@@ -1834,26 +1792,12 @@
               "defaultValue": null
             },
             {
-              "name": "set",
+              "name": "attrs",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
                 "name": "TranslationUpdate",
                 "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "unset",
-              "description": null,
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
               },
               "defaultValue": null
             },

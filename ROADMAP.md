@@ -1,12 +1,8 @@
 * Complete migration to Relay Modern:
-    - Remove deleteKey in DB
-    * Refactor schema: remove unnecessary arguments in mutations
     * Fix tests
-    - Change mutation API (remove set, unset)
     - Subscriptions?
     - Investigate Apollo client
     * Merge changes in master!
-* Update server, using async/await
 * Update Flow types: naming
 * Bump deps (incl. Giu, React)
 * Remove package.js

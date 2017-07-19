@@ -1,7 +1,7 @@
 import { graphql } from 'react-relay';
 // import { merge } from 'timm';
 
-const updateTranslation = ({ translation, set }) => ({
+const updateTranslation = ({ translation, attrs }) => ({
   mutation: graphql`
     mutation updateTranslationMutation($input: UpdateTranslationInput!) {
       updateTranslation(input: $input) {
@@ -12,10 +12,10 @@ const updateTranslation = ({ translation, set }) => ({
       }
     }
   `,
-  variables: { input: { id: translation.id, set } },
+  variables: { input: { id: translation.id, attrs } },
   // optimisticResponse: {
   //   updateTranslation: {
-  //     translation: merge(translation, set),
+  //     translation: merge(translation, attrs),
   //   },
   // },
 });

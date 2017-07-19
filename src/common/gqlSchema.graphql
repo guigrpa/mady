@@ -26,8 +26,7 @@ input ConfigUpdate {
 }
 
 input CreateTranslationInKeyTranslationsInput {
-  set: TranslationCreate
-  unset: [String]
+  attrs: TranslationCreate
   parentId: ID!
   storyId: String
   clientMutationId: String
@@ -171,8 +170,7 @@ input TranslationUpdate {
 }
 
 input UpdateConfigInput {
-  set: ConfigUpdate
-  unset: [String]
+  attrs: ConfigUpdate
   storyId: String
   clientMutationId: String
 }
@@ -185,8 +183,7 @@ type UpdateConfigPayload {
 
 input UpdateKeyInput {
   id: ID!
-  set: KeyUpdate
-  unset: [String]
+  attrs: KeyUpdate
   storyId: String
   clientMutationId: String
 }
@@ -199,8 +196,7 @@ type UpdateKeyPayload {
 
 input UpdateTranslationInput {
   id: ID!
-  set: TranslationUpdate
-  unset: [String]
+  attrs: TranslationUpdate
   storyId: String
   clientMutationId: String
 }

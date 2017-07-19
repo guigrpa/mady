@@ -1,6 +1,6 @@
 import { graphql } from 'react-relay';
 
-const updateKey = ({ theKey, set }) => ({
+const updateKey = ({ theKey, attrs }) => ({
   mutation: graphql`
     mutation updateKeyMutation($input: UpdateKeyInput!) {
       updateKey(input: $input) {
@@ -10,7 +10,7 @@ const updateKey = ({ theKey, set }) => ({
       }
     }
   `,
-  variables: { input: { id: theKey.id, set } },
+  variables: { input: { id: theKey.id, attrs } },
 });
 
 export default updateKey;

@@ -10,7 +10,7 @@ import { graphql } from 'react-relay';
 //   ConnectionHandler.insertEdgeAfter(conn, translationEdge);
 // };
 //
-const createTranslation = ({ theKey, set, unset }) => ({
+const createTranslation = ({ theKey, attrs }) => ({
   mutation: graphql`
     mutation createTranslationMutation(
       $input: CreateTranslationInKeyTranslationsInput!
@@ -26,7 +26,7 @@ const createTranslation = ({ theKey, set, unset }) => ({
       }
     }
   `,
-  variables: { input: { parentId: theKey.id, set, unset } },
+  variables: { input: { parentId: theKey.id, attrs } },
   // updater: store => {
   //   const payload = store.getRootField('createTranslationInKeyTranslations');
   //   const translationEdge = payload.getLinkedRecord('createdTranslationEdge');

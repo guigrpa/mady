@@ -220,14 +220,14 @@ class Translation extends React.Component {
           description: 'Commit translation edit',
           mutationOptions: updateTranslation({
             translation,
-            set: { translation: text },
+            attrs: { translation: text },
           }),
         });
       } else {
         mutate({
           description: 'Commit translation creation',
           mutationOptions: createTranslation({
-            set: {
+            attrs: {
               lang: this.props.lang,
               keyId: this.props.theKey.id,
               translation: text,
@@ -255,7 +255,7 @@ class Translation extends React.Component {
       description: 'Click on Delete translation',
       mutationOptions: updateTranslation({
         translation,
-        set: { isDeleted: true },
+        attrs: { isDeleted: true },
       }),
     });
   };
@@ -267,7 +267,7 @@ class Translation extends React.Component {
       description: 'Toggle translation fuzziness',
       mutationOptions: updateTranslation({
         translation,
-        set: { fuzzy: !translation.fuzzy },
+        attrs: { fuzzy: !translation.fuzzy },
       }),
     });
   };

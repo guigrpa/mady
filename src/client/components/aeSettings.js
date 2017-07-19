@@ -310,7 +310,7 @@ class Settings extends React.Component {
     if (lang !== this.props.lang) this.props.onChangeLang(lang);
 
     // Save other settings
-    const set = pick(this.state, [
+    const attrs = pick(this.state, [
       'langs',
       'srcPaths',
       'srcExtensions',
@@ -318,15 +318,14 @@ class Settings extends React.Component {
       'msgRegexps',
     ]);
     if (this.refMinify == null) return;
-    set.fMinify = this.refMinify.getValue();
+    attrs.fMinify = this.refMinify.getValue();
     if (this.refReactIntlOutput == null) return;
-    set.fReactIntlOutput = this.refReactIntlOutput.getValue();
+    attrs.fReactIntlOutput = this.refReactIntlOutput.getValue();
     if (this.refJsonOutput == null) return;
-    set.fJsonOutput = this.refJsonOutput.getValue();
-    /* eslint-disable object-shorthand */
+    attrs.fJsonOutput = this.refJsonOutput.getValue();
     mutate({
       description: 'Click on Save settings',
-      mutationOptions: updateConfig({ set }),
+      mutationOptions: updateConfig({ attrs }),
       onSuccess: () => this.props.onClose(),
       onFailure: () => {
         notify({
@@ -336,7 +335,6 @@ class Settings extends React.Component {
         });
       },
     });
-    /* eslint-enable object-shorthand */
   };
 }
 

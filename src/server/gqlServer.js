@@ -25,14 +25,7 @@ import {
   offsetToCursor,
   mutationWithClientMutationId,
 } from 'graphql-relay';
-import {
-  capitalize,
-  lowerFirst,
-  upperFirst,
-  omitBy,
-  isUndefined,
-  pick,
-} from 'lodash';
+import { capitalize, lowerFirst, upperFirst, pick } from 'lodash';
 import type { StoryT } from '../common/types';
 import * as db from './db';
 
@@ -384,8 +377,7 @@ function addMutation(
     inputFields.id = { type: new GraphQLNonNull(GraphQLID) };
   }
   if (op !== 'DELETE') {
-    inputFields.set = { type: gqlTypes[`${type}${capitalize(op)}`] };
-    inputFields.unset = { type: new GraphQLList(GraphQLString) };
+    inputFields.attrs = { type: gqlTypes[`${type}${capitalize(op)}`] };
   }
   if (parent) {
     inputFields.parentId = { type: new GraphQLNonNull(GraphQLID) };
@@ -462,8 +454,7 @@ function addMutation(
 type InnerMutationArgsT = {
   id: string,
   parentId: string,
-  set?: Object,
-  unset?: Array<string>,
+  attrs?: Object,
 };
 
 type InnerMutationResultT = {
@@ -481,7 +472,7 @@ async function mutate(
   options: MutationOptionsT,
   story: StoryT
 ): Promise<InnerMutationResultT> {
-  const { id: globalId, parentId: globalParentId, set, unset } = mutationArgs;
+  const { id: globalId, parentId: globalParentId, attrs } = mutationArgs;
   const localId =
     op !== 'CREATE' && !options.fSingleton ? fromGlobalId(globalId).id : null;
   const parentNode = getNodeFromGlobalId(globalParentId);
@@ -495,7 +486,7 @@ async function mutate(
   if (op === 'DELETE') {
     result.node = await db[`delete${type}`](localId, { story });
   } else {
-    let newAttrs = mergeSetUnset(set, unset);
+    let newAttrs = attrs;
     newAttrs = resolveGlobalIds(newAttrs, options.globalIds);
     if (op === 'CREATE') {
       result.node = await db[`create${type}`](newAttrs, { story });
@@ -508,14 +499,6 @@ async function mutate(
   }
   result.node = addTypeAttr(result.node, type);
   return result;
-}
-
-function mergeSetUnset(set: Object = {}, unset: Array<string> = []): Object {
-  const attrs = omitBy(set, isUndefined);
-  unset.forEach(attr => {
-    attrs[attr] = null;
-  });
-  return attrs;
 }
 
 function resolveGlobalIds(

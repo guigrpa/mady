@@ -150,7 +150,7 @@ class TranslatorRow extends React.Component {
       description: 'Click on Delete key',
       mutationOptions: updateKey({
         theKey,
-        set: { isDeleted: true },
+        attrs: { isDeleted: true },
       }),
     });
   };
