@@ -1,7 +1,6 @@
 * Fix tests
 - Subscriptions?
 * Update Flow types: naming
-* Bump deps (incl. Giu, React)
 * Fix webpack config (reference: giu-examples)
 * Fix SSR
 * Improve parsing perf
