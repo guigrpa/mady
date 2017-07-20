@@ -1,7 +1,7 @@
 * Fix tests
 - Subscriptions?
+* Perf: avoid re-rendering RelayContainer at the top of each translatorrow, for even the simplest change (row selection)
 * Update Flow types: naming
-* Fix webpack config (reference: giu-examples)
 * Fix SSR
 * Improve parsing perf
 

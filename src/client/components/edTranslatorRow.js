@@ -207,7 +207,7 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-const HoverableTranslatorRow = hoverable(TranslatorRow);
+const HoverableTranslatorRow = TranslatorRow; //hoverable(TranslatorRow);
 const Container = Relay.createFragmentContainer(
   HoverableTranslatorRow,
   gqlFragments
