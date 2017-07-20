@@ -12,14 +12,13 @@ import type {ConcreteBatch} from 'relay-runtime';
 export type updateKeyMutationVariables = {|
   input: {
     id: string;
-    set?: ?{
+    attrs?: ?{
       isDeleted?: ?boolean;
       context?: ?string;
       text?: ?string;
       firstUsed?: ?string;
       unusedSince?: ?string;
     };
-    unset?: ?$ReadOnlyArray<?string>;
     storyId?: ?string;
     clientMutationId?: ?string;
   };

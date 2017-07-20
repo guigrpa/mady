@@ -37,7 +37,7 @@ const gqlTypes = {};
 const gqlMutations = {};
 let gqlSchema;
 const viewer = { _type: 'Viewer', id: 'me' };
-let viewerRootField = null;
+let viewerRootField;
 
 // ==============================================
 // Public API
@@ -77,9 +77,9 @@ const init = () => {
   // ==============================================
   mainStory.debug('gql', 'Creating types...');
 
-  let configBaseField = null;
-  let keysBaseField = null;
-  let translationsBaseField = null;
+  let configBaseField;
+  let keysBaseField;
+  let translationsBaseField;
 
   // ----------------------------------------------
   // Viewer
@@ -338,28 +338,28 @@ function addConnectionType(name: string): void {
   gqlTypes[`${name}Edge`] = edgeType;
 }
 
-type MutationOperationT = 'CREATE' | 'UPDATE' | 'DELETE';
-type MutationParentT = {
+type MutationOperation = 'CREATE' | 'UPDATE' | 'DELETE';
+type MutationParent = {
   type: string,
   connection: string,
   resolveConnection: (base: Object) => Array<Object>,
 };
-type MutationRelationT = {
+type MutationRelation = {
   type: string,
   name: string,
   resolve: (base: Object) => any,
 };
-type MutationOptionsT = {
+type MutationOptions = {
   fSingleton?: boolean,
   globalIds?: Array<string>,
-  parent?: MutationParentT,
-  relations?: Array<MutationRelationT>,
+  parent?: MutationParent,
+  relations?: Array<MutationRelation>,
 };
 
 function addMutation(
   type: string,
-  op: MutationOperationT,
-  options?: MutationOptionsT = {}
+  op: MutationOperation,
+  options?: MutationOptions = {}
 ): void {
   const { parent } = options;
   let name;
@@ -451,13 +451,13 @@ function addMutation(
   });
 }
 
-type InnerMutationArgsT = {
+type InnerMutationArgs = {
   id: string,
   parentId: string,
   attrs?: Object,
 };
 
-type InnerMutationResultT = {
+type InnerMutationResult = {
   globalId: string,
   localId: ?string,
   globalParentId: string,
@@ -467,16 +467,16 @@ type InnerMutationResultT = {
 
 async function mutate(
   type: string,
-  op: MutationOperationT,
-  mutationArgs: InnerMutationArgsT,
-  options: MutationOptionsT,
+  op: MutationOperation,
+  mutationArgs: InnerMutationArgs,
+  options: MutationOptions,
   story: StoryT
-): Promise<InnerMutationResultT> {
+): Promise<InnerMutationResult> {
   const { id: globalId, parentId: globalParentId, attrs } = mutationArgs;
   const localId =
     op !== 'CREATE' && !options.fSingleton ? fromGlobalId(globalId).id : null;
   const parentNode = getNodeFromGlobalId(globalParentId);
-  const result: InnerMutationResultT = {
+  const result: InnerMutationResult = {
     globalId,
     localId,
     globalParentId,
@@ -486,7 +486,7 @@ async function mutate(
   if (op === 'DELETE') {
     result.node = await db[`delete${type}`](localId, { story });
   } else {
-    let newAttrs = attrs;
+    let newAttrs: any = attrs;
     newAttrs = resolveGlobalIds(newAttrs, options.globalIds);
     if (op === 'CREATE') {
       result.node = await db[`create${type}`](newAttrs, { story });
