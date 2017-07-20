@@ -369,7 +369,7 @@ async function compileTranslations(
   });
   try {
     const { fMinify } = _config;
-    const allTranslations = getAllTranslations(_config.langs, story);
+    const allTranslations = getAllTranslations(_config.langs);
     Object.keys(allTranslations).forEach(lang => {
       const compiledLangPath = getCompiledLangPath(lang);
       const translations = allTranslations[lang];
@@ -418,12 +418,10 @@ async function compileTranslations(
 
 function getAllTranslations(
   langs: Array<string>
-  /* story: StoryT, */
 ): MapOf<Array<InternalTranslationT>> {
   // Determine lang structure
   const langStructure = {};
   const sortedLangs = langs.slice().sort();
-  // story.debug('db', 'Sorted languages', { attach: sortedLangs });
   sortedLangs.forEach(lang => {
     langStructure[lang] = { parent: null, children: [] };
     const tokens = lang.split(/[_-]/);

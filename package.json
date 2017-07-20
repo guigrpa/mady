@@ -118,7 +118,7 @@
     "extract-docs": "1.6.0",
     "extract-text-webpack-plugin": "2.0.0-rc.2",
     "file-loader": "0.11.2",
-    "flow-bin": "0.44.2",
+    "flow-bin": "0.50.0",
     "font-awesome": "4.7.0",
     "giu": "0.14.0",
     "jest": "19.0.2",
