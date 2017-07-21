@@ -49,7 +49,6 @@ module.exports = (env = {}) => {
         ? path.resolve(process.cwd(), 'lib/public/ssr')
         : path.resolve(process.cwd(), 'lib/public/assets'),
       publicPath: '/assets/',
-      // libraryTarget: fSsr ? 'commonjs2' : undefined,
       libraryTarget: fSsr ? 'umd' : undefined,
     },
 
@@ -57,7 +56,7 @@ module.exports = (env = {}) => {
     // Configuration
     // -------------------------------------------------
     devtool: fProduction || fSsr ? undefined : 'eval',
-    // target: fSsr ? 'node' : undefined,
+    target: fSsr ? 'node' : undefined,
 
     // Don't redefine `__dirname` when compiling for Node (SSR)
     // https://github.com/webpack/webpack/issues/1599#issuecomment-186841345

@@ -176,6 +176,11 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-const Container = () => <QueryRendererWrapper query={query} Component={App} />;
+const Container = ({ relayEnvironment }) =>
+  <QueryRendererWrapper
+    environment={relayEnvironment}
+    query={query}
+    Component={App}
+  />;
 export default Container;
-export { App as _App };
+export { query, App as _App };

@@ -1,7 +1,7 @@
+* Verify SSR, client from the client perspective (via yarn link)
 * Fix tests
 - Subscriptions?
 * Perf: avoid re-rendering RelayContainer at the top of each translatorrow, for even the simplest change (row selection)
-* Fix SSR
 * Improve parsing perf
 
 Someday:

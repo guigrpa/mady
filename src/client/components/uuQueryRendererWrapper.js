@@ -1,9 +1,10 @@
 // @flow
 
 import React from 'react';
-import { QueryRenderer } from 'react-relay';
+import QueryLookupRenderer from 'relay-query-lookup-renderer';
+// import { QueryRenderer } from 'react-relay';
 import { Spinner } from 'giu';
-import relayEnvironment from '../gral/relayEnvironment';
+import { getEnvironment } from '../gral/relay';
 
 type Props = {
   query: Object,
@@ -13,14 +14,16 @@ type Props = {
 };
 
 const QueryRendererWrapper = ({
+  relayEnvironment,
   query,
   vars,
   Component,
   renderDuringLoad,
   ...props
 }: Props) =>
-  <QueryRenderer
-    environment={relayEnvironment}
+  <QueryLookupRenderer
+    lookup
+    environment={relayEnvironment || getEnvironment()}
     query={query}
     variables={vars}
     render={({ error, props: relayData }) => {

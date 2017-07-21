@@ -1,12 +1,11 @@
 import path from 'path';
 import fs from 'fs';
-import Promise from 'bluebird'; // eslint-disable-line
 import React from 'react';
-import IsomorphicRelay from 'isomorphic-relay'; // eslint-disable-line
+import Relay from 'relay-runtime';
 import ReactDOMServer from 'react-dom/server';
 import { setCurrentCookies } from '../client/gral/storage';
-import App from '../client/components/aaApp';
-import { ViewerQuery } from '../client/gral/rootQueries'; // eslint-disable-line
+import App, { query as rootQuery } from '../client/components/aaApp';
+import createRelayEnvironment from '../client/gral/relay';
 import _t from '../translate';
 
 let gqlServer: Object;
@@ -15,64 +14,51 @@ let mainStory: Object;
 const SSR_CSS_PATH = path.resolve(__dirname, './ssr.bundle.css');
 const ssrCss = fs.readFileSync(SSR_CSS_PATH);
 
-function processQuery(queryRequest: Object, idx: number): Promise {
-  mainStory.debug('ssr', `Running query #${idx}...`);
-  const query = queryRequest.getQueryString();
-  const vars = queryRequest.getVariables();
-  return gqlServer
-    .runQuery(query, null, null, vars)
-    .then(result => {
-      let out;
-      if (result.errors) {
-        mainStory.error('ssr', 'SSR query failed', { attach: result.errors });
-        out = queryRequest.reject(new Error('SSR_ERROR'));
-      } else {
-        mainStory.debug('ssr', 'SSR query succeeded');
-        out = queryRequest.resolve({ response: result.data });
-      }
-      return out;
-    })
-    .catch(err => {
-      mainStory.error('ssr', 'SSR query failed', { attach: err });
-    });
-}
-
-const networkLayer = {
-  sendMutation: () => Promise.resolve(),
-  sendQueries: (queryReqs: Array<any>): Promise => {
-    mainStory.debug('ssr', `Received ${queryReqs.length} queries`);
-    return Promise.all(queryReqs.map(processQuery));
-  },
-  supports: () => false,
+const fetchQuery = async (operation /* , variables */) => {
+  const query = operation.text;
+  mainStory.debug('ssr', `Running query...`, {
+    attach: query,
+    attachLevel: 'trace',
+  });
+  try {
+    const result = await gqlServer.runQuery(query);
+    if (result.errors) {
+      mainStory.error('ssr', 'SSR query failed', { attach: result.errors });
+    } else {
+      mainStory.debug('ssr', 'SSR query succeeded');
+    }
+    return result;
+  } catch (err) {
+    mainStory.error('ssr', 'SSR query failed', { attach: err });
+    return null;
+  }
 };
 
-function init(options: { gqlServer: Object, mainStory: Object }) {
+const init = (options: { gqlServer: Object, mainStory: Object }) => {
   gqlServer = options.gqlServer;
   mainStory = options.mainStory;
-  mainStory.info('ssr', 'Initialised');
-}
+  mainStory.info('ssr', 'Initialising...');
+};
 
-function render(req: Object, { fnLocales }: { fnLocales: string }): Promise {
-  return Promise.resolve()
-    .then(() => {
-      mainStory.info('ssr', 'Rendering...');
-      const rootContainerProps = {
-        Container: App,
-        queryConfig: new ViewerQuery(),
-      };
-      return IsomorphicRelay.prepareData(rootContainerProps, networkLayer);
-    })
-    .then(({ data: relayData, props }) => {
-      // Everything here must be synchronous so that rendering works correctly!
-      const el = <IsomorphicRelay.Renderer {...props} />;
-      /* eslint-disable no-eval */
-      _t.setLocales(eval(fnLocales));
-      /* eslint-enable no-eval */
-      setCurrentCookies(req.cookies);
-      const ssrHtml = ReactDOMServer.renderToString(el);
-      return { ssrHtml, ssrCss, relayData };
-    });
-}
+const render = async (req: Object, { fnLocales }: { fnLocales: string }) => {
+  // Create a new environment for this user (with the server-side fetchQuery function)
+  const environment = createRelayEnvironment(undefined, fetchQuery);
+
+  // Load the data required for the initial render (rootQuery) into the environment
+  await Relay.fetchQuery(environment, rootQuery, {});
+
+  // Render with the cached data, making sure the language is correct
+  mainStory.info('ssr', 'Rendering...');
+  _t.setLocales(eval(fnLocales)); // eslint-disable-line no-eval
+  setCurrentCookies(req.cookies);
+  const ssrHtml = ReactDOMServer.renderToString(
+    <App relayEnvironment={environment} />
+  );
+
+  // Return the cached data, which will be bootstrapped with the page
+  // and re-hydrated by the client
+  return { ssrHtml, ssrCss, relayData: environment.getStore().getSource() };
+};
 
 // ==============================================
 // Public API
