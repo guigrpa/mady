@@ -36,10 +36,11 @@ const validateTranslation = (lang: string) => (val: string): ?string => {
 // Component declarations
 // ==========================================
 type PublicProps = {|
-  theKey: KeyT,
   lang: string,
-  translation: ?TranslationT,
   changeSelectedKey: (keyId: ?string) => void,
+  // Relay
+  theKey: KeyT,
+  translation: ?TranslationT,
 |};
 
 type Props = {

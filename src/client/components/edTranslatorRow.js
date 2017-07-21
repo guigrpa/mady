@@ -15,13 +15,14 @@ import Translation from './eeTranslation';
 // Component declarations
 // ==========================================
 type PublicProps = {|
-  theKey: KeyT,
-  viewer: ViewerT,
   langs: Array<string>,
   fSelected: boolean,
   changeSelectedKey: (keyId: ?string) => void,
   styleKeyCol: Object,
   styleLangCol: Object,
+  // Relay
+  viewer: ViewerT,
+  theKey: KeyT,
 |};
 
 type Props = {
@@ -207,7 +208,7 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-const HoverableTranslatorRow = TranslatorRow; //hoverable(TranslatorRow);
+const HoverableTranslatorRow = hoverable(TranslatorRow);
 const Container = Relay.createFragmentContainer(
   HoverableTranslatorRow,
   gqlFragments

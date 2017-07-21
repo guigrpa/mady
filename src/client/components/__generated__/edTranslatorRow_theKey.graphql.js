@@ -11,14 +11,14 @@ import type {ConcreteFragment} from 'relay-runtime';
 export type edTranslatorRow_theKey = {|
   +id: string;
   +context: ?string;
-  +text: ?string;
+  +text: string;
   +unusedSince: ?string;
   +translations: ?{|
     +edges: ?$ReadOnlyArray<?{|
       +node: ?{|
         +id: string;
         +isDeleted: ?boolean;
-        +lang: ?string;
+        +lang: string;
       |};
     |}>;
   |};

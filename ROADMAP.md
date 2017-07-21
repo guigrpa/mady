@@ -1,7 +1,6 @@
 * Fix tests
 - Subscriptions?
 * Perf: avoid re-rendering RelayContainer at the top of each translatorrow, for even the simplest change (row selection)
-* Update Flow types: naming
 * Fix SSR
 * Improve parsing perf
 

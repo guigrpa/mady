@@ -11,8 +11,8 @@ import type {ConcreteFragment} from 'relay-runtime';
 export type eeTranslation_translation = {|
   +id: string;
   +isDeleted: ?boolean;
-  +lang: ?string;
-  +translation: ?string;
+  +lang: string;
+  +translation: string;
   +fuzzy: ?boolean;
 |};
 */

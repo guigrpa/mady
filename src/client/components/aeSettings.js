@@ -33,9 +33,10 @@ const STATE_ATTRS = [
 // ==========================================
 type Props = {
   lang: string,
-  viewer: ViewerT,
   onChangeLang: (str: string) => void,
   onClose: () => void,
+  // Relay
+  viewer: ViewerT,
 };
 
 const gqlFragments = graphql`

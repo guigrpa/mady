@@ -26,6 +26,7 @@ rules:
   object-property-newline: off
   class-methods-use-this: off
   arrow-parens: off
+  camelcase: off
   react/sort-comp: off
   react/jsx-first-prop-new-line: off
   react/jsx-indent: off
@@ -53,4 +54,5 @@ globals:
   HTMLElement: false
   HTMLInputElement: false
   $Exact: false
+  $ReadOnlyArray: false
   ReactClass: false

@@ -10,7 +10,7 @@
 import type {ConcreteFragment} from 'relay-runtime';
 export type eeTranslation_theKey = {|
   +id: string;
-  +text: ?string;
+  +text: string;
 |};
 */
 

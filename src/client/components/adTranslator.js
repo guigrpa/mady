@@ -29,8 +29,9 @@ const comparator = (a: string, b: string): number => {
 };
 /* eslint-enable arrow-body-style */
 const keyComparator = (a: KeyT, b: KeyT) => {
-  const aStr = `${a.context || ''}${a.text}${a.id}`;
-  const bStr = `${b.context || ''}${b.text}${b.id}`;
+  if (a == null || b == null) return 0;
+  const aStr = `${a.context || ''}${a.text || ''}${a.id}`;
+  const bStr = `${b.context || ''}${b.text || ''}${b.id}`;
   return comparator(aStr, bStr);
 };
 
@@ -39,9 +40,10 @@ const keyComparator = (a: KeyT, b: KeyT) => {
 // ==========================================
 type Props = {
   // lang: string,
-  viewer: ViewerT,
   selectedKeyId: ?string,
   changeSelectedKey: (keyId: ?string) => void,
+  // Relay
+  viewer: ViewerT,
 };
 
 const fragment = graphql`

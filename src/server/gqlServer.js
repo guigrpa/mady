@@ -29,6 +29,9 @@ import { capitalize, lowerFirst, upperFirst, pick } from 'lodash';
 import type { StoryT } from '../common/types';
 import * as db from './db';
 
+const NonNullString = new GraphQLNonNull(GraphQLString);
+const ArrayOfNonNullString = new GraphQLList(NonNullString);
+
 // ==============================================
 // Private state
 // ==============================================
@@ -104,35 +107,41 @@ const init = () => {
   // ----------------------------------------------
   // Config
   // ----------------------------------------------
-  const configFields = () => ({
-    srcPaths: { type: new GraphQLList(GraphQLString) },
-    srcExtensions: { type: new GraphQLList(GraphQLString) },
-    langs: { type: new GraphQLList(GraphQLString) },
-    msgFunctionNames: { type: new GraphQLList(GraphQLString) },
-    msgRegexps: { type: new GraphQLList(GraphQLString) },
-    fMinify: { type: GraphQLBoolean },
-    fJsOutput: { type: GraphQLBoolean },
-    fJsonOutput: { type: GraphQLBoolean },
-    fReactIntlOutput: { type: GraphQLBoolean },
-  });
-
   gqlTypes.Config = new GraphQLObjectType({
     name: 'Config',
     interfaces: [gqlInterfaces.Node],
     isTypeOf: () => true,
-    fields: () =>
-      timm.merge(configFields(), {
-        id: globalIdField('Config'),
-      }),
+    fields: () => ({
+      id: globalIdField('Config'),
+      srcPaths: { type: new GraphQLNonNull(ArrayOfNonNullString) },
+      srcExtensions: { type: new GraphQLNonNull(ArrayOfNonNullString) },
+      langs: { type: new GraphQLNonNull(ArrayOfNonNullString) },
+      msgFunctionNames: { type: new GraphQLNonNull(ArrayOfNonNullString) },
+      msgRegexps: { type: new GraphQLNonNull(ArrayOfNonNullString) },
+      fMinify: { type: new GraphQLNonNull(GraphQLBoolean) },
+      fJsOutput: { type: new GraphQLNonNull(GraphQLBoolean) },
+      fJsonOutput: { type: new GraphQLNonNull(GraphQLBoolean) },
+      fReactIntlOutput: { type: new GraphQLNonNull(GraphQLBoolean) },
+    }),
   });
 
   gqlTypes.ConfigUpdate = new GraphQLInputObjectType({
     name: 'ConfigUpdate',
-    fields: () => configFields(),
+    fields: () => ({
+      srcPaths: { type: ArrayOfNonNullString },
+      srcExtensions: { type: ArrayOfNonNullString },
+      langs: { type: ArrayOfNonNullString },
+      msgFunctionNames: { type: ArrayOfNonNullString },
+      msgRegexps: { type: ArrayOfNonNullString },
+      fMinify: { type: GraphQLBoolean },
+      fJsOutput: { type: GraphQLBoolean },
+      fJsonOutput: { type: GraphQLBoolean },
+      fReactIntlOutput: { type: GraphQLBoolean },
+    }),
   });
 
   configBaseField = {
-    type: gqlTypes.Config,
+    type: new GraphQLNonNull(gqlTypes.Config),
     resolve: () => db.getConfig(),
   };
 
@@ -149,11 +158,11 @@ const init = () => {
       id: globalIdField('Key'),
       isDeleted: { type: GraphQLBoolean },
       context: { type: GraphQLString },
-      text: { type: GraphQLString },
+      text: { type: new GraphQLNonNull(GraphQLString) },
       description: { type: GraphQLString },
-      firstUsed: { type: GraphQLString },
+      firstUsed: { type: new GraphQLNonNull(GraphQLString) },
       unusedSince: { type: GraphQLString },
-      sources: { type: new GraphQLList(GraphQLString) },
+      sources: { type: new GraphQLNonNull(ArrayOfNonNullString) },
       translations: {
         type: gqlTypes.TranslationConnection,
         args: connectionArgs,
@@ -217,20 +226,23 @@ const init = () => {
     fields: () => ({
       id: globalIdField('Translation'),
       isDeleted: { type: GraphQLBoolean },
-      lang: { type: GraphQLString },
-      translation: { type: GraphQLString },
+      lang: { type: new GraphQLNonNull(GraphQLString) },
+      translation: { type: new GraphQLNonNull(GraphQLString) },
       fuzzy: { type: GraphQLBoolean },
-      keyId: { type: GraphQLID, resolve: o => toGlobalId('Key', o.keyId) },
+      keyId: {
+        type: new GraphQLNonNull(GraphQLID),
+        resolve: o => toGlobalId('Key', o.keyId),
+      },
     }),
   });
 
   gqlTypes.TranslationCreate = new GraphQLInputObjectType({
     name: 'TranslationCreate',
     fields: () => ({
-      lang: { type: GraphQLString },
-      translation: { type: GraphQLString },
+      lang: { type: new GraphQLNonNull(GraphQLString) },
+      translation: { type: new GraphQLNonNull(GraphQLString) },
       fuzzy: { type: GraphQLBoolean },
-      keyId: { type: GraphQLID },
+      keyId: { type: new GraphQLNonNull(GraphQLID) },
     }),
   });
 

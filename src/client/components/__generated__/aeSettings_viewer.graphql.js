@@ -10,16 +10,16 @@
 import type {ConcreteFragment} from 'relay-runtime';
 export type aeSettings_viewer = {|
   +id: string;
-  +config: ?{|
-    +langs: ?$ReadOnlyArray<?string>;
-    +srcPaths: ?$ReadOnlyArray<?string>;
-    +srcExtensions: ?$ReadOnlyArray<?string>;
-    +msgFunctionNames: ?$ReadOnlyArray<?string>;
-    +msgRegexps: ?$ReadOnlyArray<?string>;
-    +fMinify: ?boolean;
-    +fJsOutput: ?boolean;
-    +fJsonOutput: ?boolean;
-    +fReactIntlOutput: ?boolean;
+  +config: {|
+    +langs: $ReadOnlyArray<string>;
+    +srcPaths: $ReadOnlyArray<string>;
+    +srcExtensions: $ReadOnlyArray<string>;
+    +msgFunctionNames: $ReadOnlyArray<string>;
+    +msgRegexps: $ReadOnlyArray<string>;
+    +fMinify: boolean;
+    +fJsOutput: boolean;
+    +fJsonOutput: boolean;
+    +fReactIntlOutput: boolean;
   |};
 |};
 */

@@ -1,24 +1,23 @@
 type Config implements Node {
-  srcPaths: [String]
-  srcExtensions: [String]
-  langs: [String]
-  msgFunctionNames: [String]
-  msgRegexps: [String]
-  fMinify: Boolean
-  fJsOutput: Boolean
-  fJsonOutput: Boolean
-  fReactIntlOutput: Boolean
-
   # The ID of an object
   id: ID!
+  srcPaths: [String!]!
+  srcExtensions: [String!]!
+  langs: [String!]!
+  msgFunctionNames: [String!]!
+  msgRegexps: [String!]!
+  fMinify: Boolean!
+  fJsOutput: Boolean!
+  fJsonOutput: Boolean!
+  fReactIntlOutput: Boolean!
 }
 
 input ConfigUpdate {
-  srcPaths: [String]
-  srcExtensions: [String]
-  langs: [String]
-  msgFunctionNames: [String]
-  msgRegexps: [String]
+  srcPaths: [String!]
+  srcExtensions: [String!]
+  langs: [String!]
+  msgFunctionNames: [String!]
+  msgRegexps: [String!]
   fMinify: Boolean
   fJsOutput: Boolean
   fJsonOutput: Boolean
@@ -45,11 +44,11 @@ type Key implements Node {
   id: ID!
   isDeleted: Boolean
   context: String
-  text: String
+  text: String!
   description: String
-  firstUsed: String
+  firstUsed: String!
   unusedSince: String
-  sources: [String]
+  sources: [String!]!
   translations(after: String, first: Int, before: String, last: Int): TranslationConnection
 }
 
@@ -132,10 +131,10 @@ type Translation implements Node {
   # The ID of an object
   id: ID!
   isDeleted: Boolean
-  lang: String
-  translation: String
+  lang: String!
+  translation: String!
   fuzzy: Boolean
-  keyId: ID
+  keyId: ID!
 }
 
 # A connection to a list of items.
@@ -148,10 +147,10 @@ type TranslationConnection {
 }
 
 input TranslationCreate {
-  lang: String
-  translation: String
+  lang: String!
+  translation: String!
   fuzzy: Boolean
-  keyId: ID
+  keyId: ID!
 }
 
 # An edge in a connection.
@@ -210,7 +209,7 @@ type UpdateTranslationPayload {
 type Viewer implements Node {
   # The ID of an object
   id: ID!
-  config: Config
+  config: Config!
   keys(after: String, first: Int, before: String, last: Int): KeyConnection
   translations(after: String, first: Int, before: String, last: Int): TranslationConnection
 }

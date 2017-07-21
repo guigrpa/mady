@@ -10,8 +10,8 @@
 import type {ConcreteFragment} from 'relay-runtime';
 export type adTranslator_viewer = {|
   +id: string;
-  +config: ?{|
-    +langs: ?$ReadOnlyArray<?string>;
+  +config: {|
+    +langs: $ReadOnlyArray<string>;
   |};
   +keys: ?{|
     +edges: ?$ReadOnlyArray<?{|
@@ -20,11 +20,11 @@ export type adTranslator_viewer = {|
         +isDeleted: ?boolean;
         +unusedSince: ?string;
         +context: ?string;
-        +text: ?string;
+        +text: string;
         +translations: ?{|
           +edges: ?$ReadOnlyArray<?{|
             +node: ?{|
-              +lang: ?string;
+              +lang: string;
             |};
           |}>;
         |};

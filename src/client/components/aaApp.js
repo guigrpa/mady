@@ -29,6 +29,7 @@ require('./aaApp.sass');
 // Component declarations
 // ==========================================
 type Props = {
+  // Relay
   viewer: ViewerT,
 };
 
