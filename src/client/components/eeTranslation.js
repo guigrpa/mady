@@ -39,6 +39,7 @@ type PublicProps = {|
   lang: string,
   changeSelectedKey: (keyId: ?string) => void,
   // Relay
+  relay: Object,
   theKey: KeyT,
   translation: ?TranslationT,
 |};
@@ -225,6 +226,7 @@ class Translation extends React.Component {
       if (translation) {
         mutate({
           description: 'Commit translation edit',
+          environment: this.props.relay.environment,
           mutationOptions: updateTranslation({
             translation,
             attrs: { translation: text },
@@ -233,6 +235,7 @@ class Translation extends React.Component {
       } else {
         mutate({
           description: 'Commit translation creation',
+          environment: this.props.relay.environment,
           mutationOptions: createTranslation({
             attrs: {
               lang: this.props.lang,
@@ -262,6 +265,7 @@ class Translation extends React.Component {
     if (!translation || translation.isDeleted) return;
     mutate({
       description: 'Click on Delete translation',
+      environment: this.props.relay.environment,
       mutationOptions: updateTranslation({
         translation,
         attrs: { isDeleted: true },
@@ -274,6 +278,7 @@ class Translation extends React.Component {
     if (!translation || translation.isDeleted) return;
     mutate({
       description: 'Toggle translation fuzziness',
+      environment: this.props.relay.environment,
       mutationOptions: updateTranslation({
         translation,
         attrs: { fuzzy: !translation.fuzzy },

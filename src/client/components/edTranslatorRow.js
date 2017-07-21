@@ -21,6 +21,7 @@ type PublicProps = {|
   styleKeyCol: Object,
   styleLangCol: Object,
   // Relay
+  relay: Object,
   viewer: ViewerT,
   theKey: KeyT,
 |};
@@ -151,6 +152,7 @@ class TranslatorRow extends React.PureComponent {
     }
     mutate({
       description: 'Click on Delete key',
+      environment: this.props.relay.environment,
       mutationOptions: updateKey({
         theKey: this.props.theKey,
         attrs: { isDeleted: true },

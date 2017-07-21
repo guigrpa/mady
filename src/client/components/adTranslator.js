@@ -43,6 +43,7 @@ type Props = {
   selectedKeyId: ?string,
   changeSelectedKey: (keyId: ?string) => void,
   // Relay
+  relay: Object,
   viewer: ViewerT,
 };
 
@@ -330,6 +331,7 @@ class Translator extends React.Component {
     this.setState({ fParsing: true });
     mutate({
       description: 'Click on Parse source files',
+      environment: this.props.relay.environment,
       mutationOptions: parseSrcFiles(),
       onFinish: () => this.setState({ fParsing: false }),
     });

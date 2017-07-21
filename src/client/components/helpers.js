@@ -5,11 +5,11 @@ import { commitMutation } from 'react-relay';
 import { mainStory } from 'storyboard';
 import { notify } from 'giu';
 import _t from '../../translate';
-import relayEnvironment from '../gral/relayEnvironment';
 
 // Runs a Relay mutation inside a Storyboard story
 const mutate = ({
   description,
+  environment,
   mutationOptions: mutationOptions0,
   onFailure,
   onSuccess,
@@ -32,7 +32,7 @@ const mutate = ({
     ['variables', 'input', 'storyId'],
     story.storyId
   );
-  commitMutation(relayEnvironment, {
+  commitMutation(environment, {
     ...mutationOptions,
     onCompleted: response => {
       story.debug('views', 'Transaction result:', {

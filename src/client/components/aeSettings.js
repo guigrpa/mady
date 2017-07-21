@@ -36,6 +36,7 @@ type Props = {
   onChangeLang: (str: string) => void,
   onClose: () => void,
   // Relay
+  relay: Object,
   viewer: ViewerT,
 };
 
@@ -323,6 +324,7 @@ class Settings extends React.Component {
     attrs.fJsonOutput = this.refJsonOutput.getValue();
     mutate({
       description: 'Click on Save settings',
+      environment: this.props.relay.environment,
       mutationOptions: updateConfig({ viewer: this.props.viewer, attrs }),
       onFailure: () => {
         notify({
