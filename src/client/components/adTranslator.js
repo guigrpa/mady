@@ -349,7 +349,7 @@ class Translator extends React.Component {
       if (key.unusedSince) continue;
       numUsedKeys += 1;
       const translationEdges = key.translations.edges;
-      for (let k = 0; k < translationEdges; k++) {
+      for (let k = 0; k < translationEdges.length; k++) {
         const translation = translationEdges[k].node;
         const { lang } = translation;
         if (numTranslations[lang] == null) numTranslations[lang] = 0;
