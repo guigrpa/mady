@@ -134,6 +134,7 @@ exports[`Settings renders correctly 1`] = `
                 }
               }
               tabIndex={undefined}
+              type="native"
               value="\\"en\\""
             >
               <option
@@ -770,7 +771,6 @@ exports[`Settings renders correctly 1`] = `
         <div
           style={
             Object {
-              "borderTop": "1px solid #999999",
               "display": "flex",
               "flexDirection": "row",
               "marginTop": 10,
@@ -870,6 +870,7 @@ exports[`Settings renders correctly 1`] = `
             <select
               class="giu-select-native"
               style="background-color:default;border:default;color:inherit;font-family:inherit;font-size:inherit;font-weight:inherit;"
+              type="native"
               value="\\"en\\""
             >
               <option
@@ -1102,7 +1103,7 @@ exports[`Settings renders correctly 1`] = `
             </div>
           </div>
         </div>
-        <div style="border-top:1px solid #999999;display:flex;flex-direction:row;margin-top:10px;padding-top:10px;">
+        <div style="display:flex;flex-direction:row;margin-top:10px;padding-top:10px;">
           <span
             class="giu-button"
             style="-webkit-user-select:none;border:1px solid #999999;border-radius:5px;cursor:pointer;display:inline-block;margin-right:5px;padding:1px 5px;user-select:none;"

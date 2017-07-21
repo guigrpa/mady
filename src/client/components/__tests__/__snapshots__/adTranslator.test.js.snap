@@ -162,6 +162,7 @@ exports[`Translator allows changing the language of a column 1`] = `
               }
             }
             tabIndex={undefined}
+            type="native"
             value="\\"es\\""
           >
             <option
@@ -570,6 +571,7 @@ exports[`Translator allows changing the language of a column 1`] = `
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            type="native"
             value="\\"es\\""
           >
             <option
@@ -811,6 +813,7 @@ exports[`Translator allows changing the language of a column 2`] = `
               }
             }
             tabIndex={undefined}
+            type="native"
             value="\\"en\\""
           >
             <option
@@ -1219,6 +1222,7 @@ exports[`Translator allows changing the language of a column 2`] = `
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            type="native"
             value="\\"en\\""
           >
             <option
@@ -1460,6 +1464,7 @@ exports[`Translator allows removing columns 1`] = `
               }
             }
             tabIndex={undefined}
+            type="native"
             value="\\"es\\""
           >
             <option
@@ -1868,6 +1873,7 @@ exports[`Translator allows removing columns 1`] = `
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            type="native"
             value="\\"es\\""
           >
             <option
@@ -2109,6 +2115,7 @@ exports[`Translator renders correctly with a selection 1`] = `
               }
             }
             tabIndex={undefined}
+            type="native"
             value="\\"ca\\""
           >
             <option
@@ -2237,6 +2244,7 @@ exports[`Translator renders correctly with a selection 1`] = `
               }
             }
             tabIndex={undefined}
+            type="native"
             value="\\"es\\""
           >
             <option
@@ -2365,6 +2373,7 @@ exports[`Translator renders correctly with a selection 1`] = `
               }
             }
             tabIndex={undefined}
+            type="native"
             value="\\"en\\""
           >
             <option
@@ -2802,6 +2811,7 @@ exports[`Translator renders correctly with a selection 1`] = `
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            type="native"
             value="\\"ca\\""
           >
             <option
@@ -2861,6 +2871,7 @@ exports[`Translator renders correctly with a selection 1`] = `
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            type="native"
             value="\\"es\\""
           >
             <option
@@ -2920,6 +2931,7 @@ exports[`Translator renders correctly with a selection 1`] = `
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            type="native"
             value="\\"en\\""
           >
             <option
@@ -3166,6 +3178,7 @@ exports[`Translator renders correctly with default columns 1`] = `
               }
             }
             tabIndex={undefined}
+            type="native"
             value="\\"es\\""
           >
             <option
@@ -3574,6 +3587,7 @@ exports[`Translator renders correctly with default columns 1`] = `
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            type="native"
             value="\\"es\\""
           >
             <option
@@ -3815,6 +3829,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               }
             }
             tabIndex={undefined}
+            type="native"
             value="\\"ca\\""
           >
             <option
@@ -3943,6 +3958,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               }
             }
             tabIndex={undefined}
+            type="native"
             value="\\"es\\""
           >
             <option
@@ -4365,6 +4381,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            type="native"
             value="\\"ca\\""
           >
             <option
@@ -4424,6 +4441,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            type="native"
             value="\\"es\\""
           >
             <option
@@ -4666,6 +4684,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
               }
             }
             tabIndex={undefined}
+            type="native"
             value="\\"ca\\""
           >
             <option
@@ -4794,6 +4813,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
               }
             }
             tabIndex={undefined}
+            type="native"
             value="\\"es\\""
           >
             <option
@@ -4922,6 +4942,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
               }
             }
             tabIndex={undefined}
+            type="native"
             value="\\"en\\""
           >
             <option
@@ -5359,6 +5380,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            type="native"
             value="\\"ca\\""
           >
             <option
@@ -5418,6 +5440,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            type="native"
             value="\\"es\\""
           >
             <option
@@ -5477,6 +5500,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            type="native"
             value="\\"en\\""
           >
             <option
@@ -5720,6 +5744,7 @@ exports[`Translator renders correctly with no content 1`] = `
               }
             }
             tabIndex={undefined}
+            type="native"
             value="\\"es\\""
           >
             <option
@@ -5947,6 +5972,7 @@ exports[`Translator renders correctly with no content 1`] = `
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            type="native"
             value="\\"es\\""
           >
             <option
@@ -6193,6 +6219,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               }
             }
             tabIndex={undefined}
+            type="native"
             value="\\"ca\\""
           >
             <option
@@ -6321,6 +6348,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               }
             }
             tabIndex={undefined}
+            type="native"
             value="\\"es\\""
           >
             <option
@@ -6449,6 +6477,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               }
             }
             tabIndex={undefined}
+            type="native"
             value="\\"en\\""
           >
             <option
@@ -6886,6 +6915,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            type="native"
             value="\\"ca\\""
           >
             <option
@@ -6945,6 +6975,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            type="native"
             value="\\"es\\""
           >
             <option
@@ -7004,6 +7035,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
           <select
             class="giu-select-native"
             style="background-color:default;border:default;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;left:0;opacity:0;position:absolute;top:0;width:100%;"
+            type="native"
             value="\\"en\\""
           >
             <option

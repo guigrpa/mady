@@ -119,13 +119,6 @@ describe('db', () => {
     expect(db.getKeys()).toMatchSnapshot();
   });
 
-  it('should allow deleting keys', async () => {
-    db._setKeys(INITIAL_KEYS);
-    const deletedKey = await db.deleteKey('someContext_someText');
-    expect(deletedKey).toMatchSnapshot();
-    expect(db.getKeys()).toMatchSnapshot();
-  });
-
   // ==========================================
   // Translations
   // ==========================================
@@ -192,10 +185,19 @@ describe('db', () => {
   });
 
   it('should not allow the creation of incomplete translations', async () => {
-    expect(() => db.createTranslation({}, { story: mainStory })).toThrow();
-    expect(() =>
-      db.createTranslation({ lang: 'es' }, { story: mainStory })
-    ).toThrow();
+    try {
+      await db.createTranslation({}, { story: mainStory });
+      throw new Error('SHOULD_HAVE_THROWN');
+    } catch (err) {
+      if (err.message === 'SHOULD_HAVE_THROWN') throw err;
+    }
+
+    try {
+      await db.createTranslation({ lang: 'es' }, { story: mainStory });
+      throw new Error('SHOULD_HAVE_THROWN');
+    } catch (err) {
+      if (err.message === 'SHOULD_HAVE_THROWN') throw err;
+    }
   });
 
   it('should allow updating translations', async () => {
@@ -209,16 +211,6 @@ describe('db', () => {
       { story: mainStory }
     );
     expect(updatedTranslation).toMatchSnapshot();
-    expect(db.getTranslations()).toMatchSnapshot();
-  });
-
-  it('should allow deleting translations', async () => {
-    db._setTranslations(INITIAL_KEYS);
-    db._setTranslations(INITIAL_TRANSLATIONS);
-    const deletedTranslation = await db.deleteTranslation('translationId2', {
-      story: mainStory,
-    });
-    expect(deletedTranslation).toMatchSnapshot();
     expect(db.getTranslations()).toMatchSnapshot();
   });
 });
