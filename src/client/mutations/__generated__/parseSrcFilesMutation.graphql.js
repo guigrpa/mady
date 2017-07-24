@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 99a1238933ef1e14307e9884b9d880c8
+ * @relayHash dcf7f4ef0b7130e1170195e31247a869
  */
 
 /* eslint-disable */
@@ -51,17 +51,10 @@ fragment adTranslator_viewer on Viewer {
         context
         text
         ...edTranslatorRow_theKey
-        translations(first: 100000) {
-          edges {
-            node {
-              lang
-              id
-            }
-          }
-        }
       }
     }
   }
+  ...ecTranslatorHeader_viewer
   ...edTranslatorRow_viewer
 }
 
@@ -87,6 +80,33 @@ fragment edTranslatorRow_theKey on Key {
       hasNextPage
       hasPreviousPage
       startCursor
+    }
+  }
+}
+
+fragment ecTranslatorHeader_viewer on Viewer {
+  id
+  config {
+    langs
+    id
+  }
+  keys(first: 100000) {
+    edges {
+      node {
+        id
+        isDeleted
+        unusedSince
+        ...edTranslatorRow_theKey
+        translations(first: 100000) {
+          edges {
+            node {
+              lang
+              isDeleted
+              id
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -459,7 +479,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "mutation parseSrcFilesMutation(\n  $input: ParseSrcFilesInput!\n) {\n  parseSrcFiles(input: $input) {\n    viewer {\n      ...adTranslator_viewer\n      id\n    }\n  }\n}\n\nfragment adTranslator_viewer on Viewer {\n  id\n  config {\n    langs\n    id\n  }\n  keys(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        unusedSince\n        context\n        text\n        ...edTranslatorRow_theKey\n        translations(first: 100000) {\n          edges {\n            node {\n              lang\n              id\n            }\n          }\n        }\n      }\n    }\n  }\n  ...edTranslatorRow_viewer\n}\n\nfragment edTranslatorRow_theKey on Key {\n  id\n  context\n  text\n  unusedSince\n  ...eeTranslation_theKey\n  translations(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        lang\n        ...eeTranslation_translation\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n      hasPreviousPage\n      startCursor\n    }\n  }\n}\n\nfragment edTranslatorRow_viewer on Viewer {\n  id\n}\n\nfragment eeTranslation_theKey on Key {\n  id\n  text\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  isDeleted\n  lang\n  translation\n  fuzzy\n}\n"
+  "text": "mutation parseSrcFilesMutation(\n  $input: ParseSrcFilesInput!\n) {\n  parseSrcFiles(input: $input) {\n    viewer {\n      ...adTranslator_viewer\n      id\n    }\n  }\n}\n\nfragment adTranslator_viewer on Viewer {\n  id\n  config {\n    langs\n    id\n  }\n  keys(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        unusedSince\n        context\n        text\n        ...edTranslatorRow_theKey\n      }\n    }\n  }\n  ...ecTranslatorHeader_viewer\n  ...edTranslatorRow_viewer\n}\n\nfragment edTranslatorRow_theKey on Key {\n  id\n  context\n  text\n  unusedSince\n  ...eeTranslation_theKey\n  translations(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        lang\n        ...eeTranslation_translation\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n      hasPreviousPage\n      startCursor\n    }\n  }\n}\n\nfragment ecTranslatorHeader_viewer on Viewer {\n  id\n  config {\n    langs\n    id\n  }\n  keys(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        unusedSince\n        ...edTranslatorRow_theKey\n        translations(first: 100000) {\n          edges {\n            node {\n              lang\n              isDeleted\n              id\n            }\n          }\n        }\n      }\n    }\n  }\n}\n\nfragment edTranslatorRow_viewer on Viewer {\n  id\n}\n\nfragment eeTranslation_theKey on Key {\n  id\n  text\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  isDeleted\n  lang\n  translation\n  fuzzy\n}\n"
 };
 
 module.exports = batch;

@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash b5fc93e47c5e1ddf26680dcf040a394f
+ * @relayHash 8fbb2906109e890d9758b0114490c6c5
  */
 
 /* eslint-disable */
@@ -39,17 +39,10 @@ fragment adTranslator_viewer on Viewer {
         context
         text
         ...edTranslatorRow_theKey
-        translations(first: 100000) {
-          edges {
-            node {
-              lang
-              id
-            }
-          }
-        }
       }
     }
   }
+  ...ecTranslatorHeader_viewer
   ...edTranslatorRow_viewer
 }
 
@@ -91,6 +84,33 @@ fragment edTranslatorRow_theKey on Key {
       hasNextPage
       hasPreviousPage
       startCursor
+    }
+  }
+}
+
+fragment ecTranslatorHeader_viewer on Viewer {
+  id
+  config {
+    langs
+    id
+  }
+  keys(first: 100000) {
+    edges {
+      node {
+        id
+        isDeleted
+        unusedSince
+        ...edTranslatorRow_theKey
+        translations(first: 100000) {
+          edges {
+            node {
+              lang
+              isDeleted
+              id
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -474,7 +494,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query aaAppQuery {\n  viewer {\n    ...adTranslator_viewer\n    ...aeSettings_viewer\n    id\n  }\n}\n\nfragment adTranslator_viewer on Viewer {\n  id\n  config {\n    langs\n    id\n  }\n  keys(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        unusedSince\n        context\n        text\n        ...edTranslatorRow_theKey\n        translations(first: 100000) {\n          edges {\n            node {\n              lang\n              id\n            }\n          }\n        }\n      }\n    }\n  }\n  ...edTranslatorRow_viewer\n}\n\nfragment aeSettings_viewer on Viewer {\n  id\n  config {\n    langs\n    srcPaths\n    srcExtensions\n    msgFunctionNames\n    msgRegexps\n    fMinify\n    fJsOutput\n    fJsonOutput\n    fReactIntlOutput\n    id\n  }\n}\n\nfragment edTranslatorRow_theKey on Key {\n  id\n  context\n  text\n  unusedSince\n  ...eeTranslation_theKey\n  translations(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        lang\n        ...eeTranslation_translation\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n      hasPreviousPage\n      startCursor\n    }\n  }\n}\n\nfragment edTranslatorRow_viewer on Viewer {\n  id\n}\n\nfragment eeTranslation_theKey on Key {\n  id\n  text\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  isDeleted\n  lang\n  translation\n  fuzzy\n}\n"
+  "text": "query aaAppQuery {\n  viewer {\n    ...adTranslator_viewer\n    ...aeSettings_viewer\n    id\n  }\n}\n\nfragment adTranslator_viewer on Viewer {\n  id\n  config {\n    langs\n    id\n  }\n  keys(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        unusedSince\n        context\n        text\n        ...edTranslatorRow_theKey\n      }\n    }\n  }\n  ...ecTranslatorHeader_viewer\n  ...edTranslatorRow_viewer\n}\n\nfragment aeSettings_viewer on Viewer {\n  id\n  config {\n    langs\n    srcPaths\n    srcExtensions\n    msgFunctionNames\n    msgRegexps\n    fMinify\n    fJsOutput\n    fJsonOutput\n    fReactIntlOutput\n    id\n  }\n}\n\nfragment edTranslatorRow_theKey on Key {\n  id\n  context\n  text\n  unusedSince\n  ...eeTranslation_theKey\n  translations(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        lang\n        ...eeTranslation_translation\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n      hasPreviousPage\n      startCursor\n    }\n  }\n}\n\nfragment ecTranslatorHeader_viewer on Viewer {\n  id\n  config {\n    langs\n    id\n  }\n  keys(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        unusedSince\n        ...edTranslatorRow_theKey\n        translations(first: 100000) {\n          edges {\n            node {\n              lang\n              isDeleted\n              id\n            }\n          }\n        }\n      }\n    }\n  }\n}\n\nfragment edTranslatorRow_viewer on Viewer {\n  id\n}\n\nfragment eeTranslation_theKey on Key {\n  id\n  text\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  isDeleted\n  lang\n  translation\n  fuzzy\n}\n"
 };
 
 module.exports = batch;

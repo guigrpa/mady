@@ -1,5 +1,7 @@
 // @flow
 
+/* eslint-disable react/no-multi-comp */
+
 import timm from 'timm';
 import React from 'react';
 import Relay, { graphql } from 'react-relay';
@@ -215,5 +217,14 @@ const Container = Relay.createFragmentContainer(
   HoverableTranslatorRow,
   gqlFragments
 );
-export default Container;
+
+// Wrap the Relay container in a PureComponent,
+// so it only gets rendered when necessary (e.g. not when
+// changing the selected row)
+class SuperContainer extends React.PureComponent {
+  render() {
+    return <Container {...this.props} />;
+  }
+}
+export default SuperContainer;
 export { HoverableTranslatorRow as _HoverableTranslatorRow };

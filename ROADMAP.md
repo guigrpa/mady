@@ -1,6 +1,4 @@
-* Verify SSR, client from the client perspective (via yarn link)
 - Subscriptions?
-* Perf: avoid re-rendering RelayContainer at the top of each translatorrow, for even the simplest change (row selection)
 * Improve parsing perf
 
 Someday:

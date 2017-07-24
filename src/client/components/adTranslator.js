@@ -4,23 +4,12 @@
 import timm from 'timm';
 import React from 'react';
 import Relay, { graphql } from 'react-relay';
-import throttle from 'lodash/throttle';
 import filter from 'lodash/filter';
-import {
-  getScrollbarWidth,
-  flexItem,
-  flexContainer,
-  Icon,
-  Select,
-  LargeMessage,
-} from 'giu';
-import type { Choice } from 'giu/lib/gral/types';
+import { flexItem, flexContainer, Icon, LargeMessage } from 'giu';
 import type { ViewerT, KeyT } from '../../common/types';
-import _t from '../../translate';
-import parseSrcFiles from '../mutations/parseSrcFiles';
-import { COLORS } from '../gral/constants';
 import { cookieGet, cookieSet } from '../gral/storage';
-import { mutate } from './helpers';
+import { styleKeyCol, styleLangCol } from './adTranslatorStyles';
+import TranslatorHeader from './ecTranslatorHeader';
 import TranslatorRow from './edTranslatorRow';
 
 /* eslint-disable arrow-body-style */
@@ -39,11 +28,10 @@ const keyComparator = (a: KeyT, b: KeyT) => {
 // Component declarations
 // ==========================================
 type Props = {
-  // lang: string,
+  lang: string,
   selectedKeyId: ?string,
   changeSelectedKey: (keyId: ?string) => void,
   // Relay
-  relay: Object,
   viewer: ViewerT,
 };
 
@@ -62,16 +50,10 @@ const fragment = graphql`
           context
           text # for sorting
           ...edTranslatorRow_theKey
-          translations(first: 100000) {
-            edges {
-              node {
-                lang
-              }
-            }
-          }
         }
       }
     }
+    ...ecTranslatorHeader_viewer
     ...edTranslatorRow_viewer
   }
 `;
@@ -83,38 +65,19 @@ class Translator extends React.Component {
   props: Props;
   state: {
     langs: Array<string>,
-    fParsing: boolean,
-  };
-  forceRender: () => void;
-  stats: {
-    numUsedKeys: number,
-    numTranslations: { [key: string]: number },
   };
 
   constructor(props: Props) {
     super(props);
     this.state = {
       langs: this.readLangs(),
-      fParsing: false,
     };
-    this.forceRender = throttle(this.forceRender.bind(this), 200);
-  }
-
-  componentDidMount() {
-    window.addEventListener('resize', this.forceRender);
-  }
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.forceRender);
-  }
-  forceRender() {
-    this.forceUpdate();
   }
 
   // ------------------------------------------
   // Render
   // ------------------------------------------
   render() {
-    this.calcStats();
     return (
       <div style={style.outer}>
         {this.renderHeader()}
@@ -124,85 +87,15 @@ class Translator extends React.Component {
   }
 
   renderHeader() {
-    const { keys, config } = this.props.viewer;
-    const langOptions = config.langs.map(lang => ({
-      value: lang,
-      label: lang,
-    }));
     return (
-      <div
-        className="tableHeaderRow"
-        style={timm.merge(style.row, style.headerRow)}
-      >
-        <div style={timm.merge(style.headerCell, style.keyCol)}>
-          {_t('columnTitle_Messages').toUpperCase()}{' '}
-          <span style={style.numItems}>
-            [
-            <span title={_t('tooltip_Used messages')}>
-              {this.stats.numUsedKeys}
-            </span>
-            {' / '}
-            <span title={_t('tooltip_Total messages')}>
-              {keys.edges.length}
-            </span>
-            ]
-          </span>{' '}
-          <Icon
-            icon="refresh"
-            title={_t('tooltip_Parse source files to update the message list')}
-            onClick={this.onParseSrcFiles}
-            spin={this.state.fParsing}
-          />
-        </div>
-        {this.state.langs.map((lang, idx) =>
-          this.renderLangHeader(lang, idx, langOptions)
-        )}
-        {this.renderAdd()}
-        <div style={style.scrollbarSpacer()} />
-      </div>
-    );
-  }
-
-  renderLangHeader(lang: string, idx: number, langOptions: Array<Choice>) {
-    return (
-      <div
-        key={lang}
-        className="madyLangHeader"
-        style={timm.merge(style.headerCell, style.langCol)}
-      >
-        <div
-          title={_t('tooltip_Change language')}
-          style={style.langSelectorOuter}
-        >
-          <Icon icon="caret-down" style={style.langSelectorCaret} />
-          {lang}
-          <Select
-            id={idx}
-            value={lang}
-            onChange={this.onChangeLang}
-            required
-            items={langOptions}
-            style={style.langSelector}
-          />
-        </div>{' '}
-        <span style={style.numItems}>
-          [
-          <span title={_t('tooltip_Translations')}>
-            {this.stats.numTranslations[lang] || 0}
-          </span>
-          {' / '}
-          <span title={_t('tooltip_Used messages')}>
-            {this.stats.numUsedKeys}
-          </span>
-          ]
-        </span>{' '}
-        <Icon
-          id={idx}
-          icon="remove"
-          title={_t('tooltip_Remove column (does NOT delete any translations)')}
-          onClick={this.onRemoveLang}
-        />
-      </div>
+      <TranslatorHeader
+        lang={this.props.lang}
+        langs={this.state.langs}
+        viewer={this.props.viewer}
+        onAddLang={this.onAddLang}
+        onRemoveLang={this.onRemoveLang}
+        onChangeLang={this.onChangeLang}
+      />
     );
   }
 
@@ -246,21 +139,6 @@ class Translator extends React.Component {
           {noKeys}
         </div>
         {this.state.langs.map(lang => <div key={lang} style={style.langCol} />)}
-      </div>
-    );
-  }
-
-  renderAdd() {
-    const fDisabled =
-      this.state.langs.length === this.props.viewer.config.langs.length;
-    return (
-      <div
-        id="madyBtnAddLang"
-        onClick={fDisabled ? undefined : this.onAddLang}
-        title={_t('tooltip_Add column')}
-        style={style.addLang(fDisabled)}
-      >
-        <Icon icon="plus" disabled={fDisabled} />
       </div>
     );
   }
@@ -323,41 +201,6 @@ class Translator extends React.Component {
     this.writeLangs(langs);
     this.setState({ langs });
   }
-
-  // ------------------------------------------
-  // Other handlers
-  // ------------------------------------------
-  onParseSrcFiles = () => {
-    this.setState({ fParsing: true });
-    mutate({
-      description: 'Click on Parse source files',
-      environment: this.props.relay.environment,
-      mutationOptions: parseSrcFiles(),
-      onFinish: () => this.setState({ fParsing: false }),
-    });
-  };
-
-  // ------------------------------------------
-  // Helpers
-  // ------------------------------------------
-  calcStats() {
-    let numUsedKeys = 0;
-    const numTranslations = {};
-    const keyEdges = this.props.viewer.keys.edges;
-    for (let i = 0; i < keyEdges.length; i++) {
-      const key = keyEdges[i].node;
-      if (key.unusedSince) continue;
-      numUsedKeys += 1;
-      const translationEdges = key.translations.edges;
-      for (let k = 0; k < translationEdges.length; k++) {
-        const translation = translationEdges[k].node;
-        const { lang } = translation;
-        if (numTranslations[lang] == null) numTranslations[lang] = 0;
-        numTranslations[lang] += 1;
-      }
-    }
-    this.stats = { numUsedKeys, numTranslations };
-  }
 }
 
 // ------------------------------------------
@@ -370,69 +213,15 @@ const style = {
       marginTop: 5,
     })
   ),
-
   body: flexItem(1, flexContainer('column', { overflowY: 'scroll' })),
-
   row: flexItem('none', flexContainer('row')),
   headerRow: {
     position: 'relative',
     fontWeight: 'bold',
   },
   fillerRow: flexItem('1 1 0px', flexContainer('row')),
-
-  headerCell: {
-    paddingTop: 3,
-    paddingBottom: 3,
-    borderBottom: `1px solid ${COLORS.darkest}`,
-    textAlign: 'center',
-    fontWeight: 900,
-    letterSpacing: 3,
-  },
-  numItems: {
-    color: 'darkgrey',
-  },
-  keyCol: flexItem('1 1 0px', {
-    backgroundColor: COLORS.light,
-    marginRight: 5,
-    paddingLeft: 5,
-    paddingRight: 17,
-  }),
-  langCol: flexItem('1 1 0px', {
-    backgroundColor: COLORS.light,
-    marginRight: 5,
-    paddingLeft: 5,
-    paddingRight: 5,
-  }),
-  langSelectorOuter: {
-    position: 'relative',
-    display: 'inline-block',
-    paddingRight: 5,
-  },
-  langSelectorCaret: {
-    marginRight: 5,
-  },
-  langSelector: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    opacity: 0,
-    cursor: 'pointer',
-  },
-  addLang: fDisabled => {
-    const scrollbarWidth = getScrollbarWidth();
-    return {
-      position: 'absolute',
-      top: 0,
-      right: 5 + scrollbarWidth,
-      cursor: fDisabled ? undefined : 'pointer',
-      padding: '3px 6px',
-      fontWeight: 900,
-      letterSpacing: 3,
-    };
-  },
-
-  scrollbarSpacer: () => flexItem(`0 0 ${getScrollbarWidth()}px`),
+  keyCol: styleKeyCol,
+  langCol: styleLangCol,
 };
 
 // ==========================================
