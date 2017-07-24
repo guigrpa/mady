@@ -16,6 +16,7 @@ const mutate = ({
   onFinish,
 }: {|
   description: string,
+  environment: Object,
   mutationOptions: Object,
   input?: Object,
   onFailure?: (failure: Object) => void,

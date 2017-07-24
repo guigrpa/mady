@@ -176,7 +176,7 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-const Container = ({ relayEnvironment }) =>
+const Container = ({ relayEnvironment }: { relayEnvironment?: Object }) =>
   <QueryRendererWrapper
     environment={relayEnvironment}
     query={query}

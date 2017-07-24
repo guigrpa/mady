@@ -7,6 +7,7 @@ import { Spinner } from 'giu';
 import { getEnvironment } from '../gral/relay';
 
 type Props = {
+  relayEnvironment?: Object,
   query: Object,
   vars?: Object,
   Component: ReactClass<*>,
