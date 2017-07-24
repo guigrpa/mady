@@ -7,8 +7,8 @@ import { Floats } from 'giu';
 import { _TranslatorHeader as TranslatorHeader } from '../ecTranslatorHeader';
 import {
   VIEWER,
-  VIEWER_WITH_NO_CONTENT,
-  KEY_WITH_TRANSLATIONS,
+  // VIEWER_WITH_NO_CONTENT,
+  // KEY_WITH_TRANSLATIONS,
 } from './fixtures';
 import $ from './jestQuery';
 
