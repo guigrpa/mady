@@ -70,7 +70,7 @@
     "express": "4.15.3",
     "express-graphql": "0.6.6",
     "fs-extra": "0.30.0",
-    "graphql": "0.10.3",
+    "graphql": "0.10.5",
     "graphql-relay": "0.5.2",
     "lodash": "4.17.4",
     "messageformat": "1.0.2",
@@ -81,7 +81,7 @@
     "storyboard-listener-ws-server": "^3.0.0",
     "timm": "1.2.5",
     "uglify-js": "2.7.3",
-    "uuid": "3.0.1"
+    "uuid": "3.1.0"
   },
   "peerDependencies": {
     "babel-core": "^6.0.0",
@@ -106,8 +106,8 @@
     "coveralls": "2.13.1",
     "cross-env": "2.0.1",
     "css-loader": "0.28.4",
-    "eslint": "4.2.0",
-    "eslint-config-airbnb": "15.0.2",
+    "eslint": "4.3.0",
+    "eslint-config-airbnb": "15.1.0",
     "eslint-config-prettier": "2.3.0",
     "eslint-plugin-flowtype": "2.35.0",
     "eslint-plugin-import": "2.7.0",

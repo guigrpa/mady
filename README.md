@@ -65,7 +65,9 @@ Access the translation app by running `npm run translate`. Mady will automatical
 
 * Update the message database with new messages extracted from your source files
 * Configure your languages, source paths, file extensions, etc.
+* Mark translations as dubious
 * Translate your keys to the different supported languages
+* Apply filters: untranslated or unused messages, dubious translations, etc.
 * [Automatically] export translations to JS files and other formats, for use by the [translation function](#the-translation-function), React Intl and other integrations
 
 Messages in your source files might have the form: `_t('someContext_Once upon a time...')` (single or double quotes are supported), where `_t()` is the default name for the translation function (see below), `someContext` is some hint for the translator and `Once upon a time...` is your untranslated [MessageFormat](#messageformat) message.
