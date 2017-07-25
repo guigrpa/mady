@@ -1,3 +1,5 @@
+## 2.4.0 (July 25, 2017)
+
 * **Add filters**: untranslated or unused messages, fuzzy translations.
 * **Performance improvements**.
 

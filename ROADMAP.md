@@ -1,5 +1,3 @@
-* Update deps
-* Cut release
 * Use Giu's DataTable
 * Split in two, adding oao and creating mady-cli
 * Add subscriptions
