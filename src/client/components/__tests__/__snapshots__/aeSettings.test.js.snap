@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Settings renders correctly 1`] = `
+exports[`Settings 01 normal 1`] = `
 <div>
   <div
     className="giu-floats"

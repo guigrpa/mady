@@ -4,163 +4,146 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Floats } from 'giu';
-import { _TranslatorHeader as TranslatorHeader } from '../ecTranslatorHeader';
+import { _Translator as Translator } from '../adTranslator';
 import {
   VIEWER,
-  // VIEWER_WITH_NO_CONTENT,
-  // KEY_WITH_TRANSLATIONS,
+  VIEWER_WITH_NO_CONTENT,
+  KEY_WITH_TRANSLATIONS,
 } from './fixtures';
 import $ from './jestQuery';
 
 // https://github.com/facebook/react/issues/7386#issuecomment-238091398
 jest.mock('react-dom');
+jest.mock('../ecTranslatorHeader', () =>
+  require('./mockComponent')('TranslatorHeader', {
+    description: ({ langs }) => langs.join(','),
+  })
+);
+const headerMatcher = node =>
+  node.props && node.props.dataMockType === 'TranslatorHeader';
 jest.mock('../edTranslatorRow', () =>
-  require('./mockComponent')('TranslatorRow')
+  require('./mockComponent')('TranslatorRow', {
+    description: ({ fSelected }) => (fSelected ? 'selected' : 'unselected'),
+  })
 );
 jest.mock('../../gral/storage');
 
 // ======================================================
 // Tests
 // ======================================================
-// describe('Translator', () => {
-//   it('renders correctly with no content', () => {
-//     const tree = renderer
-//       .create(
-//         <div>
-//           <Floats />
-//           <Translator
-//             viewer={VIEWER_WITH_NO_CONTENT}
-//             changeSelectedKey={() => {}}
-//           />
-//         </div>
-//       )
-//       .toJSON();
-//     expect(tree).toMatchSnapshot();
-//   });
-//
-//   it('renders correctly with a selection', () => {
-//     const tree = renderer
-//       .create(
-//         <div>
-//           <Floats />
-//           <Translator
-//             viewer={VIEWER}
-//             selectedKeyId={KEY_WITH_TRANSLATIONS.id}
-//             changeSelectedKey={() => {}}
-//           />
-//         </div>
-//       )
-//       .toJSON();
-//     expect(tree).toMatchSnapshot();
-//   });
-// });
-
-describe.skip('TranslatorHeader', () => {
-  it('renders correctly with default columns', () => {
+describe('Translator', () => {
+  it('01 no content', () => {
     const tree = renderer
       .create(
         <div>
           <Floats />
-          <TranslatorHeader viewer={VIEWER} />
+          <Translator
+            viewer={VIEWER_WITH_NO_CONTENT}
+            changeSelectedKey={() => {}}
+          />
         </div>
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders correctly with fixed columns', () => {
-    require('../../gral/storage').cookieSet('langs', ['ca', 'es']);
+  it('02 selected row', () => {
     const tree = renderer
       .create(
         <div>
           <Floats />
-          <TranslatorHeader viewer={VIEWER} />
+          <Translator
+            viewer={VIEWER}
+            selectedKeyId={KEY_WITH_TRANSLATIONS.id}
+            changeSelectedKey={() => {}}
+          />
         </div>
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders correctly with fixed columns using up all available options', () => {
-    require('../../gral/storage').cookieSet('langs', ['ca', 'es', 'en']);
+  it('03 default columns', () => {
     const tree = renderer
       .create(
         <div>
           <Floats />
-          <TranslatorHeader viewer={VIEWER} />
+          <Translator viewer={VIEWER} />
         </div>
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('when adding a column, it corresponds to a new language', () => {
+  it('04 fixed columns', () => {
+    require('../../gral/storage').cookieSet('langs', ['ca', 'es']);
+    const tree = renderer
+      .create(
+        <div>
+          <Floats />
+          <Translator viewer={VIEWER} />
+        </div>
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('05 add column (it must correspond to a new language)', () => {
     require('../../gral/storage').cookieSet('langs', ['ca', 'es']);
     const component = renderer.create(
       <div>
         <Floats />
-        <TranslatorHeader viewer={VIEWER} />
+        <Translator viewer={VIEWER} />
       </div>
     );
     let tree = component.toJSON();
-    const addBtn = $(tree, '#madyBtnAddLang');
-    expect(addBtn).not.toBeNull();
-    addBtn.props.onClick();
+    const headerComponent = $(tree, headerMatcher);
+    expect(headerComponent).not.toBeNull();
+    headerComponent.props.onAddLang();
     tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('allows removing columns', () => {
+  it('06 remove column', () => {
     require('../../gral/storage').cookieSet('langs', ['ca', 'es']);
     const component = renderer.create(
       <div>
         <Floats />
-        <TranslatorHeader viewer={VIEWER} />
+        <Translator viewer={VIEWER} />
       </div>
     );
     let tree = component.toJSON();
-    const langHeader = $(tree, '.madyLangHeader');
-    expect(langHeader).not.toBeNull();
-    const removeBtn = $(langHeader, '.fa-remove');
-    expect(removeBtn).not.toBeNull();
-    const removeBtnNode = document.createElement('div');
-    removeBtnNode.id = '0';
-    removeBtn.props.onClick({ currentTarget: removeBtnNode });
+    const headerComponent = $(tree, headerMatcher);
+    expect(headerComponent).not.toBeNull();
+    const fakeRemoveBtn = document.createElement('div');
+    fakeRemoveBtn.id = '0';
+    headerComponent.props.onRemoveLang({ currentTarget: fakeRemoveBtn });
     tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('allows changing the language of a column', () => {
+  it('07 change column language', () => {
     require('../../gral/storage').cookieSet('langs', ['ca', 'es']);
     const component = renderer.create(
       <div>
         <Floats />
-        <TranslatorHeader viewer={VIEWER} />
+        <Translator viewer={VIEWER} />
       </div>
     );
     let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    const headerComponent = $(tree, headerMatcher);
+    expect(headerComponent).not.toBeNull();
+    const fakeSelect = document.createElement('div');
+    fakeSelect.id = '0';
 
-    let langHeader;
-    let selectEl;
-
-    const selectElNode = document.createElement('select');
-    selectElNode.id = '0';
-
-    // Change the language ca -> es: keeps just one column, 'es'
-    langHeader = $(tree, '.madyLangHeader');
-    expect(langHeader).not.toBeNull();
-    selectEl = $(langHeader, '.giu-select');
-    expect(selectEl).not.toBeNull();
-    selectEl.props.onChange({ currentTarget: selectElNode }, '"es"');
+    // Change the language ca -> en: changes the column
+    headerComponent.props.onChangeLang({ currentTarget: fakeSelect }, 'en');
     tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 
-    // Change the language es -> en: changes the column
-    langHeader = $(tree, '.madyLangHeader');
-    expect(langHeader).not.toBeNull();
-    selectEl = $(langHeader, '.giu-select');
-    expect(selectEl).not.toBeNull();
-    selectEl.props.onChange({ currentTarget: selectElNode }, '"en"');
+    // Change the language en -> es: removes the column, laves just one, 'e'
+    headerComponent.props.onChangeLang({ currentTarget: fakeSelect }, 'es');
     tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });

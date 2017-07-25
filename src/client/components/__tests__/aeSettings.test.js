@@ -8,7 +8,7 @@ import { _Settings as Settings } from '../aeSettings';
 jest.mock('react-dom');
 
 describe('Settings', () => {
-  it('renders correctly', () => {
+  it('01 normal', () => {
     const viewer = {
       id: 'me',
       config: {

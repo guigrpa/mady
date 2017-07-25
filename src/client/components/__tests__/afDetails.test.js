@@ -11,86 +11,52 @@ jest.mock('react-dom');
 // ======================================================
 const KEY_ID = 'keyId';
 
-const VIEWER_WITHOUT_KEY = {
-  id: 'me',
+const NODE_USED = {
+  firstUsed: '2016-04-18T05:37:47.074Z',
+  unusedSince: null,
+  description: 'Some details',
+  sources: ['src/client/components/060-translator.js'],
 };
 
-const VIEWER_WITH_KEY_USED = {
-  id: 'me',
-  anyNode: {
-    firstUsed: '2016-04-18T05:37:47.074Z',
-    unusedSince: null,
-    description: 'Some details',
-    sources: ['src/client/components/060-translator.js'],
-  },
+const NODE_UNUSED = {
+  firstUsed: '2016-04-18T05:37:47.074Z',
+  unusedSince: '2016-04-21T05:37:47.074Z',
+  description: 'Some details',
+  sources: [],
 };
 
-const VIEWER_WITH_KEY_UNUSED = {
-  id: 'me',
-  anyNode: {
-    firstUsed: '2016-04-18T05:37:47.074Z',
-    unusedSince: '2016-04-21T05:37:47.074Z',
-    description: 'Some details',
-    sources: [],
-  },
-};
-
-const RELAY_MOCK = {
-  setVariables: jest.fn(),
-};
+const NOW = new Date('2017-01-01T17:00:00.000Z');
 
 // ======================================================
 // Tests
 // ======================================================
 describe('Details', () => {
-  it('renders correctly without a selection', () => {
+  it('01 no selection', () => {
     const tree = renderer
-      .create(
-        <Details
-          relay={RELAY_MOCK}
-          viewer={VIEWER_WITHOUT_KEY}
-          selectedKeyId={null}
-        />
-      )
+      .create(<Details node={null} selectedKeyId={null} _now={NOW} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders correctly with a selection but no data yet', () => {
+  it('02 selection, but no data yet', () => {
     const tree = renderer
-      .create(
-        <Details
-          relay={RELAY_MOCK}
-          viewer={VIEWER_WITHOUT_KEY}
-          selectedKeyId={KEY_ID}
-        />
-      )
+      .create(<Details node={null} selectedKeyId={KEY_ID} _now={NOW} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  describe('when the details for the selection are available', () => {
-    it('renders correctly for a message that is used', () => {
+  describe('03 selection (and data are available):', () => {
+    it('03a message that is used', () => {
       const tree = renderer
-        .create(
-          <Details
-            relay={RELAY_MOCK}
-            viewer={VIEWER_WITH_KEY_USED}
-            selectedKeyId={KEY_ID}
-          />
-        )
+        .create(<Details node={NODE_USED} selectedKeyId={KEY_ID} _now={NOW} />)
         .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
-    it('renders correctly for a message that is unused', () => {
+    it('03b message that is unused', () => {
       const tree = renderer
         .create(
-          <Details
-            relay={RELAY_MOCK}
-            viewer={VIEWER_WITH_KEY_UNUSED}
-            selectedKeyId={KEY_ID}
-          />
+          <Details node={NODE_UNUSED} selectedKeyId={KEY_ID} _now={NOW} />
         )
         .toJSON();
       expect(tree).toMatchSnapshot();

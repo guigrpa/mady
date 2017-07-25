@@ -1,0 +1,3353 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Translator 01 no content 1`] = `
+<div>
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0,
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "WebkitFlex": "1 0 10em",
+        "display": "flex",
+        "flex": "1 0 10em",
+        "flexDirection": "column",
+        "marginTop": 5,
+      }
+    }
+  >
+    <div
+      dataMockType="TranslatorHeader"
+      lang={undefined}
+      langs={
+        Array [
+          "es",
+        ]
+      }
+      onAddLang={[Function]}
+      onChangeLang={[Function]}
+      onRemoveLang={[Function]}
+      viewer={
+        Object {
+          "config": Object {
+            "langs": Array [
+              "es",
+              "ca",
+              "en",
+            ],
+          },
+          "id": "me",
+          "keys": Object {
+            "edges": Array [],
+          },
+        }
+      }
+    >
+      TranslatorHeader (es)
+    </div>
+    <div
+      className="tableBody"
+      style={
+        Object {
+          "WebkitFlex": 1,
+          "display": "flex",
+          "flex": 1,
+          "flexDirection": "column",
+          "overflowY": "scroll",
+        }
+      }
+    >
+      <div
+        className="tableFillerRow"
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "display": "flex",
+            "flex": "1 1 0px",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 17,
+            }
+          }
+        >
+          <div
+            className="giu-large-message"
+            style={
+              Object {
+                "color": "#999999",
+                "fontSize": "1.4em",
+                "fontWeight": 700,
+                "padding": "0.8em",
+                "textAlign": "center",
+              }
+            }
+          >
+            No messages. Click on 
+            <i
+              className="giu-icon fa fa-refresh"
+              onClick={undefined}
+              style={
+                Object {
+                  "color": "#999999",
+                  "cursor": undefined,
+                  "fontSize": undefined,
+                  "letterSpacing": "normal",
+                }
+              }
+            />
+             to refresh
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+------------HTML PREVIEW---------------
+<div>
+  <div
+    class="giu-floats"
+    style="height:0;left:0;position:absolute;top:0;width:0;"
+  >
+  </div>
+  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+    <div dataMockType="TranslatorHeader">
+      TranslatorHeader (es)
+    </div>
+    <div
+      class="tableBody"
+      style="-webkit-flex:1;display:flex;flex:1;flex-direction:column;overflow-y:scroll;"
+    >
+      <div
+        class="tableFillerRow"
+        style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;"
+      >
+        <div style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
+          <div
+            class="giu-large-message"
+            style="color:#999999;font-size:1.4em;font-weight:700;padding:0.8em;text-align:center;"
+          >
+            No messages. Click on 
+            <i
+              class="giu-icon fa fa-refresh"
+              style="color:#999999;letter-spacing:normal;"
+            >
+            </i>
+             to refresh
+          </div>
+        </div>
+        <div style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Translator 02 selected row 1`] = `
+<div>
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0,
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "WebkitFlex": "1 0 10em",
+        "display": "flex",
+        "flex": "1 0 10em",
+        "flexDirection": "column",
+        "marginTop": 5,
+      }
+    }
+  >
+    <div
+      dataMockType="TranslatorHeader"
+      lang={undefined}
+      langs={
+        Array [
+          "es",
+        ]
+      }
+      onAddLang={[Function]}
+      onChangeLang={[Function]}
+      onRemoveLang={[Function]}
+      viewer={
+        Object {
+          "config": Object {
+            "langs": Array [
+              "es",
+              "ca",
+              "en",
+            ],
+          },
+          "id": "me",
+          "keys": Object {
+            "edges": Array [
+              Object {
+                "node": Object {
+                  "context": "someContext",
+                  "id": "keyId1",
+                  "text": "A message",
+                  "translations": Object {
+                    "edges": Array [],
+                  },
+                  "unusedSince": null,
+                },
+              },
+              Object {
+                "node": Object {
+                  "context": "someContext",
+                  "id": "keyId2",
+                  "text": "A message",
+                  "translations": Object {
+                    "edges": Array [
+                      Object {
+                        "node": Object {
+                          "id": "translationId1",
+                          "lang": "es",
+                          "translation": "Un mensaje",
+                        },
+                      },
+                      Object {
+                        "node": Object {
+                          "id": "translationId2",
+                          "lang": "ca",
+                          "translation": "Un missatge",
+                        },
+                      },
+                    ],
+                  },
+                  "unusedSince": null,
+                },
+              },
+            ],
+          },
+        }
+      }
+    >
+      TranslatorHeader (es)
+    </div>
+    <div
+      className="tableBody"
+      style={
+        Object {
+          "WebkitFlex": 1,
+          "display": "flex",
+          "flex": 1,
+          "flexDirection": "column",
+          "overflowY": "scroll",
+        }
+      }
+    >
+      <div
+        changeSelectedKey={[Function]}
+        dataMockType="TranslatorRow"
+        fSelected={false}
+        langs={
+          Array [
+            "es",
+          ]
+        }
+        styleKeyCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 17,
+          }
+        }
+        styleLangCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+          }
+        }
+        theKey={
+          Object {
+            "context": "someContext",
+            "id": "keyId1",
+            "text": "A message",
+            "translations": Object {
+              "edges": Array [],
+            },
+            "unusedSince": null,
+          }
+        }
+        viewer={
+          Object {
+            "config": Object {
+              "langs": Array [
+                "es",
+                "ca",
+                "en",
+              ],
+            },
+            "id": "me",
+            "keys": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId1",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId2",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [
+                        Object {
+                          "node": Object {
+                            "id": "translationId1",
+                            "lang": "es",
+                            "translation": "Un mensaje",
+                          },
+                        },
+                        Object {
+                          "node": Object {
+                            "id": "translationId2",
+                            "lang": "ca",
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
+          }
+        }
+      >
+        TranslatorRow (unselected)
+      </div>
+      <div
+        changeSelectedKey={[Function]}
+        dataMockType="TranslatorRow"
+        fSelected={true}
+        langs={
+          Array [
+            "es",
+          ]
+        }
+        styleKeyCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 17,
+          }
+        }
+        styleLangCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+          }
+        }
+        theKey={
+          Object {
+            "context": "someContext",
+            "id": "keyId2",
+            "text": "A message",
+            "translations": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "id": "translationId1",
+                    "lang": "es",
+                    "translation": "Un mensaje",
+                  },
+                },
+                Object {
+                  "node": Object {
+                    "id": "translationId2",
+                    "lang": "ca",
+                    "translation": "Un missatge",
+                  },
+                },
+              ],
+            },
+            "unusedSince": null,
+          }
+        }
+        viewer={
+          Object {
+            "config": Object {
+              "langs": Array [
+                "es",
+                "ca",
+                "en",
+              ],
+            },
+            "id": "me",
+            "keys": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId1",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId2",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [
+                        Object {
+                          "node": Object {
+                            "id": "translationId1",
+                            "lang": "es",
+                            "translation": "Un mensaje",
+                          },
+                        },
+                        Object {
+                          "node": Object {
+                            "id": "translationId2",
+                            "lang": "ca",
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
+          }
+        }
+      >
+        TranslatorRow (selected)
+      </div>
+      <div
+        className="tableFillerRow"
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "display": "flex",
+            "flex": "1 1 0px",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 17,
+            }
+          }
+        >
+          
+        </div>
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+------------HTML PREVIEW---------------
+<div>
+  <div
+    class="giu-floats"
+    style="height:0;left:0;position:absolute;top:0;width:0;"
+  >
+  </div>
+  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+    <div dataMockType="TranslatorHeader">
+      TranslatorHeader (es)
+    </div>
+    <div
+      class="tableBody"
+      style="-webkit-flex:1;display:flex;flex:1;flex-direction:column;overflow-y:scroll;"
+    >
+      <div dataMockType="TranslatorRow">
+        TranslatorRow (unselected)
+      </div>
+      <div
+        dataMockType="TranslatorRow"
+        fSelected
+      >
+        TranslatorRow (selected)
+      </div>
+      <div
+        class="tableFillerRow"
+        style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;"
+      >
+        <div style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
+          
+        </div>
+        <div style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Translator 03 default columns 1`] = `
+<div>
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0,
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "WebkitFlex": "1 0 10em",
+        "display": "flex",
+        "flex": "1 0 10em",
+        "flexDirection": "column",
+        "marginTop": 5,
+      }
+    }
+  >
+    <div
+      dataMockType="TranslatorHeader"
+      lang={undefined}
+      langs={
+        Array [
+          "es",
+        ]
+      }
+      onAddLang={[Function]}
+      onChangeLang={[Function]}
+      onRemoveLang={[Function]}
+      viewer={
+        Object {
+          "config": Object {
+            "langs": Array [
+              "es",
+              "ca",
+              "en",
+            ],
+          },
+          "id": "me",
+          "keys": Object {
+            "edges": Array [
+              Object {
+                "node": Object {
+                  "context": "someContext",
+                  "id": "keyId1",
+                  "text": "A message",
+                  "translations": Object {
+                    "edges": Array [],
+                  },
+                  "unusedSince": null,
+                },
+              },
+              Object {
+                "node": Object {
+                  "context": "someContext",
+                  "id": "keyId2",
+                  "text": "A message",
+                  "translations": Object {
+                    "edges": Array [
+                      Object {
+                        "node": Object {
+                          "id": "translationId1",
+                          "lang": "es",
+                          "translation": "Un mensaje",
+                        },
+                      },
+                      Object {
+                        "node": Object {
+                          "id": "translationId2",
+                          "lang": "ca",
+                          "translation": "Un missatge",
+                        },
+                      },
+                    ],
+                  },
+                  "unusedSince": null,
+                },
+              },
+            ],
+          },
+        }
+      }
+    >
+      TranslatorHeader (es)
+    </div>
+    <div
+      className="tableBody"
+      style={
+        Object {
+          "WebkitFlex": 1,
+          "display": "flex",
+          "flex": 1,
+          "flexDirection": "column",
+          "overflowY": "scroll",
+        }
+      }
+    >
+      <div
+        changeSelectedKey={undefined}
+        dataMockType="TranslatorRow"
+        fSelected={false}
+        langs={
+          Array [
+            "es",
+          ]
+        }
+        styleKeyCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 17,
+          }
+        }
+        styleLangCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+          }
+        }
+        theKey={
+          Object {
+            "context": "someContext",
+            "id": "keyId1",
+            "text": "A message",
+            "translations": Object {
+              "edges": Array [],
+            },
+            "unusedSince": null,
+          }
+        }
+        viewer={
+          Object {
+            "config": Object {
+              "langs": Array [
+                "es",
+                "ca",
+                "en",
+              ],
+            },
+            "id": "me",
+            "keys": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId1",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId2",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [
+                        Object {
+                          "node": Object {
+                            "id": "translationId1",
+                            "lang": "es",
+                            "translation": "Un mensaje",
+                          },
+                        },
+                        Object {
+                          "node": Object {
+                            "id": "translationId2",
+                            "lang": "ca",
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
+          }
+        }
+      >
+        TranslatorRow (unselected)
+      </div>
+      <div
+        changeSelectedKey={undefined}
+        dataMockType="TranslatorRow"
+        fSelected={false}
+        langs={
+          Array [
+            "es",
+          ]
+        }
+        styleKeyCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 17,
+          }
+        }
+        styleLangCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+          }
+        }
+        theKey={
+          Object {
+            "context": "someContext",
+            "id": "keyId2",
+            "text": "A message",
+            "translations": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "id": "translationId1",
+                    "lang": "es",
+                    "translation": "Un mensaje",
+                  },
+                },
+                Object {
+                  "node": Object {
+                    "id": "translationId2",
+                    "lang": "ca",
+                    "translation": "Un missatge",
+                  },
+                },
+              ],
+            },
+            "unusedSince": null,
+          }
+        }
+        viewer={
+          Object {
+            "config": Object {
+              "langs": Array [
+                "es",
+                "ca",
+                "en",
+              ],
+            },
+            "id": "me",
+            "keys": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId1",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId2",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [
+                        Object {
+                          "node": Object {
+                            "id": "translationId1",
+                            "lang": "es",
+                            "translation": "Un mensaje",
+                          },
+                        },
+                        Object {
+                          "node": Object {
+                            "id": "translationId2",
+                            "lang": "ca",
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
+          }
+        }
+      >
+        TranslatorRow (unselected)
+      </div>
+      <div
+        className="tableFillerRow"
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "display": "flex",
+            "flex": "1 1 0px",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 17,
+            }
+          }
+        >
+          
+        </div>
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+------------HTML PREVIEW---------------
+<div>
+  <div
+    class="giu-floats"
+    style="height:0;left:0;position:absolute;top:0;width:0;"
+  >
+  </div>
+  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+    <div dataMockType="TranslatorHeader">
+      TranslatorHeader (es)
+    </div>
+    <div
+      class="tableBody"
+      style="-webkit-flex:1;display:flex;flex:1;flex-direction:column;overflow-y:scroll;"
+    >
+      <div dataMockType="TranslatorRow">
+        TranslatorRow (unselected)
+      </div>
+      <div dataMockType="TranslatorRow">
+        TranslatorRow (unselected)
+      </div>
+      <div
+        class="tableFillerRow"
+        style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;"
+      >
+        <div style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
+          
+        </div>
+        <div style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Translator 04 fixed columns 1`] = `
+<div>
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0,
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "WebkitFlex": "1 0 10em",
+        "display": "flex",
+        "flex": "1 0 10em",
+        "flexDirection": "column",
+        "marginTop": 5,
+      }
+    }
+  >
+    <div
+      dataMockType="TranslatorHeader"
+      lang={undefined}
+      langs={
+        Array [
+          "ca",
+          "es",
+        ]
+      }
+      onAddLang={[Function]}
+      onChangeLang={[Function]}
+      onRemoveLang={[Function]}
+      viewer={
+        Object {
+          "config": Object {
+            "langs": Array [
+              "es",
+              "ca",
+              "en",
+            ],
+          },
+          "id": "me",
+          "keys": Object {
+            "edges": Array [
+              Object {
+                "node": Object {
+                  "context": "someContext",
+                  "id": "keyId1",
+                  "text": "A message",
+                  "translations": Object {
+                    "edges": Array [],
+                  },
+                  "unusedSince": null,
+                },
+              },
+              Object {
+                "node": Object {
+                  "context": "someContext",
+                  "id": "keyId2",
+                  "text": "A message",
+                  "translations": Object {
+                    "edges": Array [
+                      Object {
+                        "node": Object {
+                          "id": "translationId1",
+                          "lang": "es",
+                          "translation": "Un mensaje",
+                        },
+                      },
+                      Object {
+                        "node": Object {
+                          "id": "translationId2",
+                          "lang": "ca",
+                          "translation": "Un missatge",
+                        },
+                      },
+                    ],
+                  },
+                  "unusedSince": null,
+                },
+              },
+            ],
+          },
+        }
+      }
+    >
+      TranslatorHeader (ca,es)
+    </div>
+    <div
+      className="tableBody"
+      style={
+        Object {
+          "WebkitFlex": 1,
+          "display": "flex",
+          "flex": 1,
+          "flexDirection": "column",
+          "overflowY": "scroll",
+        }
+      }
+    >
+      <div
+        changeSelectedKey={undefined}
+        dataMockType="TranslatorRow"
+        fSelected={false}
+        langs={
+          Array [
+            "ca",
+            "es",
+          ]
+        }
+        styleKeyCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 17,
+          }
+        }
+        styleLangCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+          }
+        }
+        theKey={
+          Object {
+            "context": "someContext",
+            "id": "keyId1",
+            "text": "A message",
+            "translations": Object {
+              "edges": Array [],
+            },
+            "unusedSince": null,
+          }
+        }
+        viewer={
+          Object {
+            "config": Object {
+              "langs": Array [
+                "es",
+                "ca",
+                "en",
+              ],
+            },
+            "id": "me",
+            "keys": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId1",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId2",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [
+                        Object {
+                          "node": Object {
+                            "id": "translationId1",
+                            "lang": "es",
+                            "translation": "Un mensaje",
+                          },
+                        },
+                        Object {
+                          "node": Object {
+                            "id": "translationId2",
+                            "lang": "ca",
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
+          }
+        }
+      >
+        TranslatorRow (unselected)
+      </div>
+      <div
+        changeSelectedKey={undefined}
+        dataMockType="TranslatorRow"
+        fSelected={false}
+        langs={
+          Array [
+            "ca",
+            "es",
+          ]
+        }
+        styleKeyCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 17,
+          }
+        }
+        styleLangCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+          }
+        }
+        theKey={
+          Object {
+            "context": "someContext",
+            "id": "keyId2",
+            "text": "A message",
+            "translations": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "id": "translationId1",
+                    "lang": "es",
+                    "translation": "Un mensaje",
+                  },
+                },
+                Object {
+                  "node": Object {
+                    "id": "translationId2",
+                    "lang": "ca",
+                    "translation": "Un missatge",
+                  },
+                },
+              ],
+            },
+            "unusedSince": null,
+          }
+        }
+        viewer={
+          Object {
+            "config": Object {
+              "langs": Array [
+                "es",
+                "ca",
+                "en",
+              ],
+            },
+            "id": "me",
+            "keys": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId1",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId2",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [
+                        Object {
+                          "node": Object {
+                            "id": "translationId1",
+                            "lang": "es",
+                            "translation": "Un mensaje",
+                          },
+                        },
+                        Object {
+                          "node": Object {
+                            "id": "translationId2",
+                            "lang": "ca",
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
+          }
+        }
+      >
+        TranslatorRow (unselected)
+      </div>
+      <div
+        className="tableFillerRow"
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "display": "flex",
+            "flex": "1 1 0px",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 17,
+            }
+          }
+        >
+          
+        </div>
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+            }
+          }
+        />
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+------------HTML PREVIEW---------------
+<div>
+  <div
+    class="giu-floats"
+    style="height:0;left:0;position:absolute;top:0;width:0;"
+  >
+  </div>
+  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+    <div dataMockType="TranslatorHeader">
+      TranslatorHeader (ca,es)
+    </div>
+    <div
+      class="tableBody"
+      style="-webkit-flex:1;display:flex;flex:1;flex-direction:column;overflow-y:scroll;"
+    >
+      <div dataMockType="TranslatorRow">
+        TranslatorRow (unselected)
+      </div>
+      <div dataMockType="TranslatorRow">
+        TranslatorRow (unselected)
+      </div>
+      <div
+        class="tableFillerRow"
+        style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;"
+      >
+        <div style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
+          
+        </div>
+        <div style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;"></div>
+        <div style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Translator 05 add column (it must correspond to a new language) 1`] = `
+<div>
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0,
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "WebkitFlex": "1 0 10em",
+        "display": "flex",
+        "flex": "1 0 10em",
+        "flexDirection": "column",
+        "marginTop": 5,
+      }
+    }
+  >
+    <div
+      dataMockType="TranslatorHeader"
+      lang={undefined}
+      langs={
+        Array [
+          "ca",
+          "es",
+          "en",
+        ]
+      }
+      onAddLang={[Function]}
+      onChangeLang={[Function]}
+      onRemoveLang={[Function]}
+      viewer={
+        Object {
+          "config": Object {
+            "langs": Array [
+              "es",
+              "ca",
+              "en",
+            ],
+          },
+          "id": "me",
+          "keys": Object {
+            "edges": Array [
+              Object {
+                "node": Object {
+                  "context": "someContext",
+                  "id": "keyId1",
+                  "text": "A message",
+                  "translations": Object {
+                    "edges": Array [],
+                  },
+                  "unusedSince": null,
+                },
+              },
+              Object {
+                "node": Object {
+                  "context": "someContext",
+                  "id": "keyId2",
+                  "text": "A message",
+                  "translations": Object {
+                    "edges": Array [
+                      Object {
+                        "node": Object {
+                          "id": "translationId1",
+                          "lang": "es",
+                          "translation": "Un mensaje",
+                        },
+                      },
+                      Object {
+                        "node": Object {
+                          "id": "translationId2",
+                          "lang": "ca",
+                          "translation": "Un missatge",
+                        },
+                      },
+                    ],
+                  },
+                  "unusedSince": null,
+                },
+              },
+            ],
+          },
+        }
+      }
+    >
+      TranslatorHeader (ca,es,en)
+    </div>
+    <div
+      className="tableBody"
+      style={
+        Object {
+          "WebkitFlex": 1,
+          "display": "flex",
+          "flex": 1,
+          "flexDirection": "column",
+          "overflowY": "scroll",
+        }
+      }
+    >
+      <div
+        changeSelectedKey={undefined}
+        dataMockType="TranslatorRow"
+        fSelected={false}
+        langs={
+          Array [
+            "ca",
+            "es",
+            "en",
+          ]
+        }
+        styleKeyCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 17,
+          }
+        }
+        styleLangCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+          }
+        }
+        theKey={
+          Object {
+            "context": "someContext",
+            "id": "keyId1",
+            "text": "A message",
+            "translations": Object {
+              "edges": Array [],
+            },
+            "unusedSince": null,
+          }
+        }
+        viewer={
+          Object {
+            "config": Object {
+              "langs": Array [
+                "es",
+                "ca",
+                "en",
+              ],
+            },
+            "id": "me",
+            "keys": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId1",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId2",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [
+                        Object {
+                          "node": Object {
+                            "id": "translationId1",
+                            "lang": "es",
+                            "translation": "Un mensaje",
+                          },
+                        },
+                        Object {
+                          "node": Object {
+                            "id": "translationId2",
+                            "lang": "ca",
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
+          }
+        }
+      >
+        TranslatorRow (unselected)
+      </div>
+      <div
+        changeSelectedKey={undefined}
+        dataMockType="TranslatorRow"
+        fSelected={false}
+        langs={
+          Array [
+            "ca",
+            "es",
+            "en",
+          ]
+        }
+        styleKeyCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 17,
+          }
+        }
+        styleLangCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+          }
+        }
+        theKey={
+          Object {
+            "context": "someContext",
+            "id": "keyId2",
+            "text": "A message",
+            "translations": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "id": "translationId1",
+                    "lang": "es",
+                    "translation": "Un mensaje",
+                  },
+                },
+                Object {
+                  "node": Object {
+                    "id": "translationId2",
+                    "lang": "ca",
+                    "translation": "Un missatge",
+                  },
+                },
+              ],
+            },
+            "unusedSince": null,
+          }
+        }
+        viewer={
+          Object {
+            "config": Object {
+              "langs": Array [
+                "es",
+                "ca",
+                "en",
+              ],
+            },
+            "id": "me",
+            "keys": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId1",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId2",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [
+                        Object {
+                          "node": Object {
+                            "id": "translationId1",
+                            "lang": "es",
+                            "translation": "Un mensaje",
+                          },
+                        },
+                        Object {
+                          "node": Object {
+                            "id": "translationId2",
+                            "lang": "ca",
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
+          }
+        }
+      >
+        TranslatorRow (unselected)
+      </div>
+      <div
+        className="tableFillerRow"
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "display": "flex",
+            "flex": "1 1 0px",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 17,
+            }
+          }
+        >
+          
+        </div>
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+            }
+          }
+        />
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+            }
+          }
+        />
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+------------HTML PREVIEW---------------
+<div>
+  <div
+    class="giu-floats"
+    style="height:0;left:0;position:absolute;top:0;width:0;"
+  >
+  </div>
+  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+    <div dataMockType="TranslatorHeader">
+      TranslatorHeader (ca,es,en)
+    </div>
+    <div
+      class="tableBody"
+      style="-webkit-flex:1;display:flex;flex:1;flex-direction:column;overflow-y:scroll;"
+    >
+      <div dataMockType="TranslatorRow">
+        TranslatorRow (unselected)
+      </div>
+      <div dataMockType="TranslatorRow">
+        TranslatorRow (unselected)
+      </div>
+      <div
+        class="tableFillerRow"
+        style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;"
+      >
+        <div style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
+          
+        </div>
+        <div style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;"></div>
+        <div style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;"></div>
+        <div style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Translator 06 remove column 1`] = `
+<div>
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0,
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "WebkitFlex": "1 0 10em",
+        "display": "flex",
+        "flex": "1 0 10em",
+        "flexDirection": "column",
+        "marginTop": 5,
+      }
+    }
+  >
+    <div
+      dataMockType="TranslatorHeader"
+      lang={undefined}
+      langs={
+        Array [
+          "es",
+        ]
+      }
+      onAddLang={[Function]}
+      onChangeLang={[Function]}
+      onRemoveLang={[Function]}
+      viewer={
+        Object {
+          "config": Object {
+            "langs": Array [
+              "es",
+              "ca",
+              "en",
+            ],
+          },
+          "id": "me",
+          "keys": Object {
+            "edges": Array [
+              Object {
+                "node": Object {
+                  "context": "someContext",
+                  "id": "keyId1",
+                  "text": "A message",
+                  "translations": Object {
+                    "edges": Array [],
+                  },
+                  "unusedSince": null,
+                },
+              },
+              Object {
+                "node": Object {
+                  "context": "someContext",
+                  "id": "keyId2",
+                  "text": "A message",
+                  "translations": Object {
+                    "edges": Array [
+                      Object {
+                        "node": Object {
+                          "id": "translationId1",
+                          "lang": "es",
+                          "translation": "Un mensaje",
+                        },
+                      },
+                      Object {
+                        "node": Object {
+                          "id": "translationId2",
+                          "lang": "ca",
+                          "translation": "Un missatge",
+                        },
+                      },
+                    ],
+                  },
+                  "unusedSince": null,
+                },
+              },
+            ],
+          },
+        }
+      }
+    >
+      TranslatorHeader (es)
+    </div>
+    <div
+      className="tableBody"
+      style={
+        Object {
+          "WebkitFlex": 1,
+          "display": "flex",
+          "flex": 1,
+          "flexDirection": "column",
+          "overflowY": "scroll",
+        }
+      }
+    >
+      <div
+        changeSelectedKey={undefined}
+        dataMockType="TranslatorRow"
+        fSelected={false}
+        langs={
+          Array [
+            "es",
+          ]
+        }
+        styleKeyCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 17,
+          }
+        }
+        styleLangCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+          }
+        }
+        theKey={
+          Object {
+            "context": "someContext",
+            "id": "keyId1",
+            "text": "A message",
+            "translations": Object {
+              "edges": Array [],
+            },
+            "unusedSince": null,
+          }
+        }
+        viewer={
+          Object {
+            "config": Object {
+              "langs": Array [
+                "es",
+                "ca",
+                "en",
+              ],
+            },
+            "id": "me",
+            "keys": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId1",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId2",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [
+                        Object {
+                          "node": Object {
+                            "id": "translationId1",
+                            "lang": "es",
+                            "translation": "Un mensaje",
+                          },
+                        },
+                        Object {
+                          "node": Object {
+                            "id": "translationId2",
+                            "lang": "ca",
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
+          }
+        }
+      >
+        TranslatorRow (unselected)
+      </div>
+      <div
+        changeSelectedKey={undefined}
+        dataMockType="TranslatorRow"
+        fSelected={false}
+        langs={
+          Array [
+            "es",
+          ]
+        }
+        styleKeyCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 17,
+          }
+        }
+        styleLangCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+          }
+        }
+        theKey={
+          Object {
+            "context": "someContext",
+            "id": "keyId2",
+            "text": "A message",
+            "translations": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "id": "translationId1",
+                    "lang": "es",
+                    "translation": "Un mensaje",
+                  },
+                },
+                Object {
+                  "node": Object {
+                    "id": "translationId2",
+                    "lang": "ca",
+                    "translation": "Un missatge",
+                  },
+                },
+              ],
+            },
+            "unusedSince": null,
+          }
+        }
+        viewer={
+          Object {
+            "config": Object {
+              "langs": Array [
+                "es",
+                "ca",
+                "en",
+              ],
+            },
+            "id": "me",
+            "keys": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId1",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId2",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [
+                        Object {
+                          "node": Object {
+                            "id": "translationId1",
+                            "lang": "es",
+                            "translation": "Un mensaje",
+                          },
+                        },
+                        Object {
+                          "node": Object {
+                            "id": "translationId2",
+                            "lang": "ca",
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
+          }
+        }
+      >
+        TranslatorRow (unselected)
+      </div>
+      <div
+        className="tableFillerRow"
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "display": "flex",
+            "flex": "1 1 0px",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 17,
+            }
+          }
+        >
+          
+        </div>
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+------------HTML PREVIEW---------------
+<div>
+  <div
+    class="giu-floats"
+    style="height:0;left:0;position:absolute;top:0;width:0;"
+  >
+  </div>
+  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+    <div dataMockType="TranslatorHeader">
+      TranslatorHeader (es)
+    </div>
+    <div
+      class="tableBody"
+      style="-webkit-flex:1;display:flex;flex:1;flex-direction:column;overflow-y:scroll;"
+    >
+      <div dataMockType="TranslatorRow">
+        TranslatorRow (unselected)
+      </div>
+      <div dataMockType="TranslatorRow">
+        TranslatorRow (unselected)
+      </div>
+      <div
+        class="tableFillerRow"
+        style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;"
+      >
+        <div style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
+          
+        </div>
+        <div style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Translator 07 change column language 1`] = `
+<div>
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0,
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "WebkitFlex": "1 0 10em",
+        "display": "flex",
+        "flex": "1 0 10em",
+        "flexDirection": "column",
+        "marginTop": 5,
+      }
+    }
+  >
+    <div
+      dataMockType="TranslatorHeader"
+      lang={undefined}
+      langs={
+        Array [
+          "ca",
+          "es",
+        ]
+      }
+      onAddLang={[Function]}
+      onChangeLang={[Function]}
+      onRemoveLang={[Function]}
+      viewer={
+        Object {
+          "config": Object {
+            "langs": Array [
+              "es",
+              "ca",
+              "en",
+            ],
+          },
+          "id": "me",
+          "keys": Object {
+            "edges": Array [
+              Object {
+                "node": Object {
+                  "context": "someContext",
+                  "id": "keyId1",
+                  "text": "A message",
+                  "translations": Object {
+                    "edges": Array [],
+                  },
+                  "unusedSince": null,
+                },
+              },
+              Object {
+                "node": Object {
+                  "context": "someContext",
+                  "id": "keyId2",
+                  "text": "A message",
+                  "translations": Object {
+                    "edges": Array [
+                      Object {
+                        "node": Object {
+                          "id": "translationId1",
+                          "lang": "es",
+                          "translation": "Un mensaje",
+                        },
+                      },
+                      Object {
+                        "node": Object {
+                          "id": "translationId2",
+                          "lang": "ca",
+                          "translation": "Un missatge",
+                        },
+                      },
+                    ],
+                  },
+                  "unusedSince": null,
+                },
+              },
+            ],
+          },
+        }
+      }
+    >
+      TranslatorHeader (ca,es)
+    </div>
+    <div
+      className="tableBody"
+      style={
+        Object {
+          "WebkitFlex": 1,
+          "display": "flex",
+          "flex": 1,
+          "flexDirection": "column",
+          "overflowY": "scroll",
+        }
+      }
+    >
+      <div
+        changeSelectedKey={undefined}
+        dataMockType="TranslatorRow"
+        fSelected={false}
+        langs={
+          Array [
+            "ca",
+            "es",
+          ]
+        }
+        styleKeyCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 17,
+          }
+        }
+        styleLangCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+          }
+        }
+        theKey={
+          Object {
+            "context": "someContext",
+            "id": "keyId1",
+            "text": "A message",
+            "translations": Object {
+              "edges": Array [],
+            },
+            "unusedSince": null,
+          }
+        }
+        viewer={
+          Object {
+            "config": Object {
+              "langs": Array [
+                "es",
+                "ca",
+                "en",
+              ],
+            },
+            "id": "me",
+            "keys": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId1",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId2",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [
+                        Object {
+                          "node": Object {
+                            "id": "translationId1",
+                            "lang": "es",
+                            "translation": "Un mensaje",
+                          },
+                        },
+                        Object {
+                          "node": Object {
+                            "id": "translationId2",
+                            "lang": "ca",
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
+          }
+        }
+      >
+        TranslatorRow (unselected)
+      </div>
+      <div
+        changeSelectedKey={undefined}
+        dataMockType="TranslatorRow"
+        fSelected={false}
+        langs={
+          Array [
+            "ca",
+            "es",
+          ]
+        }
+        styleKeyCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 17,
+          }
+        }
+        styleLangCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+          }
+        }
+        theKey={
+          Object {
+            "context": "someContext",
+            "id": "keyId2",
+            "text": "A message",
+            "translations": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "id": "translationId1",
+                    "lang": "es",
+                    "translation": "Un mensaje",
+                  },
+                },
+                Object {
+                  "node": Object {
+                    "id": "translationId2",
+                    "lang": "ca",
+                    "translation": "Un missatge",
+                  },
+                },
+              ],
+            },
+            "unusedSince": null,
+          }
+        }
+        viewer={
+          Object {
+            "config": Object {
+              "langs": Array [
+                "es",
+                "ca",
+                "en",
+              ],
+            },
+            "id": "me",
+            "keys": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId1",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId2",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [
+                        Object {
+                          "node": Object {
+                            "id": "translationId1",
+                            "lang": "es",
+                            "translation": "Un mensaje",
+                          },
+                        },
+                        Object {
+                          "node": Object {
+                            "id": "translationId2",
+                            "lang": "ca",
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
+          }
+        }
+      >
+        TranslatorRow (unselected)
+      </div>
+      <div
+        className="tableFillerRow"
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "display": "flex",
+            "flex": "1 1 0px",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 17,
+            }
+          }
+        >
+          
+        </div>
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+            }
+          }
+        />
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+------------HTML PREVIEW---------------
+<div>
+  <div
+    class="giu-floats"
+    style="height:0;left:0;position:absolute;top:0;width:0;"
+  >
+  </div>
+  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+    <div dataMockType="TranslatorHeader">
+      TranslatorHeader (ca,es)
+    </div>
+    <div
+      class="tableBody"
+      style="-webkit-flex:1;display:flex;flex:1;flex-direction:column;overflow-y:scroll;"
+    >
+      <div dataMockType="TranslatorRow">
+        TranslatorRow (unselected)
+      </div>
+      <div dataMockType="TranslatorRow">
+        TranslatorRow (unselected)
+      </div>
+      <div
+        class="tableFillerRow"
+        style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;"
+      >
+        <div style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
+          
+        </div>
+        <div style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;"></div>
+        <div style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Translator 07 change column language 2`] = `
+<div>
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0,
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "WebkitFlex": "1 0 10em",
+        "display": "flex",
+        "flex": "1 0 10em",
+        "flexDirection": "column",
+        "marginTop": 5,
+      }
+    }
+  >
+    <div
+      dataMockType="TranslatorHeader"
+      lang={undefined}
+      langs={
+        Array [
+          "en",
+          "es",
+        ]
+      }
+      onAddLang={[Function]}
+      onChangeLang={[Function]}
+      onRemoveLang={[Function]}
+      viewer={
+        Object {
+          "config": Object {
+            "langs": Array [
+              "es",
+              "ca",
+              "en",
+            ],
+          },
+          "id": "me",
+          "keys": Object {
+            "edges": Array [
+              Object {
+                "node": Object {
+                  "context": "someContext",
+                  "id": "keyId1",
+                  "text": "A message",
+                  "translations": Object {
+                    "edges": Array [],
+                  },
+                  "unusedSince": null,
+                },
+              },
+              Object {
+                "node": Object {
+                  "context": "someContext",
+                  "id": "keyId2",
+                  "text": "A message",
+                  "translations": Object {
+                    "edges": Array [
+                      Object {
+                        "node": Object {
+                          "id": "translationId1",
+                          "lang": "es",
+                          "translation": "Un mensaje",
+                        },
+                      },
+                      Object {
+                        "node": Object {
+                          "id": "translationId2",
+                          "lang": "ca",
+                          "translation": "Un missatge",
+                        },
+                      },
+                    ],
+                  },
+                  "unusedSince": null,
+                },
+              },
+            ],
+          },
+        }
+      }
+    >
+      TranslatorHeader (en,es)
+    </div>
+    <div
+      className="tableBody"
+      style={
+        Object {
+          "WebkitFlex": 1,
+          "display": "flex",
+          "flex": 1,
+          "flexDirection": "column",
+          "overflowY": "scroll",
+        }
+      }
+    >
+      <div
+        changeSelectedKey={undefined}
+        dataMockType="TranslatorRow"
+        fSelected={false}
+        langs={
+          Array [
+            "en",
+            "es",
+          ]
+        }
+        styleKeyCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 17,
+          }
+        }
+        styleLangCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+          }
+        }
+        theKey={
+          Object {
+            "context": "someContext",
+            "id": "keyId1",
+            "text": "A message",
+            "translations": Object {
+              "edges": Array [],
+            },
+            "unusedSince": null,
+          }
+        }
+        viewer={
+          Object {
+            "config": Object {
+              "langs": Array [
+                "es",
+                "ca",
+                "en",
+              ],
+            },
+            "id": "me",
+            "keys": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId1",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId2",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [
+                        Object {
+                          "node": Object {
+                            "id": "translationId1",
+                            "lang": "es",
+                            "translation": "Un mensaje",
+                          },
+                        },
+                        Object {
+                          "node": Object {
+                            "id": "translationId2",
+                            "lang": "ca",
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
+          }
+        }
+      >
+        TranslatorRow (unselected)
+      </div>
+      <div
+        changeSelectedKey={undefined}
+        dataMockType="TranslatorRow"
+        fSelected={false}
+        langs={
+          Array [
+            "en",
+            "es",
+          ]
+        }
+        styleKeyCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 17,
+          }
+        }
+        styleLangCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+          }
+        }
+        theKey={
+          Object {
+            "context": "someContext",
+            "id": "keyId2",
+            "text": "A message",
+            "translations": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "id": "translationId1",
+                    "lang": "es",
+                    "translation": "Un mensaje",
+                  },
+                },
+                Object {
+                  "node": Object {
+                    "id": "translationId2",
+                    "lang": "ca",
+                    "translation": "Un missatge",
+                  },
+                },
+              ],
+            },
+            "unusedSince": null,
+          }
+        }
+        viewer={
+          Object {
+            "config": Object {
+              "langs": Array [
+                "es",
+                "ca",
+                "en",
+              ],
+            },
+            "id": "me",
+            "keys": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId1",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId2",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [
+                        Object {
+                          "node": Object {
+                            "id": "translationId1",
+                            "lang": "es",
+                            "translation": "Un mensaje",
+                          },
+                        },
+                        Object {
+                          "node": Object {
+                            "id": "translationId2",
+                            "lang": "ca",
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
+          }
+        }
+      >
+        TranslatorRow (unselected)
+      </div>
+      <div
+        className="tableFillerRow"
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "display": "flex",
+            "flex": "1 1 0px",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 17,
+            }
+          }
+        >
+          
+        </div>
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+            }
+          }
+        />
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+------------HTML PREVIEW---------------
+<div>
+  <div
+    class="giu-floats"
+    style="height:0;left:0;position:absolute;top:0;width:0;"
+  >
+  </div>
+  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+    <div dataMockType="TranslatorHeader">
+      TranslatorHeader (en,es)
+    </div>
+    <div
+      class="tableBody"
+      style="-webkit-flex:1;display:flex;flex:1;flex-direction:column;overflow-y:scroll;"
+    >
+      <div dataMockType="TranslatorRow">
+        TranslatorRow (unselected)
+      </div>
+      <div dataMockType="TranslatorRow">
+        TranslatorRow (unselected)
+      </div>
+      <div
+        class="tableFillerRow"
+        style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;"
+      >
+        <div style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
+          
+        </div>
+        <div style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;"></div>
+        <div style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Translator 07 change column language 3`] = `
+<div>
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0,
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "WebkitFlex": "1 0 10em",
+        "display": "flex",
+        "flex": "1 0 10em",
+        "flexDirection": "column",
+        "marginTop": 5,
+      }
+    }
+  >
+    <div
+      dataMockType="TranslatorHeader"
+      lang={undefined}
+      langs={
+        Array [
+          "es",
+        ]
+      }
+      onAddLang={[Function]}
+      onChangeLang={[Function]}
+      onRemoveLang={[Function]}
+      viewer={
+        Object {
+          "config": Object {
+            "langs": Array [
+              "es",
+              "ca",
+              "en",
+            ],
+          },
+          "id": "me",
+          "keys": Object {
+            "edges": Array [
+              Object {
+                "node": Object {
+                  "context": "someContext",
+                  "id": "keyId1",
+                  "text": "A message",
+                  "translations": Object {
+                    "edges": Array [],
+                  },
+                  "unusedSince": null,
+                },
+              },
+              Object {
+                "node": Object {
+                  "context": "someContext",
+                  "id": "keyId2",
+                  "text": "A message",
+                  "translations": Object {
+                    "edges": Array [
+                      Object {
+                        "node": Object {
+                          "id": "translationId1",
+                          "lang": "es",
+                          "translation": "Un mensaje",
+                        },
+                      },
+                      Object {
+                        "node": Object {
+                          "id": "translationId2",
+                          "lang": "ca",
+                          "translation": "Un missatge",
+                        },
+                      },
+                    ],
+                  },
+                  "unusedSince": null,
+                },
+              },
+            ],
+          },
+        }
+      }
+    >
+      TranslatorHeader (es)
+    </div>
+    <div
+      className="tableBody"
+      style={
+        Object {
+          "WebkitFlex": 1,
+          "display": "flex",
+          "flex": 1,
+          "flexDirection": "column",
+          "overflowY": "scroll",
+        }
+      }
+    >
+      <div
+        changeSelectedKey={undefined}
+        dataMockType="TranslatorRow"
+        fSelected={false}
+        langs={
+          Array [
+            "es",
+          ]
+        }
+        styleKeyCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 17,
+          }
+        }
+        styleLangCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+          }
+        }
+        theKey={
+          Object {
+            "context": "someContext",
+            "id": "keyId1",
+            "text": "A message",
+            "translations": Object {
+              "edges": Array [],
+            },
+            "unusedSince": null,
+          }
+        }
+        viewer={
+          Object {
+            "config": Object {
+              "langs": Array [
+                "es",
+                "ca",
+                "en",
+              ],
+            },
+            "id": "me",
+            "keys": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId1",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId2",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [
+                        Object {
+                          "node": Object {
+                            "id": "translationId1",
+                            "lang": "es",
+                            "translation": "Un mensaje",
+                          },
+                        },
+                        Object {
+                          "node": Object {
+                            "id": "translationId2",
+                            "lang": "ca",
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
+          }
+        }
+      >
+        TranslatorRow (unselected)
+      </div>
+      <div
+        changeSelectedKey={undefined}
+        dataMockType="TranslatorRow"
+        fSelected={false}
+        langs={
+          Array [
+            "es",
+          ]
+        }
+        styleKeyCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 17,
+          }
+        }
+        styleLangCol={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "backgroundColor": "#f2f0ff",
+            "flex": "1 1 0px",
+            "marginRight": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+          }
+        }
+        theKey={
+          Object {
+            "context": "someContext",
+            "id": "keyId2",
+            "text": "A message",
+            "translations": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "id": "translationId1",
+                    "lang": "es",
+                    "translation": "Un mensaje",
+                  },
+                },
+                Object {
+                  "node": Object {
+                    "id": "translationId2",
+                    "lang": "ca",
+                    "translation": "Un missatge",
+                  },
+                },
+              ],
+            },
+            "unusedSince": null,
+          }
+        }
+        viewer={
+          Object {
+            "config": Object {
+              "langs": Array [
+                "es",
+                "ca",
+                "en",
+              ],
+            },
+            "id": "me",
+            "keys": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId1",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+                Object {
+                  "node": Object {
+                    "context": "someContext",
+                    "id": "keyId2",
+                    "text": "A message",
+                    "translations": Object {
+                      "edges": Array [
+                        Object {
+                          "node": Object {
+                            "id": "translationId1",
+                            "lang": "es",
+                            "translation": "Un mensaje",
+                          },
+                        },
+                        Object {
+                          "node": Object {
+                            "id": "translationId2",
+                            "lang": "ca",
+                            "translation": "Un missatge",
+                          },
+                        },
+                      ],
+                    },
+                    "unusedSince": null,
+                  },
+                },
+              ],
+            },
+          }
+        }
+      >
+        TranslatorRow (unselected)
+      </div>
+      <div
+        className="tableFillerRow"
+        style={
+          Object {
+            "WebkitFlex": "1 1 0px",
+            "display": "flex",
+            "flex": "1 1 0px",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 17,
+            }
+          }
+        >
+          
+        </div>
+        <div
+          style={
+            Object {
+              "WebkitFlex": "1 1 0px",
+              "backgroundColor": "#f2f0ff",
+              "flex": "1 1 0px",
+              "marginRight": 5,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+------------HTML PREVIEW---------------
+<div>
+  <div
+    class="giu-floats"
+    style="height:0;left:0;position:absolute;top:0;width:0;"
+  >
+  </div>
+  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+    <div dataMockType="TranslatorHeader">
+      TranslatorHeader (es)
+    </div>
+    <div
+      class="tableBody"
+      style="-webkit-flex:1;display:flex;flex:1;flex-direction:column;overflow-y:scroll;"
+    >
+      <div dataMockType="TranslatorRow">
+        TranslatorRow (unselected)
+      </div>
+      <div dataMockType="TranslatorRow">
+        TranslatorRow (unselected)
+      </div>
+      <div
+        class="tableFillerRow"
+        style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;"
+      >
+        <div style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
+          
+        </div>
+        <div style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

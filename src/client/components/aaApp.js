@@ -29,6 +29,8 @@ require('./aaApp.sass');
 // Component declarations
 // ==========================================
 type Props = {
+  // Unit testing
+  _disableHints?: boolean,
   // Relay
   viewer: ViewerT,
 };
@@ -63,7 +65,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.showHint();
+    if (!this.props._disableHints) this.showHint();
   }
 
   // ------------------------------------------

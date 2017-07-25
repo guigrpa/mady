@@ -147,7 +147,7 @@
     "xxl": "^1.2.0"
   },
   "jest": {
-    "testRegex": "src/.*__tests__/.*\\.(test|spec)\\.(js|jsx)$",
+    "testRegex": "src/.*__tests__/.*\\.test\\.js$",
     "moduleNameMapper": {
       "^typeface-.*": "<rootDir>/test/emptyObject.js",
       "\\.(css|less|sass)$": "<rootDir>/test/emptyObject.js",
@@ -161,6 +161,7 @@
       "!**/node_modules/**",
       "!**/__tests__/**",
       "!**/__mocks__/**",
+      "!**/__generated__/**",
       "!src/locales/**",
       "!src/localesBackup/**",
       "!src/exampleLocales.js",

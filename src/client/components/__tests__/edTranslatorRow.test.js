@@ -35,7 +35,7 @@ const STYLE_LANG_COL = flexItem('1 1 0px', {
 // Tests
 // ======================================================
 describe('HoverableTranslatorRow', () => {
-  it('renders correctly a key without translations', () => {
+  it('01 key without translations', () => {
     const tree = renderer
       .create(
         <HoverableTranslatorRow
@@ -52,7 +52,7 @@ describe('HoverableTranslatorRow', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders correctly a key with translations', () => {
+  it('02 key with translations', () => {
     const tree = renderer
       .create(
         <HoverableTranslatorRow
@@ -69,7 +69,7 @@ describe('HoverableTranslatorRow', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders correctly a selected key', () => {
+  it('03 selected key', () => {
     const tree = renderer
       .create(
         <HoverableTranslatorRow
@@ -86,7 +86,7 @@ describe('HoverableTranslatorRow', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('reacts to clicks, changing the selected key', () => {
+  it('04 click changes selected key', () => {
     const spyChangeSelectedKey = jest.fn();
     const tree = renderer
       .create(

@@ -9,22 +9,32 @@ import $ from './jestQuery';
 // https://github.com/facebook/react/issues/7386#issuecomment-238091398
 jest.mock('react-dom');
 jest.mock('../abHeader', () => require('./mockComponent')('Header'));
-jest.mock('../adTranslator', () => require('./mockComponent')('Translator'));
+jest.mock('../adTranslator', () =>
+  require('./mockComponent')('Translator', {
+    description: ({ selectedKeyId }) => selectedKeyId || 'no selection',
+  })
+);
 jest.mock('../aeSettings', () => require('./mockComponent')('Settings'));
-jest.mock('../afDetails', () => require('./mockComponent')('Details'));
+jest.mock('../afDetails', () =>
+  require('./mockComponent')('Details', {
+    description: ({ selectedKeyId }) => selectedKeyId || 'no selection',
+  })
+);
 jest.mock('../../gral/storage');
 jest.mock('../fetchLangBundle');
 
 describe('App', () => {
-  it('renders correctly with no content', () => {
+  it('01 no content', () => {
     const tree = renderer
-      .create(<App viewer={VIEWER_WITH_NO_CONTENT} />)
+      .create(<App viewer={VIEWER_WITH_NO_CONTENT} _disableHints />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('shows the settings when clicked', () => {
-    const component = renderer.create(<App viewer={VIEWER_WITH_NO_CONTENT} />);
+  it('02 shows the settings when clicked', () => {
+    const component = renderer.create(
+      <App viewer={VIEWER_WITH_NO_CONTENT} _disableHints />
+    );
     let tree = component.toJSON();
 
     const headerEl = $(tree, o => o.props.dataMockType === 'Header');
@@ -40,8 +50,10 @@ describe('App', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('changes the selected key when clicked', () => {
-    const component = renderer.create(<App viewer={VIEWER_WITH_NO_CONTENT} />);
+  it('03 changes the selected key when clicked and shows details', () => {
+    const component = renderer.create(
+      <App viewer={VIEWER_WITH_NO_CONTENT} _disableHints />
+    );
     let tree = component.toJSON();
 
     const translatorEl = $(tree, o => o.props.dataMockType === 'Translator');
@@ -51,9 +63,11 @@ describe('App', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('changes the application language', () => {
+  it('04 changes the application language', () => {
     const storage = require('../../gral/storage');
-    const component = renderer.create(<App viewer={VIEWER_WITH_NO_CONTENT} />);
+    const component = renderer.create(
+      <App viewer={VIEWER_WITH_NO_CONTENT} _disableHints />
+    );
     let tree = component.toJSON();
 
     const headerEl = $(tree, o => o.props.dataMockType === 'Header');

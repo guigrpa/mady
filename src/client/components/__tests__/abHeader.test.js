@@ -9,7 +9,7 @@ import $ from './jestQuery';
 jest.mock('react-dom');
 
 describe('Header', () => {
-  it('renders correctly', () => {
+  it('01 normal', () => {
     const tree = renderer.create(<Header onShowSettings={() => {}} />).toJSON();
     expect(tree).toMatchSnapshot();
   });

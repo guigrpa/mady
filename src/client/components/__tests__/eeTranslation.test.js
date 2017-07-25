@@ -25,7 +25,7 @@ const TRANSLATION = {
 // Tests
 // ======================================================
 describe('HoverableTranslation', () => {
-  it('renders correctly without translation', () => {
+  it('01 without translation', () => {
     const tree = renderer
       .create(
         <div>
@@ -42,7 +42,7 @@ describe('HoverableTranslation', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders correctly with translation', () => {
+  it('02 with translation', () => {
     const tree = renderer
       .create(
         <div>

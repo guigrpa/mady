@@ -14,6 +14,7 @@ import QueryRendererWrapper from './uuQueryRendererWrapper';
 // Component declarations
 // ==========================================
 type PublicProps = {
+  _now?: any, // eslint-disable-line
   // lang: string,
   selectedKeyId: ?string,
 };
@@ -111,9 +112,10 @@ class Details extends React.PureComponent {
   }
 
   renderDate(d: string) {
+    const { _now } = this.props;
     return (
       <span title={moment(d).format('LLLL')} style={style.date}>
-        {moment(d).fromNow()}
+        {_now ? moment(d).from(_now) : moment(d).fromNow()}
       </span>
     );
   }
