@@ -44,5 +44,15 @@
   "settingsForm_React Intl JSON file": "Fichero JSON para React Intl",
   "settingsForm_Output:": "Ficheros de salida:",
   "settingsForm_Make sure your regular expression has exactly one capture group, for example: (.*?)": "Asegúrate de que la expresión regular tiene exactamente un grupo de captura, por ejemplo: (.*?)",
-  "tooltip_Dubious translation (click to toggle)": "Traducción dudosa (haz clic para cambiar)"
+  "tooltip_Dubious translation (click to toggle)": "Traducción dudosa (haz clic para cambiar)",
+  "filter_All (no filter)": "Todos (sin filtro)",
+  "filter_All (remove filter)": "Todos (quitar filtro)",
+  "filter_Dubious translations": "Traducciones dudosas",
+  "filter_Dubious": "Dudas",
+  "filter_Missing translations": "Traducciones pendientes",
+  "filter_Missing": "Pendientes",
+  "filter_Unused messages": "Mensajes no usados",
+  "filter_Unused": "No usados",
+  "hint_Filter relevant messages": "Filtrar mensajes relevantes",
+  "tooltip_Filter": "Filtro"
 }

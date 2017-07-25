@@ -308,5 +308,75 @@
     "translation": "Traducció dubtosa (fes clic per canviar)",
     "keyId": "dG9vbHRpcF9EdWJpb3VzIHRyYW5zbGF0aW9uIChjbGljayB0byB0b2dnbGUp",
     "fuzzy": true
+  },
+  "3328e3ad-cbe9-47bb-a7e7-c1f415eb05dc": {
+    "id": "3328e3ad-cbe9-47bb-a7e7-c1f415eb05dc",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Tots (sense filtre)",
+    "keyId": "ZmlsdGVyX0FsbCAobm8gZmlsdGVyKQ=="
+  },
+  "2f21135c-7a1b-4f47-b6e6-7639eb2a2341": {
+    "id": "2f21135c-7a1b-4f47-b6e6-7639eb2a2341",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Tots (treure filtre)",
+    "keyId": "ZmlsdGVyX0FsbCAocmVtb3ZlIGZpbHRlcik="
+  },
+  "14a9feb4-feb6-4a12-a585-ecb1da62d317": {
+    "id": "14a9feb4-feb6-4a12-a585-ecb1da62d317",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Traduccions dubtoses",
+    "keyId": "ZmlsdGVyX0R1YmlvdXMgdHJhbnNsYXRpb25z"
+  },
+  "b783416c-687f-49a5-8d74-01d350cd38b5": {
+    "id": "b783416c-687f-49a5-8d74-01d350cd38b5",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Dubtes",
+    "keyId": "ZmlsdGVyX0R1YmlvdXM="
+  },
+  "57b7e18b-a08a-416e-8e96-79aa601845e4": {
+    "id": "57b7e18b-a08a-416e-8e96-79aa601845e4",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Traduccions pendents",
+    "keyId": "ZmlsdGVyX01pc3NpbmcgdHJhbnNsYXRpb25z"
+  },
+  "b3000671-4551-45f8-910a-f01f7383d158": {
+    "id": "b3000671-4551-45f8-910a-f01f7383d158",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Pendents",
+    "keyId": "ZmlsdGVyX01pc3Npbmc="
+  },
+  "2ad44ee4-e6f0-41be-b00d-1abc12abb674": {
+    "id": "2ad44ee4-e6f0-41be-b00d-1abc12abb674",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Missatges no utilitzats",
+    "keyId": "ZmlsdGVyX1VudXNlZCBtZXNzYWdlcw=="
+  },
+  "1385846c-6d34-400f-be5d-0f1e8919a1fd": {
+    "id": "1385846c-6d34-400f-be5d-0f1e8919a1fd",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "No utilitzats",
+    "keyId": "ZmlsdGVyX1VudXNlZA=="
+  },
+  "7b126684-363e-46e4-86eb-bdc1da8d07db": {
+    "id": "7b126684-363e-46e4-86eb-bdc1da8d07db",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Filtrar missatges rellevants",
+    "keyId": "aGludF9GaWx0ZXIgcmVsZXZhbnQgbWVzc2FnZXM="
+  },
+  "97da1507-4ea1-4f82-9f9c-772289c277ac": {
+    "id": "97da1507-4ea1-4f82-9f9c-772289c277ac",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Filtre",
+    "keyId": "dG9vbHRpcF9GaWx0ZXI="
   }
 }

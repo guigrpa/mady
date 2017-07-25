@@ -17,8 +17,6 @@ const createTranslation = ({ theKey, attrs }) => ({
     ) {
       createTranslationInKeyTranslations(input: $input) {
         createdTranslationEdge {
-          __typename
-          cursor
           node {
             ...eeTranslation_translation
           }
@@ -27,6 +25,13 @@ const createTranslation = ({ theKey, attrs }) => ({
     }
   `,
   variables: { input: { parentId: theKey.id, attrs } },
+  optimisticResponse: {
+    createTranslationInKeyTranslations: {
+      createdTranslationEdge: {
+        node: attrs,
+      },
+    },
+  },
   // updater: store => {
   //   const payload = store.getRootField('createTranslationInKeyTranslations');
   //   const translationEdge = payload.getLinkedRecord('createdTranslationEdge');
@@ -38,6 +43,7 @@ const createTranslation = ({ theKey, attrs }) => ({
       parentID: theKey.id,
       connectionInfo: [
         { key: 'TranslatorRow_theKey_translations', rangeBehavior: 'append' },
+        { key: 'Translator_viewer_translations', rangeBehavior: 'append' },
       ],
       edgeName: 'createdTranslationEdge',
     },

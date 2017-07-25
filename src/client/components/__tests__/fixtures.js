@@ -7,6 +7,14 @@ const KEY_WITHOUT_TRANSLATIONS = {
   translations: { edges: [] },
 };
 
+const UNUSED_KEY_WITHOUT_TRANSLATIONS = {
+  id: 'keyId1',
+  context: 'someContext',
+  text: 'A message',
+  unusedSince: '2016-04-20T11:33:38.450Z',
+  translations: { edges: [] },
+};
+
 const KEY_WITH_TRANSLATIONS = {
   id: 'keyId2',
   context: 'someContext',
@@ -26,6 +34,25 @@ const KEY_WITH_TRANSLATIONS = {
           id: 'translationId2',
           lang: 'ca',
           translation: 'Un missatge',
+        },
+      },
+    ],
+  },
+};
+
+const KEY_WITH_FUZZY_TRANSLATION = {
+  id: 'keyId3',
+  context: 'someContext',
+  text: 'This is the one',
+  unusedSince: null,
+  translations: {
+    edges: [
+      {
+        node: {
+          id: 'translationId1',
+          lang: 'es',
+          translation: 'Este es el bueno',
+          fuzzy: true,
         },
       },
     ],
@@ -58,4 +85,6 @@ export {
   VIEWER_WITH_NO_CONTENT,
   KEY_WITHOUT_TRANSLATIONS,
   KEY_WITH_TRANSLATIONS,
+  KEY_WITH_FUZZY_TRANSLATION,
+  UNUSED_KEY_WITHOUT_TRANSLATIONS,
 };

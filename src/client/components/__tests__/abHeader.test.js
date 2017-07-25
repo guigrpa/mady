@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { Hints } from 'giu';
+import { Hints, Floats } from 'giu';
 import Header from '../abHeader';
 import $ from './jestQuery';
 
@@ -10,14 +10,22 @@ jest.mock('react-dom');
 
 describe('Header', () => {
   it('01 normal', () => {
-    const tree = renderer.create(<Header onShowSettings={() => {}} />).toJSON();
+    const tree = renderer
+      .create(
+        <div>
+          <Floats />
+          <Header onShowSettings={() => {}} />
+        </div>
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('shows hints when the info button is clicked', () => {
+  it('02 shows hints when the info button is clicked', () => {
     const component = renderer.create(
       <div>
         <Hints />
+        <Floats />
         <Header onShowSettings={() => {}} />
       </div>
     );

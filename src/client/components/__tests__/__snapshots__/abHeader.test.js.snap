@@ -1,107 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header 01 normal 1`] = `
-<div
-  style={
-    Object {
-      "WebkitFlex": "0 0 2.5em",
-      "alignItems": "center",
-      "backgroundColor": "#dcd6ff",
-      "display": "flex",
-      "flex": "0 0 2.5em",
-      "flexDirection": "row",
-      "padding": "5px 8px",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "WebkitFlex": "1",
-        "flex": "1",
-      }
-    }
-  />
-  <div
-    style={
-      Object {
-        "fontSize": "1.3em",
-        "fontWeight": 900,
-        "letterSpacing": 3,
-      }
-    }
-  >
-    MADY
-    <i
-      className="giu-icon fa fa-cog"
-      id="madyBtnSettings"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": undefined,
-          "cursor": "pointer",
-          "fontSize": undefined,
-          "letterSpacing": "normal",
-          "marginLeft": 10,
-        }
-      }
-      title="Settings"
-    />
-  </div>
-  <div
-    style={
-      Object {
-        "WebkitFlex": "1",
-        "flex": "1",
-        "fontSize": "1.3em",
-        "fontWeight": 900,
-        "letterSpacing": 3,
-        "marginRight": 10,
-        "textAlign": "right",
-      }
-    }
-  >
-    <i
-      className="giu-icon fa fa-question-circle"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": undefined,
-          "cursor": "pointer",
-          "fontSize": undefined,
-          "letterSpacing": "normal",
-        }
-      }
-    />
-  </div>
-</div>
-------------HTML PREVIEW---------------
-<div style="-webkit-flex:0 0 2.5em;align-items:center;background-color:#dcd6ff;display:flex;flex:0 0 2.5em;flex-direction:row;padding:5px 8px;">
-  <div style="-webkit-flex:1;flex:1;"></div>
-  <div style="font-size:1.3em;font-weight:900;letter-spacing:3px;">
-    MADY
-    <i
-      class="giu-icon fa fa-cog"
-      id="madyBtnSettings"
-      style="cursor:pointer;letter-spacing:normal;margin-left:10px;"
-      title="Settings"
-    >
-    </i>
-  </div>
-  <div style="-webkit-flex:1;flex:1;font-size:1.3em;font-weight:900;letter-spacing:3px;margin-right:10px;text-align:right;">
-    <i
-      class="giu-icon fa fa-question-circle"
-      style="cursor:pointer;letter-spacing:normal;"
-    >
-    </i>
-  </div>
-</div>
-`;
-
-exports[`Header shows hints when the info button is clicked 1`] = `
 <div>
   <div
-    className="giu-hints"
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0,
+      }
+    }
   />
   <div
     style={
@@ -112,10 +23,88 @@ exports[`Header shows hints when the info button is clicked 1`] = `
         "display": "flex",
         "flex": "0 0 2.5em",
         "flexDirection": "row",
-        "padding": "5px 8px",
+        "padding": "5px 4px",
       }
     }
   >
+    <div
+      style={
+        Object {
+          "minWidth": 140,
+        }
+      }
+    >
+      <span
+        className="giu-select-custom"
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        style={
+          Object {
+            "display": "inline-block",
+            "position": "relative",
+          }
+        }
+      >
+        <input
+          onBlur={[Function]}
+          onCopy={[Function]}
+          onCut={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onPaste={[Function]}
+          style={
+            Object {
+              "cursor": "default",
+              "height": 0,
+              "left": 8,
+              "opacity": 0,
+              "padding": 0,
+              "pointerEvents": "none",
+              "position": "fixed",
+              "top": 8,
+              "width": 0,
+              "zIndex": -80,
+            }
+          }
+          tabIndex={undefined}
+        />
+        <div
+          className="giu-drop-down-menu-title"
+          onMouseDown={[Function]}
+          style={
+            Object {
+              "backgroundColor": undefined,
+              "color": undefined,
+              "cursor": "pointer",
+              "display": "inline-block",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "paddingLeft": 10,
+                "paddingRight": 10,
+              }
+            }
+          >
+            <i
+              className="giu-icon fa fa-filter"
+              id="madyMenuFilter"
+              style={
+                Object {
+                  "color": undefined,
+                  "cursor": "pointer",
+                  "fontSize": undefined,
+                  "letterSpacing": "normal",
+                }
+              }
+              title="Filter"
+            />
+          </div>
+        </div>
+      </span>
+    </div>
     <div
       style={
         Object {
@@ -130,6 +119,7 @@ exports[`Header shows hints when the info button is clicked 1`] = `
           "fontSize": "1.3em",
           "fontWeight": 900,
           "letterSpacing": 3,
+          "paddingBottom": 1,
         }
       }
     >
@@ -155,10 +145,248 @@ exports[`Header shows hints when the info button is clicked 1`] = `
         Object {
           "WebkitFlex": "1",
           "flex": "1",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
           "fontSize": "1.3em",
           "fontWeight": 900,
           "letterSpacing": 3,
           "marginRight": 10,
+          "minWidth": 140,
+          "textAlign": "right",
+        }
+      }
+    >
+      <i
+        className="giu-icon fa fa-question-circle"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": undefined,
+            "cursor": "pointer",
+            "fontSize": undefined,
+            "letterSpacing": "normal",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+------------HTML PREVIEW---------------
+<div>
+  <div
+    class="giu-floats"
+    style="height:0;left:0;position:absolute;top:0;width:0;"
+  >
+  </div>
+  <div style="-webkit-flex:0 0 2.5em;align-items:center;background-color:#dcd6ff;display:flex;flex:0 0 2.5em;flex-direction:row;padding:5px 4px;">
+    <div style="min-width:140px;">
+      <span
+        class="giu-select-custom"
+        style="display:inline-block;position:relative;"
+      >
+        <input style="cursor:default;height:0;left:8px;opacity:0;padding:0;pointer-events:none;position:fixed;top:8px;width:0;z-index:-80;">
+        <div
+          class="giu-drop-down-menu-title"
+          style="cursor:pointer;display:inline-block;"
+        >
+          <div style="padding-left:10px;padding-right:10px;">
+            <i
+              class="giu-icon fa fa-filter"
+              id="madyMenuFilter"
+              style="cursor:pointer;letter-spacing:normal;"
+              title="Filter"
+            >
+            </i>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div style="-webkit-flex:1;flex:1;"></div>
+    <div style="font-size:1.3em;font-weight:900;letter-spacing:3px;padding-bottom:1px;">
+      MADY
+      <i
+        class="giu-icon fa fa-cog"
+        id="madyBtnSettings"
+        style="cursor:pointer;letter-spacing:normal;margin-left:10px;"
+        title="Settings"
+      >
+      </i>
+    </div>
+    <div style="-webkit-flex:1;flex:1;"></div>
+    <div style="font-size:1.3em;font-weight:900;letter-spacing:3px;margin-right:10px;min-width:140px;text-align:right;">
+      <i
+        class="giu-icon fa fa-question-circle"
+        style="cursor:pointer;letter-spacing:normal;"
+      >
+      </i>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Header 02 shows hints when the info button is clicked 1`] = `
+<div>
+  <div
+    className="giu-hints"
+  />
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0,
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "WebkitFlex": "0 0 2.5em",
+        "alignItems": "center",
+        "backgroundColor": "#dcd6ff",
+        "display": "flex",
+        "flex": "0 0 2.5em",
+        "flexDirection": "row",
+        "padding": "5px 4px",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "minWidth": 140,
+        }
+      }
+    >
+      <span
+        className="giu-select-custom"
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        style={
+          Object {
+            "display": "inline-block",
+            "position": "relative",
+          }
+        }
+      >
+        <input
+          onBlur={[Function]}
+          onCopy={[Function]}
+          onCut={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onPaste={[Function]}
+          style={
+            Object {
+              "cursor": "default",
+              "height": 0,
+              "left": 8,
+              "opacity": 0,
+              "padding": 0,
+              "pointerEvents": "none",
+              "position": "fixed",
+              "top": 8,
+              "width": 0,
+              "zIndex": -80,
+            }
+          }
+          tabIndex={undefined}
+        />
+        <div
+          className="giu-drop-down-menu-title"
+          onMouseDown={[Function]}
+          style={
+            Object {
+              "backgroundColor": undefined,
+              "color": undefined,
+              "cursor": "pointer",
+              "display": "inline-block",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "paddingLeft": 10,
+                "paddingRight": 10,
+              }
+            }
+          >
+            <i
+              className="giu-icon fa fa-filter"
+              id="madyMenuFilter"
+              style={
+                Object {
+                  "color": undefined,
+                  "cursor": "pointer",
+                  "fontSize": undefined,
+                  "letterSpacing": "normal",
+                }
+              }
+              title="Filter"
+            />
+          </div>
+        </div>
+      </span>
+    </div>
+    <div
+      style={
+        Object {
+          "WebkitFlex": "1",
+          "flex": "1",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "fontSize": "1.3em",
+          "fontWeight": 900,
+          "letterSpacing": 3,
+          "paddingBottom": 1,
+        }
+      }
+    >
+      MADY
+      <i
+        className="giu-icon fa fa-cog"
+        id="madyBtnSettings"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": undefined,
+            "cursor": "pointer",
+            "fontSize": undefined,
+            "letterSpacing": "normal",
+            "marginLeft": 10,
+          }
+        }
+        title="Settings"
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "WebkitFlex": "1",
+          "flex": "1",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "fontSize": "1.3em",
+          "fontWeight": 900,
+          "letterSpacing": 3,
+          "marginRight": 10,
+          "minWidth": 140,
           "textAlign": "right",
         }
       }
@@ -181,9 +409,36 @@ exports[`Header shows hints when the info button is clicked 1`] = `
 ------------HTML PREVIEW---------------
 <div>
   <div class="giu-hints"></div>
-  <div style="-webkit-flex:0 0 2.5em;align-items:center;background-color:#dcd6ff;display:flex;flex:0 0 2.5em;flex-direction:row;padding:5px 8px;">
+  <div
+    class="giu-floats"
+    style="height:0;left:0;position:absolute;top:0;width:0;"
+  >
+  </div>
+  <div style="-webkit-flex:0 0 2.5em;align-items:center;background-color:#dcd6ff;display:flex;flex:0 0 2.5em;flex-direction:row;padding:5px 4px;">
+    <div style="min-width:140px;">
+      <span
+        class="giu-select-custom"
+        style="display:inline-block;position:relative;"
+      >
+        <input style="cursor:default;height:0;left:8px;opacity:0;padding:0;pointer-events:none;position:fixed;top:8px;width:0;z-index:-80;">
+        <div
+          class="giu-drop-down-menu-title"
+          style="cursor:pointer;display:inline-block;"
+        >
+          <div style="padding-left:10px;padding-right:10px;">
+            <i
+              class="giu-icon fa fa-filter"
+              id="madyMenuFilter"
+              style="cursor:pointer;letter-spacing:normal;"
+              title="Filter"
+            >
+            </i>
+          </div>
+        </div>
+      </span>
+    </div>
     <div style="-webkit-flex:1;flex:1;"></div>
-    <div style="font-size:1.3em;font-weight:900;letter-spacing:3px;">
+    <div style="font-size:1.3em;font-weight:900;letter-spacing:3px;padding-bottom:1px;">
       MADY
       <i
         class="giu-icon fa fa-cog"
@@ -193,7 +448,8 @@ exports[`Header shows hints when the info button is clicked 1`] = `
       >
       </i>
     </div>
-    <div style="-webkit-flex:1;flex:1;font-size:1.3em;font-weight:900;letter-spacing:3px;margin-right:10px;text-align:right;">
+    <div style="-webkit-flex:1;flex:1;"></div>
+    <div style="font-size:1.3em;font-weight:900;letter-spacing:3px;margin-right:10px;min-width:140px;text-align:right;">
       <i
         class="giu-icon fa fa-question-circle"
         style="cursor:pointer;letter-spacing:normal;"
@@ -204,7 +460,7 @@ exports[`Header shows hints when the info button is clicked 1`] = `
 </div>
 `;
 
-exports[`Header shows hints when the info button is clicked 2`] = `
+exports[`Header 02 shows hints when the info button is clicked 2`] = `
 <div>
   <div
     className="giu-hints"
@@ -267,6 +523,18 @@ exports[`Header shows hints when the info button is clicked 2`] = `
     </div>
   </div>
   <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0,
+      }
+    }
+  />
+  <div
     style={
       Object {
         "WebkitFlex": "0 0 2.5em",
@@ -275,10 +543,88 @@ exports[`Header shows hints when the info button is clicked 2`] = `
         "display": "flex",
         "flex": "0 0 2.5em",
         "flexDirection": "row",
-        "padding": "5px 8px",
+        "padding": "5px 4px",
       }
     }
   >
+    <div
+      style={
+        Object {
+          "minWidth": 140,
+        }
+      }
+    >
+      <span
+        className="giu-select-custom"
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        style={
+          Object {
+            "display": "inline-block",
+            "position": "relative",
+          }
+        }
+      >
+        <input
+          onBlur={[Function]}
+          onCopy={[Function]}
+          onCut={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onPaste={[Function]}
+          style={
+            Object {
+              "cursor": "default",
+              "height": 0,
+              "left": 8,
+              "opacity": 0,
+              "padding": 0,
+              "pointerEvents": "none",
+              "position": "fixed",
+              "top": 8,
+              "width": 0,
+              "zIndex": -80,
+            }
+          }
+          tabIndex={undefined}
+        />
+        <div
+          className="giu-drop-down-menu-title"
+          onMouseDown={[Function]}
+          style={
+            Object {
+              "backgroundColor": undefined,
+              "color": undefined,
+              "cursor": "pointer",
+              "display": "inline-block",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "paddingLeft": 10,
+                "paddingRight": 10,
+              }
+            }
+          >
+            <i
+              className="giu-icon fa fa-filter"
+              id="madyMenuFilter"
+              style={
+                Object {
+                  "color": undefined,
+                  "cursor": "pointer",
+                  "fontSize": undefined,
+                  "letterSpacing": "normal",
+                }
+              }
+              title="Filter"
+            />
+          </div>
+        </div>
+      </span>
+    </div>
     <div
       style={
         Object {
@@ -293,6 +639,7 @@ exports[`Header shows hints when the info button is clicked 2`] = `
           "fontSize": "1.3em",
           "fontWeight": 900,
           "letterSpacing": 3,
+          "paddingBottom": 1,
         }
       }
     >
@@ -318,10 +665,17 @@ exports[`Header shows hints when the info button is clicked 2`] = `
         Object {
           "WebkitFlex": "1",
           "flex": "1",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
           "fontSize": "1.3em",
           "fontWeight": 900,
           "letterSpacing": 3,
           "marginRight": 10,
+          "minWidth": 140,
           "textAlign": "right",
         }
       }
@@ -360,9 +714,36 @@ exports[`Header shows hints when the info button is clicked 2`] = `
       </div>
     </div>
   </div>
-  <div style="-webkit-flex:0 0 2.5em;align-items:center;background-color:#dcd6ff;display:flex;flex:0 0 2.5em;flex-direction:row;padding:5px 8px;">
+  <div
+    class="giu-floats"
+    style="height:0;left:0;position:absolute;top:0;width:0;"
+  >
+  </div>
+  <div style="-webkit-flex:0 0 2.5em;align-items:center;background-color:#dcd6ff;display:flex;flex:0 0 2.5em;flex-direction:row;padding:5px 4px;">
+    <div style="min-width:140px;">
+      <span
+        class="giu-select-custom"
+        style="display:inline-block;position:relative;"
+      >
+        <input style="cursor:default;height:0;left:8px;opacity:0;padding:0;pointer-events:none;position:fixed;top:8px;width:0;z-index:-80;">
+        <div
+          class="giu-drop-down-menu-title"
+          style="cursor:pointer;display:inline-block;"
+        >
+          <div style="padding-left:10px;padding-right:10px;">
+            <i
+              class="giu-icon fa fa-filter"
+              id="madyMenuFilter"
+              style="cursor:pointer;letter-spacing:normal;"
+              title="Filter"
+            >
+            </i>
+          </div>
+        </div>
+      </span>
+    </div>
     <div style="-webkit-flex:1;flex:1;"></div>
-    <div style="font-size:1.3em;font-weight:900;letter-spacing:3px;">
+    <div style="font-size:1.3em;font-weight:900;letter-spacing:3px;padding-bottom:1px;">
       MADY
       <i
         class="giu-icon fa fa-cog"
@@ -372,7 +753,8 @@ exports[`Header shows hints when the info button is clicked 2`] = `
       >
       </i>
     </div>
-    <div style="-webkit-flex:1;flex:1;font-size:1.3em;font-weight:900;letter-spacing:3px;margin-right:10px;text-align:right;">
+    <div style="-webkit-flex:1;flex:1;"></div>
+    <div style="font-size:1.3em;font-weight:900;letter-spacing:3px;margin-right:10px;min-width:140px;text-align:right;">
       <i
         class="giu-icon fa fa-question-circle"
         style="cursor:pointer;letter-spacing:normal;"

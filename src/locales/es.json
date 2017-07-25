@@ -335,5 +335,75 @@
     "translation": "Traducción dudosa (haz clic para cambiar)",
     "keyId": "dG9vbHRpcF9EdWJpb3VzIHRyYW5zbGF0aW9uIChjbGljayB0byB0b2dnbGUp",
     "fuzzy": true
+  },
+  "5441057a-3969-4936-a011-18e8beaf5eb1": {
+    "id": "5441057a-3969-4936-a011-18e8beaf5eb1",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Todos (sin filtro)",
+    "keyId": "ZmlsdGVyX0FsbCAobm8gZmlsdGVyKQ=="
+  },
+  "7ac917de-f571-4e09-867b-ab2894c759cf": {
+    "id": "7ac917de-f571-4e09-867b-ab2894c759cf",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Todos (quitar filtro)",
+    "keyId": "ZmlsdGVyX0FsbCAocmVtb3ZlIGZpbHRlcik="
+  },
+  "1887998a-4439-4698-9340-4ea5e12f2945": {
+    "id": "1887998a-4439-4698-9340-4ea5e12f2945",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Traducciones dudosas",
+    "keyId": "ZmlsdGVyX0R1YmlvdXMgdHJhbnNsYXRpb25z"
+  },
+  "669a293e-44c6-4368-800f-ed3bb55223af": {
+    "id": "669a293e-44c6-4368-800f-ed3bb55223af",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Dudas",
+    "keyId": "ZmlsdGVyX0R1YmlvdXM="
+  },
+  "c5603b13-4548-4c58-b0b9-559463e0e52f": {
+    "id": "c5603b13-4548-4c58-b0b9-559463e0e52f",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Traducciones pendientes",
+    "keyId": "ZmlsdGVyX01pc3NpbmcgdHJhbnNsYXRpb25z"
+  },
+  "8352bf6a-7343-4de3-80a6-2757e7910c9e": {
+    "id": "8352bf6a-7343-4de3-80a6-2757e7910c9e",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Pendientes",
+    "keyId": "ZmlsdGVyX01pc3Npbmc="
+  },
+  "ddfb2f86-6c36-4a9b-b9f1-12f00991f9b3": {
+    "id": "ddfb2f86-6c36-4a9b-b9f1-12f00991f9b3",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Mensajes no usados",
+    "keyId": "ZmlsdGVyX1VudXNlZCBtZXNzYWdlcw=="
+  },
+  "4ae729fe-014d-4066-b7cd-4a3de22dda44": {
+    "id": "4ae729fe-014d-4066-b7cd-4a3de22dda44",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "No usados",
+    "keyId": "ZmlsdGVyX1VudXNlZA=="
+  },
+  "b06dcbdd-58d2-43b1-9c96-a56d5da1e5d4": {
+    "id": "b06dcbdd-58d2-43b1-9c96-a56d5da1e5d4",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Filtrar mensajes relevantes",
+    "keyId": "aGludF9GaWx0ZXIgcmVsZXZhbnQgbWVzc2FnZXM="
+  },
+  "7cab3380-3faf-48df-8c58-0293854ba018": {
+    "id": "7cab3380-3faf-48df-8c58-0293854ba018",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Filtro",
+    "keyId": "dG9vbHRpcF9GaWx0ZXI="
   }
 }

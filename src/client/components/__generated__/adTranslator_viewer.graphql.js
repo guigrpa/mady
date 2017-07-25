@@ -21,6 +21,15 @@ export type adTranslator_viewer = {|
         +unusedSince: ?string;
         +context: ?string;
         +text: string;
+        +translations: ?{|
+          +edges: ?$ReadOnlyArray<?{|
+            +node: ?{|
+              +isDeleted: ?boolean;
+              +lang: string;
+              +fuzzy: ?boolean;
+            |};
+          |}>;
+        |};
       |};
     |}>;
   |};
@@ -31,7 +40,16 @@ export type adTranslator_viewer = {|
 const fragment /*: ConcreteFragment*/ = {
   "argumentDefinitions": [],
   "kind": "Fragment",
-  "metadata": null,
+  "metadata": {
+    "connection": [
+      {
+        "count": null,
+        "cursor": null,
+        "direction": "forward",
+        "path": null
+      }
+    ]
+  },
   "name": "adTranslator_viewer",
   "selections": [
     {
@@ -123,6 +141,60 @@ const fragment /*: ConcreteFragment*/ = {
                   "alias": null,
                   "args": null,
                   "name": "text",
+                  "storageKey": null
+                },
+                {
+                  "kind": "LinkedField",
+                  "alias": "translations",
+                  "args": null,
+                  "concreteType": "TranslationConnection",
+                  "name": "__Translator_viewer_translations_connection",
+                  "plural": false,
+                  "selections": [
+                    {
+                      "kind": "LinkedField",
+                      "alias": null,
+                      "args": null,
+                      "concreteType": "TranslationEdge",
+                      "name": "edges",
+                      "plural": true,
+                      "selections": [
+                        {
+                          "kind": "LinkedField",
+                          "alias": null,
+                          "args": null,
+                          "concreteType": "Translation",
+                          "name": "node",
+                          "plural": false,
+                          "selections": [
+                            {
+                              "kind": "ScalarField",
+                              "alias": null,
+                              "args": null,
+                              "name": "isDeleted",
+                              "storageKey": null
+                            },
+                            {
+                              "kind": "ScalarField",
+                              "alias": null,
+                              "args": null,
+                              "name": "lang",
+                              "storageKey": null
+                            },
+                            {
+                              "kind": "ScalarField",
+                              "alias": null,
+                              "args": null,
+                              "name": "fuzzy",
+                              "storageKey": null
+                            }
+                          ],
+                          "storageKey": null
+                        }
+                      ],
+                      "storageKey": null
+                    }
+                  ],
                   "storageKey": null
                 },
                 {

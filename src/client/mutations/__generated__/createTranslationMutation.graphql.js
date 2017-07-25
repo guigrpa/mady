@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash e6b0eb9ec3c593a90e95dcafadf82dcb
+ * @relayHash 6a7b18fbbf69a1bc9c0daae37fabeb1a
  */
 
 /* eslint-disable */
@@ -12,10 +12,10 @@ import type {ConcreteBatch} from 'relay-runtime';
 export type createTranslationMutationVariables = {|
   input: {
     attrs?: ?{
-      lang?: ?string;
-      translation?: ?string;
+      lang: string;
+      translation: string;
       fuzzy?: ?boolean;
-      keyId?: ?string;
+      keyId: string;
     };
     parentId: string;
     storyId?: ?string;
@@ -26,8 +26,6 @@ export type createTranslationMutationVariables = {|
 export type createTranslationMutationResponse = {|
   +createTranslationInKeyTranslations: ?{|
     +createdTranslationEdge: ?{|
-      +__typename: string;
-      +cursor: string;
       +node: ?{| |};
     |};
   |};
@@ -41,8 +39,6 @@ mutation createTranslationMutation(
 ) {
   createTranslationInKeyTranslations(input: $input) {
     createdTranslationEdge {
-      __typename
-      cursor
       node {
         ...eeTranslation_translation
         id
@@ -97,20 +93,6 @@ const batch /*: ConcreteBatch*/ = {
             "name": "createdTranslationEdge",
             "plural": false,
             "selections": [
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "__typename",
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "cursor",
-                "storageKey": null
-              },
               {
                 "kind": "LinkedField",
                 "alias": null,
@@ -177,20 +159,6 @@ const batch /*: ConcreteBatch*/ = {
             "plural": false,
             "selections": [
               {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "__typename",
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "cursor",
-                "storageKey": null
-              },
-              {
                 "kind": "LinkedField",
                 "alias": null,
                 "args": null,
@@ -244,7 +212,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "mutation createTranslationMutation(\n  $input: CreateTranslationInKeyTranslationsInput!\n) {\n  createTranslationInKeyTranslations(input: $input) {\n    createdTranslationEdge {\n      __typename\n      cursor\n      node {\n        ...eeTranslation_translation\n        id\n      }\n    }\n  }\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  isDeleted\n  lang\n  translation\n  fuzzy\n}\n"
+  "text": "mutation createTranslationMutation(\n  $input: CreateTranslationInKeyTranslationsInput!\n) {\n  createTranslationInKeyTranslations(input: $input) {\n    createdTranslationEdge {\n      node {\n        ...eeTranslation_translation\n        id\n      }\n    }\n  }\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  isDeleted\n  lang\n  translation\n  fuzzy\n}\n"
 };
 
 module.exports = batch;

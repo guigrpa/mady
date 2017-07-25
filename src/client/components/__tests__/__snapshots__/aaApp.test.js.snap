@@ -40,7 +40,10 @@ exports[`App 01 no content 1`] = `
     className="giu-hints"
   />
   <div
+    changeFilter={[Function]}
     dataMockType="Header"
+    filter="ALL"
+    lang="en"
     onShowSettings={[Function]}
   >
     Header
@@ -48,6 +51,7 @@ exports[`App 01 no content 1`] = `
   <div
     changeSelectedKey={[Function]}
     dataMockType="Translator"
+    filter="ALL"
     lang="en"
     selectedKeyId={null}
     viewer={
@@ -82,11 +86,16 @@ exports[`App 01 no content 1`] = `
   >
   </div>
   <div class="giu-hints"></div>
-  <div dataMockType="Header">
+  <div
+    dataMockType="Header"
+    filter="ALL"
+    lang="en"
+  >
     Header
   </div>
   <div
     dataMockType="Translator"
+    filter="ALL"
     lang="en"
   >
     Translator (no selection)
@@ -134,7 +143,10 @@ exports[`App 02 shows the settings when clicked 1`] = `
     className="giu-hints"
   />
   <div
+    changeFilter={[Function]}
     dataMockType="Header"
+    filter="ALL"
+    lang="en"
     onShowSettings={[Function]}
   >
     Header
@@ -142,6 +154,7 @@ exports[`App 02 shows the settings when clicked 1`] = `
   <div
     changeSelectedKey={[Function]}
     dataMockType="Translator"
+    filter="ALL"
     lang="en"
     selectedKeyId={null}
     viewer={
@@ -199,11 +212,16 @@ exports[`App 02 shows the settings when clicked 1`] = `
   >
   </div>
   <div class="giu-hints"></div>
-  <div dataMockType="Header">
+  <div
+    dataMockType="Header"
+    filter="ALL"
+    lang="en"
+  >
     Header
   </div>
   <div
     dataMockType="Translator"
+    filter="ALL"
     lang="en"
   >
     Translator (no selection)
@@ -257,7 +275,10 @@ exports[`App 02 shows the settings when clicked 2`] = `
     className="giu-hints"
   />
   <div
+    changeFilter={[Function]}
     dataMockType="Header"
+    filter="ALL"
+    lang="en"
     onShowSettings={[Function]}
   >
     Header
@@ -265,6 +286,7 @@ exports[`App 02 shows the settings when clicked 2`] = `
   <div
     changeSelectedKey={[Function]}
     dataMockType="Translator"
+    filter="ALL"
     lang="en"
     selectedKeyId={null}
     viewer={
@@ -299,11 +321,16 @@ exports[`App 02 shows the settings when clicked 2`] = `
   >
   </div>
   <div class="giu-hints"></div>
-  <div dataMockType="Header">
+  <div
+    dataMockType="Header"
+    filter="ALL"
+    lang="en"
+  >
     Header
   </div>
   <div
     dataMockType="Translator"
+    filter="ALL"
     lang="en"
   >
     Translator (no selection)
@@ -351,7 +378,10 @@ exports[`App 03 changes the selected key when clicked and shows details 1`] = `
     className="giu-hints"
   />
   <div
+    changeFilter={[Function]}
     dataMockType="Header"
+    filter="ALL"
+    lang="en"
     onShowSettings={[Function]}
   >
     Header
@@ -359,6 +389,7 @@ exports[`App 03 changes the selected key when clicked and shows details 1`] = `
   <div
     changeSelectedKey={[Function]}
     dataMockType="Translator"
+    filter="ALL"
     lang="en"
     selectedKeyId="SELECTED_KEY"
     viewer={
@@ -400,11 +431,16 @@ exports[`App 03 changes the selected key when clicked and shows details 1`] = `
   >
   </div>
   <div class="giu-hints"></div>
-  <div dataMockType="Header">
+  <div
+    dataMockType="Header"
+    filter="ALL"
+    lang="en"
+  >
     Header
   </div>
   <div
     dataMockType="Translator"
+    filter="ALL"
     lang="en"
     selectedKeyId="SELECTED_KEY"
   >

@@ -1,3 +1,6 @@
+* **Add filters**: untranslated or unused messages, fuzzy translations.
+* **Performance improvements**.
+
 ## 2.3.1 (May 3, 2017)
 
 * Fix missing `buffer` dependency.

@@ -4,10 +4,10 @@
 import timm from 'timm';
 import React from 'react';
 import Relay, { graphql } from 'react-relay';
-import filter from 'lodash/filter';
 import { flexItem, flexContainer, Icon, LargeMessage } from 'giu';
 import type { ViewerT, KeyT } from '../../common/types';
 import { cookieGet, cookieSet } from '../gral/storage';
+import type { KeyFilter } from '../gral/types';
 import { styleKeyCol, styleLangCol } from './adTranslatorStyles';
 import TranslatorHeader from './ecTranslatorHeader';
 import TranslatorRow from './edTranslatorRow';
@@ -25,12 +25,13 @@ const keyComparator = (a: KeyT, b: KeyT) => {
 };
 
 // ==========================================
-// Component declarations
+// Declarations
 // ==========================================
 type Props = {
   lang: string,
   selectedKeyId: ?string,
   changeSelectedKey: (keyId: ?string) => void,
+  filter: KeyFilter,
   // Relay
   viewer: ViewerT,
 };
@@ -49,6 +50,16 @@ const fragment = graphql`
           unusedSince
           context
           text # for sorting
+          translations(first: 100000)
+            @connection(key: "Translator_viewer_translations") {
+            edges {
+              node {
+                isDeleted
+                lang
+                fuzzy
+              }
+            }
+          }
           ...edTranslatorRow_theKey
         }
       }
@@ -59,7 +70,7 @@ const fragment = graphql`
 `;
 
 // ==========================================
-// Component
+// Translator
 // ==========================================
 class Translator extends React.Component {
   props: Props;
@@ -74,9 +85,7 @@ class Translator extends React.Component {
     };
   }
 
-  // ------------------------------------------
-  // Render
-  // ------------------------------------------
+  // ==========================================
   render() {
     return (
       <div style={style.outer}>
@@ -100,8 +109,7 @@ class Translator extends React.Component {
   }
 
   renderBody() {
-    let keys = this.props.viewer.keys.edges.map(o => o.node);
-    keys = keys.filter(o => !o.isDeleted).sort(keyComparator);
+    const keys = this.getKeys();
     return (
       <div className="tableBody" style={style.body}>
         {keys.map(this.renderKeyRow)}
@@ -143,13 +151,58 @@ class Translator extends React.Component {
     );
   }
 
-  // ------------------------------------------
-  // Langs
-  // ------------------------------------------
+  // ==========================================
+  getKeys() {
+    let keys = this.props.viewer.keys.edges
+      .map(o => o.node)
+      .filter(o => !o.isDeleted);
+    const { filter } = this.props;
+    const { langs } = this.state;
+    if (filter === 'UNUSED') keys = keys.filter(o => !!o.unusedSince);
+    if (filter === 'FUZZY') {
+      const allKeys = keys;
+      keys = [];
+      for (let i = 0; i < allKeys.length; i++) {
+        const key = allKeys[i];
+        const translations = key.translations
+          ? key.translations.edges.map(o => o.node).filter(o => !o.isDeleted)
+          : [];
+        for (let k = 0; k < translations.length; k++) {
+          const translation = translations[k];
+          if (langs.indexOf(translation.lang) < 0) continue;
+          if (translation.fuzzy) {
+            keys.push(key);
+            break;
+          }
+        }
+      }
+    }
+    if (filter === 'UNTRANSLATED') {
+      const allKeys = keys;
+      keys = [];
+      for (let i = 0; i < allKeys.length; i++) {
+        const key = allKeys[i];
+        const translations = key.translations
+          ? key.translations.edges.map(o => o.node).filter(o => !o.isDeleted)
+          : [];
+        for (let k = 0; k < langs.length; k++) {
+          const lang = langs[k];
+          const translation = translations.find(o => o.lang === lang);
+          if (!translation) {
+            keys.push(key);
+            break;
+          }
+        }
+      }
+    }
+    keys = keys.sort(keyComparator);
+    return keys;
+  }
+
   readLangs(): Array<string> {
     const availableLangs = this.props.viewer.config.langs;
     let langs = cookieGet('langs') || [];
-    langs = filter(langs, o => availableLangs.indexOf(o) >= 0);
+    langs = langs.filter(o => availableLangs.indexOf(o) >= 0);
     if (!langs.length && availableLangs.length) langs.push(availableLangs[0]);
     this.writeLangs(langs);
     return langs;
@@ -203,9 +256,7 @@ class Translator extends React.Component {
   }
 }
 
-// ------------------------------------------
-// Styles
-// ------------------------------------------
+// ==========================================
 const style = {
   outer: flexItem(
     '1 0 10em',
@@ -225,7 +276,7 @@ const style = {
 };
 
 // ==========================================
-// Public API
+// Public
 // ==========================================
 const Container = Relay.createFragmentContainer(Translator, fragment);
 export default Container;

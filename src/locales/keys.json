@@ -16,7 +16,7 @@
     "firstUsed": "2016-04-18T06:07:16.000Z",
     "unusedSince": null,
     "sources": [
-      "src/client/components/adTranslator.js"
+      "src/client/components/ecTranslatorHeader.js"
     ]
   },
   "dG9vbHRpcF9BZGQgY29sdW1u": {
@@ -26,7 +26,7 @@
     "firstUsed": "2016-04-18T06:07:16.000Z",
     "unusedSince": null,
     "sources": [
-      "src/client/components/adTranslator.js"
+      "src/client/components/ecTranslatorHeader.js"
     ]
   },
   "YnV0dG9uX1NhdmU=": {
@@ -56,7 +56,7 @@
     "firstUsed": "2016-04-18T06:17:27.893Z",
     "unusedSince": null,
     "sources": [
-      "src/client/components/adTranslator.js"
+      "src/client/components/ecTranslatorHeader.js"
     ]
   },
   "Y29sdW1uVGl0bGVfTWVzc2FnZXM=": {
@@ -66,7 +66,7 @@
     "firstUsed": "2016-04-18T06:23:18.511Z",
     "unusedSince": null,
     "sources": [
-      "src/client/components/adTranslator.js"
+      "src/client/components/ecTranslatorHeader.js"
     ]
   },
   "bXNnRGV0YWlsc1ZpZXdfRGV0YWlscw==": {
@@ -156,8 +156,8 @@
     "firstUsed": "2016-04-20T05:54:48.437Z",
     "unusedSince": null,
     "sources": [
-      "src/client/components/adTranslator.js",
-      "src/client/components/adTranslator.js"
+      "src/client/components/ecTranslatorHeader.js",
+      "src/client/components/ecTranslatorHeader.js"
     ]
   },
   "dG9vbHRpcF9Ub3RhbCBtZXNzYWdlcw==": {
@@ -167,7 +167,7 @@
     "firstUsed": "2016-04-20T05:54:48.437Z",
     "unusedSince": null,
     "sources": [
-      "src/client/components/adTranslator.js"
+      "src/client/components/ecTranslatorHeader.js"
     ]
   },
   "dG9vbHRpcF9UcmFuc2xhdGlvbnM=": {
@@ -177,7 +177,7 @@
     "firstUsed": "2016-04-20T06:06:44.958Z",
     "unusedSince": null,
     "sources": [
-      "src/client/components/adTranslator.js"
+      "src/client/components/ecTranslatorHeader.js"
     ]
   },
   "dG9vbHRpcF9VbnVzZWQgbWVzc2FnZXM=": {
@@ -293,7 +293,7 @@
     "firstUsed": "2016-05-24T14:33:23.107Z",
     "unusedSince": null,
     "sources": [
-      "src/client/components/adTranslator.js"
+      "src/client/components/ecTranslatorHeader.js"
     ]
   },
   "ZXJyb3JfQ29uZmlndXJhdGlvbiBjb3VsZCBub3QgYmUgc2F2ZWQ=": {
@@ -478,6 +478,124 @@
     "unusedSince": null,
     "sources": [
       "src/client/components/eeTranslation.js"
+    ]
+  },
+  "aGludF9GaWx0ZXIgcmVsZXZhbnQgbWVzc2FnZXM=": {
+    "id": "aGludF9GaWx0ZXIgcmVsZXZhbnQgbWVzc2FnZXM=",
+    "context": "hint",
+    "text": "Filter relevant messages",
+    "firstUsed": "2017-07-25T09:23:26.894Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/aaApp.js"
+    ]
+  },
+  "ZmlsdGVyX0FsbCAocmVtb3ZlIGZpbHRlcik=": {
+    "id": "ZmlsdGVyX0FsbCAocmVtb3ZlIGZpbHRlcik=",
+    "context": "filter",
+    "text": "All (remove filter)",
+    "firstUsed": "2017-07-25T09:23:26.894Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/abHeader.js"
+    ]
+  },
+  "ZmlsdGVyX0FsbCAobm8gZmlsdGVyKQ==": {
+    "id": "ZmlsdGVyX0FsbCAobm8gZmlsdGVyKQ==",
+    "context": "filter",
+    "text": "All (no filter)",
+    "firstUsed": "2017-07-25T09:23:26.894Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/abHeader.js"
+    ]
+  },
+  "ZmlsdGVyX1VudXNlZCBtZXNzYWdlcw==": {
+    "id": "ZmlsdGVyX1VudXNlZCBtZXNzYWdlcw==",
+    "context": "filter",
+    "text": "Unused messages",
+    "firstUsed": "2017-07-25T09:23:26.894Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/abHeader.js"
+    ]
+  },
+  "ZmlsdGVyX01pc3NpbmcgdHJhbnNsYXRpb25z": {
+    "id": "ZmlsdGVyX01pc3NpbmcgdHJhbnNsYXRpb25z",
+    "context": "filter",
+    "text": "Missing translations",
+    "firstUsed": "2017-07-25T09:23:26.894Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/abHeader.js"
+    ]
+  },
+  "ZmlsdGVyX0Z1enp5IHRyYW5zbGF0aW9ucw==": {
+    "id": "ZmlsdGVyX0Z1enp5IHRyYW5zbGF0aW9ucw==",
+    "context": "filter",
+    "text": "Fuzzy translations",
+    "firstUsed": "2017-07-25T09:23:26.894Z",
+    "unusedSince": "2017-07-25T09:25:35.557Z",
+    "sources": [],
+    "isDeleted": true
+  },
+  "ZmlsdGVyX1VudXNlZA==": {
+    "id": "ZmlsdGVyX1VudXNlZA==",
+    "context": "filter",
+    "text": "Unused",
+    "firstUsed": "2017-07-25T09:23:26.894Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/abHeader.js"
+    ]
+  },
+  "ZmlsdGVyX01pc3Npbmc=": {
+    "id": "ZmlsdGVyX01pc3Npbmc=",
+    "context": "filter",
+    "text": "Missing",
+    "firstUsed": "2017-07-25T09:23:26.894Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/abHeader.js"
+    ]
+  },
+  "ZmlsdGVyX0Z1enp5": {
+    "id": "ZmlsdGVyX0Z1enp5",
+    "context": "filter",
+    "text": "Fuzzy",
+    "firstUsed": "2017-07-25T09:23:26.894Z",
+    "unusedSince": "2017-07-25T09:25:35.557Z",
+    "sources": [],
+    "isDeleted": true
+  },
+  "dG9vbHRpcF9GaWx0ZXI=": {
+    "id": "dG9vbHRpcF9GaWx0ZXI=",
+    "context": "tooltip",
+    "text": "Filter",
+    "firstUsed": "2017-07-25T09:23:26.894Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/abHeader.js"
+    ]
+  },
+  "ZmlsdGVyX0R1YmlvdXMgdHJhbnNsYXRpb25z": {
+    "id": "ZmlsdGVyX0R1YmlvdXMgdHJhbnNsYXRpb25z",
+    "context": "filter",
+    "text": "Dubious translations",
+    "firstUsed": "2017-07-25T09:25:35.557Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/abHeader.js"
+    ]
+  },
+  "ZmlsdGVyX0R1YmlvdXM=": {
+    "id": "ZmlsdGVyX0R1YmlvdXM=",
+    "context": "filter",
+    "text": "Dubious",
+    "firstUsed": "2017-07-25T09:25:35.557Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/abHeader.js"
     ]
   }
 }

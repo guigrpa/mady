@@ -41,5 +41,15 @@
   "settingsForm_React Intl JSON file": "Fitxer JSON per a React Intl",
   "settingsForm_Output:": "Fitxers de sortida:",
   "settingsForm_Make sure your regular expression has exactly one capture group, for example: (.*?)": "Assegura't que l'expressió regular té exactament un grup de captura, per exemple: (.*?)",
-  "tooltip_Dubious translation (click to toggle)": "Traducció dubtosa (fes clic per canviar)"
+  "tooltip_Dubious translation (click to toggle)": "Traducció dubtosa (fes clic per canviar)",
+  "filter_All (no filter)": "Tots (sense filtre)",
+  "filter_All (remove filter)": "Tots (treure filtre)",
+  "filter_Dubious translations": "Traduccions dubtoses",
+  "filter_Dubious": "Dubtes",
+  "filter_Missing translations": "Traduccions pendents",
+  "filter_Missing": "Pendents",
+  "filter_Unused messages": "Missatges no utilitzats",
+  "filter_Unused": "No utilitzats",
+  "hint_Filter relevant messages": "Filtrar missatges rellevants",
+  "tooltip_Filter": "Filtre"
 }

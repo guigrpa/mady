@@ -9,6 +9,8 @@ import {
   VIEWER,
   VIEWER_WITH_NO_CONTENT,
   KEY_WITH_TRANSLATIONS,
+  UNUSED_KEY_WITHOUT_TRANSLATIONS,
+  KEY_WITH_FUZZY_TRANSLATION,
 } from './fixtures';
 import $ from './jestQuery';
 
@@ -23,7 +25,8 @@ const headerMatcher = node =>
   node.props && node.props.dataMockType === 'TranslatorHeader';
 jest.mock('../edTranslatorRow', () =>
   require('./mockComponent')('TranslatorRow', {
-    description: ({ fSelected }) => (fSelected ? 'selected' : 'unselected'),
+    description: ({ fSelected, theKey }) =>
+      `${fSelected ? 'selected' : 'unselected'} - ${theKey.text}`,
   })
 );
 jest.mock('../../gral/storage');
@@ -145,6 +148,94 @@ describe('Translator', () => {
     // Change the language en -> es: removes the column, laves just one, 'e'
     headerComponent.props.onChangeLang({ currentTarget: fakeSelect }, 'es');
     tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('10 applies UNUSED filter', () => {
+    require('../../gral/storage').cookieSet('langs', ['ca', 'es']);
+    const tree = renderer
+      .create(
+        <div>
+          <Floats />
+          <Translator
+            viewer={{
+              id: 'me',
+              config: { langs: ['es', 'ca', 'en'] },
+              keys: {
+                edges: [
+                  { node: KEY_WITH_TRANSLATIONS },
+                  { node: UNUSED_KEY_WITHOUT_TRANSLATIONS },
+                ],
+              },
+            }}
+            filter="UNUSED"
+          />
+        </div>
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('11 applies UNTRANSLATED filter', () => {
+    require('../../gral/storage').cookieSet('langs', ['ca', 'es']);
+    const tree = renderer
+      .create(
+        <div>
+          <Floats />
+          <Translator viewer={VIEWER} filter="UNTRANSLATED" />
+        </div>
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('12 applies FUZZY filter', () => {
+    require('../../gral/storage').cookieSet('langs', ['ca', 'es']);
+    const tree = renderer
+      .create(
+        <div>
+          <Floats />
+          <Translator
+            viewer={{
+              id: 'me',
+              config: { langs: ['es', 'ca', 'en'] },
+              keys: {
+                edges: [
+                  { node: KEY_WITH_TRANSLATIONS },
+                  { node: KEY_WITH_FUZZY_TRANSLATION },
+                ],
+              },
+            }}
+            filter="FUZZY"
+          />
+        </div>
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('12 applies FUZZY filter only over shown languages', () => {
+    require('../../gral/storage').cookieSet('langs', ['ca']);
+    const tree = renderer
+      .create(
+        <div>
+          <Floats />
+          <Translator
+            viewer={{
+              id: 'me',
+              config: { langs: ['es', 'ca', 'en'] },
+              keys: {
+                edges: [
+                  { node: KEY_WITH_TRANSLATIONS },
+                  { node: KEY_WITH_FUZZY_TRANSLATION },
+                ],
+              },
+            }}
+            filter="FUZZY"
+          />
+        </div>
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

@@ -6,6 +6,7 @@ import React from 'react';
 import { graphql } from 'react-relay';
 import moment from 'moment';
 import { Floats, Hints, Notifications, hintDefine, hintShow } from 'giu';
+import type { KeyFilter } from '../gral/types';
 import type { ViewerT } from '../../common/types';
 import _t from '../../translate';
 import { cookieGet, cookieSet } from '../gral/storage';
@@ -53,6 +54,7 @@ class App extends React.Component {
     selectedKeyId: ?string,
     fSettingsShown: boolean,
     lang: string,
+    filter: KeyFilter,
   };
 
   constructor() {
@@ -61,6 +63,7 @@ class App extends React.Component {
       selectedKeyId: null,
       fSettingsShown: false,
       lang: cookieGet('lang', { defaultValue: 'en' }),
+      filter: 'ALL',
     };
   }
 
@@ -75,12 +78,18 @@ class App extends React.Component {
         <Floats />
         <Notifications />
         <Hints />
-        <Header onShowSettings={this.showSettings} />
+        <Header
+          lang={this.state.lang}
+          onShowSettings={this.showSettings}
+          filter={this.state.filter}
+          changeFilter={this.changeFilter}
+        />
         <Translator
           lang={this.state.lang}
           viewer={this.props.viewer}
           selectedKeyId={this.state.selectedKeyId}
           changeSelectedKey={this.changeSelectedKey}
+          filter={this.state.filter}
         />
         {this.state.selectedKeyId &&
           <Details
@@ -102,12 +111,18 @@ class App extends React.Component {
   changeSelectedKey = (selectedKeyId: ?string) => {
     this.setState({ selectedKeyId });
   };
+
+  changeFilter = (filter: KeyFilter) => {
+    this.setState({ filter });
+  };
+
   showSettings = () => {
     this.setState({ fSettingsShown: true });
   };
   hideSettings = () => {
     this.setState({ fSettingsShown: false });
   };
+
   onChangeLang = (lang: string) => {
     cookieSet('lang', lang);
     fetchLangBundle(lang, locales => {
@@ -154,6 +169,23 @@ class App extends React.Component {
           from: { x, y: 140 },
           to: { x: (bcr.left + bcr.right) / 2, y: bcr.bottom },
           counterclockwise: true,
+        });
+      }
+      const nodeFilterMenu = document.getElementById('madyMenuFilter');
+      if (nodeFilterMenu) {
+        const bcr = nodeFilterMenu.getBoundingClientRect();
+        const x = 50;
+        out.push({
+          type: 'LABEL',
+          x,
+          y: 140,
+          align: 'left',
+          children: _t('hint_Filter relevant messages'),
+        });
+        out.push({
+          type: 'ARROW',
+          from: { x, y: 140 },
+          to: { x: (bcr.left + bcr.right) / 2, y: bcr.bottom },
         });
       }
       return out;

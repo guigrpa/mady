@@ -12,6 +12,7 @@ const COLORS = {
   dark: tinycolor(BASE_COLOR).darken(10).toHexString(),
   darkest: tinycolor(BASE_COLOR).darken(65).toHexString(),
   dim: '#999',
+  accent: 'darkred',
 };
 
 const LANG_OPTIONS = [
