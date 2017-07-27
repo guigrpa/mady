@@ -27,6 +27,7 @@ import {
 } from 'graphql-relay';
 import { capitalize, lowerFirst, upperFirst, pick } from 'lodash';
 import type { StoryT } from '../common/types';
+import { subscribe } from './subscriptions';
 import * as db from './db';
 
 const NonNullString = new GraphQLNonNull(GraphQLString);
@@ -38,6 +39,7 @@ const ArrayOfNonNullString = new GraphQLList(NonNullString);
 const gqlInterfaces = {};
 const gqlTypes = {};
 const gqlMutations = {};
+const gqlSubscriptions = {};
 let gqlSchema;
 const viewer = { _type: 'Viewer', id: 'me' };
 let viewerRootField;
@@ -216,6 +218,19 @@ const init = () => {
     },
   });
 
+  gqlTypes.UpdatedKeyPayload = new GraphQLObjectType({
+    name: 'UpdatedKeyPayload',
+    fields: () => ({
+      key: { type: gqlTypes.Key },
+    }),
+  });
+
+  gqlSubscriptions.updatedKey = {
+    type: gqlTypes.UpdatedKeyPayload,
+    resolve: payload => payload,
+    subscribe: () => subscribe('updatedKey'),
+  };
+
   // ----------------------------------------------
   // Translations
   // ----------------------------------------------
@@ -298,7 +313,18 @@ const init = () => {
           'updateTranslation',
         ]),
     }),
+
+    subscription: new GraphQLObjectType({
+      name: 'Subscription',
+      fields: () =>
+        pick(gqlSubscriptions, [
+          // 'createdKey',
+          'updatedKey',
+        ]),
+    }),
   });
+
+  return gqlSchema;
 };
 
 // ==============================================

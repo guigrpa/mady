@@ -5,8 +5,7 @@
 import path from 'path';
 import http from 'http';
 import cloneDeep from 'lodash/cloneDeep';
-import { mainStory, chalk, addListener } from 'storyboard';
-import wsServerListener from 'storyboard-listener-ws-server';
+import { mainStory, chalk } from 'storyboard';
 import express from 'express';
 import graphqlHttp from 'express-graphql';
 import ejs from 'ejs';
@@ -96,7 +95,7 @@ async function sendIndexHtml(req, res) {
   }
 }
 
-function init(options: {| port: number |}): void {
+function init(options: {| port: number |}): Object {
   ssr && ssr.init({ gqlServer, mainStory });
 
   // Disable flow on Express
@@ -109,13 +108,8 @@ function init(options: {| port: number |}): void {
   expressApp.use(cookieParser());
 
   // GraphQL + GraphiQL
-  expressApp.use(
-    '/graphql',
-    graphqlHttp({
-      schema: gqlServer.getSchema(),
-      graphiql: true,
-    })
-  );
+  const schema = gqlServer.getSchema();
+  expressApp.use('/graphql', graphqlHttp({ schema, graphiql: true }));
 
   // Index
   expressApp.use('/', (req, res, next) => {
@@ -132,9 +126,6 @@ function init(options: {| port: number |}): void {
   // Create HTTP server
   const httpServer = http.createServer(expressApp);
 
-  // Storyboard
-  addListener(wsServerListener, { httpServer });
-
   // Look for a suitable port and start listening
   let port = options.port;
   httpServer.on('error', () => {
@@ -150,9 +141,11 @@ function init(options: {| port: number |}): void {
     mainStory.info('http', `Listening on port ${chalk.cyan.bold(port)}`);
   });
   httpServer.listen(port);
+
+  return httpServer;
 }
 
 // ==============================================
-// Public API
+// Public
 // ==============================================
 export { init };

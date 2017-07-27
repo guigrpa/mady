@@ -2,6 +2,20 @@
 
 import 'isomorphic-fetch';
 import Relay from 'relay-runtime';
+import socketio from 'socket.io-client';
+
+let socket;
+if (!process.env.SERVER_SIDE_RENDERING) {
+  socket = socketio.connect();
+  socket.on('MESSAGE', msg => {
+    console.log('RX: ', msg);
+  });
+  // socket.emit('MESSAGE', {
+  //   type: 'SUBSCRIBE',
+  //   subscriptionId: 'updatedKey',
+  //   query: 'subscription { updatedKey { key { text, isDeleted }}}',
+  // });
+}
 
 const defaultFetchQuery = async (operation, variables) => {
   const response = await fetch('/graphql', {

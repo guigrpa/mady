@@ -127,6 +127,10 @@ type Query {
   viewer: Viewer
 }
 
+type Subscription {
+  updatedKey: UpdatedKeyPayload
+}
+
 type Translation implements Node {
   # The ID of an object
   id: ID!
@@ -178,6 +182,10 @@ type UpdateConfigPayload {
   viewer: Viewer
   config: Config
   clientMutationId: String
+}
+
+type UpdatedKeyPayload {
+  key: Key
 }
 
 input UpdateKeyInput {

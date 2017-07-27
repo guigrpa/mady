@@ -2,11 +2,13 @@
 
 import { mainStory, addListener } from 'storyboard';
 import consoleListener from 'storyboard-listener-console';
+import wsServerListener from 'storyboard-listener-ws-server';
 import program from 'commander';
 import opn from 'opn';
 import * as db from './db';
-import * as gqlServer from './gqlServer';
-import * as httpServer from './httpServer';
+import { init as gqlInit } from './gqlServer';
+import { init as httpInit } from './httpServer';
+import { init as socketInit } from './socketServer';
 
 const pkg = require('../../package.json');
 
@@ -47,7 +49,9 @@ db.init({ localeDir: cliOptions.dir, fRecompile: cliOptions.recompile });
 if (cliOptions.importV0) {
   db.importV0(cliOptions.importV0);
 } else {
-  gqlServer.init();
-  httpServer.init({ port: cliOptions.port });
+  const gqlSchema = gqlInit();
+  const httpServer = httpInit({ port: cliOptions.port });
+  const socketServer = socketInit({ httpServer, gqlSchema });
+  addListener(wsServerListener, { socketServer });
 }
 opn(`http://localhost:${cliOptions.port}/`);

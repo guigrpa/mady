@@ -2,7 +2,7 @@
 
 import path from 'path';
 import fs from 'fs-extra';
-import timm from 'timm';
+import { addDefaults, merge } from 'timm';
 import { mainStory, chalk } from 'storyboard';
 import uuid from 'uuid';
 import { base64ToUtf8 } from '../common/base64';
@@ -18,6 +18,7 @@ import compile from './compileTranslations';
 import collectReactIntlTranslations from './collectReactIntlTranslations';
 import collectJsonTranslations from './collectJsonTranslations';
 import * as importers from './importData';
+import { publish } from './subscriptions';
 
 const DB_VERSION = 2;
 
@@ -98,7 +99,7 @@ function initConfig(): boolean {
       _config.dbVersion = DB_VERSION;
       fMigrated = true;
     }
-    _config = timm.addDefaults(_config, DEFAULT_CONFIG);
+    _config = addDefaults(_config, DEFAULT_CONFIG);
     saveConfig();
     return fMigrated;
   } catch (err) {
@@ -127,7 +128,7 @@ async function updateConfig(
   newAttrs: Object,
   { story }: { story: StoryT }
 ): Promise<InternalConfigT> {
-  _config = timm.merge(_config, newAttrs);
+  _config = merge(_config, newAttrs);
   story.debug('db', 'New config:', { attach: _config });
   saveConfig({ story });
   await compileTranslations({ story });
@@ -194,11 +195,13 @@ async function createKey(newAttrs: Object): Promise<?InternalKeyT> {
 }
 
 async function updateKey(id: string, newAttrs: Object): Promise<?InternalKeyT> {
-  _keys[id] = timm.merge(_keys[id], newAttrs);
+  const updatedKey = merge(_keys[id], newAttrs);
+  _keys[id] = updatedKey;
   saveKeys();
   await compileTranslations();
   await delay(RESPONSE_DELAY);
-  return _keys[id];
+  publish('updatedKey', { key: updatedKey });
+  return updatedKey;
 }
 
 async function parseSrcFiles({ story }: { story: StoryT }) {
@@ -284,7 +287,7 @@ function initTranslations() {
 function readTranslations(lang: string) {
   const translations = readJson(getLangPath(lang));
   if (translations) {
-    _translations = timm.merge(_translations, translations);
+    _translations = merge(_translations, translations);
   }
 }
 
@@ -349,7 +352,7 @@ async function updateTranslation(
   newAttrs: Object,
   { story }: { story: StoryT }
 ): Promise<?InternalTranslationT> {
-  _translations[id] = timm.merge(_translations[id], newAttrs);
+  _translations[id] = merge(_translations[id], newAttrs);
   saveTranslations(_translations[id].lang, { story });
   await compileTranslations({ story });
   await delay(RESPONSE_DELAY);
