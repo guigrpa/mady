@@ -149,6 +149,17 @@ const init = () => {
 
   addMutation('Config', 'UPDATE', { fSingleton: true });
 
+  gqlSubscriptions.updatedConfig = {
+    type: new GraphQLObjectType({
+      name: 'UpdatedConfigPayload',
+      fields: () => ({
+        config: { type: gqlTypes.Config },
+      }),
+    }),
+    resolve: payload => payload,
+    subscribe: () => subscribe('updatedConfig'),
+  };
+
   // ----------------------------------------------
   // Keys
   // ----------------------------------------------
@@ -218,15 +229,13 @@ const init = () => {
     },
   });
 
-  gqlTypes.UpdatedKeyPayload = new GraphQLObjectType({
-    name: 'UpdatedKeyPayload',
-    fields: () => ({
-      key: { type: gqlTypes.Key },
-    }),
-  });
-
   gqlSubscriptions.updatedKey = {
-    type: gqlTypes.UpdatedKeyPayload,
+    type: new GraphQLObjectType({
+      name: 'UpdatedKeyPayload',
+      fields: () => ({
+        key: { type: gqlTypes.Key },
+      }),
+    }),
     resolve: payload => payload,
     subscribe: () => subscribe('updatedKey'),
   };
@@ -318,6 +327,7 @@ const init = () => {
       name: 'Subscription',
       fields: () =>
         pick(gqlSubscriptions, [
+          'updatedConfig',
           // 'createdKey',
           'updatedKey',
         ]),

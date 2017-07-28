@@ -1,7 +1,7 @@
 // @flow
 
 import { setIn } from 'timm';
-import { commitMutation } from 'react-relay';
+import { commitMutation, requestSubscription } from 'react-relay';
 import { mainStory } from 'storyboard';
 import { notify } from 'giu';
 import _t from '../../translate';
@@ -63,6 +63,15 @@ const mutate = ({
   });
 };
 
+const subscribe = ({ environment, subscriptionOptions }) => {
+  requestSubscription(environment, {
+    ...subscriptionOptions,
+    onNext: data => {
+      console.log('RX at END-USER-LEVEL:', data);
+    },
+  });
+};
+
 const tearDown = story => {
   story.close();
 };
@@ -70,4 +79,4 @@ const tearDown = story => {
 // ===================================================
 // Public
 // ===================================================
-export { mutate };
+export { mutate, subscribe };

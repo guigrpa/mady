@@ -128,12 +128,14 @@ async function updateConfig(
   newAttrs: Object,
   { story }: { story: StoryT }
 ): Promise<InternalConfigT> {
-  _config = merge(_config, newAttrs);
-  story.debug('db', 'New config:', { attach: _config });
+  const updatedConfig = merge(_config, newAttrs);
+  _config = updatedConfig;
+  story.debug('db', 'New config:', { attach: updatedConfig });
   saveConfig({ story });
   await compileTranslations({ story });
   await delay(RESPONSE_DELAY);
-  return _config;
+  publish('updatedConfig', { config: updatedConfig });
+  return updatedConfig;
 }
 
 // ==============================================

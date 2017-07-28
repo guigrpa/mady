@@ -3,7 +3,8 @@
 import React from 'react';
 import QueryLookupRenderer from 'relay-query-lookup-renderer';
 // import { QueryRenderer } from 'react-relay';
-import { Spinner } from 'giu';
+import { Spinner, LargeMessage } from 'giu';
+import _t from '../../translate';
 import { getEnvironment } from '../gral/relay';
 
 type Props = {
@@ -29,10 +30,11 @@ const QueryRendererWrapper = ({
     variables={vars}
     render={({ error, props: relayData }) => {
       if (error) {
+        console.error(error); // eslint-disable-line
         return (
-          <div>
-            {error.message}
-          </div>
+          <LargeMessage>
+            {_t('error_Oops, an error occurred!')}
+          </LargeMessage>
         );
       }
       if (relayData) {

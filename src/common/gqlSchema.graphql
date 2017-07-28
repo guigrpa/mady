@@ -128,6 +128,7 @@ type Query {
 }
 
 type Subscription {
+  updatedConfig: UpdatedConfigPayload
   updatedKey: UpdatedKeyPayload
 }
 
@@ -182,6 +183,10 @@ type UpdateConfigPayload {
   viewer: Viewer
   config: Config
   clientMutationId: String
+}
+
+type UpdatedConfigPayload {
+  config: Config
 }
 
 type UpdatedKeyPayload {

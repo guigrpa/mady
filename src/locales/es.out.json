@@ -54,5 +54,6 @@
   "filter_Unused messages": "Mensajes no usados",
   "filter_Unused": "No usados",
   "hint_Filter relevant messages": "Filtrar mensajes relevantes",
-  "tooltip_Filter": "Filtro"
+  "tooltip_Filter": "Filtro",
+  "error_Oops, an error occurred!": "¡Uy, ha ocurrido un error!"
 }

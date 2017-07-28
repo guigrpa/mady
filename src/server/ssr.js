@@ -41,8 +41,12 @@ const init = (options: { gqlServer: Object, mainStory: Object }) => {
 };
 
 const render = async (req: Object, { fnLocales }: { fnLocales: string }) => {
-  // Create a new environment for this user (with the server-side fetchQuery function)
-  const environment = createRelayEnvironment(undefined, fetchQuery);
+  // Create a new environment for this user
+  const environment = createRelayEnvironment(
+    undefined /* start with no records */,
+    fetchQuery /* server-side fetchQuery function */,
+    null /* no subscribe function */
+  );
 
   // Load the data required for the initial render (rootQuery) into the environment
   await Relay.fetchQuery(environment, rootQuery, {});

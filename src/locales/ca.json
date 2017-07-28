@@ -378,5 +378,12 @@
     "lang": "ca",
     "translation": "Filtre",
     "keyId": "dG9vbHRpcF9GaWx0ZXI="
+  },
+  "4570f055-7932-46ef-8cb3-b31efcfd4c54": {
+    "id": "4570f055-7932-46ef-8cb3-b31efcfd4c54",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Ui, hi ha hagut un error!",
+    "keyId": "ZXJyb3JfT29wcywgYW4gZXJyb3Igb2NjdXJyZWQh"
   }
 }

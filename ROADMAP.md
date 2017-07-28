@@ -1,7 +1,12 @@
 * Add subscriptions
     - [x] PoC server side
     - [ ] PoC client side
+        - [x] Basic
+        - [ ] Add key creation subscription, ideally sharing the same payloads as keyUpdated
+        - [ ] Unsubscribe
     - [ ] Check that SSR doesn't break
+* Bump React to 16
+* Show error when user specifies a language that doesn't exist
 * Use Giu's DataTable
 * Split in two, adding oao and creating mady-cli
 * Add watch-based parsing

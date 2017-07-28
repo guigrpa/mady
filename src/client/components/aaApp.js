@@ -10,6 +10,9 @@ import type { KeyFilter } from '../gral/types';
 import type { ViewerT } from '../../common/types';
 import _t from '../../translate';
 import { cookieGet, cookieSet } from '../gral/storage';
+import { subscribe } from './helpers';
+import updatedKey from '../subscriptions/updatedKey';
+import updatedConfig from '../subscriptions/updatedConfig';
 import Header from './abHeader';
 import Translator from './adTranslator';
 import Details from './afDetails';
@@ -33,6 +36,7 @@ type Props = {
   // Unit testing
   _disableHints?: boolean,
   // Relay
+  relay: Object,
   viewer: ViewerT,
 };
 
@@ -59,6 +63,7 @@ class App extends React.Component {
     filter: KeyFilter,
   };
 
+  isSubscribed = false;
   constructor() {
     super();
     this.state = {
@@ -71,6 +76,10 @@ class App extends React.Component {
 
   componentDidMount() {
     if (!this.props._disableHints) this.showHint();
+    const { environment } = this.props;
+    if (!environment) return;
+    subscribe({ environment, subscriptionOptions: updatedConfig() });
+    subscribe({ environment, subscriptionOptions: updatedKey() });
   }
 
   // ------------------------------------------

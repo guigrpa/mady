@@ -2042,12 +2042,47 @@
           "description": null,
           "fields": [
             {
+              "name": "updatedConfig",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "UpdatedConfigPayload",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "updatedKey",
               "description": null,
               "args": [],
               "type": {
                 "kind": "OBJECT",
                 "name": "UpdatedKeyPayload",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "UpdatedConfigPayload",
+          "description": null,
+          "fields": [
+            {
+              "name": "config",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Config",
                 "ofType": null
               },
               "isDeprecated": false,

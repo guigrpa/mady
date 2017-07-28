@@ -405,5 +405,12 @@
     "lang": "es",
     "translation": "Filtro",
     "keyId": "dG9vbHRpcF9GaWx0ZXI="
+  },
+  "152fe90d-9a37-463d-b820-113040b9eb28": {
+    "id": "152fe90d-9a37-463d-b820-113040b9eb28",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "¡Uy, ha ocurrido un error!",
+    "keyId": "ZXJyb3JfT29wcywgYW4gZXJyb3Igb2NjdXJyZWQh"
   }
 }

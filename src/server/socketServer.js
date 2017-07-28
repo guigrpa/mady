@@ -9,12 +9,18 @@ import { subscribe as gqlSubscribe, parse as gqlParse } from 'graphql';
 // ==============================================
 // Types
 // ==============================================
-type WsMessage = {
-  type: 'SUBSCRIBE',
-  subscriptionId: string,
-  query: string,
-  variables?: Object,
-};
+type WsMessage =
+  | {
+      type: 'SUBSCRIBE',
+      subscriptionId: string,
+      query: string,
+      variables?: Object,
+    }
+  | {
+      type: 'NOTIF',
+      subscriptionId: string,
+      payload: Object,
+    };
 type WsContext = { socket: Object };
 
 // ==============================================
@@ -74,10 +80,10 @@ const rxSubscribe = async (context, msg) => {
   }
   /* eslint-disable no-await-in-loop, no-constant-condition */
   while (true) {
-    const { done, value } = await subscription.next();
+    const { done, value: payload } = await subscription.next();
     if (done) break;
-    mainStory.debug('socket', 'Retransmitting payload...', { attach: value });
-    socket.emit('MESSAGE', { type: 'NOTIF', ...value });
+    mainStory.debug('socket', 'Retransmitting payload...', { attach: payload });
+    socket.emit('MESSAGE', { type: 'NOTIF', subscriptionId, payload });
   }
   /* eslint-enable no-await-in-loop, no-constant-condition */
 };

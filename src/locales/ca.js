@@ -97,7 +97,8 @@ return {
   "ZmlsdGVyX1VudXNlZCBtZXNzYWdlcw==": function(d) { return "Missatges no utilitzats"; },
   "ZmlsdGVyX1VudXNlZA==": function(d) { return "No utilitzats"; },
   "aGludF9GaWx0ZXIgcmVsZXZhbnQgbWVzc2FnZXM=": function(d) { return "Filtrar missatges rellevants"; },
-  "dG9vbHRpcF9GaWx0ZXI=": function(d) { return "Filtre"; }
+  "dG9vbHRpcF9GaWx0ZXI=": function(d) { return "Filtre"; },
+  ZXJyb3JfT29wcywgYW4gZXJyb3Igb2NjdXJyZWQh: function(d) { return "Ui, hi ha hagut un error!"; }
 }
 };
 module.exports = anonymous();
