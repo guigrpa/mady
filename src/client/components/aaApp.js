@@ -40,7 +40,9 @@ const query = graphql`
   query aaAppQuery {
     viewer {
       ...adTranslator_viewer
-      ...aeSettings_viewer
+      config {
+        ...aeSettings_config
+      }
     }
   }
 `;
@@ -73,6 +75,7 @@ class App extends React.Component {
 
   // ------------------------------------------
   render() {
+    const { viewer } = this.props;
     return (
       <div style={style.outer}>
         <Floats />
@@ -86,7 +89,7 @@ class App extends React.Component {
         />
         <Translator
           lang={this.state.lang}
-          viewer={this.props.viewer}
+          viewer={viewer}
           selectedKeyId={this.state.selectedKeyId}
           changeSelectedKey={this.changeSelectedKey}
           filter={this.state.filter}
@@ -99,7 +102,7 @@ class App extends React.Component {
         {this.state.fSettingsShown &&
           <Settings
             lang={this.state.lang}
-            viewer={this.props.viewer}
+            config={viewer ? viewer.config : null}
             onChangeLang={this.onChangeLang}
             onClose={this.hideSettings}
           />}

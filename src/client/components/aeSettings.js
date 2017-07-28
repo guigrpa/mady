@@ -13,7 +13,7 @@ import {
   Modal,
   notify,
 } from 'giu';
-import type { ViewerT } from '../../common/types';
+import type { ConfigT } from '../../common/types';
 import _t from '../../translate';
 import updateConfig from '../mutations/updateConfig';
 import { LANG_OPTIONS } from '../gral/constants';
@@ -37,23 +37,20 @@ type Props = {
   onClose: () => void,
   // Relay
   relay: Object,
-  viewer: ViewerT,
+  config: ConfigT,
 };
 
 const gqlFragments = graphql`
-  fragment aeSettings_viewer on Viewer {
-    id
-    config {
-      langs
-      srcPaths
-      srcExtensions
-      msgFunctionNames
-      msgRegexps
-      fMinify
-      fJsOutput
-      fJsonOutput
-      fReactIntlOutput
-    }
+  fragment aeSettings_config on Config {
+    langs
+    srcPaths
+    srcExtensions
+    msgFunctionNames
+    msgRegexps
+    fMinify
+    fJsOutput
+    fJsonOutput
+    fReactIntlOutput
   }
 `;
 
@@ -85,7 +82,7 @@ class Settings extends React.Component {
     // - For other attributes (`lang`, `fMinify`...), we can
     // leave state handling entirely to `giu`, and fetch the value when the user clicks on
     // Save.
-    this.state = pick(props.viewer.config, STATE_ATTRS);
+    this.state = pick(props.config, STATE_ATTRS);
   }
 
   // ------------------------------------------
@@ -107,7 +104,7 @@ class Settings extends React.Component {
 
   renderConfig() {
     const { lang } = this.props;
-    const { fMinify, fJsonOutput, fReactIntlOutput } = this.props.viewer.config;
+    const { fMinify, fJsonOutput, fReactIntlOutput } = this.props.config;
     const { fJsOutput } = this.state;
     return (
       <div>
@@ -325,7 +322,10 @@ class Settings extends React.Component {
     mutate({
       description: 'Click on Save settings',
       environment: this.props.relay.environment,
-      mutationOptions: updateConfig({ viewer: this.props.viewer, attrs }),
+      mutationOptions: updateConfig({
+        config: this.props.config,
+        attrs,
+      }),
       onFailure: () => {
         notify({
           msg: _t('error_Configuration could not be saved'),

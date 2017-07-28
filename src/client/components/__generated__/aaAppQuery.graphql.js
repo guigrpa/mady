@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 1a1fa09b34ea958586e8037cb383a2c3
+ * @relayHash 93090dfe1b1ae3a5fbcda25635b6c240
  */
 
 /* eslint-disable */
@@ -10,7 +10,9 @@
 /*::
 import type {ConcreteBatch} from 'relay-runtime';
 export type aaAppQueryResponse = {|
-  +viewer: ?{| |};
+  +viewer: ?{|
+    +config: {| |};
+  |};
 |};
 */
 
@@ -19,7 +21,10 @@ export type aaAppQueryResponse = {|
 query aaAppQuery {
   viewer {
     ...adTranslator_viewer
-    ...aeSettings_viewer
+    config {
+      ...aeSettings_config
+      id
+    }
     id
   }
 }
@@ -64,20 +69,16 @@ fragment adTranslator_viewer on Viewer {
   ...edTranslatorRow_viewer
 }
 
-fragment aeSettings_viewer on Viewer {
-  id
-  config {
-    langs
-    srcPaths
-    srcExtensions
-    msgFunctionNames
-    msgRegexps
-    fMinify
-    fJsOutput
-    fJsonOutput
-    fReactIntlOutput
-    id
-  }
+fragment aeSettings_config on Config {
+  langs
+  srcPaths
+  srcExtensions
+  msgFunctionNames
+  msgRegexps
+  fMinify
+  fJsOutput
+  fJsonOutput
+  fReactIntlOutput
 }
 
 fragment edTranslatorRow_theKey on Key {
@@ -172,9 +173,20 @@ const batch /*: ConcreteBatch*/ = {
             "args": null
           },
           {
-            "kind": "FragmentSpread",
-            "name": "aeSettings_viewer",
-            "args": null
+            "kind": "LinkedField",
+            "alias": null,
+            "args": null,
+            "concreteType": "Config",
+            "name": "config",
+            "plural": false,
+            "selections": [
+              {
+                "kind": "FragmentSpread",
+                "name": "aeSettings_config",
+                "args": null
+              }
+            ],
+            "storageKey": null
           }
         ],
         "storageKey": null
@@ -230,60 +242,66 @@ const batch /*: ConcreteBatch*/ = {
                 "storageKey": null
               },
               {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "srcPaths",
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "srcExtensions",
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "msgFunctionNames",
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "msgRegexps",
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "fMinify",
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "fJsOutput",
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "fJsonOutput",
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "fReactIntlOutput",
-                "storageKey": null
+                "kind": "InlineFragment",
+                "type": "Config",
+                "selections": [
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "srcPaths",
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "srcExtensions",
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "msgFunctionNames",
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "msgRegexps",
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "fMinify",
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "fJsOutput",
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "fJsonOutput",
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "fReactIntlOutput",
+                    "storageKey": null
+                  }
+                ]
               }
             ],
             "storageKey": null
@@ -528,7 +546,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query aaAppQuery {\n  viewer {\n    ...adTranslator_viewer\n    ...aeSettings_viewer\n    id\n  }\n}\n\nfragment adTranslator_viewer on Viewer {\n  id\n  config {\n    langs\n    id\n  }\n  keys(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        unusedSince\n        context\n        text\n        translations(first: 100000) {\n          edges {\n            node {\n              isDeleted\n              lang\n              fuzzy\n              id\n              __typename\n            }\n            cursor\n          }\n          pageInfo {\n            endCursor\n            hasNextPage\n            hasPreviousPage\n            startCursor\n          }\n        }\n        ...edTranslatorRow_theKey\n      }\n    }\n  }\n  ...ecTranslatorHeader_viewer\n  ...edTranslatorRow_viewer\n}\n\nfragment aeSettings_viewer on Viewer {\n  id\n  config {\n    langs\n    srcPaths\n    srcExtensions\n    msgFunctionNames\n    msgRegexps\n    fMinify\n    fJsOutput\n    fJsonOutput\n    fReactIntlOutput\n    id\n  }\n}\n\nfragment edTranslatorRow_theKey on Key {\n  id\n  context\n  text\n  unusedSince\n  ...eeTranslation_theKey\n  translations(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        lang\n        ...eeTranslation_translation\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n      hasPreviousPage\n      startCursor\n    }\n  }\n}\n\nfragment ecTranslatorHeader_viewer on Viewer {\n  id\n  config {\n    langs\n    id\n  }\n  keys(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        unusedSince\n        ...edTranslatorRow_theKey\n        translations(first: 100000) {\n          edges {\n            node {\n              lang\n              isDeleted\n              id\n            }\n          }\n        }\n      }\n    }\n  }\n}\n\nfragment edTranslatorRow_viewer on Viewer {\n  id\n}\n\nfragment eeTranslation_theKey on Key {\n  id\n  text\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  isDeleted\n  lang\n  translation\n  fuzzy\n}\n"
+  "text": "query aaAppQuery {\n  viewer {\n    ...adTranslator_viewer\n    config {\n      ...aeSettings_config\n      id\n    }\n    id\n  }\n}\n\nfragment adTranslator_viewer on Viewer {\n  id\n  config {\n    langs\n    id\n  }\n  keys(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        unusedSince\n        context\n        text\n        translations(first: 100000) {\n          edges {\n            node {\n              isDeleted\n              lang\n              fuzzy\n              id\n              __typename\n            }\n            cursor\n          }\n          pageInfo {\n            endCursor\n            hasNextPage\n            hasPreviousPage\n            startCursor\n          }\n        }\n        ...edTranslatorRow_theKey\n      }\n    }\n  }\n  ...ecTranslatorHeader_viewer\n  ...edTranslatorRow_viewer\n}\n\nfragment aeSettings_config on Config {\n  langs\n  srcPaths\n  srcExtensions\n  msgFunctionNames\n  msgRegexps\n  fMinify\n  fJsOutput\n  fJsonOutput\n  fReactIntlOutput\n}\n\nfragment edTranslatorRow_theKey on Key {\n  id\n  context\n  text\n  unusedSince\n  ...eeTranslation_theKey\n  translations(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        lang\n        ...eeTranslation_translation\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n      hasPreviousPage\n      startCursor\n    }\n  }\n}\n\nfragment ecTranslatorHeader_viewer on Viewer {\n  id\n  config {\n    langs\n    id\n  }\n  keys(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        unusedSince\n        ...edTranslatorRow_theKey\n        translations(first: 100000) {\n          edges {\n            node {\n              lang\n              isDeleted\n              id\n            }\n          }\n        }\n      }\n    }\n  }\n}\n\nfragment edTranslatorRow_viewer on Viewer {\n  id\n}\n\nfragment eeTranslation_theKey on Key {\n  id\n  text\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  isDeleted\n  lang\n  translation\n  fuzzy\n}\n"
 };
 
 module.exports = batch;

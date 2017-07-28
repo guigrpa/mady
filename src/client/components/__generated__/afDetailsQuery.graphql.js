@@ -11,10 +11,10 @@
 import type {ConcreteBatch} from 'relay-runtime';
 export type afDetailsQueryResponse = {|
   +node: ?{|
-    +firstUsed?: ?string;
+    +firstUsed?: string;
     +unusedSince?: ?string;
     +description?: ?string;
-    +sources?: ?$ReadOnlyArray<?string>;
+    +sources?: $ReadOnlyArray<string>;
   |};
 |};
 */
