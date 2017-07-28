@@ -224,5 +224,4 @@ type Viewer implements Node {
   id: ID!
   config: Config!
   keys(after: String, first: Int, before: String, last: Int): KeyConnection
-  translations(after: String, first: Int, before: String, last: Int): TranslationConnection
 }

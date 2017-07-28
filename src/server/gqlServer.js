@@ -84,7 +84,6 @@ const init = () => {
 
   let configBaseField;
   let keysBaseField;
-  let translationsBaseField;
 
   // ----------------------------------------------
   // Viewer
@@ -97,7 +96,6 @@ const init = () => {
       id: globalIdField('Viewer'),
       config: configBaseField,
       keys: keysBaseField,
-      translations: translationsBaseField,
     }),
   });
 
@@ -280,12 +278,6 @@ const init = () => {
   });
 
   addConnectionType('Translation');
-
-  translationsBaseField = {
-    type: gqlTypes.TranslationConnection,
-    args: connectionArgs,
-    resolve: (base, args) => connectionFromArray(db.getTranslations(), args),
-  };
 
   {
     const globalIds = ['keyId'];
