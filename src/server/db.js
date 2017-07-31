@@ -183,7 +183,7 @@ async function createKey(newAttrs: Object): Promise<?InternalKeyT> {
     newAttrs.context != null
       ? `${newAttrs.context}_${newAttrs.text}`
       : newAttrs.text;
-  _keys[id] = {
+  const newKey = {
     id,
     context: newAttrs.context || null,
     text: newAttrs.text,
@@ -191,9 +191,11 @@ async function createKey(newAttrs: Object): Promise<?InternalKeyT> {
     unusedSince: newAttrs.unusedSince || null,
     sources: [],
   };
+  _keys[id] = newKey;
   saveKeys();
   await compileTranslations();
-  return _keys[id];
+  publish('createdKey', { key: newKey });
+  return newKey;
 }
 
 async function updateKey(id: string, newAttrs: Object): Promise<?InternalKeyT> {
@@ -342,11 +344,20 @@ async function createTranslation(
   if (!lang) throw new Error('Translation language must be specified');
   if (keyId == null) throw new Error('Translation key must be specified');
   const id = uuid.v4();
-  _translations[id] = { id, isDeleted: false, lang, translation, fuzzy, keyId };
+  const newTranslation = {
+    id,
+    isDeleted: false,
+    lang,
+    translation,
+    fuzzy,
+    keyId,
+  };
+  _translations[id] = newTranslation;
   saveTranslations(lang, { story });
   await compileTranslations({ story });
   await delay(RESPONSE_DELAY);
-  return _translations[id];
+  publish('createdTranslation', { translation: newTranslation });
+  return newTranslation;
 }
 
 async function updateTranslation(
@@ -354,11 +365,13 @@ async function updateTranslation(
   newAttrs: Object,
   { story }: { story: StoryT }
 ): Promise<?InternalTranslationT> {
-  _translations[id] = merge(_translations[id], newAttrs);
-  saveTranslations(_translations[id].lang, { story });
+  const updatedTranslation = merge(_translations[id], newAttrs);
+  _translations[id] = updatedTranslation;
+  saveTranslations(updatedTranslation.lang, { story });
   await compileTranslations({ story });
   await delay(RESPONSE_DELAY);
-  return _translations[id];
+  publish('updatedTranslation', { translation: updatedTranslation });
+  return updatedTranslation;
 }
 
 async function compileTranslations(

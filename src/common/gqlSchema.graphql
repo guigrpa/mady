@@ -130,6 +130,7 @@ type Query {
 type Subscription {
   updatedConfig: UpdatedConfigPayload
   updatedKey: UpdatedKeyPayload
+  updatedTranslation: UpdatedTranslationPayload
 }
 
 type Translation implements Node {
@@ -191,6 +192,10 @@ type UpdatedConfigPayload {
 
 type UpdatedKeyPayload {
   key: Key
+}
+
+type UpdatedTranslationPayload {
+  translation: Translation
 }
 
 input UpdateKeyInput {

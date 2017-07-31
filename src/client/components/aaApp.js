@@ -11,8 +11,9 @@ import type { ViewerT } from '../../common/types';
 import _t from '../../translate';
 import { cookieGet, cookieSet } from '../gral/storage';
 import { subscribe } from './helpers';
-import updatedKey from '../subscriptions/updatedKey';
 import updatedConfig from '../subscriptions/updatedConfig';
+import updatedKey from '../subscriptions/updatedKey';
+import updatedTranslation from '../subscriptions/updatedTranslation';
 import Header from './abHeader';
 import Translator from './adTranslator';
 import Details from './afDetails';
@@ -36,7 +37,6 @@ type Props = {
   // Unit testing
   _disableHints?: boolean,
   // Relay
-  relay: Object,
   viewer: ViewerT,
 };
 
@@ -80,6 +80,7 @@ class App extends React.Component {
     if (!environment) return;
     subscribe({ environment, subscriptionOptions: updatedConfig() });
     subscribe({ environment, subscriptionOptions: updatedKey() });
+    subscribe({ environment, subscriptionOptions: updatedTranslation() });
   }
 
   // ------------------------------------------

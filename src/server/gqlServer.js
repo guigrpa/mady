@@ -1,5 +1,7 @@
 // @flow
 
+/* eslint-disable no-param-reassign */
+
 import { mainStory } from 'storyboard';
 import timm from 'timm';
 import {
@@ -67,7 +69,7 @@ const runIntrospect = async (): Promise<Object> => {
 
 const init = () => {
   // ==============================================
-  // Interfaces
+  // Node interface
   // ==============================================
   mainStory.debug('gql', 'Creating interfaces...');
   const { nodeInterface, nodeField } = nodeDefinitions(
@@ -77,17 +79,13 @@ const init = () => {
   gqlInterfaces.Node = nodeInterface;
   const nodeRootField = nodeField;
 
-  // ==============================================
-  // Types
-  // ==============================================
   mainStory.debug('gql', 'Creating types...');
-
   let configBaseField;
   let keysBaseField;
 
-  // ----------------------------------------------
+  // ==============================================
   // Viewer
-  // ----------------------------------------------
+  // ==============================================
   gqlTypes.Viewer = new GraphQLObjectType({
     name: 'Viewer',
     interfaces: [gqlInterfaces.Node],
@@ -104,9 +102,9 @@ const init = () => {
     resolve: () => viewer,
   };
 
-  // ----------------------------------------------
+  // ==============================================
   // Config
-  // ----------------------------------------------
+  // ==============================================
   gqlTypes.Config = new GraphQLObjectType({
     name: 'Config',
     interfaces: [gqlInterfaces.Node],
@@ -145,22 +143,19 @@ const init = () => {
     resolve: () => db.getConfig(),
   };
 
+  // ------------------------
+  // Mutations
+  // ------------------------
   addMutation('Config', 'UPDATE', { fSingleton: true });
 
-  gqlSubscriptions.updatedConfig = {
-    type: new GraphQLObjectType({
-      name: 'UpdatedConfigPayload',
-      fields: () => ({
-        config: { type: gqlTypes.Config },
-      }),
-    }),
-    resolve: payload => payload,
-    subscribe: () => subscribe('updatedConfig'),
-  };
+  // ------------------------
+  // Subscriptions
+  // ------------------------
+  addSubscription('Config', 'UPDATED', gqlTypes, gqlSubscriptions);
 
-  // ----------------------------------------------
+  // ==============================================
   // Keys
-  // ----------------------------------------------
+  // ==============================================
   gqlTypes.Key = new GraphQLObjectType({
     name: 'Key',
     interfaces: [gqlInterfaces.Node],
@@ -202,6 +197,9 @@ const init = () => {
     resolve: (base, args) => connectionFromArray(db.getKeys(), args),
   };
 
+  // ------------------------
+  // Mutations
+  // ------------------------
   addMutation('Key', 'UPDATE');
   gqlMutations.parseSrcFiles = mutationWithClientMutationId({
     name: 'ParseSrcFiles',
@@ -227,20 +225,14 @@ const init = () => {
     },
   });
 
-  gqlSubscriptions.updatedKey = {
-    type: new GraphQLObjectType({
-      name: 'UpdatedKeyPayload',
-      fields: () => ({
-        key: { type: gqlTypes.Key },
-      }),
-    }),
-    resolve: payload => payload,
-    subscribe: () => subscribe('updatedKey'),
-  };
+  // ------------------------
+  // Subscriptions
+  // ------------------------
+  addSubscription('Key', 'UPDATED', gqlTypes, gqlSubscriptions);
 
-  // ----------------------------------------------
+  // ==============================================
   // Translations
-  // ----------------------------------------------
+  // ==============================================
   gqlTypes.Translation = new GraphQLObjectType({
     name: 'Translation',
     interfaces: [gqlInterfaces.Node],
@@ -280,6 +272,9 @@ const init = () => {
   addConnectionType('Translation');
 
   {
+    // ------------------------
+    // Mutations
+    // ------------------------
     const globalIds = ['keyId'];
     const parent = {
       type: 'Key',
@@ -288,6 +283,11 @@ const init = () => {
     };
     addMutation('Translation', 'CREATE', { globalIds, parent });
     addMutation('Translation', 'UPDATE', { globalIds });
+
+    // ------------------------
+    // Subscriptions
+    // ------------------------
+    addSubscription('Translation', 'UPDATED', gqlTypes, gqlSubscriptions);
   }
 
   // ==============================================
@@ -320,8 +320,9 @@ const init = () => {
       fields: () =>
         pick(gqlSubscriptions, [
           'updatedConfig',
-          // 'createdKey',
+          // 'createdKeyInViewerKeys',
           'updatedKey',
+          'updatedTranslation',
         ]),
     }),
   });
@@ -378,8 +379,9 @@ function addConnectionType(name: string): void {
   gqlTypes[`${name}Edge`] = edgeType;
 }
 
-type MutationOperation = 'CREATE' | 'UPDATE' | 'DELETE';
-type MutationParent = {
+type MutationType = 'CREATE' | 'UPDATE' | 'DELETE';
+type SubscriptionType = 'CREATED' | 'UPDATED' | 'DELETED';
+type OperationParent = {
   type: string,
   connection: string,
   resolveConnection: (base: Object) => Array<Object>,
@@ -392,24 +394,48 @@ type MutationRelation = {
 type MutationOptions = {
   fSingleton?: boolean,
   globalIds?: Array<string>,
-  parent?: MutationParent,
+  parent?: OperationParent,
   relations?: Array<MutationRelation>,
+};
+
+const operationBaseName = (
+  type: string,
+  op: string,
+  parent: ?OperationParent
+) =>
+  parent != null
+    ? `${capitalize(op)}${type}In${parent.type}${upperFirst(parent.connection)}`
+    : `${capitalize(op)}${type}`;
+
+const addSubscription = (
+  type: string,
+  op: SubscriptionType,
+  allTypes: Object,
+  allSubscriptions: Object,
+  options?: SubscriptionOptions = {}
+) => {
+  const { parent } = options;
+  const baseName = operationBaseName(type, op, parent);
+  const subscriptionName = lowerFirst(baseName);
+  allSubscriptions[subscriptionName] = {
+    type: new GraphQLObjectType({
+      name: `${baseName}Payload`,
+      fields: () => ({
+        [lowerFirst(type)]: { type: allTypes[type] },
+      }),
+    }),
+    resolve: payload => payload,
+    subscribe: () => subscribe(subscriptionName),
+  };
 };
 
 function addMutation(
   type: string,
-  op: MutationOperation,
+  op: MutationType,
   options?: MutationOptions = {}
 ): void {
   const { parent } = options;
-  let name;
-  if (parent) {
-    name = `${capitalize(op)}${type}In${parent.type}${upperFirst(
-      parent.connection
-    )}`;
-  } else {
-    name = `${capitalize(op)}${type}`;
-  }
+  const name = operationBaseName(type, op, parent);
 
   // Input fields
   const inputFields = {};
@@ -507,7 +533,7 @@ type InnerMutationResult = {
 
 async function mutate(
   type: string,
-  op: MutationOperation,
+  op: MutationType,
   mutationArgs: InnerMutationArgs,
   options: MutationOptions,
   story: StoryT
@@ -541,6 +567,7 @@ async function mutate(
   return result;
 }
 
+// Recursively solve all global IDs to their corresponding local ones
 function resolveGlobalIds(
   prevAttrs: Object,
   globalIds: Array<string> = []
