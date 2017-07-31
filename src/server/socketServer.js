@@ -61,7 +61,7 @@ const rx = (context: WsContext) => (msg: WsMessage) => {
 
 const rxSubscribe = async (context, msg) => {
   const { socket } = context;
-  const { subscriptionId, query } = msg;
+  const { subscriptionId, query, variables } = msg;
   let ast;
   try {
     if (!query) throw new Error('MISSING_QUERY');
@@ -72,7 +72,7 @@ const rxSubscribe = async (context, msg) => {
   }
   let subscription;
   try {
-    subscription = gqlSubscribe(context.gqlSchema, ast);
+    subscription = gqlSubscribe(context.gqlSchema, ast, null, null, variables);
     context.subscriptions[subscriptionId] = subscription;
   } catch (err) {
     mainStory.error('socket', 'GraphQL subscribe error', { attach: err });
@@ -82,7 +82,7 @@ const rxSubscribe = async (context, msg) => {
   while (true) {
     const { done, value: payload } = await subscription.next();
     if (done) break;
-    mainStory.debug('socket', 'Retransmitting payload...', { attach: payload });
+    // mainStory.debug('socket', 'Retransmitting payload...', { attach: payload });
     socket.emit('MESSAGE', { type: 'NOTIF', subscriptionId, payload });
   }
   /* eslint-enable no-await-in-loop, no-constant-condition */

@@ -6,7 +6,7 @@ import timm from 'timm';
 import React from 'react';
 import Relay, { graphql } from 'react-relay';
 import { cancelEvent, flexContainer, flexItem, Icon, hoverable } from 'giu';
-import type { ViewerT, KeyT, HoverableProps } from '../../common/types';
+import type { KeyT, HoverableProps } from '../../common/types';
 import _t from '../../translate';
 import updateKey from '../mutations/updateKey';
 import { COLORS } from '../gral/constants';
@@ -24,7 +24,6 @@ type PublicProps = {|
   styleLangCol: Object,
   // Relay
   relay: Object,
-  viewer: ViewerT,
   theKey: KeyT,
 |};
 
@@ -34,10 +33,6 @@ type Props = {
 };
 
 const gqlFragments = graphql`
-  fragment edTranslatorRow_viewer on Viewer {
-    id
-  }
-
   fragment edTranslatorRow_theKey on Key {
     id
     context

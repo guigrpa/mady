@@ -1,10 +1,10 @@
 * Add subscriptions
-    - [x] PoC server side
-    - [ ] PoC client side
-        - [x] Basic
-        - [ ] Add key creation subscription, ideally sharing the same payloads as keyUpdated
-        - [ ] Add translation subscriptions
-        - [ ] Unsubscribe
+    - [ ] createdTranslation subscription
+    - [ ] Refactor subscriptions, esp. createdKey: try not to repeat fragments in the subscription!
+    - [ ] Rethink component API, considering fragments...
+    - [ ] Server db: publish key changes in more cases, not only creation
+    - [ ] Unsubscribe (needed?)
+    - [ ] Clean up client fragments
     - [ ] Refactor server:
         - [ ] Move to graphql subfolder
         - [ ] Separate addMutation, addSubscription, other relay helpers

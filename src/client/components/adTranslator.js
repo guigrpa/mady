@@ -42,7 +42,7 @@ const fragment = graphql`
     config {
       langs
     }
-    keys(first: 100000) {
+    keys(first: 100000) @connection(key: "Translator_viewer_keys") {
       edges {
         node {
           id
@@ -65,7 +65,6 @@ const fragment = graphql`
       }
     }
     ...ecTranslatorHeader_viewer
-    ...edTranslatorRow_viewer
   }
 `;
 

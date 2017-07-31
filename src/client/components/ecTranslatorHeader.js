@@ -34,13 +34,12 @@ const fragment = graphql`
     config {
       langs
     }
-    keys(first: 100000) {
+    keys(first: 100000) @connection(key: "TranslatorHeader_viewer_keys") {
       edges {
         node {
           id
           isDeleted
           unusedSince
-          ...edTranslatorRow_theKey
           translations(first: 100000) {
             edges {
               node {

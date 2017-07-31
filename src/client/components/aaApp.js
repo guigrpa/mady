@@ -12,6 +12,7 @@ import _t from '../../translate';
 import { cookieGet, cookieSet } from '../gral/storage';
 import { subscribe } from './helpers';
 import updatedConfig from '../subscriptions/updatedConfig';
+import createdKey from '../subscriptions/createdKey';
 import updatedKey from '../subscriptions/updatedKey';
 import updatedTranslation from '../subscriptions/updatedTranslation';
 import Header from './abHeader';
@@ -43,6 +44,7 @@ type Props = {
 const query = graphql`
   query aaAppQuery {
     viewer {
+      id
       ...adTranslator_viewer
       config {
         ...aeSettings_config
@@ -76,9 +78,13 @@ class App extends React.Component {
 
   componentDidMount() {
     if (!this.props._disableHints) this.showHint();
-    const { environment } = this.props;
+    const { environment, viewer } = this.props;
     if (!environment) return;
     subscribe({ environment, subscriptionOptions: updatedConfig() });
+    subscribe({
+      environment,
+      subscriptionOptions: createdKey({ viewerId: viewer.id }),
+    });
     subscribe({ environment, subscriptionOptions: updatedKey() });
     subscribe({ environment, subscriptionOptions: updatedTranslation() });
   }

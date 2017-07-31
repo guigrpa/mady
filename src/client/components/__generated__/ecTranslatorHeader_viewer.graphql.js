@@ -37,7 +37,18 @@ export type ecTranslatorHeader_viewer = {|
 const fragment /*: ConcreteFragment*/ = {
   "argumentDefinitions": [],
   "kind": "Fragment",
-  "metadata": null,
+  "metadata": {
+    "connection": [
+      {
+        "count": null,
+        "cursor": null,
+        "direction": "forward",
+        "path": [
+          "keys"
+        ]
+      }
+    ]
+  },
   "name": "ecTranslatorHeader_viewer",
   "selections": [
     {
@@ -67,17 +78,10 @@ const fragment /*: ConcreteFragment*/ = {
     },
     {
       "kind": "LinkedField",
-      "alias": null,
-      "args": [
-        {
-          "kind": "Literal",
-          "name": "first",
-          "value": 100000,
-          "type": "Int"
-        }
-      ],
+      "alias": "keys",
+      "args": null,
       "concreteType": "KeyConnection",
-      "name": "keys",
+      "name": "__TranslatorHeader_viewer_keys_connection",
       "plural": false,
       "selections": [
         {
@@ -116,11 +120,6 @@ const fragment /*: ConcreteFragment*/ = {
                   "args": null,
                   "name": "unusedSince",
                   "storageKey": null
-                },
-                {
-                  "kind": "FragmentSpread",
-                  "name": "edTranslatorRow_theKey",
-                  "args": null
                 },
                 {
                   "kind": "LinkedField",
@@ -183,7 +182,7 @@ const fragment /*: ConcreteFragment*/ = {
           "storageKey": null
         }
       ],
-      "storageKey": "keys{\"first\":100000}"
+      "storageKey": null
     }
   ],
   "type": "Viewer"

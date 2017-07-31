@@ -24,6 +24,13 @@ input ConfigUpdate {
   fReactIntlOutput: Boolean
 }
 
+type CreatedKeyInViewerKeysPayload {
+  viewer: Viewer
+  key: Key
+  parent: Viewer
+  createdKeyEdge: KeyEdge
+}
+
 input CreateTranslationInKeyTranslationsInput {
   attrs: TranslationCreate
   parentId: ID!
@@ -129,6 +136,7 @@ type Query {
 
 type Subscription {
   updatedConfig: UpdatedConfigPayload
+  createdKeyInViewerKeys(parentId: ID!): CreatedKeyInViewerKeysPayload
   updatedKey: UpdatedKeyPayload
   updatedTranslation: UpdatedTranslationPayload
 }
@@ -187,14 +195,17 @@ type UpdateConfigPayload {
 }
 
 type UpdatedConfigPayload {
+  viewer: Viewer
   config: Config
 }
 
 type UpdatedKeyPayload {
+  viewer: Viewer
   key: Key
 }
 
 type UpdatedTranslationPayload {
+  viewer: Viewer
   translation: Translation
 }
 

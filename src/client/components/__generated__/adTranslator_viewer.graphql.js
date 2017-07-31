@@ -47,6 +47,14 @@ const fragment /*: ConcreteFragment*/ = {
         "cursor": null,
         "direction": "forward",
         "path": null
+      },
+      {
+        "count": null,
+        "cursor": null,
+        "direction": "forward",
+        "path": [
+          "keys"
+        ]
       }
     ]
   },
@@ -79,17 +87,10 @@ const fragment /*: ConcreteFragment*/ = {
     },
     {
       "kind": "LinkedField",
-      "alias": null,
-      "args": [
-        {
-          "kind": "Literal",
-          "name": "first",
-          "value": 100000,
-          "type": "Int"
-        }
-      ],
+      "alias": "keys",
+      "args": null,
       "concreteType": "KeyConnection",
-      "name": "keys",
+      "name": "__Translator_viewer_keys_connection",
       "plural": false,
       "selections": [
         {
@@ -209,16 +210,11 @@ const fragment /*: ConcreteFragment*/ = {
           "storageKey": null
         }
       ],
-      "storageKey": "keys{\"first\":100000}"
+      "storageKey": null
     },
     {
       "kind": "FragmentSpread",
       "name": "ecTranslatorHeader_viewer",
-      "args": null
-    },
-    {
-      "kind": "FragmentSpread",
-      "name": "edTranslatorRow_viewer",
       "args": null
     }
   ],

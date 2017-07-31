@@ -3,7 +3,7 @@
 /* eslint-disable no-param-reassign */
 
 import { mainStory } from 'storyboard';
-import timm from 'timm';
+import { set as timmSet } from 'timm';
 import {
   GraphQLID,
   GraphQLString,
@@ -198,37 +198,44 @@ const init = () => {
   };
 
   // ------------------------
-  // Mutations
+  // Mutations and subscriptions
   // ------------------------
-  addMutation('Key', 'UPDATE');
-  gqlMutations.parseSrcFiles = mutationWithClientMutationId({
-    name: 'ParseSrcFiles',
-    inputFields: {
-      storyId: { type: GraphQLString },
-    },
-    mutateAndGetPayload: async ({ storyId }) => {
-      const story = mainStory.child({
-        src: 'gql',
-        title: 'Mutation: parse source files',
-        extraParents: storyId,
-      });
-      try {
-        await db.parseSrcFiles({ story });
-        return {};
-      } finally {
-        story.close();
-      }
-    },
-    outputFields: {
-      keys: keysBaseField,
-      viewer: viewerRootField,
-    },
-  });
+  {
+    const parent = {
+      type: 'Viewer',
+      connection: 'keys',
+      resolveConnection: () => db.getKeys(),
+    };
 
-  // ------------------------
-  // Subscriptions
-  // ------------------------
-  addSubscription('Key', 'UPDATED', gqlTypes, gqlSubscriptions);
+    addMutation('Key', 'UPDATE');
+
+    gqlMutations.parseSrcFiles = mutationWithClientMutationId({
+      name: 'ParseSrcFiles',
+      inputFields: {
+        storyId: { type: GraphQLString },
+      },
+      mutateAndGetPayload: async ({ storyId }) => {
+        const story = mainStory.child({
+          src: 'gql',
+          title: 'Mutation: parse source files',
+          extraParents: storyId,
+        });
+        try {
+          await db.parseSrcFiles({ story });
+          return {};
+        } finally {
+          story.close();
+        }
+      },
+      outputFields: {
+        keys: keysBaseField,
+        viewer: viewerRootField,
+      },
+    });
+
+    addSubscription('Key', 'CREATED', gqlTypes, gqlSubscriptions, { parent });
+    addSubscription('Key', 'UPDATED', gqlTypes, gqlSubscriptions);
+  }
 
   // ==============================================
   // Translations
@@ -271,22 +278,20 @@ const init = () => {
 
   addConnectionType('Translation');
 
+  // ------------------------
+  // Mutations and subscriptions
+  // ------------------------
   {
-    // ------------------------
-    // Mutations
-    // ------------------------
     const globalIds = ['keyId'];
     const parent = {
       type: 'Key',
       connection: 'translations',
       resolveConnection: key => db.getKeyTranslations(key.id),
     };
+
     addMutation('Translation', 'CREATE', { globalIds, parent });
     addMutation('Translation', 'UPDATE', { globalIds });
 
-    // ------------------------
-    // Subscriptions
-    // ------------------------
     addSubscription('Translation', 'UPDATED', gqlTypes, gqlSubscriptions);
   }
 
@@ -320,7 +325,7 @@ const init = () => {
       fields: () =>
         pick(gqlSubscriptions, [
           'updatedConfig',
-          // 'createdKeyInViewerKeys',
+          'createdKeyInViewerKeys',
           'updatedKey',
           'updatedTranslation',
         ]),
@@ -367,7 +372,7 @@ function getNodeFromTypeAndLocalId(type: string, localId: string): ?Object {
 }
 
 function addTypeAttr(obj: ?Object, type: string): ?Object {
-  return obj ? timm.set(obj, '_type', type) : obj;
+  return obj ? timmSet(obj, '_type', type) : obj;
 }
 
 function addConnectionType(name: string): void {
@@ -379,33 +384,22 @@ function addConnectionType(name: string): void {
   gqlTypes[`${name}Edge`] = edgeType;
 }
 
-type MutationType = 'CREATE' | 'UPDATE' | 'DELETE';
-type SubscriptionType = 'CREATED' | 'UPDATED' | 'DELETED';
+type MutationType = 'CREATE' | 'UPDATE';
 type OperationParent = {
   type: string,
   connection: string,
   resolveConnection: (base: Object) => Array<Object>,
 };
-type MutationRelation = {
-  type: string,
-  name: string,
-  resolve: (base: Object) => any,
-};
 type MutationOptions = {
   fSingleton?: boolean,
   globalIds?: Array<string>,
   parent?: OperationParent,
-  relations?: Array<MutationRelation>,
 };
 
-const operationBaseName = (
-  type: string,
-  op: string,
-  parent: ?OperationParent
-) =>
-  parent != null
-    ? `${capitalize(op)}${type}In${parent.type}${upperFirst(parent.connection)}`
-    : `${capitalize(op)}${type}`;
+type SubscriptionType = 'CREATED' | 'UPDATED';
+type SubscriptionOptions = {
+  parent?: OperationParent,
+};
 
 const addSubscription = (
   type: string,
@@ -414,18 +408,57 @@ const addSubscription = (
   allSubscriptions: Object,
   options?: SubscriptionOptions = {}
 ) => {
-  const { parent } = options;
-  const baseName = operationBaseName(type, op, parent);
-  const subscriptionName = lowerFirst(baseName);
-  allSubscriptions[subscriptionName] = {
+  const { parent: parentSpec } = options;
+  const baseName = operationBaseName(type, op, parentSpec);
+
+  // Args
+  const argSpecs = {};
+  if (parentSpec) argSpecs.parentId = { type: new GraphQLNonNull(GraphQLID) };
+
+  // Output fields
+  // - `viewer`
+  // - `typeName`
+  // - [`parent`]
+  // - [`createdTypeNameEdge`]
+  const outputFields = {};
+  outputFields.viewer = viewerRootField;
+  outputFields[lowerFirst(type)] = { type: allTypes[type] };
+  if (parentSpec) {
+    outputFields.parent = { type: allTypes[parentSpec.type] };
+    if (op === 'CREATED') {
+      outputFields[`created${type}Edge`] = {
+        type: allTypes[`${type}Edge`],
+        resolve: payload => {
+          const parentNode = payload.parent;
+          const node = payload[lowerFirst(type)];
+          if (!node) return null;
+          const allNodes = parentSpec.resolveConnection(parentNode);
+          const nodeId = node.id;
+          const idx = allNodes.findIndex(o => o.id === nodeId);
+          const cursor = idx >= 0 ? offsetToCursor(idx) : null;
+          return { cursor, node };
+        },
+      };
+    }
+  }
+
+  // Save subscription
+  allSubscriptions[lowerFirst(baseName)] = {
     type: new GraphQLObjectType({
       name: `${baseName}Payload`,
-      fields: () => ({
-        [lowerFirst(type)]: { type: allTypes[type] },
-      }),
+      fields: () => outputFields,
     }),
-    resolve: payload => payload,
-    subscribe: () => subscribe(subscriptionName),
+    args: Object.keys(argSpecs).length ? argSpecs : undefined,
+    resolve: (payload0, args) => {
+      let payload = payload0;
+      if (parentSpec) {
+        const { parentId: globalParentId } = args;
+        const parentNode = getNodeFromGlobalId(globalParentId);
+        payload = timmSet(payload, 'parent', parentNode);
+      }
+      return payload;
+    },
+    subscribe: () => subscribe(lowerFirst(`${capitalize(op)}${type}`)),
   };
 };
 
@@ -442,12 +475,8 @@ function addMutation(
   if (op !== 'CREATE' && !options.fSingleton) {
     inputFields.id = { type: new GraphQLNonNull(GraphQLID) };
   }
-  if (op !== 'DELETE') {
-    inputFields.attrs = { type: gqlTypes[`${type}${capitalize(op)}`] };
-  }
-  if (parent) {
-    inputFields.parentId = { type: new GraphQLNonNull(GraphQLID) };
-  }
+  inputFields.attrs = { type: gqlTypes[`${type}${capitalize(op)}`] };
+  if (parent) inputFields.parentId = { type: new GraphQLNonNull(GraphQLID) };
   inputFields.storyId = { type: GraphQLString };
 
   // The operation
@@ -467,21 +496,15 @@ function addMutation(
 
   // Output fields
   // - `viewer`
-  // - `deletedTypeNameId` [DELETE]
-  // - `typeName` [non-DELETE]
-  // - `parent` [if in args, typically in CREATE/DELETE]
-  const outputFields: Object = { viewer: viewerRootField };
-  if (op === 'DELETE') {
-    outputFields[`deleted${type}Id`] = {
-      type: GraphQLID,
-      resolve: ({ globalId }) => globalId,
-    };
-  } else {
-    outputFields[lowerFirst(type)] = {
-      type: gqlTypes[type],
-      resolve: ({ node }) => node,
-    };
-  }
+  // - `typeName`
+  // - [`parent`] [if in args, typically in CREATE]
+  // - [`createdTypeNameEdge`]
+  const outputFields = {};
+  outputFields.viewer = viewerRootField;
+  outputFields[lowerFirst(type)] = {
+    type: gqlTypes[type],
+    resolve: ({ node }) => node,
+  };
   if (parent) {
     outputFields.parent = {
       type: gqlTypes[parent.type],
@@ -493,20 +516,14 @@ function addMutation(
         resolve: ({ node, parentNode }) => {
           if (!node) return null;
           const allNodes = parent.resolveConnection(parentNode);
-          const idx = allNodes.findIndex(o => o.id === node.id);
+          const nodeId = node.id;
+          const idx = allNodes.findIndex(o => o.id === nodeId);
           const cursor = idx >= 0 ? offsetToCursor(idx) : null;
           return { cursor, node };
         },
       };
     }
   }
-  const relations = options.relations != null ? options.relations : [];
-  relations.forEach(relation => {
-    outputFields[relation.name] = {
-      type: gqlTypes[relation.type],
-      resolve: ({ node }) => relation.resolve(node),
-    };
-  });
 
   // Save mutation
   gqlMutations[lowerFirst(name)] = mutationWithClientMutationId({
@@ -516,6 +533,15 @@ function addMutation(
     outputFields,
   });
 }
+
+const operationBaseName = (
+  type: string,
+  op: string,
+  parent: ?OperationParent
+) =>
+  parent != null
+    ? `${capitalize(op)}${type}In${parent.type}${upperFirst(parent.connection)}`
+    : `${capitalize(op)}${type}`;
 
 type InnerMutationArgs = {
   id: string,
@@ -549,19 +575,16 @@ async function mutate(
     parentNode,
     node: null,
   };
-  if (op === 'DELETE') {
-    result.node = await db[`delete${type}`](localId, { story });
+  let newAttrs: any = attrs;
+  newAttrs = resolveGlobalIds(newAttrs, options.globalIds);
+  if (op === 'CREATE') {
+    result.node = await db[`create${type}`](newAttrs, { story });
+    result.localId = result.node.id;
   } else {
-    let newAttrs: any = attrs;
-    newAttrs = resolveGlobalIds(newAttrs, options.globalIds);
-    if (op === 'CREATE') {
-      result.node = await db[`create${type}`](newAttrs, { story });
-      result.localId = result.node.id;
-    } else {
-      result.node = options.fSingleton
-        ? await db[`update${type}`](newAttrs, { story })
-        : await db[`update${type}`](localId, newAttrs, { story });
-    }
+    /* UPDATE */
+    result.node = options.fSingleton
+      ? await db[`update${type}`](newAttrs, { story })
+      : await db[`update${type}`](localId, newAttrs, { story });
   }
   result.node = addTypeAttr(result.node, type);
   return result;
@@ -581,19 +604,19 @@ function resolveGlobalIds(
     if (tokens.length === 1) {
       const globalId = attrs[curToken];
       if (globalId == null) continue;
-      attrs = timm.set(attrs, curToken, fromGlobalId(globalId).id);
+      attrs = timmSet(attrs, curToken, fromGlobalId(globalId).id);
     } else {
       const subLocatorPath = tokens.slice(1).join('.');
       if (curToken === '*') {
         for (let idx = 0; idx < attrs.length; idx++) {
-          attrs = timm.set(
+          attrs = timmSet(
             attrs,
             idx,
             resolveGlobalIds(attrs[idx], [subLocatorPath])
           );
         }
       } else {
-        attrs = timm.set(
+        attrs = timmSet(
           attrs,
           curToken,
           resolveGlobalIds(attrs[curToken], [subLocatorPath])
