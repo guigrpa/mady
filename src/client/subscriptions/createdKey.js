@@ -36,13 +36,6 @@ const createdKey = ({ viewerId }) => ({
       ConnectionHandler.getConnection(viewerProxy, 'Translator_viewer_keys'),
       keyEdge
     );
-    ConnectionHandler.insertEdgeAfter(
-      ConnectionHandler.getConnection(
-        viewerProxy,
-        'TranslatorHeader_viewer_keys'
-      ),
-      keyEdge
-    );
   },
 });
 

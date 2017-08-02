@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 6a7b18fbbf69a1bc9c0daae37fabeb1a
+ * @relayHash 5da556ea514939c1e34924422988e9d9
  */
 
 /* eslint-disable */
@@ -28,6 +28,9 @@ export type createTranslationMutationResponse = {|
     +createdTranslationEdge: ?{|
       +node: ?{| |};
     |};
+    +stats: {|
+      +id: string;
+    |};
   |};
 |};
 */
@@ -44,6 +47,10 @@ mutation createTranslationMutation(
         id
       }
     }
+    stats {
+      id
+      ...ecTranslatorHeader_stats
+    }
   }
 }
 
@@ -53,6 +60,15 @@ fragment eeTranslation_translation on Translation {
   lang
   translation
   fuzzy
+}
+
+fragment ecTranslatorHeader_stats on Stats {
+  numTotalKeys
+  numUsedKeys
+  numTranslations {
+    lang
+    value
+  }
 }
 */
 
@@ -108,6 +124,29 @@ const batch /*: ConcreteBatch*/ = {
                   }
                 ],
                 "storageKey": null
+              }
+            ],
+            "storageKey": null
+          },
+          {
+            "kind": "LinkedField",
+            "alias": null,
+            "args": null,
+            "concreteType": "Stats",
+            "name": "stats",
+            "plural": false,
+            "selections": [
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "args": null,
+                "name": "id",
+                "storageKey": null
+              },
+              {
+                "kind": "FragmentSpread",
+                "name": "ecTranslatorHeader_stats",
+                "args": null
               }
             ],
             "storageKey": null
@@ -206,13 +245,76 @@ const batch /*: ConcreteBatch*/ = {
               }
             ],
             "storageKey": null
+          },
+          {
+            "kind": "LinkedField",
+            "alias": null,
+            "args": null,
+            "concreteType": "Stats",
+            "name": "stats",
+            "plural": false,
+            "selections": [
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "args": null,
+                "name": "id",
+                "storageKey": null
+              },
+              {
+                "kind": "InlineFragment",
+                "type": "Stats",
+                "selections": [
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "numTotalKeys",
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "numUsedKeys",
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "LinkedField",
+                    "alias": null,
+                    "args": null,
+                    "concreteType": "StatsForLang",
+                    "name": "numTranslations",
+                    "plural": true,
+                    "selections": [
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "args": null,
+                        "name": "lang",
+                        "storageKey": null
+                      },
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "args": null,
+                        "name": "value",
+                        "storageKey": null
+                      }
+                    ],
+                    "storageKey": null
+                  }
+                ]
+              }
+            ],
+            "storageKey": null
           }
         ],
         "storageKey": null
       }
     ]
   },
-  "text": "mutation createTranslationMutation(\n  $input: CreateTranslationInKeyTranslationsInput!\n) {\n  createTranslationInKeyTranslations(input: $input) {\n    createdTranslationEdge {\n      node {\n        ...eeTranslation_translation\n        id\n      }\n    }\n  }\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  isDeleted\n  lang\n  translation\n  fuzzy\n}\n"
+  "text": "mutation createTranslationMutation(\n  $input: CreateTranslationInKeyTranslationsInput!\n) {\n  createTranslationInKeyTranslations(input: $input) {\n    createdTranslationEdge {\n      node {\n        ...eeTranslation_translation\n        id\n      }\n    }\n    stats {\n      id\n      ...ecTranslatorHeader_stats\n    }\n  }\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  isDeleted\n  lang\n  translation\n  fuzzy\n}\n\nfragment ecTranslatorHeader_stats on Stats {\n  numTotalKeys\n  numUsedKeys\n  numTranslations {\n    lang\n    value\n  }\n}\n"
 };
 
 module.exports = batch;

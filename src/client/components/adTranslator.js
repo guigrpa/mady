@@ -42,6 +42,9 @@ const fragment = graphql`
     config {
       langs
     }
+    stats {
+      ...ecTranslatorHeader_stats
+    }
     keys(first: 100000) @connection(key: "Translator_viewer_keys") {
       edges {
         node {
@@ -64,7 +67,6 @@ const fragment = graphql`
         }
       }
     }
-    ...ecTranslatorHeader_viewer
   }
 `;
 
@@ -95,11 +97,13 @@ class Translator extends React.Component {
   }
 
   renderHeader() {
+    const { viewer } = this.props;
     return (
       <TranslatorHeader
         lang={this.props.lang}
         langs={this.state.langs}
-        viewer={this.props.viewer}
+        availableLangs={viewer.config.langs}
+        stats={viewer.stats}
         onAddLang={this.onAddLang}
         onRemoveLang={this.onRemoveLang}
         onChangeLang={this.onChangeLang}
@@ -123,12 +127,12 @@ class Translator extends React.Component {
       <TranslatorRow
         key={key.id}
         theKey={key}
-        viewer={this.props.viewer}
         langs={this.state.langs}
         fSelected={fSelected}
         changeSelectedKey={this.props.changeSelectedKey}
         styleKeyCol={style.keyCol}
         styleLangCol={style.langCol}
+        stats={this.props.viewer.stats}
       />
     );
   };

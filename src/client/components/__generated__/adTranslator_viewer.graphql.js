@@ -13,6 +13,7 @@ export type adTranslator_viewer = {|
   +config: {|
     +langs: $ReadOnlyArray<string>;
   |};
+  +stats: {| |};
   +keys: ?{|
     +edges: ?$ReadOnlyArray<?{|
       +node: ?{|
@@ -81,6 +82,22 @@ const fragment /*: ConcreteFragment*/ = {
           "args": null,
           "name": "langs",
           "storageKey": null
+        }
+      ],
+      "storageKey": null
+    },
+    {
+      "kind": "LinkedField",
+      "alias": null,
+      "args": null,
+      "concreteType": "Stats",
+      "name": "stats",
+      "plural": false,
+      "selections": [
+        {
+          "kind": "FragmentSpread",
+          "name": "ecTranslatorHeader_stats",
+          "args": null
         }
       ],
       "storageKey": null
@@ -211,11 +228,6 @@ const fragment /*: ConcreteFragment*/ = {
         }
       ],
       "storageKey": null
-    },
-    {
-      "kind": "FragmentSpread",
-      "name": "ecTranslatorHeader_viewer",
-      "args": null
     }
   ],
   "type": "Viewer"

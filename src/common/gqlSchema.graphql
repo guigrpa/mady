@@ -47,6 +47,7 @@ input CreateTranslationInKeyTranslationsInput {
 
 type CreateTranslationInKeyTranslationsPayload {
   viewer: Viewer
+  stats: Stats!
   translation: Translation
   parent: Key
   createdTranslationEdge: TranslationEdge
@@ -141,8 +142,22 @@ type Query {
   viewer: Viewer
 }
 
+type Stats implements Node {
+  # The ID of an object
+  id: ID!
+  numTotalKeys: Float!
+  numUsedKeys: Float!
+  numTranslations: [StatsForLang]
+}
+
+type StatsForLang {
+  lang: String!
+  value: Float!
+}
+
 type Subscription {
   updatedConfig: UpdatedConfigPayload
+  updatedStats: UpdatedStatsPayload
   createdKeyInViewerKeys: CreatedKeyInViewerKeysPayload
   updatedKey: UpdatedKeyPayload
   createdTranslationInKeyTranslations: CreatedTranslationInKeyTranslationsPayload
@@ -198,6 +213,7 @@ input UpdateConfigInput {
 
 type UpdateConfigPayload {
   viewer: Viewer
+  stats: Stats!
   config: Config
   clientMutationId: String
 }
@@ -210,6 +226,11 @@ type UpdatedConfigPayload {
 type UpdatedKeyPayload {
   viewer: Viewer
   key: Key
+}
+
+type UpdatedStatsPayload {
+  viewer: Viewer
+  stats: Stats
 }
 
 type UpdatedTranslationPayload {
@@ -226,6 +247,7 @@ input UpdateKeyInput {
 
 type UpdateKeyPayload {
   viewer: Viewer
+  stats: Stats!
   key: Key
   clientMutationId: String
 }
@@ -239,6 +261,7 @@ input UpdateTranslationInput {
 
 type UpdateTranslationPayload {
   viewer: Viewer
+  stats: Stats!
   translation: Translation
   clientMutationId: String
 }
@@ -247,5 +270,6 @@ type Viewer implements Node {
   # The ID of an object
   id: ID!
   config: Config!
+  stats: Stats!
   keys(after: String, first: Int, before: String, last: Int): KeyConnection
 }

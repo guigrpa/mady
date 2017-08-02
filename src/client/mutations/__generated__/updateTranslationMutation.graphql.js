@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 176b3e7826c9b30c9bb49f564c9f938e
+ * @relayHash 8d8b55de3e9334709ed65c9405cd2d3e
  */
 
 /* eslint-disable */
@@ -27,6 +27,9 @@ export type updateTranslationMutationResponse = {|
     +translation: ?{|
       +isDeleted: ?boolean;
     |};
+    +stats: {|
+      +id: string;
+    |};
   |};
 |};
 */
@@ -42,6 +45,10 @@ mutation updateTranslationMutation(
       ...eeTranslation_translation
       id
     }
+    stats {
+      id
+      ...ecTranslatorHeader_stats
+    }
   }
 }
 
@@ -51,6 +58,15 @@ fragment eeTranslation_translation on Translation {
   lang
   translation
   fuzzy
+}
+
+fragment ecTranslatorHeader_stats on Stats {
+  numTotalKeys
+  numUsedKeys
+  numTranslations {
+    lang
+    value
+  }
 }
 */
 
@@ -101,6 +117,29 @@ const batch /*: ConcreteBatch*/ = {
               {
                 "kind": "FragmentSpread",
                 "name": "eeTranslation_translation",
+                "args": null
+              }
+            ],
+            "storageKey": null
+          },
+          {
+            "kind": "LinkedField",
+            "alias": null,
+            "args": null,
+            "concreteType": "Stats",
+            "name": "stats",
+            "plural": false,
+            "selections": [
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "args": null,
+                "name": "id",
+                "storageKey": null
+              },
+              {
+                "kind": "FragmentSpread",
+                "name": "ecTranslatorHeader_stats",
                 "args": null
               }
             ],
@@ -189,13 +228,76 @@ const batch /*: ConcreteBatch*/ = {
               }
             ],
             "storageKey": null
+          },
+          {
+            "kind": "LinkedField",
+            "alias": null,
+            "args": null,
+            "concreteType": "Stats",
+            "name": "stats",
+            "plural": false,
+            "selections": [
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "args": null,
+                "name": "id",
+                "storageKey": null
+              },
+              {
+                "kind": "InlineFragment",
+                "type": "Stats",
+                "selections": [
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "numTotalKeys",
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "numUsedKeys",
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "LinkedField",
+                    "alias": null,
+                    "args": null,
+                    "concreteType": "StatsForLang",
+                    "name": "numTranslations",
+                    "plural": true,
+                    "selections": [
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "args": null,
+                        "name": "lang",
+                        "storageKey": null
+                      },
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "args": null,
+                        "name": "value",
+                        "storageKey": null
+                      }
+                    ],
+                    "storageKey": null
+                  }
+                ]
+              }
+            ],
+            "storageKey": null
           }
         ],
         "storageKey": null
       }
     ]
   },
-  "text": "mutation updateTranslationMutation(\n  $input: UpdateTranslationInput!\n) {\n  updateTranslation(input: $input) {\n    translation {\n      isDeleted\n      ...eeTranslation_translation\n      id\n    }\n  }\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  isDeleted\n  lang\n  translation\n  fuzzy\n}\n"
+  "text": "mutation updateTranslationMutation(\n  $input: UpdateTranslationInput!\n) {\n  updateTranslation(input: $input) {\n    translation {\n      isDeleted\n      ...eeTranslation_translation\n      id\n    }\n    stats {\n      id\n      ...ecTranslatorHeader_stats\n    }\n  }\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  isDeleted\n  lang\n  translation\n  fuzzy\n}\n\nfragment ecTranslatorHeader_stats on Stats {\n  numTotalKeys\n  numUsedKeys\n  numTranslations {\n    lang\n    value\n  }\n}\n"
 };
 
 module.exports = batch;

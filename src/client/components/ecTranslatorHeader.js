@@ -7,7 +7,7 @@ import Relay, { graphql } from 'react-relay';
 import throttle from 'lodash/throttle';
 import { getScrollbarWidth, flexItem, flexContainer, Icon, Select } from 'giu';
 import type { Choice } from 'giu/lib/gral/types';
-import type { ViewerT } from '../../common/types';
+import type { StatsT } from '../../common/types';
 import _t from '../../translate';
 import parseSrcFiles from '../mutations/parseSrcFiles';
 import { COLORS } from '../gral/constants';
@@ -20,36 +20,22 @@ import { mutate } from './helpers';
 type Props = {
   // lang: string, // just for refresh
   langs: Array<string>,
+  availableLangs: Array<string>,
   onAddLang: () => any,
   onRemoveLang: (ev: SyntheticEvent) => any,
   onChangeLang: (ev: SyntheticEvent, lang: string) => any,
   // Relay
   relay: Object,
-  viewer: ViewerT,
+  stats: StatsT,
 };
 
 const fragment = graphql`
-  fragment ecTranslatorHeader_viewer on Viewer {
-    id
-    config {
-      langs
-    }
-    keys(first: 100000) @connection(key: "TranslatorHeader_viewer_keys") {
-      edges {
-        node {
-          id
-          isDeleted
-          unusedSince
-          translations(first: 100000) {
-            edges {
-              node {
-                lang
-                isDeleted
-              }
-            }
-          }
-        }
-      }
+  fragment ecTranslatorHeader_stats on Stats {
+    numTotalKeys
+    numUsedKeys
+    numTranslations {
+      lang
+      value
     }
   }
 `;
@@ -91,12 +77,11 @@ class TranslatorHeader extends React.PureComponent {
   // Render
   // ------------------------------------------
   render() {
-    this.calcStats();
-    const { config } = this.props.viewer;
-    const langOptions = config.langs.map(lang => ({
+    const langOptions = this.props.availableLangs.map(lang => ({
       value: lang,
       label: lang,
     }));
+    const { stats } = this.props;
     return (
       <div
         className="tableHeaderRow"
@@ -106,12 +91,10 @@ class TranslatorHeader extends React.PureComponent {
           {_t('columnTitle_Messages').toUpperCase()}{' '}
           <span style={style.numItems}>
             [
-            <span title={_t('tooltip_Used messages')}>
-              {this.stats.numUsedKeys}
-            </span>
+            <span title={_t('tooltip_Used messages')}>{stats.numUsedKeys}</span>
             {' / '}
             <span title={_t('tooltip_Total messages')}>
-              {this.stats.numTotalKeys}
+              {stats.numTotalKeys}
             </span>
             ]
           </span>{' '}
@@ -132,6 +115,8 @@ class TranslatorHeader extends React.PureComponent {
   }
 
   renderLangHeader(lang: string, idx: number, langOptions: Array<Choice>) {
+    const { stats } = this.props;
+    const langStats = stats.numTranslations.find(o => o.lang === lang);
     return (
       <div
         key={lang}
@@ -156,12 +141,10 @@ class TranslatorHeader extends React.PureComponent {
         <span style={style.numItems}>
           [
           <span title={_t('tooltip_Translations')}>
-            {this.stats.numTranslations[lang] || 0}
+            {langStats ? langStats.value : 0}
           </span>
           {' / '}
-          <span title={_t('tooltip_Used messages')}>
-            {this.stats.numUsedKeys}
-          </span>
+          <span title={_t('tooltip_Used messages')}>{stats.numUsedKeys}</span>
           ]
         </span>{' '}
         <Icon
@@ -176,7 +159,7 @@ class TranslatorHeader extends React.PureComponent {
 
   renderAdd() {
     const fDisabled =
-      this.props.langs.length === this.props.viewer.config.langs.length;
+      this.props.langs.length === this.props.availableLangs.length;
     return (
       <div
         id="madyBtnAddLang"

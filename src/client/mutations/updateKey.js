@@ -1,4 +1,5 @@
 import { graphql } from 'react-relay';
+// import { set as timmSet } from 'timm';
 
 const updateKey = ({ theKey, attrs }) => ({
   mutation: graphql`
@@ -6,6 +7,10 @@ const updateKey = ({ theKey, attrs }) => ({
       updateKey(input: $input) {
         key {
           isDeleted
+        }
+        stats {
+          id
+          ...ecTranslatorHeader_stats
         }
       }
     }

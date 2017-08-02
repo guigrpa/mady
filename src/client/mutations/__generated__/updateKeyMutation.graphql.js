@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash e7cdf209e516f2acd07174f905f4974e
+ * @relayHash e355bc2133550783ec77f0a83f735882
  */
 
 /* eslint-disable */
@@ -29,6 +29,9 @@ export type updateKeyMutationResponse = {|
     +key: ?{|
       +isDeleted: ?boolean;
     |};
+    +stats: {|
+      +id: string;
+    |};
   |};
 |};
 */
@@ -43,6 +46,19 @@ mutation updateKeyMutation(
       isDeleted
       id
     }
+    stats {
+      id
+      ...ecTranslatorHeader_stats
+    }
+  }
+}
+
+fragment ecTranslatorHeader_stats on Stats {
+  numTotalKeys
+  numUsedKeys
+  numTranslations {
+    lang
+    value
   }
 }
 */
@@ -90,6 +106,29 @@ const batch /*: ConcreteBatch*/ = {
                 "args": null,
                 "name": "isDeleted",
                 "storageKey": null
+              }
+            ],
+            "storageKey": null
+          },
+          {
+            "kind": "LinkedField",
+            "alias": null,
+            "args": null,
+            "concreteType": "Stats",
+            "name": "stats",
+            "plural": false,
+            "selections": [
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "args": null,
+                "name": "id",
+                "storageKey": null
+              },
+              {
+                "kind": "FragmentSpread",
+                "name": "ecTranslatorHeader_stats",
+                "args": null
               }
             ],
             "storageKey": null
@@ -156,13 +195,76 @@ const batch /*: ConcreteBatch*/ = {
               }
             ],
             "storageKey": null
+          },
+          {
+            "kind": "LinkedField",
+            "alias": null,
+            "args": null,
+            "concreteType": "Stats",
+            "name": "stats",
+            "plural": false,
+            "selections": [
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "args": null,
+                "name": "id",
+                "storageKey": null
+              },
+              {
+                "kind": "InlineFragment",
+                "type": "Stats",
+                "selections": [
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "numTotalKeys",
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "numUsedKeys",
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "LinkedField",
+                    "alias": null,
+                    "args": null,
+                    "concreteType": "StatsForLang",
+                    "name": "numTranslations",
+                    "plural": true,
+                    "selections": [
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "args": null,
+                        "name": "lang",
+                        "storageKey": null
+                      },
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "args": null,
+                        "name": "value",
+                        "storageKey": null
+                      }
+                    ],
+                    "storageKey": null
+                  }
+                ]
+              }
+            ],
+            "storageKey": null
           }
         ],
         "storageKey": null
       }
     ]
   },
-  "text": "mutation updateKeyMutation(\n  $input: UpdateKeyInput!\n) {\n  updateKey(input: $input) {\n    key {\n      isDeleted\n      id\n    }\n  }\n}\n"
+  "text": "mutation updateKeyMutation(\n  $input: UpdateKeyInput!\n) {\n  updateKey(input: $input) {\n    key {\n      isDeleted\n      id\n    }\n    stats {\n      id\n      ...ecTranslatorHeader_stats\n    }\n  }\n}\n\nfragment ecTranslatorHeader_stats on Stats {\n  numTotalKeys\n  numUsedKeys\n  numTranslations {\n    lang\n    value\n  }\n}\n"
 };
 
 module.exports = batch;

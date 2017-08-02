@@ -44,6 +44,14 @@ export type InternalConfigT = ConfigT & {
   dbVersion: number,
 };
 
+export type StatsT = {
+  numTotalKeys: number,
+  numUsedKeys: number,
+  numTranslations: Array<{ lang: string, value: number }>,
+};
+
+export type InternalStatsT = StatsT;
+
 interface NodeT {
   id: string,
 }
@@ -83,5 +91,6 @@ export type InternalTranslationT = TranslationT;
 export type ViewerT = {
   id: string,
   config: ConfigT,
+  stats: StatsT,
   keys: Object,
 };

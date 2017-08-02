@@ -7,6 +7,7 @@ import { set as timmSet } from 'timm';
 import {
   GraphQLID,
   GraphQLString,
+  GraphQLFloat,
   GraphQLBoolean,
   GraphQLObjectType,
   GraphQLInputObjectType,
@@ -45,6 +46,7 @@ const gqlSubscriptions = {};
 let gqlSchema;
 const viewer = { _type: 'Viewer', id: 'me' };
 let viewerRootField;
+let statsBaseField;
 
 // ==============================================
 // Public API
@@ -93,6 +95,7 @@ const init = () => {
     fields: () => ({
       id: globalIdField('Viewer'),
       config: configBaseField,
+      stats: statsBaseField,
       keys: keysBaseField,
     }),
   });
@@ -101,6 +104,41 @@ const init = () => {
     type: gqlTypes.Viewer,
     resolve: () => viewer,
   };
+
+  // ==============================================
+  // Stats
+  // ==============================================
+  gqlTypes.Stats = new GraphQLObjectType({
+    name: 'Stats',
+    interfaces: [gqlInterfaces.Node],
+    isTypeOf: () => true,
+    fields: () => ({
+      id: globalIdField('Stats'),
+      numTotalKeys: { type: new GraphQLNonNull(GraphQLFloat) },
+      numUsedKeys: { type: new GraphQLNonNull(GraphQLFloat) },
+      numTranslations: {
+        type: new GraphQLList(
+          new GraphQLObjectType({
+            name: 'StatsForLang',
+            fields: {
+              lang: { type: new GraphQLNonNull(GraphQLString) },
+              value: { type: new GraphQLNonNull(GraphQLFloat) },
+            },
+          })
+        ),
+      },
+    }),
+  });
+
+  statsBaseField = {
+    type: new GraphQLNonNull(gqlTypes.Stats),
+    resolve: () => db.getStats(),
+  };
+
+  // ---------------------------
+  // Subscriptions
+  // ---------------------------
+  addSubscription('Stats', 'UPDATED', gqlTypes, gqlSubscriptions);
 
   // ==============================================
   // Config
@@ -326,6 +364,7 @@ const init = () => {
       fields: () =>
         pick(gqlSubscriptions, [
           'updatedConfig',
+          'updatedStats',
           'createdKeyInViewerKeys',
           'updatedKey',
           'createdTranslationInKeyTranslations',
@@ -511,6 +550,7 @@ function addMutation(
   // - [`createdTypeNameEdge`]
   const outputFields = {};
   outputFields.viewer = viewerRootField;
+  outputFields.stats = statsBaseField;
   outputFields[lowerFirst(type)] = {
     type: gqlTypes[type],
     resolve: ({ node }) => node,

@@ -7,6 +7,10 @@ const updateConfig = ({ config, attrs }) => ({
         config {
           ...aeSettings_config
         }
+        stats {
+          id
+          ...ecTranslatorHeader_stats
+        }
       }
     }
   `,

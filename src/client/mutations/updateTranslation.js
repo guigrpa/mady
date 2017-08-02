@@ -8,6 +8,10 @@ const updateTranslation = ({ translation, attrs }) => ({
           isDeleted
           ...eeTranslation_translation
         }
+        stats {
+          id
+          ...ecTranslatorHeader_stats
+        }
       }
     }
   `,

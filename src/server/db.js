@@ -1,5 +1,7 @@
 // @flow
 
+/* eslint-disable no-loop-func */
+
 import path from 'path';
 import fs from 'fs-extra';
 import { addDefaults, merge } from 'timm';
@@ -10,6 +12,7 @@ import type {
   MapOf,
   StoryT,
   InternalConfigT,
+  InternalStatsT,
   InternalKeyT,
   InternalTranslationT,
 } from '../common/types';
@@ -53,6 +56,7 @@ function init(options: { fRecompile: boolean, localeDir: string }) {
   const fMigrated = initConfig();
   initKeys();
   initTranslations();
+  initStats();
   if (fMigrated || options.fRecompile) compileTranslations();
 }
 
@@ -135,6 +139,7 @@ async function updateConfig(
   await compileTranslations({ story });
   await delay(RESPONSE_DELAY);
   publish('updatedConfig', { config: updatedConfig });
+  updateStats();
   return updatedConfig;
 }
 
@@ -195,6 +200,7 @@ async function createKey(newAttrs: Object): Promise<?InternalKeyT> {
   saveKeys();
   await compileTranslations();
   publish('createdKey', { key: newKey });
+  updateStats();
   return newKey;
 }
 
@@ -205,6 +211,7 @@ async function updateKey(id: string, newAttrs: Object): Promise<?InternalKeyT> {
   await compileTranslations();
   await delay(RESPONSE_DELAY);
   publish('updatedKey', { key: updatedKey });
+  updateStats();
   return updatedKey;
 }
 
@@ -257,6 +264,7 @@ async function parseSrcFiles({ story }: { story: StoryT }) {
 
   saveKeys({ story });
   await compileTranslations({ story });
+  updateStats();
   return _keys;
 }
 
@@ -360,6 +368,7 @@ async function createTranslation(
   await compileTranslations({ story });
   await delay(RESPONSE_DELAY);
   publish('createdTranslation', { translation: newTranslation });
+  updateStats();
   return newTranslation;
 }
 
@@ -374,6 +383,7 @@ async function updateTranslation(
   await compileTranslations({ story });
   await delay(RESPONSE_DELAY);
   publish('updatedTranslation', { translation: updatedTranslation });
+  updateStats();
   return updatedTranslation;
 }
 
@@ -527,6 +537,54 @@ function getParentTranslations(
 }
 
 // ==============================================
+// Stats
+// ==============================================
+let _stats: InternalStatsT;
+
+function initStats() {
+  calcStats();
+  mainStory.info('db', 'Initial stats', { attach: _stats });
+}
+
+function updateStats() {
+  calcStats();
+  publish('updatedStats', { stats: _stats });
+}
+
+function calcStats() {
+  _stats = {
+    numTotalKeys: 0,
+    numUsedKeys: 0,
+    numTranslations: [],
+  };
+
+  // Process keys
+  const keys = getKeys(); // filters out deleted ones
+  for (let i = 0; i < keys.length; i++) {
+    _stats.numTotalKeys += 1;
+    if (keys[i].unusedSince == null) _stats.numUsedKeys += 1;
+  }
+
+  // Process translations
+  const { langs } = getConfig();
+  for (let i = 0; i < langs.length; i++) {
+    const lang = langs[i];
+    const translations = getLangTranslations(lang).filter(
+      translation =>
+        _keys[translation.keyId] != null && !_keys[translation.keyId].isDeleted
+    );
+    _stats.numTranslations.push({
+      lang,
+      value: translations.length,
+    });
+  }
+}
+
+function getStats() {
+  return _stats;
+}
+
+// ==============================================
 // Merge keys and translations from old stores
 // ==============================================
 function importV0(dir: string) {
@@ -597,6 +655,7 @@ export {
   getTranslation,
   createTranslation,
   updateTranslation,
+  getStats,
   parseSrcFiles,
   compileTranslations,
   importV0,

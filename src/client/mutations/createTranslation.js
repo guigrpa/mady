@@ -21,6 +21,10 @@ const createTranslation = ({ theKey, attrs }) => ({
             ...eeTranslation_translation
           }
         }
+        stats {
+          id
+          ...ecTranslatorHeader_stats
+        }
       }
     }
   `,

@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 3cbf965ee3c18ab29a78ec342484de20
+ * @relayHash 385ef842dd4d6127512629780e723e9f
  */
 
 /* eslint-disable */
@@ -30,6 +30,9 @@ export type updateConfigMutationVariables = {|
 export type updateConfigMutationResponse = {|
   +updateConfig: ?{|
     +config: ?{| |};
+    +stats: {|
+      +id: string;
+    |};
   |};
 |};
 */
@@ -44,6 +47,10 @@ mutation updateConfigMutation(
       ...aeSettings_config
       id
     }
+    stats {
+      id
+      ...ecTranslatorHeader_stats
+    }
   }
 }
 
@@ -57,6 +64,15 @@ fragment aeSettings_config on Config {
   fJsOutput
   fJsonOutput
   fReactIntlOutput
+}
+
+fragment ecTranslatorHeader_stats on Stats {
+  numTotalKeys
+  numUsedKeys
+  numTranslations {
+    lang
+    value
+  }
 }
 */
 
@@ -100,6 +116,29 @@ const batch /*: ConcreteBatch*/ = {
               {
                 "kind": "FragmentSpread",
                 "name": "aeSettings_config",
+                "args": null
+              }
+            ],
+            "storageKey": null
+          },
+          {
+            "kind": "LinkedField",
+            "alias": null,
+            "args": null,
+            "concreteType": "Stats",
+            "name": "stats",
+            "plural": false,
+            "selections": [
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "args": null,
+                "name": "id",
+                "storageKey": null
+              },
+              {
+                "kind": "FragmentSpread",
+                "name": "ecTranslatorHeader_stats",
                 "args": null
               }
             ],
@@ -223,13 +262,76 @@ const batch /*: ConcreteBatch*/ = {
               }
             ],
             "storageKey": null
+          },
+          {
+            "kind": "LinkedField",
+            "alias": null,
+            "args": null,
+            "concreteType": "Stats",
+            "name": "stats",
+            "plural": false,
+            "selections": [
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "args": null,
+                "name": "id",
+                "storageKey": null
+              },
+              {
+                "kind": "InlineFragment",
+                "type": "Stats",
+                "selections": [
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "numTotalKeys",
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "numUsedKeys",
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "LinkedField",
+                    "alias": null,
+                    "args": null,
+                    "concreteType": "StatsForLang",
+                    "name": "numTranslations",
+                    "plural": true,
+                    "selections": [
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "args": null,
+                        "name": "lang",
+                        "storageKey": null
+                      },
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "args": null,
+                        "name": "value",
+                        "storageKey": null
+                      }
+                    ],
+                    "storageKey": null
+                  }
+                ]
+              }
+            ],
+            "storageKey": null
           }
         ],
         "storageKey": null
       }
     ]
   },
-  "text": "mutation updateConfigMutation(\n  $input: UpdateConfigInput!\n) {\n  updateConfig(input: $input) {\n    config {\n      ...aeSettings_config\n      id\n    }\n  }\n}\n\nfragment aeSettings_config on Config {\n  langs\n  srcPaths\n  srcExtensions\n  msgFunctionNames\n  msgRegexps\n  fMinify\n  fJsOutput\n  fJsonOutput\n  fReactIntlOutput\n}\n"
+  "text": "mutation updateConfigMutation(\n  $input: UpdateConfigInput!\n) {\n  updateConfig(input: $input) {\n    config {\n      ...aeSettings_config\n      id\n    }\n    stats {\n      id\n      ...ecTranslatorHeader_stats\n    }\n  }\n}\n\nfragment aeSettings_config on Config {\n  langs\n  srcPaths\n  srcExtensions\n  msgFunctionNames\n  msgRegexps\n  fMinify\n  fJsOutput\n  fJsonOutput\n  fReactIntlOutput\n}\n\nfragment ecTranslatorHeader_stats on Stats {\n  numTotalKeys\n  numUsedKeys\n  numTranslations {\n    lang\n    value\n  }\n}\n"
 };
 
 module.exports = batch;
