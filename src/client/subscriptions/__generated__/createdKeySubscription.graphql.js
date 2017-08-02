@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 29ca526ab97567b4c5311b70dcb9c512
+ * @relayHash e2d374213bab610a4c448313aed3ad87
  */
 
 /* eslint-disable */
@@ -13,24 +13,7 @@ export type createdKeySubscriptionVariables = {| |};
 
 export type createdKeySubscriptionResponse = {|
   +createdKeyInViewerKeys: ?{|
-    +createdKeyEdge: ?{|
-      +node: ?{|
-        +id: string;
-        +isDeleted: ?boolean;
-        +unusedSince: ?string;
-        +context: ?string;
-        +text: string;
-        +translations: ?{|
-          +edges: ?$ReadOnlyArray<?{|
-            +node: ?{|
-              +isDeleted: ?boolean;
-              +lang: string;
-              +fuzzy: ?boolean;
-            |};
-          |}>;
-        |};
-      |};
-    |};
+    +viewer: ?{| |};
   |};
 |};
 */
@@ -39,7 +22,25 @@ export type createdKeySubscriptionResponse = {|
 /*
 subscription createdKeySubscription {
   createdKeyInViewerKeys {
-    createdKeyEdge {
+    viewer {
+      ...adTranslator_viewer
+      id
+    }
+  }
+}
+
+fragment adTranslator_viewer on Viewer {
+  id
+  config {
+    langs
+    id
+  }
+  stats {
+    ...ecTranslatorHeader_stats
+    id
+  }
+  keys(first: 100000) {
+    edges {
       node {
         id
         isDeleted
@@ -65,8 +66,25 @@ subscription createdKeySubscription {
           }
         }
         ...edTranslatorRow_theKey
+        __typename
       }
+      cursor
     }
+    pageInfo {
+      endCursor
+      hasNextPage
+      hasPreviousPage
+      startCursor
+    }
+  }
+}
+
+fragment ecTranslatorHeader_stats on Stats {
+  numTotalKeys
+  numUsedKeys
+  numTranslations {
+    lang
+    value
   }
 }
 
@@ -129,114 +147,14 @@ const batch /*: ConcreteBatch*/ = {
             "kind": "LinkedField",
             "alias": null,
             "args": null,
-            "concreteType": "KeyEdge",
-            "name": "createdKeyEdge",
+            "concreteType": "Viewer",
+            "name": "viewer",
             "plural": false,
             "selections": [
               {
-                "kind": "LinkedField",
-                "alias": null,
-                "args": null,
-                "concreteType": "Key",
-                "name": "node",
-                "plural": false,
-                "selections": [
-                  {
-                    "kind": "ScalarField",
-                    "alias": null,
-                    "args": null,
-                    "name": "id",
-                    "storageKey": null
-                  },
-                  {
-                    "kind": "ScalarField",
-                    "alias": null,
-                    "args": null,
-                    "name": "isDeleted",
-                    "storageKey": null
-                  },
-                  {
-                    "kind": "ScalarField",
-                    "alias": null,
-                    "args": null,
-                    "name": "unusedSince",
-                    "storageKey": null
-                  },
-                  {
-                    "kind": "ScalarField",
-                    "alias": null,
-                    "args": null,
-                    "name": "context",
-                    "storageKey": null
-                  },
-                  {
-                    "kind": "ScalarField",
-                    "alias": null,
-                    "args": null,
-                    "name": "text",
-                    "storageKey": null
-                  },
-                  {
-                    "kind": "LinkedField",
-                    "alias": "translations",
-                    "args": null,
-                    "concreteType": "TranslationConnection",
-                    "name": "__Translator_viewer_translations_connection",
-                    "plural": false,
-                    "selections": [
-                      {
-                        "kind": "LinkedField",
-                        "alias": null,
-                        "args": null,
-                        "concreteType": "TranslationEdge",
-                        "name": "edges",
-                        "plural": true,
-                        "selections": [
-                          {
-                            "kind": "LinkedField",
-                            "alias": null,
-                            "args": null,
-                            "concreteType": "Translation",
-                            "name": "node",
-                            "plural": false,
-                            "selections": [
-                              {
-                                "kind": "ScalarField",
-                                "alias": null,
-                                "args": null,
-                                "name": "isDeleted",
-                                "storageKey": null
-                              },
-                              {
-                                "kind": "ScalarField",
-                                "alias": null,
-                                "args": null,
-                                "name": "lang",
-                                "storageKey": null
-                              },
-                              {
-                                "kind": "ScalarField",
-                                "alias": null,
-                                "args": null,
-                                "name": "fuzzy",
-                                "storageKey": null
-                              }
-                            ],
-                            "storageKey": null
-                          }
-                        ],
-                        "storageKey": null
-                      }
-                    ],
-                    "storageKey": null
-                  },
-                  {
-                    "kind": "FragmentSpread",
-                    "name": "edTranslatorRow_theKey",
-                    "args": null
-                  }
-                ],
-                "storageKey": null
+                "kind": "FragmentSpread",
+                "name": "adTranslator_viewer",
+                "args": null
               }
             ],
             "storageKey": null
@@ -249,21 +167,7 @@ const batch /*: ConcreteBatch*/ = {
   },
   "id": null,
   "kind": "Batch",
-  "metadata": {
-    "connection": [
-      {
-        "count": null,
-        "cursor": null,
-        "direction": "forward",
-        "path": [
-          "createdKeyInViewerKeys",
-          "createdKeyEdge",
-          "node",
-          "translations"
-        ]
-      }
-    ]
-  },
+  "metadata": {},
   "name": "createdKeySubscription",
   "query": {
     "argumentDefinitions": [],
@@ -283,16 +187,48 @@ const batch /*: ConcreteBatch*/ = {
             "kind": "LinkedField",
             "alias": null,
             "args": null,
-            "concreteType": "KeyEdge",
-            "name": "createdKeyEdge",
+            "concreteType": "Viewer",
+            "name": "viewer",
             "plural": false,
             "selections": [
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "args": null,
+                "name": "id",
+                "storageKey": null
+              },
               {
                 "kind": "LinkedField",
                 "alias": null,
                 "args": null,
-                "concreteType": "Key",
-                "name": "node",
+                "concreteType": "Config",
+                "name": "config",
+                "plural": false,
+                "selections": [
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "langs",
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "id",
+                    "storageKey": null
+                  }
+                ],
+                "storageKey": null
+              },
+              {
+                "kind": "LinkedField",
+                "alias": null,
+                "args": null,
+                "concreteType": "Stats",
+                "name": "stats",
                 "plural": false,
                 "selections": [
                   {
@@ -303,195 +239,356 @@ const batch /*: ConcreteBatch*/ = {
                     "storageKey": null
                   },
                   {
-                    "kind": "ScalarField",
-                    "alias": null,
-                    "args": null,
-                    "name": "isDeleted",
-                    "storageKey": null
-                  },
-                  {
-                    "kind": "ScalarField",
-                    "alias": null,
-                    "args": null,
-                    "name": "unusedSince",
-                    "storageKey": null
-                  },
-                  {
-                    "kind": "ScalarField",
-                    "alias": null,
-                    "args": null,
-                    "name": "context",
-                    "storageKey": null
-                  },
-                  {
-                    "kind": "ScalarField",
-                    "alias": null,
-                    "args": null,
-                    "name": "text",
-                    "storageKey": null
-                  },
-                  {
-                    "kind": "LinkedField",
-                    "alias": null,
-                    "args": [
-                      {
-                        "kind": "Literal",
-                        "name": "first",
-                        "value": 100000,
-                        "type": "Int"
-                      }
-                    ],
-                    "concreteType": "TranslationConnection",
-                    "name": "translations",
-                    "plural": false,
+                    "kind": "InlineFragment",
+                    "type": "Stats",
                     "selections": [
                       {
-                        "kind": "LinkedField",
+                        "kind": "ScalarField",
                         "alias": null,
                         "args": null,
-                        "concreteType": "TranslationEdge",
-                        "name": "edges",
-                        "plural": true,
-                        "selections": [
-                          {
-                            "kind": "LinkedField",
-                            "alias": null,
-                            "args": null,
-                            "concreteType": "Translation",
-                            "name": "node",
-                            "plural": false,
-                            "selections": [
-                              {
-                                "kind": "ScalarField",
-                                "alias": null,
-                                "args": null,
-                                "name": "isDeleted",
-                                "storageKey": null
-                              },
-                              {
-                                "kind": "ScalarField",
-                                "alias": null,
-                                "args": null,
-                                "name": "lang",
-                                "storageKey": null
-                              },
-                              {
-                                "kind": "ScalarField",
-                                "alias": null,
-                                "args": null,
-                                "name": "fuzzy",
-                                "storageKey": null
-                              },
-                              {
-                                "kind": "ScalarField",
-                                "alias": null,
-                                "args": null,
-                                "name": "id",
-                                "storageKey": null
-                              },
-                              {
-                                "kind": "ScalarField",
-                                "alias": null,
-                                "args": null,
-                                "name": "__typename",
-                                "storageKey": null
-                              },
-                              {
-                                "kind": "ScalarField",
-                                "alias": null,
-                                "args": null,
-                                "name": "translation",
-                                "storageKey": null
-                              }
-                            ],
-                            "storageKey": null
-                          },
-                          {
-                            "kind": "ScalarField",
-                            "alias": null,
-                            "args": null,
-                            "name": "cursor",
-                            "storageKey": null
-                          }
-                        ],
+                        "name": "numTotalKeys",
+                        "storageKey": null
+                      },
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "args": null,
+                        "name": "numUsedKeys",
                         "storageKey": null
                       },
                       {
                         "kind": "LinkedField",
                         "alias": null,
                         "args": null,
-                        "concreteType": "PageInfo",
-                        "name": "pageInfo",
+                        "concreteType": "StatsForLang",
+                        "name": "numTranslations",
+                        "plural": true,
+                        "selections": [
+                          {
+                            "kind": "ScalarField",
+                            "alias": null,
+                            "args": null,
+                            "name": "lang",
+                            "storageKey": null
+                          },
+                          {
+                            "kind": "ScalarField",
+                            "alias": null,
+                            "args": null,
+                            "name": "value",
+                            "storageKey": null
+                          }
+                        ],
+                        "storageKey": null
+                      }
+                    ]
+                  }
+                ],
+                "storageKey": null
+              },
+              {
+                "kind": "LinkedField",
+                "alias": null,
+                "args": [
+                  {
+                    "kind": "Literal",
+                    "name": "first",
+                    "value": 100000,
+                    "type": "Int"
+                  }
+                ],
+                "concreteType": "KeyConnection",
+                "name": "keys",
+                "plural": false,
+                "selections": [
+                  {
+                    "kind": "LinkedField",
+                    "alias": null,
+                    "args": null,
+                    "concreteType": "KeyEdge",
+                    "name": "edges",
+                    "plural": true,
+                    "selections": [
+                      {
+                        "kind": "LinkedField",
+                        "alias": null,
+                        "args": null,
+                        "concreteType": "Key",
+                        "name": "node",
                         "plural": false,
                         "selections": [
                           {
                             "kind": "ScalarField",
                             "alias": null,
                             "args": null,
-                            "name": "endCursor",
+                            "name": "id",
                             "storageKey": null
                           },
                           {
                             "kind": "ScalarField",
                             "alias": null,
                             "args": null,
-                            "name": "hasNextPage",
+                            "name": "isDeleted",
                             "storageKey": null
                           },
                           {
                             "kind": "ScalarField",
                             "alias": null,
                             "args": null,
-                            "name": "hasPreviousPage",
+                            "name": "unusedSince",
                             "storageKey": null
                           },
                           {
                             "kind": "ScalarField",
                             "alias": null,
                             "args": null,
-                            "name": "startCursor",
+                            "name": "context",
+                            "storageKey": null
+                          },
+                          {
+                            "kind": "ScalarField",
+                            "alias": null,
+                            "args": null,
+                            "name": "text",
+                            "storageKey": null
+                          },
+                          {
+                            "kind": "LinkedField",
+                            "alias": null,
+                            "args": [
+                              {
+                                "kind": "Literal",
+                                "name": "first",
+                                "value": 100000,
+                                "type": "Int"
+                              }
+                            ],
+                            "concreteType": "TranslationConnection",
+                            "name": "translations",
+                            "plural": false,
+                            "selections": [
+                              {
+                                "kind": "LinkedField",
+                                "alias": null,
+                                "args": null,
+                                "concreteType": "TranslationEdge",
+                                "name": "edges",
+                                "plural": true,
+                                "selections": [
+                                  {
+                                    "kind": "LinkedField",
+                                    "alias": null,
+                                    "args": null,
+                                    "concreteType": "Translation",
+                                    "name": "node",
+                                    "plural": false,
+                                    "selections": [
+                                      {
+                                        "kind": "ScalarField",
+                                        "alias": null,
+                                        "args": null,
+                                        "name": "isDeleted",
+                                        "storageKey": null
+                                      },
+                                      {
+                                        "kind": "ScalarField",
+                                        "alias": null,
+                                        "args": null,
+                                        "name": "lang",
+                                        "storageKey": null
+                                      },
+                                      {
+                                        "kind": "ScalarField",
+                                        "alias": null,
+                                        "args": null,
+                                        "name": "fuzzy",
+                                        "storageKey": null
+                                      },
+                                      {
+                                        "kind": "ScalarField",
+                                        "alias": null,
+                                        "args": null,
+                                        "name": "id",
+                                        "storageKey": null
+                                      },
+                                      {
+                                        "kind": "ScalarField",
+                                        "alias": null,
+                                        "args": null,
+                                        "name": "__typename",
+                                        "storageKey": null
+                                      },
+                                      {
+                                        "kind": "ScalarField",
+                                        "alias": null,
+                                        "args": null,
+                                        "name": "translation",
+                                        "storageKey": null
+                                      }
+                                    ],
+                                    "storageKey": null
+                                  },
+                                  {
+                                    "kind": "ScalarField",
+                                    "alias": null,
+                                    "args": null,
+                                    "name": "cursor",
+                                    "storageKey": null
+                                  }
+                                ],
+                                "storageKey": null
+                              },
+                              {
+                                "kind": "LinkedField",
+                                "alias": null,
+                                "args": null,
+                                "concreteType": "PageInfo",
+                                "name": "pageInfo",
+                                "plural": false,
+                                "selections": [
+                                  {
+                                    "kind": "ScalarField",
+                                    "alias": null,
+                                    "args": null,
+                                    "name": "endCursor",
+                                    "storageKey": null
+                                  },
+                                  {
+                                    "kind": "ScalarField",
+                                    "alias": null,
+                                    "args": null,
+                                    "name": "hasNextPage",
+                                    "storageKey": null
+                                  },
+                                  {
+                                    "kind": "ScalarField",
+                                    "alias": null,
+                                    "args": null,
+                                    "name": "hasPreviousPage",
+                                    "storageKey": null
+                                  },
+                                  {
+                                    "kind": "ScalarField",
+                                    "alias": null,
+                                    "args": null,
+                                    "name": "startCursor",
+                                    "storageKey": null
+                                  }
+                                ],
+                                "storageKey": null
+                              }
+                            ],
+                            "storageKey": "translations{\"first\":100000}"
+                          },
+                          {
+                            "kind": "LinkedHandle",
+                            "alias": null,
+                            "args": [
+                              {
+                                "kind": "Literal",
+                                "name": "first",
+                                "value": 100000,
+                                "type": "Int"
+                              }
+                            ],
+                            "handle": "connection",
+                            "name": "translations",
+                            "key": "Translator_viewer_translations",
+                            "filters": null
+                          },
+                          {
+                            "kind": "LinkedHandle",
+                            "alias": null,
+                            "args": [
+                              {
+                                "kind": "Literal",
+                                "name": "first",
+                                "value": 100000,
+                                "type": "Int"
+                              }
+                            ],
+                            "handle": "connection",
+                            "name": "translations",
+                            "key": "TranslatorRow_theKey_translations",
+                            "filters": null
+                          },
+                          {
+                            "kind": "ScalarField",
+                            "alias": null,
+                            "args": null,
+                            "name": "__typename",
                             "storageKey": null
                           }
                         ],
                         "storageKey": null
+                      },
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "args": null,
+                        "name": "cursor",
+                        "storageKey": null
                       }
                     ],
-                    "storageKey": "translations{\"first\":100000}"
+                    "storageKey": null
                   },
                   {
-                    "kind": "LinkedHandle",
+                    "kind": "LinkedField",
                     "alias": null,
-                    "args": [
+                    "args": null,
+                    "concreteType": "PageInfo",
+                    "name": "pageInfo",
+                    "plural": false,
+                    "selections": [
                       {
-                        "kind": "Literal",
-                        "name": "first",
-                        "value": 100000,
-                        "type": "Int"
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "args": null,
+                        "name": "endCursor",
+                        "storageKey": null
+                      },
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "args": null,
+                        "name": "hasNextPage",
+                        "storageKey": null
+                      },
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "args": null,
+                        "name": "hasPreviousPage",
+                        "storageKey": null
+                      },
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "args": null,
+                        "name": "startCursor",
+                        "storageKey": null
                       }
                     ],
-                    "handle": "connection",
-                    "name": "translations",
-                    "key": "Translator_viewer_translations",
-                    "filters": null
-                  },
-                  {
-                    "kind": "LinkedHandle",
-                    "alias": null,
-                    "args": [
-                      {
-                        "kind": "Literal",
-                        "name": "first",
-                        "value": 100000,
-                        "type": "Int"
-                      }
-                    ],
-                    "handle": "connection",
-                    "name": "translations",
-                    "key": "TranslatorRow_theKey_translations",
-                    "filters": null
+                    "storageKey": null
                   }
                 ],
-                "storageKey": null
+                "storageKey": "keys{\"first\":100000}"
+              },
+              {
+                "kind": "LinkedHandle",
+                "alias": null,
+                "args": [
+                  {
+                    "kind": "Literal",
+                    "name": "first",
+                    "value": 100000,
+                    "type": "Int"
+                  }
+                ],
+                "handle": "connection",
+                "name": "keys",
+                "key": "Translator_viewer_keys",
+                "filters": null
               }
             ],
             "storageKey": null
@@ -501,7 +598,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "subscription createdKeySubscription {\n  createdKeyInViewerKeys {\n    createdKeyEdge {\n      node {\n        id\n        isDeleted\n        unusedSince\n        context\n        text\n        translations(first: 100000) {\n          edges {\n            node {\n              isDeleted\n              lang\n              fuzzy\n              id\n              __typename\n            }\n            cursor\n          }\n          pageInfo {\n            endCursor\n            hasNextPage\n            hasPreviousPage\n            startCursor\n          }\n        }\n        ...edTranslatorRow_theKey\n      }\n    }\n  }\n}\n\nfragment edTranslatorRow_theKey on Key {\n  id\n  context\n  text\n  unusedSince\n  ...eeTranslation_theKey\n  translations(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        lang\n        ...eeTranslation_translation\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n      hasPreviousPage\n      startCursor\n    }\n  }\n}\n\nfragment eeTranslation_theKey on Key {\n  id\n  text\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  isDeleted\n  lang\n  translation\n  fuzzy\n}\n"
+  "text": "subscription createdKeySubscription {\n  createdKeyInViewerKeys {\n    viewer {\n      ...adTranslator_viewer\n      id\n    }\n  }\n}\n\nfragment adTranslator_viewer on Viewer {\n  id\n  config {\n    langs\n    id\n  }\n  stats {\n    ...ecTranslatorHeader_stats\n    id\n  }\n  keys(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        unusedSince\n        context\n        text\n        translations(first: 100000) {\n          edges {\n            node {\n              isDeleted\n              lang\n              fuzzy\n              id\n              __typename\n            }\n            cursor\n          }\n          pageInfo {\n            endCursor\n            hasNextPage\n            hasPreviousPage\n            startCursor\n          }\n        }\n        ...edTranslatorRow_theKey\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n      hasPreviousPage\n      startCursor\n    }\n  }\n}\n\nfragment ecTranslatorHeader_stats on Stats {\n  numTotalKeys\n  numUsedKeys\n  numTranslations {\n    lang\n    value\n  }\n}\n\nfragment edTranslatorRow_theKey on Key {\n  id\n  context\n  text\n  unusedSince\n  ...eeTranslation_theKey\n  translations(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        lang\n        ...eeTranslation_translation\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n      hasPreviousPage\n      startCursor\n    }\n  }\n}\n\nfragment eeTranslation_theKey on Key {\n  id\n  text\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  isDeleted\n  lang\n  translation\n  fuzzy\n}\n"
 };
 
 module.exports = batch;

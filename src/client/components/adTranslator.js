@@ -51,7 +51,7 @@ const fragment = graphql`
           id
           isDeleted
           unusedSince
-          context
+          context # for sorting
           text # for sorting
           translations(first: 100000)
             @connection(key: "Translator_viewer_translations") {

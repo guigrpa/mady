@@ -54,7 +54,7 @@ if (!process.env.SERVER_SIDE_RENDERING) {
 }
 
 const rxNotif = msg => {
-  console.log('NOTIF', msg);
+  // console.log('NOTIF', msg);
   const { subscriptionId, payload } = msg;
   const observers = subscriptionObservers[subscriptionId];
   if (!observers) return;

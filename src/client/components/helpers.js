@@ -66,9 +66,9 @@ const mutate = ({
 const subscribe = ({ environment, subscriptionOptions }) => {
   requestSubscription(environment, {
     ...subscriptionOptions,
-    onNext: data => {
-      console.log('RX at END-USER-LEVEL:', data);
-    },
+    // onNext: data => {
+    //   console.log('RX at END-USER-LEVEL:', data);
+    // },
   });
 };
 

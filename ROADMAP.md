@@ -1,6 +1,5 @@
 * Add subscriptions
-    - [ ] createdTranslation subscription
-    - [ ] Refactor subscriptions, esp. createdKey: try not to repeat fragments in the subscription!
+    - [ ] Sort lines: simplify strings!
     - [ ] Rethink component API, considering fragments...
     - [ ] Server db: publish key changes in more cases, not only creation
     - [ ] Unsubscribe (needed?)
@@ -15,5 +14,7 @@
 * Split in two, adding oao and creating mady-cli
 * Add watch-based parsing
 * Add Google Translate (triggers for all new keys and languages, sent to users asynchronously)
+
+- Improve creation subscriptions, so that they no longer require full data downloads
 
 Someday: *Nothing identified right now!*
