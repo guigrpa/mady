@@ -11,7 +11,14 @@
   },
   "author": "Guillermo Grau Panea",
   "license": "MIT",
-  "keywords": ["i18n", "MessageFormat", "translation", "locales", "translator"],
+  "keywords": [
+    "i18n",
+    "MessageFormat",
+    "translation",
+    "locales",
+    "translator",
+    "React Intl"
+  ],
   "homepage": "https://github.com/guigrpa/mady#readme",
   "bugs": {
     "url": "https://github.com/guigrpa/mady/issues"
@@ -19,6 +26,13 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/guigrpa/mady.git"
+  },
+  "_devSetup": {
+    "install": "yarn",
+    "term1": "yarn compileWatch",
+    "term2": "yarn compile:relayWatch",
+    "term3": "yarn buildClientWatch",
+    "term4": "yarn start"
   },
   "scripts": {
     "start": "node lib/server/startup --dir src/locales",

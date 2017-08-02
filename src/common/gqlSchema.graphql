@@ -31,6 +31,13 @@ type CreatedKeyInViewerKeysPayload {
   createdKeyEdge: KeyEdge
 }
 
+type CreatedTranslationInKeyTranslationsPayload {
+  viewer: Viewer
+  translation: Translation
+  parent: Key
+  createdTranslationEdge: TranslationEdge
+}
+
 input CreateTranslationInKeyTranslationsInput {
   attrs: TranslationCreate
   parentId: ID!
@@ -136,8 +143,9 @@ type Query {
 
 type Subscription {
   updatedConfig: UpdatedConfigPayload
-  createdKeyInViewerKeys(parentId: ID!): CreatedKeyInViewerKeysPayload
+  createdKeyInViewerKeys: CreatedKeyInViewerKeysPayload
   updatedKey: UpdatedKeyPayload
+  createdTranslationInKeyTranslations: CreatedTranslationInKeyTranslationsPayload
   updatedTranslation: UpdatedTranslationPayload
 }
 

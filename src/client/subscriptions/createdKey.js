@@ -3,8 +3,8 @@ import { ConnectionHandler } from 'relay-runtime';
 
 const createdKey = ({ viewerId }) => ({
   subscription: graphql`
-    subscription createdKeySubscription($parentId: ID!) {
-      createdKeyInViewerKeys(parentId: $parentId) {
+    subscription createdKeySubscription {
+      createdKeyInViewerKeys {
         createdKeyEdge {
           node {
             id
@@ -28,7 +28,6 @@ const createdKey = ({ viewerId }) => ({
       }
     }
   `,
-  variables: { parentId: viewerId },
   updater: store => {
     const payload = store.getRootField('createdKeyInViewerKeys');
     const keyEdge = payload.getLinkedRecord('createdKeyEdge');

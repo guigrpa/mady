@@ -143,14 +143,10 @@ const init = () => {
     resolve: () => db.getConfig(),
   };
 
-  // ------------------------
-  // Mutations
-  // ------------------------
+  // ---------------------------
+  // Mutations and subscriptions
+  // ---------------------------
   addMutation('Config', 'UPDATE', { fSingleton: true });
-
-  // ------------------------
-  // Subscriptions
-  // ------------------------
   addSubscription('Config', 'UPDATED', gqlTypes, gqlSubscriptions);
 
   // ==============================================
@@ -197,13 +193,14 @@ const init = () => {
     resolve: (base, args) => connectionFromArray(db.getKeys(), args),
   };
 
-  // ------------------------
+  // ---------------------------
   // Mutations and subscriptions
-  // ------------------------
+  // ---------------------------
   {
     const parent = {
       type: 'Viewer',
       connection: 'keys',
+      resolveParent: () => viewer,
       resolveConnection: () => db.getKeys(),
     };
 
@@ -278,20 +275,24 @@ const init = () => {
 
   addConnectionType('Translation');
 
-  // ------------------------
+  // ---------------------------
   // Mutations and subscriptions
-  // ------------------------
+  // ---------------------------
   {
     const globalIds = ['keyId'];
     const parent = {
       type: 'Key',
       connection: 'translations',
+      resolveParent: translation => db.getKey(translation.keyId),
       resolveConnection: key => db.getKeyTranslations(key.id),
     };
 
     addMutation('Translation', 'CREATE', { globalIds, parent });
     addMutation('Translation', 'UPDATE', { globalIds });
 
+    addSubscription('Translation', 'CREATED', gqlTypes, gqlSubscriptions, {
+      parent,
+    });
     addSubscription('Translation', 'UPDATED', gqlTypes, gqlSubscriptions);
   }
 
@@ -327,6 +328,7 @@ const init = () => {
           'updatedConfig',
           'createdKeyInViewerKeys',
           'updatedKey',
+          'createdTranslationInKeyTranslations',
           'updatedTranslation',
         ]),
     }),
@@ -413,7 +415,7 @@ const addSubscription = (
 
   // Args
   const argSpecs = {};
-  if (parentSpec) argSpecs.parentId = { type: new GraphQLNonNull(GraphQLID) };
+  // if (parentSpec) argSpecs.parentId = { type: new GraphQLNonNull(GraphQLID) };
 
   // Output fields
   // - `viewer`
@@ -424,22 +426,30 @@ const addSubscription = (
   outputFields.viewer = viewerRootField;
   outputFields[lowerFirst(type)] = { type: allTypes[type] };
   if (parentSpec) {
-    outputFields.parent = { type: allTypes[parentSpec.type] };
-    if (op === 'CREATED') {
-      outputFields[`created${type}Edge`] = {
-        type: allTypes[`${type}Edge`],
-        resolve: payload => {
-          const parentNode = payload.parent;
-          const node = payload[lowerFirst(type)];
-          if (!node) return null;
-          const allNodes = parentSpec.resolveConnection(parentNode);
-          const nodeId = node.id;
-          const idx = allNodes.findIndex(o => o.id === nodeId);
-          const cursor = idx >= 0 ? offsetToCursor(idx) : null;
-          return { cursor, node };
-        },
-      };
-    }
+    outputFields.parent = {
+      type: allTypes[parentSpec.type],
+      resolve: async payload => {
+        const node = payload[lowerFirst(type)];
+        if (!node) return null;
+        return parentSpec.resolveParent(node);
+      },
+    };
+  }
+  if (parentSpec && op === 'CREATED') {
+    outputFields[`created${type}Edge`] = {
+      type: allTypes[`${type}Edge`],
+      resolve: async payload => {
+        const node = payload[lowerFirst(type)];
+        if (!node) return null;
+        const parentNode = await parentSpec.resolveParent(node);
+        if (!parentNode) return null;
+        const allNodes = parentSpec.resolveConnection(parentNode);
+        const nodeId = node.id;
+        const idx = allNodes.findIndex(o => o.id === nodeId);
+        const cursor = idx >= 0 ? offsetToCursor(idx) : null;
+        return { cursor, node };
+      },
+    };
   }
 
   // Save subscription

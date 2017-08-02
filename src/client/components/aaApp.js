@@ -14,6 +14,7 @@ import { subscribe } from './helpers';
 import updatedConfig from '../subscriptions/updatedConfig';
 import createdKey from '../subscriptions/createdKey';
 import updatedKey from '../subscriptions/updatedKey';
+import createdTranslation from '../subscriptions/createdTranslation';
 import updatedTranslation from '../subscriptions/updatedTranslation';
 import Header from './abHeader';
 import Translator from './adTranslator';
@@ -80,13 +81,14 @@ class App extends React.Component {
     if (!this.props._disableHints) this.showHint();
     const { environment, viewer } = this.props;
     if (!environment) return;
-    subscribe({ environment, subscriptionOptions: updatedConfig() });
-    subscribe({
-      environment,
-      subscriptionOptions: createdKey({ viewerId: viewer.id }),
-    });
-    subscribe({ environment, subscriptionOptions: updatedKey() });
-    subscribe({ environment, subscriptionOptions: updatedTranslation() });
+    // subscribe({ environment, subscriptionOptions: updatedConfig() });
+    // subscribe({
+    //   environment,
+    //   subscriptionOptions: createdKey({ viewerId: viewer.id }),
+    // });
+    // subscribe({ environment, subscriptionOptions: updatedKey() });
+    // subscribe({ environment, subscriptionOptions: createdTranslation() });
+    // subscribe({ environment, subscriptionOptions: updatedTranslation() });
   }
 
   // ------------------------------------------

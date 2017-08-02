@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash df1178d1e36d74aa776603988a03fcfe
+ * @relayHash 29ca526ab97567b4c5311b70dcb9c512
  */
 
 /* eslint-disable */
@@ -9,9 +9,7 @@
 
 /*::
 import type {ConcreteBatch} from 'relay-runtime';
-export type createdKeySubscriptionVariables = {|
-  parentId: string;
-|};
+export type createdKeySubscriptionVariables = {| |};
 
 export type createdKeySubscriptionResponse = {|
   +createdKeyInViewerKeys: ?{|
@@ -39,10 +37,8 @@ export type createdKeySubscriptionResponse = {|
 
 
 /*
-subscription createdKeySubscription(
-  $parentId: ID!
-) {
-  createdKeyInViewerKeys(parentId: $parentId) {
+subscription createdKeySubscription {
+  createdKeyInViewerKeys {
     createdKeyEdge {
       node {
         id
@@ -116,14 +112,7 @@ fragment eeTranslation_translation on Translation {
 
 const batch /*: ConcreteBatch*/ = {
   "fragment": {
-    "argumentDefinitions": [
-      {
-        "kind": "LocalArgument",
-        "name": "parentId",
-        "type": "ID!",
-        "defaultValue": null
-      }
-    ],
+    "argumentDefinitions": [],
     "kind": "Fragment",
     "metadata": null,
     "name": "createdKeySubscription",
@@ -131,14 +120,7 @@ const batch /*: ConcreteBatch*/ = {
       {
         "kind": "LinkedField",
         "alias": null,
-        "args": [
-          {
-            "kind": "Variable",
-            "name": "parentId",
-            "variableName": "parentId",
-            "type": "ID!"
-          }
-        ],
+        "args": null,
         "concreteType": "CreatedKeyInViewerKeysPayload",
         "name": "createdKeyInViewerKeys",
         "plural": false,
@@ -284,14 +266,7 @@ const batch /*: ConcreteBatch*/ = {
   },
   "name": "createdKeySubscription",
   "query": {
-    "argumentDefinitions": [
-      {
-        "kind": "LocalArgument",
-        "name": "parentId",
-        "type": "ID!",
-        "defaultValue": null
-      }
-    ],
+    "argumentDefinitions": [],
     "kind": "Root",
     "name": "createdKeySubscription",
     "operation": "subscription",
@@ -299,14 +274,7 @@ const batch /*: ConcreteBatch*/ = {
       {
         "kind": "LinkedField",
         "alias": null,
-        "args": [
-          {
-            "kind": "Variable",
-            "name": "parentId",
-            "variableName": "parentId",
-            "type": "ID!"
-          }
-        ],
+        "args": null,
         "concreteType": "CreatedKeyInViewerKeysPayload",
         "name": "createdKeyInViewerKeys",
         "plural": false,
@@ -533,7 +501,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "subscription createdKeySubscription(\n  $parentId: ID!\n) {\n  createdKeyInViewerKeys(parentId: $parentId) {\n    createdKeyEdge {\n      node {\n        id\n        isDeleted\n        unusedSince\n        context\n        text\n        translations(first: 100000) {\n          edges {\n            node {\n              isDeleted\n              lang\n              fuzzy\n              id\n              __typename\n            }\n            cursor\n          }\n          pageInfo {\n            endCursor\n            hasNextPage\n            hasPreviousPage\n            startCursor\n          }\n        }\n        ...edTranslatorRow_theKey\n      }\n    }\n  }\n}\n\nfragment edTranslatorRow_theKey on Key {\n  id\n  context\n  text\n  unusedSince\n  ...eeTranslation_theKey\n  translations(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        lang\n        ...eeTranslation_translation\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n      hasPreviousPage\n      startCursor\n    }\n  }\n}\n\nfragment eeTranslation_theKey on Key {\n  id\n  text\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  isDeleted\n  lang\n  translation\n  fuzzy\n}\n"
+  "text": "subscription createdKeySubscription {\n  createdKeyInViewerKeys {\n    createdKeyEdge {\n      node {\n        id\n        isDeleted\n        unusedSince\n        context\n        text\n        translations(first: 100000) {\n          edges {\n            node {\n              isDeleted\n              lang\n              fuzzy\n              id\n              __typename\n            }\n            cursor\n          }\n          pageInfo {\n            endCursor\n            hasNextPage\n            hasPreviousPage\n            startCursor\n          }\n        }\n        ...edTranslatorRow_theKey\n      }\n    }\n  }\n}\n\nfragment edTranslatorRow_theKey on Key {\n  id\n  context\n  text\n  unusedSince\n  ...eeTranslation_theKey\n  translations(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        lang\n        ...eeTranslation_translation\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n      hasPreviousPage\n      startCursor\n    }\n  }\n}\n\nfragment eeTranslation_theKey on Key {\n  id\n  text\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  isDeleted\n  lang\n  translation\n  fuzzy\n}\n"
 };
 
 module.exports = batch;
