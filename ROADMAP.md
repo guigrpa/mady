@@ -1,5 +1,4 @@
 * Add subscriptions
-    - [ ] Sort lines: simplify strings!
     - [ ] Rethink component API, considering fragments...
     - [ ] Server db: publish key changes in more cases, not only creation
     - [ ] Unsubscribe (needed?)

@@ -8,6 +8,7 @@ import { flexItem, flexContainer, Icon, LargeMessage } from 'giu';
 import type { ViewerT, KeyT } from '../../common/types';
 import { cookieGet, cookieSet } from '../gral/storage';
 import type { KeyFilter } from '../gral/types';
+import { simplifyStringWithCache } from './helpers';
 import { styleKeyCol, styleLangCol } from './adTranslatorStyles';
 import TranslatorHeader from './ecTranslatorHeader';
 import TranslatorRow from './edTranslatorRow';
@@ -21,7 +22,10 @@ const keyComparator = (a: KeyT, b: KeyT) => {
   if (a == null || b == null) return 0;
   const aStr = `${a.context || ''}${a.text || ''}${a.id}`;
   const bStr = `${b.context || ''}${b.text || ''}${b.id}`;
-  return comparator(aStr, bStr);
+  return comparator(
+    simplifyStringWithCache(aStr),
+    simplifyStringWithCache(bStr)
+  );
 };
 
 // ==========================================

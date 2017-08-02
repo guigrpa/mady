@@ -3,7 +3,7 @@
 import { setIn } from 'timm';
 import { commitMutation, requestSubscription } from 'react-relay';
 import { mainStory } from 'storyboard';
-import { notify } from 'giu';
+import { notify, simplifyString } from 'giu';
 import _t from '../../translate';
 
 // Runs a Relay mutation inside a Storyboard story
@@ -76,7 +76,17 @@ const tearDown = story => {
   story.close();
 };
 
+const cachedSimplifiedStrings = {};
+const simplifyStringWithCache = str => {
+  let out = cachedSimplifiedStrings[str];
+  if (out == null) {
+    out = simplifyString(str);
+    cachedSimplifiedStrings[str] = out;
+  }
+  return out;
+};
+
 // ===================================================
 // Public
 // ===================================================
-export { mutate, subscribe };
+export { mutate, subscribe, simplifyStringWithCache };
