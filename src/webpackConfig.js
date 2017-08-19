@@ -78,29 +78,40 @@ module.exports = (env = {}) => {
     })(),
 
     module: {
-      rules: [
-        {
-          test: /\.(js|jsx)$/,
-          loader: 'babel-loader',
-          exclude: path.resolve(process.cwd(), 'node_modules'),
-        },
-        {
-          test: /\.(otf|eot|svg|ttf|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-          loader: 'file-loader',
-        },
-        {
-          test: /\.css$/,
-          use: styleRules([cssLoader]),
-        },
-        {
-          test: /\.sass$/,
-          use: styleRules([cssLoader, sassLoader]),
-        },
-        {
-          test: /\.png$/,
-          loader: 'file-loader',
-        },
-      ],
+      rules: (() => {
+        let out = [];
+        if (fSsr) {
+          out.push({
+            test: /\.js$/,
+            include: [path.resolve('node_modules/socket.io-client')],
+            use: 'null-loader',
+          });
+        }
+        out = out.concat([
+          {
+            test: /\.(js|jsx)$/,
+            loader: 'babel-loader',
+            exclude: [/node_modules/],
+          },
+          {
+            test: /\.(otf|eot|svg|ttf|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+            loader: 'file-loader',
+          },
+          {
+            test: /\.css$/,
+            use: styleRules([cssLoader]),
+          },
+          {
+            test: /\.sass$/,
+            use: styleRules([cssLoader, sassLoader]),
+          },
+          {
+            test: /\.png$/,
+            loader: 'file-loader',
+          },
+        ]);
+        return out;
+      })(),
     },
   };
 };
