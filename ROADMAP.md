@@ -10,10 +10,10 @@
     - [ ] Fix Flow
     - Improve creation subscriptions, so that they no longer require full data downloads
 
+* Cut release
 * Bump React to 16
 * Show error when user specifies a language that doesn't exist
 * Use Giu's DataTable
-* Split in two, adding oao and creating mady-cli??
 * Add watch-based parsing
 * Add Google Translate (triggers for all new keys and languages, sent to users asynchronously)
 

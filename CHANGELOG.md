@@ -1,3 +1,6 @@
+* **Multi-user support**: changes by one user are automatically pushed to other users.
+* Bugfix: correct handling of keyboard shortcuts in filters (caused by an upstream bug).
+
 ## 2.4.0 (July 25, 2017)
 
 * **Add filters**: untranslated or unused messages, fuzzy translations.

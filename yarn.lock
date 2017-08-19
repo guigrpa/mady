@@ -2863,9 +2863,9 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
-giu@0.14.0:
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/giu/-/giu-0.14.0.tgz#188b727a6308c04840da4b337e462a2e0201779f"
+giu@^0.14.1:
+  version "0.14.1"
+  resolved "https://registry.yarnpkg.com/giu/-/giu-0.14.1.tgz#17485159c4c9b6e020577d39e9adc3052c477e94"
   dependencies:
     babel-runtime "6.23.0"
     filesize "3.5.10"
