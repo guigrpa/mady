@@ -26,6 +26,13 @@ exports[`Translator 01 no content 1`] = `
     }
   >
     <div
+      availableLangs={
+        Array [
+          "es",
+          "ca",
+          "en",
+        ]
+      }
       dataMockType="TranslatorHeader"
       lang={undefined}
       langs={
@@ -36,19 +43,24 @@ exports[`Translator 01 no content 1`] = `
       onAddLang={[Function]}
       onChangeLang={[Function]}
       onRemoveLang={[Function]}
-      viewer={
+      stats={
         Object {
-          "config": Object {
-            "langs": Array [
-              "es",
-              "ca",
-              "en",
-            ],
-          },
-          "id": "me",
-          "keys": Object {
-            "edges": Array [],
-          },
+          "numTotalKeys": 0,
+          "numTranslations": Array [
+            Object {
+              "lang": "es",
+              "value": 0,
+            },
+            Object {
+              "lang": "ca",
+              "value": 0,
+            },
+            Object {
+              "lang": "en",
+              "value": 0,
+            },
+          ],
+          "numUsedKeys": 0,
         }
       }
     >
@@ -199,6 +211,13 @@ exports[`Translator 02 selected row 1`] = `
     }
   >
     <div
+      availableLangs={
+        Array [
+          "es",
+          "ca",
+          "en",
+        ]
+      }
       dataMockType="TranslatorHeader"
       lang={undefined}
       langs={
@@ -209,57 +228,24 @@ exports[`Translator 02 selected row 1`] = `
       onAddLang={[Function]}
       onChangeLang={[Function]}
       onRemoveLang={[Function]}
-      viewer={
+      stats={
         Object {
-          "config": Object {
-            "langs": Array [
-              "es",
-              "ca",
-              "en",
-            ],
-          },
-          "id": "me",
-          "keys": Object {
-            "edges": Array [
-              Object {
-                "node": Object {
-                  "context": "someContext",
-                  "id": "keyId1",
-                  "text": "A message",
-                  "translations": Object {
-                    "edges": Array [],
-                  },
-                  "unusedSince": null,
-                },
-              },
-              Object {
-                "node": Object {
-                  "context": "someContext",
-                  "id": "keyId2",
-                  "text": "A message",
-                  "translations": Object {
-                    "edges": Array [
-                      Object {
-                        "node": Object {
-                          "id": "translationId1",
-                          "lang": "es",
-                          "translation": "Un mensaje",
-                        },
-                      },
-                      Object {
-                        "node": Object {
-                          "id": "translationId2",
-                          "lang": "ca",
-                          "translation": "Un missatge",
-                        },
-                      },
-                    ],
-                  },
-                  "unusedSince": null,
-                },
-              },
-            ],
-          },
+          "numTotalKeys": 2,
+          "numTranslations": Array [
+            Object {
+              "lang": "es",
+              "value": 1,
+            },
+            Object {
+              "lang": "ca",
+              "value": 1,
+            },
+            Object {
+              "lang": "en",
+              "value": 0,
+            },
+          ],
+          "numUsedKeys": 2,
         }
       }
     >
@@ -285,6 +271,26 @@ exports[`Translator 02 selected row 1`] = `
           Array [
             "es",
           ]
+        }
+        stats={
+          Object {
+            "numTotalKeys": 2,
+            "numTranslations": Array [
+              Object {
+                "lang": "es",
+                "value": 1,
+              },
+              Object {
+                "lang": "ca",
+                "value": 1,
+              },
+              Object {
+                "lang": "en",
+                "value": 0,
+              },
+            ],
+            "numUsedKeys": 2,
+          }
         }
         styleKeyCol={
           Object {
@@ -317,59 +323,6 @@ exports[`Translator 02 selected row 1`] = `
             "unusedSince": null,
           }
         }
-        viewer={
-          Object {
-            "config": Object {
-              "langs": Array [
-                "es",
-                "ca",
-                "en",
-              ],
-            },
-            "id": "me",
-            "keys": Object {
-              "edges": Array [
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId1",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId2",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [
-                        Object {
-                          "node": Object {
-                            "id": "translationId1",
-                            "lang": "es",
-                            "translation": "Un mensaje",
-                          },
-                        },
-                        Object {
-                          "node": Object {
-                            "id": "translationId2",
-                            "lang": "ca",
-                            "translation": "Un missatge",
-                          },
-                        },
-                      ],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-              ],
-            },
-          }
-        }
       >
         TranslatorRow (unselected - A message)
       </div>
@@ -381,6 +334,26 @@ exports[`Translator 02 selected row 1`] = `
           Array [
             "es",
           ]
+        }
+        stats={
+          Object {
+            "numTotalKeys": 2,
+            "numTranslations": Array [
+              Object {
+                "lang": "es",
+                "value": 1,
+              },
+              Object {
+                "lang": "ca",
+                "value": 1,
+              },
+              Object {
+                "lang": "en",
+                "value": 0,
+              },
+            ],
+            "numUsedKeys": 2,
+          }
         }
         styleKeyCol={
           Object {
@@ -426,59 +399,6 @@ exports[`Translator 02 selected row 1`] = `
               ],
             },
             "unusedSince": null,
-          }
-        }
-        viewer={
-          Object {
-            "config": Object {
-              "langs": Array [
-                "es",
-                "ca",
-                "en",
-              ],
-            },
-            "id": "me",
-            "keys": Object {
-              "edges": Array [
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId1",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId2",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [
-                        Object {
-                          "node": Object {
-                            "id": "translationId1",
-                            "lang": "es",
-                            "translation": "Un mensaje",
-                          },
-                        },
-                        Object {
-                          "node": Object {
-                            "id": "translationId2",
-                            "lang": "ca",
-                            "translation": "Un missatge",
-                          },
-                        },
-                      ],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-              ],
-            },
           }
         }
       >
@@ -589,6 +509,13 @@ exports[`Translator 03 default columns 1`] = `
     }
   >
     <div
+      availableLangs={
+        Array [
+          "es",
+          "ca",
+          "en",
+        ]
+      }
       dataMockType="TranslatorHeader"
       lang={undefined}
       langs={
@@ -599,57 +526,24 @@ exports[`Translator 03 default columns 1`] = `
       onAddLang={[Function]}
       onChangeLang={[Function]}
       onRemoveLang={[Function]}
-      viewer={
+      stats={
         Object {
-          "config": Object {
-            "langs": Array [
-              "es",
-              "ca",
-              "en",
-            ],
-          },
-          "id": "me",
-          "keys": Object {
-            "edges": Array [
-              Object {
-                "node": Object {
-                  "context": "someContext",
-                  "id": "keyId1",
-                  "text": "A message",
-                  "translations": Object {
-                    "edges": Array [],
-                  },
-                  "unusedSince": null,
-                },
-              },
-              Object {
-                "node": Object {
-                  "context": "someContext",
-                  "id": "keyId2",
-                  "text": "A message",
-                  "translations": Object {
-                    "edges": Array [
-                      Object {
-                        "node": Object {
-                          "id": "translationId1",
-                          "lang": "es",
-                          "translation": "Un mensaje",
-                        },
-                      },
-                      Object {
-                        "node": Object {
-                          "id": "translationId2",
-                          "lang": "ca",
-                          "translation": "Un missatge",
-                        },
-                      },
-                    ],
-                  },
-                  "unusedSince": null,
-                },
-              },
-            ],
-          },
+          "numTotalKeys": 2,
+          "numTranslations": Array [
+            Object {
+              "lang": "es",
+              "value": 1,
+            },
+            Object {
+              "lang": "ca",
+              "value": 1,
+            },
+            Object {
+              "lang": "en",
+              "value": 0,
+            },
+          ],
+          "numUsedKeys": 2,
         }
       }
     >
@@ -675,6 +569,26 @@ exports[`Translator 03 default columns 1`] = `
           Array [
             "es",
           ]
+        }
+        stats={
+          Object {
+            "numTotalKeys": 2,
+            "numTranslations": Array [
+              Object {
+                "lang": "es",
+                "value": 1,
+              },
+              Object {
+                "lang": "ca",
+                "value": 1,
+              },
+              Object {
+                "lang": "en",
+                "value": 0,
+              },
+            ],
+            "numUsedKeys": 2,
+          }
         }
         styleKeyCol={
           Object {
@@ -707,59 +621,6 @@ exports[`Translator 03 default columns 1`] = `
             "unusedSince": null,
           }
         }
-        viewer={
-          Object {
-            "config": Object {
-              "langs": Array [
-                "es",
-                "ca",
-                "en",
-              ],
-            },
-            "id": "me",
-            "keys": Object {
-              "edges": Array [
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId1",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId2",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [
-                        Object {
-                          "node": Object {
-                            "id": "translationId1",
-                            "lang": "es",
-                            "translation": "Un mensaje",
-                          },
-                        },
-                        Object {
-                          "node": Object {
-                            "id": "translationId2",
-                            "lang": "ca",
-                            "translation": "Un missatge",
-                          },
-                        },
-                      ],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-              ],
-            },
-          }
-        }
       >
         TranslatorRow (unselected - A message)
       </div>
@@ -771,6 +632,26 @@ exports[`Translator 03 default columns 1`] = `
           Array [
             "es",
           ]
+        }
+        stats={
+          Object {
+            "numTotalKeys": 2,
+            "numTranslations": Array [
+              Object {
+                "lang": "es",
+                "value": 1,
+              },
+              Object {
+                "lang": "ca",
+                "value": 1,
+              },
+              Object {
+                "lang": "en",
+                "value": 0,
+              },
+            ],
+            "numUsedKeys": 2,
+          }
         }
         styleKeyCol={
           Object {
@@ -816,59 +697,6 @@ exports[`Translator 03 default columns 1`] = `
               ],
             },
             "unusedSince": null,
-          }
-        }
-        viewer={
-          Object {
-            "config": Object {
-              "langs": Array [
-                "es",
-                "ca",
-                "en",
-              ],
-            },
-            "id": "me",
-            "keys": Object {
-              "edges": Array [
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId1",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId2",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [
-                        Object {
-                          "node": Object {
-                            "id": "translationId1",
-                            "lang": "es",
-                            "translation": "Un mensaje",
-                          },
-                        },
-                        Object {
-                          "node": Object {
-                            "id": "translationId2",
-                            "lang": "ca",
-                            "translation": "Un missatge",
-                          },
-                        },
-                      ],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-              ],
-            },
           }
         }
       >
@@ -976,6 +804,13 @@ exports[`Translator 04 fixed columns 1`] = `
     }
   >
     <div
+      availableLangs={
+        Array [
+          "es",
+          "ca",
+          "en",
+        ]
+      }
       dataMockType="TranslatorHeader"
       lang={undefined}
       langs={
@@ -987,57 +822,24 @@ exports[`Translator 04 fixed columns 1`] = `
       onAddLang={[Function]}
       onChangeLang={[Function]}
       onRemoveLang={[Function]}
-      viewer={
+      stats={
         Object {
-          "config": Object {
-            "langs": Array [
-              "es",
-              "ca",
-              "en",
-            ],
-          },
-          "id": "me",
-          "keys": Object {
-            "edges": Array [
-              Object {
-                "node": Object {
-                  "context": "someContext",
-                  "id": "keyId1",
-                  "text": "A message",
-                  "translations": Object {
-                    "edges": Array [],
-                  },
-                  "unusedSince": null,
-                },
-              },
-              Object {
-                "node": Object {
-                  "context": "someContext",
-                  "id": "keyId2",
-                  "text": "A message",
-                  "translations": Object {
-                    "edges": Array [
-                      Object {
-                        "node": Object {
-                          "id": "translationId1",
-                          "lang": "es",
-                          "translation": "Un mensaje",
-                        },
-                      },
-                      Object {
-                        "node": Object {
-                          "id": "translationId2",
-                          "lang": "ca",
-                          "translation": "Un missatge",
-                        },
-                      },
-                    ],
-                  },
-                  "unusedSince": null,
-                },
-              },
-            ],
-          },
+          "numTotalKeys": 2,
+          "numTranslations": Array [
+            Object {
+              "lang": "es",
+              "value": 1,
+            },
+            Object {
+              "lang": "ca",
+              "value": 1,
+            },
+            Object {
+              "lang": "en",
+              "value": 0,
+            },
+          ],
+          "numUsedKeys": 2,
         }
       }
     >
@@ -1064,6 +866,26 @@ exports[`Translator 04 fixed columns 1`] = `
             "ca",
             "es",
           ]
+        }
+        stats={
+          Object {
+            "numTotalKeys": 2,
+            "numTranslations": Array [
+              Object {
+                "lang": "es",
+                "value": 1,
+              },
+              Object {
+                "lang": "ca",
+                "value": 1,
+              },
+              Object {
+                "lang": "en",
+                "value": 0,
+              },
+            ],
+            "numUsedKeys": 2,
+          }
         }
         styleKeyCol={
           Object {
@@ -1096,59 +918,6 @@ exports[`Translator 04 fixed columns 1`] = `
             "unusedSince": null,
           }
         }
-        viewer={
-          Object {
-            "config": Object {
-              "langs": Array [
-                "es",
-                "ca",
-                "en",
-              ],
-            },
-            "id": "me",
-            "keys": Object {
-              "edges": Array [
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId1",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId2",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [
-                        Object {
-                          "node": Object {
-                            "id": "translationId1",
-                            "lang": "es",
-                            "translation": "Un mensaje",
-                          },
-                        },
-                        Object {
-                          "node": Object {
-                            "id": "translationId2",
-                            "lang": "ca",
-                            "translation": "Un missatge",
-                          },
-                        },
-                      ],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-              ],
-            },
-          }
-        }
       >
         TranslatorRow (unselected - A message)
       </div>
@@ -1161,6 +930,26 @@ exports[`Translator 04 fixed columns 1`] = `
             "ca",
             "es",
           ]
+        }
+        stats={
+          Object {
+            "numTotalKeys": 2,
+            "numTranslations": Array [
+              Object {
+                "lang": "es",
+                "value": 1,
+              },
+              Object {
+                "lang": "ca",
+                "value": 1,
+              },
+              Object {
+                "lang": "en",
+                "value": 0,
+              },
+            ],
+            "numUsedKeys": 2,
+          }
         }
         styleKeyCol={
           Object {
@@ -1206,59 +995,6 @@ exports[`Translator 04 fixed columns 1`] = `
               ],
             },
             "unusedSince": null,
-          }
-        }
-        viewer={
-          Object {
-            "config": Object {
-              "langs": Array [
-                "es",
-                "ca",
-                "en",
-              ],
-            },
-            "id": "me",
-            "keys": Object {
-              "edges": Array [
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId1",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId2",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [
-                        Object {
-                          "node": Object {
-                            "id": "translationId1",
-                            "lang": "es",
-                            "translation": "Un mensaje",
-                          },
-                        },
-                        Object {
-                          "node": Object {
-                            "id": "translationId2",
-                            "lang": "ca",
-                            "translation": "Un missatge",
-                          },
-                        },
-                      ],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-              ],
-            },
           }
         }
       >
@@ -1379,6 +1115,13 @@ exports[`Translator 05 add column (it must correspond to a new language) 1`] = `
     }
   >
     <div
+      availableLangs={
+        Array [
+          "es",
+          "ca",
+          "en",
+        ]
+      }
       dataMockType="TranslatorHeader"
       lang={undefined}
       langs={
@@ -1391,57 +1134,24 @@ exports[`Translator 05 add column (it must correspond to a new language) 1`] = `
       onAddLang={[Function]}
       onChangeLang={[Function]}
       onRemoveLang={[Function]}
-      viewer={
+      stats={
         Object {
-          "config": Object {
-            "langs": Array [
-              "es",
-              "ca",
-              "en",
-            ],
-          },
-          "id": "me",
-          "keys": Object {
-            "edges": Array [
-              Object {
-                "node": Object {
-                  "context": "someContext",
-                  "id": "keyId1",
-                  "text": "A message",
-                  "translations": Object {
-                    "edges": Array [],
-                  },
-                  "unusedSince": null,
-                },
-              },
-              Object {
-                "node": Object {
-                  "context": "someContext",
-                  "id": "keyId2",
-                  "text": "A message",
-                  "translations": Object {
-                    "edges": Array [
-                      Object {
-                        "node": Object {
-                          "id": "translationId1",
-                          "lang": "es",
-                          "translation": "Un mensaje",
-                        },
-                      },
-                      Object {
-                        "node": Object {
-                          "id": "translationId2",
-                          "lang": "ca",
-                          "translation": "Un missatge",
-                        },
-                      },
-                    ],
-                  },
-                  "unusedSince": null,
-                },
-              },
-            ],
-          },
+          "numTotalKeys": 2,
+          "numTranslations": Array [
+            Object {
+              "lang": "es",
+              "value": 1,
+            },
+            Object {
+              "lang": "ca",
+              "value": 1,
+            },
+            Object {
+              "lang": "en",
+              "value": 0,
+            },
+          ],
+          "numUsedKeys": 2,
         }
       }
     >
@@ -1469,6 +1179,26 @@ exports[`Translator 05 add column (it must correspond to a new language) 1`] = `
             "es",
             "en",
           ]
+        }
+        stats={
+          Object {
+            "numTotalKeys": 2,
+            "numTranslations": Array [
+              Object {
+                "lang": "es",
+                "value": 1,
+              },
+              Object {
+                "lang": "ca",
+                "value": 1,
+              },
+              Object {
+                "lang": "en",
+                "value": 0,
+              },
+            ],
+            "numUsedKeys": 2,
+          }
         }
         styleKeyCol={
           Object {
@@ -1501,59 +1231,6 @@ exports[`Translator 05 add column (it must correspond to a new language) 1`] = `
             "unusedSince": null,
           }
         }
-        viewer={
-          Object {
-            "config": Object {
-              "langs": Array [
-                "es",
-                "ca",
-                "en",
-              ],
-            },
-            "id": "me",
-            "keys": Object {
-              "edges": Array [
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId1",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId2",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [
-                        Object {
-                          "node": Object {
-                            "id": "translationId1",
-                            "lang": "es",
-                            "translation": "Un mensaje",
-                          },
-                        },
-                        Object {
-                          "node": Object {
-                            "id": "translationId2",
-                            "lang": "ca",
-                            "translation": "Un missatge",
-                          },
-                        },
-                      ],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-              ],
-            },
-          }
-        }
       >
         TranslatorRow (unselected - A message)
       </div>
@@ -1567,6 +1244,26 @@ exports[`Translator 05 add column (it must correspond to a new language) 1`] = `
             "es",
             "en",
           ]
+        }
+        stats={
+          Object {
+            "numTotalKeys": 2,
+            "numTranslations": Array [
+              Object {
+                "lang": "es",
+                "value": 1,
+              },
+              Object {
+                "lang": "ca",
+                "value": 1,
+              },
+              Object {
+                "lang": "en",
+                "value": 0,
+              },
+            ],
+            "numUsedKeys": 2,
+          }
         }
         styleKeyCol={
           Object {
@@ -1612,59 +1309,6 @@ exports[`Translator 05 add column (it must correspond to a new language) 1`] = `
               ],
             },
             "unusedSince": null,
-          }
-        }
-        viewer={
-          Object {
-            "config": Object {
-              "langs": Array [
-                "es",
-                "ca",
-                "en",
-              ],
-            },
-            "id": "me",
-            "keys": Object {
-              "edges": Array [
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId1",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId2",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [
-                        Object {
-                          "node": Object {
-                            "id": "translationId1",
-                            "lang": "es",
-                            "translation": "Un mensaje",
-                          },
-                        },
-                        Object {
-                          "node": Object {
-                            "id": "translationId2",
-                            "lang": "ca",
-                            "translation": "Un missatge",
-                          },
-                        },
-                      ],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-              ],
-            },
           }
         }
       >
@@ -1798,6 +1442,13 @@ exports[`Translator 06 remove column 1`] = `
     }
   >
     <div
+      availableLangs={
+        Array [
+          "es",
+          "ca",
+          "en",
+        ]
+      }
       dataMockType="TranslatorHeader"
       lang={undefined}
       langs={
@@ -1808,57 +1459,24 @@ exports[`Translator 06 remove column 1`] = `
       onAddLang={[Function]}
       onChangeLang={[Function]}
       onRemoveLang={[Function]}
-      viewer={
+      stats={
         Object {
-          "config": Object {
-            "langs": Array [
-              "es",
-              "ca",
-              "en",
-            ],
-          },
-          "id": "me",
-          "keys": Object {
-            "edges": Array [
-              Object {
-                "node": Object {
-                  "context": "someContext",
-                  "id": "keyId1",
-                  "text": "A message",
-                  "translations": Object {
-                    "edges": Array [],
-                  },
-                  "unusedSince": null,
-                },
-              },
-              Object {
-                "node": Object {
-                  "context": "someContext",
-                  "id": "keyId2",
-                  "text": "A message",
-                  "translations": Object {
-                    "edges": Array [
-                      Object {
-                        "node": Object {
-                          "id": "translationId1",
-                          "lang": "es",
-                          "translation": "Un mensaje",
-                        },
-                      },
-                      Object {
-                        "node": Object {
-                          "id": "translationId2",
-                          "lang": "ca",
-                          "translation": "Un missatge",
-                        },
-                      },
-                    ],
-                  },
-                  "unusedSince": null,
-                },
-              },
-            ],
-          },
+          "numTotalKeys": 2,
+          "numTranslations": Array [
+            Object {
+              "lang": "es",
+              "value": 1,
+            },
+            Object {
+              "lang": "ca",
+              "value": 1,
+            },
+            Object {
+              "lang": "en",
+              "value": 0,
+            },
+          ],
+          "numUsedKeys": 2,
         }
       }
     >
@@ -1884,6 +1502,26 @@ exports[`Translator 06 remove column 1`] = `
           Array [
             "es",
           ]
+        }
+        stats={
+          Object {
+            "numTotalKeys": 2,
+            "numTranslations": Array [
+              Object {
+                "lang": "es",
+                "value": 1,
+              },
+              Object {
+                "lang": "ca",
+                "value": 1,
+              },
+              Object {
+                "lang": "en",
+                "value": 0,
+              },
+            ],
+            "numUsedKeys": 2,
+          }
         }
         styleKeyCol={
           Object {
@@ -1916,59 +1554,6 @@ exports[`Translator 06 remove column 1`] = `
             "unusedSince": null,
           }
         }
-        viewer={
-          Object {
-            "config": Object {
-              "langs": Array [
-                "es",
-                "ca",
-                "en",
-              ],
-            },
-            "id": "me",
-            "keys": Object {
-              "edges": Array [
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId1",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId2",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [
-                        Object {
-                          "node": Object {
-                            "id": "translationId1",
-                            "lang": "es",
-                            "translation": "Un mensaje",
-                          },
-                        },
-                        Object {
-                          "node": Object {
-                            "id": "translationId2",
-                            "lang": "ca",
-                            "translation": "Un missatge",
-                          },
-                        },
-                      ],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-              ],
-            },
-          }
-        }
       >
         TranslatorRow (unselected - A message)
       </div>
@@ -1980,6 +1565,26 @@ exports[`Translator 06 remove column 1`] = `
           Array [
             "es",
           ]
+        }
+        stats={
+          Object {
+            "numTotalKeys": 2,
+            "numTranslations": Array [
+              Object {
+                "lang": "es",
+                "value": 1,
+              },
+              Object {
+                "lang": "ca",
+                "value": 1,
+              },
+              Object {
+                "lang": "en",
+                "value": 0,
+              },
+            ],
+            "numUsedKeys": 2,
+          }
         }
         styleKeyCol={
           Object {
@@ -2025,59 +1630,6 @@ exports[`Translator 06 remove column 1`] = `
               ],
             },
             "unusedSince": null,
-          }
-        }
-        viewer={
-          Object {
-            "config": Object {
-              "langs": Array [
-                "es",
-                "ca",
-                "en",
-              ],
-            },
-            "id": "me",
-            "keys": Object {
-              "edges": Array [
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId1",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId2",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [
-                        Object {
-                          "node": Object {
-                            "id": "translationId1",
-                            "lang": "es",
-                            "translation": "Un mensaje",
-                          },
-                        },
-                        Object {
-                          "node": Object {
-                            "id": "translationId2",
-                            "lang": "ca",
-                            "translation": "Un missatge",
-                          },
-                        },
-                      ],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-              ],
-            },
           }
         }
       >
@@ -2185,6 +1737,13 @@ exports[`Translator 07 change column language 1`] = `
     }
   >
     <div
+      availableLangs={
+        Array [
+          "es",
+          "ca",
+          "en",
+        ]
+      }
       dataMockType="TranslatorHeader"
       lang={undefined}
       langs={
@@ -2196,57 +1755,24 @@ exports[`Translator 07 change column language 1`] = `
       onAddLang={[Function]}
       onChangeLang={[Function]}
       onRemoveLang={[Function]}
-      viewer={
+      stats={
         Object {
-          "config": Object {
-            "langs": Array [
-              "es",
-              "ca",
-              "en",
-            ],
-          },
-          "id": "me",
-          "keys": Object {
-            "edges": Array [
-              Object {
-                "node": Object {
-                  "context": "someContext",
-                  "id": "keyId1",
-                  "text": "A message",
-                  "translations": Object {
-                    "edges": Array [],
-                  },
-                  "unusedSince": null,
-                },
-              },
-              Object {
-                "node": Object {
-                  "context": "someContext",
-                  "id": "keyId2",
-                  "text": "A message",
-                  "translations": Object {
-                    "edges": Array [
-                      Object {
-                        "node": Object {
-                          "id": "translationId1",
-                          "lang": "es",
-                          "translation": "Un mensaje",
-                        },
-                      },
-                      Object {
-                        "node": Object {
-                          "id": "translationId2",
-                          "lang": "ca",
-                          "translation": "Un missatge",
-                        },
-                      },
-                    ],
-                  },
-                  "unusedSince": null,
-                },
-              },
-            ],
-          },
+          "numTotalKeys": 2,
+          "numTranslations": Array [
+            Object {
+              "lang": "es",
+              "value": 1,
+            },
+            Object {
+              "lang": "ca",
+              "value": 1,
+            },
+            Object {
+              "lang": "en",
+              "value": 0,
+            },
+          ],
+          "numUsedKeys": 2,
         }
       }
     >
@@ -2273,6 +1799,26 @@ exports[`Translator 07 change column language 1`] = `
             "ca",
             "es",
           ]
+        }
+        stats={
+          Object {
+            "numTotalKeys": 2,
+            "numTranslations": Array [
+              Object {
+                "lang": "es",
+                "value": 1,
+              },
+              Object {
+                "lang": "ca",
+                "value": 1,
+              },
+              Object {
+                "lang": "en",
+                "value": 0,
+              },
+            ],
+            "numUsedKeys": 2,
+          }
         }
         styleKeyCol={
           Object {
@@ -2305,59 +1851,6 @@ exports[`Translator 07 change column language 1`] = `
             "unusedSince": null,
           }
         }
-        viewer={
-          Object {
-            "config": Object {
-              "langs": Array [
-                "es",
-                "ca",
-                "en",
-              ],
-            },
-            "id": "me",
-            "keys": Object {
-              "edges": Array [
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId1",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId2",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [
-                        Object {
-                          "node": Object {
-                            "id": "translationId1",
-                            "lang": "es",
-                            "translation": "Un mensaje",
-                          },
-                        },
-                        Object {
-                          "node": Object {
-                            "id": "translationId2",
-                            "lang": "ca",
-                            "translation": "Un missatge",
-                          },
-                        },
-                      ],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-              ],
-            },
-          }
-        }
       >
         TranslatorRow (unselected - A message)
       </div>
@@ -2370,6 +1863,26 @@ exports[`Translator 07 change column language 1`] = `
             "ca",
             "es",
           ]
+        }
+        stats={
+          Object {
+            "numTotalKeys": 2,
+            "numTranslations": Array [
+              Object {
+                "lang": "es",
+                "value": 1,
+              },
+              Object {
+                "lang": "ca",
+                "value": 1,
+              },
+              Object {
+                "lang": "en",
+                "value": 0,
+              },
+            ],
+            "numUsedKeys": 2,
+          }
         }
         styleKeyCol={
           Object {
@@ -2415,59 +1928,6 @@ exports[`Translator 07 change column language 1`] = `
               ],
             },
             "unusedSince": null,
-          }
-        }
-        viewer={
-          Object {
-            "config": Object {
-              "langs": Array [
-                "es",
-                "ca",
-                "en",
-              ],
-            },
-            "id": "me",
-            "keys": Object {
-              "edges": Array [
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId1",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId2",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [
-                        Object {
-                          "node": Object {
-                            "id": "translationId1",
-                            "lang": "es",
-                            "translation": "Un mensaje",
-                          },
-                        },
-                        Object {
-                          "node": Object {
-                            "id": "translationId2",
-                            "lang": "ca",
-                            "translation": "Un missatge",
-                          },
-                        },
-                      ],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-              ],
-            },
           }
         }
       >
@@ -2588,6 +2048,13 @@ exports[`Translator 07 change column language 2`] = `
     }
   >
     <div
+      availableLangs={
+        Array [
+          "es",
+          "ca",
+          "en",
+        ]
+      }
       dataMockType="TranslatorHeader"
       lang={undefined}
       langs={
@@ -2599,57 +2066,24 @@ exports[`Translator 07 change column language 2`] = `
       onAddLang={[Function]}
       onChangeLang={[Function]}
       onRemoveLang={[Function]}
-      viewer={
+      stats={
         Object {
-          "config": Object {
-            "langs": Array [
-              "es",
-              "ca",
-              "en",
-            ],
-          },
-          "id": "me",
-          "keys": Object {
-            "edges": Array [
-              Object {
-                "node": Object {
-                  "context": "someContext",
-                  "id": "keyId1",
-                  "text": "A message",
-                  "translations": Object {
-                    "edges": Array [],
-                  },
-                  "unusedSince": null,
-                },
-              },
-              Object {
-                "node": Object {
-                  "context": "someContext",
-                  "id": "keyId2",
-                  "text": "A message",
-                  "translations": Object {
-                    "edges": Array [
-                      Object {
-                        "node": Object {
-                          "id": "translationId1",
-                          "lang": "es",
-                          "translation": "Un mensaje",
-                        },
-                      },
-                      Object {
-                        "node": Object {
-                          "id": "translationId2",
-                          "lang": "ca",
-                          "translation": "Un missatge",
-                        },
-                      },
-                    ],
-                  },
-                  "unusedSince": null,
-                },
-              },
-            ],
-          },
+          "numTotalKeys": 2,
+          "numTranslations": Array [
+            Object {
+              "lang": "es",
+              "value": 1,
+            },
+            Object {
+              "lang": "ca",
+              "value": 1,
+            },
+            Object {
+              "lang": "en",
+              "value": 0,
+            },
+          ],
+          "numUsedKeys": 2,
         }
       }
     >
@@ -2676,6 +2110,26 @@ exports[`Translator 07 change column language 2`] = `
             "en",
             "es",
           ]
+        }
+        stats={
+          Object {
+            "numTotalKeys": 2,
+            "numTranslations": Array [
+              Object {
+                "lang": "es",
+                "value": 1,
+              },
+              Object {
+                "lang": "ca",
+                "value": 1,
+              },
+              Object {
+                "lang": "en",
+                "value": 0,
+              },
+            ],
+            "numUsedKeys": 2,
+          }
         }
         styleKeyCol={
           Object {
@@ -2708,59 +2162,6 @@ exports[`Translator 07 change column language 2`] = `
             "unusedSince": null,
           }
         }
-        viewer={
-          Object {
-            "config": Object {
-              "langs": Array [
-                "es",
-                "ca",
-                "en",
-              ],
-            },
-            "id": "me",
-            "keys": Object {
-              "edges": Array [
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId1",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId2",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [
-                        Object {
-                          "node": Object {
-                            "id": "translationId1",
-                            "lang": "es",
-                            "translation": "Un mensaje",
-                          },
-                        },
-                        Object {
-                          "node": Object {
-                            "id": "translationId2",
-                            "lang": "ca",
-                            "translation": "Un missatge",
-                          },
-                        },
-                      ],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-              ],
-            },
-          }
-        }
       >
         TranslatorRow (unselected - A message)
       </div>
@@ -2773,6 +2174,26 @@ exports[`Translator 07 change column language 2`] = `
             "en",
             "es",
           ]
+        }
+        stats={
+          Object {
+            "numTotalKeys": 2,
+            "numTranslations": Array [
+              Object {
+                "lang": "es",
+                "value": 1,
+              },
+              Object {
+                "lang": "ca",
+                "value": 1,
+              },
+              Object {
+                "lang": "en",
+                "value": 0,
+              },
+            ],
+            "numUsedKeys": 2,
+          }
         }
         styleKeyCol={
           Object {
@@ -2818,59 +2239,6 @@ exports[`Translator 07 change column language 2`] = `
               ],
             },
             "unusedSince": null,
-          }
-        }
-        viewer={
-          Object {
-            "config": Object {
-              "langs": Array [
-                "es",
-                "ca",
-                "en",
-              ],
-            },
-            "id": "me",
-            "keys": Object {
-              "edges": Array [
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId1",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId2",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [
-                        Object {
-                          "node": Object {
-                            "id": "translationId1",
-                            "lang": "es",
-                            "translation": "Un mensaje",
-                          },
-                        },
-                        Object {
-                          "node": Object {
-                            "id": "translationId2",
-                            "lang": "ca",
-                            "translation": "Un missatge",
-                          },
-                        },
-                      ],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-              ],
-            },
           }
         }
       >
@@ -2991,6 +2359,13 @@ exports[`Translator 07 change column language 3`] = `
     }
   >
     <div
+      availableLangs={
+        Array [
+          "es",
+          "ca",
+          "en",
+        ]
+      }
       dataMockType="TranslatorHeader"
       lang={undefined}
       langs={
@@ -3001,57 +2376,24 @@ exports[`Translator 07 change column language 3`] = `
       onAddLang={[Function]}
       onChangeLang={[Function]}
       onRemoveLang={[Function]}
-      viewer={
+      stats={
         Object {
-          "config": Object {
-            "langs": Array [
-              "es",
-              "ca",
-              "en",
-            ],
-          },
-          "id": "me",
-          "keys": Object {
-            "edges": Array [
-              Object {
-                "node": Object {
-                  "context": "someContext",
-                  "id": "keyId1",
-                  "text": "A message",
-                  "translations": Object {
-                    "edges": Array [],
-                  },
-                  "unusedSince": null,
-                },
-              },
-              Object {
-                "node": Object {
-                  "context": "someContext",
-                  "id": "keyId2",
-                  "text": "A message",
-                  "translations": Object {
-                    "edges": Array [
-                      Object {
-                        "node": Object {
-                          "id": "translationId1",
-                          "lang": "es",
-                          "translation": "Un mensaje",
-                        },
-                      },
-                      Object {
-                        "node": Object {
-                          "id": "translationId2",
-                          "lang": "ca",
-                          "translation": "Un missatge",
-                        },
-                      },
-                    ],
-                  },
-                  "unusedSince": null,
-                },
-              },
-            ],
-          },
+          "numTotalKeys": 2,
+          "numTranslations": Array [
+            Object {
+              "lang": "es",
+              "value": 1,
+            },
+            Object {
+              "lang": "ca",
+              "value": 1,
+            },
+            Object {
+              "lang": "en",
+              "value": 0,
+            },
+          ],
+          "numUsedKeys": 2,
         }
       }
     >
@@ -3077,6 +2419,26 @@ exports[`Translator 07 change column language 3`] = `
           Array [
             "es",
           ]
+        }
+        stats={
+          Object {
+            "numTotalKeys": 2,
+            "numTranslations": Array [
+              Object {
+                "lang": "es",
+                "value": 1,
+              },
+              Object {
+                "lang": "ca",
+                "value": 1,
+              },
+              Object {
+                "lang": "en",
+                "value": 0,
+              },
+            ],
+            "numUsedKeys": 2,
+          }
         }
         styleKeyCol={
           Object {
@@ -3109,59 +2471,6 @@ exports[`Translator 07 change column language 3`] = `
             "unusedSince": null,
           }
         }
-        viewer={
-          Object {
-            "config": Object {
-              "langs": Array [
-                "es",
-                "ca",
-                "en",
-              ],
-            },
-            "id": "me",
-            "keys": Object {
-              "edges": Array [
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId1",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId2",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [
-                        Object {
-                          "node": Object {
-                            "id": "translationId1",
-                            "lang": "es",
-                            "translation": "Un mensaje",
-                          },
-                        },
-                        Object {
-                          "node": Object {
-                            "id": "translationId2",
-                            "lang": "ca",
-                            "translation": "Un missatge",
-                          },
-                        },
-                      ],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-              ],
-            },
-          }
-        }
       >
         TranslatorRow (unselected - A message)
       </div>
@@ -3173,6 +2482,26 @@ exports[`Translator 07 change column language 3`] = `
           Array [
             "es",
           ]
+        }
+        stats={
+          Object {
+            "numTotalKeys": 2,
+            "numTranslations": Array [
+              Object {
+                "lang": "es",
+                "value": 1,
+              },
+              Object {
+                "lang": "ca",
+                "value": 1,
+              },
+              Object {
+                "lang": "en",
+                "value": 0,
+              },
+            ],
+            "numUsedKeys": 2,
+          }
         }
         styleKeyCol={
           Object {
@@ -3218,59 +2547,6 @@ exports[`Translator 07 change column language 3`] = `
               ],
             },
             "unusedSince": null,
-          }
-        }
-        viewer={
-          Object {
-            "config": Object {
-              "langs": Array [
-                "es",
-                "ca",
-                "en",
-              ],
-            },
-            "id": "me",
-            "keys": Object {
-              "edges": Array [
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId1",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId2",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [
-                        Object {
-                          "node": Object {
-                            "id": "translationId1",
-                            "lang": "es",
-                            "translation": "Un mensaje",
-                          },
-                        },
-                        Object {
-                          "node": Object {
-                            "id": "translationId2",
-                            "lang": "ca",
-                            "translation": "Un missatge",
-                          },
-                        },
-                      ],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-              ],
-            },
           }
         }
       >
@@ -3378,6 +2654,13 @@ exports[`Translator 10 applies UNUSED filter 1`] = `
     }
   >
     <div
+      availableLangs={
+        Array [
+          "es",
+          "ca",
+          "en",
+        ]
+      }
       dataMockType="TranslatorHeader"
       lang={undefined}
       langs={
@@ -3389,59 +2672,7 @@ exports[`Translator 10 applies UNUSED filter 1`] = `
       onAddLang={[Function]}
       onChangeLang={[Function]}
       onRemoveLang={[Function]}
-      viewer={
-        Object {
-          "config": Object {
-            "langs": Array [
-              "es",
-              "ca",
-              "en",
-            ],
-          },
-          "id": "me",
-          "keys": Object {
-            "edges": Array [
-              Object {
-                "node": Object {
-                  "context": "someContext",
-                  "id": "keyId2",
-                  "text": "A message",
-                  "translations": Object {
-                    "edges": Array [
-                      Object {
-                        "node": Object {
-                          "id": "translationId1",
-                          "lang": "es",
-                          "translation": "Un mensaje",
-                        },
-                      },
-                      Object {
-                        "node": Object {
-                          "id": "translationId2",
-                          "lang": "ca",
-                          "translation": "Un missatge",
-                        },
-                      },
-                    ],
-                  },
-                  "unusedSince": null,
-                },
-              },
-              Object {
-                "node": Object {
-                  "context": "someContext",
-                  "id": "keyId1",
-                  "text": "A message",
-                  "translations": Object {
-                    "edges": Array [],
-                  },
-                  "unusedSince": "2016-04-20T11:33:38.450Z",
-                },
-              },
-            ],
-          },
-        }
-      }
+      stats={undefined}
     >
       TranslatorHeader (ca,es)
     </div>
@@ -3467,6 +2698,7 @@ exports[`Translator 10 applies UNUSED filter 1`] = `
             "es",
           ]
         }
+        stats={undefined}
         styleKeyCol={
           Object {
             "WebkitFlex": "1 1 0px",
@@ -3496,59 +2728,6 @@ exports[`Translator 10 applies UNUSED filter 1`] = `
               "edges": Array [],
             },
             "unusedSince": "2016-04-20T11:33:38.450Z",
-          }
-        }
-        viewer={
-          Object {
-            "config": Object {
-              "langs": Array [
-                "es",
-                "ca",
-                "en",
-              ],
-            },
-            "id": "me",
-            "keys": Object {
-              "edges": Array [
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId2",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [
-                        Object {
-                          "node": Object {
-                            "id": "translationId1",
-                            "lang": "es",
-                            "translation": "Un mensaje",
-                          },
-                        },
-                        Object {
-                          "node": Object {
-                            "id": "translationId2",
-                            "lang": "ca",
-                            "translation": "Un missatge",
-                          },
-                        },
-                      ],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId1",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [],
-                    },
-                    "unusedSince": "2016-04-20T11:33:38.450Z",
-                  },
-                },
-              ],
-            },
           }
         }
       >
@@ -3666,6 +2845,13 @@ exports[`Translator 11 applies UNTRANSLATED filter 1`] = `
     }
   >
     <div
+      availableLangs={
+        Array [
+          "es",
+          "ca",
+          "en",
+        ]
+      }
       dataMockType="TranslatorHeader"
       lang={undefined}
       langs={
@@ -3677,57 +2863,24 @@ exports[`Translator 11 applies UNTRANSLATED filter 1`] = `
       onAddLang={[Function]}
       onChangeLang={[Function]}
       onRemoveLang={[Function]}
-      viewer={
+      stats={
         Object {
-          "config": Object {
-            "langs": Array [
-              "es",
-              "ca",
-              "en",
-            ],
-          },
-          "id": "me",
-          "keys": Object {
-            "edges": Array [
-              Object {
-                "node": Object {
-                  "context": "someContext",
-                  "id": "keyId1",
-                  "text": "A message",
-                  "translations": Object {
-                    "edges": Array [],
-                  },
-                  "unusedSince": null,
-                },
-              },
-              Object {
-                "node": Object {
-                  "context": "someContext",
-                  "id": "keyId2",
-                  "text": "A message",
-                  "translations": Object {
-                    "edges": Array [
-                      Object {
-                        "node": Object {
-                          "id": "translationId1",
-                          "lang": "es",
-                          "translation": "Un mensaje",
-                        },
-                      },
-                      Object {
-                        "node": Object {
-                          "id": "translationId2",
-                          "lang": "ca",
-                          "translation": "Un missatge",
-                        },
-                      },
-                    ],
-                  },
-                  "unusedSince": null,
-                },
-              },
-            ],
-          },
+          "numTotalKeys": 2,
+          "numTranslations": Array [
+            Object {
+              "lang": "es",
+              "value": 1,
+            },
+            Object {
+              "lang": "ca",
+              "value": 1,
+            },
+            Object {
+              "lang": "en",
+              "value": 0,
+            },
+          ],
+          "numUsedKeys": 2,
         }
       }
     >
@@ -3754,6 +2907,26 @@ exports[`Translator 11 applies UNTRANSLATED filter 1`] = `
             "ca",
             "es",
           ]
+        }
+        stats={
+          Object {
+            "numTotalKeys": 2,
+            "numTranslations": Array [
+              Object {
+                "lang": "es",
+                "value": 1,
+              },
+              Object {
+                "lang": "ca",
+                "value": 1,
+              },
+              Object {
+                "lang": "en",
+                "value": 0,
+              },
+            ],
+            "numUsedKeys": 2,
+          }
         }
         styleKeyCol={
           Object {
@@ -3784,59 +2957,6 @@ exports[`Translator 11 applies UNTRANSLATED filter 1`] = `
               "edges": Array [],
             },
             "unusedSince": null,
-          }
-        }
-        viewer={
-          Object {
-            "config": Object {
-              "langs": Array [
-                "es",
-                "ca",
-                "en",
-              ],
-            },
-            "id": "me",
-            "keys": Object {
-              "edges": Array [
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId1",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId2",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [
-                        Object {
-                          "node": Object {
-                            "id": "translationId1",
-                            "lang": "es",
-                            "translation": "Un mensaje",
-                          },
-                        },
-                        Object {
-                          "node": Object {
-                            "id": "translationId2",
-                            "lang": "ca",
-                            "translation": "Un missatge",
-                          },
-                        },
-                      ],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-              ],
-            },
           }
         }
       >
@@ -3954,6 +3074,13 @@ exports[`Translator 12 applies FUZZY filter 1`] = `
     }
   >
     <div
+      availableLangs={
+        Array [
+          "es",
+          "ca",
+          "en",
+        ]
+      }
       dataMockType="TranslatorHeader"
       lang={undefined}
       langs={
@@ -3965,68 +3092,7 @@ exports[`Translator 12 applies FUZZY filter 1`] = `
       onAddLang={[Function]}
       onChangeLang={[Function]}
       onRemoveLang={[Function]}
-      viewer={
-        Object {
-          "config": Object {
-            "langs": Array [
-              "es",
-              "ca",
-              "en",
-            ],
-          },
-          "id": "me",
-          "keys": Object {
-            "edges": Array [
-              Object {
-                "node": Object {
-                  "context": "someContext",
-                  "id": "keyId2",
-                  "text": "A message",
-                  "translations": Object {
-                    "edges": Array [
-                      Object {
-                        "node": Object {
-                          "id": "translationId1",
-                          "lang": "es",
-                          "translation": "Un mensaje",
-                        },
-                      },
-                      Object {
-                        "node": Object {
-                          "id": "translationId2",
-                          "lang": "ca",
-                          "translation": "Un missatge",
-                        },
-                      },
-                    ],
-                  },
-                  "unusedSince": null,
-                },
-              },
-              Object {
-                "node": Object {
-                  "context": "someContext",
-                  "id": "keyId3",
-                  "text": "This is the one",
-                  "translations": Object {
-                    "edges": Array [
-                      Object {
-                        "node": Object {
-                          "fuzzy": true,
-                          "id": "translationId1",
-                          "lang": "es",
-                          "translation": "Este es el bueno",
-                        },
-                      },
-                    ],
-                  },
-                  "unusedSince": null,
-                },
-              },
-            ],
-          },
-        }
-      }
+      stats={undefined}
     >
       TranslatorHeader (ca,es)
     </div>
@@ -4052,6 +3118,7 @@ exports[`Translator 12 applies FUZZY filter 1`] = `
             "es",
           ]
         }
+        stats={undefined}
         styleKeyCol={
           Object {
             "WebkitFlex": "1 1 0px",
@@ -4090,68 +3157,6 @@ exports[`Translator 12 applies FUZZY filter 1`] = `
               ],
             },
             "unusedSince": null,
-          }
-        }
-        viewer={
-          Object {
-            "config": Object {
-              "langs": Array [
-                "es",
-                "ca",
-                "en",
-              ],
-            },
-            "id": "me",
-            "keys": Object {
-              "edges": Array [
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId2",
-                    "text": "A message",
-                    "translations": Object {
-                      "edges": Array [
-                        Object {
-                          "node": Object {
-                            "id": "translationId1",
-                            "lang": "es",
-                            "translation": "Un mensaje",
-                          },
-                        },
-                        Object {
-                          "node": Object {
-                            "id": "translationId2",
-                            "lang": "ca",
-                            "translation": "Un missatge",
-                          },
-                        },
-                      ],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-                Object {
-                  "node": Object {
-                    "context": "someContext",
-                    "id": "keyId3",
-                    "text": "This is the one",
-                    "translations": Object {
-                      "edges": Array [
-                        Object {
-                          "node": Object {
-                            "fuzzy": true,
-                            "id": "translationId1",
-                            "lang": "es",
-                            "translation": "Este es el bueno",
-                          },
-                        },
-                      ],
-                    },
-                    "unusedSince": null,
-                  },
-                },
-              ],
-            },
           }
         }
       >
@@ -4269,6 +3274,13 @@ exports[`Translator 12 applies FUZZY filter only over shown languages 1`] = `
     }
   >
     <div
+      availableLangs={
+        Array [
+          "es",
+          "ca",
+          "en",
+        ]
+      }
       dataMockType="TranslatorHeader"
       lang={undefined}
       langs={
@@ -4279,68 +3291,7 @@ exports[`Translator 12 applies FUZZY filter only over shown languages 1`] = `
       onAddLang={[Function]}
       onChangeLang={[Function]}
       onRemoveLang={[Function]}
-      viewer={
-        Object {
-          "config": Object {
-            "langs": Array [
-              "es",
-              "ca",
-              "en",
-            ],
-          },
-          "id": "me",
-          "keys": Object {
-            "edges": Array [
-              Object {
-                "node": Object {
-                  "context": "someContext",
-                  "id": "keyId2",
-                  "text": "A message",
-                  "translations": Object {
-                    "edges": Array [
-                      Object {
-                        "node": Object {
-                          "id": "translationId1",
-                          "lang": "es",
-                          "translation": "Un mensaje",
-                        },
-                      },
-                      Object {
-                        "node": Object {
-                          "id": "translationId2",
-                          "lang": "ca",
-                          "translation": "Un missatge",
-                        },
-                      },
-                    ],
-                  },
-                  "unusedSince": null,
-                },
-              },
-              Object {
-                "node": Object {
-                  "context": "someContext",
-                  "id": "keyId3",
-                  "text": "This is the one",
-                  "translations": Object {
-                    "edges": Array [
-                      Object {
-                        "node": Object {
-                          "fuzzy": true,
-                          "id": "translationId1",
-                          "lang": "es",
-                          "translation": "Este es el bueno",
-                        },
-                      },
-                    ],
-                  },
-                  "unusedSince": null,
-                },
-              },
-            ],
-          },
-        }
-      }
+      stats={undefined}
     >
       TranslatorHeader (ca)
     </div>

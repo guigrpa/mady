@@ -9,16 +9,13 @@ jest.mock('react-dom');
 
 describe('Settings', () => {
   it('01 normal', () => {
-    const viewer = {
-      id: 'me',
-      config: {
-        langs: ['en', 'es'],
-        srcPaths: ['src'],
-        srcExtensions: ['.js', '.jsx'],
-        msgFunctionNames: ['_t'],
-        msgRegexps: [],
-        fMinify: false,
-      },
+    const config = {
+      langs: ['en', 'es'],
+      srcPaths: ['src'],
+      srcExtensions: ['.js', '.jsx'],
+      msgFunctionNames: ['_t'],
+      msgRegexps: [],
+      fMinify: false,
     };
     const tree = renderer
       .create(
@@ -26,7 +23,7 @@ describe('Settings', () => {
           <Floats />
           <Settings
             lang="en"
-            viewer={viewer}
+            config={config}
             onChangeLang={() => {}}
             onClose={() => {}}
           />

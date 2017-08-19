@@ -176,25 +176,19 @@ exports[`App 02 shows the settings when clicked 1`] = `
     Translator (no selection)
   </div>
   <div
+    config={
+      Object {
+        "langs": Array [
+          "es",
+          "ca",
+          "en",
+        ],
+      }
+    }
     dataMockType="Settings"
     lang="en"
     onChangeLang={[Function]}
     onClose={[Function]}
-    viewer={
-      Object {
-        "config": Object {
-          "langs": Array [
-            "es",
-            "ca",
-            "en",
-          ],
-        },
-        "id": "me",
-        "keys": Object {
-          "edges": Array [],
-        },
-      }
-    }
   >
     Settings
   </div>

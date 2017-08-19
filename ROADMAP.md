@@ -1,6 +1,4 @@
 * Cut release
-- [ ] Fix tests
-- [ ] Fix Flow
 - [ ] Fix SSR
 - [ ] Update docs, indicating multi-user and push support
 - [ ] Refactor server:

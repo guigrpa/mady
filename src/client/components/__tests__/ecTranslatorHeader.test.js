@@ -4,7 +4,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Floats } from 'giu';
 import { _TranslatorHeader as TranslatorHeader } from '../ecTranslatorHeader';
-import { VIEWER, VIEWER_WITH_NO_CONTENT } from './fixtures';
+import {
+  VIEWER,
+  VIEWER_WITH_NO_CONTENT,
+  STATS,
+  STATS_WITH_NO_CONTENT,
+} from './fixtures';
 
 // https://github.com/facebook/react/issues/7386#issuecomment-238091398
 jest.mock('react-dom');
@@ -20,7 +25,9 @@ describe('TranslatorHeader', () => {
           <Floats />
           <TranslatorHeader
             langs={['ca', 'es']}
+            availableLangs={['es', 'ca', 'en']}
             viewer={VIEWER_WITH_NO_CONTENT}
+            stats={STATS_WITH_NO_CONTENT}
           />
         </div>
       )
@@ -33,7 +40,12 @@ describe('TranslatorHeader', () => {
       .create(
         <div>
           <Floats />
-          <TranslatorHeader langs={['ca', 'es']} viewer={VIEWER} />
+          <TranslatorHeader
+            langs={['ca', 'es']}
+            availableLangs={['es', 'ca', 'en']}
+            viewer={VIEWER}
+            stats={STATS}
+          />
         </div>
       )
       .toJSON();
@@ -45,7 +57,12 @@ describe('TranslatorHeader', () => {
       .create(
         <div>
           <Floats />
-          <TranslatorHeader langs={['ca', 'es', 'en']} viewer={VIEWER} />
+          <TranslatorHeader
+            langs={['ca', 'es', 'en']}
+            availableLangs={['es', 'ca', 'en']}
+            viewer={VIEWER}
+            stats={STATS}
+          />
         </div>
       )
       .toJSON();

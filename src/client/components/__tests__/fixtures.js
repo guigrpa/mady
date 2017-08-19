@@ -64,6 +64,15 @@ const VIEWER = {
   config: {
     langs: ['es', 'ca', 'en'],
   },
+  stats: {
+    numUsedKeys: 2,
+    numTotalKeys: 2,
+    numTranslations: [
+      { lang: 'es', value: 1 },
+      { lang: 'ca', value: 1 },
+      { lang: 'en', value: 0 },
+    ],
+  },
   keys: {
     edges: [
       { node: KEY_WITHOUT_TRANSLATIONS },
@@ -71,18 +80,31 @@ const VIEWER = {
     ],
   },
 };
+const STATS = VIEWER.stats;
 
 const VIEWER_WITH_NO_CONTENT = {
   id: 'me',
   config: {
     langs: ['es', 'ca', 'en'],
   },
+  stats: {
+    numUsedKeys: 0,
+    numTotalKeys: 0,
+    numTranslations: [
+      { lang: 'es', value: 0 },
+      { lang: 'ca', value: 0 },
+      { lang: 'en', value: 0 },
+    ],
+  },
   keys: { edges: [] },
 };
+const STATS_WITH_NO_CONTENT = VIEWER_WITH_NO_CONTENT.stats;
 
 export {
   VIEWER,
   VIEWER_WITH_NO_CONTENT,
+  STATS,
+  STATS_WITH_NO_CONTENT,
   KEY_WITHOUT_TRANSLATIONS,
   KEY_WITH_TRANSLATIONS,
   KEY_WITH_FUZZY_TRANSLATION,
