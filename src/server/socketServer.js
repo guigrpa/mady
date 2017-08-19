@@ -9,24 +9,34 @@ import { subscribe as gqlSubscribe, parse as gqlParse } from 'graphql';
 // ==============================================
 // Types
 // ==============================================
-type WsMessage =
-  | {
-      type: 'SUBSCRIBE',
-      subscriptionId: string,
-      query: string,
-      variables?: Object,
-    }
-  | {
-      type: 'NOTIF',
-      subscriptionId: string,
-      payload: Object,
-    };
-type WsContext = { socket: Object };
+type WsMessage = WsMessageSubscribe | WsMessageNotif;
+type WsMessageSubscribe = {
+  type: 'SUBSCRIBE',
+  subscriptionId: string,
+  query: string,
+  variables?: Object,
+};
+type WsMessageNotif = {
+  type: 'NOTIF',
+  subscriptionId: string,
+  payload: Object,
+};
+type WsContext = {
+  socket: Object,
+  gqlSchema: Object,
+  subscriptions: { [subscriptionId: string]: Object },
+};
 
 // ==============================================
 // Main
 // ==============================================
-const init = ({ httpServer, gqlSchema }) => {
+const init = ({
+  httpServer,
+  gqlSchema,
+}: {|
+  httpServer: Object,
+  gqlSchema: Object,
+|}) => {
   const socketioServer = socketio(httpServer);
   socketioServer.on('connect', onConnect(gqlSchema));
   return socketioServer;
@@ -52,18 +62,17 @@ const onCloseOrError = context => (/* error */) => {
 // Message processing
 // ==============================================
 const rx = (context: WsContext) => (msg: WsMessage) => {
-  const { type } = msg;
   mainStory.debug(
     'socket',
-    `RX ${chalk.magenta(type)} ${type === 'SUBSCRIBE'
+    `RX ${chalk.magenta(msg.type)} ${msg.type === 'SUBSCRIBE'
       ? chalk.yellow(msg.subscriptionId)
       : ''}`,
     { attach: msg, attachLevel: 'trace' }
   );
-  if (type === 'SUBSCRIBE') rxSubscribe(context, msg);
+  if (msg.type === 'SUBSCRIBE') rxSubscribe(context, msg);
 };
 
-const rxSubscribe = async (context, msg) => {
+const rxSubscribe = async (context, msg: WsMessageSubscribe) => {
   const { socket } = context;
   const { subscriptionId, query, variables } = msg;
   let ast;

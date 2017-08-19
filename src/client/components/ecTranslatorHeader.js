@@ -7,7 +7,7 @@ import Relay, { graphql } from 'react-relay';
 import throttle from 'lodash/throttle';
 import { getScrollbarWidth, flexItem, flexContainer, Icon, Select } from 'giu';
 import type { Choice } from 'giu/lib/gral/types';
-import type { StatsT } from '../../common/types';
+import type { ViewerT, StatsT } from '../../common/types';
 import _t from '../../translate';
 import parseSrcFiles from '../mutations/parseSrcFiles';
 import { COLORS } from '../gral/constants';
@@ -26,6 +26,7 @@ type Props = {
   onChangeLang: (ev: SyntheticEvent, lang: string) => any,
   // Relay
   relay: Object,
+  viewer: ViewerT,
   stats: StatsT,
 };
 

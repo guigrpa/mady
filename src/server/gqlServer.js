@@ -426,7 +426,7 @@ function addConnectionType(name: string): void {
 }
 
 type MutationType = 'CREATE' | 'UPDATE';
-type OperationParent = {
+type MutationParent = {
   type: string,
   connection: string,
   resolveConnection: (base: Object) => Array<Object>,
@@ -434,13 +434,19 @@ type OperationParent = {
 type MutationOptions = {
   fSingleton?: boolean,
   globalIds?: Array<string>,
-  parent?: OperationParent,
+  parent?: MutationParent,
 };
 
+type SubscriptionParent = {
+  ...$Exact<MutationParent>,
+  resolveParent: (base: Object) => ?Object,
+};
 type SubscriptionType = 'CREATED' | 'UPDATED';
 type SubscriptionOptions = {
-  parent?: OperationParent,
+  parent?: SubscriptionParent,
 };
+
+type OperationParent = MutationParent | SubscriptionParent;
 
 const addSubscription = (
   type: string,

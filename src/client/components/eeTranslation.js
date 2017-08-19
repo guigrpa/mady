@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Relay, { graphql } from 'react-relay';
-// $FlowFixMe: messageformat specifies 'main' in its package.json in a way flow doesn't like
 import MessageFormat from 'messageformat';
 import { mainStory } from 'storyboard';
 import { cancelEvent, Icon, Textarea, KEYS, hoverable } from 'giu';

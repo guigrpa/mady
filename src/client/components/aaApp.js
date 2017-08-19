@@ -40,6 +40,7 @@ type Props = {
   // Unit testing
   _disableHints?: boolean,
   // Relay
+  environment: Object,
   viewer: ViewerT,
 };
 

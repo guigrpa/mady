@@ -63,7 +63,13 @@ const mutate = ({
   });
 };
 
-const subscribe = ({ environment, subscriptionOptions }) => {
+const subscribe = ({
+  environment,
+  subscriptionOptions,
+}: {|
+  environment: Object,
+  subscriptionOptions: Object,
+|}) => {
   requestSubscription(environment, {
     ...subscriptionOptions,
     // onNext: data => {
@@ -77,7 +83,7 @@ const tearDown = story => {
 };
 
 const cachedSimplifiedStrings = {};
-const simplifyStringWithCache = str => {
+const simplifyStringWithCache = (str: string) => {
   let out = cachedSimplifiedStrings[str];
   if (out == null) {
     out = simplifyString(str);
