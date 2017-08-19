@@ -3,7 +3,7 @@
 /* eslint-disable no-param-reassign */
 
 import socketio from 'socket.io';
-import { mainStory } from 'storyboard';
+import { mainStory, chalk } from 'storyboard';
 import { subscribe as gqlSubscribe, parse as gqlParse } from 'graphql';
 
 // ==============================================
@@ -52,11 +52,15 @@ const onCloseOrError = context => (/* error */) => {
 // Message processing
 // ==============================================
 const rx = (context: WsContext) => (msg: WsMessage) => {
-  mainStory.debug('socket', 'RX', { attach: msg });
   const { type } = msg;
-  if (type === 'SUBSCRIBE') {
-    rxSubscribe(context, msg);
-  }
+  mainStory.debug(
+    'socket',
+    `RX ${chalk.magenta(type)} ${type === 'SUBSCRIBE'
+      ? chalk.yellow(msg.subscriptionId)
+      : ''}`,
+    { attach: msg, attachLevel: 'trace' }
+  );
+  if (type === 'SUBSCRIBE') rxSubscribe(context, msg);
 };
 
 const rxSubscribe = async (context, msg) => {

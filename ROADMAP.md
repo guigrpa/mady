@@ -2,6 +2,7 @@
 - [ ] Fix tests
 - [ ] Fix Flow
 - [ ] Fix SSR
+- [ ] Update docs, indicating multi-user and push support
 - [ ] Refactor server:
     - [ ] Move to graphql subfolder
     - [ ] Separate addMutation, addSubscription, other relay helpers
