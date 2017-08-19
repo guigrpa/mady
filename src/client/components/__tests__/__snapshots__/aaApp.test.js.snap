@@ -67,6 +67,24 @@ exports[`App 01 no content 1`] = `
         "keys": Object {
           "edges": Array [],
         },
+        "stats": Object {
+          "numTotalKeys": 0,
+          "numTranslations": Array [
+            Object {
+              "lang": "es",
+              "value": 0,
+            },
+            Object {
+              "lang": "ca",
+              "value": 0,
+            },
+            Object {
+              "lang": "en",
+              "value": 0,
+            },
+          ],
+          "numUsedKeys": 0,
+        },
       }
     }
   >
@@ -169,6 +187,24 @@ exports[`App 02 shows the settings when clicked 1`] = `
         "id": "me",
         "keys": Object {
           "edges": Array [],
+        },
+        "stats": Object {
+          "numTotalKeys": 0,
+          "numTranslations": Array [
+            Object {
+              "lang": "es",
+              "value": 0,
+            },
+            Object {
+              "lang": "ca",
+              "value": 0,
+            },
+            Object {
+              "lang": "en",
+              "value": 0,
+            },
+          ],
+          "numUsedKeys": 0,
         },
       }
     }
@@ -296,6 +332,24 @@ exports[`App 02 shows the settings when clicked 2`] = `
         "keys": Object {
           "edges": Array [],
         },
+        "stats": Object {
+          "numTotalKeys": 0,
+          "numTranslations": Array [
+            Object {
+              "lang": "es",
+              "value": 0,
+            },
+            Object {
+              "lang": "ca",
+              "value": 0,
+            },
+            Object {
+              "lang": "en",
+              "value": 0,
+            },
+          ],
+          "numUsedKeys": 0,
+        },
       }
     }
   >
@@ -398,6 +452,24 @@ exports[`App 03 changes the selected key when clicked and shows details 1`] = `
         "id": "me",
         "keys": Object {
           "edges": Array [],
+        },
+        "stats": Object {
+          "numTotalKeys": 0,
+          "numTranslations": Array [
+            Object {
+              "lang": "es",
+              "value": 0,
+            },
+            Object {
+              "lang": "ca",
+              "value": 0,
+            },
+            Object {
+              "lang": "en",
+              "value": 0,
+            },
+          ],
+          "numUsedKeys": 0,
         },
       }
     }
