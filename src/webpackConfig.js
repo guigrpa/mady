@@ -27,8 +27,8 @@ module.exports = (env = {}) => {
   const styleRules = loaders =>
     fSsr
       ? ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: loaders,
+          fallback: 'style-loader',
+          use: loaders,
         })
       : [{ loader: 'style-loader' }].concat(loaders);
 
