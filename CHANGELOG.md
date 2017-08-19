@@ -1,3 +1,5 @@
+## 2.5.0 (2017-8-19)
+
 * **Multi-user support**: changes by one user are automatically pushed to other users.
 * Bugfix: correct handling of keyboard shortcuts in filters (caused by an upstream bug).
 
