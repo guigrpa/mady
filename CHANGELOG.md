@@ -1,3 +1,5 @@
+## 2.6.0 (2017-8-20)
+
 * Add **watch-based (or *delta*) parsing**: Mady now automatically parses files that are added, changed or removed from your watched folders, and then pushes changes in real time to all connected users. This increases parse times a lot and aims at improving developer workflows.
 
 ## 2.5.1 (2017-8-19)
