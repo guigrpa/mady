@@ -21,6 +21,7 @@ exports[`Translator 01 no content 1`] = `
         "display": "flex",
         "flex": "1 0 10em",
         "flexDirection": "column",
+        "marginRight": -5,
         "marginTop": 5,
       }
     }
@@ -152,7 +153,7 @@ exports[`Translator 01 no content 1`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
-  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-right:-5px;margin-top:5px;">
     <div dataMockType="TranslatorHeader">
       TranslatorHeader (es)
     </div>
@@ -206,6 +207,7 @@ exports[`Translator 02 selected row 1`] = `
         "display": "flex",
         "flex": "1 0 10em",
         "flexDirection": "column",
+        "marginRight": -5,
         "marginTop": 5,
       }
     }
@@ -452,7 +454,7 @@ exports[`Translator 02 selected row 1`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
-  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-right:-5px;margin-top:5px;">
     <div dataMockType="TranslatorHeader">
       TranslatorHeader (es)
     </div>
@@ -504,6 +506,7 @@ exports[`Translator 03 default columns 1`] = `
         "display": "flex",
         "flex": "1 0 10em",
         "flexDirection": "column",
+        "marginRight": -5,
         "marginTop": 5,
       }
     }
@@ -750,7 +753,7 @@ exports[`Translator 03 default columns 1`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
-  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-right:-5px;margin-top:5px;">
     <div dataMockType="TranslatorHeader">
       TranslatorHeader (es)
     </div>
@@ -799,6 +802,7 @@ exports[`Translator 04 fixed columns 1`] = `
         "display": "flex",
         "flex": "1 0 10em",
         "flexDirection": "column",
+        "marginRight": -5,
         "marginTop": 5,
       }
     }
@@ -1060,7 +1064,7 @@ exports[`Translator 04 fixed columns 1`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
-  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-right:-5px;margin-top:5px;">
     <div dataMockType="TranslatorHeader">
       TranslatorHeader (ca,es)
     </div>
@@ -1110,6 +1114,7 @@ exports[`Translator 05 add column (it must correspond to a new language) 1`] = `
         "display": "flex",
         "flex": "1 0 10em",
         "flexDirection": "column",
+        "marginRight": -5,
         "marginTop": 5,
       }
     }
@@ -1386,7 +1391,7 @@ exports[`Translator 05 add column (it must correspond to a new language) 1`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
-  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-right:-5px;margin-top:5px;">
     <div dataMockType="TranslatorHeader">
       TranslatorHeader (ca,es,en)
     </div>
@@ -1437,6 +1442,7 @@ exports[`Translator 06 remove column 1`] = `
         "display": "flex",
         "flex": "1 0 10em",
         "flexDirection": "column",
+        "marginRight": -5,
         "marginTop": 5,
       }
     }
@@ -1683,7 +1689,7 @@ exports[`Translator 06 remove column 1`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
-  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-right:-5px;margin-top:5px;">
     <div dataMockType="TranslatorHeader">
       TranslatorHeader (es)
     </div>
@@ -1732,6 +1738,7 @@ exports[`Translator 07 change column language 1`] = `
         "display": "flex",
         "flex": "1 0 10em",
         "flexDirection": "column",
+        "marginRight": -5,
         "marginTop": 5,
       }
     }
@@ -1993,7 +2000,7 @@ exports[`Translator 07 change column language 1`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
-  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-right:-5px;margin-top:5px;">
     <div dataMockType="TranslatorHeader">
       TranslatorHeader (ca,es)
     </div>
@@ -2043,6 +2050,7 @@ exports[`Translator 07 change column language 2`] = `
         "display": "flex",
         "flex": "1 0 10em",
         "flexDirection": "column",
+        "marginRight": -5,
         "marginTop": 5,
       }
     }
@@ -2304,7 +2312,7 @@ exports[`Translator 07 change column language 2`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
-  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-right:-5px;margin-top:5px;">
     <div dataMockType="TranslatorHeader">
       TranslatorHeader (en,es)
     </div>
@@ -2354,6 +2362,7 @@ exports[`Translator 07 change column language 3`] = `
         "display": "flex",
         "flex": "1 0 10em",
         "flexDirection": "column",
+        "marginRight": -5,
         "marginTop": 5,
       }
     }
@@ -2600,7 +2609,7 @@ exports[`Translator 07 change column language 3`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
-  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-right:-5px;margin-top:5px;">
     <div dataMockType="TranslatorHeader">
       TranslatorHeader (es)
     </div>
@@ -2649,6 +2658,7 @@ exports[`Translator 10 applies UNUSED filter 1`] = `
         "display": "flex",
         "flex": "1 0 10em",
         "flexDirection": "column",
+        "marginRight": -5,
         "marginTop": 5,
       }
     }
@@ -2793,7 +2803,7 @@ exports[`Translator 10 applies UNUSED filter 1`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
-  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-right:-5px;margin-top:5px;">
     <div dataMockType="TranslatorHeader">
       TranslatorHeader (ca,es)
     </div>
@@ -2840,6 +2850,7 @@ exports[`Translator 11 applies UNTRANSLATED filter 1`] = `
         "display": "flex",
         "flex": "1 0 10em",
         "flexDirection": "column",
+        "marginRight": -5,
         "marginTop": 5,
       }
     }
@@ -3022,7 +3033,7 @@ exports[`Translator 11 applies UNTRANSLATED filter 1`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
-  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-right:-5px;margin-top:5px;">
     <div dataMockType="TranslatorHeader">
       TranslatorHeader (ca,es)
     </div>
@@ -3069,6 +3080,7 @@ exports[`Translator 12 applies FUZZY filter 1`] = `
         "display": "flex",
         "flex": "1 0 10em",
         "flexDirection": "column",
+        "marginRight": -5,
         "marginTop": 5,
       }
     }
@@ -3222,7 +3234,7 @@ exports[`Translator 12 applies FUZZY filter 1`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
-  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-right:-5px;margin-top:5px;">
     <div dataMockType="TranslatorHeader">
       TranslatorHeader (ca,es)
     </div>
@@ -3269,6 +3281,7 @@ exports[`Translator 12 applies FUZZY filter only over shown languages 1`] = `
         "display": "flex",
         "flex": "1 0 10em",
         "flexDirection": "column",
+        "marginRight": -5,
         "marginTop": 5,
       }
     }
@@ -3355,7 +3368,7 @@ exports[`Translator 12 applies FUZZY filter only over shown languages 1`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
-  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
+  <div style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-right:-5px;margin-top:5px;">
     <div dataMockType="TranslatorHeader">
       TranslatorHeader (ca)
     </div>

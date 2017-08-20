@@ -18,6 +18,7 @@ const init = ({ paths, onEvent }: Options) => {
   });
   mainStory.info('watch', `Watching: ${chalk.cyan.bold(paths.join(', '))}`);
   ['change', 'add', 'unlink'].forEach(type => {
+    if (!watcher) return;
     watcher.on(type, filePath => {
       mainStory.info(
         'watch',
