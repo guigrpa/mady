@@ -8,7 +8,7 @@ import * as gqlServer from './gqlServer';
 
 addListener(consoleListener);
 
-const outputPath = path.join(__dirname, '../../src/common/');
+const outputPath = path.join(__dirname, '../../../src/common/');
 gqlServer.init();
 
 const run = async () => {

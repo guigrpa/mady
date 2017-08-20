@@ -46,7 +46,7 @@
     "compile:mainWatch": "yarn compile:main -- --watch",
     "compile:relay": "yarn compile:schema && relay-compiler --src ./src --schema ./src/common/gqlSchema.graphql",
     "compile:relayWatch": "yarn compile:relay -- --watch",
-    "compile:schema": "node lib/server/gqlUpdateSchema",
+    "compile:schema": "node lib/server/graphql/updateSchema",
     "build": "yarn lint && yarn flow && yarn compile && yarn buildClient && yarn buildSsr && yarn test && yarn docs && yarn xxl",
     "buildSsr": "yarn build:copyPublic && yarn build:webpack -- -p --env.NODE_ENV=production --env.SERVER_SIDE_RENDERING=true",
     "buildSsrWatch": "yarn build:copyPublic && yarn build:webpack -- -w --env.SERVER_SIDE_RENDERING=true",
@@ -170,14 +170,8 @@
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/test/emptyString.js"
     },
     "coverageDirectory": ".nyc_output",
-    "coverageReporters": [
-      "json",
-      "text",
-      "html"
-    ],
-    "snapshotSerializers": [
-      "<rootDir>/node_modules/jest-html"
-    ],
+    "coverageReporters": ["json", "text", "html"],
+    "snapshotSerializers": ["<rootDir>/node_modules/jest-html"],
     "collectCoverageFrom": [
       "src/**/*.js",
       "!**/node_modules/**",

@@ -6,7 +6,7 @@ import wsServerListener from 'storyboard-listener-ws-server';
 import program from 'commander';
 import opn from 'opn';
 import * as db from './db';
-import { init as gqlInit } from './gqlServer';
+import { init as gqlInit } from './graphql/gqlServer';
 import { init as httpInit } from './httpServer';
 import { init as socketInit } from './socketServer';
 
