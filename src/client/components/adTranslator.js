@@ -9,7 +9,11 @@ import type { ViewerT, KeyT } from '../../common/types';
 import { cookieGet, cookieSet } from '../gral/storage';
 import type { KeyFilter } from '../gral/types';
 import { simplifyStringWithCache } from './helpers';
-import { styleKeyCol, styleLangCol } from './adTranslatorStyles';
+import {
+  styleKeyCol,
+  styleLangCol,
+  TRANSLATOR_GUTTER,
+} from './adTranslatorStyles';
 import TranslatorHeader from './ecTranslatorHeader';
 import TranslatorRow from './edTranslatorRow';
 
@@ -269,6 +273,7 @@ const style = {
     '1 0 10em',
     flexContainer('column', {
       marginTop: 5,
+      marginRight: -TRANSLATOR_GUTTER,
     })
   ),
   body: flexItem(1, flexContainer('column', { overflowY: 'scroll' })),

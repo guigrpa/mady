@@ -1,6 +1,3 @@
-* **Bugfix: update details when key changes (if possible)**
-
-* Cut release
 * Improvement: Add Google Translate (triggers for all new keys and languages, sent to users asynchronously)
 * Improvement: Show error when user specifies a language that doesn't exist
 * Improvement: Use Giu's DataTable
