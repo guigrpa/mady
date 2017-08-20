@@ -1,3 +1,5 @@
+* Add watch-based parsing: Mady now automatically parses files that are added, changed or removed from your watched folders, and then pushes all changes to the connected users. This increases parse times a lot and aims at improving the developer's workflow.
+
 ## 2.5.1 (2017-8-19)
 
 * Fix SSR.
