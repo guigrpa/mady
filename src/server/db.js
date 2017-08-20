@@ -250,9 +250,6 @@ async function parseSrcFiles({ story }: { story: StoryT }) {
     if (!key.firstUsed) {
       newKeys.push(id);
       key.firstUsed = now;
-      publish('createdKey', { key });
-    } else {
-      // TODO: determine whether a key has been updated and publish if needed
     }
     _keys[id] = key;
   });
@@ -265,6 +262,7 @@ async function parseSrcFiles({ story }: { story: StoryT }) {
   saveKeys({ story });
   await compileTranslations({ story });
   updateStats();
+  publish('parsedSrcFiles');
   return _keys;
 }
 

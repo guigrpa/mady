@@ -33,6 +33,7 @@ import {
   addMutation,
   addSubscription,
 } from './relay';
+import { subscribe } from '../subscriptions';
 import * as db from '../db';
 
 const NonNullString = new GraphQLNonNull(GraphQLString);
@@ -243,50 +244,46 @@ const init = () => {
   // ---------------------------
   // Mutations and subscriptions
   // ---------------------------
-  {
-    const parent = {
-      type: 'Viewer',
-      connection: 'keys',
-      resolveParent: () => viewer,
-      resolveConnection: () => db.getKeys(),
-    };
+  addMutation('Key', 'UPDATE', gqlTypes, gqlMutations, {
+    outputFields: { viewer: viewerRootField, stats: statsBaseField },
+  });
 
-    addMutation('Key', 'UPDATE', gqlTypes, gqlMutations, {
-      outputFields: { viewer: viewerRootField, stats: statsBaseField },
-    });
+  gqlMutations.parseSrcFiles = mutationWithClientMutationId({
+    name: 'ParseSrcFiles',
+    inputFields: {
+      storyId: { type: GraphQLString },
+    },
+    mutateAndGetPayload: async ({ storyId }) => {
+      const story = mainStory.child({
+        src: 'gql',
+        title: 'Mutation: parse source files',
+        extraParents: storyId,
+      });
+      try {
+        await db.parseSrcFiles({ story });
+        return {};
+      } finally {
+        story.close();
+      }
+    },
+    outputFields: {
+      keys: keysBaseField,
+      viewer: viewerRootField,
+    },
+  });
 
-    gqlMutations.parseSrcFiles = mutationWithClientMutationId({
-      name: 'ParseSrcFiles',
-      inputFields: {
-        storyId: { type: GraphQLString },
-      },
-      mutateAndGetPayload: async ({ storyId }) => {
-        const story = mainStory.child({
-          src: 'gql',
-          title: 'Mutation: parse source files',
-          extraParents: storyId,
-        });
-        try {
-          await db.parseSrcFiles({ story });
-          return {};
-        } finally {
-          story.close();
-        }
-      },
-      outputFields: {
-        keys: keysBaseField,
-        viewer: viewerRootField,
-      },
-    });
+  gqlSubscriptions.parsedSrcFiles = {
+    type: new GraphQLObjectType({
+      name: 'ParsedSrcFilesPayload',
+      fields: () => ({ viewer: viewerRootField }),
+    }),
+    resolve: () => ({}),
+    subscribe: () => subscribe('parsedSrcFiles'),
+  };
 
-    addSubscription('Key', 'CREATED', gqlTypes, gqlSubscriptions, {
-      parent,
-      outputFields: { viewer: viewerRootField },
-    });
-    addSubscription('Key', 'UPDATED', gqlTypes, gqlSubscriptions, {
-      outputFields: { viewer: viewerRootField },
-    });
-  }
+  addSubscription('Key', 'UPDATED', gqlTypes, gqlSubscriptions, {
+    outputFields: { viewer: viewerRootField },
+  });
 
   // ==============================================
   // Translations
@@ -391,6 +388,7 @@ const init = () => {
         pick(gqlSubscriptions, [
           'updatedConfig',
           'updatedStats',
+          'parsedSrcFiles',
           'createdKeyInViewerKeys',
           'updatedKey',
           'createdTranslationInKeyTranslations',

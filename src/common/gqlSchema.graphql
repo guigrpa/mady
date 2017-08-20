@@ -24,13 +24,6 @@ input ConfigUpdate {
   fReactIntlOutput: Boolean
 }
 
-type CreatedKeyInViewerKeysPayload {
-  viewer: Viewer
-  key: Key
-  parent: Viewer
-  createdKeyEdge: KeyEdge
-}
-
 type CreatedTranslationInKeyTranslationsPayload {
   viewer: Viewer
   translation: Translation
@@ -122,6 +115,10 @@ type PageInfo {
   endCursor: String
 }
 
+type ParsedSrcFilesPayload {
+  viewer: Viewer
+}
+
 input ParseSrcFilesInput {
   storyId: String
   clientMutationId: String
@@ -158,7 +155,7 @@ type StatsForLang {
 type Subscription {
   updatedConfig: UpdatedConfigPayload
   updatedStats: UpdatedStatsPayload
-  createdKeyInViewerKeys: CreatedKeyInViewerKeysPayload
+  parsedSrcFiles: ParsedSrcFilesPayload
   updatedKey: UpdatedKeyPayload
   createdTranslationInKeyTranslations: CreatedTranslationInKeyTranslationsPayload
   updatedTranslation: UpdatedTranslationPayload
