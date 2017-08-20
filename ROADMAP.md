@@ -1,4 +1,5 @@
-* Add watch-based parsing
+* Bug: update details when key changes (if possible)
+
 * Cut release
 * Add Google Translate (triggers for all new keys and languages, sent to users asynchronously)
 * Show error when user specifies a language that doesn't exist

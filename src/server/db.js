@@ -16,12 +16,13 @@ import type {
   InternalKeyT,
   InternalTranslationT,
 } from '../common/types';
-import parse from './parseSources';
+import { parseAll, parseOne } from './parseSources';
 import compile from './compileTranslations';
 import collectReactIntlTranslations from './collectReactIntlTranslations';
 import collectJsonTranslations from './collectJsonTranslations';
 import * as importers from './importData';
 import { publish } from './subscriptions';
+import { init as initFileWatcher } from './fileWatcher';
 
 const DB_VERSION = 2;
 
@@ -122,7 +123,19 @@ function readConfig() {
 }
 function saveConfig(options?: Object) {
   saveJson(_configPath, _config, options);
+  initFileWatcher({ paths: _config.srcPaths, onEvent: onFileChange });
 }
+
+const onFileChange = async (eventType, filePath) => {
+  if (eventType === 'unlink') {
+    onSrcFileDeleted(filePath, { save: true });
+  } else if (eventType === 'add') {
+    onSrcFileAdded(filePath, { save: true });
+  } else if (eventType === 'change') {
+    await onSrcFileDeleted(filePath, { save: false });
+    onSrcFileAdded(filePath, { save: true, forceSave: true });
+  }
+};
 
 function getConfig(): InternalConfigT {
   return _config;
@@ -217,7 +230,7 @@ async function updateKey(id: string, newAttrs: Object): Promise<?InternalKeyT> {
 
 async function parseSrcFiles({ story }: { story: StoryT }) {
   const { srcPaths, srcExtensions, msgFunctionNames, msgRegexps } = _config;
-  const curKeys = parse({
+  const curKeys = parseAll({
     srcPaths,
     srcExtensions,
     msgFunctionNames,
@@ -226,6 +239,9 @@ async function parseSrcFiles({ story }: { story: StoryT }) {
   });
   const now = new Date().toISOString();
 
+  // Go through the previous list of keys and:
+  // - If key is still used, copy `firstUsed` attr from the previous list
+  // - If key is no longer used, copy the whole key and initialise (if needed) `unusedSince`
   const unusedKeys = [];
   Object.keys(_keys).forEach(id => {
     const key = _keys[id];
@@ -244,6 +260,7 @@ async function parseSrcFiles({ story }: { story: StoryT }) {
     });
   }
 
+  // Go through the new list of keys and initialise (if needed) `firstUsed`
   const newKeys = [];
   Object.keys(curKeys).forEach(id => {
     const key = curKeys[id];
@@ -264,6 +281,63 @@ async function parseSrcFiles({ story }: { story: StoryT }) {
   updateStats();
   publish('parsedSrcFiles');
   return _keys;
+}
+
+async function onSrcFileDeleted(
+  filePath: string,
+  { save }: { save: boolean } = {}
+) {
+  let hasChanged = false;
+  const now = new Date().toISOString();
+  const keyIds = Object.keys(_keys);
+  for (let i = 0; i < keyIds.length; i++) {
+    const key = _keys[keyIds[i]];
+    if (key.sources && key.sources.indexOf(filePath) >= 0) {
+      key.sources = key.sources.filter(o => o !== filePath);
+      hasChanged = true;
+      if (!key.sources.length) key.unusedSince = now;
+    }
+  }
+  if (hasChanged && save) {
+    saveKeys();
+    await compileTranslations();
+    updateStats();
+    publish('parsedSrcFiles');
+  }
+}
+
+async function onSrcFileAdded(
+  filePath: string,
+  { save, forceSave }: { save: boolean, forceSave?: boolean } = {}
+) {
+  let hasChanged = false;
+  const now = new Date().toISOString();
+  const { msgFunctionNames, msgRegexps } = _config;
+  const newKeys = parseOne({
+    filePath,
+    msgFunctionNames,
+    msgRegexps,
+    story: mainStory,
+  });
+  const newKeyIds = Object.keys(newKeys);
+  for (let i = 0; i < newKeyIds.length; i++) {
+    hasChanged = true;
+    const newKeyId = newKeyIds[i];
+    const newKey = newKeys[newKeyId];
+    if (_keys[newKeyId]) {
+      _keys[newKeyId].sources.push(filePath);
+      _keys[newKeyId].unusedSince = null; // just in case
+    } else {
+      _keys[newKeyId] = newKey;
+      _keys[newKeyId].firstUsed = now;
+    }
+  }
+  if ((hasChanged && save) || forceSave) {
+    saveKeys();
+    await compileTranslations();
+    updateStats();
+    publish('parsedSrcFiles');
+  }
 }
 
 // ==============================================

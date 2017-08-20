@@ -73,7 +73,7 @@ const getRegexps = (
   return out;
 };
 
-const parse = ({
+const parseAll = ({
   srcPaths,
   srcExtensions,
   msgFunctionNames,
@@ -94,15 +94,37 @@ const parse = ({
       return srcExtensions.indexOf(path.extname(filePath)) >= 0;
     },
   };
-  const diveProcess = (err, filePath) => {
-    const finalFilePath = path.normalize(filePath);
-    story.info('parser', `Processing ${chalk.cyan.bold(finalFilePath)}...`);
-    const fileContents = fs.readFileSync(finalFilePath, 'utf8');
-    parseWithRegexps(keys, finalFilePath, fileContents, regexps);
-    if (fReactIntl) parseReactIntl(keys, finalFilePath, fileContents, story);
-  };
-  srcPaths.forEach(srcPath => diveSync(srcPath, diveOptions, diveProcess));
+  srcPaths.forEach(srcPath =>
+    diveSync(srcPath, diveOptions, (err, filePath) => {
+      parseFile(filePath, keys, { regexps, story });
+    })
+  );
   return keys;
+};
+
+const parseOne = ({
+  filePath,
+  msgFunctionNames,
+  msgRegexps,
+  story,
+}: {|
+  filePath: string,
+  msgFunctionNames: Array<string>,
+  msgRegexps: Array<string>,
+  story: StoryT,
+|}): MapOf<InternalKeyT> => {
+  const regexps = getRegexps(msgFunctionNames, msgRegexps);
+  const keys = {};
+  parseFile(filePath, keys, { regexps, story });
+  return keys;
+};
+
+const parseFile = (filePath, keys, { regexps, story }) => {
+  const finalFilePath = path.normalize(filePath);
+  story.info('parser', `Processing ${chalk.cyan.bold(finalFilePath)}...`);
+  const fileContents = fs.readFileSync(finalFilePath, 'utf8');
+  parseWithRegexps(keys, finalFilePath, fileContents, regexps);
+  if (fReactIntl) parseReactIntl(keys, finalFilePath, fileContents, story);
 };
 
 const parseWithRegexps = (
@@ -176,10 +198,12 @@ const addMessageToKeys = (
 // ======================================================
 // Public API
 // ======================================================
-export default parse;
+export default parseAll;
 
-// Only for unit tests
 export {
+  parseAll,
+  parseOne,
+  // Only for unit tests
   getRegexps as _getRegexps,
   parseWithRegexps as _parseWithRegexps,
   parseReactIntl as _parseReactIntl,
