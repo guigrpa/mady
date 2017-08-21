@@ -7,6 +7,7 @@ import fs from 'fs-extra';
 import { addDefaults, merge } from 'timm';
 import { mainStory, chalk } from 'storyboard';
 import uuid from 'uuid';
+import debounce from 'lodash/debounce';
 import { base64ToUtf8 } from '../common/base64';
 import type {
   MapOf,
@@ -23,8 +24,11 @@ import collectJsonTranslations from './collectJsonTranslations';
 import * as importers from './importData';
 import { publish } from './subscriptions';
 import { init as initFileWatcher } from './fileWatcher';
+import googleTranslate from './googleTranslate';
 
 const DB_VERSION = 2;
+const DEBOUNCE_SAVE = 2000;
+const DEBOUNCE_COMPILE = 2000;
 
 const DEFAULT_CONFIG = {
   srcPaths: ['src'],
@@ -56,6 +60,7 @@ function init(options: { fRecompile: boolean, localeDir: string }) {
   initLocaleDir(options);
   const fMigrated = initConfig();
   initKeys();
+  initAutoTranslations();
   initTranslations();
   initStats();
   if (fMigrated || options.fRecompile) compileTranslations();
@@ -149,7 +154,7 @@ async function updateConfig(
   _config = updatedConfig;
   story.debug('db', 'New config:', { attach: updatedConfig });
   saveConfig({ story });
-  await compileTranslations({ story });
+  compileTranslations({ story });
   await delay(RESPONSE_DELAY);
   publish('updatedConfig', { config: updatedConfig });
   updateStats();
@@ -211,7 +216,7 @@ async function createKey(newAttrs: Object): Promise<?InternalKeyT> {
   };
   _keys[id] = newKey;
   saveKeys();
-  await compileTranslations();
+  compileTranslations();
   publish('createdKey', { key: newKey });
   updateStats();
   return newKey;
@@ -221,13 +226,16 @@ async function updateKey(id: string, newAttrs: Object): Promise<?InternalKeyT> {
   const updatedKey = merge(_keys[id], newAttrs);
   _keys[id] = updatedKey;
   saveKeys();
-  await compileTranslations();
+  compileTranslations();
   await delay(RESPONSE_DELAY);
   publish('updatedKey', { key: updatedKey });
   updateStats();
   return updatedKey;
 }
 
+// ==============================================
+// Parsing and delta-parsing
+// ==============================================
 async function parseSrcFiles({ story }: { story: StoryT }) {
   const { srcPaths, srcExtensions, msgFunctionNames, msgRegexps } = _config;
   const curKeys = parseAll({
@@ -277,9 +285,15 @@ async function parseSrcFiles({ story }: { story: StoryT }) {
   }
 
   saveKeys({ story });
-  await compileTranslations({ story });
+  compileTranslations({ story });
   updateStats();
   publish('parsedSrcFiles');
+
+  // Try to add automatic translations
+  newKeys.forEach(keyId => {
+    fetchAutomaticTranslationsForKey(keyId, { story });
+  });
+
   return _keys;
 }
 
@@ -300,7 +314,7 @@ async function onSrcFileDeleted(
   }
   if (hasChanged && save) {
     saveKeys();
-    await compileTranslations();
+    compileTranslations();
     updateStats();
     publish('parsedSrcFiles');
   }
@@ -334,10 +348,29 @@ async function onSrcFileAdded(
   }
   if ((hasChanged && save) || forceSave) {
     saveKeys();
-    await compileTranslations();
+    compileTranslations();
     updateStats();
     publish('parsedSrcFiles');
   }
+
+  // Try to add automatic translations
+  newKeyIds.forEach(keyId => {
+    fetchAutomaticTranslationsForKey(keyId, { story: mainStory });
+  });
+}
+
+function fetchAutomaticTranslationsForKey(
+  keyId: string,
+  { story }: { story: StoryT }
+) {
+  const key = _keys[keyId];
+  const { text } = key;
+  _config.langs.forEach(async lang => {
+    const translation = await getAutoTranslation(text, lang);
+    if (translation != null) {
+      createTranslation({ lang, translation, fuzzy: true, keyId }, { story });
+    }
+  });
 }
 
 // ==============================================
@@ -437,7 +470,7 @@ async function createTranslation(
   };
   _translations[id] = newTranslation;
   saveTranslations(lang, { story });
-  await compileTranslations({ story });
+  compileTranslations({ story });
   await delay(RESPONSE_DELAY);
   publish('createdTranslation', { translation: newTranslation });
   updateStats();
@@ -452,16 +485,14 @@ async function updateTranslation(
   const updatedTranslation = merge(_translations[id], newAttrs);
   _translations[id] = updatedTranslation;
   saveTranslations(updatedTranslation.lang, { story });
-  await compileTranslations({ story });
+  compileTranslations({ story });
   await delay(RESPONSE_DELAY);
   publish('updatedTranslation', { translation: updatedTranslation });
   updateStats();
   return updatedTranslation;
 }
 
-async function compileTranslations(
-  { story: baseStory }: { story?: StoryT } = {}
-): Promise<*> {
+function compileTranslations0({ story: baseStory }: { story?: StoryT } = {}) {
   const story = (baseStory || mainStory)
     .child({ src: 'db', title: 'Compile translations' });
   const keys = {};
@@ -513,11 +544,11 @@ async function compileTranslations(
     });
   } catch (err) {
     story.error('db', 'Could not compile translations:', { attach: err });
-    throw err;
   } finally {
     story.close();
   }
 }
+const compileTranslations = debounce(compileTranslations0, DEBOUNCE_COMPILE);
 
 function getAllTranslations(
   langs: Array<string>
@@ -606,6 +637,52 @@ function getParentTranslations(
     out = out.concat(langStructure[tmpLang].translations);
   }
   return out;
+}
+
+// ==============================================
+// Auto translations
+// ==============================================
+let _autoTranslationsPath: string;
+let _autoTranslations: MapOf<string> = {}; // cache, saved to file
+
+function initAutoTranslations() {
+  _autoTranslationsPath = path.join(_localeDir, 'autoTranslations.json');
+  try {
+    fs.statSync(_autoTranslationsPath);
+  } catch (err) {
+    saveAutoTranslations();
+  } finally {
+    mainStory.info(
+      'db',
+      `Reading file ${chalk.cyan.bold(_autoTranslationsPath)}...`
+    );
+    readGoogleCache();
+  }
+}
+
+function readGoogleCache() {
+  _autoTranslations = readJson(_autoTranslationsPath);
+}
+
+function saveAutoTranslations(options?: Object) {
+  saveJson(_autoTranslationsPath, _autoTranslations, options);
+}
+const debouncedSaveAutoTranslations = debounce(
+  saveAutoTranslations,
+  DEBOUNCE_SAVE
+);
+
+async function getAutoTranslation(text: string, lang: string) {
+  const cacheKey = `${lang}:::::${text}`;
+  let translation = _autoTranslations[cacheKey];
+  if (translation) return translation;
+  translation = await googleTranslate(text, {
+    languageCodeTo: lang,
+  });
+  if (translation == null) return translation;
+  _autoTranslations[cacheKey] = translation;
+  debouncedSaveAutoTranslations();
+  return translation;
 }
 
 // ==============================================

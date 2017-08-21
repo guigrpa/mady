@@ -1,4 +1,11 @@
-* Improvement: Add Google Translate (triggers for all new keys and languages, sent to users asynchronously)
+* Add Google Translate:
+    - [x] For all new keys, discovered:
+        - [x] Upon full parse
+        - [x] Upon delta parse
+    - [ ] Do not ask for translations for MessageFormat (with braces)
+    - [ ] For all added languages in config
+    - [ ] Add config (Google API key, instead of per-message token!!)
+    - [ ] Docs
 * Improvement: Show error when user specifies a language that doesn't exist
 * Improvement: Use Giu's DataTable
 * Bugfix: Fix Jest running: it never stops when testing locally (it does in Travis)

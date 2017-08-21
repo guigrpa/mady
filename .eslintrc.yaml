@@ -48,6 +48,7 @@ rules:
   jsx-a11y/href-no-hash: off
   jsx-a11y/label-has-for: off
 globals:
+  fetch: false
   # Flow
   SyntheticEvent: false
   SyntheticKeyboardEvent: false
