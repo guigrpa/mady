@@ -4,7 +4,16 @@ import React from 'react';
 import Relay, { graphql } from 'react-relay';
 import MessageFormat from 'messageformat';
 import { mainStory } from 'storyboard';
-import { cancelEvent, Icon, Textarea, KEYS, hoverable } from 'giu';
+import {
+  cancelEvent,
+  Icon,
+  Textarea,
+  KEYS,
+  IS_IOS,
+  hoverable,
+  floatAdd,
+  floatDelete,
+} from 'giu';
 import type { Command } from 'giu/lib/gral/types';
 import type { KeyT, TranslationT, HoverableProps } from '../../common/types';
 import _t from '../../translate';
@@ -48,6 +57,12 @@ type Props = {
   ...$Exact<HoverableProps>,
 };
 
+type State = {
+  fEditing: boolean,
+  fDismissedHelp: boolean,
+  cmds: Array<Command>,
+};
+
 const gqlFragments = graphql`
   fragment eeTranslation_theKey on Key {
     id
@@ -68,12 +83,10 @@ const gqlFragments = graphql`
 // ==========================================
 class Translation extends React.Component {
   props: Props;
-  state: {
-    fEditing: boolean,
-    fDismissedHelp: boolean,
-    cmds: Array<Command>,
-  };
+  state: State;
   refInput: ?Object;
+  refInputWrapper: ?Object;
+  helpFloatId: ?string;
 
   constructor(props: Props) {
     super(props);
@@ -82,6 +95,20 @@ class Translation extends React.Component {
       fDismissedHelp: false,
       cmds: [],
     };
+  }
+
+  componentWillUnmount() {
+    if (this.helpFloatId != null) floatDelete(this.helpFloatId);
+  }
+
+  componentDidUpdate(prevProps: Props, prevState: State) {
+    const { fEditing, fDismissedHelp } = this.state;
+    if (
+      fEditing !== prevState.fEditing ||
+      fDismissedHelp !== prevState.fDismissedHelp
+    ) {
+      this.renderHelpFloat();
+    }
   }
 
   // ------------------------------------------
@@ -96,7 +123,6 @@ class Translation extends React.Component {
       >
         {this.renderTranslation()}
         {this.renderButtons()}
-        {this.renderHelp()}
       </div>
     );
   }
@@ -106,21 +132,29 @@ class Translation extends React.Component {
     const { cmds } = this.state;
     // const fUpdating = translation && relay.hasOptimisticUpdate(translation);
     return (
-      <Textarea
+      <div
         ref={c => {
-          this.refInput = c;
+          this.refInputWrapper = c;
         }}
-        value={
-          translation && !translation.isDeleted ? translation.translation : null
-        }
-        validators={[validateTranslation(lang)]}
-        onFocus={this.onFocus}
-        onBlur={this.onBlur}
-        onKeyDown={this.onKeyDown}
-        onKeyUp={this.onKeyUp}
-        cmds={cmds}
-        style={style.textareaBase(this.state)}
-      />
+      >
+        <Textarea
+          ref={c => {
+            this.refInput = c;
+          }}
+          value={
+            translation && !translation.isDeleted
+              ? translation.translation
+              : null
+          }
+          validators={[validateTranslation(lang)]}
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}
+          onKeyDown={this.onKeyDown}
+          onKeyUp={this.onKeyUp}
+          cmds={cmds}
+          style={style.textareaBase(this.state)}
+        />
+      </div>
     );
   }
 
@@ -172,13 +206,38 @@ class Translation extends React.Component {
   }
 
   renderHelp() {
-    if (!this.state.fEditing || this.state.fDismissedHelp) return null;
     return (
       <div onMouseEnter={this.onHoverHelp} style={style.help}>
         {_t('translationHelp_Click outside or TAB to save. ESC to undo.')}
       </div>
     );
   }
+
+  renderHelpFloat = () => {
+    if (IS_IOS) return;
+    const { fEditing, fDismissedHelp } = this.state;
+    const fShouldShow = fEditing && !fDismissedHelp;
+
+    // Remove float
+    if (!fShouldShow && this.helpFloatId != null) {
+      floatDelete(this.helpFloatId);
+      this.helpFloatId = null;
+      return;
+    }
+
+    // Create or update float
+    if (fShouldShow && this.helpFloatId == null) {
+      const floatOptions = {
+        position: 'above',
+        align: 'right',
+        zIndex: 1,
+        getAnchorNode: () => this.refInputWrapper,
+        children: this.renderHelp(),
+        noStyleShadow: true,
+      };
+      this.helpFloatId = floatAdd(floatOptions);
+    }
+  };
 
   // ------------------------------------------
   // Handlers
@@ -305,7 +364,7 @@ const style = {
   outer: {
     paddingRight: 56,
     marginBottom: -2,
-    position: 'relative',
+    // position: 'relative',
   },
   textareaBase: ({ fEditing }) => ({
     padding: 0,
@@ -327,9 +386,9 @@ const style = {
     color: button ? (active ? 'black' : COLORS.dim) : 'orange',
   }),
   help: {
-    position: 'absolute',
-    bottom: '100%',
-    right: -5,
+    // position: 'absolute',
+    // bottom: '100%',
+    // right: -5,
     margin: '0 0 2px 0',
     padding: '0px 4px',
     background: COLORS.darkest,

@@ -4,7 +4,13 @@
 import timm from 'timm';
 import React from 'react';
 import Relay, { graphql } from 'react-relay';
-import { flexItem, flexContainer, Icon, LargeMessage } from 'giu';
+import {
+  flexItem,
+  flexContainer,
+  Icon,
+  LargeMessage,
+  floatReposition,
+} from 'giu';
 import type { ViewerT, KeyT } from '../../common/types';
 import { cookieGet, cookieSet } from '../gral/storage';
 import type { KeyFilter } from '../gral/types';
@@ -122,7 +128,7 @@ class Translator extends React.Component {
   renderBody() {
     const keys = this.getKeys();
     return (
-      <div className="tableBody" style={style.body}>
+      <div className="tableBody" style={style.body} onScroll={floatReposition}>
         {keys.map(this.renderKeyRow)}
         {this.renderFillerRow()}
       </div>
