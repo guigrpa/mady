@@ -69,6 +69,7 @@ exports[`Translator 01 no content 1`] = `
     </div>
     <div
       className="tableBody"
+      onScroll={[Function]}
       style={
         Object {
           "WebkitFlex": 1,
@@ -255,6 +256,7 @@ exports[`Translator 02 selected row 1`] = `
     </div>
     <div
       className="tableBody"
+      onScroll={[Function]}
       style={
         Object {
           "WebkitFlex": 1,
@@ -554,6 +556,7 @@ exports[`Translator 03 default columns 1`] = `
     </div>
     <div
       className="tableBody"
+      onScroll={[Function]}
       style={
         Object {
           "WebkitFlex": 1,
@@ -851,6 +854,7 @@ exports[`Translator 04 fixed columns 1`] = `
     </div>
     <div
       className="tableBody"
+      onScroll={[Function]}
       style={
         Object {
           "WebkitFlex": 1,
@@ -1164,6 +1168,7 @@ exports[`Translator 05 add column (it must correspond to a new language) 1`] = `
     </div>
     <div
       className="tableBody"
+      onScroll={[Function]}
       style={
         Object {
           "WebkitFlex": 1,
@@ -1490,6 +1495,7 @@ exports[`Translator 06 remove column 1`] = `
     </div>
     <div
       className="tableBody"
+      onScroll={[Function]}
       style={
         Object {
           "WebkitFlex": 1,
@@ -1787,6 +1793,7 @@ exports[`Translator 07 change column language 1`] = `
     </div>
     <div
       className="tableBody"
+      onScroll={[Function]}
       style={
         Object {
           "WebkitFlex": 1,
@@ -2099,6 +2106,7 @@ exports[`Translator 07 change column language 2`] = `
     </div>
     <div
       className="tableBody"
+      onScroll={[Function]}
       style={
         Object {
           "WebkitFlex": 1,
@@ -2410,6 +2418,7 @@ exports[`Translator 07 change column language 3`] = `
     </div>
     <div
       className="tableBody"
+      onScroll={[Function]}
       style={
         Object {
           "WebkitFlex": 1,
@@ -2688,6 +2697,7 @@ exports[`Translator 10 applies UNUSED filter 1`] = `
     </div>
     <div
       className="tableBody"
+      onScroll={[Function]}
       style={
         Object {
           "WebkitFlex": 1,
@@ -2899,6 +2909,7 @@ exports[`Translator 11 applies UNTRANSLATED filter 1`] = `
     </div>
     <div
       className="tableBody"
+      onScroll={[Function]}
       style={
         Object {
           "WebkitFlex": 1,
@@ -3110,6 +3121,7 @@ exports[`Translator 12 applies FUZZY filter 1`] = `
     </div>
     <div
       className="tableBody"
+      onScroll={[Function]}
       style={
         Object {
           "WebkitFlex": 1,
@@ -3310,6 +3322,7 @@ exports[`Translator 12 applies FUZZY filter only over shown languages 1`] = `
     </div>
     <div
       className="tableBody"
+      onScroll={[Function]}
       style={
         Object {
           "WebkitFlex": 1,
