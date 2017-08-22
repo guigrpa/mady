@@ -47,7 +47,7 @@
     "compile:relay": "yarn compile:schema && relay-compiler --src ./src --schema ./src/common/gqlSchema.graphql",
     "compile:relayWatch": "yarn compile:relay -- --watch",
     "compile:schema": "node lib/server/graphql/updateSchema",
-    "build": "yarn lint && yarn flow && yarn compile && yarn buildClient && yarn buildSsr && yarn test && yarn docs && yarn xxl",
+    "build": "yarn lint && yarn flow && yarn compile && yarn buildClient && yarn test && yarn docs && yarn xxl",
     "buildSsr": "yarn build:copyPublic && yarn build:webpack -- -p --env.NODE_ENV=production --env.SERVER_SIDE_RENDERING=true",
     "buildSsrWatch": "yarn build:copyPublic && yarn build:webpack -- -w --env.SERVER_SIDE_RENDERING=true",
     "buildClient": "yarn build:copyPublic && yarn build:webpack -- -p --env.NODE_ENV=production",
@@ -153,7 +153,6 @@
     "react-relay": "^1.2.0",
     "react-test-renderer": "^15.6.1",
     "relay-compiler": "^1.2.0",
-    "relay-query-lookup-renderer": "1.0.1",
     "relay-runtime": "^1.2.0",
     "sass-loader": "6.0.6",
     "storyboard-listener-browser-extension": "^3.0.0",
@@ -173,14 +172,8 @@
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/test/emptyString.js"
     },
     "coverageDirectory": ".nyc_output",
-    "coverageReporters": [
-      "json",
-      "text",
-      "html"
-    ],
-    "snapshotSerializers": [
-      "<rootDir>/node_modules/jest-html"
-    ],
+    "coverageReporters": ["json", "text", "html"],
+    "snapshotSerializers": ["<rootDir>/node_modules/jest-html"],
     "collectCoverageFrom": [
       "src/**/*.js",
       "!**/node_modules/**",

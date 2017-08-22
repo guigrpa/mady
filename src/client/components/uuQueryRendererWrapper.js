@@ -1,8 +1,7 @@
 // @flow
 
 import React from 'react';
-import QueryLookupRenderer from 'relay-query-lookup-renderer';
-// import { QueryRenderer } from 'react-relay';
+import { QueryRenderer } from 'react-relay';
 import { Spinner, LargeMessage } from 'giu';
 import _t from '../../translate';
 import { getEnvironment } from '../gral/relay';
@@ -23,8 +22,7 @@ const QueryRendererWrapper = ({
   renderDuringLoad,
   ...props
 }: Props) =>
-  <QueryLookupRenderer
-    lookup
+  <QueryRenderer
     environment={relayEnvironment || getEnvironment()}
     query={query}
     variables={vars}

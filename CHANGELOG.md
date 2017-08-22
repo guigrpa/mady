@@ -1,3 +1,5 @@
+* Bugfix: Fix strange behaviour in Production after 3 different key selections — remove `relay-query-lookup-renderer` and SSR (for the time being).
+
 ## 2.7.0 (2017-8-22)
 
 * Generate **automatic translations** whenever new messages or languages are added to the database. All automatic translations are automatically flagged as dubious.
