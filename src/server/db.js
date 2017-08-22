@@ -29,6 +29,7 @@ import autoTranslate from './autoTranslate';
 const DB_VERSION = 2;
 const DEBOUNCE_SAVE = 2000;
 const DEBOUNCE_COMPILE = 2000;
+const { UNIT_TESTING } = process.env;
 
 const DEFAULT_CONFIG = {
   srcPaths: ['src'],
@@ -63,7 +64,7 @@ function init(options: { fRecompile: boolean, localeDir: string }) {
   initAutoTranslations();
   initTranslations();
   initStats();
-  if (fMigrated || options.fRecompile) compileTranslations();
+  if (fMigrated || options.fRecompile) debouncedCompileTranslations();
 }
 
 // ==============================================
@@ -150,33 +151,33 @@ async function updateConfig(
   newAttrs: Object,
   { story }: { story: StoryT }
 ): Promise<InternalConfigT> {
-  const prevLangs = _config.langs;
+  // const prevLangs = _config.langs;
   const updatedConfig = merge(_config, newAttrs);
   _config = updatedConfig;
   story.debug('db', 'New config:', { attach: updatedConfig });
   saveConfig({ story });
-  compileTranslations({ story });
+  debouncedCompileTranslations({ story });
   await delay(RESPONSE_DELAY);
   publish('updatedConfig', { config: updatedConfig });
   updateStats();
 
-  // If new langs have been added, add automatic translations
-  const langs = _config.langs;
-  let hasNewLangs = false;
-  for (let i = 0; i < langs.length; i++) {
-    const lang = langs[i];
-    if (prevLangs.indexOf(lang) < 0) {
-      hasNewLangs = true;
-      break;
-    }
-  }
-  if (hasNewLangs) {
-    const keyIds = Object.keys(_keys);
-    story.info('db', 'Fetching auto translations for new languages...');
-    keyIds.forEach(keyId => {
-      fetchAutomaticTranslationsForKey(keyId, { story });
-    });
-  }
+  // // If new langs have been added, add automatic translations
+  // const langs = _config.langs;
+  // let hasNewLangs = false;
+  // for (let i = 0; i < langs.length; i++) {
+  //   const lang = langs[i];
+  //   if (prevLangs.indexOf(lang) < 0) {
+  //     hasNewLangs = true;
+  //     break;
+  //   }
+  // }
+  // if (hasNewLangs) {
+  //   const keyIds = Object.keys(_keys);
+  //   story.info('db', 'Fetching auto translations for new languages...');
+  //   keyIds.forEach(keyId => {
+  //     fetchAutomaticTranslationsForKey(keyId, { story });
+  //   });
+  // }
   return updatedConfig;
 }
 
@@ -235,7 +236,7 @@ async function createKey(newAttrs: Object): Promise<?InternalKeyT> {
   };
   _keys[id] = newKey;
   saveKeys();
-  compileTranslations();
+  debouncedCompileTranslations();
   publish('createdKey', { key: newKey });
   updateStats();
   return newKey;
@@ -245,7 +246,7 @@ async function updateKey(id: string, newAttrs: Object): Promise<?InternalKeyT> {
   const updatedKey = merge(_keys[id], newAttrs);
   _keys[id] = updatedKey;
   saveKeys();
-  compileTranslations();
+  debouncedCompileTranslations();
   await delay(RESPONSE_DELAY);
   publish('updatedKey', { key: updatedKey });
   updateStats();
@@ -304,7 +305,7 @@ async function parseSrcFiles({ story }: { story: StoryT }) {
   }
 
   saveKeys({ story });
-  compileTranslations({ story });
+  debouncedCompileTranslations({ story });
   updateStats();
   publish('parsedSrcFiles');
 
@@ -334,7 +335,7 @@ async function onSrcFileDeleted(
   }
   if (hasChanged && save) {
     saveKeys();
-    compileTranslations();
+    debouncedCompileTranslations();
     updateStats();
     publish('parsedSrcFiles');
   }
@@ -368,7 +369,7 @@ async function onSrcFileAdded(
   }
   if ((hasChanged && save) || forceSave) {
     saveKeys();
-    compileTranslations();
+    debouncedCompileTranslations();
     updateStats();
     publish('parsedSrcFiles');
   }
@@ -500,7 +501,7 @@ async function createTranslation(
   };
   _translations[id] = newTranslation;
   saveTranslations(lang, { story });
-  compileTranslations({ story });
+  debouncedCompileTranslations({ story });
   await delay(RESPONSE_DELAY);
   publish('createdTranslation', { translation: newTranslation });
   updateStats();
@@ -515,14 +516,14 @@ async function updateTranslation(
   const updatedTranslation = merge(_translations[id], newAttrs);
   _translations[id] = updatedTranslation;
   saveTranslations(updatedTranslation.lang, { story });
-  compileTranslations({ story });
+  debouncedCompileTranslations({ story });
   await delay(RESPONSE_DELAY);
   publish('updatedTranslation', { translation: updatedTranslation });
   updateStats();
   return updatedTranslation;
 }
 
-function compileTranslations0({ story: baseStory }: { story?: StoryT } = {}) {
+function compileTranslations({ story: baseStory }: { story?: StoryT } = {}) {
   const story = (baseStory || mainStory)
     .child({ src: 'db', title: 'Compile translations' });
   const keys = {};
@@ -578,7 +579,9 @@ function compileTranslations0({ story: baseStory }: { story?: StoryT } = {}) {
     story.close();
   }
 }
-const compileTranslations = debounce(compileTranslations0, DEBOUNCE_COMPILE);
+const debouncedCompileTranslations = UNIT_TESTING
+  ? compileTranslations
+  : debounce(compileTranslations, DEBOUNCE_COMPILE);
 
 function getAllTranslations(
   langs: Array<string>
@@ -608,7 +611,7 @@ function getAllTranslations(
   // - Add ancestor translations (including those coming up from other branches)
   // - Add own translations
   // This algorithm may result in multiple translations for the same key, but the latest one
-  // should have higher priority (this is used by `compileTranslations()` during flattening).
+  // should have higher priority (this is used by `debouncedCompileTranslations()` during flattening).
   // Higher priority is guaranteed by the order in which languages are processed,
   // and the order in which translations are added to the array.
   const allLangs = Object.keys(langStructure).sort();
@@ -697,10 +700,9 @@ function readGoogleCache() {
 function saveAutoTranslations(options?: Object) {
   saveJson(_autoTranslationsPath, _autoTranslations, options);
 }
-const debouncedSaveAutoTranslations = debounce(
-  saveAutoTranslations,
-  DEBOUNCE_SAVE
-);
+const debouncedSaveAutoTranslations = UNIT_TESTING
+  ? saveAutoTranslations
+  : debounce(saveAutoTranslations, DEBOUNCE_SAVE);
 
 async function getAutoTranslation(text: string, lang: string) {
   const cacheKey = `${lang}:::::${text}`;
@@ -786,7 +788,7 @@ function importV0(dir: string) {
       saveTranslations(lang, { story });
     });
   }
-  compileTranslations();
+  debouncedCompileTranslations();
   story.close();
 }
 
@@ -836,7 +838,7 @@ export {
   updateTranslation,
   getStats,
   parseSrcFiles,
-  compileTranslations,
+  debouncedCompileTranslations,
   importV0,
   saveJson,
   // Only for unit tests

@@ -1,1 +1,1 @@
-// Nothing for the moment
+process.env.UNIT_TESTING = true;
