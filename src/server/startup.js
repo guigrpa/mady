@@ -21,6 +21,11 @@ process.on('SIGINT', () => {
   process.exit(0);
 });
 
+process.on('unhandledRejection', err => {
+  console.error(err); // eslint-disable-line
+  process.exit(1);
+});
+
 // ==============================================
 // Main
 // ==============================================
@@ -54,4 +59,6 @@ if (cliOptions.importV0) {
   const socketServer = socketInit({ httpServer, gqlSchema });
   addListener(wsServerListener, { socketServer });
 }
-opn(`http://localhost:${cliOptions.port}/`);
+opn(`http://localhost:${cliOptions.port}/`).catch(err => {
+  mainStory.error('OPN error', { attach: err });
+});
