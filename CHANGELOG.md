@@ -1,3 +1,5 @@
+## 2.7.3 (2017-8-22)
+
 ## 2.7.2 (2017-8-22)
 
 * Bugfix: fetch automatic translations also when a new language is added (disabled accidentally).
