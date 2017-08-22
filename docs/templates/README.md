@@ -17,10 +17,11 @@ Remember: this is not only for translation! Even if you only use English, you ma
 
 ## Why?
 
-* **Easy-to-use tool for parsing source files, adding locales, editing translations, comparing locales side-by-side, filtering missing/dubious/unused translations, and compiling to (optionally minified) JavaScript modules**.
-* Use it also as a library: a no-frills translation function to run the compiled language modules.
+* **Easy-to-use tool for parsing source files, editing translations, comparing languages side-by-side, filtering missing/dubious/unused translations, and compiling to (optionally minified) JavaScript modules**.
+* A **translation function** to run the compiled language modules, which also includes language inheritance (e.g. `es-ES` will inherit translations from `es`).
 * **[React Intl](https://github.com/yahoo/react-intl) interoperability**, both for message extraction and translation injection.
 * **Multi-user support**: multiple users can work simultaneously, with changes pushed in real time to all of them.
+* **Automatic translations**: Mady suggests automatic translations as soon as new messages or languages are added to its database.
 * **Ultra-fast parsing**: Mady watches your application folders and parses files as they are added, changed or deleted, then pushes all changes to the connected users. No more waiting for the parsing spinner to stop!
 * **MessageFormat messages**: while it does not solve all the problems in the huge field of i18n, MessageFormat is a much more powerful tool than the conventional gettext (IMHO).
 * **Full UNICODE support**: messages and translations can include any UNICODE character. In other words, you can now translate 👍 (en) as 👏 (es-ES) and then 💃 (es-ES-andalusia)!

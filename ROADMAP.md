@@ -1,5 +1,3 @@
-* Add Google Translate:
-    - [ ] Docs
 * Improvement: Show error when user specifies a language that doesn't exist
 * Improvement: Use Giu's DataTable
 * Bugfix: Fix Jest running: it never stops when testing locally (it does in Travis)
