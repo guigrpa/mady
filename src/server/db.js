@@ -151,7 +151,7 @@ async function updateConfig(
   newAttrs: Object,
   { story }: { story: StoryT }
 ): Promise<InternalConfigT> {
-  // const prevLangs = _config.langs;
+  const prevLangs = _config.langs;
   const updatedConfig = merge(_config, newAttrs);
   _config = updatedConfig;
   story.debug('db', 'New config:', { attach: updatedConfig });
@@ -161,23 +161,23 @@ async function updateConfig(
   publish('updatedConfig', { config: updatedConfig });
   updateStats();
 
-  // // If new langs have been added, add automatic translations
-  // const langs = _config.langs;
-  // let hasNewLangs = false;
-  // for (let i = 0; i < langs.length; i++) {
-  //   const lang = langs[i];
-  //   if (prevLangs.indexOf(lang) < 0) {
-  //     hasNewLangs = true;
-  //     break;
-  //   }
-  // }
-  // if (hasNewLangs) {
-  //   const keyIds = Object.keys(_keys);
-  //   story.info('db', 'Fetching auto translations for new languages...');
-  //   keyIds.forEach(keyId => {
-  //     fetchAutomaticTranslationsForKey(keyId, { story });
-  //   });
-  // }
+  // If new langs have been added, add automatic translations
+  const langs = _config.langs;
+  let hasNewLangs = false;
+  for (let i = 0; i < langs.length; i++) {
+    const lang = langs[i];
+    if (prevLangs.indexOf(lang) < 0) {
+      hasNewLangs = true;
+      break;
+    }
+  }
+  if (hasNewLangs) {
+    const keyIds = Object.keys(_keys);
+    story.info('db', 'Fetching auto translations for new languages...');
+    keyIds.forEach(keyId => {
+      fetchAutomaticTranslationsForKey(keyId, { story });
+    });
+  }
   return updatedConfig;
 }
 

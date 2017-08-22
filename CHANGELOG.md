@@ -1,3 +1,5 @@
+* Bugfix: fetch automatic translations also when a new language is added (disabled accidentally).
+
 ## 2.7.1 (2017-8-22)
 
 * Bugfix: Fix strange behaviour in Production after 3 different key selections — remove `relay-query-lookup-renderer` and SSR (for the time being).
