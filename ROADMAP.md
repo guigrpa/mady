@@ -1,5 +1,4 @@
 * Add Google Translate:
-    - [ ] Add config (Google API key, instead of per-message token!!)
     - [ ] Docs
 * Improvement: Show error when user specifies a language that doesn't exist
 * Improvement: Use Giu's DataTable

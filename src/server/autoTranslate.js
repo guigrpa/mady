@@ -10,25 +10,17 @@ import { mainStory } from 'storyboard';
 type Options = {|
   languageCodeFrom?: string,
   languageCodeTo: string,
-  tokenName?: string,
-  tokenValue?: string,
 |};
 
 const GOOGLE_TRANSLATE_URL = 'https://translate.google.com/translate_a/single';
 
 const translate = async (
   text: string,
-  { languageCodeFrom, languageCodeTo, tokenName, tokenValue }: Options
+  { languageCodeFrom, languageCodeTo }: Options
 ) => {
   try {
     // Get token
-    let googleToken;
-    if (tokenName && tokenValue) {
-      googleToken = { name: tokenName, value: tokenValue };
-    }
-    if (!googleToken && process.env.MADY_DEBUG_GOOGLE_TRANSLATE) {
-      googleToken = await googleTranslateToken.get(text);
-    }
+    const googleToken = await googleTranslateToken.get(text);
     if (!googleToken) return null;
 
     // Build query
