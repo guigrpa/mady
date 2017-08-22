@@ -1,6 +1,4 @@
 * Add Google Translate:
-    - [x] For all new keys
-    - [ ] For all added languages in config
     - [ ] Add config (Google API key, instead of per-message token!!)
     - [ ] Docs
 * Improvement: Show error when user specifies a language that doesn't exist
