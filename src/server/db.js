@@ -24,7 +24,7 @@ import collectJsonTranslations from './collectJsonTranslations';
 import * as importers from './importData';
 import { publish } from './subscriptions';
 import { init as initFileWatcher } from './fileWatcher';
-import googleTranslate from './googleTranslate';
+import autoTranslate from './autoTranslate';
 
 const DB_VERSION = 2;
 const DEBOUNCE_SAVE = 2000;
@@ -365,7 +365,12 @@ function fetchAutomaticTranslationsForKey(
 ) {
   const key = _keys[keyId];
   const { text } = key;
+
+  // Abort if message has MessageFormat tags (cannot be auto-translated
+  // reliably)
+  if (text.indexOf('{') >= 0) return;
   _config.langs.forEach(async lang => {
+    if (getKeyTranslations(keyId, lang).length) return;
     const translation = await getAutoTranslation(text, lang);
     if (translation != null) {
       createTranslation({ lang, translation, fuzzy: true, keyId }, { story });
@@ -437,13 +442,17 @@ function getLangTranslations(lang: string): Array<InternalTranslationT> {
   return out;
 }
 
-function getKeyTranslations(keyId: string): Array<InternalTranslationT> {
+function getKeyTranslations(
+  keyId: string,
+  lang?: string
+): Array<InternalTranslationT> {
   const out = [];
   Object.keys(_translations).forEach(translationId => {
     const translation = _translations[translationId];
-    if (!translation.isDeleted && translation.keyId === keyId) {
-      out.push(translation);
-    }
+    if (translation.isDeleted) return;
+    if (lang && translation.lang !== lang) return;
+    if (translation.keyId !== keyId) return;
+    out.push(translation);
   });
   return out;
 }
@@ -676,7 +685,7 @@ async function getAutoTranslation(text: string, lang: string) {
   const cacheKey = `${lang}:::::${text}`;
   let translation = _autoTranslations[cacheKey];
   if (translation) return translation;
-  translation = await googleTranslate(text, {
+  translation = await autoTranslate(text, {
     languageCodeTo: lang,
   });
   if (translation == null) return translation;

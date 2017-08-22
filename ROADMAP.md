@@ -1,8 +1,5 @@
 * Add Google Translate:
-    - [x] For all new keys, discovered:
-        - [x] Upon full parse
-        - [x] Upon delta parse
-    - [ ] Do not ask for translations for MessageFormat (with braces)
+    - [x] For all new keys
     - [ ] For all added languages in config
     - [ ] Add config (Google API key, instead of per-message token!!)
     - [ ] Docs
