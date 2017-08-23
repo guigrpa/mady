@@ -33,7 +33,7 @@ const { UNIT_TESTING } = process.env;
 
 const DEFAULT_CONFIG = {
   srcPaths: ['src'],
-  srcExtensions: ['.js', '.jsx', '.coffee', '.cjsx'],
+  srcExtensions: ['.js', '.jsx'],
   langs: ['en'],
   msgFunctionNames: ['_t'],
   msgRegexps: [],
