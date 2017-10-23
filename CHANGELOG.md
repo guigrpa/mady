@@ -1,3 +1,5 @@
+## 2.8.0 (2017-10-23)
+
 * Remove translations from compiled files if the corresponding key no longer exists or is unused.
 * Replace cmd-A shortcut (filter removal) with cmd-shift-A, which causes fewer UX issues.
 * Add `originalLang` config option to prevent automatic translations for original language. For the time being, this option can only be modified at the server side.
