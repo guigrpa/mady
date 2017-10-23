@@ -412,5 +412,12 @@
     "lang": "es",
     "translation": "¡Uy, ha ocurrido un error!",
     "keyId": "ZXJyb3JfT29wcywgYW4gZXJyb3Igb2NjdXJyZWQh"
+  },
+  "bc367a7a-78b8-4b6e-8028-fee9340b4aa6": {
+    "id": "bc367a7a-78b8-4b6e-8028-fee9340b4aa6",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Haz clic fuera o pulsa TAB para guardar. Pulsa ESC para deshacer.",
+    "keyId": "dHJhbnNsYXRpb25IZWxwX0NsaWNrIG91dHNpZGUgb3IgcHJlc3MgVEFCIHRvIHNhdmUuIFByZXNzIEVTQyB0byB1bmRvLg=="
   }
 }
