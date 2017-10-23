@@ -32,20 +32,6 @@ module.exports = anonymous();
 "
 `;
 
-exports[`compileTranslations should include all keys for which a translation is available 1`] = `
-"/* eslint-disable */
-function anonymous() {
-
-return {
-  keyId1: function(d) { return \\"¡Hola!\\"; },
-  keyId4: function(d) { return \\"¡Adiós, \\" + d.NAME + \\"!\\"; }
-}
-};
-module.exports = anonymous();
-/* eslint-enable */
-"
-`;
-
 exports[`compileTranslations should include keys with braces, even if no translation is available 1`] = `
 "/* eslint-disable */
 function anonymous() {
@@ -53,6 +39,19 @@ function anonymous() {
 return {
   keyId3: function(d) { return \\"Hello \\" + d.NAME + \\"!\\"; },
   keyId4: function(d) { return \\"¡Adiós, \\" + d.NAME + \\"!\\"; },
+  keyId1: function(d) { return \\"¡Hola!\\"; }
+}
+};
+module.exports = anonymous();
+/* eslint-enable */
+"
+`;
+
+exports[`compileTranslations should include translations for keys still being used 1`] = `
+"/* eslint-disable */
+function anonymous() {
+
+return {
   keyId1: function(d) { return \\"¡Hola!\\"; }
 }
 };

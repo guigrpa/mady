@@ -18,6 +18,13 @@ const KEYS_WITHOUT_BRACES = {
     sources: ['FILENAME'],
     unusedSince: null,
   },
+  keyId5: {
+    id: 'keyId5',
+    context: 'context',
+    text: 'Hello again!',
+    sources: [],
+    unusedSince: '2010-01-01T10:00:00Z',
+  },
 };
 
 const KEYS_INCLUDING_SOME_WITH_BRACES = merge(KEYS_WITHOUT_BRACES, {
@@ -40,10 +47,11 @@ const KEYS_INCLUDING_SOME_WITH_BRACES = merge(KEYS_WITHOUT_BRACES, {
 const TRANSLATIONS_ARRAY = [
   { keyId: 'keyId1', lang: 'es', translation: '¡Hola!' },
   { keyId: 'keyId4', lang: 'es', translation: '¡Adiós, {NAME}!' },
+  { keyId: 'keyId5', lang: 'es', translation: '¡Hola de nuevo!' },
 ];
 
 describe('compileTranslations', () => {
-  it('should include all keys for which a translation is available', () => {
+  it('should include translations for keys still being used', () => {
     const result = compileTranslations({
       lang: 'es',
       keys: KEYS_WITHOUT_BRACES,

@@ -1,3 +1,4 @@
+* Remove translations from compiled files if the corresponding key no longer exists or is unused.
 * Replace cmd-A shortcut (filter removal) with cmd-shift-A, which causes fewer UX issues.
 
 ## 2.7.2, 2.7.3 (2017-8-22)

@@ -34,7 +34,10 @@ export default function compileTranslations({
     }
   });
   translations.forEach(translation => {
-    finalTranslations[translation.keyId] = translation.translation;
+    const { keyId } = translation;
+    const key = keys[keyId];
+    if (!key || key.unusedSince) return;
+    finalTranslations[keyId] = translation.translation;
   });
   story.debug('compiler', `${logPrefix} Translations prepared`, {
     attach: finalTranslations,
