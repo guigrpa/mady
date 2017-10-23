@@ -25,5 +25,6 @@
   "fJsOutput": true,
   "fMinify": false,
   "fJsonOutput": true,
-  "fReactIntlOutput": true
+  "fReactIntlOutput": true,
+  "originalLang": "en"
 }

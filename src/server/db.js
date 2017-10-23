@@ -35,6 +35,7 @@ const DEFAULT_CONFIG = {
   srcPaths: ['src'],
   srcExtensions: ['.js', '.jsx'],
   langs: ['en'],
+  originalLang: 'en',
   msgFunctionNames: ['_t'],
   msgRegexps: [],
   fMinify: false,
@@ -392,6 +393,7 @@ function fetchAutomaticTranslationsForKey(
   // reliably)
   if (text.indexOf('{') >= 0) return;
   _config.langs.forEach(async lang => {
+    if (lang.startsWith(_config.originalLang)) return;
     if (getKeyTranslations(keyId, lang).length) return;
     const translation = await getAutoTranslation(text, lang);
     if (translation != null) {

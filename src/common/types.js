@@ -32,6 +32,7 @@ export type ConfigT = {
   srcPaths: Array<string>,
   srcExtensions: Array<string>,
   langs: Array<string>,
+  originalLang: string,
   msgFunctionNames: Array<string>,
   msgRegexps: Array<string>,
   fMinify: boolean,
