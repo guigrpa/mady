@@ -41,7 +41,7 @@ class Header extends React.PureComponent {
             ? _t('filter_All (remove filter)')
             : _t('filter_All (no filter)'),
         value: 'ALL',
-        keys: 'mod+a',
+        keys: 'shift+mod+a',
       },
       { label: _t('filter_Unused messages'), value: 'UNUSED', keys: 'mod+u' },
       {
