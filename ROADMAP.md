@@ -4,9 +4,9 @@ Urgent:
 * [x] During source parsing, use `getExtraMessages()` in `/locales`
 * [x] Translations are saved normally, in `${lang}.json`
 * [ ] During compilation:
-    * [ ] Don't consider `isMarkdown`-flagged messages as MessageFormat
+    * [x] Don't consider `isMarkdown`-flagged messages as MessageFormat
     * [ ] Don't include `scope`d keys in the output .js files
-* [ ] **Define better**: Implement `getTranslationsForScope(xxx)` to obtain only the translations of interest. buildDataPackages() can merge those with the ones obtained from `require(`.locales`)`
+    * [ ] Generate a separate `scoped/{scopeName}-{lang}.js` file for each scope
 * [ ] Improve editing of long data. Include markdown preview
 * [ ] [Future] Allow integration with another server:
     * Serve assets

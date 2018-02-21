@@ -3,7 +3,7 @@
 exports[`compileTranslations should allow minification 1`] = `"function anonymous(){return{keyId3:function(n){return\\"Hello \\"+n.NAME+\\"!\\"},keyId4:function(n){return\\"¡Adiós, \\"+n.NAME+\\"!\\"},keyId1:function(n){return\\"¡Hola!\\"}}}module.exports=anonymous();"`;
 
 exports[`compileTranslations should compile a key with plural selection 1`] = `
-"/* eslint-disable */
+"
 function anonymous() {
 var es = function (n, ord) {
   if (ord) return 'other';
@@ -28,12 +28,11 @@ return {
 }
 };
 module.exports = anonymous();
-/* eslint-enable */
 "
 `;
 
 exports[`compileTranslations should include keys with braces, even if no translation is available 1`] = `
-"/* eslint-disable */
+"
 function anonymous() {
 
 return {
@@ -43,12 +42,11 @@ return {
 }
 };
 module.exports = anonymous();
-/* eslint-enable */
 "
 `;
 
 exports[`compileTranslations should include translations for keys still being used 1`] = `
-"/* eslint-disable */
+"
 function anonymous() {
 
 return {
@@ -56,6 +54,5 @@ return {
 }
 };
 module.exports = anonymous();
-/* eslint-enable */
 "
 `;

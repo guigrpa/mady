@@ -26,41 +26,64 @@ export default function compileTranslations({
   const logPrefix = `Lang ${chalk.magenta.bold(lang)}`;
 
   story.info('compiler', `${logPrefix} Preparing translations...`);
-  const finalTranslations = {};
-  // We must always include those keys using curly braces, even if there is no translation
+
+  // =====================================
+  // Prepare messageFormatTranslations and markdownTranslations
+  // =====================================
+  const messageFormatTranslations = {};
+  const markdownTranslations = {};
+
+  // We must always include those keys that are not markdown and
+  // include curly braces, even if there is no translation
   Object.keys(keys).forEach(keyId => {
-    if (keys[keyId].text.indexOf('{') >= 0) {
-      finalTranslations[keyId] = keys[keyId].text;
+    const key = keys[keyId];
+    if (!key.isMarkdown && key.text.indexOf('{') >= 0) {
+      messageFormatTranslations[keyId] = keys[keyId].text;
     }
   });
+
+  // Copy non-deleted translations to either messageFormatTranslations
+  // or markdownTranslations
   translations.forEach(translation => {
     const { keyId } = translation;
     const key = keys[keyId];
     if (!key || key.unusedSince) return;
-    finalTranslations[keyId] = translation.translation;
+    if (key.isMarkdown) {
+      markdownTranslations[keyId] = translation.translation;
+    } else {
+      messageFormatTranslations[keyId] = translation.translation;
+    }
   });
   story.debug('compiler', `${logPrefix} Translations prepared`, {
-    attach: finalTranslations,
+    attach: messageFormatTranslations,
     attachLevel: 'TRACE',
   });
 
+  // =====================================
+  // Compile translation function
+  // =====================================
   story.info('compiler', `${logPrefix} Precompiling...`);
   const mf = new MessageFormat(lang).setIntlSupport(true);
-  let fnTranslate = mf.compile(finalTranslations).toString();
-  /* eslint-disable prefer-template */
-  fnTranslate =
-    '/* eslint-disable */\n' +
-    'function anonymous() {\n' +
-    fnTranslate +
-    '\n};\n' +
-    'module.exports = anonymous();\n' +
-    '/* eslint-enable */\n';
-  /* eslint-enable prefer-template */
+  const fnMessageFormat = mf.compile(messageFormatTranslations).toString();
+  let fnTranslate = `
+function anonymous() {
+${fnMessageFormat}
+};
+module.exports = anonymous();
+`;
+  Object.keys(markdownTranslations).forEach(keyId => {
+    fnTranslate += `module.exports['${keyId}'] = ${JSON.stringify(
+      markdownTranslations[keyId]
+    )}\n`;
+  });
   story.debug('compiler', `${logPrefix} Precompiled`, {
     attach: fnTranslate,
     attachLevel: 'TRACE',
   });
 
+  // =====================================
+  // Minify result
+  // =====================================
   if (fMinify) {
     story.info('compiler', `${logPrefix} Minifying...`);
     fnTranslate = UglifyJS.minify(fnTranslate, { fromString: true }).code;

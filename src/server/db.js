@@ -543,9 +543,13 @@ function compileTranslations({ story: baseStory }: { story?: StoryT } = {}) {
     const { fMinify } = _config;
     const allTranslations = getAllTranslations(_config.langs);
     Object.keys(allTranslations).forEach(lang => {
-      const compiledLangPath = getCompiledLangPath(lang);
       const translations = allTranslations[lang];
+
+      // ---------------------------------
+      // Generate JS output
+      // ---------------------------------
       if (_config.fJsOutput) {
+        const compiledLangPath = getCompiledLangPath(lang);
         const fnTranslate = compile({
           lang,
           keys,
@@ -559,6 +563,10 @@ function compileTranslations({ story: baseStory }: { story?: StoryT } = {}) {
         );
         fs.writeFileSync(compiledLangPath, fnTranslate, 'utf8');
       }
+
+      // ---------------------------------
+      // Generate ReactIntl outputs
+      // ---------------------------------
       if (_config.fReactIntlOutput) {
         const reactIntlLangPath = getReactIntlLangPath(lang);
         const reactIntlTranslations = collectReactIntlTranslations({
@@ -569,6 +577,10 @@ function compileTranslations({ story: baseStory }: { story?: StoryT } = {}) {
         });
         saveJson(reactIntlLangPath, reactIntlTranslations, { story });
       }
+
+      // ---------------------------------
+      // Generate JSON outputs
+      // ---------------------------------
       if (_config.fJsonOutput) {
         const jsonLangPath = getJsonLangPath(lang);
         const jsonTranslations = collectJsonTranslations({
