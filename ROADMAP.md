@@ -9,7 +9,7 @@ Urgent:
     * [x] Generate a separate `scoped/{scopeName}-{lang}.js` file for each scope
 * [ ] Why aren't messages from getExtraMessages() updated, when data.json changes?
 * [ ] Client:
-    * [ ] For isMarkdown keys, don't enforce MessageFormat validation in translations
+    * [x] For isMarkdown keys, don't enforce MessageFormat validation in translations
     * [ ] Improve editing of long data. Include markdown preview
 * [ ] [Future] Allow integration with another server:
     * Serve assets

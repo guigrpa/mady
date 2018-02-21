@@ -22,7 +22,9 @@ import updateTranslation from '../mutations/updateTranslation';
 import { COLORS } from '../gral/constants';
 import { mutate } from './helpers';
 
-const validateTranslation = (lang: string) => (val: string): ?string => {
+const validateMessageFormatSynxtax = (lang: string) => (
+  val: string
+): ?string => {
   const numOpen = val.split('{').length - 1;
   const numClose = val.split('}').length - 1;
   if (numOpen !== numClose) {
@@ -67,6 +69,7 @@ const gqlFragments = graphql`
   fragment eeTranslation_theKey on Key {
     id
     text
+    isMarkdown
   }
 
   fragment eeTranslation_translation on Translation {
@@ -131,6 +134,9 @@ class Translation extends React.Component {
     const { lang, translation } = this.props;
     const { cmds } = this.state;
     // const fUpdating = translation && relay.hasOptimisticUpdate(translation);
+    const validators = this.props.theKey.isMarkdown
+      ? undefined
+      : [validateMessageFormatSynxtax(lang)];
     return (
       <div
         ref={c => {
@@ -146,7 +152,7 @@ class Translation extends React.Component {
               ? translation.translation
               : null
           }
-          validators={[validateTranslation(lang)]}
+          validators={validators}
           onFocus={this.onFocus}
           onBlur={this.onBlur}
           onKeyDown={this.onKeyDown}
@@ -164,33 +170,29 @@ class Translation extends React.Component {
     const elFuzzy =
       translation &&
       !translation.isDeleted &&
-      (interactedWith || translation.fuzzy)
-        ? <Icon
-            icon="warning"
-            title={_t('tooltip_Dubious translation (click to toggle)')}
-            onClick={translation ? this.onClickFuzzy : undefined}
-            style={style.iconFuzzy({
-              button: interactedWith,
-              active: translation.fuzzy,
-            })}
-          />
-        : null;
+      (interactedWith || translation.fuzzy) ? (
+        <Icon
+          icon="warning"
+          title={_t('tooltip_Dubious translation (click to toggle)')}
+          onClick={translation ? this.onClickFuzzy : undefined}
+          style={style.iconFuzzy({
+            button: interactedWith,
+            active: translation.fuzzy,
+          })}
+        />
+      ) : null;
     if (!interactedWith) {
-      return elFuzzy
-        ? <div style={style.buttons}>
-            {elFuzzy}
-          </div>
-        : null;
+      return elFuzzy ? <div style={style.buttons}>{elFuzzy}</div> : null;
     }
     const elDelete =
-      translation && !translation.isDeleted
-        ? <Icon
-            icon="remove"
-            title={_t('tooltip_Delete translation')}
-            onClick={this.onClickDelete}
-            style={style.iconButton}
-          />
-        : null;
+      translation && !translation.isDeleted ? (
+        <Icon
+          icon="remove"
+          title={_t('tooltip_Delete translation')}
+          onClick={this.onClickDelete}
+          style={style.iconButton}
+        />
+      ) : null;
     return (
       <div style={style.buttons}>
         <Icon

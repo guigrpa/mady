@@ -11,6 +11,7 @@ import type {ConcreteFragment} from 'relay-runtime';
 export type eeTranslation_theKey = {|
   +id: string;
   +text: string;
+  +isMarkdown: ?boolean;
 |};
 */
 
@@ -33,6 +34,13 @@ const fragment /*: ConcreteFragment*/ = {
       "alias": null,
       "args": null,
       "name": "text",
+      "storageKey": null
+    },
+    {
+      "kind": "ScalarField",
+      "alias": null,
+      "args": null,
+      "name": "isMarkdown",
       "storageKey": null
     }
   ],
