@@ -28,11 +28,12 @@
     "url": "git+https://github.com/guigrpa/mady.git"
   },
   "_devSetup": {
-    "install": "yarn",
+    "install": "yarn && brew install watchman",
     "term1": "yarn compileWatch",
     "term2": "yarn compile:relayWatch",
     "term3": "yarn buildClientWatch",
-    "term4": "yarn start"
+    "term4": "yarn start",
+    "term5": "yarn jest"
   },
   "scripts": {
     "start": "node lib/server/startup --dir src/locales",
@@ -43,17 +44,17 @@
     "compile:clean": "rm -rf ./lib && mkdir lib",
     "compile:copy": "cp src/api.js.flow lib/translate.js.flow",
     "compile:main": "babel src -d lib --ignore \"src/client/**\",\"**/__mocks__/**\",\"**/__tests__/**\"",
-    "compile:mainWatch": "yarn compile:main -- --watch",
+    "compile:mainWatch": "yarn compile:main --watch",
     "compile:relay": "yarn compile:schema && relay-compiler --src ./src --schema ./src/common/gqlSchema.graphql",
-    "compile:relayWatch": "yarn compile:relay -- --watch",
+    "compile:relayWatch": "yarn compile:relay --watch",
     "compile:schema": "node lib/server/graphql/updateSchema",
     "build": "yarn lint && yarn flow && yarn compile && yarn compile:relay && yarn buildClient && yarn test && yarn docs && yarn xxl",
-    "buildSsr": "yarn build:copyPublic && yarn build:webpack -- -p --env.NODE_ENV=production --env.SERVER_SIDE_RENDERING=true",
-    "buildSsrWatch": "yarn build:copyPublic && yarn build:webpack -- -w --env.SERVER_SIDE_RENDERING=true",
-    "buildClient": "yarn build:copyPublic && yarn build:webpack -- -p --env.NODE_ENV=production",
-    "buildClientWatch": "yarn build:copyPublic && yarn build:webpack -- -w",
-    "buildAnalysis": "yarn build:copyPublic && yarn build:webpack -- --env.ANALYZE_BUNDLE=true",
-    "buildAnalysisProd": "yarn build:copyPublic && yarn build:webpack -- -p --env.NODE_ENV=production --env.ANALYZE_BUNDLE=true",
+    "buildSsr": "yarn build:copyPublic && yarn build:webpack -p --env.NODE_ENV=production --env.SERVER_SIDE_RENDERING=true",
+    "buildSsrWatch": "yarn build:copyPublic && yarn build:webpack -w --env.SERVER_SIDE_RENDERING=true",
+    "buildClient": "yarn build:copyPublic && yarn build:webpack -p --env.NODE_ENV=production",
+    "buildClientWatch": "yarn build:copyPublic && yarn build:webpack -w",
+    "buildAnalysis": "yarn build:copyPublic && yarn build:webpack --env.ANALYZE_BUNDLE=true",
+    "buildAnalysisProd": "yarn build:copyPublic && yarn build:webpack -p --env.NODE_ENV=production --env.ANALYZE_BUNDLE=true",
     "build:copyPublic": "cp -r src/public lib",
     "build:webpack": "webpack --config ./src/webpackConfig.js --color --progress --display-chunks",
     "travis": "yarn compile && yarn test",
@@ -147,7 +148,7 @@
     "null-loader": "0.1.1",
     "nyc": "^11.1.0",
     "oao": "^0.10.4",
-    "prettier": "^1.5.3",
+    "prettier": "^1.10.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-intl": "^2.3.0",
@@ -173,14 +174,8 @@
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/test/emptyString.js"
     },
     "coverageDirectory": ".nyc_output",
-    "coverageReporters": [
-      "json",
-      "text",
-      "html"
-    ],
-    "snapshotSerializers": [
-      "<rootDir>/node_modules/jest-html"
-    ],
+    "coverageReporters": ["json", "text", "html"],
+    "snapshotSerializers": ["<rootDir>/node_modules/jest-html"],
     "collectCoverageFrom": [
       "src/**/*.js",
       "!**/node_modules/**",
