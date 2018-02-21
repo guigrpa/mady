@@ -1,3 +1,7 @@
+* Add support for a `getExtraMessages.js` hook (in the locale directory), which allows injecting messages in Mady that do not appear in the source files.
+* Add support for **Markdown** messages and translations (≠ MessageFormat messages).
+* Add support for **scoped** messages, which produce separate JS output modules (translations are stored in JSON files as always, along with the unscoped message translations).
+
 ## 2.8.0 (2017-10-23)
 
 * Remove translations from compiled files if the corresponding key no longer exists or is unused.
