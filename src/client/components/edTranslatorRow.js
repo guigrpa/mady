@@ -65,26 +65,22 @@ class TranslatorRow extends React.PureComponent {
   render() {
     const { theKey: key } = this.props;
     const fUnused = !!key.unusedSince;
-    const elContext = key.context
-      ? <span style={style.context}>
-          {key.context}
-        </span>
-      : undefined;
-    const elText = (
-      <span style={style.text}>
-        {key.text}
-      </span>
+    const elContext = key.context ? (
+      <span style={style.context}>{key.context}</span>
+    ) : (
+      undefined
     );
-    const elDeleteKey = this.props.hovering
-      ? <Icon
-          icon="remove"
-          title={_t(
-            'tooltip_Delete message (does NOT delete any translations)'
-          )}
-          onClick={this.onClickDeleteKey}
-          style={style.removeIcon}
-        />
-      : undefined;
+    const elText = <span style={style.text}>{key.text}</span>;
+    const elDeleteKey = this.props.hovering ? (
+      <Icon
+        icon="remove"
+        title={_t('tooltip_Delete message (does NOT delete any translations)')}
+        onClick={this.onClickDeleteKey}
+        style={style.removeIcon}
+      />
+    ) : (
+      undefined
+    );
     let cellStyle = timm.merge(
       style.bodyCell,
       this.props.styleKeyCol,

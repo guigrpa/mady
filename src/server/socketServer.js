@@ -64,9 +64,9 @@ const onCloseOrError = context => (/* error */) => {
 const rx = (context: WsContext) => (msg: WsMessage) => {
   mainStory.debug(
     'socket',
-    `RX ${chalk.magenta(msg.type)} ${msg.type === 'SUBSCRIBE'
-      ? chalk.yellow(msg.subscriptionId)
-      : ''}`,
+    `RX ${chalk.magenta(msg.type)} ${
+      msg.type === 'SUBSCRIBE' ? chalk.yellow(msg.subscriptionId) : ''
+    }`,
     { attach: msg, attachLevel: 'trace' }
   );
   if (msg.type === 'SUBSCRIBE') rxSubscribe(context, msg);

@@ -70,9 +70,7 @@ class Details extends React.PureComponent {
   renderContents() {
     if (this.props.selectedKeyId == null) {
       return (
-        <LargeMessage>
-          {_t('msgDetailsView_No message selected')}
-        </LargeMessage>
+        <LargeMessage>{_t('msgDetailsView_No message selected')}</LargeMessage>
       );
     }
     if (!this.state.key) {
@@ -84,26 +82,22 @@ class Details extends React.PureComponent {
     }
     const { description, sources, firstUsed, unusedSince } = this.state.key;
     const since = this.renderDate(firstUsed);
-    const until = unusedSince
-      ? <span>
-          {' '}{_t('msgDetailsView_until')} {this.renderDate(unusedSince)}
-        </span>
-      : ':';
-    const elSources = sources.length
-      ? <ul style={style.srcList}>
-          {sources.map((src, idx) =>
-            <li key={idx}>
-              {src}
-            </li>
-          )}
-        </ul>
-      : null;
+    const until = unusedSince ? (
+      <span>
+        {' '}
+        {_t('msgDetailsView_until')} {this.renderDate(unusedSince)}
+      </span>
+    ) : (
+      ':'
+    );
+    const elSources = sources.length ? (
+      <ul style={style.srcList}>
+        {sources.map((src, idx) => <li key={idx}>{src}</li>)}
+      </ul>
+    ) : null;
     return (
       <div>
-        {description &&
-          <div>
-            {description}
-          </div>}
+        {description && <div>{description}</div>}
         {_t('msgDetailsView_Used since')} {since}
         {until}
         {elSources}
@@ -147,14 +141,15 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-const Container = (props: PublicProps) =>
+const Container = (props: PublicProps) => (
   <QueryRendererWrapper
     query={query}
     vars={{ selectedKeyId: props.selectedKeyId }}
     Component={Details}
     renderDuringLoad
     {...props}
-  />;
+  />
+);
 
 export default Container;
 export { Details as _Details };

@@ -77,10 +77,7 @@ class Header extends React.PureComponent {
     return (
       <div style={style.filterTitle}>
         <Icon id="madyMenuFilter" icon="filter" title={_t('tooltip_Filter')} />
-        {!!text &&
-          <div style={style.filterTitleText}>
-            {text}
-          </div>}
+        {!!text && <div style={style.filterTitleText}>{text}</div>}
       </div>
     );
   }

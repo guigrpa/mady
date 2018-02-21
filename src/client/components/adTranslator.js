@@ -153,16 +153,16 @@ class Translator extends React.Component {
 
   renderFillerRow() {
     const noKeys =
-      this.props.viewer.keys.edges.length > 0
-        ? ''
-        : <LargeMessage>
-            No messages. Click on <Icon icon="refresh" disabled /> to refresh
-          </LargeMessage>;
+      this.props.viewer.keys.edges.length > 0 ? (
+        ''
+      ) : (
+        <LargeMessage>
+          No messages. Click on <Icon icon="refresh" disabled /> to refresh
+        </LargeMessage>
+      );
     return (
       <div className="tableFillerRow" style={style.fillerRow}>
-        <div style={style.keyCol}>
-          {noKeys}
-        </div>
+        <div style={style.keyCol}>{noKeys}</div>
         {this.state.langs.map(lang => <div key={lang} style={style.langCol} />)}
       </div>
     );

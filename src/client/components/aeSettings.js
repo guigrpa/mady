@@ -129,9 +129,7 @@ class Settings extends React.Component {
           placeholder: 'e.g. es-ES, ca…',
           width: 80,
         })}
-        <div style={style.listLabel}>
-          {_t('settingsForm_Source paths:')}
-        </div>
+        <div style={style.listLabel}>{_t('settingsForm_Source paths:')}</div>
         {this.renderList({
           id: 'srcPaths',
           dir: 'column',
@@ -179,9 +177,7 @@ class Settings extends React.Component {
           width: 300,
         })}
         <div style={style.configLine}>
-          <div>
-            {_t('settingsForm_Output:')}
-          </div>
+          <div>{_t('settingsForm_Output:')}</div>
           <div style={style.indented}>
             <Checkbox
               id="fJsOutput"
@@ -249,7 +245,7 @@ class Settings extends React.Component {
     const values = this.state[id];
     return (
       <div style={style.list(dir)}>
-        {values.map((value, idx) =>
+        {values.map((value, idx) => (
           <div key={idx} style={style.listItem(dir)}>
             <Component
               id={`${id}.${idx}`}
@@ -267,7 +263,7 @@ class Settings extends React.Component {
               style={style.remove}
             />
           </div>
-        )}
+        ))}
         <Icon
           id={id}
           icon="plus"

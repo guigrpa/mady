@@ -1,2 +1,4 @@
 *.html
 /package.json
+/src/locales
+*.graphql.js

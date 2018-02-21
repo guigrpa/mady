@@ -112,18 +112,20 @@ class App extends React.Component {
           changeSelectedKey={this.changeSelectedKey}
           filter={this.state.filter}
         />
-        {this.state.selectedKeyId &&
+        {this.state.selectedKeyId && (
           <Details
             lang={this.state.lang}
             selectedKeyId={this.state.selectedKeyId}
-          />}
-        {this.state.fSettingsShown &&
+          />
+        )}
+        {this.state.fSettingsShown && (
           <Settings
             lang={this.state.lang}
             config={viewer ? viewer.config : null}
             onChangeLang={this.onChangeLang}
             onClose={this.hideSettings}
-          />}
+          />
+        )}
       </div>
     );
   }
@@ -231,11 +233,12 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-const Container = ({ relayEnvironment }: { relayEnvironment?: Object }) =>
+const Container = ({ relayEnvironment }: { relayEnvironment?: Object }) => (
   <QueryRendererWrapper
     environment={relayEnvironment}
     query={query}
     Component={App}
-  />;
+  />
+);
 export default Container;
 export { query, App as _App };

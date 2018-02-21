@@ -33,11 +33,7 @@ const Example = ({ lang, messages }: { lang: string, messages: Object }) => {
               other {messages}
             }`}
           values={{
-            NAME: (
-              <b>
-                {name}
-              </b>
-            ),
+            NAME: <b>{name}</b>,
             UNREAD_COUNT: unreadCount,
           }}
         />

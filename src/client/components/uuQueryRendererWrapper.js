@@ -21,7 +21,7 @@ const QueryRendererWrapper = ({
   Component,
   renderDuringLoad,
   ...props
-}: Props) =>
+}: Props) => (
   <QueryRenderer
     environment={relayEnvironment || getEnvironment()}
     query={query}
@@ -30,9 +30,7 @@ const QueryRendererWrapper = ({
       if (error) {
         console.error(error); // eslint-disable-line
         return (
-          <LargeMessage>
-            {_t('error_Oops, an error occurred!')}
-          </LargeMessage>
+          <LargeMessage>{_t('error_Oops, an error occurred!')}</LargeMessage>
         );
       }
       if (relayData) {
@@ -41,6 +39,7 @@ const QueryRendererWrapper = ({
       if (renderDuringLoad) return <Component {...props} />;
       return <Spinner />;
     }}
-  />;
+  />
+);
 
 export default QueryRendererWrapper;
