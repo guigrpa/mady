@@ -168,9 +168,9 @@ const addMessageToKeys = (
   // eslint-disable-next-line no-param-reassign
   keys[base64] = keys[base64] || {
     id: base64,
+    ...extras,
     context,
     text,
-    ...extras,
     firstUsed: null,
     unusedSince: null,
     sources: [],
@@ -224,12 +224,8 @@ const processGetExtraMessagesHook = (localeDir, keys) => {
   if (!getExtraMessages) return;
   const extraMessages = getExtraMessages();
   if (extraMessages == null) return;
-  extraMessages.forEach(({ text, isMarkdown, scope, filePath }) => {
-    addMessageToKeys(keys, text, filePath, {
-      isMarkdown,
-      scope,
-      context: null,
-    });
+  extraMessages.forEach(({ text, context, isMarkdown, scope, filePath }) => {
+    addMessageToKeys(keys, text, filePath, { isMarkdown, scope, context });
   });
 };
 
