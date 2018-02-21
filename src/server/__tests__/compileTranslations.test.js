@@ -93,6 +93,28 @@ describe('compileTranslations', () => {
     expect(result).toMatchSnapshot();
   });
 
+  it('should compile a key with Markdown', () => {
+    const result = compileTranslations({
+      lang: 'es',
+      keys: {
+        ID: {
+          id: 'ID',
+          text: '# Title',
+          isMarkdown: true,
+        },
+      },
+      translations: [
+        {
+          keyId: 'ID',
+          lang: 'es',
+          translation: '# Título',
+        },
+      ],
+      story: mainStory,
+    });
+    expect(result).toMatchSnapshot();
+  });
+
   it('should allow minification', () => {
     const result = compileTranslations({
       lang: 'es',

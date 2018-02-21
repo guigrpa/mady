@@ -68,13 +68,13 @@ export default function compileTranslations({
   let fnTranslate = `
 function anonymous() {
 ${fnMessageFormat}
-};
+}
 module.exports = anonymous();
 `;
   Object.keys(markdownTranslations).forEach(keyId => {
-    fnTranslate += `module.exports['${keyId}'] = ${JSON.stringify(
-      markdownTranslations[keyId]
-    )}\n`;
+    fnTranslate += `module.exports['${keyId}'] = function() {
+      return ${JSON.stringify(markdownTranslations[keyId])}
+    };\n`;
   });
   story.debug('compiler', `${logPrefix} Precompiled`, {
     attach: fnTranslate,
