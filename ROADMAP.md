@@ -1,12 +1,7 @@
-Urgent:
-
-* [ ] Why aren't messages from getExtraMessages() updated, when data.json changes?
-* [ ] Client:
-    * [x] For isMarkdown keys, don't enforce MessageFormat validation in translations
-    * [ ] Improve editing of long data. Include markdown preview
-
 Later:
 
+* [ ] Client:
+    * [ ] Improve editing of long data. Include markdown preview
 * Allow integration with another server:
     * Serve assets
     * Events to report on changes: added translations, new messages, etc. Events could be used to trigger prepareBuild, build, same as manually editing variable contents.
