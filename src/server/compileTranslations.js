@@ -14,12 +14,14 @@ export default function compileTranslations({
   lang,
   keys,
   translations,
+  fAlwaysIncludeKeysWithBraces = true,
   fMinify = false,
   story,
 }: {|
   lang: string,
   keys: MapOf<InternalKeyT>,
   translations: Array<InternalTranslationT>,
+  fAlwaysIncludeKeysWithBraces: boolean,
   fMinify?: boolean,
   story: StoryT,
 |}): string {
@@ -35,12 +37,14 @@ export default function compileTranslations({
 
   // We must always include those keys that are not markdown and
   // include curly braces, even if there is no translation
-  Object.keys(keys).forEach(keyId => {
-    const key = keys[keyId];
-    if (!key.isMarkdown && key.text.indexOf('{') >= 0) {
-      messageFormatTranslations[keyId] = keys[keyId].text;
-    }
-  });
+  if (fAlwaysIncludeKeysWithBraces) {
+    Object.keys(keys).forEach(keyId => {
+      const key = keys[keyId];
+      if (!key.isMarkdown && key.text.indexOf('{') >= 0) {
+        messageFormatTranslations[keyId] = keys[keyId].text;
+      }
+    });
+  }
 
   // Copy non-deleted translations to either messageFormatTranslations
   // or markdownTranslations

@@ -256,6 +256,16 @@ async function updateKey(id: string, newAttrs: Object): Promise<?InternalKeyT> {
   return updatedKey;
 }
 
+function getScopeList() {
+  const ids = Object.keys(_keys);
+  const scopes = {};
+  for (let i = 0; i < ids.length; i++) {
+    const { scope } = _keys[ids[i]];
+    if (scope != null) scopes[scope] = true;
+  }
+  return Object.keys(scopes);
+}
+
 // ==============================================
 // Parsing and delta-parsing
 // ==============================================
@@ -412,8 +422,10 @@ let _translations: MapOf<InternalTranslationT> = {};
 
 const getLangPath = (lang: string): string =>
   path.join(_localeDir, `${lang}.json`);
-const getCompiledLangPath = (lang: string): string =>
-  path.join(_localeDir, `${lang}.js`);
+const getCompiledLangPath = (lang: string, scope: ?string): string =>
+  scope != null
+    ? path.join(_localeDir, 'scoped', `${scope}-${lang}.js`)
+    : path.join(_localeDir, `${lang}.js`);
 const getJsonLangPath = (lang: string): string =>
   path.join(_localeDir, `${lang}.out.json`);
 const getReactIntlLangPath = (lang: string): string =>
@@ -549,19 +561,30 @@ function compileTranslations({ story: baseStory }: { story?: StoryT } = {}) {
       // Generate JS output
       // ---------------------------------
       if (_config.fJsOutput) {
-        const compiledLangPath = getCompiledLangPath(lang);
-        const fnTranslate = compile({
-          lang,
-          keys,
-          translations,
-          fMinify,
-          story,
+        const scopes = [null].concat(getScopeList());
+        scopes.forEach(scope => {
+          const translationSubset = translations.filter(({ keyId }) => {
+            const key = keys[keyId];
+            if (!key) return false;
+            if (key.scope == null) return scope == null;
+            return key.scope === scope;
+          });
+          const compiledLangPath = getCompiledLangPath(lang, scope);
+          fs.ensureDirSync(path.dirname(compiledLangPath));
+          const fnTranslate = compile({
+            lang,
+            keys,
+            translations: translationSubset,
+            fAlwaysIncludeKeysWithBraces: scope == null,
+            fMinify,
+            story,
+          });
+          story.debug(
+            'db',
+            `Writing file ${chalk.cyan.bold(compiledLangPath)}...`
+          );
+          fs.writeFileSync(compiledLangPath, fnTranslate, 'utf8');
         });
-        story.debug(
-          'db',
-          `Writing file ${chalk.cyan.bold(compiledLangPath)}...`
-        );
-        fs.writeFileSync(compiledLangPath, fnTranslate, 'utf8');
       }
 
       // ---------------------------------

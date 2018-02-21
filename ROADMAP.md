@@ -3,10 +3,10 @@ Urgent:
 * [x] Add `isMarkdown` and `scope` to message types
 * [x] During source parsing, use `getExtraMessages()` in `/locales`
 * [x] Translations are saved normally, in `${lang}.json`
-* [ ] During compilation:
+* [x] During compilation:
     * [x] Don't consider `isMarkdown`-flagged messages as MessageFormat
-    * [ ] Don't include `scope`d keys in the output .js files
-    * [ ] Generate a separate `scoped/{scopeName}-{lang}.js` file for each scope
+    * [x] Don't include `scope`d keys in the output .js files
+    * [x] Generate a separate `scoped/{scopeName}-{lang}.js` file for each scope
 * [ ] Improve editing of long data. Include markdown preview
 * [ ] [Future] Allow integration with another server:
     * Serve assets
