@@ -215,7 +215,9 @@ function saveKeys(options?: Object) {
 }
 
 function getKeys(): Array<InternalKeyT> {
-  return Object.keys(_keys).map(id => _keys[id]).filter(o => !o.isDeleted);
+  return Object.keys(_keys)
+    .map(id => _keys[id])
+    .filter(o => !o.isDeleted);
 }
 
 function getKey(id: string): ?InternalKeyT {
@@ -264,6 +266,7 @@ async function parseSrcFiles({ story }: { story: StoryT }) {
     srcExtensions,
     msgFunctionNames,
     msgRegexps,
+    localeDir: _localeDir,
     story,
   });
   const now = new Date().toISOString();
@@ -526,8 +529,10 @@ async function updateTranslation(
 }
 
 function compileTranslations({ story: baseStory }: { story?: StoryT } = {}) {
-  const story = (baseStory || mainStory)
-    .child({ src: 'db', title: 'Compile translations' });
+  const story = (baseStory || mainStory).child({
+    src: 'db',
+    title: 'Compile translations',
+  });
   const keys = {};
   Object.keys(_keys).forEach(name => {
     const key = _keys[name];
