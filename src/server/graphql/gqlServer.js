@@ -213,6 +213,8 @@ const init = () => {
       firstUsed: { type: new GraphQLNonNull(GraphQLString) },
       unusedSince: { type: GraphQLString },
       sources: { type: new GraphQLNonNull(ArrayOfNonNullString) },
+      isMarkdown: { type: GraphQLBoolean },
+      scope: { type: GraphQLString },
       translations: {
         type: gqlTypes.TranslationConnection,
         args: connectionArgs,

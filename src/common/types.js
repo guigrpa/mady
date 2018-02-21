@@ -25,9 +25,13 @@ export type HoverableProps = {
 // Other
 // ========================================
 export type MapOf<T> = { [key: string]: T };
-
 export type LocaleFunctionT = (data: any) => string;
 
+// interface NodeT { id: string }
+
+// ----------------------------------------
+// Config
+// ----------------------------------------
 export type ConfigT = {
   srcPaths: Array<string>,
   srcExtensions: Array<string>,
@@ -41,28 +45,34 @@ export type ConfigT = {
   fReactIntlOutput: boolean,
 };
 
+// Used server-side
 export type InternalConfigT = ConfigT & {
   dbVersion: number,
 };
 
+// ----------------------------------------
+// Stats
+// ----------------------------------------
 export type StatsT = {
   numTotalKeys: number,
   numUsedKeys: number,
   numTranslations: Array<{ lang: string, value: number }>,
 };
 
+// Used server-side
 export type InternalStatsT = StatsT;
 
-interface NodeT {
-  id: string,
-}
-
+// ----------------------------------------
+// Key
+// ----------------------------------------
 type CoreKeyT = {
   isDeleted?: boolean,
   context: ?string,
   text: string,
   unusedSince: ?string,
   sources: Array<string>,
+  isMarkdown?: boolean,
+  scope?: string,
 };
 
 export type KeyT = CoreKeyT & {
@@ -72,12 +82,16 @@ export type KeyT = CoreKeyT & {
   translations: Object,
 };
 
+// Used server-side
 export type InternalKeyT = CoreKeyT & {
   id: string,
   firstUsed: ?string,
   reactIntlId?: string,
 };
 
+// ----------------------------------------
+// Translation
+// ----------------------------------------
 export type TranslationT = {
   id: string,
   isDeleted: boolean,
@@ -87,8 +101,12 @@ export type TranslationT = {
   keyId: string,
 };
 
+// Used server-side
 export type InternalTranslationT = TranslationT;
 
+// ----------------------------------------
+// Viewer
+// ----------------------------------------
 export type ViewerT = {
   id: string,
   config: ConfigT,
