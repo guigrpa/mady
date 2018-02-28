@@ -82,7 +82,6 @@
     "compression": "1.7.0",
     "cookie-parser": "1.4.3",
     "diveSync": "0.3.0",
-    "ejs": "^2.5.7",
     "express": "^4.15.4",
     "express-graphql": "^0.6.7",
     "fs-extra": "0.30.0",

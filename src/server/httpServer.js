@@ -3,12 +3,12 @@
 /* eslint-disable global-require, import/prefer-default-export */
 
 import path from 'path';
+import fs from 'fs';
 import http from 'http';
 import cloneDeep from 'lodash/cloneDeep';
 import { mainStory, chalk } from 'storyboard';
 import express from 'express';
 import graphqlHttp from 'express-graphql';
-import ejs from 'ejs';
 import cookieParser from 'cookie-parser';
 import compression from 'compression';
 import addAllLocales, { getReactIntlMessages } from './allLocales';
@@ -32,6 +32,11 @@ try {
 /* eslint-enable global-require */
 
 const ASSET_PATH = '../public';
+const ABS_ASSET_PATH = path.join(__dirname, ASSET_PATH);
+const MADY_HTML = fs.readFileSync(
+  path.join(ABS_ASSET_PATH, 'mady.html'),
+  'utf8'
+);
 const DEFAULT_BOOTSTRAP = {
   ssrHtml: '',
   ssrCss: '',
@@ -48,43 +53,26 @@ addAllLocales();
 // ==============================================
 type Options = {|
   expressApp?: Object,
+  httpServer?: Object,
   port?: number,
 |};
 
 function init(options: Options): Object {
   ssr && ssr.init({ gqlServer, mainStory });
 
+  // Create app if needed
   const expressApp = options.expressApp || createExpressApp();
 
-  // GraphQL + GraphiQL
+  // Add endpoints
   const schema = gqlServer.getSchema();
   expressApp.use('/mady-graphql', graphqlHttp({ schema, graphiql: true }));
-
-  // Index
   expressApp.use('/mady', sendIndexHtml);
+  expressApp.use(express.static(ABS_ASSET_PATH));
 
-  // Static assets
-  expressApp.use(express.static(path.join(__dirname, ASSET_PATH)));
-
-  // Create HTTP server
-  const httpServer = http.createServer(expressApp);
-
-  // Look for a suitable port and start listening
-  let { port } = options;
-  if (port != null) {
-    httpServer.on('error', () => {
-      mainStory.warn('http', `Port ${String(port)} busy`);
-      port += 1;
-      if (port >= options.port + 20) {
-        mainStory.error('http', 'Cannot open port (tried 20 times)');
-        return;
-      }
-      httpServer.listen(port);
-    });
-    httpServer.on('listening', () => {
-      mainStory.info('http', `Listening on port ${chalk.cyan.bold(port)}`);
-    });
-    httpServer.listen(port);
+  // Create HTTP server + look for a suitable port and start listening
+  const httpServer = options.httpServer || http.createServer(expressApp);
+  if (options.httpServer == null && options.port != null) {
+    startListening(httpServer, options.port);
   }
 
   return httpServer;
@@ -97,13 +85,28 @@ const createExpressApp = () => {
   // Disable flow on Express
   const expressApp: Object = express();
 
-  // Templating and other middleware
-  expressApp.engine('html', ejs.renderFile);
-  expressApp.set('views', path.join(__dirname, ASSET_PATH));
+  // Middleware
   expressApp.use(compression());
   expressApp.use(cookieParser());
 
   return expressApp;
+};
+
+const startListening = (httpServer, initialPort) => {
+  let port = initialPort;
+  httpServer.on('error', () => {
+    mainStory.warn('http', `Port ${String(port)} busy`);
+    port += 1;
+    if (port >= initialPort + 20) {
+      mainStory.error('http', 'Cannot open port (tried 20 times)');
+      return;
+    }
+    httpServer.listen(port);
+  });
+  httpServer.on('listening', () => {
+    mainStory.info('http', `Listening on port ${chalk.cyan.bold(port)}`);
+  });
+  httpServer.listen(port);
 };
 
 const sendIndexHtml = async (req, res) => {
@@ -154,7 +157,11 @@ const sendIndexHtml = async (req, res) => {
   } finally {
     // Render the result!
     bootstrap.jsonData = JSON.stringify(bootstrap.jsonData);
-    res.render('mady.html', bootstrap);
+    const out = MADY_HTML.replace('<%- ssrCss %>', bootstrap.ssrCss)
+      .replace('<%- ssrHtml %>', bootstrap.ssrHtml)
+      .replace('<%- jsonData %>', bootstrap.jsonData)
+      .replace('<%- fnLocales %>', bootstrap.fnLocales);
+    res.send(out);
   }
 };
 
