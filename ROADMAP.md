@@ -2,8 +2,8 @@ Later:
 
 * [ ] Client:
     * [ ] Improve editing of long data. Include markdown preview
-* Allow integration with another server:
-    * Serve assets
+* [ ] Client integration with user app
+* [ ] Server integration with user app:
     * Events to report on changes: added translations, new messages, etc. Events could be used to trigger prepareBuild, build, same as manually editing variable contents.
 
 Later still:
