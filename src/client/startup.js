@@ -29,5 +29,5 @@ const relayEnvironment = createRelayEnvironment(window.AppBootstrap.relayData);
 
 ReactDOM.render(
   <App relayEnvironment={relayEnvironment} />,
-  document.getElementById('app')
+  document.getElementById('mady-app')
 );

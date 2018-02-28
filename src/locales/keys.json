@@ -368,10 +368,10 @@
   },
   "c29tZUNvbnRleHRfSGVsbG8sIHtOQU1FfSE=": {
     "id": "c29tZUNvbnRleHRfSGVsbG8sIHtOQU1FfSE=",
-    "context": "someContext",
-    "text": "Hello, {NAME}!",
     "reactIntlId": "reactIntlSample1",
     "description": "Message to greet the user",
+    "context": "someContext",
+    "text": "Hello, {NAME}!",
     "firstUsed": "2016-09-19T07:41:50.724Z",
     "unusedSince": null,
     "sources": [
@@ -380,9 +380,9 @@
   },
   "c29tZUNvbnRleHRfSGVsbG8ge05BTUV9LCB5b3UgaGF2ZSB7VU5SRUFEX0NPVU5ULCBudW1iZXJ9IHtVTlJFQURfQ09VTlQsIHBsdXJhbCwgb25lIHttZXNzYWdlfSBvdGhlciB7bWVzc2FnZXN9fQ==": {
     "id": "c29tZUNvbnRleHRfSGVsbG8ge05BTUV9LCB5b3UgaGF2ZSB7VU5SRUFEX0NPVU5ULCBudW1iZXJ9IHtVTlJFQURfQ09VTlQsIHBsdXJhbCwgb25lIHttZXNzYWdlfSBvdGhlciB7bWVzc2FnZXN9fQ==",
+    "reactIntlId": "reactIntlSample2",
     "context": "someContext",
     "text": "Hello {NAME}, you have {UNREAD_COUNT, number} {UNREAD_COUNT, plural, one {message} other {messages}}",
-    "reactIntlId": "reactIntlSample2",
     "firstUsed": "2016-10-06T13:43:11.210Z",
     "unusedSince": null,
     "sources": [
@@ -391,9 +391,9 @@
   },
   "c29tZUNvbnRleHRfPGk+SGk8L2k+IDxiPntOQU1FfTwvYj4h": {
     "id": "c29tZUNvbnRleHRfPGk+SGk8L2k+IDxiPntOQU1FfTwvYj4h",
+    "reactIntlId": "reactIntlSample3",
     "context": "someContext",
     "text": "<i>Hi</i> <b>{NAME}</b>!",
-    "reactIntlId": "reactIntlSample3",
     "firstUsed": "2016-09-19T07:41:50.724Z",
     "unusedSince": null,
     "sources": [
