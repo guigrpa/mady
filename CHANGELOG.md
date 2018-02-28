@@ -1,3 +1,5 @@
+* Add experimental interface to integrate the Mady server in another Express.js server (`lib/serverPlugin`).
+
 ## 2.9.0 (2018-2-21)
 
 * Add support for a `getExtraMessages.js` hook (in the locale directory), which allows injecting messages in Mady that do not appear in the source files.
