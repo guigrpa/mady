@@ -38,7 +38,7 @@ module.exports = (env = {}) => {
     // -------------------------------------------------
     entry: fSsr
       ? { ssr: ['./src/server/ssr.js'] }
-      : { app: ['./src/client/startup.js'] },
+      : { 'mady-app': ['./src/client/startup.js'] },
 
     // -------------------------------------------------
     // Output
