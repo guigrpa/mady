@@ -1,3 +1,5 @@
+## 2.10.0 (2018-2-28)
+
 * Add experimental interface to integrate the Mady server in another Express.js server (`lib/serverPlugin`).
 
 ## 2.9.0 (2018-2-21)
