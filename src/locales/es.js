@@ -1,4 +1,4 @@
-/* eslint-disable */
+
 function anonymous() {
 var es = function (n, ord) {
   if (ord) return 'other';
@@ -87,6 +87,5 @@ return {
   "dG9vbHRpcF9GaWx0ZXI=": function(d) { return "Filtro"; },
   ZXJyb3JfT29wcywgYW4gZXJyb3Igb2NjdXJyZWQh: function(d) { return "¡Uy, ha ocurrido un error!"; }
 }
-};
+}
 module.exports = anonymous();
-/* eslint-enable */

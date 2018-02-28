@@ -1,4 +1,4 @@
-/* eslint-disable */
+
 function anonymous() {
 var ca = function (n, ord) {
   var s = String(n).split('.'), v0 = !s[1];
@@ -92,6 +92,5 @@ return {
   "dG9vbHRpcF9GaWx0ZXI=": function(d) { return "Filtre"; },
   ZXJyb3JfT29wcywgYW4gZXJyb3Igb2NjdXJyZWQh: function(d) { return "Ui, hi ha hagut un error!"; }
 }
-};
+}
 module.exports = anonymous();
-/* eslint-enable */

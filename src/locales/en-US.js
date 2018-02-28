@@ -1,4 +1,4 @@
-/* eslint-disable */
+
 function anonymous() {
 var en_US = function (n, ord) {
   var s = String(n).split('.'), v0 = !s[1], t0 = Number(s[0]) == n,
@@ -40,6 +40,5 @@ return {
   "c29tZUNvbnRleHRfPGk+SGk8L2k+IDxiPntOQU1FfTwvYj4h": function(d) { return "<i>Hi</i> <b>" + d.NAME + "</b>!"; },
   "c29tZUNvbnRleHRfQSB0b29sIGZvciBpbnRlcm5hdGlvbmFsaXphdGlvbg==": function(d) { return "A tool for internationalization"; }
 }
-};
+}
 module.exports = anonymous();
-/* eslint-enable */

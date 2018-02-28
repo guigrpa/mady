@@ -59,6 +59,6 @@ if (cliOptions.importV0) {
   const socketServer = socketInit({ httpServer, gqlSchema });
   addListener(wsServerListener, { socketServer });
 }
-opn(`http://localhost:${cliOptions.port}/`).catch(err => {
+opn(`http://localhost:${cliOptions.port}/mady`).catch(err => {
   mainStory.error('OPN error', { attach: err });
 });

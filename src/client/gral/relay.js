@@ -64,7 +64,7 @@ const rxNotif = msg => {
 };
 
 const defaultFetchQuery = async (operation, variables) => {
-  const response = await fetch('/graphql', {
+  const response = await fetch('/mady-graphql', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
