@@ -43,7 +43,7 @@
     "compileWatch": "yarn compile:clean && yarn compile:copy && yarn compile:mainWatch",
     "compile:clean": "rm -rf ./lib && mkdir lib",
     "compile:copy": "cp src/api.js.flow lib/translate.js.flow",
-    "compile:main": "babel src -d lib --ignore \"src/client/**\",\"**/__mocks__/**\",\"**/__tests__/**\"",
+    "compile:main": "babel src -d lib --ignore \"**/__mocks__/**\",\"**/__tests__/**\"",
     "compile:mainWatch": "yarn compile:main --watch",
     "compile:relay": "yarn compile:schema && relay-compiler --src ./src --schema ./src/common/gqlSchema.graphql",
     "compile:relayWatch": "yarn compile:relay --watch",
