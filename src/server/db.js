@@ -4,6 +4,7 @@
 
 import path from 'path';
 import fs from 'fs-extra';
+import slash from 'slash';
 import { addDefaults, merge } from 'timm';
 import { mainStory, chalk } from 'storyboard';
 import uuid from 'uuid';
@@ -134,6 +135,7 @@ function saveConfig(options?: Object) {
 }
 
 const onFileChange = async (eventType, filePath) => {
+  filePath = slash(filePath)
   if (eventType === 'unlink') {
     onSrcFileDeleted(filePath, { save: true });
   } else if (eventType === 'add') {
