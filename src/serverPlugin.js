@@ -16,6 +16,8 @@ const DEFAULT_LOCALE_PATH = 'locales';
 const init = (options: Options) => {
   const localeDir = options.localeDir || DEFAULT_LOCALE_PATH;
   const { expressApp, httpServer } = options;
+  if (!expressApp) throw new Error('expressApp option not provided');
+  if (!httpServer) throw new Error('httpServer option not provided');
   db.init({ localeDir, fRecompile: false });
   const gqlSchema = gqlInit();
   httpInit({ expressApp, httpServer });
