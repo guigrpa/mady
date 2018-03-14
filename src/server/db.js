@@ -134,8 +134,8 @@ function saveConfig(options?: Object) {
   initFileWatcher({ paths: _config.srcPaths, onEvent: onFileChange });
 }
 
-const onFileChange = async (eventType, filePath) => {
-  filePath = slash(filePath);
+const onFileChange = async (eventType, filePath0) => {
+  const filePath = slash(filePath0);
   if (eventType === 'unlink') {
     onSrcFileDeleted(filePath, { save: true });
   } else if (eventType === 'add') {
