@@ -135,7 +135,7 @@ function saveConfig(options?: Object) {
 }
 
 const onFileChange = async (eventType, filePath) => {
-  filePath = slash(filePath)
+  filePath = slash(filePath);
   if (eventType === 'unlink') {
     onSrcFileDeleted(filePath, { save: true });
   } else if (eventType === 'add') {
