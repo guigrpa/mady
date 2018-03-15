@@ -1,12 +1,14 @@
 // @flow
 
 /* eslint-env browser */
+/* eslint-disable import/no-mutable-exports */
 
 import tinycolor from 'tinycolor2';
 
 // Detect theme
 let THEME;
 try {
+  // $FlowFixMe
   THEME = new URL(document.location).searchParams.get('theme');
 } catch (err) {
   /* ignore */
