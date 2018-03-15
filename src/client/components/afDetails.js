@@ -14,8 +14,9 @@ import QueryRendererWrapper from './uuQueryRendererWrapper';
 // Component declarations
 // ==========================================
 type PublicProps = {
-  _now?: any, // eslint-disable-line
   // lang: string,
+  // Unit testing
+  _now?: any, // eslint-disable-line
   selectedKeyId: ?string,
 };
 
