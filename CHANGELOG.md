@@ -1,3 +1,5 @@
+* Add some theming support via URL querystring (try `?theme=bw`).
+
 ## 2.10.3 (2018-2-28)
 
 ## 2.10.2 (2018-2-28)
