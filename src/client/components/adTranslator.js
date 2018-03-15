@@ -282,7 +282,7 @@ const style = {
       marginRight: -TRANSLATOR_GUTTER,
     })
   ),
-  body: flexItem(1, flexContainer('column', { overflowY: 'scroll' })),
+  body: flexItem('1 1 0px', flexContainer('column', { overflowY: 'scroll' })),
   row: flexItem('none', flexContainer('row')),
   headerRow: {
     position: 'relative',

@@ -1,3 +1,5 @@
+* Fix Firefox layout.
+
 ## 2.11.0 (2018-3-15)
 
 * Add some theming support via URL querystring (try `?theme=bw`).
