@@ -19,7 +19,7 @@ const BASE_COLOR2 = tinycolor('aliceblue')
   .spin(10)
   .toHexString();
 const COLORS =
-  THEME === 'embedded'
+  THEME === 'bw'
     ? {
         light: undefined,
         lightAlt: BASE_COLOR2,
