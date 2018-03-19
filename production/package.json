@@ -1,0 +1,30 @@
+{
+  "name": "mady-production",
+  "version": "2.11.1",
+  "description": "Easy-to-use tool to manage and translate ICU MessageFormat messages",
+  "main": "lib/translate.js",
+  "engines": {
+    "node": ">=4"
+  },
+  "author": "Guillermo Grau Panea",
+  "license": "MIT",
+  "keywords": [
+    "i18n",
+    "MessageFormat",
+    "translation",
+    "locales",
+    "translator",
+    "React Intl"
+  ],
+  "homepage": "https://github.com/guigrpa/mady#readme",
+  "bugs": {
+    "url": "https://github.com/guigrpa/mady/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guigrpa/mady.git"
+  },
+  "dependencies": {
+    "buffer": "^5.0.7"
+  }
+}
