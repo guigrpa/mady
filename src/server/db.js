@@ -59,7 +59,12 @@ const delay = ms =>
 // ==============================================
 // Init
 // ==============================================
-function init(options: { fRecompile: boolean, localeDir: string }) {
+type Options = {
+  fRecompile: boolean,
+  localeDir: string,
+  otherLocaleDirs?: Array<string>,
+};
+function init(options: Options) {
   initLocaleDir(options);
   const fMigrated = initConfig();
   initKeys();
@@ -73,12 +78,14 @@ function init(options: { fRecompile: boolean, localeDir: string }) {
 // Locale dir
 // ==============================================
 let _localeDir: string;
+let _otherLocaleDirs: Array<string> = [];
 function setLocaleDir(localeDir: string) {
   _localeDir = localeDir;
 }
 
-function initLocaleDir(options: { localeDir: string }) {
+function initLocaleDir(options: Options) {
   _localeDir = options.localeDir;
+  _otherLocaleDirs = options.otherLocaleDirs || [];
   try {
     fs.statSync(_localeDir);
   } catch (err) {
@@ -457,6 +464,18 @@ function readTranslations(lang: string) {
   }
 }
 
+function readAllTranslationsFromAnotherDir(dir: string) {
+  let out = {};
+  _config.langs.forEach(lang => {
+    try {
+      out = merge(out, readJson(path.join(dir, `${lang}.json`)));
+    } catch (err) {
+      /* swallow: we ignore langs for which there are no translations */
+    }
+  });
+  return out;
+}
+
 function saveTranslations(lang: string, options: Object) {
   const langTranslations = {};
   Object.keys(_translations).forEach(translationId => {
@@ -472,10 +491,13 @@ function getTranslations() {
   return Object.keys(_translations).map(id => _translations[id]);
 }
 
-function getLangTranslations(lang: string): Array<InternalTranslationT> {
+function getLangTranslations(
+  lang: string,
+  refTranslations?: MapOf<InternalTranslationT> = _translations
+): Array<InternalTranslationT> {
   const out = [];
-  Object.keys(_translations).forEach(translationId => {
-    const translation = _translations[translationId];
+  Object.keys(refTranslations).forEach(translationId => {
+    const translation = refTranslations[translationId];
     if (!translation.isDeleted && translation.lang === lang) {
       out.push(translation);
     }
@@ -542,20 +564,58 @@ async function updateTranslation(
   return updatedTranslation;
 }
 
+// ==============================================
+// Compiling translations
+// ==============================================
 function compileTranslations({ story: baseStory }: { story?: StoryT } = {}) {
   const story = (baseStory || mainStory).child({
     src: 'db',
     title: 'Compile translations',
   });
+
+  // ---------------------------------
+  // Gather all keys (incl. otherLocaleDirs)
+  // ---------------------------------
+  story.info('db', 'Gathering keys...');
   const keys = {};
-  Object.keys(_keys).forEach(name => {
-    const key = _keys[name];
-    if (key.isDeleted) return;
-    keys[name] = key;
+  const loadKeys = myKeys => {
+    Object.keys(myKeys).forEach(name => {
+      const key = myKeys[name];
+      if (!key.isDeleted) keys[name] = key;
+    });
+  };
+  _otherLocaleDirs.forEach(dir => {
+    const otherKeys = readJson(path.join(dir, 'keys.json'));
+    loadKeys(otherKeys);
   });
+  loadKeys(_keys);
+
+  const { fMinify } = _config;
   try {
-    const { fMinify } = _config;
-    const allTranslations = getAllTranslations(_config.langs);
+    // ---------------------------------
+    // Gather all translations (incl. otherLocaleDirs)
+    // ---------------------------------
+    story.info('db', 'Gathering translations...');
+    const allTranslations = {};
+    const { langs } = _config;
+    langs.forEach(lang => {
+      allTranslations[lang] = [];
+    });
+    const loadTranslations = refTranslations => {
+      const temp = getAllTranslations(langs, refTranslations);
+      langs.forEach(lang => {
+        allTranslations[lang] = allTranslations[lang].concat(temp[lang] || []);
+      });
+    };
+    _otherLocaleDirs.forEach(dir => {
+      const otherTranslations = readAllTranslationsFromAnotherDir(dir);
+      loadTranslations(otherTranslations);
+    });
+    loadTranslations(_translations);
+
+    // ---------------------------------
+    // Generate all translations outputs
+    // ---------------------------------
     Object.keys(allTranslations).forEach(lang => {
       const translations = allTranslations[lang];
 
@@ -628,7 +688,8 @@ const debouncedCompileTranslations = UNIT_TESTING
   : debounce(compileTranslations, DEBOUNCE_COMPILE);
 
 function getAllTranslations(
-  langs: Array<string>
+  langs: Array<string>,
+  refTranslations: MapOf<InternalTranslationT>
 ): MapOf<Array<InternalTranslationT>> {
   // Determine lang structure
   const langStructure = {};
@@ -663,12 +724,13 @@ function getAllTranslations(
     const childrenTranslations = getChildrenTranslations(
       langStructure,
       lang,
+      refTranslations,
       []
     );
     // story.debug('db', `Children translations for ${lang}`, { attach: childrenTranslations });
     const parentTranslations = getParentTranslations(langStructure, lang);
     // story.debug('db', `Parent translations for ${lang}`, { attach: parentTranslations });
-    const ownTranslations = getLangTranslations(lang);
+    const ownTranslations = getLangTranslations(lang, refTranslations);
     // story.debug('db', `Own translations for ${lang}`, { attach: ownTranslations });
     langStructure[lang].translations = childrenTranslations.concat(
       parentTranslations,
@@ -685,17 +747,22 @@ function getAllTranslations(
   return out;
 }
 
+// Recursive
 function getChildrenTranslations(
   langStructure: MapOf<Object>,
   lang: string,
+  refTranslations: MapOf<InternalTranslationT>,
   translations0: Array<InternalTranslationT>
 ): Array<InternalTranslationT> {
   let translations = translations0;
   langStructure[lang].children.forEach(childLang => {
-    translations = translations.concat(getLangTranslations(childLang));
+    translations = translations.concat(
+      getLangTranslations(childLang, refTranslations)
+    );
     translations = getChildrenTranslations(
       langStructure,
       childLang,
+      refTranslations,
       translations
     );
   });

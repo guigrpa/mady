@@ -37,6 +37,11 @@ program
     DEFAULT_LOCALE_PATH
   )
   .option(
+    '--other-dirs [dirs]',
+    'Comma-separated relative paths to other Mady locale folders (e.g. libs)',
+    ''
+  )
+  .option(
     '-p, --port [port]',
     'Initial port number to use ' +
       '(if unavailable, the next available one will be used)',
@@ -48,9 +53,16 @@ program
   .parse(process.argv);
 
 const cliOptions = program.opts();
+cliOptions.otherDirs = cliOptions.otherDirs
+  ? cliOptions.otherDirs.split(',')
+  : [];
 
 mainStory.info('startup', 'CLI options:', { attach: cliOptions });
-db.init({ localeDir: cliOptions.dir, fRecompile: cliOptions.recompile });
+db.init({
+  localeDir: cliOptions.dir,
+  otherLocaleDirs: cliOptions.otherDirs,
+  fRecompile: cliOptions.recompile,
+});
 if (cliOptions.importV0) {
   db.importV0(cliOptions.importV0);
 } else {
