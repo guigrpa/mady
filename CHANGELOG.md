@@ -1,3 +1,5 @@
+## 2.12.0 (2018-7-20)
+
 * Add `--other-dirs` CLI flag (allows you to include keys and translations from the libs you use in your application, as long as those libs are also using Mady).
 
 ## 2.11.1 (2018-3-15)
