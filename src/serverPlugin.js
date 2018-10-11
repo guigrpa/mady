@@ -9,16 +9,17 @@ type Options = {|
   expressApp: Object,
   httpServer: Object,
   localeDir?: string,
+  otherLocaleDirs?: Array<string>,
 |};
 
 const DEFAULT_LOCALE_PATH = 'locales';
 
 const init = (options: Options) => {
   const localeDir = options.localeDir || DEFAULT_LOCALE_PATH;
-  const { expressApp, httpServer } = options;
+  const { expressApp, httpServer, otherLocaleDirs } = options;
   if (!expressApp) throw new Error('expressApp option not provided');
   if (!httpServer) throw new Error('httpServer option not provided');
-  db.init({ localeDir, fRecompile: false });
+  db.init({ localeDir, fRecompile: false, otherLocaleDirs });
   const gqlSchema = gqlInit();
   httpInit({ expressApp, httpServer });
   socketInit({ httpServer, gqlSchema });

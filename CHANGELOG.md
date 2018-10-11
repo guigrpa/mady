@@ -1,3 +1,5 @@
+* Server plugin: accept `otherLocaleDirs` (same as the `--other-dirs` flag described below).
+
 ## 2.12.0 (2018-7-20)
 
 * Add `--other-dirs` CLI flag (allows you to include keys and translations from the libs you use in your application, as long as those libs are also using Mady).
