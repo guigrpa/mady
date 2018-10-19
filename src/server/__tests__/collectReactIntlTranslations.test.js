@@ -58,4 +58,18 @@ describe('collectReactIntlTranslations', () => {
     });
     expect(result).toEqual({ reactIntlId3: 'Hello {NAME}!' });
   });
+
+  it('should include all keys with React Intl IDs, for the original lang', () => {
+    const result = collectReactIntlTranslations({
+      originalLang: 'en',
+      lang: 'en',
+      keys: KEYS_INCLUDING_SOME_WITH_BRACES,
+      translations: [],
+      story: mainStory,
+    });
+    expect(result).toEqual({
+      reactIntlId1: 'Hello there!',
+      reactIntlId3: 'Hello {NAME}!'
+    });
+  });
 });

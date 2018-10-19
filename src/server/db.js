@@ -655,6 +655,7 @@ function compileTranslations({ story: baseStory }: { story?: StoryT } = {}) {
       if (_config.fReactIntlOutput) {
         const reactIntlLangPath = getReactIntlLangPath(lang);
         const reactIntlTranslations = collectReactIntlTranslations({
+          originalLang: _config.originalLang,
           lang,
           keys,
           translations,
