@@ -1,5 +1,7 @@
 // @flow
 
+/* eslint-disable react/no-access-state-in-setstate */
+
 import timm from 'timm';
 import React from 'react';
 import Relay, { graphql } from 'react-relay';
