@@ -93,7 +93,9 @@ class Details extends React.PureComponent {
     );
     const elSources = sources.length ? (
       <ul style={style.srcList}>
-        {sources.map((src, idx) => <li key={idx}>{src}</li>)}
+        {sources.map((src, idx) => (
+          <li key={idx}>{src}</li>
+        ))}
       </ul>
     ) : null;
     return (

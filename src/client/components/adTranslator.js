@@ -163,7 +163,9 @@ class Translator extends React.Component {
     return (
       <div className="tableFillerRow" style={style.fillerRow}>
         <div style={style.keyCol}>{noKeys}</div>
-        {this.state.langs.map(lang => <div key={lang} style={style.langCol} />)}
+        {this.state.langs.map(lang => (
+          <div key={lang} style={style.langCol} />
+        ))}
       </div>
     );
   }

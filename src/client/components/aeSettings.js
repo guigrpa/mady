@@ -255,7 +255,8 @@ class Settings extends React.Component {
               required
               errorZ={52}
               style={style.input(width)}
-            />&nbsp;
+            />
+            &nbsp;
             <Icon
               id={`${id}.${idx}`}
               icon="remove"

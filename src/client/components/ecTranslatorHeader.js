@@ -145,8 +145,7 @@ class TranslatorHeader extends React.PureComponent {
             {langStats ? langStats.value : 0}
           </span>
           {' / '}
-          <span title={_t('tooltip_Used messages')}>{stats.numUsedKeys}</span>
-          ]
+          <span title={_t('tooltip_Used messages')}>{stats.numUsedKeys}</span>]
         </span>{' '}
         <Icon
           id={idx}
