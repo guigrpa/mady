@@ -130,10 +130,7 @@ exports[`TranslatorHeader 01 no content 1`] = `
           id={0}
           onBlur={[Function]}
           onChange={[Function]}
-          onCopy={undefined}
-          onCut={undefined}
           onFocus={[Function]}
-          onPaste={undefined}
           style={
             Object {
               "backgroundColor": "default",
@@ -150,7 +147,6 @@ exports[`TranslatorHeader 01 no content 1`] = `
               "width": "100%",
             }
           }
-          tabIndex={undefined}
           type="native"
           value="\\"ca\\""
         >
@@ -200,7 +196,6 @@ exports[`TranslatorHeader 01 no content 1`] = `
       <i
         className="giu-icon fa fa-remove"
         id={0}
-        onClick={undefined}
         style={
           Object {
             "color": undefined,
@@ -259,10 +254,7 @@ exports[`TranslatorHeader 01 no content 1`] = `
           id={1}
           onBlur={[Function]}
           onChange={[Function]}
-          onCopy={undefined}
-          onCut={undefined}
           onFocus={[Function]}
-          onPaste={undefined}
           style={
             Object {
               "backgroundColor": "default",
@@ -279,7 +271,6 @@ exports[`TranslatorHeader 01 no content 1`] = `
               "width": "100%",
             }
           }
-          tabIndex={undefined}
           type="native"
           value="\\"es\\""
         >
@@ -329,7 +320,6 @@ exports[`TranslatorHeader 01 no content 1`] = `
       <i
         className="giu-icon fa fa-remove"
         id={1}
-        onClick={undefined}
         style={
           Object {
             "color": undefined,
@@ -343,7 +333,6 @@ exports[`TranslatorHeader 01 no content 1`] = `
     </div>
     <div
       id="madyBtnAddLang"
-      onClick={undefined}
       style={
         Object {
           "cursor": "pointer",
@@ -678,10 +667,7 @@ exports[`TranslatorHeader 02 normal 1`] = `
           id={0}
           onBlur={[Function]}
           onChange={[Function]}
-          onCopy={undefined}
-          onCut={undefined}
           onFocus={[Function]}
-          onPaste={undefined}
           style={
             Object {
               "backgroundColor": "default",
@@ -698,7 +684,6 @@ exports[`TranslatorHeader 02 normal 1`] = `
               "width": "100%",
             }
           }
-          tabIndex={undefined}
           type="native"
           value="\\"ca\\""
         >
@@ -748,7 +733,6 @@ exports[`TranslatorHeader 02 normal 1`] = `
       <i
         className="giu-icon fa fa-remove"
         id={0}
-        onClick={undefined}
         style={
           Object {
             "color": undefined,
@@ -807,10 +791,7 @@ exports[`TranslatorHeader 02 normal 1`] = `
           id={1}
           onBlur={[Function]}
           onChange={[Function]}
-          onCopy={undefined}
-          onCut={undefined}
           onFocus={[Function]}
-          onPaste={undefined}
           style={
             Object {
               "backgroundColor": "default",
@@ -827,7 +808,6 @@ exports[`TranslatorHeader 02 normal 1`] = `
               "width": "100%",
             }
           }
-          tabIndex={undefined}
           type="native"
           value="\\"es\\""
         >
@@ -877,7 +857,6 @@ exports[`TranslatorHeader 02 normal 1`] = `
       <i
         className="giu-icon fa fa-remove"
         id={1}
-        onClick={undefined}
         style={
           Object {
             "color": undefined,
@@ -891,7 +870,6 @@ exports[`TranslatorHeader 02 normal 1`] = `
     </div>
     <div
       id="madyBtnAddLang"
-      onClick={undefined}
       style={
         Object {
           "cursor": "pointer",
@@ -1226,10 +1204,7 @@ exports[`TranslatorHeader 03 all columns shown 1`] = `
           id={0}
           onBlur={[Function]}
           onChange={[Function]}
-          onCopy={undefined}
-          onCut={undefined}
           onFocus={[Function]}
-          onPaste={undefined}
           style={
             Object {
               "backgroundColor": "default",
@@ -1246,7 +1221,6 @@ exports[`TranslatorHeader 03 all columns shown 1`] = `
               "width": "100%",
             }
           }
-          tabIndex={undefined}
           type="native"
           value="\\"ca\\""
         >
@@ -1296,7 +1270,6 @@ exports[`TranslatorHeader 03 all columns shown 1`] = `
       <i
         className="giu-icon fa fa-remove"
         id={0}
-        onClick={undefined}
         style={
           Object {
             "color": undefined,
@@ -1355,10 +1328,7 @@ exports[`TranslatorHeader 03 all columns shown 1`] = `
           id={1}
           onBlur={[Function]}
           onChange={[Function]}
-          onCopy={undefined}
-          onCut={undefined}
           onFocus={[Function]}
-          onPaste={undefined}
           style={
             Object {
               "backgroundColor": "default",
@@ -1375,7 +1345,6 @@ exports[`TranslatorHeader 03 all columns shown 1`] = `
               "width": "100%",
             }
           }
-          tabIndex={undefined}
           type="native"
           value="\\"es\\""
         >
@@ -1425,7 +1394,6 @@ exports[`TranslatorHeader 03 all columns shown 1`] = `
       <i
         className="giu-icon fa fa-remove"
         id={1}
-        onClick={undefined}
         style={
           Object {
             "color": undefined,
@@ -1484,10 +1452,7 @@ exports[`TranslatorHeader 03 all columns shown 1`] = `
           id={2}
           onBlur={[Function]}
           onChange={[Function]}
-          onCopy={undefined}
-          onCut={undefined}
           onFocus={[Function]}
-          onPaste={undefined}
           style={
             Object {
               "backgroundColor": "default",
@@ -1504,7 +1469,6 @@ exports[`TranslatorHeader 03 all columns shown 1`] = `
               "width": "100%",
             }
           }
-          tabIndex={undefined}
           type="native"
           value="\\"en\\""
         >
@@ -1554,7 +1518,6 @@ exports[`TranslatorHeader 03 all columns shown 1`] = `
       <i
         className="giu-icon fa fa-remove"
         id={2}
-        onClick={undefined}
         style={
           Object {
             "color": undefined,
@@ -1568,7 +1531,6 @@ exports[`TranslatorHeader 03 all columns shown 1`] = `
     </div>
     <div
       id="madyBtnAddLang"
-      onClick={undefined}
       style={
         Object {
           "cursor": undefined,
@@ -1584,7 +1546,6 @@ exports[`TranslatorHeader 03 all columns shown 1`] = `
     >
       <i
         className="giu-icon fa fa-plus"
-        onClick={undefined}
         style={
           Object {
             "color": "#999999",

@@ -16,7 +16,6 @@ exports[`Settings 01 normal 1`] = `
   />
   <div
     className="giu-modal"
-    id={undefined}
     onClick={[Function]}
     onKeyDown={[Function]}
     style={
@@ -99,7 +98,6 @@ exports[`Settings 01 normal 1`] = `
               "zIndex": -80,
             }
           }
-          tabIndex={undefined}
         />
         <div>
           <div
@@ -119,10 +117,7 @@ exports[`Settings 01 normal 1`] = `
               className="giu-select-native"
               onBlur={[Function]}
               onChange={[Function]}
-              onCopy={undefined}
-              onCut={undefined}
               onFocus={[Function]}
-              onPaste={undefined}
               style={
                 Object {
                   "backgroundColor": "default",
@@ -133,7 +128,6 @@ exports[`Settings 01 normal 1`] = `
                   "fontWeight": "inherit",
                 }
               }
-              tabIndex={undefined}
               type="native"
               value="\\"en\\""
             >
@@ -191,11 +185,7 @@ exports[`Settings 01 normal 1`] = `
                 id="langs.0"
                 onBlur={[Function]}
                 onChange={[Function]}
-                onCopy={undefined}
-                onCut={undefined}
                 onFocus={[Function]}
-                onPaste={undefined}
-                orient={undefined}
                 placeholder="e.g. es-ES, ca…"
                 style={
                   Object {
@@ -208,7 +198,6 @@ exports[`Settings 01 normal 1`] = `
                     "width": 80,
                   }
                 }
-                tabIndex={undefined}
                 type="text"
                 value="en"
               />
@@ -242,11 +231,7 @@ exports[`Settings 01 normal 1`] = `
                 id="langs.1"
                 onBlur={[Function]}
                 onChange={[Function]}
-                onCopy={undefined}
-                onCut={undefined}
                 onFocus={[Function]}
-                onPaste={undefined}
-                orient={undefined}
                 placeholder="e.g. es-ES, ca…"
                 style={
                   Object {
@@ -259,7 +244,6 @@ exports[`Settings 01 normal 1`] = `
                     "width": 80,
                   }
                 }
-                tabIndex={undefined}
                 type="text"
                 value="es"
               />
@@ -328,11 +312,7 @@ exports[`Settings 01 normal 1`] = `
                 id="srcPaths.0"
                 onBlur={[Function]}
                 onChange={[Function]}
-                onCopy={undefined}
-                onCut={undefined}
                 onFocus={[Function]}
-                onPaste={undefined}
-                orient={undefined}
                 placeholder="e.g. src/client"
                 style={
                   Object {
@@ -345,7 +325,6 @@ exports[`Settings 01 normal 1`] = `
                     "width": 300,
                   }
                 }
-                tabIndex={undefined}
                 type="text"
                 value="src"
               />
@@ -414,11 +393,7 @@ exports[`Settings 01 normal 1`] = `
                 id="srcExtensions.0"
                 onBlur={[Function]}
                 onChange={[Function]}
-                onCopy={undefined}
-                onCut={undefined}
                 onFocus={[Function]}
-                onPaste={undefined}
-                orient={undefined}
                 placeholder="e.g. .js"
                 style={
                   Object {
@@ -431,7 +406,6 @@ exports[`Settings 01 normal 1`] = `
                     "width": 60,
                   }
                 }
-                tabIndex={undefined}
                 type="text"
                 value=".js"
               />
@@ -465,11 +439,7 @@ exports[`Settings 01 normal 1`] = `
                 id="srcExtensions.1"
                 onBlur={[Function]}
                 onChange={[Function]}
-                onCopy={undefined}
-                onCut={undefined}
                 onFocus={[Function]}
-                onPaste={undefined}
-                orient={undefined}
                 placeholder="e.g. .js"
                 style={
                   Object {
@@ -482,7 +452,6 @@ exports[`Settings 01 normal 1`] = `
                     "width": 60,
                   }
                 }
-                tabIndex={undefined}
                 type="text"
                 value=".jsx"
               />
@@ -551,11 +520,7 @@ exports[`Settings 01 normal 1`] = `
                 id="msgFunctionNames.0"
                 onBlur={[Function]}
                 onChange={[Function]}
-                onCopy={undefined}
-                onCut={undefined}
                 onFocus={[Function]}
-                onPaste={undefined}
-                orient={undefined}
                 placeholder="e.g. _t"
                 style={
                   Object {
@@ -568,7 +533,6 @@ exports[`Settings 01 normal 1`] = `
                     "width": 60,
                   }
                 }
-                tabIndex={undefined}
                 type="text"
                 value="_t"
               />
@@ -671,16 +635,10 @@ exports[`Settings 01 normal 1`] = `
               <input
                 checked={false}
                 className="giu-checkbox"
-                disabled={undefined}
                 id="fJsOutput"
                 onBlur={[Function]}
                 onChange={[Function]}
-                onCopy={undefined}
-                onCut={undefined}
                 onFocus={[Function]}
-                onPaste={undefined}
-                required={undefined}
-                tabIndex={undefined}
                 type="checkbox"
               />
               <label
@@ -696,11 +654,7 @@ exports[`Settings 01 normal 1`] = `
                 id="fMinify"
                 onBlur={[Function]}
                 onChange={[Function]}
-                onCopy={undefined}
-                onCut={undefined}
                 onFocus={[Function]}
-                onPaste={undefined}
-                required={undefined}
                 tabIndex={-1}
                 type="checkbox"
               />
@@ -720,16 +674,10 @@ exports[`Settings 01 normal 1`] = `
               <input
                 checked={false}
                 className="giu-checkbox"
-                disabled={undefined}
                 id="fReactIntlOutput"
                 onBlur={[Function]}
                 onChange={[Function]}
-                onCopy={undefined}
-                onCut={undefined}
                 onFocus={[Function]}
-                onPaste={undefined}
-                required={undefined}
-                tabIndex={undefined}
                 type="checkbox"
               />
               <label
@@ -748,16 +696,10 @@ exports[`Settings 01 normal 1`] = `
               <input
                 checked={false}
                 className="giu-checkbox"
-                disabled={undefined}
                 id="fJsonOutput"
                 onBlur={[Function]}
                 onChange={[Function]}
-                onCopy={undefined}
-                onCut={undefined}
                 onFocus={[Function]}
-                onPaste={undefined}
-                required={undefined}
-                tabIndex={undefined}
                 type="checkbox"
               />
               <label

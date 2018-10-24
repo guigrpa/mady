@@ -56,15 +56,11 @@ exports[`HoverableTranslation 01 without translation 1`] = `
           x
         </div>
         <textarea
-          disabled={undefined}
           onBlur={[Function]}
           onChange={[Function]}
-          onCopy={undefined}
-          onCut={undefined}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
-          onPaste={undefined}
           style={
             Object {
               "backgroundColor": "transparent",
@@ -83,7 +79,6 @@ exports[`HoverableTranslation 01 without translation 1`] = `
               "width": "100%",
             }
           }
-          tabIndex={undefined}
           value=""
         />
       </div>
@@ -172,15 +167,11 @@ exports[`HoverableTranslation 02 with translation 1`] = `
           Un mensaje
         </div>
         <textarea
-          disabled={undefined}
           onBlur={[Function]}
           onChange={[Function]}
-          onCopy={undefined}
-          onCut={undefined}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
-          onPaste={undefined}
           style={
             Object {
               "backgroundColor": "transparent",
@@ -199,7 +190,6 @@ exports[`HoverableTranslation 02 with translation 1`] = `
               "width": "100%",
             }
           }
-          tabIndex={undefined}
           value="Un mensaje"
         />
       </div>

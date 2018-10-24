@@ -35,7 +35,6 @@ exports[`Translator 01 no content 1`] = `
         ]
       }
       dataMockType="TranslatorHeader"
-      lang={undefined}
       langs={
         Array [
           "es",
@@ -118,7 +117,6 @@ exports[`Translator 01 no content 1`] = `
             No messages. Click on 
             <i
               className="giu-icon fa fa-refresh"
-              onClick={undefined}
               style={
                 Object {
                   "color": "#999999",
@@ -222,7 +220,6 @@ exports[`Translator 02 selected row 1`] = `
         ]
       }
       dataMockType="TranslatorHeader"
-      lang={undefined}
       langs={
         Array [
           "es",
@@ -522,7 +519,6 @@ exports[`Translator 03 default columns 1`] = `
         ]
       }
       dataMockType="TranslatorHeader"
-      lang={undefined}
       langs={
         Array [
           "es",
@@ -568,7 +564,6 @@ exports[`Translator 03 default columns 1`] = `
       }
     >
       <div
-        changeSelectedKey={undefined}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
@@ -631,7 +626,6 @@ exports[`Translator 03 default columns 1`] = `
         TranslatorRow (unselected - A message)
       </div>
       <div
-        changeSelectedKey={undefined}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
@@ -819,7 +813,6 @@ exports[`Translator 04 fixed columns 1`] = `
         ]
       }
       dataMockType="TranslatorHeader"
-      lang={undefined}
       langs={
         Array [
           "ca",
@@ -866,7 +859,6 @@ exports[`Translator 04 fixed columns 1`] = `
       }
     >
       <div
-        changeSelectedKey={undefined}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
@@ -930,7 +922,6 @@ exports[`Translator 04 fixed columns 1`] = `
         TranslatorRow (unselected - A message)
       </div>
       <div
-        changeSelectedKey={undefined}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
@@ -1132,7 +1123,6 @@ exports[`Translator 05 add column (it must correspond to a new language) 1`] = `
         ]
       }
       dataMockType="TranslatorHeader"
-      lang={undefined}
       langs={
         Array [
           "ca",
@@ -1180,7 +1170,6 @@ exports[`Translator 05 add column (it must correspond to a new language) 1`] = `
       }
     >
       <div
-        changeSelectedKey={undefined}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
@@ -1245,7 +1234,6 @@ exports[`Translator 05 add column (it must correspond to a new language) 1`] = `
         TranslatorRow (unselected - A message)
       </div>
       <div
-        changeSelectedKey={undefined}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
@@ -1461,7 +1449,6 @@ exports[`Translator 06 remove column 1`] = `
         ]
       }
       dataMockType="TranslatorHeader"
-      lang={undefined}
       langs={
         Array [
           "es",
@@ -1507,7 +1494,6 @@ exports[`Translator 06 remove column 1`] = `
       }
     >
       <div
-        changeSelectedKey={undefined}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
@@ -1570,7 +1556,6 @@ exports[`Translator 06 remove column 1`] = `
         TranslatorRow (unselected - A message)
       </div>
       <div
-        changeSelectedKey={undefined}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
@@ -1758,7 +1743,6 @@ exports[`Translator 07 change column language 1`] = `
         ]
       }
       dataMockType="TranslatorHeader"
-      lang={undefined}
       langs={
         Array [
           "ca",
@@ -1805,7 +1789,6 @@ exports[`Translator 07 change column language 1`] = `
       }
     >
       <div
-        changeSelectedKey={undefined}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
@@ -1869,7 +1852,6 @@ exports[`Translator 07 change column language 1`] = `
         TranslatorRow (unselected - A message)
       </div>
       <div
-        changeSelectedKey={undefined}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
@@ -2071,7 +2053,6 @@ exports[`Translator 07 change column language 2`] = `
         ]
       }
       dataMockType="TranslatorHeader"
-      lang={undefined}
       langs={
         Array [
           "en",
@@ -2118,7 +2099,6 @@ exports[`Translator 07 change column language 2`] = `
       }
     >
       <div
-        changeSelectedKey={undefined}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
@@ -2182,7 +2162,6 @@ exports[`Translator 07 change column language 2`] = `
         TranslatorRow (unselected - A message)
       </div>
       <div
-        changeSelectedKey={undefined}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
@@ -2384,7 +2363,6 @@ exports[`Translator 07 change column language 3`] = `
         ]
       }
       dataMockType="TranslatorHeader"
-      lang={undefined}
       langs={
         Array [
           "es",
@@ -2430,7 +2408,6 @@ exports[`Translator 07 change column language 3`] = `
       }
     >
       <div
-        changeSelectedKey={undefined}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
@@ -2493,7 +2470,6 @@ exports[`Translator 07 change column language 3`] = `
         TranslatorRow (unselected - A message)
       </div>
       <div
-        changeSelectedKey={undefined}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
@@ -2681,7 +2657,6 @@ exports[`Translator 10 applies UNUSED filter 1`] = `
         ]
       }
       dataMockType="TranslatorHeader"
-      lang={undefined}
       langs={
         Array [
           "ca",
@@ -2691,7 +2666,6 @@ exports[`Translator 10 applies UNUSED filter 1`] = `
       onAddLang={[Function]}
       onChangeLang={[Function]}
       onRemoveLang={[Function]}
-      stats={undefined}
     >
       TranslatorHeader (ca,es)
     </div>
@@ -2709,7 +2683,6 @@ exports[`Translator 10 applies UNUSED filter 1`] = `
       }
     >
       <div
-        changeSelectedKey={undefined}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
@@ -2718,7 +2691,6 @@ exports[`Translator 10 applies UNUSED filter 1`] = `
             "es",
           ]
         }
-        stats={undefined}
         styleKeyCol={
           Object {
             "WebkitFlex": "1 1 0px",
@@ -2874,7 +2846,6 @@ exports[`Translator 11 applies UNTRANSLATED filter 1`] = `
         ]
       }
       dataMockType="TranslatorHeader"
-      lang={undefined}
       langs={
         Array [
           "ca",
@@ -2921,7 +2892,6 @@ exports[`Translator 11 applies UNTRANSLATED filter 1`] = `
       }
     >
       <div
-        changeSelectedKey={undefined}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
@@ -3105,7 +3075,6 @@ exports[`Translator 12 applies FUZZY filter 1`] = `
         ]
       }
       dataMockType="TranslatorHeader"
-      lang={undefined}
       langs={
         Array [
           "ca",
@@ -3115,7 +3084,6 @@ exports[`Translator 12 applies FUZZY filter 1`] = `
       onAddLang={[Function]}
       onChangeLang={[Function]}
       onRemoveLang={[Function]}
-      stats={undefined}
     >
       TranslatorHeader (ca,es)
     </div>
@@ -3133,7 +3101,6 @@ exports[`Translator 12 applies FUZZY filter 1`] = `
       }
     >
       <div
-        changeSelectedKey={undefined}
         dataMockType="TranslatorRow"
         fSelected={false}
         langs={
@@ -3142,7 +3109,6 @@ exports[`Translator 12 applies FUZZY filter 1`] = `
             "es",
           ]
         }
-        stats={undefined}
         styleKeyCol={
           Object {
             "WebkitFlex": "1 1 0px",
@@ -3307,7 +3273,6 @@ exports[`Translator 12 applies FUZZY filter only over shown languages 1`] = `
         ]
       }
       dataMockType="TranslatorHeader"
-      lang={undefined}
       langs={
         Array [
           "ca",
@@ -3316,7 +3281,6 @@ exports[`Translator 12 applies FUZZY filter only over shown languages 1`] = `
       onAddLang={[Function]}
       onChangeLang={[Function]}
       onRemoveLang={[Function]}
-      stats={undefined}
     >
       TranslatorHeader (ca)
     </div>
