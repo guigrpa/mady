@@ -69,9 +69,9 @@
     "jest-html": "jest-html --snapshot-patterns \"src/**/*.snap\"",
     "jestDebug": "node --debug-brk --inspect node_modules/.bin/jest -i",
     "testCovPrepare": "rm -rf ./coverage .nyc_output .nyc_tmp && mkdir .nyc_tmp",
-    "testDev": "NODE_ENV=development jest --coverage && mv .nyc_output/coverage-final.json .nyc_tmp/coverage-dev.json",
-    "testProd": "NODE_ENV=production jest --coverage && mv .nyc_output/coverage-final.json .nyc_tmp/coverage-prod.json",
-    "testMin": "TEST_MINIFIED_LIB=1 jest --coverage && mv .nyc_output/coverage-final.json .nyc_tmp/coverage-min.json",
+    "testDev": "NODE_ENV=development jest --coverage && node tools/processCoverageFile dev",
+    "testProd": "NODE_ENV=production jest --coverage && node tools/processCoverageFile prod",
+    "testMin": "TEST_MINIFIED_LIB=1 jest --coverage && node tools/processCoverageFile min",
     "testCovReport": "cp .nyc_tmp/* .nyc_output/ && nyc report --reporter=html --reporter=lcov --reporter=text",
     "prettier": "prettier --single-quote --trailing-comma es5 --write \"src/**/*.js\""
   },
