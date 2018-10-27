@@ -7,65 +7,69 @@
 'use strict';
 
 /*::
-import type {ConcreteFragment} from 'relay-runtime';
+import type { ConcreteFragment } from 'relay-runtime';
+import type { FragmentReference } from "relay-runtime";
+declare export opaque type ecTranslatorHeader_stats$ref: FragmentReference;
 export type ecTranslatorHeader_stats = {|
-  +numTotalKeys: number;
-  +numUsedKeys: number;
+  +numTotalKeys: number,
+  +numUsedKeys: number,
   +numTranslations: ?$ReadOnlyArray<?{|
-    +lang: string;
-    +value: number;
-  |}>;
+    +lang: string,
+    +value: number,
+  |}>,
+  +$refType: ecTranslatorHeader_stats$ref,
 |};
 */
 
 
-const fragment /*: ConcreteFragment*/ = {
-  "argumentDefinitions": [],
+const node/*: ConcreteFragment*/ = {
   "kind": "Fragment",
-  "metadata": null,
   "name": "ecTranslatorHeader_stats",
+  "type": "Stats",
+  "metadata": null,
+  "argumentDefinitions": [],
   "selections": [
     {
       "kind": "ScalarField",
       "alias": null,
-      "args": null,
       "name": "numTotalKeys",
+      "args": null,
       "storageKey": null
     },
     {
       "kind": "ScalarField",
       "alias": null,
-      "args": null,
       "name": "numUsedKeys",
+      "args": null,
       "storageKey": null
     },
     {
       "kind": "LinkedField",
       "alias": null,
+      "name": "numTranslations",
+      "storageKey": null,
       "args": null,
       "concreteType": "StatsForLang",
-      "name": "numTranslations",
       "plural": true,
       "selections": [
         {
           "kind": "ScalarField",
           "alias": null,
-          "args": null,
           "name": "lang",
+          "args": null,
           "storageKey": null
         },
         {
           "kind": "ScalarField",
           "alias": null,
-          "args": null,
           "name": "value",
+          "args": null,
           "storageKey": null
         }
-      ],
-      "storageKey": null
+      ]
     }
-  ],
-  "type": "Stats"
+  ]
 };
-
-module.exports = fragment;
+// prettier-ignore
+(node/*: any*/).hash = 'd26fe4a27153078d1dafba509f76c862';
+module.exports = node;

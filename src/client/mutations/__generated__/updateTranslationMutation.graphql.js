@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 982562aba099fcefa8d42a871262626b
+ * @relayHash 1a0861f04a1dc1adfdeb2e7a77fa0d22
  */
 
 /* eslint-disable */
@@ -8,29 +8,38 @@
 'use strict';
 
 /*::
-import type {ConcreteBatch} from 'relay-runtime';
+import type { ConcreteRequest } from 'relay-runtime';
+type ecTranslatorHeader_stats$ref = any;
+type eeTranslation_translation$ref = any;
+export type UpdateTranslationInput = {
+  id: string,
+  attrs?: ?TranslationUpdate,
+  storyId?: ?string,
+  clientMutationId?: ?string,
+};
+export type TranslationUpdate = {
+  isDeleted?: ?boolean,
+  translation?: ?string,
+  fuzzy?: ?boolean,
+};
 export type updateTranslationMutationVariables = {|
-  input: {
-    id: string;
-    attrs?: ?{
-      isDeleted?: ?boolean;
-      translation?: ?string;
-      fuzzy?: ?boolean;
-    };
-    storyId?: ?string;
-    clientMutationId?: ?string;
-  };
+  input: UpdateTranslationInput
 |};
-
 export type updateTranslationMutationResponse = {|
   +updateTranslation: ?{|
     +translation: ?{|
-      +isDeleted: ?boolean;
-    |};
+      +isDeleted: ?boolean,
+      +$fragmentRefs: eeTranslation_translation$ref,
+    |},
     +stats: {|
-      +id: string;
-    |};
-  |};
+      +id: string,
+      +$fragmentRefs: ecTranslatorHeader_stats$ref,
+    |},
+  |}
+|};
+export type updateTranslationMutation = {|
+  variables: updateTranslationMutationVariables,
+  response: updateTranslationMutationResponse,
 |};
 */
 
@@ -70,234 +79,198 @@ fragment ecTranslatorHeader_stats on Stats {
 }
 */
 
-const batch /*: ConcreteBatch*/ = {
+const node/*: ConcreteRequest*/ = (function(){
+var v0 = [
+  {
+    "kind": "LocalArgument",
+    "name": "input",
+    "type": "UpdateTranslationInput!",
+    "defaultValue": null
+  }
+],
+v1 = [
+  {
+    "kind": "Variable",
+    "name": "input",
+    "variableName": "input",
+    "type": "UpdateTranslationInput!"
+  }
+],
+v2 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "isDeleted",
+  "args": null,
+  "storageKey": null
+},
+v3 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "id",
+  "args": null,
+  "storageKey": null
+},
+v4 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "lang",
+  "args": null,
+  "storageKey": null
+};
+return {
+  "kind": "Request",
+  "operationKind": "mutation",
+  "name": "updateTranslationMutation",
+  "id": null,
+  "text": "mutation updateTranslationMutation(\n  $input: UpdateTranslationInput!\n) {\n  updateTranslation(input: $input) {\n    translation {\n      isDeleted\n      ...eeTranslation_translation\n      id\n    }\n    stats {\n      id\n      ...ecTranslatorHeader_stats\n    }\n  }\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  isDeleted\n  lang\n  translation\n  fuzzy\n}\n\nfragment ecTranslatorHeader_stats on Stats {\n  numTotalKeys\n  numUsedKeys\n  numTranslations {\n    lang\n    value\n  }\n}\n",
+  "metadata": {},
   "fragment": {
-    "argumentDefinitions": [
-      {
-        "kind": "LocalArgument",
-        "name": "input",
-        "type": "UpdateTranslationInput!",
-        "defaultValue": null
-      }
-    ],
     "kind": "Fragment",
-    "metadata": null,
     "name": "updateTranslationMutation",
+    "type": "Mutation",
+    "metadata": null,
+    "argumentDefinitions": v0,
     "selections": [
       {
         "kind": "LinkedField",
         "alias": null,
-        "args": [
-          {
-            "kind": "Variable",
-            "name": "input",
-            "variableName": "input",
-            "type": "UpdateTranslationInput!"
-          }
-        ],
-        "concreteType": "UpdateTranslationPayload",
         "name": "updateTranslation",
+        "storageKey": null,
+        "args": v1,
+        "concreteType": "UpdateTranslationPayload",
         "plural": false,
         "selections": [
           {
             "kind": "LinkedField",
             "alias": null,
+            "name": "translation",
+            "storageKey": null,
             "args": null,
             "concreteType": "Translation",
-            "name": "translation",
             "plural": false,
             "selections": [
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "isDeleted",
-                "storageKey": null
-              },
+              v2,
               {
                 "kind": "FragmentSpread",
                 "name": "eeTranslation_translation",
                 "args": null
               }
-            ],
-            "storageKey": null
+            ]
           },
           {
             "kind": "LinkedField",
             "alias": null,
+            "name": "stats",
+            "storageKey": null,
             "args": null,
             "concreteType": "Stats",
-            "name": "stats",
             "plural": false,
             "selections": [
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "id",
-                "storageKey": null
-              },
+              v3,
               {
                 "kind": "FragmentSpread",
                 "name": "ecTranslatorHeader_stats",
                 "args": null
               }
-            ],
-            "storageKey": null
+            ]
           }
-        ],
-        "storageKey": null
+        ]
       }
-    ],
-    "type": "Mutation"
+    ]
   },
-  "id": null,
-  "kind": "Batch",
-  "metadata": {},
-  "name": "updateTranslationMutation",
-  "query": {
-    "argumentDefinitions": [
-      {
-        "kind": "LocalArgument",
-        "name": "input",
-        "type": "UpdateTranslationInput!",
-        "defaultValue": null
-      }
-    ],
-    "kind": "Root",
+  "operation": {
+    "kind": "Operation",
     "name": "updateTranslationMutation",
-    "operation": "mutation",
+    "argumentDefinitions": v0,
     "selections": [
       {
         "kind": "LinkedField",
         "alias": null,
-        "args": [
-          {
-            "kind": "Variable",
-            "name": "input",
-            "variableName": "input",
-            "type": "UpdateTranslationInput!"
-          }
-        ],
-        "concreteType": "UpdateTranslationPayload",
         "name": "updateTranslation",
+        "storageKey": null,
+        "args": v1,
+        "concreteType": "UpdateTranslationPayload",
         "plural": false,
         "selections": [
           {
             "kind": "LinkedField",
             "alias": null,
+            "name": "translation",
+            "storageKey": null,
             "args": null,
             "concreteType": "Translation",
-            "name": "translation",
             "plural": false,
             "selections": [
+              v2,
+              v3,
+              v4,
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
-                "name": "isDeleted",
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "id",
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "lang",
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
                 "name": "translation",
+                "args": null,
                 "storageKey": null
               },
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "fuzzy",
+                "args": null,
                 "storageKey": null
               }
-            ],
-            "storageKey": null
+            ]
           },
           {
             "kind": "LinkedField",
             "alias": null,
+            "name": "stats",
+            "storageKey": null,
             "args": null,
             "concreteType": "Stats",
-            "name": "stats",
             "plural": false,
             "selections": [
+              v3,
               {
                 "kind": "ScalarField",
                 "alias": null,
+                "name": "numTotalKeys",
                 "args": null,
-                "name": "id",
                 "storageKey": null
               },
               {
-                "kind": "InlineFragment",
-                "type": "Stats",
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "numUsedKeys",
+                "args": null,
+                "storageKey": null
+              },
+              {
+                "kind": "LinkedField",
+                "alias": null,
+                "name": "numTranslations",
+                "storageKey": null,
+                "args": null,
+                "concreteType": "StatsForLang",
+                "plural": true,
                 "selections": [
+                  v4,
                   {
                     "kind": "ScalarField",
                     "alias": null,
+                    "name": "value",
                     "args": null,
-                    "name": "numTotalKeys",
-                    "storageKey": null
-                  },
-                  {
-                    "kind": "ScalarField",
-                    "alias": null,
-                    "args": null,
-                    "name": "numUsedKeys",
-                    "storageKey": null
-                  },
-                  {
-                    "kind": "LinkedField",
-                    "alias": null,
-                    "args": null,
-                    "concreteType": "StatsForLang",
-                    "name": "numTranslations",
-                    "plural": true,
-                    "selections": [
-                      {
-                        "kind": "ScalarField",
-                        "alias": null,
-                        "args": null,
-                        "name": "lang",
-                        "storageKey": null
-                      },
-                      {
-                        "kind": "ScalarField",
-                        "alias": null,
-                        "args": null,
-                        "name": "value",
-                        "storageKey": null
-                      }
-                    ],
                     "storageKey": null
                   }
                 ]
               }
-            ],
-            "storageKey": null
+            ]
           }
-        ],
-        "storageKey": null
+        ]
       }
     ]
-  },
-  "text": "mutation updateTranslationMutation(\n  $input: UpdateTranslationInput!\n) {\n  updateTranslation(input: $input) {\n    translation {\n      isDeleted\n      ...eeTranslation_translation\n      id\n    }\n    stats {\n      id\n      ...ecTranslatorHeader_stats\n    }\n  }\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  isDeleted\n  lang\n  translation\n  fuzzy\n}\n\nfragment ecTranslatorHeader_stats on Stats {\n  numTotalKeys\n  numUsedKeys\n  numTranslations {\n    lang\n    value\n  }\n}\n"
+  }
 };
-
-module.exports = batch;
+})();
+// prettier-ignore
+(node/*: any*/).hash = '783d4b4d4ca03c0b8a0c3c9b0f8ee139';
+module.exports = node;

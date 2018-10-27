@@ -7,40 +7,103 @@
 'use strict';
 
 /*::
-import type {ConcreteFragment} from 'relay-runtime';
+import type { ConcreteFragment } from 'relay-runtime';
+type ecTranslatorHeader_stats$ref = any;
+type edTranslatorRow_theKey$ref = any;
+import type { FragmentReference } from "relay-runtime";
+declare export opaque type adTranslator_viewer$ref: FragmentReference;
 export type adTranslator_viewer = {|
-  +id: string;
+  +id: string,
   +config: {|
-    +langs: $ReadOnlyArray<string>;
-  |};
-  +stats: {| |};
+    +langs: $ReadOnlyArray<string>
+  |},
+  +stats: {|
+    +$fragmentRefs: ecTranslatorHeader_stats$ref
+  |},
   +keys: ?{|
     +edges: ?$ReadOnlyArray<?{|
       +node: ?{|
-        +id: string;
-        +isDeleted: ?boolean;
-        +unusedSince: ?string;
-        +context: ?string;
-        +text: string;
+        +id: string,
+        +isDeleted: ?boolean,
+        +unusedSince: ?string,
+        +context: ?string,
+        +text: string,
         +translations: ?{|
           +edges: ?$ReadOnlyArray<?{|
             +node: ?{|
-              +isDeleted: ?boolean;
-              +lang: string;
-              +fuzzy: ?boolean;
-            |};
-          |}>;
-        |};
-      |};
-    |}>;
-  |};
+              +isDeleted: ?boolean,
+              +lang: string,
+              +fuzzy: ?boolean,
+            |}
+          |}>
+        |},
+        +$fragmentRefs: edTranslatorRow_theKey$ref,
+      |}
+    |}>
+  |},
+  +$refType: adTranslator_viewer$ref,
 |};
 */
 
 
-const fragment /*: ConcreteFragment*/ = {
-  "argumentDefinitions": [],
+const node/*: ConcreteFragment*/ = (function(){
+var v0 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "id",
+  "args": null,
+  "storageKey": null
+},
+v1 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "isDeleted",
+  "args": null,
+  "storageKey": null
+},
+v2 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "__typename",
+  "args": null,
+  "storageKey": null
+},
+v3 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "cursor",
+  "args": null,
+  "storageKey": null
+},
+v4 = {
+  "kind": "LinkedField",
+  "alias": null,
+  "name": "pageInfo",
+  "storageKey": null,
+  "args": null,
+  "concreteType": "PageInfo",
+  "plural": false,
+  "selections": [
+    {
+      "kind": "ScalarField",
+      "alias": null,
+      "name": "endCursor",
+      "args": null,
+      "storageKey": null
+    },
+    {
+      "kind": "ScalarField",
+      "alias": null,
+      "name": "hasNextPage",
+      "args": null,
+      "storageKey": null
+    }
+  ]
+};
+return {
   "kind": "Fragment",
+  "name": "adTranslator_viewer",
+  "type": "Viewer",
   "metadata": {
     "connection": [
       {
@@ -59,39 +122,34 @@ const fragment /*: ConcreteFragment*/ = {
       }
     ]
   },
-  "name": "adTranslator_viewer",
+  "argumentDefinitions": [],
   "selections": [
-    {
-      "kind": "ScalarField",
-      "alias": null,
-      "args": null,
-      "name": "id",
-      "storageKey": null
-    },
+    v0,
     {
       "kind": "LinkedField",
       "alias": null,
+      "name": "config",
+      "storageKey": null,
       "args": null,
       "concreteType": "Config",
-      "name": "config",
       "plural": false,
       "selections": [
         {
           "kind": "ScalarField",
           "alias": null,
-          "args": null,
           "name": "langs",
+          "args": null,
           "storageKey": null
         }
-      ],
-      "storageKey": null
+      ]
     },
     {
       "kind": "LinkedField",
       "alias": null,
+      "name": "stats",
+      "storageKey": null,
       "args": null,
       "concreteType": "Stats",
-      "name": "stats",
       "plural": false,
       "selections": [
         {
@@ -99,216 +157,126 @@ const fragment /*: ConcreteFragment*/ = {
           "name": "ecTranslatorHeader_stats",
           "args": null
         }
-      ],
-      "storageKey": null
+      ]
     },
     {
       "kind": "LinkedField",
       "alias": "keys",
+      "name": "__Translator_viewer_keys_connection",
+      "storageKey": null,
       "args": null,
       "concreteType": "KeyConnection",
-      "name": "__Translator_viewer_keys_connection",
       "plural": false,
       "selections": [
         {
           "kind": "LinkedField",
           "alias": null,
+          "name": "edges",
+          "storageKey": null,
           "args": null,
           "concreteType": "KeyEdge",
-          "name": "edges",
           "plural": true,
           "selections": [
             {
               "kind": "LinkedField",
               "alias": null,
+              "name": "node",
+              "storageKey": null,
               "args": null,
               "concreteType": "Key",
-              "name": "node",
               "plural": false,
               "selections": [
+                v0,
+                v1,
                 {
                   "kind": "ScalarField",
                   "alias": null,
-                  "args": null,
-                  "name": "id",
-                  "storageKey": null
-                },
-                {
-                  "kind": "ScalarField",
-                  "alias": null,
-                  "args": null,
-                  "name": "isDeleted",
-                  "storageKey": null
-                },
-                {
-                  "kind": "ScalarField",
-                  "alias": null,
-                  "args": null,
                   "name": "unusedSince",
+                  "args": null,
                   "storageKey": null
                 },
                 {
                   "kind": "ScalarField",
                   "alias": null,
-                  "args": null,
                   "name": "context",
+                  "args": null,
                   "storageKey": null
                 },
                 {
                   "kind": "ScalarField",
                   "alias": null,
-                  "args": null,
                   "name": "text",
+                  "args": null,
                   "storageKey": null
                 },
                 {
                   "kind": "LinkedField",
                   "alias": "translations",
+                  "name": "__Translator_viewer_translations_connection",
+                  "storageKey": null,
                   "args": null,
                   "concreteType": "TranslationConnection",
-                  "name": "__Translator_viewer_translations_connection",
                   "plural": false,
                   "selections": [
                     {
                       "kind": "LinkedField",
                       "alias": null,
+                      "name": "edges",
+                      "storageKey": null,
                       "args": null,
                       "concreteType": "TranslationEdge",
-                      "name": "edges",
                       "plural": true,
                       "selections": [
                         {
                           "kind": "LinkedField",
                           "alias": null,
+                          "name": "node",
+                          "storageKey": null,
                           "args": null,
                           "concreteType": "Translation",
-                          "name": "node",
                           "plural": false,
                           "selections": [
+                            v1,
                             {
                               "kind": "ScalarField",
                               "alias": null,
-                              "args": null,
-                              "name": "isDeleted",
-                              "storageKey": null
-                            },
-                            {
-                              "kind": "ScalarField",
-                              "alias": null,
-                              "args": null,
                               "name": "lang",
+                              "args": null,
                               "storageKey": null
                             },
                             {
                               "kind": "ScalarField",
                               "alias": null,
-                              "args": null,
                               "name": "fuzzy",
+                              "args": null,
                               "storageKey": null
                             },
-                            {
-                              "kind": "ScalarField",
-                              "alias": null,
-                              "args": null,
-                              "name": "__typename",
-                              "storageKey": null
-                            }
-                          ],
-                          "storageKey": null
+                            v2
+                          ]
                         },
-                        {
-                          "kind": "ScalarField",
-                          "alias": null,
-                          "args": null,
-                          "name": "cursor",
-                          "storageKey": null
-                        }
-                      ],
-                      "storageKey": null
+                        v3
+                      ]
                     },
-                    {
-                      "kind": "LinkedField",
-                      "alias": null,
-                      "args": null,
-                      "concreteType": "PageInfo",
-                      "name": "pageInfo",
-                      "plural": false,
-                      "selections": [
-                        {
-                          "kind": "ScalarField",
-                          "alias": null,
-                          "args": null,
-                          "name": "endCursor",
-                          "storageKey": null
-                        },
-                        {
-                          "kind": "ScalarField",
-                          "alias": null,
-                          "args": null,
-                          "name": "hasNextPage",
-                          "storageKey": null
-                        }
-                      ],
-                      "storageKey": null
-                    }
-                  ],
-                  "storageKey": null
+                    v4
+                  ]
                 },
                 {
                   "kind": "FragmentSpread",
                   "name": "edTranslatorRow_theKey",
                   "args": null
                 },
-                {
-                  "kind": "ScalarField",
-                  "alias": null,
-                  "args": null,
-                  "name": "__typename",
-                  "storageKey": null
-                }
-              ],
-              "storageKey": null
+                v2
+              ]
             },
-            {
-              "kind": "ScalarField",
-              "alias": null,
-              "args": null,
-              "name": "cursor",
-              "storageKey": null
-            }
-          ],
-          "storageKey": null
+            v3
+          ]
         },
-        {
-          "kind": "LinkedField",
-          "alias": null,
-          "args": null,
-          "concreteType": "PageInfo",
-          "name": "pageInfo",
-          "plural": false,
-          "selections": [
-            {
-              "kind": "ScalarField",
-              "alias": null,
-              "args": null,
-              "name": "endCursor",
-              "storageKey": null
-            },
-            {
-              "kind": "ScalarField",
-              "alias": null,
-              "args": null,
-              "name": "hasNextPage",
-              "storageKey": null
-            }
-          ],
-          "storageKey": null
-        }
-      ],
-      "storageKey": null
+        v4
+      ]
     }
-  ],
-  "type": "Viewer"
+  ]
 };
-
-module.exports = fragment;
+})();
+// prettier-ignore
+(node/*: any*/).hash = 'cebc4227005f0f874ab4e0e08258e698';
+module.exports = node;

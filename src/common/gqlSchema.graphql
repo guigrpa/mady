@@ -1,5 +1,5 @@
 type Config implements Node {
-  # The ID of an object
+  """The ID of an object"""
   id: ID!
   srcPaths: [String!]!
   srcExtensions: [String!]!
@@ -48,7 +48,7 @@ type CreateTranslationInKeyTranslationsPayload {
 }
 
 type Key implements Node {
-  # The ID of an object
+  """The ID of an object"""
   id: ID!
   isDeleted: Boolean
   context: String
@@ -62,21 +62,21 @@ type Key implements Node {
   translations(after: String, first: Int, before: String, last: Int): TranslationConnection
 }
 
-# A connection to a list of items.
+"""A connection to a list of items."""
 type KeyConnection {
-  # Information to aid in pagination.
+  """Information to aid in pagination."""
   pageInfo: PageInfo!
 
-  # A list of edges.
+  """A list of edges."""
   edges: [KeyEdge]
 }
 
-# An edge in a connection.
+"""An edge in a connection."""
 type KeyEdge {
-  # The item at the end of the edge
+  """The item at the end of the edge"""
   node: Key
 
-  # A cursor for use in pagination
+  """A cursor for use in pagination"""
   cursor: String!
 }
 
@@ -96,24 +96,24 @@ type Mutation {
   updateTranslation(input: UpdateTranslationInput!): UpdateTranslationPayload
 }
 
-# An object with an ID
+"""An object with an ID"""
 interface Node {
-  # The id of the object.
+  """The id of the object."""
   id: ID!
 }
 
-# Information about pagination in a connection.
+"""Information about pagination in a connection."""
 type PageInfo {
-  # When paginating forwards, are there more items?
+  """When paginating forwards, are there more items?"""
   hasNextPage: Boolean!
 
-  # When paginating backwards, are there more items?
+  """When paginating backwards, are there more items?"""
   hasPreviousPage: Boolean!
 
-  # When paginating backwards, the cursor to continue.
+  """When paginating backwards, the cursor to continue."""
   startCursor: String
 
-  # When paginating forwards, the cursor to continue.
+  """When paginating forwards, the cursor to continue."""
   endCursor: String
 }
 
@@ -133,16 +133,16 @@ type ParseSrcFilesPayload {
 }
 
 type Query {
-  # Fetches an object given its ID
+  """Fetches an object given its ID"""
   node(
-    # The ID of an object
+    """The ID of an object"""
     id: ID!
   ): Node
   viewer: Viewer
 }
 
 type Stats implements Node {
-  # The ID of an object
+  """The ID of an object"""
   id: ID!
   numTotalKeys: Float!
   numUsedKeys: Float!
@@ -164,7 +164,7 @@ type Subscription {
 }
 
 type Translation implements Node {
-  # The ID of an object
+  """The ID of an object"""
   id: ID!
   isDeleted: Boolean
   lang: String!
@@ -173,12 +173,12 @@ type Translation implements Node {
   keyId: ID!
 }
 
-# A connection to a list of items.
+"""A connection to a list of items."""
 type TranslationConnection {
-  # Information to aid in pagination.
+  """Information to aid in pagination."""
   pageInfo: PageInfo!
 
-  # A list of edges.
+  """A list of edges."""
   edges: [TranslationEdge]
 }
 
@@ -189,12 +189,12 @@ input TranslationCreate {
   keyId: ID!
 }
 
-# An edge in a connection.
+"""An edge in a connection."""
 type TranslationEdge {
-  # The item at the end of the edge
+  """The item at the end of the edge"""
   node: Translation
 
-  # A cursor for use in pagination
+  """A cursor for use in pagination"""
   cursor: String!
 }
 
@@ -266,7 +266,7 @@ type UpdateTranslationPayload {
 }
 
 type Viewer implements Node {
-  # The ID of an object
+  """The ID of an object"""
   id: ID!
   config: Config!
   stats: Stats!

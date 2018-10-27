@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 072f77128e9eb0be46c1d774713478f6
+ * @relayHash e6c86c888556d71a36870b5c297935ab
  */
 
 /* eslint-disable */
@@ -8,16 +8,19 @@
 'use strict';
 
 /*::
-import type {ConcreteBatch} from 'relay-runtime';
-export type updatedKeySubscriptionVariables = {| |};
-
+import type { ConcreteRequest } from 'relay-runtime';
+export type updatedKeySubscriptionVariables = {||};
 export type updatedKeySubscriptionResponse = {|
   +updatedKey: ?{|
     +key: ?{|
-      +text: string;
-      +isDeleted: ?boolean;
-    |};
-  |};
+      +text: string,
+      +isDeleted: ?boolean,
+    |}
+  |}
+|};
+export type updatedKeySubscription = {|
+  variables: updatedKeySubscriptionVariables,
+  response: updatedKeySubscriptionResponse,
 |};
 */
 
@@ -34,108 +37,101 @@ subscription updatedKeySubscription {
 }
 */
 
-const batch /*: ConcreteBatch*/ = {
-  "fragment": {
-    "argumentDefinitions": [],
-    "kind": "Fragment",
-    "metadata": null,
-    "name": "updatedKeySubscription",
-    "selections": [
-      {
-        "kind": "LinkedField",
-        "alias": null,
-        "args": null,
-        "concreteType": "UpdatedKeyPayload",
-        "name": "updatedKey",
-        "plural": false,
-        "selections": [
-          {
-            "kind": "LinkedField",
-            "alias": null,
-            "args": null,
-            "concreteType": "Key",
-            "name": "key",
-            "plural": false,
-            "selections": [
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "text",
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "isDeleted",
-                "storageKey": null
-              }
-            ],
-            "storageKey": null
-          }
-        ],
-        "storageKey": null
-      }
-    ],
-    "type": "Subscription"
-  },
-  "id": null,
-  "kind": "Batch",
-  "metadata": {},
+const node/*: ConcreteRequest*/ = (function(){
+var v0 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "text",
+  "args": null,
+  "storageKey": null
+},
+v1 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "isDeleted",
+  "args": null,
+  "storageKey": null
+};
+return {
+  "kind": "Request",
+  "operationKind": "subscription",
   "name": "updatedKeySubscription",
-  "query": {
-    "argumentDefinitions": [],
-    "kind": "Root",
+  "id": null,
+  "text": "subscription updatedKeySubscription {\n  updatedKey {\n    key {\n      text\n      isDeleted\n      id\n    }\n  }\n}\n",
+  "metadata": {},
+  "fragment": {
+    "kind": "Fragment",
     "name": "updatedKeySubscription",
-    "operation": "subscription",
+    "type": "Subscription",
+    "metadata": null,
+    "argumentDefinitions": [],
     "selections": [
       {
         "kind": "LinkedField",
         "alias": null,
+        "name": "updatedKey",
+        "storageKey": null,
         "args": null,
         "concreteType": "UpdatedKeyPayload",
-        "name": "updatedKey",
         "plural": false,
         "selections": [
           {
             "kind": "LinkedField",
             "alias": null,
+            "name": "key",
+            "storageKey": null,
             "args": null,
             "concreteType": "Key",
-            "name": "key",
             "plural": false,
             "selections": [
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "text",
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "isDeleted",
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "id",
-                "storageKey": null
-              }
-            ],
-            "storageKey": null
+              v0,
+              v1
+            ]
           }
-        ],
-        "storageKey": null
+        ]
       }
     ]
   },
-  "text": "subscription updatedKeySubscription {\n  updatedKey {\n    key {\n      text\n      isDeleted\n      id\n    }\n  }\n}\n"
+  "operation": {
+    "kind": "Operation",
+    "name": "updatedKeySubscription",
+    "argumentDefinitions": [],
+    "selections": [
+      {
+        "kind": "LinkedField",
+        "alias": null,
+        "name": "updatedKey",
+        "storageKey": null,
+        "args": null,
+        "concreteType": "UpdatedKeyPayload",
+        "plural": false,
+        "selections": [
+          {
+            "kind": "LinkedField",
+            "alias": null,
+            "name": "key",
+            "storageKey": null,
+            "args": null,
+            "concreteType": "Key",
+            "plural": false,
+            "selections": [
+              v0,
+              v1,
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "id",
+                "args": null,
+                "storageKey": null
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 };
-
-module.exports = batch;
+})();
+// prettier-ignore
+(node/*: any*/).hash = '481dca79d075e1847c0b685dd6001d23';
+module.exports = node;

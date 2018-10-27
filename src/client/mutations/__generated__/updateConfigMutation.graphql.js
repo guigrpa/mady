@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 7431e97408ea80e005b52c6c3ffaabdd
+ * @relayHash 7c8a8cf9d39a66fd60b4621893022636
  */
 
 /* eslint-disable */
@@ -8,32 +8,42 @@
 'use strict';
 
 /*::
-import type {ConcreteBatch} from 'relay-runtime';
+import type { ConcreteRequest } from 'relay-runtime';
+type aeSettings_config$ref = any;
+type ecTranslatorHeader_stats$ref = any;
+export type UpdateConfigInput = {
+  attrs?: ?ConfigUpdate,
+  storyId?: ?string,
+  clientMutationId?: ?string,
+};
+export type ConfigUpdate = {
+  srcPaths?: ?$ReadOnlyArray<string>,
+  srcExtensions?: ?$ReadOnlyArray<string>,
+  langs?: ?$ReadOnlyArray<string>,
+  msgFunctionNames?: ?$ReadOnlyArray<string>,
+  msgRegexps?: ?$ReadOnlyArray<string>,
+  fMinify?: ?boolean,
+  fJsOutput?: ?boolean,
+  fJsonOutput?: ?boolean,
+  fReactIntlOutput?: ?boolean,
+};
 export type updateConfigMutationVariables = {|
-  input: {
-    attrs?: ?{
-      srcPaths?: ?$ReadOnlyArray<string>;
-      srcExtensions?: ?$ReadOnlyArray<string>;
-      langs?: ?$ReadOnlyArray<string>;
-      msgFunctionNames?: ?$ReadOnlyArray<string>;
-      msgRegexps?: ?$ReadOnlyArray<string>;
-      fMinify?: ?boolean;
-      fJsOutput?: ?boolean;
-      fJsonOutput?: ?boolean;
-      fReactIntlOutput?: ?boolean;
-    };
-    storyId?: ?string;
-    clientMutationId?: ?string;
-  };
+  input: UpdateConfigInput
 |};
-
 export type updateConfigMutationResponse = {|
   +updateConfig: ?{|
-    +config: ?{| |};
+    +config: ?{|
+      +$fragmentRefs: aeSettings_config$ref
+    |},
     +stats: {|
-      +id: string;
-    |};
-  |};
+      +id: string,
+      +$fragmentRefs: ecTranslatorHeader_stats$ref,
+    |},
+  |}
+|};
+export type updateConfigMutation = {|
+  variables: updateConfigMutationVariables,
+  response: updateConfigMutationResponse,
 |};
 */
 
@@ -76,41 +86,60 @@ fragment ecTranslatorHeader_stats on Stats {
 }
 */
 
-const batch /*: ConcreteBatch*/ = {
+const node/*: ConcreteRequest*/ = (function(){
+var v0 = [
+  {
+    "kind": "LocalArgument",
+    "name": "input",
+    "type": "UpdateConfigInput!",
+    "defaultValue": null
+  }
+],
+v1 = [
+  {
+    "kind": "Variable",
+    "name": "input",
+    "variableName": "input",
+    "type": "UpdateConfigInput!"
+  }
+],
+v2 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "id",
+  "args": null,
+  "storageKey": null
+};
+return {
+  "kind": "Request",
+  "operationKind": "mutation",
+  "name": "updateConfigMutation",
+  "id": null,
+  "text": "mutation updateConfigMutation(\n  $input: UpdateConfigInput!\n) {\n  updateConfig(input: $input) {\n    config {\n      ...aeSettings_config\n      id\n    }\n    stats {\n      id\n      ...ecTranslatorHeader_stats\n    }\n  }\n}\n\nfragment aeSettings_config on Config {\n  langs\n  srcPaths\n  srcExtensions\n  msgFunctionNames\n  msgRegexps\n  fMinify\n  fJsOutput\n  fJsonOutput\n  fReactIntlOutput\n}\n\nfragment ecTranslatorHeader_stats on Stats {\n  numTotalKeys\n  numUsedKeys\n  numTranslations {\n    lang\n    value\n  }\n}\n",
+  "metadata": {},
   "fragment": {
-    "argumentDefinitions": [
-      {
-        "kind": "LocalArgument",
-        "name": "input",
-        "type": "UpdateConfigInput!",
-        "defaultValue": null
-      }
-    ],
     "kind": "Fragment",
-    "metadata": null,
     "name": "updateConfigMutation",
+    "type": "Mutation",
+    "metadata": null,
+    "argumentDefinitions": v0,
     "selections": [
       {
         "kind": "LinkedField",
         "alias": null,
-        "args": [
-          {
-            "kind": "Variable",
-            "name": "input",
-            "variableName": "input",
-            "type": "UpdateConfigInput!"
-          }
-        ],
-        "concreteType": "UpdateConfigPayload",
         "name": "updateConfig",
+        "storageKey": null,
+        "args": v1,
+        "concreteType": "UpdateConfigPayload",
         "plural": false,
         "selections": [
           {
             "kind": "LinkedField",
             "alias": null,
+            "name": "config",
+            "storageKey": null,
             "args": null,
             "concreteType": "Config",
-            "name": "config",
             "plural": false,
             "selections": [
               {
@@ -118,220 +147,175 @@ const batch /*: ConcreteBatch*/ = {
                 "name": "aeSettings_config",
                 "args": null
               }
-            ],
-            "storageKey": null
+            ]
           },
           {
             "kind": "LinkedField",
             "alias": null,
+            "name": "stats",
+            "storageKey": null,
             "args": null,
             "concreteType": "Stats",
-            "name": "stats",
             "plural": false,
             "selections": [
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "id",
-                "storageKey": null
-              },
+              v2,
               {
                 "kind": "FragmentSpread",
                 "name": "ecTranslatorHeader_stats",
                 "args": null
               }
-            ],
-            "storageKey": null
+            ]
           }
-        ],
-        "storageKey": null
+        ]
       }
-    ],
-    "type": "Mutation"
+    ]
   },
-  "id": null,
-  "kind": "Batch",
-  "metadata": {},
-  "name": "updateConfigMutation",
-  "query": {
-    "argumentDefinitions": [
-      {
-        "kind": "LocalArgument",
-        "name": "input",
-        "type": "UpdateConfigInput!",
-        "defaultValue": null
-      }
-    ],
-    "kind": "Root",
+  "operation": {
+    "kind": "Operation",
     "name": "updateConfigMutation",
-    "operation": "mutation",
+    "argumentDefinitions": v0,
     "selections": [
       {
         "kind": "LinkedField",
         "alias": null,
-        "args": [
-          {
-            "kind": "Variable",
-            "name": "input",
-            "variableName": "input",
-            "type": "UpdateConfigInput!"
-          }
-        ],
-        "concreteType": "UpdateConfigPayload",
         "name": "updateConfig",
+        "storageKey": null,
+        "args": v1,
+        "concreteType": "UpdateConfigPayload",
         "plural": false,
         "selections": [
           {
             "kind": "LinkedField",
             "alias": null,
+            "name": "config",
+            "storageKey": null,
             "args": null,
             "concreteType": "Config",
-            "name": "config",
             "plural": false,
             "selections": [
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "langs",
+                "args": null,
                 "storageKey": null
               },
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "srcPaths",
+                "args": null,
                 "storageKey": null
               },
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "srcExtensions",
+                "args": null,
                 "storageKey": null
               },
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "msgFunctionNames",
+                "args": null,
                 "storageKey": null
               },
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "msgRegexps",
+                "args": null,
                 "storageKey": null
               },
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "fMinify",
+                "args": null,
                 "storageKey": null
               },
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "fJsOutput",
+                "args": null,
                 "storageKey": null
               },
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "fJsonOutput",
+                "args": null,
                 "storageKey": null
               },
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "fReactIntlOutput",
+                "args": null,
                 "storageKey": null
               },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "id",
-                "storageKey": null
-              }
-            ],
-            "storageKey": null
+              v2
+            ]
           },
           {
             "kind": "LinkedField",
             "alias": null,
+            "name": "stats",
+            "storageKey": null,
             "args": null,
             "concreteType": "Stats",
-            "name": "stats",
             "plural": false,
             "selections": [
+              v2,
               {
                 "kind": "ScalarField",
                 "alias": null,
+                "name": "numTotalKeys",
                 "args": null,
-                "name": "id",
                 "storageKey": null
               },
               {
-                "kind": "InlineFragment",
-                "type": "Stats",
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "numUsedKeys",
+                "args": null,
+                "storageKey": null
+              },
+              {
+                "kind": "LinkedField",
+                "alias": null,
+                "name": "numTranslations",
+                "storageKey": null,
+                "args": null,
+                "concreteType": "StatsForLang",
+                "plural": true,
                 "selections": [
                   {
                     "kind": "ScalarField",
                     "alias": null,
+                    "name": "lang",
                     "args": null,
-                    "name": "numTotalKeys",
                     "storageKey": null
                   },
                   {
                     "kind": "ScalarField",
                     "alias": null,
+                    "name": "value",
                     "args": null,
-                    "name": "numUsedKeys",
-                    "storageKey": null
-                  },
-                  {
-                    "kind": "LinkedField",
-                    "alias": null,
-                    "args": null,
-                    "concreteType": "StatsForLang",
-                    "name": "numTranslations",
-                    "plural": true,
-                    "selections": [
-                      {
-                        "kind": "ScalarField",
-                        "alias": null,
-                        "args": null,
-                        "name": "lang",
-                        "storageKey": null
-                      },
-                      {
-                        "kind": "ScalarField",
-                        "alias": null,
-                        "args": null,
-                        "name": "value",
-                        "storageKey": null
-                      }
-                    ],
                     "storageKey": null
                   }
                 ]
               }
-            ],
-            "storageKey": null
+            ]
           }
-        ],
-        "storageKey": null
+        ]
       }
     ]
-  },
-  "text": "mutation updateConfigMutation(\n  $input: UpdateConfigInput!\n) {\n  updateConfig(input: $input) {\n    config {\n      ...aeSettings_config\n      id\n    }\n    stats {\n      id\n      ...ecTranslatorHeader_stats\n    }\n  }\n}\n\nfragment aeSettings_config on Config {\n  langs\n  srcPaths\n  srcExtensions\n  msgFunctionNames\n  msgRegexps\n  fMinify\n  fJsOutput\n  fJsonOutput\n  fReactIntlOutput\n}\n\nfragment ecTranslatorHeader_stats on Stats {\n  numTotalKeys\n  numUsedKeys\n  numTranslations {\n    lang\n    value\n  }\n}\n"
+  }
 };
-
-module.exports = batch;
+})();
+// prettier-ignore
+(node/*: any*/).hash = '28918a746f696434674de418329b1ece';
+module.exports = node;

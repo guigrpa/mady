@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash f3e94f41391c3393488b76cda035fc36
+ * @relayHash a601359d0100d5b6fc3a8e46150638e3
  */
 
 /* eslint-disable */
@@ -8,15 +8,20 @@
 'use strict';
 
 /*::
-import type {ConcreteBatch} from 'relay-runtime';
-export type updatedTranslationSubscriptionVariables = {| |};
-
+import type { ConcreteRequest } from 'relay-runtime';
+type eeTranslation_translation$ref = any;
+export type updatedTranslationSubscriptionVariables = {||};
 export type updatedTranslationSubscriptionResponse = {|
   +updatedTranslation: ?{|
     +translation: ?{|
-      +isDeleted: ?boolean;
-    |};
-  |};
+      +isDeleted: ?boolean,
+      +$fragmentRefs: eeTranslation_translation$ref,
+    |}
+  |}
+|};
+export type updatedTranslationSubscription = {|
+  variables: updatedTranslationSubscriptionVariables,
+  response: updatedTranslationSubscriptionResponse,
 |};
 */
 
@@ -41,120 +46,118 @@ fragment eeTranslation_translation on Translation {
 }
 */
 
-const batch /*: ConcreteBatch*/ = {
+const node/*: ConcreteRequest*/ = (function(){
+var v0 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "isDeleted",
+  "args": null,
+  "storageKey": null
+};
+return {
+  "kind": "Request",
+  "operationKind": "subscription",
+  "name": "updatedTranslationSubscription",
+  "id": null,
+  "text": "subscription updatedTranslationSubscription {\n  updatedTranslation {\n    translation {\n      isDeleted\n      ...eeTranslation_translation\n      id\n    }\n  }\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  isDeleted\n  lang\n  translation\n  fuzzy\n}\n",
+  "metadata": {},
   "fragment": {
-    "argumentDefinitions": [],
     "kind": "Fragment",
-    "metadata": null,
     "name": "updatedTranslationSubscription",
+    "type": "Subscription",
+    "metadata": null,
+    "argumentDefinitions": [],
     "selections": [
       {
         "kind": "LinkedField",
         "alias": null,
+        "name": "updatedTranslation",
+        "storageKey": null,
         "args": null,
         "concreteType": "UpdatedTranslationPayload",
-        "name": "updatedTranslation",
         "plural": false,
         "selections": [
           {
             "kind": "LinkedField",
             "alias": null,
+            "name": "translation",
+            "storageKey": null,
             "args": null,
             "concreteType": "Translation",
-            "name": "translation",
             "plural": false,
             "selections": [
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "isDeleted",
-                "storageKey": null
-              },
+              v0,
               {
                 "kind": "FragmentSpread",
                 "name": "eeTranslation_translation",
                 "args": null
               }
-            ],
-            "storageKey": null
+            ]
           }
-        ],
-        "storageKey": null
+        ]
       }
-    ],
-    "type": "Subscription"
+    ]
   },
-  "id": null,
-  "kind": "Batch",
-  "metadata": {},
-  "name": "updatedTranslationSubscription",
-  "query": {
-    "argumentDefinitions": [],
-    "kind": "Root",
+  "operation": {
+    "kind": "Operation",
     "name": "updatedTranslationSubscription",
-    "operation": "subscription",
+    "argumentDefinitions": [],
     "selections": [
       {
         "kind": "LinkedField",
         "alias": null,
+        "name": "updatedTranslation",
+        "storageKey": null,
         "args": null,
         "concreteType": "UpdatedTranslationPayload",
-        "name": "updatedTranslation",
         "plural": false,
         "selections": [
           {
             "kind": "LinkedField",
             "alias": null,
+            "name": "translation",
+            "storageKey": null,
             "args": null,
             "concreteType": "Translation",
-            "name": "translation",
             "plural": false,
             "selections": [
+              v0,
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
-                "name": "isDeleted",
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
                 "name": "id",
+                "args": null,
                 "storageKey": null
               },
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "lang",
+                "args": null,
                 "storageKey": null
               },
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "translation",
+                "args": null,
                 "storageKey": null
               },
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "fuzzy",
+                "args": null,
                 "storageKey": null
               }
-            ],
-            "storageKey": null
+            ]
           }
-        ],
-        "storageKey": null
+        ]
       }
     ]
-  },
-  "text": "subscription updatedTranslationSubscription {\n  updatedTranslation {\n    translation {\n      isDeleted\n      ...eeTranslation_translation\n      id\n    }\n  }\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  isDeleted\n  lang\n  translation\n  fuzzy\n}\n"
+  }
 };
-
-module.exports = batch;
+})();
+// prettier-ignore
+(node/*: any*/).hash = '4a4ae750806d3e3de00530b8eea3a79a';
+module.exports = node;
