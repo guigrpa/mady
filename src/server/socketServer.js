@@ -85,7 +85,7 @@ const rxSubscribe = async (context, msg: WsMessageSubscribe) => {
   }
   let subscription;
   try {
-    subscription = gqlSubscribe(context.gqlSchema, ast, null, null, variables);
+    subscription = await gqlSubscribe(context.gqlSchema, ast, null, null, variables);
     context.subscriptions[subscriptionId] = subscription;
   } catch (err) {
     mainStory.error('socket', 'GraphQL subscribe error', { attach: err });

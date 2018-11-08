@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 99852adc065d176e8a7936ee48e5a640
+ * @relayHash f634e3e07a8643b7b334c9202cd34cef
  */
 
 /* eslint-disable */
@@ -8,13 +8,19 @@
 'use strict';
 
 /*::
-import type {ConcreteBatch} from 'relay-runtime';
-export type updatedConfigSubscriptionVariables = {| |};
-
+import type { ConcreteRequest } from 'relay-runtime';
+type aeSettings_config$ref = any;
+export type updatedConfigSubscriptionVariables = {||};
 export type updatedConfigSubscriptionResponse = {|
   +updatedConfig: ?{|
-    +config: ?{| |};
-  |};
+    +config: ?{|
+      +$fragmentRefs: aeSettings_config$ref
+    |}
+  |}
+|};
+export type updatedConfigSubscription = {|
+  variables: updatedConfigSubscriptionVariables,
+  response: updatedConfigSubscriptionResponse,
 |};
 */
 
@@ -42,27 +48,36 @@ fragment aeSettings_config on Config {
 }
 */
 
-const batch /*: ConcreteBatch*/ = {
+const node/*: ConcreteRequest*/ = {
+  "kind": "Request",
+  "operationKind": "subscription",
+  "name": "updatedConfigSubscription",
+  "id": null,
+  "text": "subscription updatedConfigSubscription {\n  updatedConfig {\n    config {\n      ...aeSettings_config\n      id\n    }\n  }\n}\n\nfragment aeSettings_config on Config {\n  langs\n  srcPaths\n  srcExtensions\n  msgFunctionNames\n  msgRegexps\n  fMinify\n  fJsOutput\n  fJsonOutput\n  fReactIntlOutput\n}\n",
+  "metadata": {},
   "fragment": {
-    "argumentDefinitions": [],
     "kind": "Fragment",
-    "metadata": null,
     "name": "updatedConfigSubscription",
+    "type": "Subscription",
+    "metadata": null,
+    "argumentDefinitions": [],
     "selections": [
       {
         "kind": "LinkedField",
         "alias": null,
+        "name": "updatedConfig",
+        "storageKey": null,
         "args": null,
         "concreteType": "UpdatedConfigPayload",
-        "name": "updatedConfig",
         "plural": false,
         "selections": [
           {
             "kind": "LinkedField",
             "alias": null,
+            "name": "config",
+            "storageKey": null,
             "args": null,
             "concreteType": "Config",
-            "name": "config",
             "plural": false,
             "selections": [
               {
@@ -70,120 +85,112 @@ const batch /*: ConcreteBatch*/ = {
                 "name": "aeSettings_config",
                 "args": null
               }
-            ],
-            "storageKey": null
+            ]
           }
-        ],
-        "storageKey": null
+        ]
       }
-    ],
-    "type": "Subscription"
+    ]
   },
-  "id": null,
-  "kind": "Batch",
-  "metadata": {},
-  "name": "updatedConfigSubscription",
-  "query": {
-    "argumentDefinitions": [],
-    "kind": "Root",
+  "operation": {
+    "kind": "Operation",
     "name": "updatedConfigSubscription",
-    "operation": "subscription",
+    "argumentDefinitions": [],
     "selections": [
       {
         "kind": "LinkedField",
         "alias": null,
+        "name": "updatedConfig",
+        "storageKey": null,
         "args": null,
         "concreteType": "UpdatedConfigPayload",
-        "name": "updatedConfig",
         "plural": false,
         "selections": [
           {
             "kind": "LinkedField",
             "alias": null,
+            "name": "config",
+            "storageKey": null,
             "args": null,
             "concreteType": "Config",
-            "name": "config",
             "plural": false,
             "selections": [
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "langs",
+                "args": null,
                 "storageKey": null
               },
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "srcPaths",
+                "args": null,
                 "storageKey": null
               },
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "srcExtensions",
+                "args": null,
                 "storageKey": null
               },
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "msgFunctionNames",
+                "args": null,
                 "storageKey": null
               },
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "msgRegexps",
+                "args": null,
                 "storageKey": null
               },
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "fMinify",
+                "args": null,
                 "storageKey": null
               },
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "fJsOutput",
+                "args": null,
                 "storageKey": null
               },
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "fJsonOutput",
+                "args": null,
                 "storageKey": null
               },
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "fReactIntlOutput",
+                "args": null,
                 "storageKey": null
               },
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "id",
+                "args": null,
                 "storageKey": null
               }
-            ],
-            "storageKey": null
+            ]
           }
-        ],
-        "storageKey": null
+        ]
       }
     ]
-  },
-  "text": "subscription updatedConfigSubscription {\n  updatedConfig {\n    config {\n      ...aeSettings_config\n      id\n    }\n  }\n}\n\nfragment aeSettings_config on Config {\n  langs\n  srcPaths\n  srcExtensions\n  msgFunctionNames\n  msgRegexps\n  fMinify\n  fJsOutput\n  fJsonOutput\n  fReactIntlOutput\n}\n"
+  }
 };
-
-module.exports = batch;
+// prettier-ignore
+(node/*: any*/).hash = '9313e0b4846ce9243d554514e33add03';
+module.exports = node;

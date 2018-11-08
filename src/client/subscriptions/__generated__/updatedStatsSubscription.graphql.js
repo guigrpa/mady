@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash d8fb57c366991511c3c2aeb45722ee69
+ * @relayHash 1819c0878647afa6d3e0ea39493035ac
  */
 
 /* eslint-disable */
@@ -8,13 +8,19 @@
 'use strict';
 
 /*::
-import type {ConcreteBatch} from 'relay-runtime';
-export type updatedStatsSubscriptionVariables = {| |};
-
+import type { ConcreteRequest } from 'relay-runtime';
+type ecTranslatorHeader_stats$ref = any;
+export type updatedStatsSubscriptionVariables = {||};
 export type updatedStatsSubscriptionResponse = {|
   +updatedStats: ?{|
-    +stats: ?{| |};
-  |};
+    +stats: ?{|
+      +$fragmentRefs: ecTranslatorHeader_stats$ref
+    |}
+  |}
+|};
+export type updatedStatsSubscription = {|
+  variables: updatedStatsSubscriptionVariables,
+  response: updatedStatsSubscriptionResponse,
 |};
 */
 
@@ -39,27 +45,36 @@ fragment ecTranslatorHeader_stats on Stats {
 }
 */
 
-const batch /*: ConcreteBatch*/ = {
+const node/*: ConcreteRequest*/ = {
+  "kind": "Request",
+  "operationKind": "subscription",
+  "name": "updatedStatsSubscription",
+  "id": null,
+  "text": "subscription updatedStatsSubscription {\n  updatedStats {\n    stats {\n      ...ecTranslatorHeader_stats\n      id\n    }\n  }\n}\n\nfragment ecTranslatorHeader_stats on Stats {\n  numTotalKeys\n  numUsedKeys\n  numTranslations {\n    lang\n    value\n  }\n}\n",
+  "metadata": {},
   "fragment": {
-    "argumentDefinitions": [],
     "kind": "Fragment",
-    "metadata": null,
     "name": "updatedStatsSubscription",
+    "type": "Subscription",
+    "metadata": null,
+    "argumentDefinitions": [],
     "selections": [
       {
         "kind": "LinkedField",
         "alias": null,
+        "name": "updatedStats",
+        "storageKey": null,
         "args": null,
         "concreteType": "UpdatedStatsPayload",
-        "name": "updatedStats",
         "plural": false,
         "selections": [
           {
             "kind": "LinkedField",
             "alias": null,
+            "name": "stats",
+            "storageKey": null,
             "args": null,
             "concreteType": "Stats",
-            "name": "stats",
             "plural": false,
             "selections": [
               {
@@ -67,96 +82,88 @@ const batch /*: ConcreteBatch*/ = {
                 "name": "ecTranslatorHeader_stats",
                 "args": null
               }
-            ],
-            "storageKey": null
+            ]
           }
-        ],
-        "storageKey": null
+        ]
       }
-    ],
-    "type": "Subscription"
+    ]
   },
-  "id": null,
-  "kind": "Batch",
-  "metadata": {},
-  "name": "updatedStatsSubscription",
-  "query": {
-    "argumentDefinitions": [],
-    "kind": "Root",
+  "operation": {
+    "kind": "Operation",
     "name": "updatedStatsSubscription",
-    "operation": "subscription",
+    "argumentDefinitions": [],
     "selections": [
       {
         "kind": "LinkedField",
         "alias": null,
+        "name": "updatedStats",
+        "storageKey": null,
         "args": null,
         "concreteType": "UpdatedStatsPayload",
-        "name": "updatedStats",
         "plural": false,
         "selections": [
           {
             "kind": "LinkedField",
             "alias": null,
+            "name": "stats",
+            "storageKey": null,
             "args": null,
             "concreteType": "Stats",
-            "name": "stats",
             "plural": false,
             "selections": [
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "numTotalKeys",
+                "args": null,
                 "storageKey": null
               },
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "numUsedKeys",
+                "args": null,
                 "storageKey": null
               },
               {
                 "kind": "LinkedField",
                 "alias": null,
+                "name": "numTranslations",
+                "storageKey": null,
                 "args": null,
                 "concreteType": "StatsForLang",
-                "name": "numTranslations",
                 "plural": true,
                 "selections": [
                   {
                     "kind": "ScalarField",
                     "alias": null,
-                    "args": null,
                     "name": "lang",
+                    "args": null,
                     "storageKey": null
                   },
                   {
                     "kind": "ScalarField",
                     "alias": null,
-                    "args": null,
                     "name": "value",
+                    "args": null,
                     "storageKey": null
                   }
-                ],
-                "storageKey": null
+                ]
               },
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "args": null,
                 "name": "id",
+                "args": null,
                 "storageKey": null
               }
-            ],
-            "storageKey": null
+            ]
           }
-        ],
-        "storageKey": null
+        ]
       }
     ]
-  },
-  "text": "subscription updatedStatsSubscription {\n  updatedStats {\n    stats {\n      ...ecTranslatorHeader_stats\n      id\n    }\n  }\n}\n\nfragment ecTranslatorHeader_stats on Stats {\n  numTotalKeys\n  numUsedKeys\n  numTranslations {\n    lang\n    value\n  }\n}\n"
+  }
 };
-
-module.exports = batch;
+// prettier-ignore
+(node/*: any*/).hash = 'cdacbdfe5bb6f5497bc5abf35152d164';
+module.exports = node;
