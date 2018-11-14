@@ -366,10 +366,11 @@ class Translation extends React.Component {
 const style = {
   outer: {
     paddingRight: 56,
-    marginBottom: -2,
+    height: '100%',
     // position: 'relative',
   },
   textareaBase: ({ fEditing }) => ({
+    display: 'block',
     padding: 0,
     border: '1px solid transparent',
     backgroundColor: fEditing ? undefined : 'transparent',
