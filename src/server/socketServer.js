@@ -32,12 +32,15 @@ type WsContext = {
 // ==============================================
 const init = ({
   httpServer,
+  socketServer,
   gqlSchema,
 }: {|
   httpServer: Object,
+  socketServer?: Object,
   gqlSchema: Object,
 |}) => {
-  const socketioServer = socketio(httpServer);
+  const socketioServer =
+    socketServer != null ? socketServer : socketio(httpServer);
   const namespaceServer = socketioServer.of('/mady');
   namespaceServer.on('connect', onConnect(gqlSchema));
   return socketioServer;

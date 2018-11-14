@@ -1,4 +1,5 @@
 * Server plugin: accept `onChange` option, a function that is called whenever locales are compiled.
+* Server plugin: make it compatible with a user that already uses websockets.
 
 ## 2.13.0 (2018-10-11)
 
