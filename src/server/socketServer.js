@@ -38,7 +38,8 @@ const init = ({
   gqlSchema: Object,
 |}) => {
   const socketioServer = socketio(httpServer);
-  socketioServer.on('connect', onConnect(gqlSchema));
+  const namespaceServer = socketioServer.of('/mady');
+  namespaceServer.on('connect', onConnect(gqlSchema));
   return socketioServer;
 };
 

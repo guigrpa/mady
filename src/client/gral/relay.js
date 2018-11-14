@@ -44,7 +44,7 @@ let socket;
 const subscriptionObservers = {};
 
 if (!process.env.SERVER_SIDE_RENDERING) {
-  socket = socketio.connect();
+  socket = socketio.connect('/mady');
   socket.on('MESSAGE', msg => {
     const { type } = msg;
     if (type === 'NOTIF') {
