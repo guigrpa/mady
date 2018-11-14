@@ -1,6 +1,5 @@
 Later:
 
-* [ ] Remove usage of base64 for keys (breaking) -- include migrator
 * [ ] Client:
     - Add way to manually trigger Google Translation (first try to get it from the cache!)
     - Make text area occupy the whole vertical space

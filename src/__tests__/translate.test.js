@@ -3,14 +3,14 @@
 import _t from '../translate';
 
 const ES_LOCALES = {
-  'c29tZUNvbnRleHRfSGVsbG8=' /* someContext_Hello */: () => 'Hola',
-  'c29tZUNvbnRleHRfUsOpc3Vtw6k=' /* someContext_Résumé */: () => 'Currículum',
-  RnJpZW5k /* Friend */: () => 'Amigo',
+  someContext_Hello: () => 'Hola',
+  someContext_Résumé: () => 'Currículum',
+  Friend: () => 'Amigo',
 };
 
 const ES_MX_LOCALES = {
-  'c29tZUNvbnRleHRfSGVsbG8=' /* someContext_Hello */: () => 'Hola',
-  RnJpZW5k /* Friend */: () => 'Cuate',
+  someContext_Hello: () => 'Hola',
+  Friend: () => 'Cuate',
 };
 
 describe('Translate library', () => {

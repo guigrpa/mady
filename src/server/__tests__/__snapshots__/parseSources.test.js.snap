@@ -2,40 +2,40 @@
 
 exports[`Source parser Custom regexp parsing should work with custom regexps 1`] = `
 Object {
-  "ISE=": Object {
+  "!!": Object {
     "context": null,
     "firstUsed": null,
-    "id": "ISE=",
+    "id": "!!",
     "sources": Array [
       "FILENAME",
     ],
     "text": "!!",
     "unusedSince": null,
   },
-  "aG8=": Object {
+  "hey": Object {
     "context": null,
     "firstUsed": null,
-    "id": "aG8=",
-    "sources": Array [
-      "FILENAME",
-    ],
-    "text": "ho",
-    "unusedSince": null,
-  },
-  "aGV5": Object {
-    "context": null,
-    "firstUsed": null,
-    "id": "aGV5",
+    "id": "hey",
     "sources": Array [
       "FILENAME",
     ],
     "text": "hey",
     "unusedSince": null,
   },
-  "bGV0J3MgZ28=": Object {
+  "ho": Object {
     "context": null,
     "firstUsed": null,
-    "id": "bGV0J3MgZ28=",
+    "id": "ho",
+    "sources": Array [
+      "FILENAME",
+    ],
+    "text": "ho",
+    "unusedSince": null,
+  },
+  "let's go": Object {
+    "context": null,
+    "firstUsed": null,
+    "id": "let's go",
     "sources": Array [
       "FILENAME",
     ],
@@ -47,10 +47,14 @@ Object {
 
 exports[`Source parser Custom regexp parsing should work with custom regexps and multiline strings 1`] = `
 Object {
-  "QSB2ZXJ5CmxvbmcKc3RyaW5n": Object {
+  "A very
+long
+string": Object {
     "context": null,
     "firstUsed": null,
-    "id": "QSB2ZXJ5CmxvbmcKc3RyaW5n",
+    "id": "A very
+long
+string",
     "sources": Array [
       "FILENAME",
     ],
@@ -64,10 +68,10 @@ string",
 
 exports[`Source parser Function parser should extract context if available 1`] = `
 Object {
-  "Y29udGV4dF9FeGFtcGxl": Object {
+  "context_Example": Object {
     "context": "context",
     "firstUsed": null,
-    "id": "Y29udGV4dF9FeGFtcGxl",
+    "id": "context_Example",
     "sources": Array [
       "FILENAME",
     ],
@@ -79,10 +83,10 @@ Object {
 
 exports[`Source parser Function parser should work in a simple case 1`] = `
 Object {
-  "RXhhbXBsZQ==": Object {
+  "Example": Object {
     "context": null,
     "firstUsed": null,
-    "id": "RXhhbXBsZQ==",
+    "id": "Example",
     "sources": Array [
       "FILENAME",
     ],
@@ -94,10 +98,14 @@ Object {
 
 exports[`Source parser Function parser should work with multiline strings 1`] = `
 Object {
-  "Y29udGV4dF9UaGlzIGlzIGEgdmVyeQpsb25nCnN0cmluZw==": Object {
+  "context_This is a very
+long
+string": Object {
     "context": "context",
     "firstUsed": null,
-    "id": "Y29udGV4dF9UaGlzIGlzIGEgdmVyeQpsb25nCnN0cmluZw==",
+    "id": "context_This is a very
+long
+string",
     "sources": Array [
       "FILENAME",
     ],
@@ -111,20 +119,20 @@ string",
 
 exports[`Source parser Function parser should work with single and double quotes 1`] = `
 Object {
-  "RXhhbXBsZQ==": Object {
+  "Example": Object {
     "context": null,
     "firstUsed": null,
-    "id": "RXhhbXBsZQ==",
+    "id": "Example",
     "sources": Array [
       "FILENAME",
     ],
     "text": "Example",
     "unusedSince": null,
   },
-  "RXhhbXBsZTI=": Object {
+  "Example2": Object {
     "context": null,
     "firstUsed": null,
-    "id": "RXhhbXBsZTI=",
+    "id": "Example2",
     "sources": Array [
       "FILENAME",
     ],
@@ -136,30 +144,30 @@ Object {
 
 exports[`Source parser Function parser should work with specially-named functions 1`] = `
 Object {
-  "aG8=": Object {
+  "hi": Object {
     "context": null,
     "firstUsed": null,
-    "id": "aG8=",
-    "sources": Array [
-      "FILENAME",
-    ],
-    "text": "ho",
-    "unusedSince": null,
-  },
-  "aGk=": Object {
-    "context": null,
-    "firstUsed": null,
-    "id": "aGk=",
+    "id": "hi",
     "sources": Array [
       "FILENAME",
     ],
     "text": "hi",
     "unusedSince": null,
   },
-  "dGhlcmU=": Object {
+  "ho": Object {
     "context": null,
     "firstUsed": null,
-    "id": "dGhlcmU=",
+    "id": "ho",
+    "sources": Array [
+      "FILENAME",
+    ],
+    "text": "ho",
+    "unusedSince": null,
+  },
+  "there": Object {
+    "context": null,
+    "firstUsed": null,
+    "id": "there",
     "sources": Array [
       "FILENAME",
     ],
@@ -171,11 +179,11 @@ Object {
 
 exports[`Source parser React Intl parser should extract messages from FormattedHTMLMessage components 1`] = `
 Object {
-  "Y29udGV4dF88aT5IZWxsbyB7TkFNRX0hPC9pPg==": Object {
+  "context_<i>Hello {NAME}!</i>": Object {
     "context": "context",
     "description": undefined,
     "firstUsed": null,
-    "id": "Y29udGV4dF88aT5IZWxsbyB7TkFNRX0hPC9pPg==",
+    "id": "context_<i>Hello {NAME}!</i>",
     "reactIntlId": "reactIntlId2",
     "sources": Array [
       "FILENAME",
@@ -188,11 +196,11 @@ Object {
 
 exports[`Source parser React Intl parser should extract messages from FormattedMessage components 1`] = `
 Object {
-  "Y29udGV4dF9IZWxsbyB7TkFNRX0h": Object {
+  "context_Hello {NAME}!": Object {
     "context": "context",
     "description": "Bla bla bla",
     "firstUsed": null,
-    "id": "Y29udGV4dF9IZWxsbyB7TkFNRX0h",
+    "id": "context_Hello {NAME}!",
     "reactIntlId": "reactIntlId1",
     "sources": Array [
       "FILENAME",
@@ -205,11 +213,11 @@ Object {
 
 exports[`Source parser React Intl parser should extract messages from defineMessages() calls 1`] = `
 Object {
-  "c29tZUNvbnRleHRfSGVsbG8sIHtOQU1FfSE=": Object {
+  "someContext_Hello, {NAME}!": Object {
     "context": "someContext",
     "description": "Message to greet the user",
     "firstUsed": null,
-    "id": "c29tZUNvbnRleHRfSGVsbG8sIHtOQU1FfSE=",
+    "id": "someContext_Hello, {NAME}!",
     "reactIntlId": "reactIntlId3",
     "sources": Array [
       "FILENAME",
