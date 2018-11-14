@@ -1,3 +1,5 @@
+* Server plugin: accept `onChange` option, a function that is called whenever locales are compiled.
+
 ## 2.13.0 (2018-10-11)
 
 * Server plugin: accept `otherLocaleDirs` (same as the `--other-dirs` flag described below).

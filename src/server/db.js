@@ -59,12 +59,16 @@ const delay = ms =>
 // ==============================================
 // Init
 // ==============================================
+let _onChange: ?Function;
+
 type Options = {
   fRecompile: boolean,
   localeDir: string,
   otherLocaleDirs?: Array<string>,
+  onChange?: Function,
 };
 function init(options: Options) {
+  _onChange = options.onChange;
   initLocaleDir(options);
   const fMigrated = initConfig();
   initKeys();
@@ -677,6 +681,7 @@ function compileTranslations({ story: baseStory }: { story?: StoryT } = {}) {
         saveJson(jsonLangPath, jsonTranslations, { story });
       }
     });
+    if (_onChange) _onChange();
   } catch (err) {
     story.error('db', 'Could not compile translations:', { attach: err });
   } finally {
