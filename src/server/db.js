@@ -9,7 +9,6 @@ import { addDefaults, merge } from 'timm';
 import { mainStory, chalk } from 'storyboard';
 import uuid from 'uuid';
 import debounce from 'lodash/debounce';
-import { base64ToUtf8 } from '../common/base64';
 import type {
   MapOf,
   StoryT,
@@ -311,7 +310,7 @@ async function parseSrcFiles({ story }: { story: StoryT }) {
   });
   if (unusedKeys.length) {
     story.debug('db', `${chalk.bold('Unused')} keys: ${unusedKeys.length}`, {
-      attach: unusedKeys.map(base64ToUtf8),
+      attach: unusedKeys,
     });
   }
 
@@ -327,7 +326,7 @@ async function parseSrcFiles({ story }: { story: StoryT }) {
   });
   if (newKeys.length) {
     story.debug('db', `${chalk.bold('New')} keys: ${newKeys.length}`, {
-      attach: newKeys.map(base64ToUtf8),
+      attach: newKeys,
     });
   }
 
