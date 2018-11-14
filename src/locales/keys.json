@@ -1,6 +1,6 @@
 {
-  "dG9vbHRpcF9TZXR0aW5ncw==": {
-    "id": "dG9vbHRpcF9TZXR0aW5ncw==",
+  "tooltip_Settings": {
+    "id": "tooltip_Settings",
     "context": "tooltip",
     "text": "Settings",
     "firstUsed": "2016-04-18T05:37:47.074Z",
@@ -9,8 +9,8 @@
       "src/client/components/abHeader.js"
     ]
   },
-  "dG9vbHRpcF9SZW1vdmUgY29sdW1uIChkb2VzIE5PVCBkZWxldGUgYW55IHRyYW5zbGF0aW9ucyk=": {
-    "id": "dG9vbHRpcF9SZW1vdmUgY29sdW1uIChkb2VzIE5PVCBkZWxldGUgYW55IHRyYW5zbGF0aW9ucyk=",
+  "tooltip_Remove column (does NOT delete any translations)": {
+    "id": "tooltip_Remove column (does NOT delete any translations)",
     "context": "tooltip",
     "text": "Remove column (does NOT delete any translations)",
     "firstUsed": "2016-04-18T06:07:16.000Z",
@@ -19,8 +19,8 @@
       "src/client/components/ecTranslatorHeader.js"
     ]
   },
-  "dG9vbHRpcF9BZGQgY29sdW1u": {
-    "id": "dG9vbHRpcF9BZGQgY29sdW1u",
+  "tooltip_Add column": {
+    "id": "tooltip_Add column",
     "context": "tooltip",
     "text": "Add column",
     "firstUsed": "2016-04-18T06:07:16.000Z",
@@ -29,8 +29,8 @@
       "src/client/components/ecTranslatorHeader.js"
     ]
   },
-  "YnV0dG9uX1NhdmU=": {
-    "id": "YnV0dG9uX1NhdmU=",
+  "button_Save": {
+    "id": "button_Save",
     "context": "button",
     "text": "Save",
     "firstUsed": "2016-04-18T06:07:16.000Z",
@@ -39,8 +39,8 @@
       "src/client/components/aeSettings.js"
     ]
   },
-  "dG9vbHRpcF9EZWxldGUgbWVzc2FnZSAoZG9lcyBOT1QgZGVsZXRlIGFueSB0cmFuc2xhdGlvbnMp": {
-    "id": "dG9vbHRpcF9EZWxldGUgbWVzc2FnZSAoZG9lcyBOT1QgZGVsZXRlIGFueSB0cmFuc2xhdGlvbnMp",
+  "tooltip_Delete message (does NOT delete any translations)": {
+    "id": "tooltip_Delete message (does NOT delete any translations)",
     "context": "tooltip",
     "text": "Delete message (does NOT delete any translations)",
     "firstUsed": "2016-04-18T06:17:12.287Z",
@@ -49,8 +49,8 @@
       "src/client/components/edTranslatorRow.js"
     ]
   },
-  "dG9vbHRpcF9QYXJzZSBzb3VyY2UgZmlsZXMgdG8gdXBkYXRlIHRoZSBtZXNzYWdlIGxpc3Q=": {
-    "id": "dG9vbHRpcF9QYXJzZSBzb3VyY2UgZmlsZXMgdG8gdXBkYXRlIHRoZSBtZXNzYWdlIGxpc3Q=",
+  "tooltip_Parse source files to update the message list": {
+    "id": "tooltip_Parse source files to update the message list",
     "context": "tooltip",
     "text": "Parse source files to update the message list",
     "firstUsed": "2016-04-18T06:17:27.893Z",
@@ -59,8 +59,8 @@
       "src/client/components/ecTranslatorHeader.js"
     ]
   },
-  "Y29sdW1uVGl0bGVfTWVzc2FnZXM=": {
-    "id": "Y29sdW1uVGl0bGVfTWVzc2FnZXM=",
+  "columnTitle_Messages": {
+    "id": "columnTitle_Messages",
     "context": "columnTitle",
     "text": "Messages",
     "firstUsed": "2016-04-18T06:23:18.511Z",
@@ -69,8 +69,8 @@
       "src/client/components/ecTranslatorHeader.js"
     ]
   },
-  "bXNnRGV0YWlsc1ZpZXdfRGV0YWlscw==": {
-    "id": "bXNnRGV0YWlsc1ZpZXdfRGV0YWlscw==",
+  "msgDetailsView_Details": {
+    "id": "msgDetailsView_Details",
     "context": "msgDetailsView",
     "text": "Details",
     "firstUsed": "2016-04-18T06:25:17.799Z",
@@ -79,8 +79,8 @@
       "src/client/components/afDetails.js"
     ]
   },
-  "bXNnRGV0YWlsc1ZpZXdfTm8gbWVzc2FnZSBzZWxlY3RlZA==": {
-    "id": "bXNnRGV0YWlsc1ZpZXdfTm8gbWVzc2FnZSBzZWxlY3RlZA==",
+  "msgDetailsView_No message selected": {
+    "id": "msgDetailsView_No message selected",
     "context": "msgDetailsView",
     "text": "No message selected",
     "firstUsed": "2016-04-18T06:25:17.799Z",
@@ -89,8 +89,8 @@
       "src/client/components/afDetails.js"
     ]
   },
-  "bXNnRGV0YWlsc1ZpZXdfdW50aWw=": {
-    "id": "bXNnRGV0YWlsc1ZpZXdfdW50aWw=",
+  "msgDetailsView_until": {
+    "id": "msgDetailsView_until",
     "context": "msgDetailsView",
     "text": "until",
     "firstUsed": "2016-04-18T06:26:52.684Z",
@@ -99,8 +99,8 @@
       "src/client/components/afDetails.js"
     ]
   },
-  "bXNnRGV0YWlsc1ZpZXdfVXNlZCBzaW5jZQ==": {
-    "id": "bXNnRGV0YWlsc1ZpZXdfVXNlZCBzaW5jZQ==",
+  "msgDetailsView_Used since": {
+    "id": "msgDetailsView_Used since",
     "context": "msgDetailsView",
     "text": "Used since",
     "firstUsed": "2016-04-18T06:26:52.684Z",
@@ -109,8 +109,8 @@
       "src/client/components/afDetails.js"
     ]
   },
-  "c2V0dGluZ3NGb3JtX0xhbmd1YWdlcyAoQkNQNDcgY29kZXMpOg==": {
-    "id": "c2V0dGluZ3NGb3JtX0xhbmd1YWdlcyAoQkNQNDcgY29kZXMpOg==",
+  "settingsForm_Languages (BCP47 codes):": {
+    "id": "settingsForm_Languages (BCP47 codes):",
     "context": "settingsForm",
     "text": "Languages (BCP47 codes):",
     "firstUsed": "2016-04-18T10:25:17.494Z",
@@ -119,8 +119,8 @@
       "src/client/components/aeSettings.js"
     ]
   },
-  "c2V0dGluZ3NGb3JtX1NvdXJjZSBwYXRoczo=": {
-    "id": "c2V0dGluZ3NGb3JtX1NvdXJjZSBwYXRoczo=",
+  "settingsForm_Source paths:": {
+    "id": "settingsForm_Source paths:",
     "context": "settingsForm",
     "text": "Source paths:",
     "firstUsed": "2016-04-18T10:25:17.494Z",
@@ -129,8 +129,8 @@
       "src/client/components/aeSettings.js"
     ]
   },
-  "c2V0dGluZ3NGb3JtX1NvdXJjZSBleHRlbnNpb25zOg==": {
-    "id": "c2V0dGluZ3NGb3JtX1NvdXJjZSBleHRlbnNpb25zOg==",
+  "settingsForm_Source extensions:": {
+    "id": "settingsForm_Source extensions:",
     "context": "settingsForm",
     "text": "Source extensions:",
     "firstUsed": "2016-04-18T10:25:17.494Z",
@@ -139,8 +139,8 @@
       "src/client/components/aeSettings.js"
     ]
   },
-  "YnV0dG9uX0NhbmNlbA==": {
-    "id": "YnV0dG9uX0NhbmNlbA==",
+  "button_Cancel": {
+    "id": "button_Cancel",
     "context": "button",
     "text": "Cancel",
     "firstUsed": "2016-04-18T10:25:17.494Z",
@@ -149,8 +149,8 @@
       "src/client/components/aeSettings.js"
     ]
   },
-  "dG9vbHRpcF9Vc2VkIG1lc3NhZ2Vz": {
-    "id": "dG9vbHRpcF9Vc2VkIG1lc3NhZ2Vz",
+  "tooltip_Used messages": {
+    "id": "tooltip_Used messages",
     "context": "tooltip",
     "text": "Used messages",
     "firstUsed": "2016-04-20T05:54:48.437Z",
@@ -160,8 +160,8 @@
       "src/client/components/ecTranslatorHeader.js"
     ]
   },
-  "dG9vbHRpcF9Ub3RhbCBtZXNzYWdlcw==": {
-    "id": "dG9vbHRpcF9Ub3RhbCBtZXNzYWdlcw==",
+  "tooltip_Total messages": {
+    "id": "tooltip_Total messages",
     "context": "tooltip",
     "text": "Total messages",
     "firstUsed": "2016-04-20T05:54:48.437Z",
@@ -170,8 +170,8 @@
       "src/client/components/ecTranslatorHeader.js"
     ]
   },
-  "dG9vbHRpcF9UcmFuc2xhdGlvbnM=": {
-    "id": "dG9vbHRpcF9UcmFuc2xhdGlvbnM=",
+  "tooltip_Translations": {
+    "id": "tooltip_Translations",
     "context": "tooltip",
     "text": "Translations",
     "firstUsed": "2016-04-20T06:06:44.958Z",
@@ -180,16 +180,16 @@
       "src/client/components/ecTranslatorHeader.js"
     ]
   },
-  "dG9vbHRpcF9VbnVzZWQgbWVzc2FnZXM=": {
-    "id": "dG9vbHRpcF9VbnVzZWQgbWVzc2FnZXM=",
+  "tooltip_Unused messages": {
+    "id": "tooltip_Unused messages",
     "context": "tooltip",
     "text": "Unused messages",
     "firstUsed": "2016-04-20T06:07:55.314Z",
     "unusedSince": "2016-04-20T06:08:06.501Z",
     "sources": []
   },
-  "dG9vbHRpcF9EZWxldGUgdHJhbnNsYXRpb24=": {
-    "id": "dG9vbHRpcF9EZWxldGUgdHJhbnNsYXRpb24=",
+  "tooltip_Delete translation": {
+    "id": "tooltip_Delete translation",
     "context": "tooltip",
     "text": "Delete translation",
     "firstUsed": "2016-04-20T06:54:22.605Z",
@@ -198,8 +198,8 @@
       "src/client/components/eeTranslation.js"
     ]
   },
-  "dG9vbHRpcF9Db3B5IG1lc3NhZ2U=": {
-    "id": "dG9vbHRpcF9Db3B5IG1lc3NhZ2U=",
+  "tooltip_Copy message": {
+    "id": "tooltip_Copy message",
     "context": "tooltip",
     "text": "Copy message",
     "firstUsed": "2016-04-20T06:54:22.605Z",
@@ -208,16 +208,16 @@
       "src/client/components/eeTranslation.js"
     ]
   },
-  "dHJhbnNsYXRpb25IZWxwX0NsaWNrIG91dHNpZGUgb3IgcHJlc3MgVEFCIHRvIHNhdmUuIFByZXNzIEVTQyB0byB1bmRvLg==": {
-    "id": "dHJhbnNsYXRpb25IZWxwX0NsaWNrIG91dHNpZGUgb3IgcHJlc3MgVEFCIHRvIHNhdmUuIFByZXNzIEVTQyB0byB1bmRvLg==",
+  "translationHelp_Click outside or press TAB to save. Press ESC to undo.": {
+    "id": "translationHelp_Click outside or press TAB to save. Press ESC to undo.",
     "context": "translationHelp",
     "text": "Click outside or press TAB to save. Press ESC to undo.",
     "firstUsed": "2016-04-20T06:54:22.605Z",
     "unusedSince": "2016-04-20T07:10:53.837Z",
     "sources": []
   },
-  "dHJhbnNsYXRpb25IZWxwX0NsaWNrIG91dHNpZGUgb3IgVEFCIHRvIHNhdmUuIEVTQyB0byB1bmRvLg==": {
-    "id": "dHJhbnNsYXRpb25IZWxwX0NsaWNrIG91dHNpZGUgb3IgVEFCIHRvIHNhdmUuIEVTQyB0byB1bmRvLg==",
+  "translationHelp_Click outside or TAB to save. ESC to undo.": {
+    "id": "translationHelp_Click outside or TAB to save. ESC to undo.",
     "context": "translationHelp",
     "text": "Click outside or TAB to save. ESC to undo.",
     "firstUsed": "2016-04-20T07:10:53.837Z",
@@ -226,8 +226,8 @@
       "src/client/components/eeTranslation.js"
     ]
   },
-  "c2V0dGluZ3NGb3JtX01hZHkgbGFuZ3VhZ2U6": {
-    "id": "c2V0dGluZ3NGb3JtX01hZHkgbGFuZ3VhZ2U6",
+  "settingsForm_Mady language:": {
+    "id": "settingsForm_Mady language:",
     "context": "settingsForm",
     "text": "Mady language:",
     "firstUsed": "2016-05-20T23:33:30.217Z",
@@ -236,8 +236,8 @@
       "src/client/components/aeSettings.js"
     ]
   },
-  "aGludF9Db25maWd1cmUgTWFkeQ==": {
-    "id": "aGludF9Db25maWd1cmUgTWFkeQ==",
+  "hint_Configure Mady": {
+    "id": "hint_Configure Mady",
     "context": "hint",
     "text": "Configure Mady",
     "firstUsed": "2016-05-21T21:21:15.632Z",
@@ -246,8 +246,8 @@
       "src/client/components/aaApp.js"
     ]
   },
-  "aGludF9BZGQgbGFuZ3VhZ2UgY29sdW1u": {
-    "id": "aGludF9BZGQgbGFuZ3VhZ2UgY29sdW1u",
+  "hint_Add language column": {
+    "id": "hint_Add language column",
     "context": "hint",
     "text": "Add language column",
     "firstUsed": "2016-05-21T21:21:15.632Z",
@@ -256,8 +256,8 @@
       "src/client/components/aaApp.js"
     ]
   },
-  "aGludF9FbmpveSB0cmFuc2xhdGluZyE=": {
-    "id": "aGludF9FbmpveSB0cmFuc2xhdGluZyE=",
+  "hint_Enjoy translating!": {
+    "id": "hint_Enjoy translating!",
     "context": "hint",
     "text": "Enjoy translating!",
     "firstUsed": "2016-05-21T21:21:15.632Z",
@@ -266,8 +266,8 @@
       "src/client/components/aaApp.js"
     ]
   },
-  "c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319": {
-    "id": "c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319",
+  "someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}": {
+    "id": "someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}",
     "context": "someContext",
     "text": "{NUM, plural, one{1 hamburger} other{# hamburgers}}",
     "firstUsed": "2016-05-21T21:54:54.834Z",
@@ -276,8 +276,8 @@
       "src/client/components/aaApp.js"
     ]
   },
-  "dmFsaWRhdGlvbl9NZXNzYWdlRm9ybWF0IHN5bnRheCBlcnJvcg==": {
-    "id": "dmFsaWRhdGlvbl9NZXNzYWdlRm9ybWF0IHN5bnRheCBlcnJvcg==",
+  "validation_MessageFormat syntax error": {
+    "id": "validation_MessageFormat syntax error",
     "context": "validation",
     "text": "MessageFormat syntax error",
     "firstUsed": "2016-05-22T14:02:36.806Z",
@@ -286,8 +286,8 @@
       "src/client/components/eeTranslation.js"
     ]
   },
-  "dG9vbHRpcF9DaGFuZ2UgbGFuZ3VhZ2U=": {
-    "id": "dG9vbHRpcF9DaGFuZ2UgbGFuZ3VhZ2U=",
+  "tooltip_Change language": {
+    "id": "tooltip_Change language",
     "context": "tooltip",
     "text": "Change language",
     "firstUsed": "2016-05-24T14:33:23.107Z",
@@ -296,8 +296,8 @@
       "src/client/components/ecTranslatorHeader.js"
     ]
   },
-  "ZXJyb3JfQ29uZmlndXJhdGlvbiBjb3VsZCBub3QgYmUgc2F2ZWQ=": {
-    "id": "ZXJyb3JfQ29uZmlndXJhdGlvbiBjb3VsZCBub3QgYmUgc2F2ZWQ=",
+  "error_Configuration could not be saved": {
+    "id": "error_Configuration could not be saved",
     "context": "error",
     "text": "Configuration could not be saved",
     "firstUsed": "2016-05-24T14:54:50.197Z",
@@ -306,8 +306,8 @@
       "src/client/components/aeSettings.js"
     ]
   },
-  "ZXJyb3JfQ2hhbmdlcyBjb3VsZCBub3QgYmUgc2F2ZWQ=": {
-    "id": "ZXJyb3JfQ2hhbmdlcyBjb3VsZCBub3QgYmUgc2F2ZWQ=",
+  "error_Changes could not be saved": {
+    "id": "error_Changes could not be saved",
     "context": "error",
     "text": "Changes could not be saved",
     "firstUsed": "2016-05-24T14:54:50.197Z",
@@ -316,8 +316,8 @@
       "src/client/components/helpers.js"
     ]
   },
-  "ZXJyb3JfSXMgdGhlIHNlcnZlciBydW5uaW5nPw==": {
-    "id": "ZXJyb3JfSXMgdGhlIHNlcnZlciBydW5uaW5nPw==",
+  "error_Is the server running?": {
+    "id": "error_Is the server running?",
     "context": "error",
     "text": "Is the server running?",
     "firstUsed": "2016-05-24T14:54:50.197Z",
@@ -326,8 +326,8 @@
       "src/client/components/helpers.js"
     ]
   },
-  "c2V0dGluZ3NGb3JtX01lc3NhZ2UgdHJhbnNsYXRpb24gZnVuY3Rpb25zIHRvIGxvb2sgZm9yOg==": {
-    "id": "c2V0dGluZ3NGb3JtX01lc3NhZ2UgdHJhbnNsYXRpb24gZnVuY3Rpb25zIHRvIGxvb2sgZm9yOg==",
+  "settingsForm_Message translation functions to look for:": {
+    "id": "settingsForm_Message translation functions to look for:",
     "context": "settingsForm",
     "text": "Message translation functions to look for:",
     "firstUsed": "2016-06-02T13:49:20.542Z",
@@ -336,8 +336,8 @@
       "src/client/components/aeSettings.js"
     ]
   },
-  "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppOiDwn46J": {
-    "id": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppOiDwn46J",
+  "someContext_Message with emoji: 🎉": {
+    "id": "someContext_Message with emoji: 🎉",
     "context": "someContext",
     "text": "Message with emoji: 🎉",
     "firstUsed": "2016-08-01T07:44:56.872Z",
@@ -346,8 +346,8 @@
       "src/client/components/aaApp.js"
     ]
   },
-  "dmFsaWRhdGlvbl90aGUgbnVtYmVyIG9mIGxlZnQgYW5kIHJpZ2h0IGJyYWNrZXRzIGRvZXMgbm90IG1hdGNo": {
-    "id": "dmFsaWRhdGlvbl90aGUgbnVtYmVyIG9mIGxlZnQgYW5kIHJpZ2h0IGJyYWNrZXRzIGRvZXMgbm90IG1hdGNo",
+  "validation_the number of left and right brackets does not match": {
+    "id": "validation_the number of left and right brackets does not match",
     "context": "validation",
     "text": "the number of left and right brackets does not match",
     "firstUsed": "2016-08-01T07:58:48.228Z",
@@ -356,8 +356,8 @@
       "src/client/components/eeTranslation.js"
     ]
   },
-  "c29tZUNvbnRleHRfQSB0b29sIGZvciBpbnRlcm5hdGlvbmFsaXphdGlvbg==": {
-    "id": "c29tZUNvbnRleHRfQSB0b29sIGZvciBpbnRlcm5hdGlvbmFsaXphdGlvbg==",
+  "someContext_A tool for internationalization": {
+    "id": "someContext_A tool for internationalization",
     "context": "someContext",
     "text": "A tool for internationalization",
     "firstUsed": "2016-08-16T14:09:39.741Z",
@@ -366,8 +366,8 @@
       "src/client/components/aaApp.js"
     ]
   },
-  "c29tZUNvbnRleHRfSGVsbG8sIHtOQU1FfSE=": {
-    "id": "c29tZUNvbnRleHRfSGVsbG8sIHtOQU1FfSE=",
+  "someContext_Hello, {NAME}!": {
+    "id": "someContext_Hello, {NAME}!",
     "reactIntlId": "reactIntlSample1",
     "description": "Message to greet the user",
     "context": "someContext",
@@ -378,8 +378,8 @@
       "src/client/components/zzReactIntlExample.js"
     ]
   },
-  "c29tZUNvbnRleHRfSGVsbG8ge05BTUV9LCB5b3UgaGF2ZSB7VU5SRUFEX0NPVU5ULCBudW1iZXJ9IHtVTlJFQURfQ09VTlQsIHBsdXJhbCwgb25lIHttZXNzYWdlfSBvdGhlciB7bWVzc2FnZXN9fQ==": {
-    "id": "c29tZUNvbnRleHRfSGVsbG8ge05BTUV9LCB5b3UgaGF2ZSB7VU5SRUFEX0NPVU5ULCBudW1iZXJ9IHtVTlJFQURfQ09VTlQsIHBsdXJhbCwgb25lIHttZXNzYWdlfSBvdGhlciB7bWVzc2FnZXN9fQ==",
+  "someContext_Hello {NAME}, you have {UNREAD_COUNT, number} {UNREAD_COUNT, plural, one {message} other {messages}}": {
+    "id": "someContext_Hello {NAME}, you have {UNREAD_COUNT, number} {UNREAD_COUNT, plural, one {message} other {messages}}",
     "reactIntlId": "reactIntlSample2",
     "context": "someContext",
     "text": "Hello {NAME}, you have {UNREAD_COUNT, number} {UNREAD_COUNT, plural, one {message} other {messages}}",
@@ -389,8 +389,8 @@
       "src/client/components/zzReactIntlExample.js"
     ]
   },
-  "c29tZUNvbnRleHRfPGk+SGk8L2k+IDxiPntOQU1FfTwvYj4h": {
-    "id": "c29tZUNvbnRleHRfPGk+SGk8L2k+IDxiPntOQU1FfTwvYj4h",
+  "someContext_<i>Hi</i> <b>{NAME}</b>!": {
+    "id": "someContext_<i>Hi</i> <b>{NAME}</b>!",
     "reactIntlId": "reactIntlSample3",
     "context": "someContext",
     "text": "<i>Hi</i> <b>{NAME}</b>!",
@@ -400,8 +400,8 @@
       "src/client/components/zzReactIntlExample.js"
     ]
   },
-  "c2V0dGluZ3NGb3JtX0FEVkFOQ0VEOiBBZGRpdGlvbmFsIHJlZ3VsYXIgZXhwcmVzc2lvbnMgZm9yIG1lc3NhZ2UgcGFyc2luZzo=": {
-    "id": "c2V0dGluZ3NGb3JtX0FEVkFOQ0VEOiBBZGRpdGlvbmFsIHJlZ3VsYXIgZXhwcmVzc2lvbnMgZm9yIG1lc3NhZ2UgcGFyc2luZzo=",
+  "settingsForm_ADVANCED: Additional regular expressions for message parsing:": {
+    "id": "settingsForm_ADVANCED: Additional regular expressions for message parsing:",
     "context": "settingsForm",
     "text": "ADVANCED: Additional regular expressions for message parsing:",
     "firstUsed": "2016-10-07T07:06:52.832Z",
@@ -410,8 +410,8 @@
       "src/client/components/aeSettings.js"
     ]
   },
-  "c2V0dGluZ3NGb3JtX01pbmlmaWVk": {
-    "id": "c2V0dGluZ3NGb3JtX01pbmlmaWVk",
+  "settingsForm_Minified": {
+    "id": "settingsForm_Minified",
     "context": "settingsForm",
     "text": "Minified",
     "firstUsed": "2016-10-07T13:27:55.521Z",
@@ -420,8 +420,8 @@
       "src/client/components/aeSettings.js"
     ]
   },
-  "c2V0dGluZ3NGb3JtX0dlbmVyaWMgSlNPTiBmaWxl": {
-    "id": "c2V0dGluZ3NGb3JtX0dlbmVyaWMgSlNPTiBmaWxl",
+  "settingsForm_Generic JSON file": {
+    "id": "settingsForm_Generic JSON file",
     "context": "settingsForm",
     "text": "Generic JSON file",
     "firstUsed": "2016-10-07T13:27:55.521Z",
@@ -430,8 +430,8 @@
       "src/client/components/aeSettings.js"
     ]
   },
-  "c2V0dGluZ3NGb3JtX1JlYWN0IEludGwgSlNPTiBmaWxl": {
-    "id": "c2V0dGluZ3NGb3JtX1JlYWN0IEludGwgSlNPTiBmaWxl",
+  "settingsForm_React Intl JSON file": {
+    "id": "settingsForm_React Intl JSON file",
     "context": "settingsForm",
     "text": "React Intl JSON file",
     "firstUsed": "2016-10-07T13:30:07.967Z",
@@ -440,8 +440,8 @@
       "src/client/components/aeSettings.js"
     ]
   },
-  "c2V0dGluZ3NGb3JtX0phdmFTY3JpcHQgbW9kdWxlIChyZXF1aXJlZCBpZiB5b3UgdXNlIE1hZHkncyB0cmFuc2xhdGlvbiBmdW5jdGlvbik=": {
-    "id": "c2V0dGluZ3NGb3JtX0phdmFTY3JpcHQgbW9kdWxlIChyZXF1aXJlZCBpZiB5b3UgdXNlIE1hZHkncyB0cmFuc2xhdGlvbiBmdW5jdGlvbik=",
+  "settingsForm_JavaScript module (required if you use Mady's translation function)": {
+    "id": "settingsForm_JavaScript module (required if you use Mady's translation function)",
     "context": "settingsForm",
     "text": "JavaScript module (required if you use Mady's translation function)",
     "firstUsed": "2016-10-07T13:30:40.186Z",
@@ -450,8 +450,8 @@
       "src/client/components/aeSettings.js"
     ]
   },
-  "c2V0dGluZ3NGb3JtX091dHB1dDo=": {
-    "id": "c2V0dGluZ3NGb3JtX091dHB1dDo=",
+  "settingsForm_Output:": {
+    "id": "settingsForm_Output:",
     "context": "settingsForm",
     "text": "Output:",
     "firstUsed": "2016-10-07T13:33:34.082Z",
@@ -460,8 +460,8 @@
       "src/client/components/aeSettings.js"
     ]
   },
-  "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cCwgZm9yIGV4YW1wbGU6ICguKj8p": {
-    "id": "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cCwgZm9yIGV4YW1wbGU6ICguKj8p",
+  "settingsForm_Make sure your regular expression has exactly one capture group, for example: (.*?)": {
+    "id": "settingsForm_Make sure your regular expression has exactly one capture group, for example: (.*?)",
     "context": "settingsForm",
     "text": "Make sure your regular expression has exactly one capture group, for example: (.*?)",
     "firstUsed": "2016-10-08T21:14:30.055Z",
@@ -470,8 +470,8 @@
       "src/client/components/aeSettings.js"
     ]
   },
-  "dG9vbHRpcF9EdWJpb3VzIHRyYW5zbGF0aW9uIChjbGljayB0byB0b2dnbGUp": {
-    "id": "dG9vbHRpcF9EdWJpb3VzIHRyYW5zbGF0aW9uIChjbGljayB0byB0b2dnbGUp",
+  "tooltip_Dubious translation (click to toggle)": {
+    "id": "tooltip_Dubious translation (click to toggle)",
     "context": "tooltip",
     "text": "Dubious translation (click to toggle)",
     "firstUsed": "2017-03-16T10:27:42.449Z",
@@ -480,8 +480,8 @@
       "src/client/components/eeTranslation.js"
     ]
   },
-  "aGludF9GaWx0ZXIgcmVsZXZhbnQgbWVzc2FnZXM=": {
-    "id": "aGludF9GaWx0ZXIgcmVsZXZhbnQgbWVzc2FnZXM=",
+  "hint_Filter relevant messages": {
+    "id": "hint_Filter relevant messages",
     "context": "hint",
     "text": "Filter relevant messages",
     "firstUsed": "2017-07-25T09:23:26.894Z",
@@ -490,8 +490,8 @@
       "src/client/components/aaApp.js"
     ]
   },
-  "ZmlsdGVyX0FsbCAocmVtb3ZlIGZpbHRlcik=": {
-    "id": "ZmlsdGVyX0FsbCAocmVtb3ZlIGZpbHRlcik=",
+  "filter_All (remove filter)": {
+    "id": "filter_All (remove filter)",
     "context": "filter",
     "text": "All (remove filter)",
     "firstUsed": "2017-07-25T09:23:26.894Z",
@@ -500,8 +500,8 @@
       "src/client/components/abHeader.js"
     ]
   },
-  "ZmlsdGVyX0FsbCAobm8gZmlsdGVyKQ==": {
-    "id": "ZmlsdGVyX0FsbCAobm8gZmlsdGVyKQ==",
+  "filter_All (no filter)": {
+    "id": "filter_All (no filter)",
     "context": "filter",
     "text": "All (no filter)",
     "firstUsed": "2017-07-25T09:23:26.894Z",
@@ -510,8 +510,8 @@
       "src/client/components/abHeader.js"
     ]
   },
-  "ZmlsdGVyX1VudXNlZCBtZXNzYWdlcw==": {
-    "id": "ZmlsdGVyX1VudXNlZCBtZXNzYWdlcw==",
+  "filter_Unused messages": {
+    "id": "filter_Unused messages",
     "context": "filter",
     "text": "Unused messages",
     "firstUsed": "2017-07-25T09:23:26.894Z",
@@ -520,8 +520,8 @@
       "src/client/components/abHeader.js"
     ]
   },
-  "ZmlsdGVyX01pc3NpbmcgdHJhbnNsYXRpb25z": {
-    "id": "ZmlsdGVyX01pc3NpbmcgdHJhbnNsYXRpb25z",
+  "filter_Missing translations": {
+    "id": "filter_Missing translations",
     "context": "filter",
     "text": "Missing translations",
     "firstUsed": "2017-07-25T09:23:26.894Z",
@@ -530,8 +530,8 @@
       "src/client/components/abHeader.js"
     ]
   },
-  "ZmlsdGVyX0Z1enp5IHRyYW5zbGF0aW9ucw==": {
-    "id": "ZmlsdGVyX0Z1enp5IHRyYW5zbGF0aW9ucw==",
+  "filter_Fuzzy translations": {
+    "id": "filter_Fuzzy translations",
     "context": "filter",
     "text": "Fuzzy translations",
     "firstUsed": "2017-07-25T09:23:26.894Z",
@@ -539,8 +539,8 @@
     "sources": [],
     "isDeleted": true
   },
-  "ZmlsdGVyX1VudXNlZA==": {
-    "id": "ZmlsdGVyX1VudXNlZA==",
+  "filter_Unused": {
+    "id": "filter_Unused",
     "context": "filter",
     "text": "Unused",
     "firstUsed": "2017-07-25T09:23:26.894Z",
@@ -549,8 +549,8 @@
       "src/client/components/abHeader.js"
     ]
   },
-  "ZmlsdGVyX01pc3Npbmc=": {
-    "id": "ZmlsdGVyX01pc3Npbmc=",
+  "filter_Missing": {
+    "id": "filter_Missing",
     "context": "filter",
     "text": "Missing",
     "firstUsed": "2017-07-25T09:23:26.894Z",
@@ -559,8 +559,8 @@
       "src/client/components/abHeader.js"
     ]
   },
-  "ZmlsdGVyX0Z1enp5": {
-    "id": "ZmlsdGVyX0Z1enp5",
+  "filter_Fuzzy": {
+    "id": "filter_Fuzzy",
     "context": "filter",
     "text": "Fuzzy",
     "firstUsed": "2017-07-25T09:23:26.894Z",
@@ -568,8 +568,8 @@
     "sources": [],
     "isDeleted": true
   },
-  "dG9vbHRpcF9GaWx0ZXI=": {
-    "id": "dG9vbHRpcF9GaWx0ZXI=",
+  "tooltip_Filter": {
+    "id": "tooltip_Filter",
     "context": "tooltip",
     "text": "Filter",
     "firstUsed": "2017-07-25T09:23:26.894Z",
@@ -578,8 +578,8 @@
       "src/client/components/abHeader.js"
     ]
   },
-  "ZmlsdGVyX0R1YmlvdXMgdHJhbnNsYXRpb25z": {
-    "id": "ZmlsdGVyX0R1YmlvdXMgdHJhbnNsYXRpb25z",
+  "filter_Dubious translations": {
+    "id": "filter_Dubious translations",
     "context": "filter",
     "text": "Dubious translations",
     "firstUsed": "2017-07-25T09:25:35.557Z",
@@ -588,8 +588,8 @@
       "src/client/components/abHeader.js"
     ]
   },
-  "ZmlsdGVyX0R1YmlvdXM=": {
-    "id": "ZmlsdGVyX0R1YmlvdXM=",
+  "filter_Dubious": {
+    "id": "filter_Dubious",
     "context": "filter",
     "text": "Dubious",
     "firstUsed": "2017-07-25T09:25:35.557Z",
@@ -598,8 +598,8 @@
       "src/client/components/abHeader.js"
     ]
   },
-  "ZXJyb3JfT29wcywgYW4gZXJyb3Igb2NjdXJyZWQh": {
-    "id": "ZXJyb3JfT29wcywgYW4gZXJyb3Igb2NjdXJyZWQh",
+  "error_Oops, an error occurred!": {
+    "id": "error_Oops, an error occurred!",
     "context": "error",
     "text": "Oops, an error occurred!",
     "firstUsed": "2017-07-28T06:41:42.292Z",

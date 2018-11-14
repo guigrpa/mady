@@ -9,7 +9,6 @@
 
 // @flow
 
-import { utf8ToBase64 } from './common/base64';
 import type { MapOf, LocaleFunctionT } from './common/types';
 
 type MapOfLocaleFunctionsT = MapOf<LocaleFunctionT>;
@@ -22,15 +21,9 @@ let _locales: MapOfLocaleFunctionsT = {};
 // Caches
 const allLocales: MapOfMapOfLocaleFunctionsT = {};
 const allLocaleCode: MapOfStringsT = {};
-const keyCache: MapOfStringsT = {};
 
 const translate = (utf8: string, data: ?Object): string => {
-  let base64 = keyCache[utf8];
-  if (base64 == null) {
-    base64 = utf8ToBase64(utf8);
-    keyCache[utf8] = base64;
-  }
-  const fnTranslate = _locales[base64];
+  const fnTranslate = _locales[utf8];
   let out;
   if (fnTranslate) {
     out = fnTranslate(data);

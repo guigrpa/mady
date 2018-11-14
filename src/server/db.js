@@ -27,7 +27,7 @@ import { publish } from './subscriptions';
 import { init as initFileWatcher } from './fileWatcher';
 import autoTranslate from './autoTranslate';
 
-const DB_VERSION = 2;
+const DB_VERSION = 3;
 const DEBOUNCE_SAVE = 2000;
 const DEBOUNCE_COMPILE = 2000;
 const { UNIT_TESTING } = process.env;
@@ -913,8 +913,16 @@ function migrateDatabase(prevDbVersion: number) {
     src: 'db',
     title: `Upgrade DB ${prevDbVersion} -> ${DB_VERSION}`,
   });
-  if (prevDbVersion == null || prevDbVersion < 2) {
+  let curVersion = prevDbVersion;
+  if (curVersion == null || curVersion < 2) {
+    story.info('Migrating to v2');
     importers.importToV2({ langs: _config.langs, dir: _localeDir, story });
+    curVersion = 2;
+  }
+  if (curVersion === 2) {
+    story.info('Migrating to v3');
+    importers.importToV3({ langs: _config.langs, dir: _localeDir, story });
+    curVersion = 3;
   }
   story.close();
 }

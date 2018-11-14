@@ -1,10 +1,12 @@
 Later:
 
+* [ ] Remove usage of base64 for keys (breaking) -- include migrator
 * [ ] Client:
-    * [ ] Improve editing of long data. Include markdown preview
-* [ ] Client integration with user app
-* [ ] Server integration with user app:
-    * Events to report on changes: added translations, new messages, etc. Events could be used to trigger prepareBuild, build, same as manually editing variable contents.
+    - Add way to manually trigger Google Translation (first try to get it from the cache!)
+    - Make text area occupy the whole vertical space
+    - Set a maximum height on text-areas (but be generous)
+* [ ] Client:
+    * [ ] Improve editing of long data. Include markdown preview?
 
 Later still:
 

@@ -7,7 +7,6 @@ import path from 'path';
 import slash from 'slash';
 import { mainStory, chalk } from 'storyboard';
 import diveSync from 'diveSync';
-import { utf8ToBase64 } from '../common/base64';
 import type { MapOf, StoryT, InternalKeyT } from '../common/types';
 
 // ======================================================
@@ -164,10 +163,9 @@ const addMessageToKeys = (
       text = tokens[0];
     }
   }
-  const base64 = utf8ToBase64(utf8);
   // eslint-disable-next-line no-param-reassign
-  keys[base64] = keys[base64] || {
-    id: base64,
+  keys[utf8] = keys[utf8] || {
+    id: utf8,
     ...extras,
     context,
     text,
@@ -175,7 +173,7 @@ const addMessageToKeys = (
     unusedSince: null,
     sources: [],
   };
-  keys[base64].sources.push(slash(filePath));
+  keys[utf8].sources.push(slash(filePath));
 };
 
 // ======================================================

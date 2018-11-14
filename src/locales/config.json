@@ -1,5 +1,5 @@
 {
-  "dbVersion": 2,
+  "dbVersion": 3,
   "srcPaths": [
     "src/client",
     "src/common",
