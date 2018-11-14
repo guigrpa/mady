@@ -1,3 +1,5 @@
+## 3.0.0 (2018-11-14)
+
 * **General**:
     * Add the possibility to request an auto-translation from the server.
 * **Server**:
