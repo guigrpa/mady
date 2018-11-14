@@ -1,3 +1,5 @@
+## 3.0.1 (2018-11-14)
+
 ## 3.0.0 (2018-11-14)
 
 * **Breaking change**: Keys are no longer stored in base64. To update your database (to v3), just run mady from the CLI.
