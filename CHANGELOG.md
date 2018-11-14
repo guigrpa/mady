@@ -1,3 +1,5 @@
+* Replace uglify-js with Terser (better-maintained).
+
 ## 3.0.1 (2018-11-14)
 
 ## 3.0.0 (2018-11-14)

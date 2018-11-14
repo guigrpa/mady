@@ -1,7 +1,7 @@
 // @flow
 
 import MessageFormat from 'messageformat';
-import UglifyJS from 'uglify-js';
+import Terser from 'terser';
 import { chalk } from 'storyboard';
 import type {
   MapOf,
@@ -90,7 +90,7 @@ module.exports = anonymous();
   // =====================================
   if (fMinify) {
     story.info('compiler', `${logPrefix} Minifying...`);
-    fnTranslate = UglifyJS.minify(fnTranslate, { fromString: true }).code;
+    fnTranslate = Terser.minify(fnTranslate).code;
     story.debug('compiler', `${logPrefix} Minified`, {
       attach: fnTranslate,
       attachLevel: 'TRACE',
