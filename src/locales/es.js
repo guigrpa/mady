@@ -85,7 +85,8 @@ return {
   filter_Unused: function(d) { return "No usados"; },
   "hint_Filter relevant messages": function(d) { return "Filtrar mensajes relevantes"; },
   tooltip_Filter: function(d) { return "Filtro"; },
-  "error_Oops, an error occurred!": function(d) { return "¡Uy, ha ocurrido un error!"; }
+  "error_Oops, an error occurred!": function(d) { return "¡Uy, ha ocurrido un error!"; },
+  tooltip_Autotranslate: function(d) { return "Traducir automáticamente"; }
 }
 }
 module.exports = anonymous();

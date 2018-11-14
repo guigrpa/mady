@@ -1,8 +1,6 @@
 Later:
 
 * [ ] Client:
-    - Add way to manually trigger Google Translation (first try to get it from the cache!)
-* [ ] Client:
     * [ ] Improve editing of long data. Include markdown preview?
 
 Later still:

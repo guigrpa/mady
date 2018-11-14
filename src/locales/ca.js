@@ -90,7 +90,8 @@ return {
   filter_Unused: function(d) { return "No utilitzats"; },
   "hint_Filter relevant messages": function(d) { return "Filtrar missatges rellevants"; },
   tooltip_Filter: function(d) { return "Filtre"; },
-  "error_Oops, an error occurred!": function(d) { return "Ui, hi ha hagut un error!"; }
+  "error_Oops, an error occurred!": function(d) { return "Ui, hi ha hagut un error!"; },
+  tooltip_Autotranslate: function(d) { return "Traduir automàticament"; }
 }
 }
 module.exports = anonymous();

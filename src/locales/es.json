@@ -419,5 +419,13 @@
     "lang": "es",
     "translation": "Haz clic fuera o pulsa TAB para guardar. Pulsa ESC para deshacer.",
     "keyId": "translationHelp_Click outside or press TAB to save. Press ESC to undo."
+  },
+  "699f08ca-e4d4-4e10-bfc5-a423b587c3f2": {
+    "id": "699f08ca-e4d4-4e10-bfc5-a423b587c3f2",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Traducir automáticamente",
+    "fuzzy": true,
+    "keyId": "tooltip_Autotranslate"
   }
 }

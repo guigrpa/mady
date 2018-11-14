@@ -1,3 +1,5 @@
+* **General**:
+    * Add the possibility to request an auto-translation from the server.
 * **Server**:
     * Server plugin: accept `onChange` option, a function that is called whenever locales are compiled.
     * Server plugin: make it compatible with a user that already uses websockets.

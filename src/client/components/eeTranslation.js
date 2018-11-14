@@ -196,13 +196,20 @@ class Translation extends React.Component {
       ) : null;
     return (
       <div style={style.buttons}>
+        {elDelete}
+        &nbsp;&nbsp;&nbsp;
         <Icon
           icon="copy"
           title={_t('tooltip_Copy message')}
-          onMouseDown={this.onMouseDownCopyKey}
+          onMouseDown={this.onMouseDownCopy}
           style={style.iconButton}
         />
-        {elDelete}
+        <Icon
+          icon="google"
+          title={_t('tooltip_Autotranslate')}
+          onClick={this.onClickAutotranslate}
+          style={style.iconButton}
+        />
         {elFuzzy}
       </div>
     );
@@ -310,12 +317,31 @@ class Translation extends React.Component {
     });
   };
 
-  onMouseDownCopyKey = () => {
+  onMouseDownCopy = () => {
     // $FlowFixMe: SET_VALUE not supported yet in Giu's Flow API
     this.setState({
       cmds: [
         // $FlowFixMe: SET_VALUE not supported yet in Giu's Flow API
         { type: 'SET_VALUE', value: this.props.theKey.text },
+        { type: 'FOCUS' },
+      ],
+    });
+  };
+
+  onClickAutotranslate = async () => {
+    const {
+      theKey: { text },
+      lang,
+    } = this.props;
+    const response = await fetch(
+      `/mady-autotranslate?lang=${lang}&text=${encodeURIComponent(text)}`
+    );
+    const translation = await response.text();
+    // $FlowFixMe: SET_VALUE not supported yet in Giu's Flow API
+    this.setState({
+      cmds: [
+        // $FlowFixMe: SET_VALUE not supported yet in Giu's Flow API
+        { type: 'SET_VALUE', value: translation },
         { type: 'FOCUS' },
       ],
     });
@@ -365,7 +391,7 @@ class Translation extends React.Component {
 // ------------------------------------------
 const style = {
   outer: {
-    paddingRight: 56,
+    paddingRight: 75,
     height: '100%',
     // position: 'relative',
   },

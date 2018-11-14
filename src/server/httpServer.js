@@ -14,6 +14,7 @@ import compression from 'compression';
 import addAllLocales, { getReactIntlMessages } from './allLocales';
 import _t from '../translate';
 import * as gqlServer from './graphql/gqlServer';
+import * as db from './db';
 
 let ssr = null;
 try {
@@ -66,6 +67,11 @@ function init(options: Options): Object {
   // Add endpoints
   const schema = gqlServer.getSchema();
   expressApp.use('/mady-graphql', graphqlHttp({ schema, graphiql: true }));
+  expressApp.get('/mady-autotranslate', async (req, res) => {
+    const { lang, text } = req.query;
+    const translation = await db.getAutoTranslation(text, lang);
+    res.send(translation);
+  });
   expressApp.use('/mady', sendIndexHtml);
   expressApp.use(express.static(ABS_ASSET_PATH));
 

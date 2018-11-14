@@ -385,5 +385,13 @@
     "lang": "ca",
     "translation": "Ui, hi ha hagut un error!",
     "keyId": "error_Oops, an error occurred!"
+  },
+  "ffdc2cc3-39ba-44b0-a366-9fb4799abcca": {
+    "id": "ffdc2cc3-39ba-44b0-a366-9fb4799abcca",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Traduir automàticament",
+    "fuzzy": true,
+    "keyId": "tooltip_Autotranslate"
   }
 }

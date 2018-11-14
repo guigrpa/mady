@@ -963,6 +963,7 @@ export {
   getStats,
   parseSrcFiles,
   debouncedCompileTranslations,
+  getAutoTranslation,
   importV0,
   saveJson,
   // Only for unit tests

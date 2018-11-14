@@ -635,5 +635,15 @@
     "sources": [
       "src/client/components/aaApp.js"
     ]
+  },
+  "tooltip_Autotranslate": {
+    "id": "tooltip_Autotranslate",
+    "context": "tooltip",
+    "text": "Autotranslate",
+    "firstUsed": "2018-11-14T10:58:31.835Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/eeTranslation.js"
+    ]
   }
 }

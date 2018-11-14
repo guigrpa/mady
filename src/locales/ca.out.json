@@ -52,5 +52,6 @@
   "filter_Unused": "No utilitzats",
   "hint_Filter relevant messages": "Filtrar missatges rellevants",
   "tooltip_Filter": "Filtre",
-  "error_Oops, an error occurred!": "Ui, hi ha hagut un error!"
+  "error_Oops, an error occurred!": "Ui, hi ha hagut un error!",
+  "tooltip_Autotranslate": "Traduir automàticament"
 }

@@ -21,7 +21,7 @@ exports[`HoverableTranslation 01 without translation 1`] = `
     style={
       Object {
         "height": "100%",
-        "paddingRight": 56,
+        "paddingRight": 75,
       }
     }
   >
@@ -95,7 +95,7 @@ exports[`HoverableTranslation 01 without translation 1`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
-  <div style="height:100%;padding-right:56px;">
+  <div style="height:100%;padding-right:75px;">
     <div>
       <div
         class="giu-textarea"
@@ -135,7 +135,7 @@ exports[`HoverableTranslation 02 with translation 1`] = `
     style={
       Object {
         "height": "100%",
-        "paddingRight": 56,
+        "paddingRight": 75,
       }
     }
   >
@@ -209,7 +209,7 @@ exports[`HoverableTranslation 02 with translation 1`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
-  <div style="height:100%;padding-right:56px;">
+  <div style="height:100%;padding-right:75px;">
     <div>
       <div
         class="giu-textarea"
