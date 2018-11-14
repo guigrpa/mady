@@ -161,9 +161,9 @@
     "style-loader": "^0.20.3",
     "tiny-cookie": "0.5.5",
     "tinycolor2": "1.4.1",
-    "webpack": "^4.22.0",
-    "webpack-bundle-analyzer": "^2.11.1",
-    "webpack-cli": "^2.0.12",
+    "webpack": "4.19.1",
+    "webpack-bundle-analyzer": "^2.13.1",
+    "webpack-cli": "^2.1.4",
     "xxl": "^1.2.0"
   },
   "jest": {
