@@ -121,6 +121,7 @@ class Translation extends React.Component {
     return (
       <div
         onMouseEnter={this.props.onHoverStart}
+        onMouseMove={this.props.onHoverStart}
         onMouseLeave={this.props.onHoverStop}
         style={style.outer}
       >

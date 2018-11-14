@@ -98,6 +98,7 @@ class TranslatorRow extends React.PureComponent {
       >
         <div
           onMouseEnter={this.props.onHoverStart}
+          onMouseMove={this.props.onHoverStart}
           onMouseLeave={this.props.onHoverStop}
           style={cellStyle}
         >
