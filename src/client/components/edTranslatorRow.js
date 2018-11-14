@@ -86,14 +86,15 @@ class TranslatorRow extends React.PureComponent {
       this.props.styleKeyCol,
       style.keyCell
     );
-    if (this.props.fSelected) cellStyle = style.selected(cellStyle);
+    const { fSelected } = this.props;
+    if (fSelected) cellStyle = style.selected(cellStyle);
     if (fUnused) cellStyle = style.unused(cellStyle);
     return (
       <div
         className="tableBodyRow"
         id={key.id}
         onClick={this.onClickKeyRow}
-        style={style.row}
+        style={style.row(fSelected)}
       >
         <div
           onMouseEnter={this.props.onHoverStart}
@@ -158,12 +159,15 @@ class TranslatorRow extends React.PureComponent {
 // Styles
 // ------------------------------------------
 const style = {
-  row: flexItem(
-    'none',
-    flexContainer('row', {
-      minHeight: 21,
-    })
-  ),
+  row: fSelected =>
+    flexItem(
+      'none',
+      flexContainer('row', {
+        minHeight: 21,
+        maxHeight: fSelected ? undefined : 100,
+        overflowY: fSelected ? undefined : 'hidden',
+      })
+    ),
   bodyCell: {
     position: 'relative',
     paddingTop: 1,

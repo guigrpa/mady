@@ -32,6 +32,11 @@ require('./aaApp.sass');
 // _t("someContext_Message with emoji: 🎉")
 // Example message with American and British English versions, so that it appears in the screenshot:
 // _t("someContext_A tool for internationalization")
+// Example of very long text
+/* _t("someContext_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet risus felis. Donec sed viverra urna. Praesent porttitor lorem id urna blandit, nec scelerisque risus varius. Nullam euismod suscipit scelerisque. Mauris placerat scelerisque nisi, vel rutrum purus dapibus et. Quisque mattis pulvinar eros in molestie. Suspendisse eleifend pretium nisi vel sagittis. In mollis diam sem, eget porta magna auctor nec. Maecenas rutrum eu magna sit amet feugiat. Nunc nec viverra dui. Suspendisse id lacus suscipit, volutpat sapien hendrerit, interdum risus. Mauris eu mollis lacus, ac posuere tortor. Integer quis pretium metus. Ut condimentum auctor elit, eu aliquet urna. Curabitur sit amet vulputate lorem, a lobortis risus.
+
+Aliquam finibus lacinia iaculis. Nulla mattis lorem nec efficitur varius. Mauris tempus velit id auctor interdum. Sed facilisis, nunc id tincidunt sollicitudin, enim augue pulvinar ligula, vel consectetur lorem urna non velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi eget auctor enim, sit amet euismod tellus. Integer vitae odio in ligula pretium interdum ac nec enim. Vestibulum tellus orci, hendrerit eu tortor quis, pretium pharetra massa. In quis quam venenatis, auctor eros nec, convallis felis. Donec mattis orci aliquam elit placerat, ac finibus turpis interdum. Proin lorem quam, dignissim vel quam ac, mollis imperdiet ipsum. Etiam iaculis elementum leo. Nulla eu lectus nec metus gravida congue. Pellentesque tempus mauris vel mauris lacinia, iaculis volutpat eros sodales. Cras eu leo ligula. Proin tortor ex, viverra efficitur risus nec, accumsan sollicitudin est.")
+*/
 
 // ==========================================
 // Component declarations

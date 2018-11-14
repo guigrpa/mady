@@ -2,8 +2,6 @@ Later:
 
 * [ ] Client:
     - Add way to manually trigger Google Translation (first try to get it from the cache!)
-    - Make text area occupy the whole vertical space
-    - Set a maximum height on text-areas (but be generous)
 * [ ] Client:
     * [ ] Improve editing of long data. Include markdown preview?
 
