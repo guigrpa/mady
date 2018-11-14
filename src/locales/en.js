@@ -34,11 +34,11 @@ var fmt = {
 };
 
 return {
-  "someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}": function(d) { return plural(d.NUM, 0, en, { one: "1 hamburger", other: number(d.NUM, "NUM") + " hamburgers" }); },
-  "someContext_Hello, {NAME}!": function(d) { return "Hello, " + d.NAME + "!"; },
-  "someContext_Hello {NAME}, you have {UNREAD_COUNT, number} {UNREAD_COUNT, plural, one {message} other {messages}}": function(d) { return "Hello " + d.NAME + ", you have " + fmt.number(d.UNREAD_COUNT, "en") + " " + plural(d.UNREAD_COUNT, 0, en, { one: "message", other: "messages" }); },
-  "someContext_<i>Hi</i> <b>{NAME}</b>!": function(d) { return "<i>Hi</i> <b>" + d.NAME + "</b>!"; },
-  "someContext_A tool for internationalization": function(d) { return "A tool for internationalization"; }
+  c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319: function(d) { return plural(d.NUM, 0, en, { one: "1 hamburger", other: number(d.NUM, "NUM") + " hamburgers" }); },
+  "c29tZUNvbnRleHRfSGVsbG8sIHtOQU1FfSE=": function(d) { return "Hello, " + d.NAME + "!"; },
+  "c29tZUNvbnRleHRfSGVsbG8ge05BTUV9LCB5b3UgaGF2ZSB7VU5SRUFEX0NPVU5ULCBudW1iZXJ9IHtVTlJFQURfQ09VTlQsIHBsdXJhbCwgb25lIHttZXNzYWdlfSBvdGhlciB7bWVzc2FnZXN9fQ==": function(d) { return "Hello " + d.NAME + ", you have " + fmt.number(d.UNREAD_COUNT, "en") + " " + plural(d.UNREAD_COUNT, 0, en, { one: "message", other: "messages" }); },
+  "c29tZUNvbnRleHRfPGk+SGk8L2k+IDxiPntOQU1FfTwvYj4h": function(d) { return "<i>Hi</i> <b>" + d.NAME + "</b>!"; },
+  "c29tZUNvbnRleHRfQSB0b29sIGZvciBpbnRlcm5hdGlvbmFsaXphdGlvbg==": function(d) { return "A tool for internationalization"; }
 }
 }
 module.exports = anonymous();

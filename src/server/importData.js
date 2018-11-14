@@ -4,7 +4,7 @@ import timm from 'timm';
 import { chalk } from 'storyboard';
 import diveSync from 'diveSync';
 import uuid from 'uuid';
-import { utf8ToBase64, base64ToUtf8 } from '../common/base64';
+import { utf8ToBase64 } from '../common/base64';
 
 function duplicatedTranslation(
   translations,
@@ -104,7 +104,6 @@ function importV0({ langs, keys, translations, dir, story }) {
   return { keys: outK, translations: outT, langs: outLangs };
 }
 
-// Use base64 keys
 function importToV2({ langs, dir, story }) {
   // Import keys
   story.info('importData', 'Processing keys...');
@@ -135,38 +134,7 @@ function importToV2({ langs, dir, story }) {
   });
 }
 
-// Go back to non-base64 keys
-function importToV3({ langs, dir, story }) {
-  // Import keys
-  story.info('importData', 'Processing keys...');
-  const keyPath = path.join(dir, 'keys.json');
-  const prevKeys = JSON.parse(fs.readFileSync(keyPath));
-  const nextKeys = {};
-  Object.keys(prevKeys).forEach(id => {
-    const keyData = prevKeys[id];
-    const nextId = base64ToUtf8(id);
-    nextKeys[nextId] = timm.set(keyData, 'id', nextId);
-  });
-  fs.writeFileSync(keyPath, JSON.stringify(nextKeys, null, '  '), 'utf8');
-
-  // Import translations
-  langs.forEach(lang => {
-    story.info('importData', `Processing translations: ${lang}...`);
-    const translationPath = path.join(dir, `${lang}.json`);
-    const translations = JSON.parse(fs.readFileSync(translationPath));
-    Object.keys(translations).forEach(id => {
-      const translation = translations[id];
-      translation.keyId = base64ToUtf8(translation.keyId);
-    });
-    fs.writeFileSync(
-      translationPath,
-      JSON.stringify(translations, null, '  '),
-      'utf8'
-    );
-  });
-}
-
 // ==============================================
 // Public API
 // ==============================================
-export { importV0, importToV2, importToV3 };
+export { importV0, importToV2 };
