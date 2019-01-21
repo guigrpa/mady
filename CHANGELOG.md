@@ -1,3 +1,4 @@
+* Add `--no-watch` CLI option and `noWatch` server-plugin option.
 * Make logs less verbose.
 
 ## 3.0.3 (2018-11-14)

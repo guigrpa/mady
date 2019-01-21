@@ -48,6 +48,7 @@ program
     Number,
     DEFAULT_PORT
   )
+  .option('--no-watch', 'Do not watch source files')
   .option('--recompile', 'Recompile translations upon launch')
   .option('--importV0 [dir]', 'Import a "v0" (old) locale folder')
   .parse(process.argv);
@@ -59,9 +60,10 @@ cliOptions.otherDirs = cliOptions.otherDirs
 
 mainStory.info('startup', 'CLI options:', { attach: cliOptions });
 db.init({
+  fRecompile: cliOptions.recompile,
   localeDir: cliOptions.dir,
   otherLocaleDirs: cliOptions.otherDirs,
-  fRecompile: cliOptions.recompile,
+  watch: cliOptions.watch,
 });
 if (cliOptions.importV0) {
   db.importV0(cliOptions.importV0);

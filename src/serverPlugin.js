@@ -12,6 +12,7 @@ type Options = {|
   localeDir?: string,
   otherLocaleDirs?: Array<string>,
   onChange?: Function,
+  noWatch?: boolean,
 |};
 
 const DEFAULT_LOCALE_PATH = 'locales';
@@ -24,10 +25,17 @@ const init = (options: Options) => {
     socketServer,
     otherLocaleDirs,
     onChange,
+    noWatch,
   } = options;
   if (!expressApp) throw new Error('expressApp option not provided');
   if (!httpServer) throw new Error('httpServer option not provided');
-  db.init({ localeDir, fRecompile: false, otherLocaleDirs, onChange });
+  db.init({
+    localeDir,
+    fRecompile: false,
+    otherLocaleDirs,
+    onChange,
+    watch: !noWatch,
+  });
   const gqlSchema = gqlInit();
   httpInit({ expressApp, httpServer });
   socketInit({ httpServer, socketServer, gqlSchema });

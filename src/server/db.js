@@ -60,15 +60,18 @@ const delay = ms =>
 // Init
 // ==============================================
 let _onChange: ?Function;
+let _watch: boolean;
 
 type Options = {
   fRecompile: boolean,
   localeDir: string,
   otherLocaleDirs?: Array<string>,
+  watch?: boolean,
   onChange?: Function,
 };
 function init(options: Options) {
   _onChange = options.onChange;
+  _watch = !!options.watch;
   initLocaleDir(options);
   const fMigrated = initConfig();
   initKeys();
@@ -142,7 +145,9 @@ function readConfig() {
 }
 function saveConfig(options?: Object) {
   saveJson(_configPath, _config, options);
-  initFileWatcher({ paths: _config.srcPaths, onEvent: onFileChange });
+  if (_watch) {
+    initFileWatcher({ paths: _config.srcPaths, onEvent: onFileChange });
+  }
 }
 
 const onFileChange = async (eventType, filePath0) => {
