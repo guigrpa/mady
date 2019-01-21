@@ -1,5 +1,7 @@
-* Add `--no-watch` CLI option and `noWatch` server-plugin option.
-* Make logs less verbose.
+* **Server**:
+    * Add `--no-watch` CLI option and `noWatch` server-plugin option.
+    * Make logs less verbose.
+    * Improve Markdown autotranslations (do not translate multi-line code blocks -- between triple backticks).
 
 ## 3.0.3 (2018-11-14)
 

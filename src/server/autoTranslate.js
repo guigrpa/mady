@@ -1,6 +1,7 @@
 // @flow
 
 /* eslint-global fetch */
+/* eslint-disable no-await-in-loop */
 
 import 'isomorphic-fetch';
 import querystring from 'querystring';
@@ -14,7 +15,18 @@ type Options = {|
 
 const GOOGLE_TRANSLATE_URL = 'https://translate.google.com/translate_a/single';
 
-const translate = async (
+const translate = async (text: string, options: Options) => {
+  const segments = text.split(/(\s*```[\s\S]*```\s*)/gm);
+  const out = [];
+  for (let i = 0; i < segments.length; i += 1) {
+    const segment = segments[i];
+    out[i] = i % 2 ? segment : await _translate(segment, options);
+    if (out[i] == null) return null;
+  }
+  return out.join('');
+};
+
+const _translate = async (
   text: string,
   { languageCodeFrom, languageCodeTo }: Options
 ) => {
