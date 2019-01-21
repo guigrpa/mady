@@ -1,3 +1,5 @@
+## 3.1.0 (2019-1-21)
+
 * **Server**:
     * Add `--no-watch` CLI option and `noWatch` server-plugin option.
     * Make logs less verbose.
