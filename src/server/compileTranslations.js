@@ -58,9 +58,8 @@ export default function compileTranslations({
       messageFormatTranslations[keyId] = translation.translation;
     }
   });
-  story.debug('compiler', `${logPrefix} Translations prepared`, {
+  story.trace('compiler', `${logPrefix} Translations prepared`, {
     attach: messageFormatTranslations,
-    attachLevel: 'TRACE',
   });
 
   // =====================================
@@ -80,10 +79,7 @@ module.exports = anonymous();
       return ${JSON.stringify(markdownTranslations[keyId])}
     };\n`;
   });
-  story.debug('compiler', `${logPrefix} Precompiled`, {
-    attach: fnTranslate,
-    attachLevel: 'TRACE',
-  });
+  story.trace('compiler', `${logPrefix} Precompiled`, { attach: fnTranslate });
 
   // =====================================
   // Minify result
@@ -91,10 +87,7 @@ module.exports = anonymous();
   if (fMinify) {
     story.info('compiler', `${logPrefix} Minifying...`);
     fnTranslate = Terser.minify(fnTranslate).code;
-    story.debug('compiler', `${logPrefix} Minified`, {
-      attach: fnTranslate,
-      attachLevel: 'TRACE',
-    });
+    story.trace('compiler', `${logPrefix} Minified`, { attach: fnTranslate });
   } else {
     story.info('compiler', `${logPrefix} Skipped minification`);
   }
