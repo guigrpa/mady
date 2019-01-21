@@ -1,3 +1,5 @@
+* Avoid a single translation to break translation compilation.
+
 Later:
 
 * [ ] Client:
