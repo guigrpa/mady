@@ -185,7 +185,7 @@ class App extends React.Component {
     const scopes = {};
     for (let i = 0; i < edges.length; i++) {
       const { scope } = edges[i].node;
-      scopes[scope] = true;
+      if (scope) scopes[scope] = true;
     }
     const scopesArr = Object.keys(scopes).sort();
     return scopesArr;
