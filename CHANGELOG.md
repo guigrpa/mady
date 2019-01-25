@@ -1,3 +1,5 @@
+## 3.2.0 (2019-1-25)
+
 * **Client**:
     * Add filtering by **scopes**!
     * Add **quick find**!
