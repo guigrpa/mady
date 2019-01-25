@@ -1,1 +1,0 @@
-function anonymous(){return{"Y29tcGFueS1uYW1lX0V1cm9wZWFuIENvbW1pc3Npb24=":function(n){return"Comisión Europea"}}}module.exports=anonymous();

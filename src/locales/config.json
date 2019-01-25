@@ -1,25 +1,30 @@
 {
+  "dbVersion": 2,
   "srcPaths": [
-    "pages",
-    "components"
+    "src/client",
+    "src/common",
+    "src/server"
   ],
   "srcExtensions": [
     ".js",
-    ".jsx"
+    ".jsx",
+    ".coffee",
+    ".cjsx"
   ],
   "langs": [
     "en",
     "es",
-    "ca"
+    "ca",
+    "en-US",
+    "en-GB"
   ],
-  "originalLang": "en",
   "msgFunctionNames": [
     "_t"
   ],
   "msgRegexps": [],
-  "fMinify": true,
   "fJsOutput": true,
-  "fJsonOutput": false,
-  "fReactIntlOutput": false,
-  "dbVersion": 2
+  "fMinify": false,
+  "fJsonOutput": true,
+  "fReactIntlOutput": true,
+  "originalLang": "en"
 }

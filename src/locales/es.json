@@ -1,1647 +1,439 @@
 {
-  "4598677d-52c7-48b9-9652-44ff86e8f032": {
-    "id": "4598677d-52c7-48b9-9652-44ff86e8f032",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Lobelia",
-    "fuzzy": false,
-    "keyId": "cGFnZS13aW5kb3dUaXRsZV9Mb2JlbGlh"
-  },
-  "6b3f637b-b735-4e4a-a54a-079859c7d29f": {
-    "id": "6b3f637b-b735-4e4a-a54a-079859c7d29f",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Video no compatible con el navegador",
-    "fuzzy": false,
-    "keyId": "YmFubmVyX1ZpZGVvIG5vdCBzdXBwb3J0ZWQgYnkgYnJvd3Nlcg=="
-  },
-  "4236f560-33d0-4854-978f-f2f3e8160e50": {
-    "id": "4236f560-33d0-4854-978f-f2f3e8160e50",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Video no compatible con el navegador",
-    "fuzzy": false,
-    "keyId": "bWFya2Rvd25fVmlkZW8gbm90IHN1cHBvcnRlZCBieSBicm93c2Vy"
-  },
-  "665dc4db-32e0-47d1-9dd0-2c64f2f5305c": {
-    "id": "665dc4db-32e0-47d1-9dd0-2c64f2f5305c",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Inicio",
-    "fuzzy": false,
-    "keyId": "cGFnZS1uYXZpZ2F0aW9uVGl0bGVfSG9tZQ=="
-  },
-  "ec372b9a-ee51-4249-bf20-82c58a21f119": {
-    "id": "ec372b9a-ee51-4249-bf20-82c58a21f119",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Inicio",
-    "fuzzy": false,
-    "keyId": "cGFnZS10aXRsZV9Ib21l"
-  },
-  "caeb976e-6fd0-4a2d-aae4-307c8944b16e": {
-    "id": "caeb976e-6fd0-4a2d-aae4-307c8944b16e",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "cierto",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1pc0NsaWVudF90cnVl"
-  },
-  "429cbd77-d1a4-444a-9381-dc66ea5833d5": {
-    "id": "429cbd77-d1a4-444a-9381-dc66ea5833d5",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "pwc",
-    "fuzzy": false,
-    "keyId": "Y29tcGFueS1uYW1lX3B3Yw=="
-  },
-  "f3e015cd-c445-4682-b5a4-08eff6408418": {
-    "id": "f3e015cd-c445-4682-b5a4-08eff6408418",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Oxfam",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1hY3JvbnltX094ZmFt"
-  },
-  "6320c2f3-81ce-442c-a92f-418610320e59": {
-    "id": "6320c2f3-81ce-442c-a92f-418610320e59",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Oxfam",
-    "fuzzy": false,
-    "keyId": "Y29tcGFueS1uYW1lX094ZmFt"
-  },
-  "0ae25e93-1daf-43eb-9b22-40b6739ac5e5": {
-    "id": "0ae25e93-1daf-43eb-9b22-40b6739ac5e5",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "PWC",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1hY3JvbnltX1BXQw=="
-  },
-  "f412cb03-fa8b-4ddd-9243-e4ab638c2485": {
-    "id": "f412cb03-fa8b-4ddd-9243-e4ab638c2485",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "xxx",
-    "fuzzy": true,
-    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfeHh4"
-  },
-  "8e4b6487-f30f-4b84-b635-110f575fc614": {
-    "id": "8e4b6487-f30f-4b84-b635-110f575fc614",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Idoneidad de cultivos",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1zaG9ydFRpdGxlX0Nyb3Agc3VpdGFiaWxpdHk="
-  },
-  "9a6aae57-1ad1-4621-8211-80200ca05892": {
-    "id": "9a6aae57-1ad1-4621-8211-80200ca05892",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Analizar y evaluar la idoneidad de los cultivos para Oxfam",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC10aXRsZV9BbmFseXNpbmcgYW5kIGFzc2Vzc2luZyBjcm9wIHN1aXRhYmlsaXR5IGZvciBPeGZhbQ=="
-  },
-  "32f5d94c-2c9c-4ce3-acec-3c9a9af3b0ad": {
-    "id": "32f5d94c-2c9c-4ce3-acec-3c9a9af3b0ad",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Hemos desarrollado una herramienta de aptitud de cultivo para Oxfam. En esta etapa, la herramienta produce mapas que muestran el número de ciclos de cultivo factibles para maíz, sorgo y mijo perla en el Sahel, África Subsahariana y Corredor Seco para los períodos de climas seleccionados y los escenarios de emisión.\n\nSe espera que el cambio climático afecte desproporcionadamente a los pequeños agricultores, que ya enfrentan numerosos riesgos para la producción agrícola. Los cultivos responderán a los cambios específicos de temperatura y precipitación en los lugares donde se cultivan actualmente.",
-    "fuzzy": true,
-    "keyId": "cHJvamVjdC1jb250ZW50c19XZSBoYXZlIGRldmVsb3BlZCBhIGNyb3Agc3VpdGFiaWxpdHkgdG9vbCBmb3IgT3hmYW0uIEF0IHRoaXMgc3RhZ2UsIHRoZSB0b29sIHByb2R1Y2VzIG1hcHMgc2hvd2luZyB0aGUgbnVtYmVyIG9mIGZlYXNpYmxlIGNyb3AgY3ljbGVzIGZvciBtYWl6ZSwgc29yZ2h1bSBhbmQgcGVhcmwgbWlsbGV0IGluIHRoZSBTYWhlbCwgU3ViLVNhaGFyYW4gQWZyaWNhIGFuZCBEcnkgQ29ycmlkb3IgZm9yIHRoZSBzZWxlY3RlZCBjbGltZSBwZXJpb2RzIGFuZCBlbWlzc2lvbiBzY2VuYXJpb3MuCgpDbGltYXRlIGNoYW5nZSBpcyBleHBlY3RlZCB0byBkaXNwcm9wb3J0aW9uYXRlbHkgYWZmZWN0IHNtYWxsaG9sZGVyIGZhcm1lcnMsIHdobyBhbHJlYWR5IGZhY2UgbnVtZXJvdXMgcmlza3MgdG8gYWdyaWN1bHR1cmFsIHByb2R1Y3Rpb24uIENyb3BzIHdpbGwgcmVzcG9uZCB0byBzcGVjaWZpYyBjaGFuZ2VzIGluIHRlbXBlcmF0dXJlIGFuZCBwcmVjaXBpdGF0aW9uIGF0IHRoZSBsb2NhdGlvbnMgd2hlcmUgdGhleSBhcmUgY3VycmVudGx5IGdyb3duLg=="
-  },
-  "3ec054aa-b7ac-4636-ac9e-943813cf297b": {
-    "id": "3ec054aa-b7ac-4636-ac9e-943813cf297b",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "contacto",
-    "fuzzy": false,
-    "keyId": "bmF2X2NvbnRhY3Q="
-  },
-  "949ec8c4-e10b-419e-b27a-85a9460daa90": {
-    "id": "949ec8c4-e10b-419e-b27a-85a9460daa90",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "trabaja con nosotros",
-    "fuzzy": false,
-    "keyId": "bmF2X3dvcmsgd2l0aCB1cw=="
-  },
-  "14b26aa4-d204-4ff2-b4c7-e0d5d310bee3": {
-    "id": "14b26aa4-d204-4ff2-b4c7-e0d5d310bee3",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "nosotros",
-    "fuzzy": false,
-    "keyId": "bmF2X2Fib3V0"
-  },
-  "2ead6a0e-882b-4ae3-a7e0-9834ddecd9b1": {
-    "id": "2ead6a0e-882b-4ae3-a7e0-9834ddecd9b1",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "nuestro trabajo",
-    "fuzzy": false,
-    "keyId": "bmF2X291ciB3b3Jr"
-  },
-  "e4eacba1-7b04-40c3-8175-5aa2e141e1f5": {
-    "id": "e4eacba1-7b04-40c3-8175-5aa2e141e1f5",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "soluciones",
-    "fuzzy": false,
-    "keyId": "bmF2X3NvbHV0aW9ucw=="
-  },
-  "9d8d100e-1cff-4614-879e-c91d95d1c537": {
-    "id": "9d8d100e-1cff-4614-879e-c91d95d1c537",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "ponte en contacto",
-    "fuzzy": false,
-    "keyId": "Y29udGFjdF9nZXQgaW4gdG91Y2g="
-  },
-  "320e04fd-4e23-48d7-95f3-f414a46ba6d5": {
-    "id": "320e04fd-4e23-48d7-95f3-f414a46ba6d5",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "¿Preguntas, comentarios?",
-    "fuzzy": false,
-    "keyId": "Y29udGFjdF9BbnkgcXVlc3Rpb25zIG9yIGNvbW1lbnRzPw=="
-  },
-  "ac0d04ff-9669-4cc8-9ea0-4af4de1b1953": {
-    "id": "ac0d04ff-9669-4cc8-9ea0-4af4de1b1953",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "más información",
-    "fuzzy": false,
-    "keyId": "YnV0dG9uX21vcmUgaW5mbw=="
-  },
-  "dc355b57-ec5c-4579-b0c1-cf9d6f8d13ed": {
-    "id": "dc355b57-ec5c-4579-b0c1-cf9d6f8d13ed",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "¡Estar en contacto!",
-    "fuzzy": true,
-    "keyId": "Y29udGFjdF9nZXQgaW4gdG91Y2gh"
-  },
-  "f345c017-b34e-44fd-b3be-3c3b5aea7ed4": {
-    "id": "f345c017-b34e-44fd-b3be-3c3b5aea7ed4",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Otras soluciones",
-    "fuzzy": true,
-    "keyId": "c2VjdGlvbl9PdGhlciBzb2x1dGlvbnM="
-  },
-  "967b5ac0-7224-4a11-9bd8-25a9afaaf00c": {
-    "id": "967b5ac0-7224-4a11-9bd8-25a9afaaf00c",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Observando la Tierra para anticipar los efectos de un clima cambiante.",
-    "fuzzy": true,
-    "keyId": "dGFnbGluZV9PYnNlcnZpbmcgdGhlIEVhcnRoIHRvIGFudGljaXBhdGUgdGhlIGVmZmVjdHMgb2YgYSBjaGFuZ2luZyBjbGltYXRlLg=="
-  },
-  "9241fd32-097f-4815-a43e-e6dde96f7ee9": {
-    "id": "9241fd32-097f-4815-a43e-e6dde96f7ee9",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "correo electrónico",
-    "fuzzy": false,
-    "keyId": "Y29udGFjdF9lbWFpbA=="
-  },
-  "d0e74beb-827e-4bec-9ee3-26b1e4a55923": {
-    "id": "d0e74beb-827e-4bec-9ee3-26b1e4a55923",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "mensaje",
-    "fuzzy": false,
-    "keyId": "Y29udGFjdF9tZXNzYWdl"
-  },
-  "0ba29f1d-898e-41b1-8048-7aedbf7b48ba": {
-    "id": "0ba29f1d-898e-41b1-8048-7aedbf7b48ba",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "tema",
-    "fuzzy": false,
-    "keyId": "Y29udGFjdF9zdWJqZWN0"
-  },
-  "7ead0f13-8f82-46ee-af50-f4aa8b2724f3": {
-    "id": "7ead0f13-8f82-46ee-af50-f4aa8b2724f3",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "nombre",
-    "fuzzy": false,
-    "keyId": "Y29udGFjdF9uYW1l"
-  },
-  "2c64b31d-4e3e-40f5-9dde-40599c50e9a8": {
-    "id": "2c64b31d-4e3e-40f5-9dde-40599c50e9a8",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "enviar",
-    "fuzzy": false,
-    "keyId": "YnV0dG9uX3NlbmQ="
-  },
-  "ca25c580-6d39-4718-b53b-10485febdd05": {
-    "id": "ca25c580-6d39-4718-b53b-10485febdd05",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Servicios expertos para hacer frente al cambio climático utilizando datos de observación de la Tierra",
-    "fuzzy": false,
-    "keyId": "cGFnZS10aXRsZV9FeHBlcnQgc2VydmljZXMgdG8gZmFjZSBjbGltYXRlIGNoYW5nZSB1c2luZyBFYXJ0aCBPYnNlcnZhdGlvbiBkYXRh"
-  },
-  "d61b294c-22be-406a-99a7-c5b0b9da364a": {
-    "id": "d61b294c-22be-406a-99a7-c5b0b9da364a",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Comisión Europea",
-    "fuzzy": false,
-    "keyId": "Y29tcGFueS1uYW1lX0V1cm9wZWFuIENvbW1pc3Npb24="
-  },
-  "7ce2b377-7433-4578-b962-1736cc99c216": {
-    "id": "7ce2b377-7433-4578-b962-1736cc99c216",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Sector privado",
-    "fuzzy": false,
-    "keyId": "bWFya2V0LW5hbWVfUHJpdmF0ZSBzZWN0b3I="
-  },
-  "2460b1bf-d9cc-4b59-b028-3dea7f99ccb9": {
-    "id": "2460b1bf-d9cc-4b59-b028-3dea7f99ccb9",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "EOMAP",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX0VPTUFQ"
-  },
-  "2bedbb1f-491a-4ad2-8c7d-f87255bdb022": {
-    "id": "2bedbb1f-491a-4ad2-8c7d-f87255bdb022",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Instituto Meteorológico e Hidrológico Sueco",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX1N3ZWRpc2ggTWV0ZW9yb2xvZ2ljYWwgYW5kIEh5ZHJvbG9naWNhbCBJbnN0aXR1dGU="
-  },
-  "713dd785-99ea-403f-b796-fe36eb956e9d": {
-    "id": "713dd785-99ea-403f-b796-fe36eb956e9d",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "`` `Contenido\n`` `",
-    "fuzzy": true,
-    "keyId": "cGFnZS1sYXlvdXRfYGBgQ29udGVudHMKYGBg"
-  },
-  "b070dc87-13c8-4e38-9357-de5dbf783172": {
-    "id": "b070dc87-13c8-4e38-9357-de5dbf783172",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "![](c.jpg)",
-    "fuzzy": false,
-    "keyId": "cGFnZS1zaWRlYmFyQ29udGVudHNfIVtdKGMuanBnKQ=="
-  },
-  "73dbfb25-cd01-449a-946b-6699692c260f": {
-    "id": "73dbfb25-cd01-449a-946b-6699692c260f",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Organización Europea para la Explotación de Satélites Meteorológicos",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX0V1cm9wZWFuIE9yZ2FuaXNhdGlvbiBmb3IgdGhlIEV4cGxvaXRhdGlvbiBvZiBNZXRlb3JvbG9naWNhbCBTYXRlbGxpdGVz"
-  },
-  "47e4e5ee-ac64-48ab-a092-3d40da237547": {
-    "id": "47e4e5ee-ac64-48ab-a092-3d40da237547",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Laia Romero",
-    "fuzzy": true,
-    "keyId": "dGVhbU1lbWJlci1uYW1lX0xhaWEgUm9tZXJv"
-  },
-  "ed310ebc-d242-46a3-a688-a4f4d78a32a3": {
-    "id": "ed310ebc-d242-46a3-a688-a4f4d78a32a3",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Gobiernos / instituciones",
-    "fuzzy": false,
-    "keyId": "bWFya2V0LW5hbWVfR292ZXJubWVudHMgLyBpbnN0aXR1dGlvbnM="
-  },
-  "694b3379-19e6-4896-9474-8fcaa17c2191": {
-    "id": "694b3379-19e6-4896-9474-8fcaa17c2191",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "```Contents\nsidebar: true\n```\n\n```TeamMembers\ntitle: Nuestro equipo\n```\n\n```Contact\nquestion: ¿Te gustaría trabajar con nosotros?\nbutton: ponte en contacto\n```",
-    "fuzzy": false,
-    "keyId": "cGFnZS1sYXlvdXRfYGBgQ29udGVudHMKc2lkZWJhcjogdHJ1ZQpgYGAKCmBgYFRlYW1NZW1iZXJzCnRpdGxlOiBPdXIgdGVhbQpgYGAKCmBgYENvbnRhY3QKcXVlc3Rpb246IFdvdWxkIHlvdSBsaWtlIHRvIHdvcmsgd2l0aCB1cz8KYnV0dG9uOiBnZXQgaW4gdG91Y2gKYGBg"
-  },
-  "ca37791e-21d5-43dd-b2c7-42e4c6da60ae": {
-    "id": "ca37791e-21d5-43dd-b2c7-42e4c6da60ae",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Instituto Meteorológico Finlandés",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX0Zpbm5pc2ggTWV0ZW9yb2xvZ2ljYWwgSW5zdGl0dXRl"
-  },
-  "d55889cd-2135-456b-bbaa-9db2b4caf5d7": {
-    "id": "d55889cd-2135-456b-bbaa-9db2b4caf5d7",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "AGRÍMETRO",
-    "fuzzy": false,
-    "keyId": "Y29tcGFueS1uYW1lX0FHUkhZTUVU"
-  },
-  "9ced0d09-990b-47da-8bfe-9eae28dfaa84": {
-    "id": "9ced0d09-990b-47da-8bfe-9eae28dfaa84",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "```Home\ntagline: \"**Observar la Tierra** para anticiparse a los efectos de un clima cambiante.\"\nprovidersTitle: Trabajamos con los principales proveedores de datos\nmarketsTitle: Trabajamos con organizaciones en todo el mundo afectadas por nuestro clima cambiante\n```\n\n```Contact\n```",
-    "fuzzy": false,
-    "keyId": "cGFnZS1sYXlvdXRfYGBgSG9tZQp0YWdsaW5lOiAiKipPYnNlcnZpbmcgdGhlIEVhcnRoKiogdG8gYW50aWNpcGF0ZSB0aGUgZWZmZWN0cyBvZiBhIGNoYW5naW5nIGNsaW1hdGUuIgpwcm92aWRlcnNUaXRsZTogV29ya2luZyB3aXRoIHRoZSBsZWFkaW5nIGRhdGEgcHJvdmlkZXJzCm1hcmtldHNUaXRsZTogV2Ugd29yayB3aXRoIG9yZ2FuaXNhdGlvbnMgYWNyb3NzIHRoZSBnbG9iZSBhZmZlY3RlZCBieSBvdXIgY2hhbmdpbmcgY2xpbWF0ZQpgYGAKCmBgYENvbnRhY3QKYGBg"
-  },
-  "40667769-aa0d-4a11-82e0-5a37a09f926f": {
-    "id": "40667769-aa0d-4a11-82e0-5a37a09f926f",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Centro Europeo de Previsiones Meteorológicas de Medio Alcance",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX0V1cm9wZWFuIENlbnRyZSBmb3IgTWVkaXVtLVJhbmdlIFdlYXRoZXIgRm9yZWNhc3Rz"
-  },
-  "b8dc3e9b-bcf6-44c6-8d81-19b962185a7c": {
-    "id": "b8dc3e9b-bcf6-44c6-8d81-19b962185a7c",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "VITO",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX1ZJVE8="
-  },
-  "305e1f09-0c89-4313-be02-a5e7b495c93c": {
-    "id": "305e1f09-0c89-4313-be02-a5e7b495c93c",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "* TBW *",
-    "fuzzy": true,
-    "keyId": "bWFya2V0LXN1bW1hcnlfKlRCVyo="
-  },
-  "9ce863db-8358-46e1-9c9c-5b217c52efb3": {
-    "id": "9ce863db-8358-46e1-9c9c-5b217c52efb3",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "! [] (pwc-extreme-event-analysis.jpg)",
-    "fuzzy": true,
-    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtdKHB3Yy1leHRyZW1lLWV2ZW50LWFuYWx5c2lzLmpwZyk="
-  },
-  "65c83211-c9a1-4d7d-9189-870160d32af7": {
-    "id": "65c83211-c9a1-4d7d-9189-870160d32af7",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "UN Habitat",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX1VOIEhhYml0YXQ="
-  },
-  "4bc959d6-1be0-4c20-bd1a-a9f407a38e25": {
-    "id": "4bc959d6-1be0-4c20-bd1a-a9f407a38e25",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Lorem ipsum dolor sit amet, elit consectetur adipiscing. Ahora muchos lagos arco. Cada recorrido de DUI en el aula. Rendimiento lorem la tarea que la capa de león voleibol. Embarazada se graduó de baloncesto fútbol fútbol, ​​una gran parte del valle a la vez.\n\n## En las puntuaciones clínicas, y los miembros de masas necesita\n\nVarias montañas clínicos Penatibus Super Bowl al instante. Antes de la primera de baloncesto fijó sus mandíbulas dolor y la atención clínica; El gluten. lobortis Fusce y un gran arco y la flecha. Sin embargo, los plátanos fea leo conveniencia del valle. El portátil se graduó de calentamiento, pero teme el chocolate en la frontera.",
-    "fuzzy": true,
-    "keyId": "cHJvamVjdC1jb250ZW50c19Mb3JlbSBpcHN1bSBkb2xvciBzaXQgYW1ldCwgY29uc2VjdGV0dXIgYWRpcGlzY2luZyBlbGl0LiBOdW5jIHNpdCBhbWV0IGFyY3UgbGFjdXMuIFF1aXNxdWUgcHJldGl1bSB2aXRhZSBkdWkgYXQgdWx0cmljaWVzLiBEdWlzIGV1aXNtb2QgbG9yZW0gaWQgbGVvIHB1bHZpbmFyIGFjY3Vtc2FuLiBNb3JiaSBncmF2aWRhIGxlY3R1cyBhIGZlbGlzIHVsdHJpY2VzLCBzaXQgYW1ldCBjb252YWxsaXMgYW50ZSBzdXNjaXBpdC4gCgojIyBJbiBvcmNpIHR1cnBpcywgc29kYWxlcyBldCBtYXNzYSBlZ2V0CgpPcmNpIHZhcml1cyBuYXRvcXVlIHBlbmF0aWJ1cyBldCBtYWduaXMgZGlzIHBhcnR1cmllbnQgbW9udGVzLCBuYXNjZXR1ciByaWRpY3VsdXMgbXVzLiBWZXN0aWJ1bHVtIGFudGUgaXBzdW0gcHJpbWlzIGluIGZhdWNpYnVzIG9yY2kgbHVjdHVzIGV0IHVsdHJpY2VzIHBvc3VlcmUgY3ViaWxpYSBDdXJhZTsgQWxpcXVhbSBlcmF0IHZvbHV0cGF0LiBGdXNjZSBsb2JvcnRpcyBldCBtYWduYSBldCBzYWdpdHRpcy4gU2VkIGFsaXF1ZXQgdHVycGlzIHNlZCBsaWd1bGEgY29tbW9kbyBjb252YWxsaXMuIEluIHVsbGFtY29ycGVyIGZlcm1lbnR1bSBsZWN0dXMsIGF0IGZpbmlidXMgbWV0dXMgc2NlbGVyaXNxdWUgYXQu"
-  },
-  "bd295ff4-2f7b-4578-83e5-756fcaa215c9": {
-    "id": "bd295ff4-2f7b-4578-83e5-756fcaa215c9",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Instituto Meteorológico Real de los Países Bajos",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX1JveWFsIE5ldGhlcmxhbmRzIE1ldGVvcm9sb2dpY2FsIEluc3RpdHV0ZQ=="
-  },
-  "b1b42a0b-6ec4-434b-9675-d9b893d3fa3f": {
-    "id": "b1b42a0b-6ec4-434b-9675-d9b893d3fa3f",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Directora de Operaciones y Estrategia",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1yb2xlX09wZXJhdGlvbnMgYW5kIFN0cmF0ZWd5IERpcmVjdG9y"
-  },
-  "075d085d-b2e9-42cd-bb81-4819d028b7a3": {
-    "id": "075d085d-b2e9-42cd-bb81-4819d028b7a3",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Agencia Espacial Europea",
-    "fuzzy": false,
-    "keyId": "Y29tcGFueS1uYW1lX0V1cm9wZWFuIFNwYWNlIEFnZW5jeQ=="
-  },
-  "91ae6400-5f39-44fd-910d-d714d677f0ae": {
-    "id": "91ae6400-5f39-44fd-910d-d714d677f0ae",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Análisis de eventos extremos",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1zaG9ydFRpdGxlX0V4dHJlbWUgZXZlbnQgYW5hbHlzaXM="
-  },
-  "c0d7bdfa-8575-4cb0-854b-ca42d337c48f": {
-    "id": "c0d7bdfa-8575-4cb0-854b-ca42d337c48f",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "¿Cómo podemos ayudarte a lidiar con este clima?",
-    "fuzzy": false,
-    "keyId": "cGFnZS10aXRsZV9Ib3cgY2FuIHdlIGhlbHAgeW91IGNvcGUgd2l0aCB0aGlzIGNsaW1hdGU/"
-  },
-  "b055623c-8ce5-4539-89ec-5b451a85cd7d": {
-    "id": "b055623c-8ce5-4539-89ec-5b451a85cd7d",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Centre National d'Études Spatiales",
-    "fuzzy": false,
-    "keyId": "Y29tcGFueS1uYW1lX0NlbnRyZSBOYXRpb25hbCBkJ8OJdHVkZXMgU3BhdGlhbGVz"
-  },
-  "8ed459c7-dd5a-4614-b0c5-9d2356f35a93": {
-    "id": "8ed459c7-dd5a-4614-b0c5-9d2356f35a93",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "! [tablero de instrumentos] (a.jpg)",
-    "fuzzy": true,
-    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtkYXNoYm9hcmRdKGEuanBnKQ=="
-  },
-  "dab1267e-9979-42bb-847b-f63bfc0ee792": {
-    "id": "dab1267e-9979-42bb-847b-f63bfc0ee792",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Análisis de eventos extremos para PwC",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC10aXRsZV9FeHRyZW1lIGV2ZW50IGFuYWx5c2lzIGZvciBQd0M="
-  },
-  "63305ff0-f573-417a-9895-d0b92da0039b": {
-    "id": "63305ff0-f573-417a-9895-d0b92da0039b",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "```ContactForm\nsendTo: guillermo.grau@isardsat.cat\n```",
-    "fuzzy": true,
-    "keyId": "cGFnZS1jb250ZW50c19gYGBDb250YWN0Rm9ybQpzZW5kVG86IGd1aWxsZXJtby5ncmF1QGlzYXJkc2F0LmNhdApgYGA="
-  },
-  "94d89f5e-4488-4852-8f53-63615ec71c35": {
-    "id": "94d89f5e-4488-4852-8f53-63615ec71c35",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Identificar los indicadores de impacto ambiental apropiados para su caso y llevar a cabo los estudios necesarios, tanto a nivel de monitoreo y pronóstico como de planificación, basados ​​en el uso de información satelital de observación de la Tierra, basada principalmente en datos crudos altamente específicos, públicos y gratuitos adquiridos por satélites europeos bajo el programa Copernicus.\n\nLobelia es un *spin-off* de isardSAT, una empresa líder que brinda servicios y soluciones en el campo de la observación de la Tierra.",
-    "fuzzy": false,
-    "keyId": "cGFnZS1jb250ZW50c19JZGVudGlmeSB0aGUgaW5kaWNhdG9ycyBvZiBlbnZpcm9ubWVudGFsIGltcGFjdCB0aGF0IGFyZSBhcHByb3ByaWF0ZSBmb3IgeW91ciBjYXNlIGFuZCBjYXJyeSBvdXQgdGhlIG5lY2Vzc2FyeSBzdHVkaWVzLCBib3RoIGF0IHRoZSBsZXZlbCBvZiBtb25pdG9yaW5nIGFuZCBmb3JlY2FzdGluZyBhbmQgcGxhbm5pbmcsIGJhc2VkIG9uIHRoZSB1c2Ugb2Ygc2F0ZWxsaXRlIEVhcnRoIE9ic2VydmF0aW9uIGluZm9ybWF0aW9uLCBsYXJnZWx5IGJhc2VkIG9uIGhpZ2hseSBzcGVjaWZpYyByYXcgZGF0YSwgcHVibGljIGFuZCBmcmVlIGFjcXVpcmVkIGJ5IEV1cm9wZWFuIHNhdGVsbGl0ZXMgdW5kZXIgdGhlIENvcGVybmljdXMgcHJvZ3JhbS4KCkxvYmVsaWEgaXMgYSBzcGluLW9mZiBvZiBpc2FyZFNBVCwgYSBsZWFkIGNvbXBhbnkgcHJvdmlkaW5nIHNlcnZpY2VzIGFuZCBzb2x1dGlvbnMgaW4gdGhlIEVhcnRoIE9ic2VydmF0aW9uIGZpZWxkLg=="
-  },
-  "fa7dca96-eb8a-4a26-842b-e73e116aac76": {
-    "id": "fa7dca96-eb8a-4a26-842b-e73e116aac76",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Hemos desarrollado una herramienta de aptitud de cultivo para Oxfam. En esta etapa, la herramienta produce mapas que muestran el número de ciclos de cultivo factibles para maíz, sorgo y mijo perla en el Sahel, África Subsahariana y Corredor Seco para los períodos de climas seleccionados y los escenarios de emisión.\n\nSe espera que el cambio climático afecte desproporcionadamente a los pequeños agricultores, que ya enfrentan numerosos riesgos para la producción agrícola. Los cultivos responderán a los cambios específicos de temperatura y precipitación en los lugares donde se cultivan actualmente.\n\n## Sahel\n\nMaíz / sorgo / mijo perla\n\n## Africa Sub-sahariana\n\nMaíz / sorgo / mijo perla / arroz / mandioca / frijoles / cacahuetes / ñame\n\n## Corredor seco\n\nMaíz / sorgo / frijoles / arroz",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1jb250ZW50c19XZSBoYXZlIGRldmVsb3BlZCBhIGNyb3Agc3VpdGFiaWxpdHkgdG9vbCBmb3IgT3hmYW0uIEF0IHRoaXMgc3RhZ2UsIHRoZSB0b29sIHByb2R1Y2VzIG1hcHMgc2hvd2luZyB0aGUgbnVtYmVyIG9mIGZlYXNpYmxlIGNyb3AgY3ljbGVzIGZvciBtYWl6ZSwgc29yZ2h1bSBhbmQgcGVhcmwgbWlsbGV0IGluIHRoZSBTYWhlbCwgU3ViLVNhaGFyYW4gQWZyaWNhIGFuZCBEcnkgQ29ycmlkb3IgZm9yIHRoZSBzZWxlY3RlZCBjbGltZSBwZXJpb2RzIGFuZCBlbWlzc2lvbiBzY2VuYXJpb3MuCgpDbGltYXRlIGNoYW5nZSBpcyBleHBlY3RlZCB0byBkaXNwcm9wb3J0aW9uYXRlbHkgYWZmZWN0IHNtYWxsaG9sZGVyIGZhcm1lcnMsIHdobyBhbHJlYWR5IGZhY2UgbnVtZXJvdXMgcmlza3MgdG8gYWdyaWN1bHR1cmFsIHByb2R1Y3Rpb24uIENyb3BzIHdpbGwgcmVzcG9uZCB0byBzcGVjaWZpYyBjaGFuZ2VzIGluIHRlbXBlcmF0dXJlIGFuZCBwcmVjaXBpdGF0aW9uIGF0IHRoZSBsb2NhdGlvbnMgd2hlcmUgdGhleSBhcmUgY3VycmVudGx5IGdyb3duLgoKIyMgU2FoZWwKCk1haXplIC8gc29yZ2h1bSAvIHBlYXJsIG1pbGxldAoKIyMgU3ViLVNhaGFyYW4gQWZyaWNhCgpNYWl6ZSAvIHNvcmdodW0gLyBwZWFybCBtaWxsZXQgLyByaWNlIC8gY2Fzc2F2YSAvIGJlYW5zIC8gZ3JvdW5kbnV0cyAvIHlhbQoKIyMgRHJ5IENvcnJpZG9yCgpNYWl6ZSAvIHNvcmdodW0gLyBiZWFucyAvIHJpY2U="
-  },
-  "d5c3e344-bd6e-47c8-886d-ca0719bb4adf": {
-    "id": "d5c3e344-bd6e-47c8-886d-ca0719bb4adf",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "! [tablero de instrumentos] (a.jpg)",
-    "fuzzy": true,
-    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtkYXNoYm9hcmRdKGEuanBnKQ=="
-  },
-  "886ddab3-1f37-412c-87f1-3688b0780d28": {
-    "id": "886ddab3-1f37-412c-87f1-3688b0780d28",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "VITO",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX1ZJVE8="
-  },
-  "7f4400d9-699b-47ca-9ee9-a44be2732ea5": {
-    "id": "7f4400d9-699b-47ca-9ee9-a44be2732ea5",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Instituto Meteorológico e Hidrológico Sueco",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX1N3ZWRpc2ggTWV0ZW9yb2xvZ2ljYWwgYW5kIEh5ZHJvbG9naWNhbCBJbnN0aXR1dGU="
-  },
-  "2cf72da5-59b0-4a3f-a062-889a6622eb28": {
-    "id": "2cf72da5-59b0-4a3f-a062-889a6622eb28",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "AGRÍMETRO",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX0FHUkhZTUVU"
-  },
-  "2ecb89b6-f42b-4ca7-a943-133a69f7f119": {
-    "id": "2ecb89b6-f42b-4ca7-a943-133a69f7f119",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Centro Nacional de Estudios Espaciales",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX0NlbnRyZSBOYXRpb25hbCBkJ8OJdHVkZXMgU3BhdGlhbGVz"
-  },
-  "94f3ba14-2688-451e-ba05-f536cd346871": {
-    "id": "94f3ba14-2688-451e-ba05-f536cd346871",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "* TBW *",
-    "fuzzy": true,
-    "keyId": "bWFya2V0LXN1bW1hcnlfKlRCVyo="
-  },
-  "e80939f1-1e59-42d6-9c13-04e362c5b1a0": {
-    "id": "e80939f1-1e59-42d6-9c13-04e362c5b1a0",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "```ContactForm\nsendTo: guillermo.grau@isardsat.cat\n```",
-    "fuzzy": true,
-    "keyId": "cGFnZS1jb250ZW50c19gYGBDb250YWN0Rm9ybQpzZW5kVG86IGd1aWxsZXJtby5ncmF1QGlzYXJkc2F0LmNhdApgYGA="
-  },
-  "ceb260f0-17f1-4a5f-a620-7103b35d3b9e": {
-    "id": "ceb260f0-17f1-4a5f-a620-7103b35d3b9e",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Centro Europeo de Previsiones Meteorológicas de Medio Alcance",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX0V1cm9wZWFuIENlbnRyZSBmb3IgTWVkaXVtLVJhbmdlIFdlYXRoZXIgRm9yZWNhc3Rz"
-  },
-  "8018cf30-efb4-464e-99c4-2246708da65b": {
-    "id": "8018cf30-efb4-464e-99c4-2246708da65b",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "! [] (c.jpg)",
-    "fuzzy": true,
-    "keyId": "cGFnZS1zaWRlYmFyQ29udGVudHNfIVtdKGMuanBnKQ=="
-  },
-  "14a4dd74-088e-4fba-96e8-e733cc8f8d5c": {
-    "id": "14a4dd74-088e-4fba-96e8-e733cc8f8d5c",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "`` `Contenido\n`` `",
-    "fuzzy": true,
-    "keyId": "cGFnZS1sYXlvdXRfYGBgQ29udGVudHMKYGBg"
-  },
-  "27350822-b2d7-4f6b-9252-f78ccdb62eef": {
-    "id": "27350822-b2d7-4f6b-9252-f78ccdb62eef",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "EOMAP",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX0VPTUFQ"
-  },
-  "17507b25-72b6-4ac5-a199-d0a84566fdec": {
-    "id": "17507b25-72b6-4ac5-a199-d0a84566fdec",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Instituto Meteorológico Finlandés",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX0Zpbm5pc2ggTWV0ZW9yb2xvZ2ljYWwgSW5zdGl0dXRl"
-  },
-  "6d535ed8-1006-4750-81a2-8f5040377562": {
-    "id": "6d535ed8-1006-4750-81a2-8f5040377562",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Instituto Meteorológico Real de los Países Bajos",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX1JveWFsIE5ldGhlcmxhbmRzIE1ldGVvcm9sb2dpY2FsIEluc3RpdHV0ZQ=="
-  },
-  "6467dd12-958c-4eb6-bb99-c75b871805c3": {
-    "id": "6467dd12-958c-4eb6-bb99-c75b871805c3",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "UN Habitat",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX1VOIEhhYml0YXQ="
-  },
-  "98b5db01-580f-4d68-b81f-12e222170dff": {
-    "id": "98b5db01-580f-4d68-b81f-12e222170dff",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Lorem ipsum dolor sit amet, elit consectetur adipiscing. Ahora muchos lagos arco. Cada recorrido de DUI en el aula. Rendimiento lorem la tarea que la capa de león voleibol. Embarazada se graduó de baloncesto fútbol fútbol, ​​una gran parte del valle a la vez.\n\n## En las puntuaciones clínicas, y los miembros de masas necesita\n\nVarias montañas clínicos Penatibus Super Bowl al instante. Antes de la primera de baloncesto fijó sus mandíbulas dolor y la atención clínica; El gluten. lobortis Fusce y un gran arco y la flecha. Sin embargo, los plátanos fea leo conveniencia del valle. El portátil se graduó de calentamiento, pero teme el chocolate en la frontera.",
-    "fuzzy": true,
-    "keyId": "cHJvamVjdC1jb250ZW50c19Mb3JlbSBpcHN1bSBkb2xvciBzaXQgYW1ldCwgY29uc2VjdGV0dXIgYWRpcGlzY2luZyBlbGl0LiBOdW5jIHNpdCBhbWV0IGFyY3UgbGFjdXMuIFF1aXNxdWUgcHJldGl1bSB2aXRhZSBkdWkgYXQgdWx0cmljaWVzLiBEdWlzIGV1aXNtb2QgbG9yZW0gaWQgbGVvIHB1bHZpbmFyIGFjY3Vtc2FuLiBNb3JiaSBncmF2aWRhIGxlY3R1cyBhIGZlbGlzIHVsdHJpY2VzLCBzaXQgYW1ldCBjb252YWxsaXMgYW50ZSBzdXNjaXBpdC4gCgojIyBJbiBvcmNpIHR1cnBpcywgc29kYWxlcyBldCBtYXNzYSBlZ2V0CgpPcmNpIHZhcml1cyBuYXRvcXVlIHBlbmF0aWJ1cyBldCBtYWduaXMgZGlzIHBhcnR1cmllbnQgbW9udGVzLCBuYXNjZXR1ciByaWRpY3VsdXMgbXVzLiBWZXN0aWJ1bHVtIGFudGUgaXBzdW0gcHJpbWlzIGluIGZhdWNpYnVzIG9yY2kgbHVjdHVzIGV0IHVsdHJpY2VzIHBvc3VlcmUgY3ViaWxpYSBDdXJhZTsgQWxpcXVhbSBlcmF0IHZvbHV0cGF0LiBGdXNjZSBsb2JvcnRpcyBldCBtYWduYSBldCBzYWdpdHRpcy4gU2VkIGFsaXF1ZXQgdHVycGlzIHNlZCBsaWd1bGEgY29tbW9kbyBjb252YWxsaXMuIEluIHVsbGFtY29ycGVyIGZlcm1lbnR1bSBsZWN0dXMsIGF0IGZpbmlidXMgbWV0dXMgc2NlbGVyaXNxdWUgYXQu"
-  },
-  "b19b4405-bccb-4b78-967b-0b9610070590": {
-    "id": "b19b4405-bccb-4b78-967b-0b9610070590",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "! [] (pwc-extreme-event-analysis.jpg)",
-    "fuzzy": true,
-    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtdKHB3Yy1leHRyZW1lLWV2ZW50LWFuYWx5c2lzLmpwZyk="
-  },
-  "8a0b32b9-6bcd-41d5-a01b-b118dc9740f2": {
-    "id": "8a0b32b9-6bcd-41d5-a01b-b118dc9740f2",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Organización Europea para la Explotación de Satélites Meteorológicos",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX0V1cm9wZWFuIE9yZ2FuaXNhdGlvbiBmb3IgdGhlIEV4cGxvaXRhdGlvbiBvZiBNZXRlb3JvbG9naWNhbCBTYXRlbGxpdGVz"
-  },
-  "64ec81cd-1217-4adb-b54b-700319c83891": {
-    "id": "64ec81cd-1217-4adb-b54b-700319c83891",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Jefe Técnico",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1yb2xlX1RlY2ggTGVhZA=="
-  },
-  "0ad4a0c8-74fa-4215-8027-09e87fb69155": {
-    "id": "0ad4a0c8-74fa-4215-8027-09e87fb69155",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Jefa de Comunicaciones y Diseño",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1yb2xlX0NvbW11bmljYXRpb25zIE1hbmFnZXIgJiBEZXNpZ24="
-  },
-  "97391658-89f0-42d3-85f9-cd6d7ca1657f": {
-    "id": "97391658-89f0-42d3-85f9-cd6d7ca1657f",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Director de Desarrollo de Negocios Internacionales",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1yb2xlX0ludGVybmF0aW9uYWwgQnVzaW5lc3MgRGV2ZWxvcG1lbnQgRGlyZWN0b3I="
-  },
-  "649c970f-0795-4dd3-9880-1b84c43131ad": {
-    "id": "649c970f-0795-4dd3-9880-1b84c43131ad",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Ingeniera en Geomática y Topografía",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1yb2xlX0dlb21hdGljcyBFbmdpbmVlciAmIExhbmQgU3VydmV5b3I="
-  },
-  "6bda315d-1760-4357-bde7-4a35fa46c36f": {
-    "id": "6bda315d-1760-4357-bde7-4a35fa46c36f",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Ingeniero Geológico en I + D",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1yb2xlX1ImRCBHZW9sb2dpY2FsIEVuZ2luZWVy"
-  },
-  "c74df08f-9ab6-40cb-b627-d4ca17fae6b1": {
-    "id": "c74df08f-9ab6-40cb-b627-d4ca17fae6b1",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Investigadores",
-    "fuzzy": false,
-    "keyId": "bWFya2V0LW5hbWVfUmVzZWFyY2hlcnM="
-  },
-  "4935d68c-f166-42c4-8edb-d5b4977c21d4": {
-    "id": "4935d68c-f166-42c4-8edb-d5b4977c21d4",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Analistas empresariales",
-    "fuzzy": true,
-    "keyId": "bWFya2V0LW5hbWVfQnVzaW5lc3MgYW5hbHlzdHM="
-  },
-  "7536328a-85f6-49a7-a4a7-601719ea608b": {
-    "id": "7536328a-85f6-49a7-a4a7-601719ea608b",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Lorem ipsum dolor sit amet, elit consectetur adipiscing.",
-    "fuzzy": true,
-    "keyId": "bWFya2V0LXN1bW1hcnlfTG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2NpbmcgZWxpdC4="
-  },
-  "425413d3-4619-4d5f-bc40-a5f8d4499a94": {
-    "id": "425413d3-4619-4d5f-bc40-a5f8d4499a94",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "¿Cuáles serán los cultivos más adecuados en África y América Central?",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1zaG9ydFRpdGxlX1doYXQgd2lsbCBiZSB0aGUgbW9zdCBzdWl0YWJsZSBjcm9wcyBpbiBBZnJpY2EgYW5kIENlbnRyYWwgQW1lcmljYT8="
-  },
-  "0b1b5115-4f39-4d8d-8ee9-a7e1ea18985a": {
-    "id": "0b1b5115-4f39-4d8d-8ee9-a7e1ea18985a",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "¿Cuáles serán los cultivos más adecuados en África y América Central?",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC10aXRsZV9XaGF0IHdpbGwgYmUgdGhlIG1vc3Qgc3VpdGFibGUgY3JvcHMgaW4gQWZyaWNhIGFuZCBDZW50cmFsIEFtZXJpY2E/"
-  },
-  "49c0f821-6276-4c1b-a820-39980a1efd36": {
-    "id": "49c0f821-6276-4c1b-a820-39980a1efd36",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Fusce de los cuatro, o la masa de corriente alterna congue, pellentesque rhoncus ipsum.",
-    "fuzzy": true,
-    "keyId": "bWFya2V0LXN1bW1hcnlfRnVzY2UgZXggbWksIGNvbmd1ZSB2ZWwgbWFzc2EgYWMsIHBlbGxlbnRlc3F1ZSByaG9uY3VzIGlwc3VtLg=="
-  },
-  "8ea5e0a1-ac0f-491c-8d11-70d86d96d5ca": {
-    "id": "8ea5e0a1-ac0f-491c-8d11-70d86d96d5ca",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "`` `Formulario de contacto\nenviar a: lala.romero@isardsat.cat\n`` `",
-    "fuzzy": true,
-    "keyId": "cGFnZS1jb250ZW50c19gYGBDb250YWN0Rm9ybQpzZW5kVG86IGxhaWEucm9tZXJvQGlzYXJkc2F0LmNhdApgYGA="
-  },
-  "8a0fc3cc-a714-434d-bc9f-2ab49536917d": {
-    "id": "8a0fc3cc-a714-434d-bc9f-2ab49536917d",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Clínica Ullamcorper libre grande, tincidunt región necesita salsa. A pesar de que los antioxidantes, pero sin sabor.",
-    "fuzzy": true,
-    "keyId": "bWFya2V0LXN1bW1hcnlfRnVzY2UgdWxsYW1jb3JwZXIgbGliZXJvIG1hZ25hLCB0aW5jaWR1bnQgc3VzY2lwaXQgdGVsbHVzIGNvbmRpbWVudHVtIGVnZXQuIEV0aWFtIGZhY2lsaXNpcyBxdWFtIHNlZCBudWxsYSBmYXVjaWJ1cyBlZmZpY2l0dXIu"
-  },
-  "15aa3348-0b20-4548-99bc-550f0ab28a90": {
-    "id": "15aa3348-0b20-4548-99bc-550f0ab28a90",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "ensalada región de la UE. Por ahora, ni la vida de Vivamus eget purus sollicitudin lobortis sit amet.",
-    "fuzzy": true,
-    "keyId": "bWFya2V0LXN1bW1hcnlfVXQgZmV1Z2lhdCB0ZWxsdXMgc2VtLiBWaXZhbXVzIGVnZXQgbnVuYyBuZWMgcHVydXMgc29sbGljaXR1ZGluIGxvYm9ydGlzIHNpdCBhbWV0IHZpdGFlIGVuaW0u"
-  },
-  "3f31ee9d-af31-45aa-8da1-7e9e06c1060a": {
-    "id": "3f31ee9d-af31-45aa-8da1-7e9e06c1060a",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Climate change is expected to disproportionately affect smallholder farmers, who already face numerous risks to their agricultural production. Crop varieties will respond differently to changes in temperature and precipitation at the locations where they are currently grown. A **crop suitability index** is an important component of assessment studies, including changes to crop geographic distribution under climate change in the coming decades.\n\nLobelia has developed a crop suitability tool for Oxfam. The growth simulator produces maps showing the number of feasible cycles for staple crops in the Sahel, Sub-Saharan Africa and Dry Corridor for the selected climate periods and emission scenarios.\n\n## Sahel\n\nMaize / sorghum / pearl millet\n\n## Sub-Saharan Africa\n\nMaize / sorghum / pearl millet / rice / cassava / beans / groundnuts / yam\n\n## Dry Corridor\n\nMaize / sorghum / beans / rice\n\n\n```Button\nlabel: Online demo\nurl: https://crop-suitability-demo.lobelia.earth/{lang}\nsupportedLangs:\n- en\n- es\n- ca\n- fr\n```",
-    "keyId": "cHJvamVjdC1jb250ZW50c19DbGltYXRlIGNoYW5nZSBpcyBleHBlY3RlZCB0byBkaXNwcm9wb3J0aW9uYXRlbHkgYWZmZWN0IHNtYWxsaG9sZGVyIGZhcm1lcnMsIHdobyBhbHJlYWR5IGZhY2UgbnVtZXJvdXMgcmlza3MgdG8gdGhlaXIgYWdyaWN1bHR1cmFsIHByb2R1Y3Rpb24uIENyb3AgdmFyaWV0aWVzIHdpbGwgcmVzcG9uZCBkaWZmZXJlbnRseSB0byBjaGFuZ2VzIGluIHRlbXBlcmF0dXJlIGFuZCBwcmVjaXBpdGF0aW9uIGF0IHRoZSBsb2NhdGlvbnMgd2hlcmUgdGhleSBhcmUgY3VycmVudGx5IGdyb3duLiBBICoqY3JvcCBzdWl0YWJpbGl0eSBpbmRleCoqIGlzIGFuIGltcG9ydGFudCBjb21wb25lbnQgb2YgYXNzZXNzbWVudCBzdHVkaWVzLCBpbmNsdWRpbmcgY2hhbmdlcyB0byBjcm9wIGdlb2dyYXBoaWMgZGlzdHJpYnV0aW9uIHVuZGVyIGNsaW1hdGUgY2hhbmdlIGluIHRoZSBjb21pbmcgZGVjYWRlcy4KCkxvYmVsaWEgaGFzIGRldmVsb3BlZCBhIGNyb3Agc3VpdGFiaWxpdHkgdG9vbCBmb3IgT3hmYW0uIFRoZSBncm93dGggc2ltdWxhdG9yIHByb2R1Y2VzIG1hcHMgc2hvd2luZyB0aGUgbnVtYmVyIG9mIGZlYXNpYmxlIGN5Y2xlcyBmb3Igc3RhcGxlIGNyb3BzIGluIHRoZSBTYWhlbCwgU3ViLVNhaGFyYW4gQWZyaWNhIGFuZCBEcnkgQ29ycmlkb3IgZm9yIHRoZSBzZWxlY3RlZCBjbGltYXRlIHBlcmlvZHMgYW5kIGVtaXNzaW9uIHNjZW5hcmlvcy4KCiMjIFNhaGVsCgpNYWl6ZSAvIHNvcmdodW0gLyBwZWFybCBtaWxsZXQKCiMjIFN1Yi1TYWhhcmFuIEFmcmljYQoKTWFpemUgLyBzb3JnaHVtIC8gcGVhcmwgbWlsbGV0IC8gcmljZSAvIGNhc3NhdmEgLyBiZWFucyAvIGdyb3VuZG51dHMgLyB5YW0KCiMjIERyeSBDb3JyaWRvcgoKTWFpemUgLyBzb3JnaHVtIC8gYmVhbnMgLyByaWNlCgoKYGBgQnV0dG9uCmxhYmVsOiBPbmxpbmUgZGVtbwp1cmw6IGh0dHBzOi8vY3JvcC1zdWl0YWJpbGl0eS1kZW1vLmxvYmVsaWEuZWFydGgve2xhbmd9CnN1cHBvcnRlZExhbmdzOgotIGVuCi0gZXMKLSBjYQotIGZyCmBgYA=="
-  },
-  "17d6bead-5902-4ce0-a2ab-8c020b3b7414": {
-    "id": "17d6bead-5902-4ce0-a2ab-8c020b3b7414",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Lobelia",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX0xvYmVsaWE="
-  },
-  "b69a2369-2d48-4798-93ed-6758b3cc9bdb": {
-    "id": "b69a2369-2d48-4798-93ed-6758b3cc9bdb",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "La investigación y la innovación promueven un crecimiento equilibrado y sostenible. Nuestro valor agregado es la provisión de soluciones basadas en un enfoque científicamente responsable.",
-    "fuzzy": true,
-    "keyId": "bWFya2V0LXN1bW1hcnlfUmVzZWFyY2ggYW5kIGlubm92YXRpb24gcHJvbW90ZXMgYSB3ZWxsLWJhbGFuY2VkLCBzdXN0YWluYWJsZSBncm93dGguIE91ciBhZGRlZCB2YWx1ZSBpcyB0aGUgcHJvdmlzaW9uIG9mIHNvbHV0aW9ucyBiYXNlZCBvbiBhIHNjaWVudGlmaWNhbGx5IHJlc3BvbnNpYmxlIGFwcHJvYWNoLg=="
-  },
-  "e08ddb27-49ce-4e14-9d05-3efacf530ce9": {
-    "id": "e08ddb27-49ce-4e14-9d05-3efacf530ce9",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Evaluando el impacto económico de tormentas extremas en los próximos 50 años",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC10aXRsZV9FdmFsdWF0aW5nIHRoZSBlY29ub21pYyBpbXBhY3Qgb2YgZXh0cmVtZSBzdG9ybXMgaW4gdGhlIG5leHQgNTAgeWVhcnM="
-  },
-  "12dbc6b6-b955-49e5-a798-3f17f6c32b3e": {
-    "id": "12dbc6b6-b955-49e5-a798-3f17f6c32b3e",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "`` `Casa\neslogan: \"** Observación de la Tierra ** para anticipar los efectos del cambio climático\".\ntagline2: \"Datos satelitales e inteligencia artificial para la adaptación al clima\".\nproveedoresTítulo: Trabajamos con los principales proveedores de datos\nMercadosTítulo: Confiados por organizaciones de todo el mundo afectadas por nuestro clima cambiante\n`` `\n\n`` `Contacto\n`` `",
-    "fuzzy": true,
-    "keyId": "cGFnZS1sYXlvdXRfYGBgSG9tZQp0YWdsaW5lOiAiKipFYXJ0aCBPYnNlcnZhdGlvbioqIHRvIGFudGljaXBhdGUgdGhlIGVmZmVjdHMgb2YgY2xpbWF0ZSBjaGFuZ2UuIgp0YWdsaW5lMjogIlNhdGVsbGl0ZSBkYXRhIGFuZCBhcnRpZmljaWFsIGludGVsbGlnZW5jZSBmb3IgY2xpbWF0ZSBhZGFwdGF0aW9uLiIKcHJvdmlkZXJzVGl0bGU6IFdlIHdvcmsgd2l0aCB0aGUgbGVhZGluZyBkYXRhIHByb3ZpZGVycwptYXJrZXRzVGl0bGU6IFRydXN0ZWQgYnkgb3JnYW5pc2F0aW9ucyBhY3Jvc3MgdGhlIGdsb2JlIGFmZmVjdGVkIGJ5IG91ciBjaGFuZ2luZyBjbGltYXRlCmBgYAoKYGBgQ29udGFjdApgYGA="
-  },
-  "3a9eae53-e17b-4a80-83a2-21268d32f9ab": {
-    "id": "3a9eae53-e17b-4a80-83a2-21268d32f9ab",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Las inundaciones son una preocupación que crece rápidamente en África occidental, y se prevé que aumentará con el cambio climático. Existe una gran necesidad de acceso confiable a ** pronósticos y alertas operacionales de inundaciones ** producidos por un sistema robusto de tecnología de información y comunicación adaptado a las condiciones regionales y operado por instituciones competentes de África Occidental.\n\nLobelia e isardSAT proporcionan ** observaciones satelitales del nivel del agua ** de la llanura de inundación de la cuenca del río Níger que se asimilan secuencialmente en un modelo hidrodinámico producido por el Instituto Sueco de Meteorología e Hidrología (SMHI) para generar los períodos de retorno de la descarga del río. Estos se utilizan en el sistema de alertas de alerta temprana y alerta temprana de SMHI en África Occidental a través de la [Plataforma Temática de Explotación Hidrológica (H-TEP) basada en la nube] (https://hydrology-tep.eo.esa.int) administrada por isardSAT .\n\nNuestros datos satelitales sobre la extensión y los niveles de agua superficial se han considerado para complementar las mediciones in situ. También se pueden utilizar como un proxy del flujo de flujo, para la calibración y validación de modelos, así como para la asimilación de datos hidrológicos.",
-    "fuzzy": true,
-    "keyId": "cHJvamVjdC1jb250ZW50c19GbG9vZHMgYXJlIGEgcmFwaWRseSBncm93aW5nIGNvbmNlcm4gaW4gV2VzdCBBZnJpY2EsIHByb2plY3RlZCB0byBpbmNyZWFzZSB3aXRoIGNsaW1hdGUgY2hhbmdlLiBUaGVyZSBpcyBhIGdyZWF0IG5lZWQgZm9yIHJlbGlhYmxlIGFjY2VzcyB0byAqKm9wZXJhdGlvbmFsIGZsb29kIGZvcmVjYXN0cyBhbmQgYWxlcnRzKiogcHJvZHVjZWQgYnkgYSByb2J1c3QgaW5mb3JtYXRpb24gYW5kIGNvbW11bmljYXRpb24gdGVjaG5vbG9neSBzeXN0ZW0gYWRhcHRlZCB0byByZWdpb25hbCBjb25kaXRpb25zIGFuZCBvcGVyYXRlZCBieSBjYXBhYmxlIFdlc3QgQWZyaWNhbiBpbnN0aXR1dGlvbnMuCgpMb2JlbGlhIGFuZCBpc2FyZFNBVCBhcmUgcHJvdmlkaW5nICoqc2F0ZWxsaXRlLWJhc2VkIHdhdGVyIGxldmVsIG9ic2VydmF0aW9ucyoqIG9mIHRoZSBOaWdlciBSaXZlciBiYXNpbiBmbG9vZHBsYWluIHRoYXQgYXJlIHNlcXVlbnRpYWxseSBhc3NpbWlsYXRlZCBpbnRvIGEgaHlkcm9keW5hbWljIG1vZGVsIHByb2R1Y2VkIGJ5IHRoZSBTd2VkaXNoIE1ldGVvcm9sb2dpY2FsIGFuZCBIeWRyb2xvZ2ljYWwgSW5zdGl0dXRlIChTTUhJKSB0byBnZW5lcmF0ZSByaXZlciBkaXNjaGFyZ2UgcmV0dXJuIHBlcmlvZHMuIFRoZXNlIGFyZSB1c2VkIGluIFNNSEnigJlzIGZsb29kIGZvcmVjYXN0aW5nIGFuZCBlYXJseS13YXJuaW5nIGFsZXJ0IHN5c3RlbSBpbiBXZXN0IEFmcmljYSB0aHJvdWdoIHRoZSBjbG91ZC1iYXNlZCBbSHlkcm9sb2d5IFRoZW1hdGljIEV4cGxvaXRhdGlvbiBQbGF0Zm9ybSAoSC1URVApXShodHRwczovL2h5ZHJvbG9neS10ZXAuZW8uZXNhLmludCkgbWFuYWdlZCBieSBpc2FyZFNBVC4KCk91ciBzYXRlbGxpdGUtYmFzZWQgZGF0YSBvbiBzdXJmYWNlIHdhdGVyIGV4dGVudCBhbmQgbGV2ZWxzIGhhdmUgYmVlbiBjb25zaWRlcmVkIHRvICBjb21wbGVtZW50IGluLXNpdHUgbWVhc3VyZW1lbnRzLiBUaGV5IGNhbiBhbHNvIGJlIHVzZWQgYXMgYSBwcm94eSBvZiBzdHJlYW1mbG93LCBmb3IgbW9kZWwgY2FsaWJyYXRpb24gYW5kIHZhbGlkYXRpb24gYXMgd2VsbCBhcyBmb3IgaHlkcm9sb2dpYyBkYXRhIGFzc2ltaWxhdGlvbi4="
-  },
-  "8c4ca0d4-caec-4f81-8087-2f4b35ca3ef8": {
-    "id": "8c4ca0d4-caec-4f81-8087-2f4b35ca3ef8",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "```ContactForm\nsendTo: laia.romero@isardsat.cat\n```\n\n## …o contacta con nosotros:\n\n<div style=\"max-width: 400px; margin: 0 auto\">\n<b>T:</b> +34 93 350 55 08<br/>\n<b>E:</b> <a href=\"mailto:info@lobelia.earth\">info@lobelia.earth</a>\n</div>\n",
-    "fuzzy": false,
-    "keyId": "cGFnZS1jb250ZW50c19gYGBDb250YWN0Rm9ybQpzZW5kVG86IGxhaWEucm9tZXJvQGlzYXJkc2F0LmNhdApgYGAKCiMjIOKApm9yIGNvbnRhY3QgdXM6Cgo8ZGl2IHN0eWxlPSJtYXgtd2lkdGg6IDQwMHB4OyBtYXJnaW46IDAgYXV0byI+CjxiPlQ6PC9iPiArMzQgOTMgMzUwIDU1IDA4PGJyLz4KPGI+RTo8L2I+IDxhIGhyZWY9Im1haWx0bzppbmZvQGxvYmVsaWEuZWFydGgiPmluZm9AbG9iZWxpYS5lYXJ0aDwvYT4KPC9kaXY+Cg=="
-  },
-  "e7b11e2e-281d-4e80-a565-7a2add1dbfaf": {
-    "id": "e7b11e2e-281d-4e80-a565-7a2add1dbfaf",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Crea equipo.",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1iaW9fVGVhbS1idWlsZGVyLg=="
-  },
-  "9bf652cb-22b1-4e4b-965a-3fe02076440d": {
-    "id": "9bf652cb-22b1-4e4b-965a-3fe02076440d",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Gestora Científico-Técnica",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1yb2xlX1NjaWVudGlmaWMvVGVjaG5pY2FsIE1hbmFnZXI="
-  },
-  "8061d96d-f190-4c7f-89e9-8e9ac6534a1f": {
-    "id": "8061d96d-f190-4c7f-89e9-8e9ac6534a1f",
-    "isDeleted": false,
+  "63b74a62-582e-42bc-8f22-4f99bb56b909": {
+    "id": "63b74a62-582e-42bc-8f22-4f99bb56b909",
     "lang": "es",
-    "translation": "La historia de",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1zaG9ydFRpdGxlX1RoZSBoaXN0b3J5IG9m"
-  },
-  "47c32725-68f1-4b22-bd4c-5cdd4e46e174": {
-    "id": "47c32725-68f1-4b22-bd4c-5cdd4e46e174",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Datos satelitales e inteligencia artificial para hacer frente a los desafíos climáticos",
-    "fuzzy": false,
-    "keyId": "cGFnZS10aXRsZV9TYXRlbGxpdGUgZGF0YSBhbmQgYXJ0aWZpY2lhbCBpbnRlbGxpZ2VuY2UgdG8gYWRkcmVzcyBjbGltYXRlIGNoYWxsZW5nZXM="
-  },
-  "e3ffd950-e3a7-4981-80d8-4b75bd088c35": {
-    "id": "e3ffd950-e3a7-4981-80d8-4b75bd088c35",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Organización de Comida y Agricultura",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX0Zvb2QgYW5kIEFncmljdWx0dXJlIE9yZ2FuaXphdGlvbg=="
-  },
-  "f1e921f3-934d-460a-b46f-fd805f19b538": {
-    "id": "f1e921f3-934d-460a-b46f-fd805f19b538",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Ayudando a UN Habitat en el análisis del clima en las ciudades",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC10aXRsZV9TdXBwb3J0aW5nIFVOwqBIYWJpdGF0IGZvciBjbGltYXRlIGFuYWx5c2lzIGluIGNpdGllcw=="
-  },
-  "db4dc266-f57c-411a-9767-d2a55c9ddc05": {
-    "id": "db4dc266-f57c-411a-9767-d2a55c9ddc05",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Hace cosas.",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1iaW9fTWFrZXMgdGhpbmdzLg=="
-  },
-  "a19c0634-6cfe-4e18-9787-792440986d7b": {
-    "id": "a19c0634-6cfe-4e18-9787-792440986d7b",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Experto en AI/ML",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1yb2xlX0FJL01MIEV4cGVydA=="
-  },
-  "82c322a4-7bd2-4e1c-a70b-1540637ea85f": {
-    "id": "82c322a4-7bd2-4e1c-a70b-1540637ea85f",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Fomentando ciudades verdes con el conocimiento de la calidad del aire que ofrecen los satélites",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1zaG9ydFRpdGxlX0hlbHBpbmcgY2l0aWVzIHRvIHR1cm4gZ3JlZW4gd2l0aCBhaXIgcXVhbGl0eSBrbm93bGVkZ2UgZnJvbSBzYXRlbGxpdGVz"
-  },
-  "2a651ff0-1390-4ec4-9b5e-ef6c2d5dbb72": {
-    "id": "2a651ff0-1390-4ec4-9b5e-ef6c2d5dbb72",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Ayuda al desarrollo",
-    "fuzzy": false,
-    "keyId": "bWFya2V0LW5hbWVfRGV2ZWxvcG1lbnQgaW5zdGl0dXRpb25z"
-  },
-  "10c025c1-9cfb-4066-b957-a36fda2b0418": {
-    "id": "10c025c1-9cfb-4066-b957-a36fda2b0418",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Autoridades africanas usan datos satelitales para prevenir inundaciones en África Occidental",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1zaG9ydFRpdGxlX0FmcmljYW4gYXV0aG9yaXRpZXMgdXNlIHNhdGVsbGl0ZSBkYXRhIHRvIHByZXZlbnQgZmxvb2RzIGluIFdlc3QgQWZyaWNh"
-  },
-  "9f2a6035-aa12-480f-a1d2-e79ed256ce88": {
-    "id": "9f2a6035-aa12-480f-a1d2-e79ed256ce88",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Ayudando a las ciudades a *volverse verdes* con el conocimiento de la calidad del aire de los satélites",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC10aXRsZV9IZWxwaW5nIGNpdGllcyB0byB0dXJuIGdyZWVuIHdpdGggYWlyIHF1YWxpdHkga25vd2xlZGdlIGZyb20gc2F0ZWxsaXRlcw=="
-  },
-  "c380f60d-9292-466f-8df5-6b9f391813b1": {
-    "id": "c380f60d-9292-466f-8df5-6b9f391813b1",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Baraja algoritmos.",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1iaW9fRnJvbGljcyBpbiBhbGdvcml0aG1zLg=="
-  },
-  "d8eadada-f698-4da0-88e7-14405555c21a": {
-    "id": "d8eadada-f698-4da0-88e7-14405555c21a",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "![Análisis de eventos extremos para PwC](pwc-extreme-event-analysis-sidebar-1.jpg)\n\n![Análisis de eventos extremos para PwC](pwc-extreme-event-analysis-sidebar-2.jpg)",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtFeHRyZW1lIGV2ZW50IGFuYWx5c2lzIGZvciBQd0NdKHB3Yy1leHRyZW1lLWV2ZW50LWFuYWx5c2lzLXNpZGViYXItMS5qcGcpCgohW0V4dHJlbWUgZXZlbnQgYW5hbHlzaXMgZm9yIFB3Q10ocHdjLWV4dHJlbWUtZXZlbnQtYW5hbHlzaXMtc2lkZWJhci0yLmpwZyk="
-  },
-  "85ab75c8-a06f-42ce-9c86-7f719e1de058": {
-    "id": "85ab75c8-a06f-42ce-9c86-7f719e1de058",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "![Inundaciones en África Occidental](west-african-floods-sidebar.png)",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtXZXN0IEFmcmljYW4gZmxvb2RzXSh3ZXN0LWFmcmljYW4tZmxvb2RzLXNpZGViYXIucG5nKQ=="
-  },
-  "55924b7e-dfc0-4d9d-abb0-9989f3a640c4": {
-    "id": "55924b7e-dfc0-4d9d-abb0-9989f3a640c4",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Ayudando a UN Habitat en el análisis del clima en las ciudades",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1zaG9ydFRpdGxlX1N1cHBvcnRpbmcgVU7CoEhhYml0YXQgZm9yIGNsaW1hdGUgYW5hbHlzaXMgaW4gY2l0aWVz"
-  },
-  "514a090b-ab6b-45b1-adc2-e73bca1207a0": {
-    "id": "514a090b-ab6b-45b1-adc2-e73bca1207a0",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Prediciendo plagas con dos meses de antelación",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1zaG9ydFRpdGxlX1ByZWRpY3RpbmcgcGxhZ3VlIG91dGJyZWFrcyB0d28gbW9udGhzIGluIGFkdmFuY2U="
-  },
-  "6ee3e949-f498-4189-878a-0677ecf2193d": {
-    "id": "6ee3e949-f498-4189-878a-0677ecf2193d",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Apoyamos estrategias de mitigación de riesgos para que las empresas anticipen los efectos del cambio climático en sus inversiones.",
-    "fuzzy": true,
-    "keyId": "bWFya2V0LXN1bW1hcnlfV2Ugc3VwcG9ydCByaXNrIG1pdGlnYXRpb24gc3RyYXRlZ2llcyBmb3IgY29tcGFuaWVzIHRvIGFudGljaXBhdGUgdGhlIGVmZmVjdHMgb2YgY2xpbWF0ZSBjaGFuZ2UgaW4gdGhlaXIgaW52ZXN0bWVudHMu"
-  },
-  "78007470-61be-4ff6-b9dd-a2f0c33b2b60": {
-    "id": "78007470-61be-4ff6-b9dd-a2f0c33b2b60",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Analizamos conjuntos de datos altamente complejos para generar proyecciones climáticas y herramientas de monitoreo para evaluar planes y estrategias de adaptación.",
-    "fuzzy": true,
-    "keyId": "bWFya2V0LXN1bW1hcnlfV2UgYW5hbHlzZSBoaWdobHktY29tcGxleCBkYXRhc2V0cyB0byBnZW5lcmF0ZSBjbGltYXRlIHByb2plY3Rpb25zIGFuZCBtb25pdG9yaW5nIHRvb2xzIHRvIGFzc2VzcyBhZGFwdGF0aW9uIHBsYW5zIGFuZCBzdHJhdGVnaWVzLg=="
-  },
-  "d1c620a2-d126-4802-b98e-fefe96f9e87d": {
-    "id": "d1c620a2-d126-4802-b98e-fefe96f9e87d",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "La historia de Lobelia",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC10aXRsZV9UaGUgaGlzdG9yeSBvZiBMb2JlbGlh"
-  },
-  "4eb64453-bbf8-43e2-baa7-d332f6ef19e6": {
-    "id": "4eb64453-bbf8-43e2-baa7-d332f6ef19e6",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Se preocupa por los detalles.",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1iaW9fQ2FyZXMgYWJvdXQgdGhlIGRldGFpbHMu"
-  },
-  "39a86526-c7b1-4482-a257-eb6d611ef663": {
-    "id": "39a86526-c7b1-4482-a257-eb6d611ef663",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Prediciendo plagas con dos meses de antelación",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC10aXRsZV9QcmVkaWN0aW5nIHBsYWd1ZSBvdXRicmVha3MgdHdvIG1vbnRocyBpbiBhZHZhbmNl"
-  },
-  "fe035b8b-1bee-44e9-b649-1c318710fe9b": {
-    "id": "fe035b8b-1bee-44e9-b649-1c318710fe9b",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Construyendo la próxima nube europea para la observación de la Tierra",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1zaG9ydFRpdGxlX0J1aWxkaW5nIHRoZSBuZXh0IEV1cm9wZWFuIGNsb3VkIGZvciBFYXJ0aCBvYnNlcnZhdGlvbg=="
-  },
-  "c6bb74f1-7650-47ae-9574-5b5a08046c4b": {
-    "id": "c6bb74f1-7650-47ae-9574-5b5a08046c4b",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "La información satelital se está utilizando de una manera nueva para predecir condiciones favorables para ** enjambres de langostas del desierto **. La nueva tecnología ayuda a aumentar el tiempo de alerta de los brotes de langosta hasta dos meses.\n\nUtilizando datos de satélites como la humedad del suelo (misión SMELLS) y la salinidad del océano (misión SMOS), se ha desarrollado una nueva herramienta para monitorear las condiciones que pueden conducir a la aparición de langostas, como la alta humedad y la vegetación verde. El enjambre ocurre cuando un período de sequía es seguido por lluvias abundantes y un rápido crecimiento de la vegetación.\n\n** Lobelia opera el servicio de humedad del suelo producido por isardSAT. **\n\n## ¿Dónde?\n\nLa FAO ha validado la herramienta en Argelia, Malí, Mauritania y Marruecos.\n\n* Durante el último brote en Mauritania (2016) *, el equipo pudo identificar un lapso de tiempo de aproximadamente 70 días desde los signos iniciales de humedad del suelo hasta el momento en que ocurrió el brote.\n\n## ¿Por qué?\n\nUn enjambre que mide un kilómetro cuadrado contiene aproximadamente 40 millones de langostas, que comen la misma cantidad de alimentos en un día que aproximadamente 35,000 personas.\n\nMás de 8 millones de personas en África occidental se vieron afectadas durante la plaga de 2003-2005, en la que se eliminaron las cosechas de cereales y se destruyeron hasta el 90% de las leguminosas y los pastos. Tomó casi $ 600 millones y 13 millones de litros de pesticida para ponerlo bajo control.",
-    "fuzzy": true,
-    "keyId": "cHJvamVjdC1jb250ZW50c19TYXRlbGxpdGUgaW5mb3JtYXRpb24gaXMgYmVpbmcgdXNlZCBpbiBhIG5ldyB3YXkgdG8gcHJlZGljdCBmYXZvdXJhYmxlIGNvbmRpdGlvbnMgZm9yICoqZGVzZXJ0IGxvY3VzdCBzd2FybXMqKi4gVGhlIG5ldyB0ZWNobm9sb2d5IGhlbHBzIHRvIGluY3JlYXNlIHRoZSB3YXJuaW5nIHRpbWUgZm9yIGxvY3VzdCBvdXRicmVha3MgYnkgdXAgdG8gdHdvIG1vbnRocy4KClVzaW5nIGRhdGEgZnJvbSBzYXRlbGxpdGVzIHN1Y2ggYXMgc29pbCBtb2lzdHVyZSAoU01FTExTIG1pc3Npb24pIGFuZCBvY2VhbiBzYWxpbml0eSAoU01PUyBtaXNzaW9uKSwgYSBuZXcgdG9vbCBoYXMgYmVlbiBkZXZlbG9wZWQgdG8gbW9uaXRvciB0aGUgY29uZGl0aW9ucyB0aGF0IGNhbiBsZWFkIHRvIHN3YXJtaW5nIGxvY3VzdHMsIHN1Y2ggYXMgaGlnaCBtb2lzdHVyZSBhbmQgZ3JlZW4gdmVnZXRhdGlvbi4gU3dhcm1pbmcgb2NjdXJzIHdoZW4gYSBwZXJpb2Qgb2YgZHJvdWdodCBpcyBmb2xsb3dlZCBieSBhYnVuZGFudCByYWlucyBhbmQgcmFwaWQgdmVnZXRhdGlvbiBncm93dGguCgoqKkxvYmVsaWEgb3BlcmF0ZXMgdGhlIHNvaWwgbW9pc3R1cmUgc2VydmljZSBwcm9kdWNlZCBieSBpc2FyZFNBVC4qKgoKIyMgV2hlcmU/CgpGQU8gaGFzIHZhbGlkYXRlZCB0aGUgdG9vbCBpbiBBbGdlcmlhLCBNYWxpLCBNYXVyaXRhbmlhIGFuZCBNb3JvY2NvLgoKKkR1cmluZyB0aGUgbGF0ZXN0IG91dGJyZWFrIGluIE1hdXJpdGFuaWEgKDIwMTYpKiwgdGhlIHRlYW0gd2FzIGFibGUgdG8gaWRlbnRpZnkgYSB0aW1lIGxhZyBvZiBhYm91dCA3MCBkYXlzIGZyb20gdGhlIGluaXRpYWwgc2lnbnMgb2Ygc29pbCBtb2lzdHVyZSB0byB3aGVuIHRoZSBvdXRicmVhayBldmVudHVhbGx5IG9jY3VycmVkLgoKIyMgV2h5PwoKQSBzd2FybSBtZWFzdXJpbmcgb25lIHNxdWFyZSBraWxvbWV0cmUgY29udGFpbnMgYWJvdXQgNDAgbWlsbGlvbiBsb2N1c3RzLCB3aGljaCBlYXQgdGhlIHNhbWUgYW1vdW50IG9mIGZvb2QgaW4gb25lIGRheSBhcyBhYm91dCAzNSwwMDAgcGVvcGxlLgoKTW9yZSB0aGFuIDggbWlsbGlvbiBwZW9wbGUgaW4gV2VzdCBBZnJpY2Egd2VyZSBhZmZlY3RlZCBkdXJpbmcgdGhlIDIwMDMtMjAwNSBwbGFndWUsIGluIHdoaWNoIGNlcmVhbCBjcm9wcyB3ZXJlIHdpcGVkIG91dCBhbmQgdXAgdG8gOTAlIG9mIGxlZ3VtZXMgYW5kIHBhc3R1cmUgd2VyZSBkZXN0cm95ZWQuIEl0IHRvb2sgbmVhcmx5ICQ2MDAgbWlsbGlvbiBhbmQgMTMgbWlsbGlvbiBsaXRyZXMgb2YgcGVzdGljaWRlIHRvIGJyaW5nIGl0IHVuZGVyIGNvbnRyb2wuCg=="
-  },
-  "700b994f-15e9-4be3-bc64-7bc0fd74f32b": {
-    "id": "700b994f-15e9-4be3-bc64-7bc0fd74f32b",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Siempre una buena palabra.",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1iaW9fQWx3YXlzIGEgZ29vZCB3b3JkLg=="
-  },
-  "2f040235-df8f-4730-9650-0c69cb5ed831": {
-    "id": "2f040235-df8f-4730-9650-0c69cb5ed831",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Autoridades africanas usan datos satelitales para prevenir inundaciones en África Occidental",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC10aXRsZV9BZnJpY2FuIGF1dGhvcml0aWVzIHVzZSBzYXRlbGxpdGUgZGF0YSB0byBwcmV2ZW50IGZsb29kcyBpbiBXZXN0IEFmcmljYQ=="
-  },
-  "22336b41-a711-457d-8d7c-62d3c0361f30": {
-    "id": "22336b41-a711-457d-8d7c-62d3c0361f30",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Proporcionamos escenarios climáticos, predicciones y herramientas de toma de decisiones a las autoridades públicas para que puedan fortalecer su planificación y catalizar acciones en toda la sociedad.",
-    "fuzzy": true,
-    "keyId": "bWFya2V0LXN1bW1hcnlfV2UgcHJvdmlkZSBjbGltYXRpYyBzY2VuYXJpb3MsIHByZWRpY3Rpb25zIGFuZCBkZWNpc2lvbi1tYWtpbmcgdG9vbHMgdG8gcHVibGljIGF1dGhvcml0aWVzIHNvIHRoZXkgY2FuIHN0cmVuZ3RoZW4gdGhlaXIgcGxhbm5pbmcgYW5kIGNhdGFseXNlIGFjdGlvbnMgYWNyb3NzIHNvY2lldHku"
-  },
-  "01f1653d-fa4d-4bf6-962f-eab658a80c89": {
-    "id": "01f1653d-fa4d-4bf6-962f-eab658a80c89",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "## Emisiones\n\nEmisiones regionales mensuales de satélites a resolución de 1 km.\n\n## Pronóstico\n\nPronósticos de calidad del aire por hora con 3 días de anticipación.\n\n## Herramientas de toma de decisiones\n\nSimulando escenarios de calidad del aire para evaluar el impacto de las acciones, la mejor manera de planificar.\n\n## Dónde\n\nMaputo / Asunción / Port Vila / Dakar / Yakutsk\n\n## contexto\n\nLobelia lidera un consorcio de calidad del aire orientado comercialmente, nacido de un proyecto europeo H2020, con algunos de los actores europeos más reconocidos en la investigación de la contaminación del aire.\n\nLa contaminación del aire es un problema grave que cuesta miles de millones de euros cada año en pérdida de productividad y gastos de salud. Además, la contaminación de la calidad del aire también tiene un impacto económico negativo en otras actividades como el transporte (por ejemplo, la falta de visibilidad), el mantenimiento de la ciudad (por ejemplo, la limpieza de la infraestructura) o la agricultura (por ejemplo, las deposiciones de contaminantes) que causan 3 millones de muertes en todo el mundo cada año.\n\nEl proyecto AirQast está construyendo una plataforma autosostenible que proporciona servicios de calidad del aire basados ​​en datos de la Observación de la Tierra.\n\n\nBotón `` `\netiqueta: compruebalo online\nurl: http://airqast.com\n`` `",
-    "fuzzy": true,
-    "keyId": "cHJvamVjdC1jb250ZW50c18jIyBFbWlzc2lvbnMKCk1vbnRobHkgcmVnaW9uYWwgZW1pc3Npb25zIGZyb20gc2F0ZWxsaXRlcyBhdCAxLWttIHJlc29sdXRpb24uCgojIyBGb3JlY2FzdAoKSG91cmx5IGFpciBxdWFsaXR5IGZvcmVjYXN0cyBmb3IgMyBkYXlzIGluIGFkdmFuY2UuCgojIyBEZWNpc2lvbi1tYWtpbmcgdG9vbHMKClNpbXVsYXRpbmcgYWlyIHF1YWxpdHkgc2NlbmFyaW9zIHRvIGV2YWx1YXRlIHRoZSBpbXBhY3Qgb2YgdGhlIGFjdGlvbnMsIHRoZSBiZXN0IHdheSB0byBwbGFuLW1ha2UuCgojIyBXaGVyZQoKTWFwdXRvwqAvIEFzdW5jacOzbsKgLyBQb3J0IFZpbGHCoC8gRGFrYXLCoC8gWWFrdXRzawoKIyMgQ29udGV4dAoKTG9iZWxpYSBsZWFkcyBhIGNvbW1lcmNpYWxseS1vcmllbnRlZCBhaXIgcXVhbGl0eSBjb25zb3J0aXVtLCBib3JuIGZyb20gYSBFdXJvcGVhbiBIMjAyMCBwcm9qZWN0LCB3aXRoIHNvbWUgb2YgdGhlIG1vc3QgcmVub3duZWQgRXVyb3BlYW4gYWN0b3JzIGluIGFpciBwb2xsdXRpb24gcmVzZWFyY2guCgpBaXIgcG9sbHV0aW9uIGlzIGEgc2VyaW91cyBwcm9ibGVtIHRoYXQgY29zdHMgYmlsbGlvbnMgb2YgZXVyb3MgZWFjaCB5ZWFyIGluIGxvc3QgcHJvZHVjdGl2aXR5IGFuZCBoZWFsdGggZXhwZW5zZXMuIEluIGFkZGl0aW9uLCBhaXIgcXVhbGl0eSBwb2xsdXRpb24gYWxzbyBoYXMgYSBuZWdhdGl2ZSBlY29ub21pYyBpbXBhY3Qgb24gb3RoZXIgYWN0aXZpdGllcyBzdWNoIGFzIHRyYW5zcG9ydCAoZS5nLiBsYWNrIG9mIHZpc2liaWxpdHkpLCBjaXR5IG1haW50ZW5hbmNlIChlLmcuIGluZnJhc3RydWN0dXJlIGNsZWFuaW5nKSBvciBhZ3JpY3VsdHVyZSAoZS5nLiBwb2xsdXRhbnQgZGVwb3NpdGlvbnMpIHRoYXQgY2F1c2UgMyBtaWxsaW9uIGRlYXRocyB3b3JsZHdpZGUgZWFjaCB5ZWFyLgoKVGhlIEFpclFhc3QgcHJvamVjdCBpcyBidWlsZGluZyBhIHNlbGYtc3VzdGFpbmFibGUgcGxhdGZvcm0gcHJvdmlkaW5nIGFpciBxdWFsaXR5IHNlcnZpY2VzIGJhc2VkIG9uIEVhcnRoIE9ic2VydmF0aW9uIGRhdGEuIAoKCmBgYEJ1dHRvbgpsYWJlbDogY2hlY2sgaXQgb25saW5lCnVybDogaHR0cDovL2FpcnFhc3QuY29tCmBgYA=="
-  },
-  "b5cc8718-7993-435a-a173-28a00cf19df9": {
-    "id": "b5cc8718-7993-435a-a173-28a00cf19df9",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Construyendo la futura *nube* europea para la observación de la Tierra",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC10aXRsZV9CdWlsZGluZyB0aGUgbmV4dCBFdXJvcGVhbiBjbG91ZCBmb3IgRWFydGggb2JzZXJ2YXRpb24="
+    "translation": "Convertir traducciones a ficheros JavaScript",
+    "keyId": "dG9vbHRpcF9Db252ZXJ0IHRyYW5zbGF0aW9ucyB0byBKYXZhU2NyaXB0IGZpbGVz"
   },
-  "e33a8fa2-d342-4c04-ab52-4d0c999b1769": {
-    "id": "e33a8fa2-d342-4c04-ab52-4d0c999b1769",
-    "isDeleted": true,
+  "b588902d-6208-4233-ad27-8078574b83c3": {
+    "id": "b588902d-6208-4233-ad27-8078574b83c3",
     "lang": "es",
-    "translation": "! [] (about-sidebar.jpg)",
-    "fuzzy": true,
-    "keyId": "cGFnZS1zaWRlYmFyQ29udGVudHNfIVtdKGFib3V0LXNpZGViYXIuanBnKQ=="
+    "translation": "",
+    "keyId": "YnV0dG9uX0NvcHkga2V5"
   },
-  "741a496b-9459-4ba6-b05b-7e8dfbfa06fa": {
-    "id": "741a496b-9459-4ba6-b05b-7e8dfbfa06fa",
-    "isDeleted": true,
+  "6a239ba8-9cc0-44b4-a36a-90991ccc3787": {
+    "id": "6a239ba8-9cc0-44b4-a36a-90991ccc3787",
     "lang": "es",
-    "translation": "AirQast",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX0FpclFhc3Q="
+    "translation": "Borrar",
+    "keyId": "YnV0dG9uX0RlbGV0ZQ=="
   },
-  "3a909d79-5572-409f-92c9-e9cf4cfbd803": {
-    "id": "3a909d79-5572-409f-92c9-e9cf4cfbd803",
-    "isDeleted": true,
+  "7a63d4f7-dea5-4872-bf10-307bc5c0d5b2": {
+    "id": "7a63d4f7-dea5-4872-bf10-307bc5c0d5b2",
     "lang": "es",
-    "translation": "TBW\n\nBotón `` `\netiqueta: compruebalo online\nurl: https://wekeo.eu\n`` `",
-    "fuzzy": true,
-    "keyId": "cHJvamVjdC1jb250ZW50c19UQlcKCmBgYEJ1dHRvbgpsYWJlbDogY2hlY2sgaXQgb25saW5lCnVybDogaHR0cHM6Ly93ZWtlby5ldQpgYGA="
+    "translation": "Cancelar cambios",
+    "keyId": "YnV0dG9uX1JldmVydA=="
   },
-  "afc89f93-5266-4783-87a3-c72e8a2392c7": {
-    "id": "afc89f93-5266-4783-87a3-c72e8a2392c7",
-    "isDeleted": false,
+  "defe1f6e-b3cd-4f41-93a1-9a51ca6eb891": {
+    "id": "defe1f6e-b3cd-4f41-93a1-9a51ca6eb891",
     "lang": "es",
-    "translation": "Tendiendo puentes.",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1iaW9fUmVhY2hpbmcgb3V0Lg=="
+    "translation": "Añadir columna",
+    "keyId": "dG9vbHRpcF9BZGQgY29sdW1u"
   },
-  "c3af1427-d8c5-41b1-9e59-057584fae665": {
-    "id": "c3af1427-d8c5-41b1-9e59-057584fae665",
-    "isDeleted": false,
+  "cbaca565-0ac1-4377-9b1a-11752132b389": {
+    "id": "cbaca565-0ac1-4377-9b1a-11752132b389",
     "lang": "es",
-    "translation": "Evaluando el impacto económico de tormentas extremas en los próximos 50 años",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1zaG9ydFRpdGxlX0V2YWx1YXRpbmcgdGhlIGVjb25vbWljIGltcGFjdCBvZiBleHRyZW1lIHN0b3JtcyBpbiB0aGUgbmV4dCA1MCB5ZWFycw=="
+    "translation": "Cambiar idioma",
+    "keyId": "dG9vbHRpcF9DaGFuZ2UgbGFuZ3VhZ2U="
   },
-  "96860a39-bf35-4ce7-9a78-5e5c568d39ff": {
-    "id": "96860a39-bf35-4ce7-9a78-5e5c568d39ff",
-    "isDeleted": false,
+  "148a00f1-388b-451b-97d2-ab0ae0a794e1": {
+    "id": "148a00f1-388b-451b-97d2-ab0ae0a794e1",
     "lang": "es",
-    "translation": "![Plataforma de calidad del aire](air-quality-for-cities-sidebar-1.jpg)\n\n![Plataforma de calidad del aire](air-quality-for-cities-sidebar-2.jpg)",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtBaXIgcXVhbGl0eSBwbGF0Zm9ybV0oYWlyLXF1YWxpdHktZm9yLWNpdGllcy1zaWRlYmFyLTEuanBnKQoKIVtBaXIgcXVhbGl0eSBwbGF0Zm9ybV0oYWlyLXF1YWxpdHktZm9yLWNpdGllcy1zaWRlYmFyLTIuanBnKQ=="
+    "translation": "Borrar mensaje (NO borra ninguna traducción)",
+    "keyId": "dG9vbHRpcF9EZWxldGUgbWVzc2FnZSAoZG9lcyBOT1QgZGVsZXRlIGFueSB0cmFuc2xhdGlvbnMp"
   },
-  "eee267e7-d093-4f53-8954-7fd45a3e502d": {
-    "id": "eee267e7-d093-4f53-8954-7fd45a3e502d",
-    "isDeleted": true,
+  "5ae2f650-ee51-470a-b47f-fbdb63e4ed58": {
+    "id": "5ae2f650-ee51-470a-b47f-fbdb63e4ed58",
     "lang": "es",
-    "translation": "! \"(\" .Jpg)",
-    "fuzzy": true,
-    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtdKGEuanBnKQ=="
+    "translation": "Analizar los ficheros de código para actualizar la lista de mensajes",
+    "keyId": "dG9vbHRpcF9QYXJzZSBzb3VyY2UgZmlsZXMgdG8gdXBkYXRlIHRoZSBtZXNzYWdlIGxpc3Q="
   },
-  "d0368089-cdb4-46e1-a243-61b7a0181637": {
-    "id": "d0368089-cdb4-46e1-a243-61b7a0181637",
-    "isDeleted": false,
+  "0c58245a-1596-4667-8690-cdf32fd2f92c": {
+    "id": "0c58245a-1596-4667-8690-cdf32fd2f92c",
     "lang": "es",
-    "translation": "Cincuenta sombras de SIG.",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1iaW9fRmlmdHkgc2hhZGVzIG9mIEdJUy4="
+    "translation": "Quitar columna (NO borra ninguna traducción)",
+    "keyId": "dG9vbHRpcF9SZW1vdmUgY29sdW1uIChkb2VzIE5PVCBkZWxldGUgYW55IHRyYW5zbGF0aW9ucyk="
   },
-  "a891ed20-2ed5-41bd-9f58-fa1025b2a774": {
-    "id": "a891ed20-2ed5-41bd-9f58-fa1025b2a774",
-    "isDeleted": false,
+  "bf3e6c9c-46a7-40d6-ad03-11afa6c7c08b": {
+    "id": "bf3e6c9c-46a7-40d6-ad03-11afa6c7c08b",
     "lang": "es",
-    "translation": "Sector público",
-    "fuzzy": false,
-    "keyId": "bWFya2V0LW5hbWVfUHVibGljIHNlY3Rvcg=="
+    "translation": "Ningún mensaje seleccionado",
+    "keyId": "bXNnRGV0YWlsc1ZpZXdfTm8gbWVzc2FnZSBzZWxlY3RlZA=="
   },
-  "d98fef4e-4f43-4a5d-81b5-012eebdfac80": {
-    "id": "d98fef4e-4f43-4a5d-81b5-012eebdfac80",
-    "isDeleted": false,
+  "91a481b7-c161-4a5f-989e-ab4bfd525705": {
+    "id": "91a481b7-c161-4a5f-989e-ab4bfd525705",
     "lang": "es",
-    "translation": "![Análisis de la idoneidad de cultivos para Oxfam](oxfam-crop-suitability-sidebar-1.jpg)",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtDcm9wIHN1aXRhYmlsaXR5IGFuYWx5c2lzIGZvciBPeGZhbV0ob3hmYW0tY3JvcC1zdWl0YWJpbGl0eS1zaWRlYmFyLTEuanBnKQ=="
+    "translation": "En uso desde",
+    "keyId": "bXNnRGV0YWlsc1ZpZXdfVXNlZCBzaW5jZQ=="
   },
-  "64b29dcf-9db1-42e0-adcd-dc7716dff9a7": {
-    "id": "64b29dcf-9db1-42e0-adcd-dc7716dff9a7",
-    "isDeleted": false,
+  "28047a72-207f-42a7-9c98-8cf4c692b511": {
+    "id": "28047a72-207f-42a7-9c98-8cf4c692b511",
     "lang": "es",
-    "translation": "Experto en SIG",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1yb2xlX0dJUyBFeHBlcnQ="
+    "translation": "Cancelar",
+    "keyId": "YnV0dG9uX0NhbmNlbA=="
   },
-  "618fe2f8-4a16-43da-b0c5-2de2af96f635": {
-    "id": "618fe2f8-4a16-43da-b0c5-2de2af96f635",
-    "isDeleted": false,
+  "2328325b-bd67-4223-9789-29828c3ff2b5": {
+    "id": "2328325b-bd67-4223-9789-29828c3ff2b5",
     "lang": "es",
-    "translation": "TBW",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1jb250ZW50c19UQlc="
+    "translation": "Idiomas (códigos BCP47):",
+    "keyId": "c2V0dGluZ3NGb3JtX0xhbmd1YWdlcyAoQkNQNDcgY29kZXMpOg=="
   },
-  "1a2bb102-8f46-4d1e-8d29-9e6ee010e053": {
-    "id": "1a2bb102-8f46-4d1e-8d29-9e6ee010e053",
-    "isDeleted": false,
+  "a893d902-b0a9-416c-8e6d-49119fd21d72": {
+    "id": "a893d902-b0a9-416c-8e6d-49119fd21d72",
     "lang": "es",
-    "translation": "Inteligencia humana.",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1iaW9fSHVtYW4gaW50ZWxsaWdlbmNlLg=="
+    "translation": "Idioma de Mady:",
+    "keyId": "c2V0dGluZ3NGb3JtX01hZHkgbGFuZ3VhZ2U6"
   },
-  "1d49ef7c-4b00-4442-93c3-243e02f1f983": {
-    "id": "1d49ef7c-4b00-4442-93c3-243e02f1f983",
-    "isDeleted": false,
+  "2d9ea250-759b-4a67-99f3-effd69ba4f19": {
+    "id": "2d9ea250-759b-4a67-99f3-effd69ba4f19",
     "lang": "es",
-    "translation": "Comprometida al 100%.",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1iaW9fRGVlcGx5IGVuZ2FnZWQu"
+    "translation": "Minificar el JavaScript de salida",
+    "keyId": "c2V0dGluZ3NGb3JtX01pbmlmeSBvdXRwdXQgSmF2YVNjcmlwdA=="
   },
-  "4fe4c317-7575-4786-abfb-942bd1e42c0f": {
-    "id": "4fe4c317-7575-4786-abfb-942bd1e42c0f",
-    "isDeleted": false,
+  "9db9dab4-823e-4f5c-8e78-3c2b403f51c4": {
+    "id": "9db9dab4-823e-4f5c-8e78-3c2b403f51c4",
     "lang": "es",
-    "translation": "```Home\ntagline: \"**Observar la Tierra** para anticipar los efectos del cambio climático.\"\ntagline2: \"Datos satelitales e inteligencia artificial para la adaptación climática.\"\nprovidersTitle: Trabajamos con proveedores de datos punteros\nmarketsTitle: Con la confianza de organizaciones en todo el mundo, afectadas por un clima cambiante\n```\n\n```Contact\n```",
-    "keyId": "cGFnZS1sYXlvdXRfYGBgSG9tZQp0YWdsaW5lOiAiKipFYXJ0aCBPYnNlcnZhdGlvbioqIHRvIGFudGljaXBhdGUgdGhlIGVmZmVjdHMgb2YgY2xpbWF0ZSBjaGFuZ2UuIgp0YWdsaW5lMjogIlNhdGVsbGl0ZSBkYXRhIGFuZCBhcnRpZmljaWFsIGludGVsbGlnZW5jZSBmb3IgY2xpbWF0ZSBhZGFwdGF0aW9uLiIKcHJvdmlkZXJzVGl0bGU6IFdlIHdvcmsgd2l0aCB0aGUgbGVhZGluZyBkYXRhIHByb3ZpZGVycwptYXJrZXRzVGl0bGU6IFRydXN0ZWQgYnkgb3JnYW5pc2F0aW9ucyBhY3Jvc3MgdGhlIGdsb2JlIGFmZmVjdGVkIGJ5IG91ciBjaGFuZ2luZyBjbGltYXRlCmBgYAoKYGBgQ29udGFjdApgYGA="
+    "translation": "Extensiones de fichero a buscar:",
+    "keyId": "c2V0dGluZ3NGb3JtX1NvdXJjZSBleHRlbnNpb25zOg=="
   },
-  "46136b96-d295-4e94-a697-d084d8f5d4cf": {
-    "id": "46136b96-d295-4e94-a697-d084d8f5d4cf",
-    "isDeleted": false,
+  "7989471c-f420-44eb-a877-76754323114d": {
+    "id": "7989471c-f420-44eb-a877-76754323114d",
     "lang": "es",
-    "translation": "Evaluando el impacto económico de tormentas extremas en los próximos 50 años",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC10aXRsZV9FdmFsdWF0aW5nIHRoZSBlY29ub21pYyBpbXBhY3Qgb2YgZXh0cmVtZSBzdG9ybXMgaW4gdGhlIG5leHQgNTDCoHllYXJz"
+    "translation": "Carpetas a buscar:",
+    "keyId": "c2V0dGluZ3NGb3JtX1NvdXJjZSBwYXRoczo="
   },
-  "094f282f-d9ad-4cd4-a422-69bb18b71b0f": {
-    "id": "094f282f-d9ad-4cd4-a422-69bb18b71b0f",
-    "isDeleted": true,
+  "8aff72a7-0e00-4c7b-bd60-d5f3603d4020": {
+    "id": "8aff72a7-0e00-4c7b-bd60-d5f3603d4020",
     "lang": "es",
-    "translation": "Evaluando el impacto económico de tormentas extremas en los próximos 50 años",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1zaG9ydFRpdGxlX0V2YWx1YXRpbmcgdGhlIGVjb25vbWljIGltcGFjdCBvZiBleHRyZW1lIHN0b3JtcyBpbiB0aGUgbmV4dCA1MMKgeWVhcnM="
+    "translation": "Total mensajes",
+    "keyId": "dG9vbHRpcF9Ub3RhbCBtZXNzYWdlcw=="
   },
-  "ab16b56e-84e1-4d78-8e1b-8d1e5c37f118": {
-    "id": "ab16b56e-84e1-4d78-8e1b-8d1e5c37f118",
-    "isDeleted": false,
+  "79130e91-bf60-4c7a-8ec3-24dd189d8527": {
+    "id": "79130e91-bf60-4c7a-8ec3-24dd189d8527",
     "lang": "es",
-    "translation": "Reunión creativa.",
-    "fuzzy": true,
-    "keyId": "dGVhbU1lbWJlci1iaW9fQnJhaW5zdG9ybWluZy4="
+    "translation": "Mensajes en uso",
+    "keyId": "dG9vbHRpcF9Vc2VkIG1lc3NhZ2Vz"
   },
-  "8a1e0df2-5b11-44bf-8c46-34725cf67a03": {
-    "id": "8a1e0df2-5b11-44bf-8c46-34725cf67a03",
-    "isDeleted": false,
+  "d7f9b7c5-edbe-4e42-b670-492a78c79190": {
+    "id": "d7f9b7c5-edbe-4e42-b670-492a78c79190",
     "lang": "es",
-    "translation": "```Home\ntagline: \"**Observar la Tierra** para anticipar los efectos del cambio climático.\"\nprovidersTitle: Trabajamos con proveedores de datos punteros\nmarketsTitle: Con la confianza de organizaciones en todo el mundo, afectadas por un clima cambiante\n```\n\n```Contact\n```",
-    "fuzzy": false,
-    "keyId": "cGFnZS1sYXlvdXRfYGBgSG9tZQp0YWdsaW5lOiAiKipFYXJ0aCBPYnNlcnZhdGlvbioqIHRvIGFudGljaXBhdGUgdGhlIGVmZmVjdHMgb2YgY2xpbWF0ZSBjaGFuZ2UuIgpwcm92aWRlcnNUaXRsZTogV2Ugd29yayB3aXRoIHRoZSBsZWFkaW5nIGRhdGEgcHJvdmlkZXJzCm1hcmtldHNUaXRsZTogVHJ1c3RlZCBieSBvcmdhbmlzYXRpb25zIGFjcm9zcyB0aGUgZ2xvYmUgYWZmZWN0ZWQgYnkgb3VyIGNoYW5naW5nIGNsaW1hdGUKYGBgCgpgYGBDb250YWN0CmBgYA=="
+    "translation": "Traducciones",
+    "keyId": "dG9vbHRpcF9UcmFuc2xhdGlvbnM="
   },
-  "0292ea24-9106-460a-8537-c445fe1a7968": {
-    "id": "0292ea24-9106-460a-8537-c445fe1a7968",
-    "isDeleted": true,
+  "23d82d27-922c-4fc8-a773-3152216d473b": {
+    "id": "23d82d27-922c-4fc8-a773-3152216d473b",
     "lang": "es",
-    "translation": "TBW\n\nBotón `` `\netiqueta: aprender más\nurl: https://wekeo.eu\nnewTab: true\n`` `",
-    "fuzzy": true,
-    "keyId": "cHJvamVjdC1jb250ZW50c19UQlcKCmBgYEJ1dHRvbgpsYWJlbDogbGVhcm4gbW9yZQp1cmw6IGh0dHBzOi8vd2VrZW8uZXUKbmV3VGFiOiB0cnVlCmBgYA=="
+    "translation": "Copiar mensaje",
+    "keyId": "dG9vbHRpcF9Db3B5IG1lc3NhZ2U="
   },
-  "158f44ea-8219-45e6-b8ff-50de823ec322": {
-    "id": "158f44ea-8219-45e6-b8ff-50de823ec322",
-    "isDeleted": true,
+  "2adf72d3-a3db-475b-9089-e263c54f6fa9": {
+    "id": "2adf72d3-a3db-475b-9089-e263c54f6fa9",
     "lang": "es",
-    "translation": "## Emisiones\n\nInventarios mensuales de emisiones regionales de satélites a una resolución de 1 km.\n\n## Pronóstico\n\nPronósticos de calidad del aire por hora con 3 días de anticipación.\n\n## Herramientas de toma de decisiones\n\nSimulando escenarios de calidad del aire para evaluar el impacto de las acciones, la mejor manera de planificar.\n\n## Dónde\n\nMaputo / Asunción / Port Vila / Dakar / Yakutsk\n\n## contexto\n\nLobelia lidera un consorcio de calidad del aire orientado comercialmente, nacido de un proyecto europeo H2020, con algunos de los actores europeos más reconocidos en la investigación de la contaminación del aire.\n\nLa contaminación del aire es un problema grave que cuesta miles de millones de euros cada año en pérdida de productividad y gastos de salud. Además, la contaminación de la calidad del aire también tiene un impacto económico negativo en otras actividades como el transporte (por ejemplo, la falta de visibilidad), el mantenimiento de la ciudad (por ejemplo, la limpieza de la infraestructura) o la agricultura (por ejemplo, las deposiciones de contaminantes) que causan 3 millones de muertes en todo el mundo cada año.\n\nEl proyecto AirQast está construyendo una plataforma autosostenible que proporciona servicios de calidad del aire basados ​​en datos de la Observación de la Tierra.\n\n\nBotón `` `\netiqueta: aprender más\nurl: http://airqast.com\nnewTab: true\n`` `",
-    "fuzzy": true,
-    "keyId": "cHJvamVjdC1jb250ZW50c18jIyBFbWlzc2lvbnMKCk1vbnRobHkgcmVnaW9uYWwgZW1pc3Npb24gaW52ZW50b3JpZXMgZnJvbSBzYXRlbGxpdGVzIGF0IDEta20gcmVzb2x1dGlvbi4KCiMjIEZvcmVjYXN0CgpIb3VybHkgYWlyIHF1YWxpdHkgZm9yZWNhc3RzIGZvciAzIGRheXMgaW4gYWR2YW5jZS4KCiMjIERlY2lzaW9uLW1ha2luZyB0b29scwoKU2ltdWxhdGluZyBhaXIgcXVhbGl0eSBzY2VuYXJpb3MgdG8gZXZhbHVhdGUgdGhlIGltcGFjdCBvZiB0aGUgYWN0aW9ucywgdGhlIGJlc3Qgd2F5IHRvIHBsYW4tbWFrZS4KCiMjIFdoZXJlCgpNYXB1dG/CoC8gQXN1bmNpw7NuwqAvIFBvcnQgVmlsYcKgLyBEYWthcsKgLyBZYWt1dHNrCgojIyBDb250ZXh0CgpMb2JlbGlhIGxlYWRzIGEgY29tbWVyY2lhbGx5LW9yaWVudGVkIGFpciBxdWFsaXR5IGNvbnNvcnRpdW0sIGJvcm4gZnJvbSBhIEV1cm9wZWFuIEgyMDIwIHByb2plY3QsIHdpdGggc29tZSBvZiB0aGUgbW9zdCByZW5vd25lZCBFdXJvcGVhbiBhY3RvcnMgaW4gYWlyIHBvbGx1dGlvbiByZXNlYXJjaC4KCkFpciBwb2xsdXRpb24gaXMgYSBzZXJpb3VzIHByb2JsZW0gdGhhdCBjb3N0cyBiaWxsaW9ucyBvZiBldXJvcyBlYWNoIHllYXIgaW4gbG9zdCBwcm9kdWN0aXZpdHkgYW5kIGhlYWx0aCBleHBlbnNlcy4gSW4gYWRkaXRpb24sIGFpciBxdWFsaXR5IHBvbGx1dGlvbiBhbHNvIGhhcyBhIG5lZ2F0aXZlIGVjb25vbWljIGltcGFjdCBvbiBvdGhlciBhY3Rpdml0aWVzIHN1Y2ggYXMgdHJhbnNwb3J0IChlLmcuIGxhY2sgb2YgdmlzaWJpbGl0eSksIGNpdHkgbWFpbnRlbmFuY2UgKGUuZy4gaW5mcmFzdHJ1Y3R1cmUgY2xlYW5pbmcpIG9yIGFncmljdWx0dXJlIChlLmcuIHBvbGx1dGFudCBkZXBvc2l0aW9ucykgdGhhdCBjYXVzZSAzIG1pbGxpb24gZGVhdGhzIHdvcmxkd2lkZSBlYWNoIHllYXIuCgpUaGUgQWlyUWFzdCBwcm9qZWN0IGlzIGJ1aWxkaW5nIGEgc2VsZi1zdXN0YWluYWJsZSBwbGF0Zm9ybSBwcm92aWRpbmcgYWlyIHF1YWxpdHkgc2VydmljZXMgYmFzZWQgb24gRWFydGggT2JzZXJ2YXRpb24gZGF0YS4gCgoKYGBgQnV0dG9uCmxhYmVsOiBsZWFybiBtb3JlCnVybDogaHR0cDovL2FpcnFhc3QuY29tCm5ld1RhYjogdHJ1ZQpgYGA="
+    "translation": "Borrar traducción",
+    "keyId": "dG9vbHRpcF9EZWxldGUgdHJhbnNsYXRpb24="
   },
-  "e89f13d8-e8df-4d3d-bcc1-ea9957595674": {
-    "id": "e89f13d8-e8df-4d3d-bcc1-ea9957595674",
-    "isDeleted": true,
+  "37f24c6d-9985-4f1d-b0af-5c70b9b12736": {
+    "id": "37f24c6d-9985-4f1d-b0af-5c70b9b12736",
     "lang": "es",
-    "translation": "Las inundaciones son una preocupación que crece rápidamente en África occidental, y se prevé que aumentará con el cambio climático. Existe una gran necesidad de acceso confiable a ** pronósticos y alertas de inundaciones operacionales **, producidos por un sistema robusto de tecnología de la información y la comunicación, adaptado a las condiciones regionales y operado por instituciones competentes de África Occidental.\n\nLobelia e isardSAT proporcionan ** observaciones satelitales del nivel del agua ** de la llanura de inundación de la cuenca del río Níger que se asimilan secuencialmente en un modelo hidrodinámico producido por el Instituto Sueco de Meteorología e Hidrología (SMHI) para generar los períodos de retorno de la descarga del río. Estos se utilizan en el sistema de alertas de alerta temprana y alerta temprana de SMHI en África Occidental a través de la [Plataforma Temática de Explotación Hidrológica (H-TEP) basada en la nube] (https://hydrology-tep.eo.esa.int) administrada por isardSAT .\n\nNuestros datos satelitales sobre la extensión y los niveles de agua superficial se han considerado para complementar las mediciones in situ. También se pueden utilizar como un proxy del flujo de flujo, para la calibración y validación de modelos, así como para la asimilación de datos hidrológicos.\n\nBotón `` `\netiqueta: aprender más\nurl: http://fanfar.eu\nnewTab: true\n`` `",
-    "fuzzy": true,
-    "keyId": "cHJvamVjdC1jb250ZW50c19GbG9vZHMgYXJlIGEgcmFwaWRseSBncm93aW5nIGNvbmNlcm4gaW4gV2VzdCBBZnJpY2EsIHByb2plY3RlZCB0byBpbmNyZWFzZSB3aXRoIGNsaW1hdGUgY2hhbmdlLiBUaGVyZSBpcyBhIGdyZWF0IG5lZWQgZm9yIHJlbGlhYmxlIGFjY2VzcyB0byAqKm9wZXJhdGlvbmFsIGZsb29kIGZvcmVjYXN0cyBhbmQgYWxlcnRzKiosIHByb2R1Y2VkIGJ5IGEgcm9idXN0IGluZm9ybWF0aW9uIGFuZCBjb21tdW5pY2F0aW9uIHRlY2hub2xvZ3kgc3lzdGVtLCBhZGFwdGVkIHRvIHJlZ2lvbmFsIGNvbmRpdGlvbnMgYW5kIG9wZXJhdGVkIGJ5IGNhcGFibGUgV2VzdCBBZnJpY2FuIGluc3RpdHV0aW9ucy4KCkxvYmVsaWEgYW5kIGlzYXJkU0FUIGFyZSBwcm92aWRpbmcgKipzYXRlbGxpdGUtYmFzZWQgd2F0ZXIgbGV2ZWwgb2JzZXJ2YXRpb25zKiogb2YgdGhlIE5pZ2VyIFJpdmVyIGJhc2luIGZsb29kcGxhaW4gdGhhdCBhcmUgc2VxdWVudGlhbGx5IGFzc2ltaWxhdGVkIGludG8gYSBoeWRyb2R5bmFtaWMgbW9kZWwgcHJvZHVjZWQgYnkgdGhlIFN3ZWRpc2ggTWV0ZW9yb2xvZ2ljYWwgYW5kIEh5ZHJvbG9naWNhbCBJbnN0aXR1dGUgKFNNSEkpIHRvIGdlbmVyYXRlIHJpdmVyIGRpc2NoYXJnZSByZXR1cm4gcGVyaW9kcy4gVGhlc2UgYXJlIHVzZWQgaW4gU01ISeKAmXMgZmxvb2QgZm9yZWNhc3RpbmcgYW5kIGVhcmx5LXdhcm5pbmcgYWxlcnQgc3lzdGVtIGluIFdlc3QgQWZyaWNhIHRocm91Z2ggdGhlIGNsb3VkLWJhc2VkIFtIeWRyb2xvZ3kgVGhlbWF0aWMgRXhwbG9pdGF0aW9uIFBsYXRmb3JtIChILVRFUCldKGh0dHBzOi8vaHlkcm9sb2d5LXRlcC5lby5lc2EuaW50KSBtYW5hZ2VkIGJ5IGlzYXJkU0FULgoKT3VyIHNhdGVsbGl0ZS1iYXNlZCBkYXRhIG9uIHN1cmZhY2Ugd2F0ZXIgZXh0ZW50IGFuZCBsZXZlbHMgaGF2ZSBiZWVuIGNvbnNpZGVyZWQgdG8gIGNvbXBsZW1lbnQgaW4tc2l0dSBtZWFzdXJlbWVudHMuIFRoZXkgY2FuIGFsc28gYmUgdXNlZCBhcyBhIHByb3h5IG9mIHN0cmVhbWZsb3csIGZvciBtb2RlbCBjYWxpYnJhdGlvbiBhbmQgdmFsaWRhdGlvbiBhcyB3ZWxsIGFzIGZvciBoeWRyb2xvZ2ljIGRhdGEgYXNzaW1pbGF0aW9uLgoKYGBgQnV0dG9uCmxhYmVsOiBsZWFybiBtb3JlCnVybDogaHR0cDovL2ZhbmZhci5ldQpuZXdUYWI6IHRydWUKYGBg"
+    "translation": "Haz clic fuera o pulsa TAB para guardar. Pulsa ESC para deshacer.",
+    "keyId": "dHJhbnNsYXRpb25IZWxwX0NsaWNrIG91dHNpZGUgb3IgVEFCIHRvIHNhdmUuIEVTQyB0byB1bmRvLg=="
   },
-  "63511b9a-a4f7-4504-85f0-9f119e5126ae": {
-    "id": "63511b9a-a4f7-4504-85f0-9f119e5126ae",
-    "isDeleted": true,
+  "ae7807cd-314e-4d0f-ad24-91d14ab048aa": {
+    "id": "ae7807cd-314e-4d0f-ad24-91d14ab048aa",
     "lang": "es",
-    "translation": "La información satelital se está utilizando de una manera nueva para predecir condiciones favorables para ** enjambres de langostas del desierto **. La nueva tecnología ayuda a aumentar el tiempo de alerta de los brotes de langosta hasta dos meses.\n\nUtilizando datos de satélites como la humedad del suelo (misión SMELLS) y la salinidad del océano (misión SMOS), se ha desarrollado una nueva herramienta para monitorear las condiciones que pueden conducir a la aparición de langostas, como la alta humedad y la vegetación verde. El enjambre ocurre cuando un período de sequía es seguido por lluvias abundantes y un rápido crecimiento de la vegetación.\n\n** Lobelia opera el servicio de humedad del suelo producido por isardSAT. **\n\n## ¿Dónde?\n\nLa FAO ha validado la herramienta en Argelia, Malí, Mauritania y Marruecos.\n\nDurante el último brote en Mauritania (2016), el equipo pudo identificar un lapso de tiempo de aproximadamente 70 días desde los signos iniciales de humedad del suelo hasta el momento en que ocurrió el brote.\n\n## ¿Por qué?\n\nUn enjambre que mide un kilómetro cuadrado contiene aproximadamente 40 millones de langostas, que comen la misma cantidad de alimentos en un día que aproximadamente 35,000 personas.\n\nMás de 8 millones de personas en África occidental se vieron afectadas durante la plaga de 2003-2005, en la que se eliminaron las cosechas de cereales y se destruyeron hasta el 90% de las leguminosas y los pastos. Tomó casi $ 600 millones y 13 millones de litros de pesticida para ponerlo bajo control.\n\nBotón `` `\netiqueta: aprender más\nurl: http://smells.isardsat.com/\nnewTab: true\n`` `",
-    "fuzzy": true,
-    "keyId": "cHJvamVjdC1jb250ZW50c19TYXRlbGxpdGUgaW5mb3JtYXRpb24gaXMgYmVpbmcgdXNlZCBpbiBhIG5ldyB3YXkgdG8gcHJlZGljdCBmYXZvdXJhYmxlIGNvbmRpdGlvbnMgZm9yICoqZGVzZXJ0IGxvY3VzdCBzd2FybXMqKi4gVGhlIG5ldyB0ZWNobm9sb2d5IGhlbHBzIHRvIGluY3JlYXNlIHRoZSB3YXJuaW5nIHRpbWUgZm9yIGxvY3VzdCBvdXRicmVha3MgYnkgdXAgdG8gdHdvIG1vbnRocy4KClVzaW5nIGRhdGEgZnJvbSBzYXRlbGxpdGVzIHN1Y2ggYXMgc29pbCBtb2lzdHVyZSAoU01FTExTIG1pc3Npb24pIGFuZCBvY2VhbiBzYWxpbml0eSAoU01PUyBtaXNzaW9uKSwgYSBuZXcgdG9vbCBoYXMgYmVlbiBkZXZlbG9wZWQgdG8gbW9uaXRvciB0aGUgY29uZGl0aW9ucyB0aGF0IGNhbiBsZWFkIHRvIHN3YXJtaW5nIGxvY3VzdHMsIHN1Y2ggYXMgaGlnaCBtb2lzdHVyZSBhbmQgZ3JlZW4gdmVnZXRhdGlvbi4gU3dhcm1pbmcgb2NjdXJzIHdoZW4gYSBwZXJpb2Qgb2YgZHJvdWdodCBpcyBmb2xsb3dlZCBieSBhYnVuZGFudCByYWlucyBhbmQgcmFwaWQgdmVnZXRhdGlvbiBncm93dGguCgoqKkxvYmVsaWEgb3BlcmF0ZXMgdGhlIHNvaWwgbW9pc3R1cmUgc2VydmljZSBwcm9kdWNlZCBieSBpc2FyZFNBVC4qKgoKIyMgV2hlcmU/CgpGQU8gaGFzIHZhbGlkYXRlZCB0aGUgdG9vbCBpbiBBbGdlcmlhLCBNYWxpLCBNYXVyaXRhbmlhIGFuZCBNb3JvY2NvLgoKRHVyaW5nIHRoZSBsYXRlc3Qgb3V0YnJlYWsgaW4gTWF1cml0YW5pYSAoMjAxNiksIHRoZSB0ZWFtIHdhcyBhYmxlIHRvIGlkZW50aWZ5IGEgdGltZSBsYWcgb2YgYWJvdXQgNzAgZGF5cyBmcm9tIHRoZSBpbml0aWFsIHNpZ25zIG9mIHNvaWwgbW9pc3R1cmUgdG8gd2hlbiB0aGUgb3V0YnJlYWsgZXZlbnR1YWxseSBvY2N1cnJlZC4KCiMjIFdoeT8KCkEgc3dhcm0gbWVhc3VyaW5nIG9uZSBzcXVhcmUga2lsb21ldHJlIGNvbnRhaW5zIGFib3V0IDQwIG1pbGxpb24gbG9jdXN0cywgd2hpY2ggZWF0IHRoZSBzYW1lIGFtb3VudCBvZiBmb29kIGluIG9uZSBkYXkgYXMgYWJvdXQgMzUsMDAwIHBlb3BsZS4KCk1vcmUgdGhhbiA4IG1pbGxpb24gcGVvcGxlIGluIFdlc3QgQWZyaWNhIHdlcmUgYWZmZWN0ZWQgZHVyaW5nIHRoZSAyMDAzLTIwMDUgcGxhZ3VlLCBpbiB3aGljaCBjZXJlYWwgY3JvcHMgd2VyZSB3aXBlZCBvdXQgYW5kIHVwIHRvIDkwJSBvZiBsZWd1bWVzIGFuZCBwYXN0dXJlIHdlcmUgZGVzdHJveWVkLiBJdCB0b29rIG5lYXJseSAkNjAwIG1pbGxpb24gYW5kIDEzIG1pbGxpb24gbGl0cmVzIG9mIHBlc3RpY2lkZSB0byBicmluZyBpdCB1bmRlciBjb250cm9sLgoKYGBgQnV0dG9uCmxhYmVsOiBsZWFybiBtb3JlCnVybDogaHR0cDovL3NtZWxscy5pc2FyZHNhdC5jb20vCm5ld1RhYjogdHJ1ZQpgYGA="
+    "translation": "Mensajes",
+    "keyId": "Y29sdW1uVGl0bGVfTWVzc2FnZXM="
   },
-  "c3db2936-be7e-48f6-b05b-a4c12d3617c4": {
-    "id": "c3db2936-be7e-48f6-b05b-a4c12d3617c4",
-    "isDeleted": true,
+  "aa05812f-f015-4fed-bd13-b18a3b8767cb": {
+    "id": "aa05812f-f015-4fed-bd13-b18a3b8767cb",
     "lang": "es",
-    "translation": "```ContactForm\nsendTo: info@lobelia.earth\n```\n\n## …o contacta con nosotros:\n\n<div style=\"max-width: 400px; margin: 0 auto\">\n<b>T:</b> +34 93 350 55 08<br/>\n<b>E:</b> <a href=\"mailto:info@lobelia.earth\">info@lobelia.earth</a>\n</div>\n",
-    "fuzzy": false,
-    "keyId": "cGFnZS1jb250ZW50c19gYGBDb250YWN0Rm9ybQpzZW5kVG86IGluZm9AaXNhcmRzYXQuY2F0CmBgYAoKIyMg4oCmb3IgY29udGFjdCB1czoKCjxkaXYgc3R5bGU9Im1heC13aWR0aDogNDAwcHg7IG1hcmdpbjogMCBhdXRvIj4KPGI+VDo8L2I+ICszNCA5MyAzNTAgNTUgMDg8YnIvPgo8Yj5FOjwvYj4gPGEgaHJlZj0ibWFpbHRvOmluZm9AbG9iZWxpYS5lYXJ0aCI+aW5mb0Bsb2JlbGlhLmVhcnRoPC9hPgo8L2Rpdj4K"
+    "translation": "Guardar",
+    "keyId": "YnV0dG9uX1NhdmU="
   },
-  "e03a0ef8-e5db-429c-b5f7-9daddf0e730e": {
-    "id": "e03a0ef8-e5db-429c-b5f7-9daddf0e730e",
-    "isDeleted": true,
+  "0a165e3f-07c3-409b-b02d-33e13a6ab886": {
+    "id": "0a165e3f-07c3-409b-b02d-33e13a6ab886",
     "lang": "es",
-    "translation": "La investigación y la innovación promueven un crecimiento equilibrado y sostenible. Nuestro valor añadido es ofrecer soluciones basadas en un enfoque científicamente responsable.",
-    "keyId": "bWFya2V0LXN1bW1hcnlfUmVzZWFyY2ggYW5kIGlubm92YXRpb24gcHJvbW90ZXMgYSB3ZWxsLWJhbGFuY2VkLCBzdXN0YWluYWJsZSBncm93dGguIE91ciBhZGRlZCB2YWx1ZSBpcyB0aGUgcHJvdmlzaW9uIG9mIHNvbHV0aW9ucyBiYXNlZCBvbiBhIHNjaWVudGlmaWNhbGx5IHJlc3BvbnNpYmxlIGFwcHJvYWNoLg=="
+    "translation": "hasta",
+    "keyId": "bXNnRGV0YWlsc1ZpZXdfdW50aWw="
   },
-  "90ef9c1f-145d-4472-86f9-0d0204ed552d": {
-    "id": "90ef9c1f-145d-4472-86f9-0d0204ed552d",
-    "isDeleted": false,
+  "58b37477-173e-4e10-a4e8-834cdc1e78c7": {
+    "id": "58b37477-173e-4e10-a4e8-834cdc1e78c7",
     "lang": "es",
-    "translation": "Analizamos conjuntos de datos altamente complejos y generamos proyecciones climáticas y herramientas de monitorización que permiten evaluar planes y estrategias de adaptación.",
-    "keyId": "bWFya2V0LXN1bW1hcnlfV2UgYW5hbHlzZSBoaWdobHktY29tcGxleCBkYXRhc2V0cyB0byBnZW5lcmF0ZSBjbGltYXRlIHByb2plY3Rpb25zIGFuZCBtb25pdG9yaW5nIHRvb2xzIHRvIGFzc2VzcyBhZGFwdGF0aW9uIHBsYW5zIGFuZCBzdHJhdGVnaWVzLg=="
+    "translation": "Añadir columna de idioma",
+    "keyId": "aGludF9BZGQgbGFuZ3VhZ2UgY29sdW1u"
   },
-  "b4cc89bf-b118-4059-9dbd-bcd41f79f46e": {
-    "id": "b4cc89bf-b118-4059-9dbd-bcd41f79f46e",
-    "isDeleted": false,
+  "ebde6828-792b-4806-bc6e-ff7032eb11a6": {
+    "id": "ebde6828-792b-4806-bc6e-ff7032eb11a6",
     "lang": "es",
-    "translation": "Proporcionamos escenarios climáticos, predicciones y herramientas de toma de decisiones a las autoridades públicas para aumentar su capacidad de planificación y catalizar acciones que nos afectan a todos.",
-    "keyId": "bWFya2V0LXN1bW1hcnlfV2UgcHJvdmlkZSBjbGltYXRpYyBzY2VuYXJpb3MsIHByZWRpY3Rpb25zIGFuZCBkZWNpc2lvbi1tYWtpbmcgdG9vbHMgdG8gcHVibGljIGF1dGhvcml0aWVzIHNvIHRoZXkgY2FuIHN0cmVuZ3RoZW4gdGhlaXIgcGxhbm5pbmcgYW5kIGNhdGFseXNlIGFjdGlvbnMgYWNyb3NzIHNvY2lldHku"
+    "translation": "Configurar Mady",
+    "keyId": "aGludF9Db25maWd1cmUgTWFkeQ=="
   },
-  "b4c97102-3049-4f3f-886d-62bf5c0ed51e": {
-    "id": "b4c97102-3049-4f3f-886d-62bf5c0ed51e",
-    "isDeleted": false,
+  "8383eadf-a1e8-4fd1-b2e3-8abb58c603aa": {
+    "id": "8383eadf-a1e8-4fd1-b2e3-8abb58c603aa",
     "lang": "es",
-    "translation": "Ayudamos a las empresas a establecer estrategias de mitigación de riesgo para anticipar los efectos del cambio climático en sus inversiones.",
-    "keyId": "bWFya2V0LXN1bW1hcnlfV2Ugc3VwcG9ydCByaXNrIG1pdGlnYXRpb24gc3RyYXRlZ2llcyBmb3IgY29tcGFuaWVzIHRvIGFudGljaXBhdGUgdGhlIGVmZmVjdHMgb2YgY2xpbWF0ZSBjaGFuZ2UgaW4gdGhlaXIgaW52ZXN0bWVudHMu"
+    "translation": "¡Disfruta traduciendo!",
+    "keyId": "aGludF9FbmpveSB0cmFuc2xhdGluZyE="
   },
-  "19025a82-3835-42e0-bc8b-dcd82e57c19c": {
-    "id": "19025a82-3835-42e0-bc8b-dcd82e57c19c",
-    "isDeleted": true,
+  "80e0d18b-5f81-4e79-84e2-66335ac4b3ad": {
+    "id": "80e0d18b-5f81-4e79-84e2-66335ac4b3ad",
     "lang": "es",
-    "translation": "Los efectos del cambio climático en la agricultura y la producción alimentaria afectarán con mayor intensidad a los pequeños propietarios de tierras, que son, precisamente, quienes actualmente sufren mayores riesgos. La respuesta a los cambios de temperatura y precipitación en diferentes localizaciones afecta de manera desigual a las diferentes variedades de productos agrarios.\n\nNos interesa prever la redistribución geográfica agraria en las próximas décadas a causa del cambio climático. Un componente importante de este estudio evaluativo son los cálculos de los **índices de idoneidad de los productos agrarios** (*crop suitability index*).\n\nLobelia ha desarrollado una herramienta de cálculo de idoneidad de productos agrarios para Oxfam. El simulador de crecimiento genera mapas del número de ciclos viables para diferentes variedades agrarias en el Sahel, el África subsahariana y el Corredor Seco para unos periodos y escenarios de emisiones seleccionados.\n\n## Sahel\n\nMaíz / sorgo / mijo perla\n\n## África subsahariana\n\nMaíz / sorgo / mijo perla / arroz / mandioca / frijoles / cacahuete / batata\n\n## Corredor Seco\n\nMaíz / sorgo / frijoles / arroz\n\n\n```Button\nlabel: demo online\nurl: https://crop-suitability-demo.lobelia.earth/{lang}\nlangs:\n- en\n- es\n- ca\n- fr\n```",
-    "keyId": "cHJvamVjdC1jb250ZW50c19DbGltYXRlIGNoYW5nZSBpcyBleHBlY3RlZCB0byBkaXNwcm9wb3J0aW9uYXRlbHkgYWZmZWN0IHNtYWxsaG9sZGVyIGZhcm1lcnMsIHdobyBhbHJlYWR5IGZhY2UgbnVtZXJvdXMgcmlza3MgdG8gdGhlaXIgYWdyaWN1bHR1cmFsIHByb2R1Y3Rpb24uIENyb3AgdmFyaWV0aWVzIHdpbGwgcmVzcG9uZCBkaWZmZXJlbnRseSB0byBjaGFuZ2VzIGluIHRlbXBlcmF0dXJlIGFuZCBwcmVjaXBpdGF0aW9uIGF0IHRoZSBsb2NhdGlvbnMgd2hlcmUgdGhleSBhcmUgY3VycmVudGx5IGdyb3duLiBBICoqY3JvcCBzdWl0YWJpbGl0eSBpbmRleCoqIGlzIGFuIGltcG9ydGFudCBjb21wb25lbnQgb2YgYXNzZXNzbWVudCBzdHVkaWVzLCBpbmNsdWRpbmcgY2hhbmdlcyB0byBnZW9ncmFwaGljYWwgY3JvcCBkaXN0cmlidXRpb24gdW5kZXIgY2xpbWF0ZSBjaGFuZ2UgaW4gdGhlIGNvbWluZyBkZWNhZGVzLgoKTG9iZWxpYSBoYXMgZGV2ZWxvcGVkIGEgY3JvcCBzdWl0YWJpbGl0eSB0b29sIGZvciBPeGZhbS4gVGhlIGdyb3d0aCBzaW11bGF0b3IgcHJvZHVjZXMgbWFwcyBzaG93aW5nIHRoZSBudW1iZXIgb2YgZmVhc2libGUgY3ljbGVzIGZvciBzdGFwbGUgY3JvcHMgaW4gdGhlIFNhaGVsLCBTdWItU2FoYXJhbiBBZnJpY2EgYW5kIERyeSBDb3JyaWRvciBmb3IgdGhlIHNlbGVjdGVkIGNsaW1hdGUgcGVyaW9kcyBhbmQgZW1pc3Npb24gc2NlbmFyaW9zLgoKIyMgU2FoZWwKCk1haXplIC8gc29yZ2h1bSAvIHBlYXJsIG1pbGxldAoKIyMgU3ViLVNhaGFyYW4gQWZyaWNhCgpNYWl6ZSAvIHNvcmdodW0gLyBwZWFybCBtaWxsZXQgLyByaWNlIC8gY2Fzc2F2YSAvIGJlYW5zIC8gZ3JvdW5kbnV0cyAvIHlhbQoKIyMgRHJ5IENvcnJpZG9yCgpNYWl6ZSAvIHNvcmdodW0gLyBiZWFucyAvIHJpY2UKCgpgYGBCdXR0b24KbGFiZWw6IG9ubGluZSBkZW1vCnVybDogaHR0cHM6Ly9jcm9wLXN1aXRhYmlsaXR5LWRlbW8ubG9iZWxpYS5lYXJ0aC97bGFuZ30KbGFuZ3M6Ci0gZW4KLSBlcwotIGNhCi0gZnIKYGBg"
+    "translation": "{NUM, plural, one{1 hamburguesa} other{# hamburguesas}}",
+    "keyId": "c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319"
   },
-  "1e4fdd86-414e-4be5-8b39-2306616ecf2b": {
-    "id": "1e4fdd86-414e-4be5-8b39-2306616ecf2b",
-    "isDeleted": true,
+  "7735f763-6bb9-4008-a4d3-e07d4be5b7a3": {
+    "id": "7735f763-6bb9-4008-a4d3-e07d4be5b7a3",
     "lang": "es",
-    "translation": "## Emisiones\n\nInventarios mensuales de emisiones regionales a través de satélites con una resolución de 1 km.\n\n## Pronóstico\n\nPronósticos horarios de calidad del aire para los 3 días siguientes.\n\n## Herramientas de toma de decisiones\n\nSimulación de escenarios de calidad del aire para evaluar el impacto de las acciones, la mejor manera de planificar.\n\n## Dónde\n\nChina / India / Europa\n\n## Contexto\n\nLobelia lidera un consorcio de calidad del aire con orientación comercial, nacido de un proyecto europeo H2020, con algunos de los actores europeos más reconocidos en la investigación sobre contaminación del aire.\n\nLa contaminación del aire es un problema grave que cuesta miles de millones de euros cada año en pérdidas de productividad y gastos de salud. Además, la contaminación del aire también tiene un impacto económico negativo en otras actividades como el transporte (ejemplo: falta de visibilidad en el transporte aéreo), el mantenimiento de las ciudades (ejemplo: limpieza de infraestructuras) o la agricultura (ejemplo: deposiciones de contaminantes), causando 3 millones de muertes al año en todo el mundo.\n\nEl proyecto AirQast está construyendo una plataforma autosostenible que proporciona servicios de calidad del aire basados ​​en datos de Observación de la Tierra.\n\n\nBotón `` `\netiqueta: saber más\nurl: http://airqast.com\nnewTab: true\n`` `",
-    "fuzzy": true,
-    "keyId": "cHJvamVjdC1jb250ZW50c18jIyBFbWlzc2lvbnMKCk1vbnRobHkgcmVnaW9uYWwgZW1pc3Npb24gaW52ZW50b3JpZXMgZnJvbSBzYXRlbGxpdGVzIGF0IDEta20gcmVzb2x1dGlvbi4KCiMjIEZvcmVjYXN0CgpIb3VybHkgYWlyIHF1YWxpdHkgZm9yZWNhc3RzIGZvciAzIGRheXMgaW4gYWR2YW5jZS4KCiMjIERlY2lzaW9uLW1ha2luZyB0b29scwoKU2ltdWxhdGluZyBhaXIgcXVhbGl0eSBzY2VuYXJpb3MgdG8gZXZhbHVhdGUgdGhlIGltcGFjdCBvZiB0aGUgYWN0aW9ucywgdGhlIGJlc3Qgd2F5IHRvIHBsYW4tbWFrZS4KCiMjIFdoZXJlCgpDaGluYSAvIEluZGlhIC8gRXVyb3BlCgojIyBDb250ZXh0CgpMb2JlbGlhIGxlYWRzIGEgY29tbWVyY2lhbGx5LW9yaWVudGVkIGFpciBxdWFsaXR5IGNvbnNvcnRpdW0sIGJvcm4gZnJvbSBhIEV1cm9wZWFuIEgyMDIwIHByb2plY3QsIHdpdGggc29tZSBvZiB0aGUgbW9zdCByZW5vd25lZCBFdXJvcGVhbiBhY3RvcnMgaW4gYWlyIHBvbGx1dGlvbiByZXNlYXJjaC4KCkFpciBwb2xsdXRpb24gaXMgYSBzZXJpb3VzIHByb2JsZW0gdGhhdCBjb3N0cyBiaWxsaW9ucyBvZiBldXJvcyBlYWNoIHllYXIgaW4gbG9zdCBwcm9kdWN0aXZpdHkgYW5kIGhlYWx0aCBleHBlbnNlcy4gSW4gYWRkaXRpb24sIGFpciBxdWFsaXR5IHBvbGx1dGlvbiBhbHNvIGhhcyBhIG5lZ2F0aXZlIGVjb25vbWljIGltcGFjdCBvbiBvdGhlciBhY3Rpdml0aWVzIHN1Y2ggYXMgdHJhbnNwb3J0IChlLmcuIGxhY2sgb2YgdmlzaWJpbGl0eSksIGNpdHkgbWFpbnRlbmFuY2UgKGUuZy4gaW5mcmFzdHJ1Y3R1cmUgY2xlYW5pbmcpIG9yIGFncmljdWx0dXJlIChlLmcuIHBvbGx1dGFudCBkZXBvc2l0aW9ucykgdGhhdCBjYXVzZSAzIG1pbGxpb24gZGVhdGhzIHdvcmxkd2lkZSBlYWNoIHllYXIuCgpUaGUgQWlyUWFzdCBwcm9qZWN0IGlzIGJ1aWxkaW5nIGEgc2VsZi1zdXN0YWluYWJsZSBwbGF0Zm9ybSBwcm92aWRpbmcgYWlyIHF1YWxpdHkgc2VydmljZXMgYmFzZWQgb24gRWFydGggT2JzZXJ2YXRpb24gZGF0YS4gCgoKYGBgQnV0dG9uCmxhYmVsOiBsZWFybiBtb3JlCnVybDogaHR0cDovL2FpcnFhc3QuY29tCm5ld1RhYjogdHJ1ZQpgYGA="
+    "translation": "Ajustes",
+    "keyId": "dG9vbHRpcF9TZXR0aW5ncw=="
   },
-  "fd9e8190-55f8-4779-bb97-89de3fa80f6c": {
-    "id": "fd9e8190-55f8-4779-bb97-89de3fa80f6c",
-    "isDeleted": true,
+  "98a58f81-c529-4dba-9dd4-bf401d2b2fc3": {
+    "id": "98a58f81-c529-4dba-9dd4-bf401d2b2fc3",
     "lang": "es",
-    "translation": "Las ciudades y sus áreas metropolitanas se encuentran fuertemente influenciadas por el cambio climático. Los ayuntamientos y gobiernos locales hacen un seguimiento y estudian en profundidad los impactos climáticos con el objetivo de adaptar las infraestructuras y minimizar los efectos que se pueden ocasionar en la calidad de vida, sanidad, transporte, gestión del agua, suministro energético, etc.\n\nLas localidades más vulnerables son aquellas con un diseño urbano mal planificado o una falta de recursos tales como el sellado del suelo, áreas verdes, estructuras de drenaje e impermeabilidad.\n\nLobelia ofrece soporte a estudios que evalúan la adaptación de áreas urbanas al cambio climático. Algunas de las ciudades son Asunción, Yakutsk, Maputo, Dakar y Port Vila.\n\nGeneramos mapas mejorados en resolución a escala local y corregidos estadísticamente respecto a observaciones (**downscaling** y **bias correction**). A partir de estos productos se pueden derivar un conjunto de indicadores y estadísticos que son extremadamente útiles en la evaluación de los efectos del cambio climático en las ciudades estudiadas.\n\n## Ejemplos de indicadores\n\nNúmero de noches tropicales, noches de heladas, olas de calor o de frío y su duración, días secos y húmedos consecutivos, etc.\n\n\n```Button\nlabel: probar demo\nurl: https://city-climate-trends.lobelia.earth/{lang}\nlangs:\n- en\n- es\n- ca\n- fr\n- zh\n- ru\n```\n\n```Button\nlabel: explorar el clima histórico (ERA5)\nurl: https://era5.lobelia.earth/{lang}\nlangs:\n- en\n- es\n- ca\n- fr\n```\n\n```Button\nlabel: Urban Resilience Hub (UN Habitat)\nurl: http://urbanresiliencehub.org/\nnewTab: true\n```",
-    "keyId": "cHJvamVjdC1jb250ZW50c19DaXRpZXMgYW5kIHVyYmFuIGFyZWFzIGFyZSBzdHJvbmdseSBpbmZsdWVuY2VkIGJ5IGNsaW1hdGUgY2hhbmdlLiBUaGUgaW1wYWN0cyBvZiB0aGVzZSBjaGFuZ2VzIGFyZSBzdHVkaWVkIGFuZCBmb2xsb3dlZCBieSBsb2NhbCBhdXRob3JpdGllcyB3aXRoIHRoZSBhaW0gdG8gYWRhcHQgdGhlaXIgaW5mcmFzdHJ1Y3R1cmUgYW5kIG1pbmltaXNlIHRoZSBlZmZlY3RzIG9uIHRoZWlyIHF1YWxpdHkgb2YgbGlmZSwgaGVhbHRoIGNhcmUsIHRyYW5zcG9ydCwgd2F0ZXIgbWFuYWdlbWVudCwgZW5lcmd5IHN1cHBseSwgZXRjLiAKClRoZSBtb3N0IHZ1bG5lcmFibGUgcmVnaW9ucyBhcmUgcG9vcmx5LWRlc2lnbmVkIHVyYmFuIGFyZWFzIGxhY2tpbmcgc29pbCBzZWFsaW5nLCBncmVlbiBhcmVhcywgaW1wZXJtZWFiaWxpdHkgYW5kIGRyYWluYWdlIHN0cnVjdHVyZXMuCgpMb2JlbGlhIHN1cHBvcnRzIGNsaW1hdGUgYWRhcHRhYmlsaXR5IGFzc2Vzc21lbnRzIGJ5IHN0dWR5aW5nIHRoZSBsb2NhbCBlZmZlY3RzIG9mIGNsaW1hdGUgY2hhbmdlIGluIHNwZWNpZmljIHVyYmFuIGFyZWFzIHN1Y2ggYXMgQXN1bmNpw7NuLCBZYWt1dHNrLCBNYXB1dG8sIERha2FyIGFuZCBQb3J0IFZpbGEuCgpUbyBkbyBzbywgd2UgKipkb3duc2NhbGUgYW5kIGJpYXMtY29ycmVjdCBjbGltYXRlIGNoYW5nZSBwcm9qZWN0aW9ucyoqIGZvciB0aGVzZSBhcmVhcy4gVGhpcyBpcyB0byBvYnRhaW4gaGlnaC1yZXNvbHV0aW9uIG1hcHMgb2YgdGhlIGZ1dHVyZSBjbGltYXRlLCBlc3BlY2lhbGx5IGFkYXB0ZWQgdG8gdGhlIGFyZWEuIFRoZSBzdGF0aXN0aWNzIGFuZCBpbmRleGVzIHdlIGRlcml2ZSBhcmUgZXh0cmVtZWx5IHVzZWZ1bCBpbmRpY2F0b3JzIHRoYXQgd2lsbCBhbGxvdyBhIGJldHRlciB1bmRlcnN0YW5kaW5nIG9mIHRoZSBjbGltYXRlIGV2b2x1dGlvbiBmb3IgdGhlIHRhcmdldGVkIGNpdGllcy4gCgojIyBFeGFtcGxlIGluZGljYXRvcnMKCk51bWJlciBvZiB0cm9waWNhbCBvciBmcm9zdCBuaWdodHMsIGhlYXQgd2F2ZXMgb3IgY29sZCB3YXZlcyBhbmQgdGhlaXIgZHVyYXRpb24sIHdldCBhbmQgZHJ5IGNvbnNlY3V0aXZlIGRheXMsIGV0Yy4KCgpgYGBCdXR0b24KbGFiZWw6IHRyeSBkZW1vCnVybDogaHR0cHM6Ly9jaXR5LWNsaW1hdGUtdHJlbmRzLmxvYmVsaWEuZWFydGgve2xhbmd9CmxhbmdzOgotIGVuCi0gZXMKLSBjYQotIGZyCi0gemgKLSBydQpgYGAKCmBgYEJ1dHRvbgpsYWJlbDogZXhwbG9yZSBwYXN0IGNsaW1hdGUgKEVSQTUpCnVybDogaHR0cHM6Ly9lcmE1LmxvYmVsaWEuZWFydGgve2xhbmd9CmxhbmdzOgotIGVuCi0gZXMKLSBjYQotIGZyCmBgYAoKYGBgQnV0dG9uCmxhYmVsOiBVTiBIYWJpdGF0J3MgVXJiYW4gUmVzaWxpZW5jZSBIdWIKdXJsOiBodHRwOi8vdXJiYW5yZXNpbGllbmNlaHViLm9yZy8KbmV3VGFiOiB0cnVlCmBgYA=="
+    "translation": "el número de llaves abiertas y cerradas no coincide",
+    "keyId": "dmFsaWRhdGlvbl90aGUgbnVtYmVyIG9mIGxlZnQgYW5kIHJpZ2h0IGJyYWNrZXRzIGRvZXMgbm90IG1hdGNo"
   },
-  "1c19aa91-8a06-4452-b985-fee1c0a262ba": {
-    "id": "1c19aa91-8a06-4452-b985-fee1c0a262ba",
-    "isDeleted": false,
+  "4bb37f3b-f610-4868-a6fd-75e31fc97c8b": {
+    "id": "4bb37f3b-f610-4868-a6fd-75e31fc97c8b",
     "lang": "es",
-    "translation": "Los efectos del cambio climático en la agricultura y la producción alimentaria afectarán con mayor intensidad a los pequeños propietarios de tierras, que son, precisamente, quienes actualmente sufren mayores riesgos. La respuesta a los cambios de temperatura y precipitación en diferentes localizaciones afecta de manera desigual a las diferentes variedades de productos agrarios.\n\nNos interesa prever la redistribución geográfica agraria en las próximas décadas a causa del cambio climático. Un componente importante de este estudio evaluativo son los cálculos de los **índices de idoneidad de los productos agrarios** (*crop suitability index*).\n\nLobelia ha desarrollado una herramienta de cálculo de idoneidad de productos agrarios para Oxfam. El simulador de crecimiento genera mapas del número de ciclos viables para diferentes variedades agrarias en el Sahel, el África subsahariana y el Corredor Seco para unos periodos y escenarios de emisiones seleccionados.\n\n## Sahel\n\nMaíz / sorgo / mijo perla\n\n## África subsahariana\n\nMaíz / sorgo / mijo perla / arroz / mandioca / frijoles / cacahuete / batata\n\n## Corredor Seco\n\nMaíz / sorgo / frijoles / arroz\n\n\n```Button\nlabel: probar demo\nurl: https://crop-suitability-demo.lobelia.earth/{lang}\nlangs:\n- en\n- es\n- ca\n- fr\n```",
-    "keyId": "cHJvamVjdC1jb250ZW50c19DbGltYXRlIGNoYW5nZSBpcyBleHBlY3RlZCB0byBkaXNwcm9wb3J0aW9uYXRlbHkgYWZmZWN0IHNtYWxsaG9sZGVyIGZhcm1lcnMsIHdobyBhbHJlYWR5IGZhY2UgbnVtZXJvdXMgcmlza3MgdG8gdGhlaXIgYWdyaWN1bHR1cmFsIHByb2R1Y3Rpb24uIENyb3AgdmFyaWV0aWVzIHdpbGwgcmVzcG9uZCBkaWZmZXJlbnRseSB0byBjaGFuZ2VzIGluIHRlbXBlcmF0dXJlIGFuZCBwcmVjaXBpdGF0aW9uIGF0IHRoZSBsb2NhdGlvbnMgd2hlcmUgdGhleSBhcmUgY3VycmVudGx5IGdyb3duLiBBICoqY3JvcCBzdWl0YWJpbGl0eSBpbmRleCoqIGlzIGFuIGltcG9ydGFudCBjb21wb25lbnQgb2YgYXNzZXNzbWVudCBzdHVkaWVzLCBpbmNsdWRpbmcgY2hhbmdlcyB0byBnZW9ncmFwaGljYWwgY3JvcCBkaXN0cmlidXRpb24gdW5kZXIgY2xpbWF0ZSBjaGFuZ2UgaW4gdGhlIGNvbWluZyBkZWNhZGVzLgoKTG9iZWxpYSBoYXMgZGV2ZWxvcGVkIGEgY3JvcCBzdWl0YWJpbGl0eSB0b29sIGZvciBPeGZhbS4gVGhlIGdyb3d0aCBzaW11bGF0b3IgcHJvZHVjZXMgbWFwcyBzaG93aW5nIHRoZSBudW1iZXIgb2YgZmVhc2libGUgY3ljbGVzIGZvciBzdGFwbGUgY3JvcHMgaW4gdGhlIFNhaGVsLCBTdWItU2FoYXJhbiBBZnJpY2EgYW5kIERyeSBDb3JyaWRvciBmb3IgdGhlIHNlbGVjdGVkIGNsaW1hdGUgcGVyaW9kcyBhbmQgZW1pc3Npb24gc2NlbmFyaW9zLgoKIyMgU2FoZWwKCk1haXplIC8gc29yZ2h1bSAvIHBlYXJsIG1pbGxldAoKIyMgU3ViLVNhaGFyYW4gQWZyaWNhCgpNYWl6ZSAvIHNvcmdodW0gLyBwZWFybCBtaWxsZXQgLyByaWNlIC8gY2Fzc2F2YSAvIGJlYW5zIC8gZ3JvdW5kbnV0cyAvIHlhbQoKIyMgRHJ5IENvcnJpZG9yCgpNYWl6ZSAvIHNvcmdodW0gLyBiZWFucyAvIHJpY2UKCgpgYGBCdXR0b24KbGFiZWw6IHRyeSBkZW1vCnVybDogaHR0cHM6Ly9jcm9wLXN1aXRhYmlsaXR5LWRlbW8ubG9iZWxpYS5lYXJ0aC97bGFuZ30KbGFuZ3M6Ci0gZW4KLSBlcwotIGNhCi0gZnIKYGBg"
+    "translation": "Error de sintaxis MessageFormat",
+    "keyId": "dmFsaWRhdGlvbl9NZXNzYWdlRm9ybWF0IHN5bnRheCBlcnJvcg=="
   },
-  "85f3b722-d7f6-4864-b6e4-04e791396171": {
-    "id": "85f3b722-d7f6-4864-b6e4-04e791396171",
-    "isDeleted": true,
+  "e1eeaa63-e42f-4195-b1af-c9ab278682bd": {
+    "id": "e1eeaa63-e42f-4195-b1af-c9ab278682bd",
     "lang": "es",
-    "translation": "## Emisiones\n\nInventarios mensuales de emisiones regionales a través de satélites con una resolución de 1 km.\n\n## Pronóstico\n\nPronósticos horarios de calidad del aire para los 3 días siguientes.\n\n## Herramientas de toma de decisiones\n\nSimulación de escenarios de calidad del aire para evaluar el impacto de las acciones, la mejor manera de planificar.\n\n## Dónde\n\nChina / India / Europa\n\n## Contexto\n\nLobelia lidera un consorcio de calidad del aire con orientación comercial, nacido de un proyecto europeo H2020, con algunos de los actores europeos más reconocidos en la investigación sobre contaminación del aire.\n\nLa contaminación del aire es un problema grave que cuesta miles de millones de euros cada año en pérdidas de productividad y gastos de salud. Además, la contaminación del aire también tiene un impacto económico negativo en otras actividades como el transporte (ejemplo: falta de visibilidad en el transporte aéreo), el mantenimiento de las ciudades (ejemplo: limpieza de infraestructuras) o la agricultura (ejemplo: deposiciones de contaminantes), causando 3 millones de muertes al año en todo el mundo.\n\nEl proyecto AirQast está construyendo una plataforma autosostenible que proporciona servicios de calidad del aire basados ​​en datos de Observación de la Tierra.\n\n\n```Button\nlabel: saber más\nurl: http://airqast.com\nnewTab: true\n```",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1jb250ZW50c18jIyBFbWlzc2lvbnMKCk1vbnRobHkgcmVnaW9uYWwgZW1pc3Npb24gaW52ZW50b3JpZXMgZnJvbSBzYXRlbGxpdGVzIGF0IDEta20gcmVzb2x1dGlvbi4KCiMjIEZvcmVjYXN0CgpIb3VybHkgYWlyIHF1YWxpdHkgZm9yZWNhc3RzIGZvciAzIGRheXMgaW4gYWR2YW5jZS4KCiMjIERlY2lzaW9uLW1ha2luZyB0b29scwoKU2ltdWxhdGluZyBhaXIgcXVhbGl0eSBzY2VuYXJpb3MgdG8gZXZhbHVhdGUgdGhlIGltcGFjdCBvZiB0aGUgYWN0aW9ucywgdGhlIGJlc3Qgd2F5IHRvIHBsYW4tbWFrZS4KCiMjIFdoZXJlCgpDaGluYSAvIEluZGlhIC8gRXVyb3BlCgojIyBDb250ZXh0CgpMb2JlbGlhIGxlYWRzIGEgY29tbWVyY2lhbGx5LW9yaWVudGVkIGFpciBxdWFsaXR5IGNvbnNvcnRpdW0sIGJvcm4gZnJvbSBhIEV1cm9wZWFuIEgyMDIwIHByb2plY3QsIHdpdGggc29tZSBvZiB0aGUgbW9zdCByZW5vd25lZCBFdXJvcGVhbiBhY3RvcnMgaW4gYWlyIHBvbGx1dGlvbiByZXNlYXJjaC4KCkFpciBwb2xsdXRpb24gaXMgYSBzZXJpb3VzIHByb2JsZW0gdGhhdCBjb3N0cyBiaWxsaW9ucyBvZiBldXJvcyBlYWNoIHllYXIgaW4gbG9zdCBwcm9kdWN0aXZpdHkgYW5kIGhlYWx0aCBleHBlbnNlcy4gSW4gYWRkaXRpb24sIGFpciBwb2xsdXRpb24gYWxzbyBoYXMgYSBuZWdhdGl2ZSBlY29ub21pYyBpbXBhY3Qgb24gb3RoZXIgYWN0aXZpdGllcyBzdWNoIGFzIHRyYW5zcG9ydCAoZS5nLiBsYWNrIG9mIHZpc2liaWxpdHkpLCBjaXR5IG1haW50ZW5hbmNlIChlLmcuIGluZnJhc3RydWN0dXJlIGNsZWFuaW5nKSBvciBhZ3JpY3VsdHVyZSAoZS5nLiBwb2xsdXRhbnQgZGVwb3NpdGlvbnMpIHRoYXQgY2F1c2UgMyBtaWxsaW9uIGRlYXRocyB3b3JsZHdpZGUgZWFjaCB5ZWFyLgoKVGhlIEFpclFhc3QgcHJvamVjdCBpcyBidWlsZGluZyBhIHNlbGYtc3VzdGFpbmFibGUgcGxhdGZvcm0gcHJvdmlkaW5nIGFpciBxdWFsaXR5IHNlcnZpY2VzIGJhc2VkIG9uIEVhcnRoIE9ic2VydmF0aW9uIGRhdGEuIAoKCmBgYEJ1dHRvbgpsYWJlbDogbGVhcm4gbW9yZQp1cmw6IGh0dHA6Ly9haXJxYXN0LmNvbQpuZXdUYWI6IHRydWUKYGBg"
+    "translation": "¡Entendido!",
+    "keyId": "aGludF9Hb3QgaXQh"
   },
-  "30407576-5d4c-42ae-893a-4cf62dfc148f": {
-    "id": "30407576-5d4c-42ae-893a-4cf62dfc148f",
-    "isDeleted": false,
+  "6e992cd3-2aea-4772-800b-a2317327f665": {
+    "id": "6e992cd3-2aea-4772-800b-a2317327f665",
     "lang": "es",
-    "translation": "Climatologe",
-    "fuzzy": true,
-    "keyId": "dGVhbU1lbWJlci1yb2xlX0NsaW1hdG9sb2dl"
+    "translation": "Detalles",
+    "keyId": "bXNnRGV0YWlsc1ZpZXdfRGV0YWlscw=="
   },
-  "0f93fa13-a744-48e8-bee0-ffca249d336e": {
-    "id": "0f93fa13-a744-48e8-bee0-ffca249d336e",
-    "isDeleted": false,
+  "08d77fa4-e22e-49cc-8f83-6dd8180b9f21": {
+    "id": "08d77fa4-e22e-49cc-8f83-6dd8180b9f21",
     "lang": "es",
-    "translation": "Tecnologías espaciales",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1yb2xlX1NwYWNlIHRlY2hub2xvZ2llcw=="
+    "translation": "No se pudieron guardar los cambios",
+    "keyId": "ZXJyb3JfQ2hhbmdlcyBjb3VsZCBub3QgYmUgc2F2ZWQ="
   },
-  "b956f48b-b810-4835-abef-e295961b5a43": {
-    "id": "b956f48b-b810-4835-abef-e295961b5a43",
-    "isDeleted": false,
+  "27cf1276-1d9a-442a-b4b6-80b6cb2d4b79": {
+    "id": "27cf1276-1d9a-442a-b4b6-80b6cb2d4b79",
     "lang": "es",
-    "translation": "Hidrología y recursos hídricos",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1yb2xlX0h5ZHJvbG9neSBhbmQgd2F0ZXIgcmVzb3VyY2Vz"
+    "translation": "No se pudo guardar la configuración",
+    "keyId": "ZXJyb3JfQ29uZmlndXJhdGlvbiBjb3VsZCBub3QgYmUgc2F2ZWQ="
   },
-  "ebce3bc5-4480-44b2-979f-455c6b458db0": {
-    "id": "ebce3bc5-4480-44b2-979f-455c6b458db0",
-    "isDeleted": false,
+  "5d0aebbf-e435-4051-be8f-f4cf0d8a641a": {
+    "id": "5d0aebbf-e435-4051-be8f-f4cf0d8a641a",
     "lang": "es",
-    "translation": "```Contents\nsidebar: true\n```\n\n```TeamMembers\ntitle: Nuestro equipo\nadvisoryGroup: false\n```\n\n```TeamMembers\ntitle: Asesores\nadvisoryGroup: true\n```\n\n```Contact\nquestion: ¿Te gustaría trabajar con nosotros?\nbutton: ponte en contacto\n```",
-    "fuzzy": false,
-    "keyId": "cGFnZS1sYXlvdXRfYGBgQ29udGVudHMKc2lkZWJhcjogdHJ1ZQpgYGAKCmBgYFRlYW1NZW1iZXJzCnRpdGxlOiBPdXIgdGVhbQphZHZpc29yeUdyb3VwOiBmYWxzZQpgYGAKCmBgYFRlYW1NZW1iZXJzCnRpdGxlOiBBZHZpc29ycwphZHZpc29yeUdyb3VwOiB0cnVlCmBgYAoKYGBgQ29udGFjdApxdWVzdGlvbjogV291bGQgeW91IGxpa2UgdG8gd29yayB3aXRoIHVzPwpidXR0b246IGdldCBpbiB0b3VjaApgYGA="
+    "translation": "¿El servidor está funcionando?",
+    "keyId": "ZXJyb3JfSXMgdGhlIHNlcnZlciBydW5uaW5nPw=="
   },
-  "8d019b22-e091-4582-bd12-77cb97cd18ec": {
-    "id": "8d019b22-e091-4582-bd12-77cb97cd18ec",
-    "isDeleted": false,
+  "2c2c21f1-d8ac-41a6-b452-2a518826b435": {
+    "id": "2c2c21f1-d8ac-41a6-b452-2a518826b435",
     "lang": "es",
-    "translation": "```Home\ntagline: \"**Observar la Tierra** para anticipar los efectos del cambio climático.\"\nprovidersTitle: Trabajamos con los mejores proveedores de datos\nmarketsTitle: Con la confianza de organizaciones en todo el mundo, afectadas por un clima cambiante\n```\n\n```Contact\n```",
-    "fuzzy": false,
-    "keyId": "cGFnZS1sYXlvdXRfYGBgSG9tZQp0YWdsaW5lOiAiKipFYXJ0aCBPYnNlcnZhdGlvbioqIHRvIGFudGljaXBhdGUgdGhlIGVmZmVjdHMgb2YgY2xpbWF0ZSBjaGFuZ2UuIgpwcm92aWRlcnNUaXRsZTogV2Ugd29yayB3aXRoIGxlYWRpbmcgZGF0YSBwcm92aWRlcnMKbWFya2V0c1RpdGxlOiBUcnVzdGVkIGJ5IG9yZ2FuaXNhdGlvbnMgYWNyb3NzIHRoZSBnbG9iZSBhZmZlY3RlZCBieSBvdXIgY2hhbmdpbmcgY2xpbWF0ZQpgYGAKCmBgYENvbnRhY3QKYGBg"
+    "translation": "Funciones de traducción de mensajes a buscar:",
+    "keyId": "c2V0dGluZ3NGb3JtX01lc3NhZ2UgdHJhbnNsYXRpb24gZnVuY3Rpb25zIHRvIGxvb2sgZm9yOg=="
   },
-  "242d9522-4faf-45ca-96b2-0295902fb033": {
-    "id": "242d9522-4faf-45ca-96b2-0295902fb033",
-    "isDeleted": false,
+  "b8f6ebb7-39bf-4590-bf14-14cb3d68340f": {
+    "id": "b8f6ebb7-39bf-4590-bf14-14cb3d68340f",
     "lang": "es",
-    "translation": "Una de las frases más escuchadas en el campo de Observación de la Tierra es \"llevar los algoritmos a los datos\". Debido a que cada vez son más voluminosos los *datasets* proporcionados por los satélites Sentinel y los servicios de Copernicus, están surgiendo plataformas que hacen precisamente eso: ayudan a los usuarios a ejecutar sus cadenas de procesamiento lo más cerca posible de los datos que necesitan, sin haber de llevar a cabo grandes descargas antes de comenzar a trabajar.\n\n**Lobelia trabaja con Mercator Océan International** ayudando a los usuarios de Observación de la Tierra a sacar el máximo provecho de [WEkEO] (https://wekeo.eu), la plataforma de Servicios de Acceso de Datos e Información (DIAS) desarrollada por EUMETSAT, ECMWF y Mercator. sí mismo. Lobelia también está profundamente involucrada en el monitoreo de los diversos servicios, así como en la recopilación de comentarios para los próximos lanzamientos de la plataforma.\n\n```Button\nlabel: saber más\nurl: https://wekeo.eu\nnewTab: true\n```",
-    "fuzzy": true,
-    "keyId": "cHJvamVjdC1jb250ZW50c19PbmUgb2YgdGhlIG1vc3QgZnJlcXVlbnRseSBoZWFyZCBwaHJhc2VzIGluIEVhcnRoIE9ic2VydmF0aW9uIGlzIOKAnGJyaW5naW5nIHRoZSBhbGdvcml0aG1zIHRvIHRoZSBkYXRh4oCdLiBHaXZlbiB0aGUgaW5jcmVhc2luZ2x5IGxhcmdlIGRhdGFzZXRzIHByb3ZpZGVkIGJ5IFNlbnRpbmVsIHNhdGVsbGl0ZXMgYW5kIENvcGVybmljdXMgc2VydmljZXMsIHBsYXRmb3JtcyBhcmUgZW1lcmdpbmcgdGhhdCBkbyBqdXN0IHRoYXQ6IGhlbHBpbmcgdXNlcnMgcnVuIHRoZWlyIHByb2Nlc3NpbmcgY2hhaW5zIGFzIGNsb3NlIGFzIHBvc3NpYmxlIHRvIHRoZSBkYXRhIHRoZXkgbmVlZCDigJQgbm8gbmVlZCB0byB3YWl0IGZvciBodWdlIGRvd25sb2FkcyBiZWZvcmUgZXZlbiBzdGFydGluZy4KCioqTG9iZWxpYSB3b3JrcyB3aXRoIE1lcmNhdG9yIE9jw6lhbiBJbnRlcm5hdGlvbmFsKiogYWlkaW5nIEVhcnRoIE9ic2VydmF0aW9uIHVzZXJzIHRvIGdldCB0aGUgbW9zdCBvdXQgb2YgW1dFa0VPXShodHRwczovL3dla2VvLmV1KSwgdGhlIERhdGEgYW5kIEluZm9ybWF0aW9uIEFjY2VzcyBTZXJ2aWNlcyAoRElBUykgcGxhdGZvcm0gZGV2ZWxvcGVkIGJ5IEVVTUVUU0FULCBFQ01XRiBhbmQgTWVyY2F0b3IgaXRzZWxmLiBMb2JlbGlhIGlzIGFsc28gZGVlcGx5IGludm9sdmVkIGluIG1vbml0b3JpbmcgdGhlIHZhcmlvdXMgc2VydmljZXMsIGFzIHdlbGwgYXMgZ2F0aGVyaW5nIGZlZWRiYWNrIGZvciB0aGUgbmV4dCByZWxlYXNlcyBvZiB0aGUgcGxhdGZvcm0uCgpgYGBCdXR0b24KbGFiZWw6IGxlYXJuIG1vcmUKdXJsOiBodHRwczovL3dla2VvLmV1Cm5ld1RhYjogdHJ1ZQpgYGA="
+    "translation": "Mensaje con emoji: 🎉",
+    "keyId": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppOiDwn46J"
   },
-  "770c09c6-9826-4c35-8ef0-67d66d720ceb": {
-    "id": "770c09c6-9826-4c35-8ef0-67d66d720ceb",
-    "isDeleted": false,
+  "414fb0de-2670-4b9d-8d3d-e6a5ad2aefc4": {
+    "id": "414fb0de-2670-4b9d-8d3d-e6a5ad2aefc4",
     "lang": "es",
-    "translation": "Clima",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1yb2xlX0NsaW1hdGU="
+    "translation": "Una herramienta para la internacionalización",
+    "keyId": "c29tZUNvbnRleHRfQSB0b29sIGZvciBpbnRlcm5hdGlvbmFsaXphdGlvbg=="
   },
-  "2b94cd5b-6f7d-4a1b-a2d4-0f12bbd0595a": {
-    "id": "2b94cd5b-6f7d-4a1b-a2d4-0f12bbd0595a",
-    "isDeleted": false,
+  "d7da0e98-7658-4c40-a264-6ceac6502490": {
+    "id": "d7da0e98-7658-4c40-a264-6ceac6502490",
     "lang": "es",
-    "translation": "Una de las frases más escuchadas en el campo de Observación de la Tierra es \"llevar los algoritmos a los datos\". Debido a que cada vez son más voluminosos los *datasets* proporcionados por los satélites Sentinel y los servicios de Copernicus, están surgiendo plataformas que hacen precisamente eso: ayudan a los usuarios a ejecutar sus cadenas de procesamiento lo más cerca posible de los datos que necesitan, sin haber de llevar a cabo grandes descargas antes de comenzar a trabajar.\n\n**Lobelia by isardSAT trabaja con Mercator Océan International** ayudando a los usuarios de Observación de la Tierra a sacar el máximo provecho de [WEkEO](https://wekeo.eu), la plataforma de Servicios de Acceso a Datos e Información (DIAS, en inglés) desarrollada por EUMETSAT, ECMWF y el propio Mercator. Lobelia también está profundamente involucrada en el monitoreo de los diversos servicios, así como en la recopilación de comentarios para los próximos lanzamientos de la plataforma.\n\n```Button\nlabel: saber más\nurl: https://wekeo.eu\nnewTab: true\n```",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1jb250ZW50c19PbmUgb2YgdGhlIG1vc3QgZnJlcXVlbnRseSBoZWFyZCBwaHJhc2VzIGluIEVhcnRoIE9ic2VydmF0aW9uIGlzIOKAnGJyaW5naW5nIHRoZSBhbGdvcml0aG1zIHRvIHRoZSBkYXRh4oCdLiBHaXZlbiB0aGUgaW5jcmVhc2luZ2x5IGxhcmdlIGRhdGFzZXRzIHByb3ZpZGVkIGJ5IFNlbnRpbmVsIHNhdGVsbGl0ZXMgYW5kIENvcGVybmljdXMgc2VydmljZXMsIHBsYXRmb3JtcyBhcmUgZW1lcmdpbmcgdGhhdCBkbyBqdXN0IHRoYXQ6IGhlbHBpbmcgdXNlcnMgcnVuIHRoZWlyIHByb2Nlc3NpbmcgY2hhaW5zIGFzIGNsb3NlIGFzIHBvc3NpYmxlIHRvIHRoZSBkYXRhIHRoZXkgbmVlZCDigJQgbm8gbmVlZCB0byB3YWl0IGZvciBodWdlIGRvd25sb2FkcyBiZWZvcmUgZXZlbiBzdGFydGluZy4KCioqTG9iZWxpYSBieSBpc2FyZFNBVCB3b3JrcyB3aXRoIE1lcmNhdG9yIE9jw6lhbiBJbnRlcm5hdGlvbmFsKiogYWlkaW5nIEVhcnRoIE9ic2VydmF0aW9uIHVzZXJzIHRvIGdldCB0aGUgbW9zdCBvdXQgb2YgW1dFa0VPXShodHRwczovL3dla2VvLmV1KSwgdGhlIERhdGEgYW5kIEluZm9ybWF0aW9uIEFjY2VzcyBTZXJ2aWNlcyAoRElBUykgcGxhdGZvcm0gZGV2ZWxvcGVkIGJ5IEVVTUVUU0FULCBFQ01XRiBhbmQgTWVyY2F0b3IgaXRzZWxmLiBMb2JlbGlhIGlzIGFsc28gZGVlcGx5IGludm9sdmVkIGluIG1vbml0b3JpbmcgdGhlIHZhcmlvdXMgc2VydmljZXMsIGFzIHdlbGwgYXMgZ2F0aGVyaW5nIGZlZWRiYWNrIGZvciB0aGUgbmV4dCByZWxlYXNlcyBvZiB0aGUgcGxhdGZvcm0uCgpgYGBCdXR0b24KbGFiZWw6IGxlYXJuIG1vcmUKdXJsOiBodHRwczovL3dla2VvLmV1Cm5ld1RhYjogdHJ1ZQpgYGA="
+    "translation": "<i>Hola</i> <b>{name}</b>!",
+    "keyId": "c29tZUNvbnRleHRfPGk+SGk8L2k+IDxiPntuYW1lfTwvYj4h"
   },
-  "876f63aa-712c-40a7-9deb-f1190cf7a8f1": {
-    "id": "876f63aa-712c-40a7-9deb-f1190cf7a8f1",
-    "isDeleted": true,
+  "061f6daa-8531-4da8-b364-73166cb35f32": {
+    "id": "061f6daa-8531-4da8-b364-73166cb35f32",
     "lang": "es",
-    "translation": "WEEE",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX1dFa0VP"
+    "translation": "<i>Hola</i> <b>{NAME}</b>!",
+    "keyId": "c29tZUNvbnRleHRfPGk+SGk8L2k+IDxiPntOQU1FfTwvYj4h"
   },
-  "924f511f-3ccc-44ae-a494-dda07f48c74e": {
-    "id": "924f511f-3ccc-44ae-a494-dda07f48c74e",
-    "isDeleted": true,
+  "7126ae5b-dedd-4c47-920e-39720b19dd6d": {
+    "id": "7126ae5b-dedd-4c47-920e-39720b19dd6d",
     "lang": "es",
-    "translation": "TBW",
-    "fuzzy": true,
-    "keyId": "cGFnZS1jb250ZW50c19UQlc="
+    "translation": "Hola {NAME}, tienes {UNREAD_COUNT, number} {UNREAD_COUNT, plural, one {mensaje} other {mensajes}}",
+    "keyId": "c29tZUNvbnRleHRfSGVsbG8ge05BTUV9LCB5b3UgaGF2ZSB7VU5SRUFEX0NPVU5ULCBudW1iZXJ9IHtVTlJFQURfQ09VTlQsIHBsdXJhbCwgb25lIHttZXNzYWdlfSBvdGhlciB7bWVzc2FnZXN9fQ=="
   },
-  "b8458a2d-1c50-4fcc-8344-92f58e604689": {
-    "id": "b8458a2d-1c50-4fcc-8344-92f58e604689",
-    "isDeleted": false,
+  "b6689dcb-fcff-4fcd-b126-245770ec997a": {
+    "id": "b6689dcb-fcff-4fcd-b126-245770ec997a",
     "lang": "es",
-    "translation": "![Análisis del clima en las ciudades](unhabitat-city-climate-sidebar-1.jpg)\n\n*Temperatura máxima del aire en Yakutsk, Rusia (promedio de julio) | 2041-2070 | RCP 4.5*\n\n\n![Análisis del clima en las ciudades](unhabitat-city-climate-sidebar-2.jpg)\n\n*Temperatura máxima del aire en Yakutsk, Rusia (promedio de febrero) | 2041-2070 | RCP 4.5*",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtDbGltYXRlIGFuYWx5c2lzIGluIGNpdGllc10odW5oYWJpdGF0LWNpdHktY2xpbWF0ZS1zaWRlYmFyLTEuanBnKQoKKk1heGltdW0gYWlyIHRlbXBlcmF0dXJlIGluIFlha3V0c2ssIFJ1c3NpYSAoSnVseSBhdmVyYWdlKSB8IDIwNDEtMjA3MCB8IFJDUCA0LjUqCgoKIVtDbGltYXRlIGFuYWx5c2lzIGluIGNpdGllc10odW5oYWJpdGF0LWNpdHktY2xpbWF0ZS1zaWRlYmFyLTIuanBnKQoKKk1heGltdW0gYWlyIHRlbXBlcmF0dXJlIGluIFlha3V0c2ssIFJ1c3NpYSAoRmVicnVhcnkgYXZlcmFnZSkgfCAyMDQxLTIwNzAgfCBSQ1AgNC41Kg=="
+    "translation": "Hola, {NAME}!",
+    "keyId": "c29tZUNvbnRleHRfSGVsbG8sIHtOQU1FfSE="
   },
-  "1ddaba7a-96b4-41ca-9c4a-2c4f1b63bbe0": {
-    "id": "1ddaba7a-96b4-41ca-9c4a-2c4f1b63bbe0",
-    "isDeleted": false,
+  "088d56d8-3ad9-4618-8b61-2eb070389382": {
+    "id": "088d56d8-3ad9-4618-8b61-2eb070389382",
     "lang": "es",
-    "translation": "![Análisis de la idoneidad del cultivo para Oxfam](oxfam-crop-suitability-sidebar-1.jpg)\n\n![Análisis de la idoneidad del cultivo para Oxfam](oxfam-crop-suitability-sidebar-2.jpg)",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtDcm9wIHN1aXRhYmlsaXR5IGFuYWx5c2lzIGZvciBPeGZhbV0ob3hmYW0tY3JvcC1zdWl0YWJpbGl0eS1zaWRlYmFyLTEuanBnKQoKIVtDcm9wIHN1aXRhYmlsaXR5IGFuYWx5c2lzIGZvciBPeGZhbV0ob3hmYW0tY3JvcC1zdWl0YWJpbGl0eS1zaWRlYmFyLTIuanBnKQ=="
+    "translation": "AVANZADO: Expresiones regulares adicionales para la extracción de mensajes:",
+    "keyId": "c2V0dGluZ3NGb3JtX0FEVkFOQ0VEOiBBZGRpdGlvbmFsIHJlZ3VsYXIgZXhwcmVzc2lvbnMgZm9yIG1lc3NhZ2UgcGFyc2luZzo="
   },
-  "9192433d-fe41-4d8b-936c-f5312ae21b10": {
-    "id": "9192433d-fe41-4d8b-936c-f5312ae21b10",
-    "isDeleted": false,
+  "7eeb87fe-65a2-47e1-be01-3483e2a13bd4": {
+    "id": "7eeb87fe-65a2-47e1-be01-3483e2a13bd4",
     "lang": "es",
-    "translation": "Datos satelitales e inteligencia computacional para hacer frente a los desafíos climáticos",
-    "fuzzy": false,
-    "keyId": "cGFnZS10aXRsZV9TYXRlbGxpdGUgZGF0YSBhbmQgY29tcHV0YXRpb25hbCBpbnRlbGxpZ2VuY2UgdG8gYWRkcmVzcyBjbGltYXRlIGNoYWxsZW5nZXM="
+    "translation": "Asegúrate de que la expresión regular tiene exactamente un grupo de captura: (.*?)",
+    "keyId": "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cDogKC4qPyk="
   },
-  "a9a7adf9-819c-4a06-a326-75879ead23c5": {
-    "id": "a9a7adf9-819c-4a06-a326-75879ead23c5",
-    "isDeleted": false,
+  "49547fe2-3e2e-4c2b-8036-45075268db67": {
+    "id": "49547fe2-3e2e-4c2b-8036-45075268db67",
     "lang": "es",
-    "translation": "Fomentando ciudades verdes con el conocimiento satelital de la calidad del aire",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC10aXRsZV9IZWxwaW5nIGNpdGllcyB0byAqdHVybiBncmVlbiogd2l0aCBhaXIgcXVhbGl0eSBrbm93bGVkZ2UgZnJvbSBzYXRlbGxpdGVz"
+    "translation": "Fichero JSON genérico",
+    "keyId": "c2V0dGluZ3NGb3JtX0dlbmVyaWMgSlNPTiBmaWxl"
   },
-  "661cafb4-4004-4859-9177-3788af9afb3b": {
-    "id": "661cafb4-4004-4859-9177-3788af9afb3b",
-    "isDeleted": true,
+  "06e5edf0-a56f-4b0e-a43a-46b9b0b95634": {
+    "id": "06e5edf0-a56f-4b0e-a43a-46b9b0b95634",
     "lang": "es",
-    "translation": "`` `Contenidos\nAncho máximo: 500\n`` `",
-    "fuzzy": true,
-    "keyId": "cGFnZS1sYXlvdXRfYGBgQ29udGVudHMKbWF4V2lkdGg6IDUwMApgYGA="
+    "translation": "Módulo JavaScript",
+    "keyId": "c2V0dGluZ3NGb3JtX0phdmFTY3JpcHQgbW9kdWxl"
   },
-  "780d4bbc-6d8f-478d-91bb-5b119fec6df2": {
-    "id": "780d4bbc-6d8f-478d-91bb-5b119fec6df2",
-    "isDeleted": true,
+  "f869eee1-a493-4b4a-a4aa-65ce8fef4179": {
+    "id": "f869eee1-a493-4b4a-a4aa-65ce8fef4179",
     "lang": "es",
-    "translation": "```ContactForm\nsendTo: info@isardsat.cat\n```\n\n## … o contacta con nosotros:\n\n**T:** +34 93 350 55 08 <br />\n**E:** <a href=\"mailto:info@lobelia.earth\">info@lobelia.earth</a>",
-    "fuzzy": false,
-    "keyId": "cGFnZS1jb250ZW50c19gYGBDb250YWN0Rm9ybQpzZW5kVG86IGluZm9AaXNhcmRzYXQuY2F0CmBgYAoKIyMg4oCmb3IgY29udGFjdCB1czoKCioqVDoqKiArMzQgOTMgMzUwIDU1IDA4IDxiciAvPgoqKkU6KiogPGEgaHJlZj0ibWFpbHRvOmluZm9AbG9iZWxpYS5lYXJ0aCI+aW5mb0Bsb2JlbGlhLmVhcnRoPC9hPgo="
+    "translation": "Módulo JavaScript (necesario si usas la función de traducción de Mady)",
+    "keyId": "c2V0dGluZ3NGb3JtX0phdmFTY3JpcHQgbW9kdWxlIChyZXF1aXJlZCBpZiB5b3UgdXNlIE1hZHkncyB0cmFuc2xhdGlvbiBmdW5jdGlvbik="
   },
-  "5840b371-2aee-4cdf-ab88-79f87b249677": {
-    "id": "5840b371-2aee-4cdf-ab88-79f87b249677",
-    "isDeleted": false,
+  "51a28bda-9afb-4a86-99c4-058fbfde3b21": {
+    "id": "51a28bda-9afb-4a86-99c4-058fbfde3b21",
     "lang": "es",
-    "translation": "```ContactForm\nsendTo: info@isardsat.cat\n```\n\n## … o contacta con nosotros:\n\n**T:** +34 93 350 55 08 <br />\n**E:** [info@lobelia.earth](mailto:info@lobelia.earth)",
-    "fuzzy": false,
-    "keyId": "cGFnZS1jb250ZW50c19gYGBDb250YWN0Rm9ybQpzZW5kVG86IGluZm9AaXNhcmRzYXQuY2F0CmBgYAoKIyMg4oCmb3IgY29udGFjdCB1czoKCioqVDoqKiArMzQgOTMgMzUwIDU1IDA4IDxiciAvPgoqKkU6KiogW2luZm9AbG9iZWxpYS5lYXJ0aF0obWFpbHRvOmluZm9AbG9iZWxpYS5lYXJ0aCkK"
+    "translation": "Asegúrate de que la expresión regular tiene exactamente un grupo de captura, por ejemplo: (.*?)",
+    "keyId": "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cCwgcG9yIGVqZW1wbG86ICguKj8p"
   },
-  "8b264c05-ae52-46de-9d02-4144c553603d": {
-    "id": "8b264c05-ae52-46de-9d02-4144c553603d",
-    "isDeleted": true,
+  "6a41d539-2a6d-4f25-ae89-232e5062a659": {
+    "id": "6a41d539-2a6d-4f25-ae89-232e5062a659",
     "lang": "es",
-    "translation": "Copérnico",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX0NvcGVybmljdXM="
+    "translation": "Minificado",
+    "keyId": "c2V0dGluZ3NGb3JtX01pbmlmaWVk"
   },
-  "a6dac6a9-f5a4-4f17-9608-c1cb6f9bc19f": {
-    "id": "a6dac6a9-f5a4-4f17-9608-c1cb6f9bc19f",
-    "isDeleted": true,
+  "77280967-13b3-43c1-8011-b0cb0aa0cbc2": {
+    "id": "77280967-13b3-43c1-8011-b0cb0aa0cbc2",
     "lang": "es",
-    "translation": "Agencia Española de Meteorología",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX0FnZW5jaWEgRXNwYcOxb2xhIGRlIE1ldGVvcm9sb2fDrWE="
+    "translation": "Fichero JSON para React Intl",
+    "keyId": "c2V0dGluZ3NGb3JtX1JlYWN0IEludGwgSlNPTiBmaWxl"
   },
-  "f0b2f4bd-6bc9-4032-8066-7db46a3744ca": {
-    "id": "f0b2f4bd-6bc9-4032-8066-7db46a3744ca",
-    "isDeleted": false,
+  "a3d276a1-7f63-44d0-8dc4-900e798579c7": {
+    "id": "a3d276a1-7f63-44d0-8dc4-900e798579c7",
     "lang": "es",
-    "translation": "Hace cosas.",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1iaW9fTWFrZXIu"
+    "translation": "Ficheros de salida:",
+    "keyId": "c2V0dGluZ3NGb3JtX091dHB1dDo="
   },
-  "fff47bea-9a23-4cda-bfc5-08d7c4c2d096": {
-    "id": "fff47bea-9a23-4cda-bfc5-08d7c4c2d096",
-    "isDeleted": true,
+  "0ef2aada-1e72-43c6-862e-a68d838d08f7": {
+    "id": "0ef2aada-1e72-43c6-862e-a68d838d08f7",
     "lang": "es",
-    "translation": "Servicio Meteorológico de Cataluña",
-    "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX1NlcnZlaSBNZXRlb3JvbMOyZ2ljIGRlIENhdGFsdW55YQ=="
+    "translation": "Asegúrate de que la expresión regular tiene exactamente un grupo de captura, por ejemplo: (.*?)",
+    "keyId": "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cCwgZm9yIGV4YW1wbGU6ICguKj8p"
   },
-  "f2e493ba-c67e-4feb-9748-8046c056c6c3": {
-    "id": "f2e493ba-c67e-4feb-9748-8046c056c6c3",
-    "isDeleted": false,
+  "af21fcfc-1eea-450b-81fe-24d452740861": {
+    "id": "af21fcfc-1eea-450b-81fe-24d452740861",
     "lang": "es",
-    "translation": "Director de Desarrollo de Negocio",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1yb2xlX0J1c2luZXNzIERldmVsb3BtZW50IERpcmVjdG9y"
+    "translation": "Traducción dudosa (haz clic para cambiar)",
+    "keyId": "dG9vbHRpcF9EdWJpb3VzIHRyYW5zbGF0aW9uIChjbGljayB0byB0b2dnbGUp",
+    "fuzzy": true
   },
-  "c53e2642-1ccb-42ad-a49c-a318ab10a8bf": {
-    "id": "c53e2642-1ccb-42ad-a49c-a318ab10a8bf",
+  "5441057a-3969-4936-a011-18e8beaf5eb1": {
+    "id": "5441057a-3969-4936-a011-18e8beaf5eb1",
     "isDeleted": false,
     "lang": "es",
-    "translation": "![Ilustración WEkEO](building-wekeo-sidebar-1.png)",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtXRWtFTyBpbGx1c3RyYXRpb25dKGJ1aWxkaW5nLXdla2VvLXNpZGViYXItMS5wbmcp"
+    "translation": "Todos (sin filtro)",
+    "keyId": "ZmlsdGVyX0FsbCAobm8gZmlsdGVyKQ=="
   },
-  "fb385a5c-975d-4eb2-a1ed-e83fb8733bf9": {
-    "id": "fb385a5c-975d-4eb2-a1ed-e83fb8733bf9",
+  "7ac917de-f571-4e09-867b-ab2894c759cf": {
+    "id": "7ac917de-f571-4e09-867b-ab2894c759cf",
     "isDeleted": false,
     "lang": "es",
-    "translation": "![Brotes de plagas](plague-outbreaks-sidebar-1.png)\n\n*Estimación de la humedad del suelo con 1 km de resolución (julio de 2017)*\n\n\n![Brotes de plagas](plague-outbreaks-sidebar-2.png)\n\n*Estimación de la humedad del suelo con 1 km de resolución (noviembre de 2017)*",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtQbGFndWUgb3V0YnJlYWtzXShwbGFndWUtb3V0YnJlYWtzLXNpZGViYXItMS5wbmcpCgoqRGVjYWRhbCAxLWttIHNvaWwgbW9pc3R1cmUgZXN0aW1hdGVzIChKdWx5IDIwMTcpKgoKCiFbUGxhZ3VlIG91dGJyZWFrc10ocGxhZ3VlLW91dGJyZWFrcy1zaWRlYmFyLTIucG5nKQoKKkRlY2FkYWwgMS1rbSBzb2lsIG1vaXN0dXJlIGVzdGltYXRlcyAoTm92ZW1iZXIgMjAxNykqCg=="
+    "translation": "Todos (quitar filtro)",
+    "keyId": "ZmlsdGVyX0FsbCAocmVtb3ZlIGZpbHRlcik="
   },
-  "cfe08e99-5c4e-4328-9ada-fcb82833c0f8": {
-    "id": "cfe08e99-5c4e-4328-9ada-fcb82833c0f8",
+  "1887998a-4439-4698-9340-4ea5e12f2945": {
+    "id": "1887998a-4439-4698-9340-4ea5e12f2945",
     "isDeleted": false,
     "lang": "es",
-    "translation": "Una de las frases más escuchadas en el campo de Observación de la Tierra es \"llevar los algoritmos a los datos\". Debido a que cada vez son más voluminosos los *datasets* proporcionados por los satélites Sentinel y los servicios de Copernicus, están surgiendo plataformas que hacen precisamente eso: ayudan a los usuarios a ejecutar sus cadenas de procesamiento lo más cerca posible de los datos que necesitan, sin haber de llevar a cabo grandes descargas antes de comenzar a trabajar.\n\n**Lobelia colabora con Mercator Océan International para ayudar a los usuarios de la Observación de la Tierra a extraer el máximo rendimiento de [WEkEO](https://wekeo.eu)**, la plataforma de Servicios de Acceso a Datos e Información (DIAS, en inglés) desarrollada por EUMETSAT, ECMWF y el propio Mercator. Lobelia también está profundamente involucrada en la monitorización de los diversos servicios, así como en la recopilación de *feedback* para los próximos lanzamientos de la plataforma.\n\n```Button\nlabel: saber más\nurl: https://wekeo.eu\nnewTab: true\n```",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1jb250ZW50c19PbmUgb2YgdGhlIG1vc3QgZnJlcXVlbnRseSBoZWFyZCBwaHJhc2VzIGluIEVhcnRoIE9ic2VydmF0aW9uIGlzIOKAnGJyaW5naW5nIHRoZSBhbGdvcml0aG1zIHRvIHRoZSBkYXRh4oCdLiBHaXZlbiB0aGUgaW5jcmVhc2luZ2x5IGxhcmdlIGRhdGFzZXRzIHByb3ZpZGVkIGJ5IFNlbnRpbmVsIHNhdGVsbGl0ZXMgYW5kIENvcGVybmljdXMgc2VydmljZXMsIHBsYXRmb3JtcyBhcmUgZW1lcmdpbmcgdGhhdCBkbyBqdXN0IHRoYXQ6IGhlbHBpbmcgdXNlcnMgcnVuIHRoZWlyIHByb2Nlc3NpbmcgY2hhaW5zIGFzIGNsb3NlIGFzIHBvc3NpYmxlIHRvIHRoZSBkYXRhIHRoZXkgbmVlZCDigJQgbm8gbmVlZCB0byB3YWl0IGZvciBodWdlIGRvd25sb2FkcyBiZWZvcmUgZXZlbiBzdGFydGluZy4KCioqTG9iZWxpYSBjb2xsYWJvcmF0ZXMgd2l0aCBNZXJjYXRvciBPY8OpYW4gSW50ZXJuYXRpb25hbCBhaWRpbmcgRWFydGggT2JzZXJ2YXRpb24gdXNlcnMgdG8gZ2V0IHRoZSBtb3N0IG91dCBvZiBbV0VrRU9dKGh0dHBzOi8vd2VrZW8uZXUpKiosIHRoZSBEYXRhIGFuZCBJbmZvcm1hdGlvbiBBY2Nlc3MgU2VydmljZXMgKERJQVMpIHBsYXRmb3JtIGRldmVsb3BlZCBieSBFVU1FVFNBVCwgRUNNV0YgYW5kIE1lcmNhdG9yIGl0c2VsZi4gTG9iZWxpYSBpcyBhbHNvIGRlZXBseSBpbnZvbHZlZCBpbiBtb25pdG9yaW5nIHRoZSB2YXJpb3VzIHNlcnZpY2VzLCBhcyB3ZWxsIGFzIGdhdGhlcmluZyBmZWVkYmFjayBmb3IgdGhlIG5leHQgcmVsZWFzZXMgb2YgdGhlIHBsYXRmb3JtLgoKYGBgQnV0dG9uCmxhYmVsOiBsZWFybiBtb3JlCnVybDogaHR0cHM6Ly93ZWtlby5ldQpuZXdUYWI6IHRydWUKYGBg"
+    "translation": "Traducciones dudosas",
+    "keyId": "ZmlsdGVyX0R1YmlvdXMgdHJhbnNsYXRpb25z"
   },
-  "b86441a8-55c3-40ef-993a-29b5c3cc208f": {
-    "id": "b86441a8-55c3-40ef-993a-29b5c3cc208f",
+  "669a293e-44c6-4368-800f-ed3bb55223af": {
+    "id": "669a293e-44c6-4368-800f-ed3bb55223af",
     "isDeleted": false,
     "lang": "es",
-    "translation": "Un enjambre que mide un kilómetro cuadrado contiene unos 40 millones de langostas, que comen aproximadamente la misma cantidad de alimentos en un día que 35.000 personas.\n\nMás de 8 millones de personas en África occidental se vieron afectadas durante la plaga de 2003-2005, en la que se perdieron cosechas enteras de cereales y se destruyeron hasta el 90% de las leguminosas y los pastos. Fueron necesarios 600 millones de dólares y 13 millones de litros de pesticida para retomar el control.\n\nSe están usando datos satelitales de una manera novedosa para predecir las condiciones que favorecen a los enjambres de langostas del desierto. La nueva tecnología, basada en gran parte en **datos de alta resolución de humedad del suelo**, ayuda a aumentar hasta dos meses el tiempo de preaviso de brotes de langostas.\n\nisardSAT y el Cirad desarrollaron una nueva herramienta, bajo un contrato con la Agencia Espacial Europea, para monitorizar y pronosticar las condiciones que pueden conducir a plagas de langostas, como la alta humedad y vegetación verde. Aparecen enjambres cuando un período de sequía es seguido por lluvias abundantes y un rápido crecimiento de la vegetación. Los resultados se validaron en Argelia, Malí, Mauritania y Marruecos en coordinación con las Autoridades Nacionales y la FAO.\n\nDurante el último brote en Mauritania (2016), el equipo pudo identificar un lapso de tiempo de aproximadamente 70 días desde los signos iniciales de humedad del suelo hasta el momento en que ocurrió el brote. Estos resultados se obtuvieron utilizando datos de observación de la Tierra del **servicio operacional de humedad del suelo con cobertura global operado actualmente por Lobelia**.\n\n\n```Button\nlabel: saber más\nurl: http://smells.isardsat.com/\nnewTab: true\n```",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1jb250ZW50c19BIHN3YXJtIG1lYXN1cmluZyBvbmUgc3F1YXJlIGtpbG9tZXRyZSBjb250YWlucyBhYm91dCA0MCBtaWxsaW9uIGxvY3VzdHMsIHdoaWNoIGVhdCB0aGUgc2FtZSBhbW91bnQgb2YgZm9vZCBpbiBvbmUgZGF5IGFzIGFwcHJveGltYXRlbHkgMzUsMDAwIHBlb3BsZS4KCk1vcmUgdGhhbiA4IG1pbGxpb24gcGVvcGxlIGluIFdlc3QgQWZyaWNhIHdlcmUgYWZmZWN0ZWQgZHVyaW5nIHRoZSAyMDAzLTIwMDUgcGxhZ3VlLCBpbiB3aGljaCBjZXJlYWwgY3JvcHMgd2VyZSB3aXBlZCBvdXQgYW5kIHVwIHRvIDkwJSBvZiBsZWd1bWVzIGFuZCBwYXN0dXJlIHdlcmUgZGVzdHJveWVkLiBJdCB0b29rIG5lYXJseSAkNjAwIG1pbGxpb24gYW5kIDEzIG1pbGxpb24gbGl0cmVzIG9mIHBlc3RpY2lkZSB0byBicmluZyBpdCB1bmRlciBjb250cm9sLgoKU2F0ZWxsaXRlIGRhdGEgaXMgYmVpbmcgdXNlZCBpbiBhIG5vdmVsIHdheSB0byBwcmVkaWN0IGZhdm91cmFibGUgY29uZGl0aW9ucyBmb3IgZGVzZXJ0IGxvY3VzdCBzd2FybXMuIFRoZSBuZXcgdGVjaG5vbG9neSwgbGFyZ2VseSBiYXNlZCBvbiAqKmhpZ2gtcmVzb2x1dGlvbiBzb2lsIG1vaXN0dXJlKiogZGF0YSwgaGVscHMgdG8gaW5jcmVhc2UgdGhlIHdhcm5pbmcgdGltZSBmb3IgbG9jdXN0IG91dGJyZWFrcyBieSB1cCB0byB0d28gbW9udGhzLgoKQSBuZXcgdG9vbCB3YXMgZGV2ZWxvcGVkIGJ5IGlzYXJkU0FUIGFuZCBDaXJhZCwgdW5kZXIgYSBjb250cmFjdCB3aXRoIHRoZSBFdXJvcGVhbiBTcGFjZSBBZ2VuY3ksIHRvIG1vbml0b3IgYW5kIGZvcmVjYXN0IHRoZSBjb25kaXRpb25zIHRoYXQgY2FuIGxlYWQgdG8gbG9jdXN0IHN3YXJtcywgc3VjaCBhcyBoaWdoIG1vaXN0dXJlIGFuZCBncmVlbiB2ZWdldGF0aW9uLiBTd2FybWluZyBvY2N1cnMgd2hlbiBhIHBlcmlvZCBvZiBkcm91Z2h0IGlzIGZvbGxvd2VkIGJ5IGFidW5kYW50IHJhaW5zIGFuZCByYXBpZCB2ZWdldGF0aW9uIGdyb3d0aC4gUmVzdWx0cyB3ZXJlIHZhbGlkYXRlZCBpbiBBbGdlcmlhLCBNYWxpLCBNYXVyaXRhbmlhIGFuZCBNb3JvY2NvIGluIGNvb3JkaW5hdGlvbiB3aXRoIE5hdGlvbmFsIEF1dGhvcml0aWVzIGFuZCBGQU8uCgpEdXJpbmcgdGhlIGxhdGVzdCBvdXRicmVhayBpbiBNYXVyaXRhbmlhICgyMDE2KSwgdGhlIHRlYW0gd2FzIGFibGUgdG8gaWRlbnRpZnkgYSB0aW1lIGxhZyBvZiBhYm91dCA3MCBkYXlzIGZyb20gdGhlIGluaXRpYWwgc2lnbnMgb2Ygc29pbCBtb2lzdHVyZSB0byB3aGVuIHRoZSBvdXRicmVhayBldmVudHVhbGx5IG9jY3VycmVkLiBUaGVzZSByZXN1bHRzIHdlcmUgb2J0YWluZWQgdXNpbmcgRWFydGggb2JzZXJ2YXRpb24gZGF0YSBmcm9tIHRoZSAqKm9wZXJhdGlvbmFsIHNvaWwgbW9pc3R1cmUgc2VydmljZSB3aXRoIGdsb2JhbCBjb3ZlcmFnZSBvcGVyYXRlZCB0b2RheSBieSBMb2JlbGlhKiouCgoKYGBgQnV0dG9uCmxhYmVsOiBsZWFybiBtb3JlCnVybDogaHR0cDovL3NtZWxscy5pc2FyZHNhdC5jb20vCm5ld1RhYjogdHJ1ZQpgYGA="
+    "translation": "Dudas",
+    "keyId": "ZmlsdGVyX0R1YmlvdXM="
   },
-  "cb209560-1026-4a6b-93c1-d79286bfa514": {
-    "id": "cb209560-1026-4a6b-93c1-d79286bfa514",
+  "c5603b13-4548-4c58-b0b9-559463e0e52f": {
+    "id": "c5603b13-4548-4c58-b0b9-559463e0e52f",
     "isDeleted": false,
     "lang": "es",
-    "translation": "**Lobelia** se crea para responder a las necesidades sociales de medidas regulatorias para confrontar el cambio climático. El protocolo de Kyoto y la COP21 son solo dos de los principales foros donde se han tomado decisiones a nivel internacional para trabajar en colaboración y enfrentarse a los desafíos climáticos y establecer un camino para una nueva economía. Esta nueva economía tiene en cuenta la responsabilidad colectiva con respecto al impacto del cambio climático en las operaciones del sector privado y la política pública. Un ejemplo es la Directiva europea para la divulgación de información no financiera para grandes grupos y el compromiso de las principales empresas de inversión con resultados ambientalmente sostenibles.\n\nCon más de diez años de experiencia, ** isardSAT ** es un experto líder en tecnologías satelitales, diseño e implementación de misiones satelitales, así como en algoritmos patentados para la aplicación de tecnología satelital para problemas ambientales, y ahora está orgulloso de presentar su nuevo Unidad de negocio: * Lobelia *.\n\nLobelia ha sido creada con el claro objetivo de utilizar datos satelitales, inteligencia computacional e información climática para la creación de planes estratégicos y medidas de adaptación frente al cambio climático.\n\nHoy, el equipo de Lobelia está compuesto por apasionados expertos en física, ciencias de la tierra, diseño gráfico, visualización de datos e inteligencia computacional. Trabajamos con proveedores de datos de confianza y tenemos una red creciente de colaboradores internacionales que están tan comprometidos como nosotros para impulsar el cambio.",
-    "fuzzy": true,
-    "keyId": "cHJvamVjdC1jb250ZW50c18qKkxvYmVsaWEqKiBpcyBjcmVhdGVkIHRvIHJlc3BvbmQgdG8gdGhlIHNvY2lldGFsIG5lZWRzIGZvciByZWd1bGF0b3J5IG1lYXN1cmVzIHRvIGNvbmZyb250IGNsaW1hdGUgY2hhbmdlLiBUaGUgS3lvdG8gcHJvdG9jb2wgYW5kIENPUDIxIGFyZSBqdXN0IHR3byBvZiB0aGUgbWFqb3IgZm9ydW1zIHdoZXJlIGRlY2lzaW9ucyBoYXZlIGJlZW4gbWFkZSBpbnRlcm5hdGlvbmFsbHkgdG8gd29yayBjb2xsYWJvcmF0aXZlbHkgYW5kIGFkZHJlc3MgY2xpbWF0ZS1iYXNlZCBjaGFsbGVuZ2VzIGFuZCBzZXQgdXAgYSBwYXRoIGZvciBhIG5ldyBlY29ub215LiBUaGlzIG5ldyBlY29ub215IHRha2VzIGludG8gYWNjb3VudCBjb2xsZWN0aXZlIHJlc3BvbnNpYmlsaXR5IHdpdGggcmVzcGVjdCB0byB0aGUgaW1wYWN0IG9mIGNsaW1hdGUgY2hhbmdlIHVwb24gcHJpdmF0ZSBzZWN0b3Igb3BlcmF0aW9ucyBhbmQgcHVibGljIHBvbGljeS4gIE9uZSBleGFtcGxlIGlzIHRoZSBFdXJvcGVhbiBEaXJlY3RpdmUgZm9yIHRoZSBkaXNjbG9zdXJlIG9mIG5vbi1maW5hbmNpYWwgaW5mb3JtYXRpb24gZm9yIGxhcmdlIGdyb3VwcyBhbmQgdGhlIGNvbW1pdG1lbnQgb2YgbWFqb3IgaW52ZXN0bWVudCBmaXJtcyB0byBlbnZpcm9ubWVudGFsbHkgc3VzdGFpbmFibGUgb3V0Y29tZXMuCgpXaXRoIG1vcmUgdGhhbiB0ZW4geWVhcnMgb2YgZXhwZXJpZW5jZSwgKippc2FyZFNBVCoqIGlzIGEgbGVhZGluZyBleHBlcnQgb24gc2F0ZWxsaXRlIHRlY2hub2xvZ2llcywgc2F0ZWxsaXRlIG1pc3Npb24gZGVzaWduIGFuZCBpbXBsZW1lbnRhdGlvbiBhcyB3ZWxsIGFzIG9uIHByb3ByaWV0YXJ5IGFsZ29yaXRobXMgZm9yIHRoZSBhcHBsaWNhdGlvbiBvZiBzYXRlbGxpdGUgdGVjaG5vbG9neSBmb3IgZW52aXJvbm1lbnRhbCBpc3N1ZXMsIGFuZCBpcyBub3cgcHJvdWQgdG8gcHJlc2VudCBpdHMgbmV3IGJ1c2luZXNzIHVuaXQ6ICpMb2JlbGlhKi4KCkxvYmVsaWEgaGFzIGJlZW4gY3JlYXRlZCB3aXRoIHRoZSBjbGVhciBvYmplY3RpdmUgb2YgcHV0dGluZyBzYXRlbGxpdGUgZGF0YSwgY29tcHV0YXRpb25hbCBpbnRlbGxpZ2VuY2UgYW5kIGNsaW1hdGUgaW5mb3JtYXRpb24gdG8gdXNlIGZvciB0aGUgY3JlYXRpb24gb2Ygc3RyYXRlZ2ljIHBsYW5zIGFuZCBhZGFwdGlvbiBtZWFzdXJlcyBpbiB0aGUgZmFjZSBvZiBjbGltYXRlIGNoYW5nZS4KClRvZGF5LCB0aGUgdGVhbSBhdCBMb2JlbGlhIGlzIGNvbXBvc2VkIG9mIHBhc3Npb25hdGUgZXhwZXJ0cyBpbiBwaHlzaWNzLCBlYXJ0aCBzY2llbmNlLCBncmFwaGljIGRlc2lnbiwgZGF0YSB2aXN1YWxpc2F0aW9uIGFuZCBjb21wdXRhdGlvbmFsIGludGVsbGlnZW5jZS4gV2Ugd29yayB3aXRoIHRydXN0ZWQgZGF0YSBwcm92aWRlcnMgYW5kIGhhdmUgYSBncm93aW5nIG5ldHdvcmsgb2YgaW50ZXJuYXRpb25hbCBjb2xsYWJvcmF0b3JzIHRoYXQgYXJlIGFzIGVuZ2FnZWQgYXMgd2UgYXJlIHRvIGRyaXZlIGZvciBjaGFuZ2Uu"
+    "translation": "Traducciones pendientes",
+    "keyId": "ZmlsdGVyX01pc3NpbmcgdHJhbnNsYXRpb25z"
   },
-  "e0cf39f0-e2f7-4b8f-9189-39faa9073af6": {
-    "id": "e0cf39f0-e2f7-4b8f-9189-39faa9073af6",
+  "8352bf6a-7343-4de3-80a6-2757e7910c9e": {
+    "id": "8352bf6a-7343-4de3-80a6-2757e7910c9e",
     "isDeleted": false,
     "lang": "es",
-    "translation": "Las inundaciones son una preocupación creciente en África Occidental, y se prevé que aumentarán con el cambio climático. Existe una gran necesidad de acceso fiable a alertas y pronósticos operacionales de inundaciones, producidos por un robusto sistema de información y comunicación, adaptado a las condiciones regionales y operado por instituciones competentes de África Occidental.\n\nEl proyecto FANFAR, financiado por la UE, tiene como objetivo construir un sistema de este tipo. En este contexto, **Lobelia proporciona productos satélite de nivel del agua** en la llanura de inundación de la cuenca del río Níger, que son asimilados secuencialmente en un modelo hidrológico del Instituto Sueco de Meteorología e Hidrología (SMHI, en inglés) para generar los períodos de retorno de la descarga del río. Estos resultados se utilizan luego en el sistema de predicción de inundaciones y alerta temprana de SMHI en África Occidental.\n\n**La [Plataforma de Explotación Temática de Hidrología](https://hydrology-tep.eo.esa.int) (H-TEP, en inglés), basada en la nube, opera este sistema de alerta de inundaciones.** El servicio global de nivel del agua de Lobelia, basado en datos satélite, se ejecuta en la H-TEP y permite complementar redes de sensores *in situ*. También se puede utilizar como un *proxy* para el flujo hídrico, así como para la calibración y validación de modelos, y para la asimilación de datos hidrológicos.\n\n```Button\nlabel: saber más\nurl: http://fanfar.eu\nnewTab: true\n```",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1jb250ZW50c19GbG9vZHMgYXJlIGEgcmFwaWRseSBncm93aW5nIGNvbmNlcm4gaW4gV2VzdCBBZnJpY2EsIHByb2plY3RlZCB0byBpbmNyZWFzZSB3aXRoIGNsaW1hdGUgY2hhbmdlLiBUaGVyZSBpcyBhIGdyZWF0IG5lZWQgZm9yIHJlbGlhYmxlIGFjY2VzcyB0byBvcGVyYXRpb25hbCBmbG9vZCBmb3JlY2FzdHMgYW5kIGFsZXJ0cywgcHJvZHVjZWQgYnkgYSByb2J1c3QgaW5mb3JtYXRpb24gYW5kIGNvbW11bmljYXRpb24gc3lzdGVtLCBhZGFwdGVkIHRvIHJlZ2lvbmFsIGNvbmRpdGlvbnMgYW5kIG9wZXJhdGVkIGJ5IGNhcGFibGUgV2VzdCBBZnJpY2FuIGluc3RpdHV0aW9ucy4KClRoZSBFQy1mdW5kZWQgRkFORkFSIHByb2plY3QgYWltcyBhdCBidWlsZGluZyBzdWNoIGEgc3lzdGVtLiBJbiB0aGlzIGNvbnRleHQsIExvYmVsaWEncyAqKnNhdGVsbGl0ZS1iYXNlZCB3YXRlciBsZXZlbCBwcm9kdWN0cyoqIG9mIHRoZSBOaWdlciBSaXZlciBiYXNpbiBmbG9vZHBsYWluIGFyZSBzZXF1ZW50aWFsbHkgYXNzaW1pbGF0ZWQgaW50byBhIGh5ZHJvbG9naWNhbCBtb2RlbCBmcm9tIHRoZSBTd2VkaXNoIE1ldGVvcm9sb2dpY2FsIGFuZCBIeWRyb2xvZ2ljYWwgSW5zdGl0dXRlIChTTUhJKSB0byBnZW5lcmF0ZSByaXZlciBkaXNjaGFyZ2UgcmV0dXJuIHBlcmlvZHMuIFRoZXNlIHJlc3VsdHMgYXJlIHRoZW4gdXNlZCBpbiBTTUhJ4oCZcyBmbG9vZCBmb3JlY2FzdGluZyBhbmQgZWFybHktd2FybmluZyBhbGVydCBzeXN0ZW0gaW4gV2VzdCBBZnJpY2EuCgoqKlRoZSBjbG91ZC1iYXNlZCBbSHlkcm9sb2d5IFRoZW1hdGljIEV4cGxvaXRhdGlvbiBQbGF0Zm9ybSAoSC1URVApXShodHRwczovL2h5ZHJvbG9neS10ZXAuZW8uZXNhLmludCkgb3BlcmF0ZXMgdGhpcyBmbG9vZCB3YXJuaW5nIHN5c3RlbS4qKiBMb2JlbGlhJ3Mgc2F0ZWxsaXRlLWJhc2VkLCBnbG9iYWwgd2F0ZXIgbGV2ZWwgc2VydmljZSBydW5zIG9uIHRoZSBILVRFUCBhbmQgaXMgd2VsbC1zdWl0ZWQgdG8gY29tcGxlbWVudCBpbi1zaXR1IHNlbnNvciBuZXR3b3Jrcy4gSXQgY2FuIGFsc28gYmUgdXNlZCBhcyBhIHByb3h5IG9mIHN0cmVhbWZsb3csIGZvciBtb2RlbCBjYWxpYnJhdGlvbiBhbmQgdmFsaWRhdGlvbiBhcyB3ZWxsIGFzIGZvciBoeWRyb2xvZ2ljIGRhdGEgYXNzaW1pbGF0aW9uLgoKYGBgQnV0dG9uCmxhYmVsOiBsZWFybiBtb3JlCnVybDogaHR0cDovL2ZhbmZhci5ldQpuZXdUYWI6IHRydWUKYGBg"
+    "translation": "Pendientes",
+    "keyId": "ZmlsdGVyX01pc3Npbmc="
   },
-  "abcb986d-5333-4f8b-8ce6-3baccfdd66fc": {
-    "id": "abcb986d-5333-4f8b-8ce6-3baccfdd66fc",
+  "ddfb2f86-6c36-4a9b-b9f1-12f00991f9b3": {
+    "id": "ddfb2f86-6c36-4a9b-b9f1-12f00991f9b3",
     "isDeleted": false,
     "lang": "es",
-    "translation": "Lobelia ha desarrollado un sistema para predecir tendencias de eventos climáticos extremos en ubicaciones específicas. El sistema se alimenta con observaciones y modelos climáticos, así como reanálisis y conjuntos de datos satelitales. Las fuentes de datos incluyen las principales agencias meteorológicas europeas, ECMWF, imágenes de Sentinel y varios proveedores de datos locales.\n\nUtilizamos **técnicas de inteligencia computacional** para encontrar patrones en los modelos climáticos que se correlacionan con la densidad temporal de eventos extremos en el pasado, de acuerdo con observaciones reales de agencias meteorológicas. Estos resultados se proyectan en el futuro de acuerdo con los modelos climáticos existentes.\n\nNuestros estudios han encontrado que la evolución en el tiempo de las probabilidades de ocurrencia varía sustancialmente según el evento (por ejemplo, vientos extraordinarios, ciclones y tormentas extremas) y la ubicación. Se requieren estudios específicos en cada contexto para obtener resultados óptimos para cada categoría de evento extremo.\n\n**Lobelia colabora con PwC en la evaluación económica de daños potenciales derivados de eventos climáticos extremos.**\n\n```Button\nlabel: solicitar una demo\nurl: mailto:info@lobelia.earth\n```",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1jb250ZW50c19Mb2JlbGlhIGhhcyBkZXZlbG9wZWQgYSBzeXN0ZW0gdG8gcHJlZGljdCB0cmVuZHMgb2YgZXh0cmVtZSBjbGltYXRlIGV2ZW50cyBhdCBzcGVjaWZpYyBsb2NhdGlvbnMuIFRoZSBzeXN0ZW0gaXMgZmVkIHdpdGggb2JzZXJ2YXRpb25zIGFuZCBjbGltYXRlIG1vZGVscywgYXMgd2VsbCBhcyByZWFuYWx5c2lzIGFuZCBzYXRlbGxpdGUgZGF0YXNldHMuIERhdGEgc291cmNlcyBpbmNsdWRlIGxlYWRpbmcgRXVyb3BlYW4gbWV0ZW9yb2xvZ2ljYWwgYWdlbmNpZXMsIEVDTVdGLCBTZW50aW5lbCBpbWFnZXJ5IGFuZCB2YXJpb3VzIGxvY2FsIGRhdGEgcHJvdmlkZXJzLgoKV2UgdXNlICoqY29tcHV0YXRpb25hbCBpbnRlbGxpZ2VuY2UgdGVjaG5pcXVlcyoqIHRvIGZpbmQgcGF0dGVybnMgaW4gdGhlIGNsaW1hdGUgbW9kZWxzIHRoYXQgY29ycmVsYXRlIHdpdGggdGhlIHRlbXBvcmFsIGRlbnNpdHkgb2YgZXh0cmVtZSBldmVudHMgaW4gdGhlIHBhc3QsIGFjY29yZGluZyB0byByZWFsIG9ic2VydmF0aW9ucyBmcm9tIG1ldGVvcm9sb2dpY2FsIGFnZW5jaWVzLiBUaGVzZSByZXN1bHRzIGFyZSB0aGVuIHByb2plY3RlZCBpbnRvIHRoZSBmdXR1cmUgYWNjb3JkaW5nIHRvIHRoZSBleGlzdGluZyBjbGltYXRlIG1vZGVscy4KCk91ciBzdHVkaWVzIGhhdmUgZm91bmQgdGhhdCB0aGUgZXZvbHV0aW9uIGluIHRpbWUgb2YgdGhlIHByb2JhYmlsaXRpZXMgb2Ygb2NjdXJyZW5jZSBkaWZmZXIgc3Vic3RhbnRpYWxseSBkZXBlbmRpbmcgb24gdGhlIGV2ZW50IChlLmcuIGV4dHJhb3JkaW5hcnkgd2luZHMsIGN5Y2xvbmVzIGFuZCBleHRyZW1lIHN0b3JtcykgYW5kIHRoZSBsb2NhdGlvbi4gU3BlY2lmaWMgc3R1ZGllcyBhcmUgcmVxdWlyZWQgaW4gZXZlcnkgY29udGV4dCB0byBvYnRhaW4gb3B0aW11bSByZXN1bHRzIGZvciBlYWNoIGV4dHJlbWUgZXZlbnQgY2F0ZWdvcnkuCgoqKkxvYmVsaWEgY29sbGFib3JhdGVzIHdpdGggUHdDIG9uIHRoZSBlY29ub21pYyBhc3Nlc3NtZW50IG9mIHBvdGVudGlhbCBkYW1hZ2VzIGRlcml2ZWQgZnJvbSBleHRyZW1lIGNsaW1hdGUgZXZlbnRzLioqIAoKYGBgQnV0dG9uCmxhYmVsOiByZXF1ZXN0IGEgZGVtbwp1cmw6IG1haWx0bzppbmZvQGxvYmVsaWEuZWFydGgKYGBg"
+    "translation": "Mensajes no usados",
+    "keyId": "ZmlsdGVyX1VudXNlZCBtZXNzYWdlcw=="
   },
-  "4f4b0a53-1670-4abb-b032-6244e8d637c5": {
-    "id": "4f4b0a53-1670-4abb-b032-6244e8d637c5",
+  "4ae729fe-014d-4066-b7cd-4a3de22dda44": {
+    "id": "4ae729fe-014d-4066-b7cd-4a3de22dda44",
     "isDeleted": false,
     "lang": "es",
-    "translation": "Utilizamos datos de observación de la Tierra y proyecciones climáticas para evaluar **vulnerabilidades, riesgos y oportunidades asociadas a los escenarios climáticos** para cada caso particular y región de interés. Trabajamos en la monitorización, pronóstico y planificación, a menudo a partir de datos abiertos y gratuitos adquiridos por satélites europeos bajo el programa Copernicus.",
-    "fuzzy": false,
-    "keyId": "cGFnZS1jb250ZW50c19XZSB1c2UgRWFydGggT2JzZXJ2YXRpb24gZGF0YSBhbmQgY2xpbWF0ZSBwcm9qZWN0aW9ucyBmb3IgdGhlIGFzc2Vzc21lbnQgb2YgKip2dWxuZXJhYmlsaXRpZXMsIHJpc2tzIGFuZCBvcHBvcnR1bml0aWVzIGFzc29jaWF0ZWQgdG8gY2xpbWF0ZSBzY2VuYXJpb3MqKiBmb3IgZWFjaCBwYXJ0aWN1bGFyIGNhc2UgYW5kIHJlZ2lvbiBvZiBpbnRlcmVzdC4gV2Ugd29yayBvbiBtb25pdG9yaW5nLCBmb3JlY2FzdGluZyBhbmQgcGxhbm5pbmcsIG9mdGVuIGZyb20gb3BlbiBhbmQgZnJlZSBkYXRhIGFjcXVpcmVkIGJ5IEV1cm9wZWFuIHNhdGVsbGl0ZXMgdW5kZXIgdGhlIENvcGVybmljdXMgcHJvZ3JhbW1lLg=="
+    "translation": "No usados",
+    "keyId": "ZmlsdGVyX1VudXNlZA=="
   },
-  "9b7ceec7-49dc-4aa1-9bb9-35646e601d89": {
-    "id": "9b7ceec7-49dc-4aa1-9bb9-35646e601d89",
+  "b06dcbdd-58d2-43b1-9c96-a56d5da1e5d4": {
+    "id": "b06dcbdd-58d2-43b1-9c96-a56d5da1e5d4",
     "isDeleted": false,
     "lang": "es",
-    "translation": "![Hermosa vista de la Tierra desde el espacio](about-sidebar.jpg)",
-    "fuzzy": false,
-    "keyId": "cGFnZS1zaWRlYmFyQ29udGVudHNfIVtCZWF1dGlmdWwgdmlldyBvZiBFYXJ0aCBmcm9tIHNwYWNlXShhYm91dC1zaWRlYmFyLmpwZyk="
+    "translation": "Filtrar mensajes relevantes",
+    "keyId": "aGludF9GaWx0ZXIgcmVsZXZhbnQgbWVzc2FnZXM="
   },
-  "e98102f1-3474-4cc7-b183-f0489c137904": {
-    "id": "e98102f1-3474-4cc7-b183-f0489c137904",
+  "7cab3380-3faf-48df-8c58-0293854ba018": {
+    "id": "7cab3380-3faf-48df-8c58-0293854ba018",
     "isDeleted": false,
     "lang": "es",
-    "translation": "![Hermosa vista de la Tierra desde el espacio](lobelias-background-sidebar.jpg)",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtCZWF1dGlmdWwgdmlldyBvZiBFYXJ0aCBmcm9tIHNwYWNlXShsb2JlbGlhcy1iYWNrZ3JvdW5kLXNpZGViYXIuanBnKQ=="
+    "translation": "Filtro",
+    "keyId": "dG9vbHRpcF9GaWx0ZXI="
   },
-  "ad894cb5-dbc1-40b5-82dc-8e8b7fb72be2": {
-    "id": "ad894cb5-dbc1-40b5-82dc-8e8b7fb72be2",
+  "152fe90d-9a37-463d-b820-113040b9eb28": {
+    "id": "152fe90d-9a37-463d-b820-113040b9eb28",
     "isDeleted": false,
     "lang": "es",
-    "translation": "Experto en IA",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1yb2xlX0FJIEV4cGVydA=="
+    "translation": "¡Uy, ha ocurrido un error!",
+    "keyId": "ZXJyb3JfT29wcywgYW4gZXJyb3Igb2NjdXJyZWQh"
   },
-  "77dfa0fa-1bcb-41b0-91e2-936ffe4d4a08": {
-    "id": "77dfa0fa-1bcb-41b0-91e2-936ffe4d4a08",
+  "bc367a7a-78b8-4b6e-8028-fee9340b4aa6": {
+    "id": "bc367a7a-78b8-4b6e-8028-fee9340b4aa6",
     "isDeleted": false,
     "lang": "es",
-    "translation": "AirQast ofrece una cartera de productos de calidad del aire derivados de datos satelitales. Con origen en un proyecto europeo H2020, AirQast incluye a los actores europeos más reconocidos en la investigación de la contaminación del aire.\n\n**Lobelia opera la plataforma AirQast y proporciona servicios de calidad del aire a escalas urbanas.**\n\n## Emisiones\n\nInventarios mensuales de emisiones regionales a partir de datos satélite a una resolución de 1 km.\n\n## Pronóstico\n\nPronósticos horarios de calidad del aire para los siguientes 3 días.\n\n## Herramientas de toma de decisiones\n\nSimulaciones de escenarios para evaluar el impacto de las medidas de calidad del aire en ciudades/regiones y planificar en consecuencia.\n\n## Dónde\n\nChina / India / Europa / otras regiones bajo demanda.\n\n## Contexto\n\nLa contaminación del aire es un problema grave que se relaciona con 3 millones de muertes en todo el mundo cada año. También causa costes anuales del orden de miles de millones de euros, por ejemplo en pérdidas de productividad y gastos de salud. Finalmente, la contaminación tiene un impacto negativo en aspectos como el transporte (por ejemplo, la falta de visibilidad en los aeropuertos), el mantenimiento de la ciudad (por ejemplo, la limpieza de infraestructuras) y la agricultura (por ejemplo, las deposiciones de contaminantes).\n\n\n```Button\nlabel: saber más\nurl: http://airqast.com\nnewTab: true\n```",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1jb250ZW50c19BaXJRYXN0IG9mZmVycyBhIHBvcnRmb2xpbyBvZiBhaXIgcXVhbGl0eSBwcm9kdWN0cyBkZXJpdmVkIGZyb20gc2F0ZWxsaXRlIGRhdGEuIE9yaWdpbmF0aW5nIGZyb20gYSBFdXJvcGVhbiBIMjAyMCBwcm9qZWN0LCBBaXJRYXN0IGluY2x1ZGVzIHNvbWUgb2YgdGhlIG1vc3QgcmVub3duZWQgRXVyb3BlYW4gYWN0b3JzIGluIGFpciBwb2xsdXRpb24gcmVzZWFyY2guCgoqKkxvYmVsaWEgb3BlcmF0ZXMgdGhlIEFpclFhc3QgcGxhdGZvcm0gYW5kIHByb3ZpZGVzIGFpciBxdWFsaXR5IHNlcnZpY2VzIGF0IHVyYmFuIHNjYWxlcy4qKgoKIyMgRW1pc3Npb25zCgpNb250aGx5IHJlZ2lvbmFsIGVtaXNzaW9uIGludmVudG9yaWVzIGZyb20gc2F0ZWxsaXRlcyBhdCAxLWttIHJlc29sdXRpb24uCgojIyBGb3JlY2FzdAoKSG91cmx5IGFpciBxdWFsaXR5IGZvcmVjYXN0cyBmb3IgMyBkYXlzIGluIGFkdmFuY2UuCgojIyBEZWNpc2lvbi1tYWtpbmcgdG9vbHMKClNjZW5hcmlvIHNpbXVsYXRpb25zIHRvIGV2YWx1YXRlIHRoZSBpbXBhY3Qgb2YgYWlyIHF1YWxpdHkgbWVhc3VyZXMgaW4gY2l0aWVzL3JlZ2lvbnMgYW5kIHBsYW4gYWNjb3JkaW5nbHkuCgojIyBXaGVyZQoKQ2hpbmEgLyBJbmRpYSAvIEV1cm9wZSAvIG90aGVyIHJlZ2lvbnMgdXBvbiBkZW1hbmQuCgojIyBDb250ZXh0CgpBaXIgcG9sbHV0aW9uIGlzIGEgc2VyaW91cyBwcm9ibGVtIHRyYWNlZCB0byAzIG1pbGxpb24gZGVhdGhzIHdvcmxkd2lkZSBldmVyeSB5ZWFyLiBJdCBhbHNvIGNhdXNlcyB5ZWFybHkgY29zdHMgaW4gdGhlIG9yZGVyIG9mIGJpbGxpb25zIG9mIGV1cm9zLCBjb25zaWRlcmluZyBsb3N0IHByb2R1Y3Rpdml0eSBhbmQgaGVhbHRoIGV4cGVuc2VzLiBGaW5hbGx5LCBwb2xsdXRpb24gaW1wYWN0cyBuZWdhdGl2ZWx5IG9uIGFzcGVjdHMgc3VjaCBhcyB0cmFuc3BvcnQgKGUuZy4gbGFjayBvZiB2aXNpYmlsaXR5IGluIGFpcnBvcnRzKSwgY2l0eSBtYWludGVuYW5jZSAoZS5nLiBpbmZyYXN0cnVjdHVyZSBjbGVhbmluZykgYW5kIGFncmljdWx0dXJlIChlLmcuIHBvbGx1dGFudCBkZXBvc2l0aW9ucykuCgoKYGBgQnV0dG9uCmxhYmVsOiBsZWFybiBtb3JlCnVybDogaHR0cDovL2FpcnFhc3QuY29tCm5ld1RhYjogdHJ1ZQpgYGA="
+    "translation": "Haz clic fuera o pulsa TAB para guardar. Pulsa ESC para deshacer.",
+    "keyId": "dHJhbnNsYXRpb25IZWxwX0NsaWNrIG91dHNpZGUgb3IgcHJlc3MgVEFCIHRvIHNhdmUuIFByZXNzIEVTQyB0byB1bmRvLg=="
   },
-  "7114544d-2a7e-484d-be4c-ffc1f16cfa43": {
-    "id": "7114544d-2a7e-484d-be4c-ffc1f16cfa43",
+  "7d850225-1e2f-46d5-9acc-0609a9571056": {
+    "id": "7d850225-1e2f-46d5-9acc-0609a9571056",
     "isDeleted": true,
     "lang": "es",
-    "translation": "Mercator Ocean International",
+    "translation": "Lorem ipsum dolor sit amet, elit consectetur adipiscing. Por lo tanto, una gran cantidad de gatos risa. Pero hasta que tire olla. Presente porttitor lorem blandit Identificación urna, el chocolate, ni las risas de las varillas. Rendimiento recibe relé térmico. Pero el más grande de chocolate de bienes raíces o proteína de chile y el maquillaje. Cada lote de voleibol de maní en la televisión. deducible de estrés si el precio o los disparos. El diámetro resistentes sem, la puerta de un gran autor ni la necesidad. fútbol maquillaje Mecenas con una gran cantidad de la UE. Ahora no tire de la pena. lacus Suspendisse suscipit, hendrerit volutpat sapiens, congue Aenean. Mauris eu mollis lacus, ac lectus eget lectus. temor por los precios enteros. Para la competición autor salsa, los plátanos de fútbol olla. Estoy muy feliz vulputate LOREM una risa cartón.\n\nLos últimos extremos de la falda dirigidos. Nulla Mattis lorem ncp trajo alrededor de las varillas. Mauris a veces el autor de las veces, que él desea. Pero antioxidantes, ahora que sollicitudin tincidunt, enim porttitor ut ligula pulvinar, urna consectetur lorem o no quieren. Antes de la primera de baloncesto fijó sus mandíbulas dolor y la atención clínica; Morbi eget auctor enim, sit amet elit euismod. Porque no hay odio en Canberra, y los rectos de la vida y, a veces el precio. Kibbeh Estados Unidos, los intereses estratégicos de cualquier temperatura, precio aljaba de masas. En quis rutrum quam, nec erat auctor eros, convallis felis. Por desgracia, algunos inversores invierten una gran cantidad de frustración, y hasta los confines de la base a veces. Proin quam lorem, dignissim vel quam ac, peinado suave muy importante. También apuntado elemento de león. Ningún ordenador o en casa embarazada miedo. falda Sed mauris Mauris, dirigida miembros de fin de semana de maní. redes de león de fútbol mañana. Proin sentarse, se convierte en la risa de la nec tirón, accumsan sollicitudin est.",
     "fuzzy": true,
-    "keyId": "Y29tcGFueS1uYW1lX01lcmNhdG9yIE9jw6lhbiBJbnRlcm5hdGlvbmFs"
-  },
-  "78b3ef67-a7e3-4f92-9b5e-c166394fc904": {
-    "id": "78b3ef67-a7e3-4f92-9b5e-c166394fc904",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "La investigación y la innovación promueven un crecimiento equilibrado y sostenible. Brindamos soluciones basadas en un enfoque científicamente responsable.",
-    "fuzzy": false,
-    "keyId": "bWFya2V0LXN1bW1hcnlfUmVzZWFyY2ggYW5kIGlubm92YXRpb24gcHJvbW90ZXMgYSB3ZWxsLWJhbGFuY2VkLCBzdXN0YWluYWJsZSBncm93dGguIFdlIHByb3ZpZGUgc29sdXRpb25zIGJhc2VkIG9uIGEgc2NpZW50aWZpY2FsbHkgcmVzcG9uc2libGUgYXBwcm9hY2gu"
-  },
-  "739a7e4a-09a4-4e89-8738-84832bd8a9c8": {
-    "id": "739a7e4a-09a4-4e89-8738-84832bd8a9c8",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "**Lobelia** se crea para responder a las necesidades sociales de medidas regulatorias para afrontar el cambio climático. El protocolo de Kyoto y la COP21 son solo dos de los principales foros donde se han tomado decisiones a nivel internacional para trabajar de manera colaborativa, abordar los desafíos climáticos y establecer un camino para una nueva economía. Esta nueva economía tiene en cuenta nuestra responsabilidad colectiva con respecto al impacto del cambio climático en las operaciones del sector privado y las políticas públicas. Un ejemplo es la Directiva Europea para la divulgación de información no financiera de grandes grupos y el compromiso de las principales empresas de inversión con resultados ambientalmente sostenibles.\n\nCon más de diez años de experiencia, **isardSAT** es un experto líder en tecnologías satelitales, diseño e implementación de misiones satélite, así como en algoritmos propietarios para la aplicación de tecnología satelital a problemas ambientales, y se enorgullece de presentar su nueva unidad de negocio: *Lobelia*.\n\nLobelia ha sido creada con el claro objetivo de utilizar datos satelitales, inteligencia computacional e información climática para la generación de planes estratégicos y medidas de adaptación frente al cambio climático.\n\nHoy, el equipo de Lobelia está compuesto por expertos apasionados en física, ciencias de la tierra, diseño gráfico, visualización de datos e inteligencia computacional. Trabajamos con proveedores de datos de confianza y tenemos una red creciente de colaboradores internacionales que están tan comprometidos como nosotros para impulsar el cambio.",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1jb250ZW50c18qKkxvYmVsaWEqKiBpcyBjcmVhdGVkIHRvIHJlc3BvbmQgdG8gdGhlIHNvY2lldGFsIG5lZWRzIGZvciByZWd1bGF0b3J5IG1lYXN1cmVzIHRvIGNvbmZyb250IGNsaW1hdGUgY2hhbmdlLiBUaGUgS3lvdG8gcHJvdG9jb2wgYW5kIENPUDIxIGFyZSBqdXN0IHR3byBvZiB0aGUgbWFqb3IgZm9ydW1zIHdoZXJlIGRlY2lzaW9ucyBoYXZlIGJlZW4gbWFkZSBpbnRlcm5hdGlvbmFsbHkgdG8gd29yayBjb2xsYWJvcmF0aXZlbHksIGFkZHJlc3MgY2xpbWF0ZS1iYXNlZCBjaGFsbGVuZ2VzIGFuZCBzZXQgdXAgYSBwYXRoIGZvciBhIG5ldyBlY29ub215LiBUaGlzIG5ldyBlY29ub215IHRha2VzIGludG8gYWNjb3VudCBvdXIgY29sbGVjdGl2ZSByZXNwb25zaWJpbGl0eSB3aXRoIHJlc3BlY3QgdG8gdGhlIGltcGFjdCBvZiBjbGltYXRlIGNoYW5nZSB1cG9uIHByaXZhdGUgc2VjdG9yIG9wZXJhdGlvbnMgYW5kIHB1YmxpYyBwb2xpY3kuIE9uZSBleGFtcGxlIGlzIHRoZSBFdXJvcGVhbiBEaXJlY3RpdmUgZm9yIHRoZSBkaXNjbG9zdXJlIG9mIG5vbi1maW5hbmNpYWwgaW5mb3JtYXRpb24gZm9yIGxhcmdlIGdyb3VwcyBhbmQgdGhlIGNvbW1pdG1lbnQgb2YgbWFqb3IgaW52ZXN0bWVudCBmaXJtcyB0byBlbnZpcm9ubWVudGFsbHkgc3VzdGFpbmFibGUgb3V0Y29tZXMuCgpXaXRoIG1vcmUgdGhhbiB0ZW4geWVhcnMgb2YgZXhwZXJpZW5jZSwgKippc2FyZFNBVCoqIGlzIGEgbGVhZGluZyBleHBlcnQgb24gc2F0ZWxsaXRlIHRlY2hub2xvZ2llcywgc2F0ZWxsaXRlIG1pc3Npb24gZGVzaWduIGFuZCBpbXBsZW1lbnRhdGlvbiBhcyB3ZWxsIGFzIG9uIHByb3ByaWV0YXJ5IGFsZ29yaXRobXMgZm9yIHRoZSBhcHBsaWNhdGlvbiBvZiBzYXRlbGxpdGUgdGVjaG5vbG9neSBmb3IgZW52aXJvbm1lbnRhbCBpc3N1ZXMsIGFuZCBpcyBub3cgcHJvdWQgdG8gcHJlc2VudCBpdHMgbmV3IGJ1c2luZXNzIHVuaXQ6ICpMb2JlbGlhKi4KCkxvYmVsaWEgaGFzIGJlZW4gY3JlYXRlZCB3aXRoIHRoZSBjbGVhciBvYmplY3RpdmUgb2YgcHV0dGluZyBzYXRlbGxpdGUgZGF0YSwgY29tcHV0YXRpb25hbCBpbnRlbGxpZ2VuY2UgYW5kIGNsaW1hdGUgaW5mb3JtYXRpb24gdG8gdXNlIGZvciB0aGUgY3JlYXRpb24gb2Ygc3RyYXRlZ2ljIHBsYW5zIGFuZCBhZGFwdGlvbiBtZWFzdXJlcyBpbiB0aGUgZmFjZSBvZiBjbGltYXRlIGNoYW5nZS4KClRvZGF5LCB0aGUgdGVhbSBhdCBMb2JlbGlhIGlzIGNvbXBvc2VkIG9mIHBhc3Npb25hdGUgZXhwZXJ0cyBpbiBwaHlzaWNzLCBlYXJ0aCBzY2llbmNlLCBncmFwaGljIGRlc2lnbiwgZGF0YSB2aXN1YWxpc2F0aW9uIGFuZCBjb21wdXRhdGlvbmFsIGludGVsbGlnZW5jZS4gV2Ugd29yayB3aXRoIHRydXN0ZWQgZGF0YSBwcm92aWRlcnMgYW5kIGhhdmUgYSBncm93aW5nIG5ldHdvcmsgb2YgaW50ZXJuYXRpb25hbCBjb2xsYWJvcmF0b3JzIHRoYXQgYXJlIGFzIGVuZ2FnZWQgYXMgd2UgYXJlIHRvIGRyaXZlIGZvciBjaGFuZ2Uu"
-  },
-  "b264dd5e-991d-404e-beb4-47a827e8fad0": {
-    "id": "b264dd5e-991d-404e-beb4-47a827e8fad0",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Se espera que el cambio climático afecte de manera desproporcionada a los pequeños agricultores, que ya enfrentan numerosos riesgos para su producción agrícola. Las variedades de cultivos responderán de manera diferente a los cambios de temperatura y precipitación en los lugares donde actualmente se cultivan. Un **índice de idoneidad del cultivo** es un componente importante de los estudios de evaluación, así como un estudio de los cambios en la distribución geográfica de los cultivos debidos al cambio climático en las próximas décadas.\n\n**En colaboración con Oxfam, Lobelia ha desarrollado una herramienta de idoneidad de cultivos para evaluar el futuro de los cultivos básicos en diferentes regiones.**\n\n## Sahel\n\nMaíz / sorgo / mijo perla\n\n## África subsahariana\n\nMaíz / sorgo / mijo perla / arroz / mandioca / frijoles / cacahuete / batata\n\n## Corredor Seco (América Central)\n\nMaíz / sorgo / frijoles / arroz\n\n\n```Button\nlabel: probar demo\nurl: https://crop-suitability-demo.lobelia.earth/{lang}\nlangs:\n- en\n- es\n- ca\n- fr\n```",
-    "keyId": "cHJvamVjdC1jb250ZW50c19DbGltYXRlIGNoYW5nZSBpcyBleHBlY3RlZCB0byBkaXNwcm9wb3J0aW9uYXRlbHkgYWZmZWN0IHNtYWxsaG9sZGVyIGZhcm1lcnMsIHdobyBhbHJlYWR5IGZhY2UgbnVtZXJvdXMgcmlza3MgdG8gdGhlaXIgYWdyaWN1bHR1cmFsIHByb2R1Y3Rpb24uIENyb3AgdmFyaWV0aWVzIHdpbGwgcmVzcG9uZCBkaWZmZXJlbnRseSB0byBjaGFuZ2VzIGluIHRlbXBlcmF0dXJlIGFuZCBwcmVjaXBpdGF0aW9uIGF0IHRoZSBsb2NhdGlvbnMgd2hlcmUgdGhleSBhcmUgY3VycmVudGx5IGdyb3duLiBBICoqY3JvcCBzdWl0YWJpbGl0eSBpbmRleCoqIGlzIGFuIGltcG9ydGFudCBjb21wb25lbnQgb2YgYXNzZXNzbWVudCBzdHVkaWVzLCBpbmNsdWRpbmcgY2hhbmdlcyB0byBnZW9ncmFwaGljYWwgY3JvcCBkaXN0cmlidXRpb24gdW5kZXIgY2xpbWF0ZSBjaGFuZ2UgaW4gdGhlIGNvbWluZyBkZWNhZGVzLgoKKiogSW4gY29sbGFib3JhdGlvbiB3aXRoIE94ZmFtLCBMb2JlbGlhIGhhcyBkZXZlbG9wZWQgYSBjcm9wIHN1aXRhYmlsaXR5IHRvb2wgdG8gYXNzZXNzIHRoZSBmdXR1cmUgb2Ygc3RhcGxlIGNyb3BzIGluIGRpZmZlcmVudCByZWdpb25zLioqCgojIyBTYWhlbAoKTWFpemUgLyBzb3JnaHVtIC8gcGVhcmwgbWlsbGV0CgojIyBTdWItU2FoYXJhbiBBZnJpY2EKCk1haXplIC8gc29yZ2h1bSAvIHBlYXJsIG1pbGxldCAvIHJpY2UgLyBjYXNzYXZhIC8gYmVhbnMgLyBncm91bmRudXRzIC8geWFtCgojIyBEcnkgQ29ycmlkb3IKCk1haXplIC8gc29yZ2h1bSAvIGJlYW5zIC8gcmljZQoKCmBgYEJ1dHRvbgpsYWJlbDogdHJ5IGRlbW8KdXJsOiBodHRwczovL2Nyb3Atc3VpdGFiaWxpdHktZGVtby5sb2JlbGlhLmVhcnRoL3tsYW5nfQpsYW5nczoKLSBlbgotIGVzCi0gY2EKLSBmcgpgYGA="
-  },
-  "65689a90-2813-4721-9637-f9549b73aa1f": {
-    "id": "65689a90-2813-4721-9637-f9549b73aa1f",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Las áreas urbanas están fuertemente expuestas a los efectos del cambio climático. Las autoridades locales controlan estos efectos muy de cerca, para poderse adaptar en el momento oportuno y reducir su impacto en la vida de los ciudadanos: atención médica, transporte, gestión del agua, suministro de energía, etc.\n\nEl **Programa de Perfiles de Resiliencia Urbana de UN Habitat (CRPP, en inglés)** brinda a los gobiernos nacionales y locales herramientas para medir y aumentar la resiliencia ante los impactos de múltiples peligros, incluidos los asociados con el cambio climático.\n\n**El motor climático de Lobelia está integrado en el CRPP**, lo que ayuda a analizar las tendencias climáticas y a vincular otros tipos de datos según sea necesario para permitir la definición de un plan de acción adecuado. La caja de herramientas de Lobelia puede ser utilizada por ciudades de todo el mundo, con usuarios actuales como Asunción, Yakutsk, Maputo, Dakar y Port Vila.\n\nLobelia utiliza técnicas de reducción de escala y corrección de sesgo (*downscaling and bias correction*) para generar datos de alta resolución, adaptados localmente, que describen el clima futuro en las ciudades objetivo.\n\n\n```Button\nlabel: probar demo\nurl: https://city-climate-trends.lobelia.earth/{lang}\nlangs:\n- en\n- es\n- ca\n- fr\n- zh\n- ru\n```\n\n```Button\nlabel: explorar el clima pasado (ERA5)\nurl: https://era5.lobelia.earth/{lang}\nlangs:\n- en\n- es\n- ca\n- fr\n```\n\n```Button\nlabel: Urban Resilience Hub (UN Habitat)\nurl: http://urbanresiliencehub.org/\nnewTab: true\n```",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC1jb250ZW50c19VcmJhbiBhcmVhcyBhcmUgc3Ryb25nbHkgZXhwb3NlZCB0byB0aGUgZWZmZWN0cyBvZiBjbGltYXRlIGNoYW5nZS4gTG9jYWwgYXV0aG9yaXRpZXMgbW9uaXRvciB0aGVzZSBlZmZlY3RzIHZlcnkgY2xvc2VseSwgc28gdGhhdCB0aGV5IGNhbiBhZGFwdCBpbiBhIHRpbWVseSBtYW5uZXIgYW5kIHJlZHVjZSB0aGVpciBpbXBhY3Qgb24gY2l0aXplbnMnIGxpdmVzOiBoZWFsdGggY2FyZSwgdHJhbnNwb3J0LCB3YXRlciBtYW5hZ2VtZW50LCBlbmVyZ3kgc3VwcGx5LCBldGMuICAKClVOIEhhYml0YXQncyAqKkNpdHkgUmVzaWxpZW5jZSBQcm9maWxpbmcgUHJvZ3JhbW1lIChDUlBQKSoqIHByb3ZpZGVzIG5hdGlvbmFsIGFuZCBsb2NhbCBnb3Zlcm5tZW50cyB3aXRoIHRvb2xzIGZvciBtZWFzdXJpbmcgYW5kIGluY3JlYXNpbmcgcmVzaWxpZW5jZSB0byBtdWx0aS1oYXphcmQgaW1wYWN0cywgaW5jbHVkaW5nIHRob3NlIGFzc29jaWF0ZWQgd2l0aCBjbGltYXRlIGNoYW5nZS4KCioqTG9iZWxpYSdzIGNsaW1hdGUgZW5naW5lIGlzIGludGVncmF0ZWQgaW4gdGhlIENSUFAqKiwgaGVscGluZyBhbmFseXNlIGNsaW1hdGUgdHJlbmRzIGFuZCBsaW5rIHRvIG90aGVyIHR5cGVzIG9mIGRhdGEgYXMgcmVxdWlyZWQgdG8gYWxsb3cgdGhlIGRlZmluaXRpb24gb2YgYSBzdWl0YWJsZSBhY3Rpb24gcGxhbi4gTG9iZWxpYSdzIHRvb2xib3ggY2FuIGJlIHVzZWQgYnkgY2l0aWVzIHdvcmxkd2lkZSwgd2l0aCBjdXJyZW50IHVzZXJzIGluY2x1ZGluZyBBc3VuY2nDs24sIFlha3V0c2ssIE1hcHV0bywgRGFrYXIgYW5kIFBvcnQgVmlsYS4KCkxvYmVsaWEgdXNlcyBkb3duc2NhbGluZyBhbmQgYmlhcyBjb3JyZWN0aW9uIHRlY2huaXF1ZXMgdG8gZ2VuZXJhdGUgaGlnaC1yZXNvbHV0aW9uLCBsb2NhbGx5LWFkYXB0ZWQgZGF0YSBkZXNjcmliaW5nIHRoZSBmdXR1cmUgY2xpbWF0ZSBpbiB0aGUgdGFyZ2V0IGNpdGllcy4gCgoKYGBgQnV0dG9uCmxhYmVsOiB0cnkgZGVtbwp1cmw6IGh0dHBzOi8vY2l0eS1jbGltYXRlLXRyZW5kcy5sb2JlbGlhLmVhcnRoL3tsYW5nfQpsYW5nczoKLSBlbgotIGVzCi0gY2EKLSBmcgotIHpoCi0gcnUKYGBgCgpgYGBCdXR0b24KbGFiZWw6IGV4cGxvcmUgcGFzdCBjbGltYXRlIChFUkE1KQp1cmw6IGh0dHBzOi8vZXJhNS5sb2JlbGlhLmVhcnRoL3tsYW5nfQpsYW5nczoKLSBlbgotIGVzCi0gY2EKLSBmcgpgYGAKCmBgYEJ1dHRvbgpsYWJlbDogVU4gSGFiaXRhdCdzIFVyYmFuIFJlc2lsaWVuY2UgSHViCnVybDogaHR0cDovL3VyYmFucmVzaWxpZW5jZWh1Yi5vcmcvCm5ld1RhYjogdHJ1ZQpgYGA="
-  },
-  "be6eea00-1d37-40aa-bc61-c64e3e3fc7d8": {
-    "id": "be6eea00-1d37-40aa-bc61-c64e3e3fc7d8",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Las áreas urbanas están fuertemente expuestas a los efectos del cambio climático. Las autoridades locales controlan estos efectos muy de cerca, para poderse adaptar en el momento oportuno y reducir su impacto en la vida de los ciudadanos: atención médica, transporte, gestión del agua, suministro de energía, etc.\n\nEl **Programa de Perfiles de Resiliencia Urbana de UN Habitat (CRPP, en inglés)** brinda a los gobiernos nacionales y locales herramientas para medir y aumentar la resiliencia ante los impactos de múltiples peligros, incluidos los asociados con el cambio climático.\n\n**El motor climático de Lobelia está integrado en el CRPP**, lo que ayuda a analizar las tendencias climáticas y a vincular otros tipos de datos según sea necesario para permitir la definición de un plan de acción adecuado. La caja de herramientas de Lobelia puede ser utilizada por ciudades de todo el mundo, con usuarios actuales como Asunción, Yakutsk, Maputo, Dakar y Port Vila.\n\nLobelia utiliza técnicas de reducción de escala y corrección de sesgo (*downscaling and bias correction*) para generar datos de alta resolución, adaptados localmente, que describen el clima futuro en las ciudades objetivo.\n\n\n```Button\nlabel: probar demo\nurl: https://city-climate-trends.lobelia.earth/{lang}\nlangs:\n- en\n- es\n- ca\n- fr\n- zh\n- ru\n```\n\n```Button\nlabel: explorar el clima pasado\nurl: https://era5.lobelia.earth/{lang}\nlangs:\n- en\n- es\n- ca\n- fr\n```\n\n```Button\nlabel: Urban Resilience Hub (UN Habitat)\nurl: http://urbanresiliencehub.org/\nnewTab: true\n```",
-    "keyId": "cHJvamVjdC1jb250ZW50c19VcmJhbiBhcmVhcyBhcmUgc3Ryb25nbHkgZXhwb3NlZCB0byB0aGUgZWZmZWN0cyBvZiBjbGltYXRlIGNoYW5nZS4gTG9jYWwgYXV0aG9yaXRpZXMgbW9uaXRvciB0aGVzZSBlZmZlY3RzIHZlcnkgY2xvc2VseSwgc28gdGhhdCB0aGV5IGNhbiBhZGFwdCBpbiBhIHRpbWVseSBtYW5uZXIgYW5kIHJlZHVjZSB0aGVpciBpbXBhY3Qgb24gY2l0aXplbnMnIGxpdmVzOiBoZWFsdGggY2FyZSwgdHJhbnNwb3J0LCB3YXRlciBtYW5hZ2VtZW50LCBlbmVyZ3kgc3VwcGx5LCBldGMuICAKClVOIEhhYml0YXQncyAqKkNpdHkgUmVzaWxpZW5jZSBQcm9maWxpbmcgUHJvZ3JhbW1lIChDUlBQKSoqIHByb3ZpZGVzIG5hdGlvbmFsIGFuZCBsb2NhbCBnb3Zlcm5tZW50cyB3aXRoIHRvb2xzIGZvciBtZWFzdXJpbmcgYW5kIGluY3JlYXNpbmcgcmVzaWxpZW5jZSB0byBtdWx0aS1oYXphcmQgaW1wYWN0cywgaW5jbHVkaW5nIHRob3NlIGFzc29jaWF0ZWQgd2l0aCBjbGltYXRlIGNoYW5nZS4KCioqTG9iZWxpYSdzIGNsaW1hdGUgZW5naW5lIGlzIGludGVncmF0ZWQgaW4gdGhlIENSUFAqKiwgaGVscGluZyBhbmFseXNlIGNsaW1hdGUgdHJlbmRzIGFuZCBsaW5rIHRvIG90aGVyIHR5cGVzIG9mIGRhdGEgYXMgcmVxdWlyZWQgdG8gYWxsb3cgdGhlIGRlZmluaXRpb24gb2YgYSBzdWl0YWJsZSBhY3Rpb24gcGxhbi4gTG9iZWxpYSdzIHRvb2xib3ggY2FuIGJlIHVzZWQgYnkgY2l0aWVzIHdvcmxkd2lkZSwgd2l0aCBjdXJyZW50IHVzZXJzIGluY2x1ZGluZyBBc3VuY2nDs24sIFlha3V0c2ssIE1hcHV0bywgRGFrYXIgYW5kIFBvcnQgVmlsYS4KCkxvYmVsaWEgdXNlcyBkb3duc2NhbGluZyBhbmQgYmlhcyBjb3JyZWN0aW9uIHRlY2huaXF1ZXMgdG8gZ2VuZXJhdGUgaGlnaC1yZXNvbHV0aW9uLCBsb2NhbGx5LWFkYXB0ZWQgZGF0YSBkZXNjcmliaW5nIHRoZSBmdXR1cmUgY2xpbWF0ZSBpbiB0aGUgdGFyZ2V0IGNpdGllcy4gCgoKYGBgQnV0dG9uCmxhYmVsOiB0cnkgZGVtbwp1cmw6IGh0dHBzOi8vY2l0eS1jbGltYXRlLXRyZW5kcy5sb2JlbGlhLmVhcnRoL3tsYW5nfQpsYW5nczoKLSBlbgotIGVzCi0gY2EKLSBmcgotIHpoCi0gcnUKYGBgCgpgYGBCdXR0b24KbGFiZWw6IGV4cGxvcmUgcGFzdCBjbGltYXRlCnVybDogaHR0cHM6Ly9lcmE1LmxvYmVsaWEuZWFydGgve2xhbmd9CmxhbmdzOgotIGVuCi0gZXMKLSBjYQotIGZyCmBgYAoKYGBgQnV0dG9uCmxhYmVsOiBVTiBIYWJpdGF0J3MgVXJiYW4gUmVzaWxpZW5jZSBIdWIKdXJsOiBodHRwOi8vdXJiYW5yZXNpbGllbmNlaHViLm9yZy8KbmV3VGFiOiB0cnVlCmBgYA=="
-  },
-  "f04a3e7c-2c5d-40a1-8e54-50a5b2e48fa1": {
-    "id": "f04a3e7c-2c5d-40a1-8e54-50a5b2e48fa1",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "Con recursos.",
-    "fuzzy": false,
-    "keyId": "dGVhbU1lbWJlci1iaW9fUmVzb3VyY2VmdWwu"
-  },
-  "c87884ad-ab97-4413-82e9-f90bdcf49ed6": {
-    "id": "c87884ad-ab97-4413-82e9-f90bdcf49ed6",
-    "isDeleted": false,
-    "lang": "es",
-    "translation": "```ContactForm\nsendTo: info@lobelia.earth\n```\n\n## … o contacta con nosotros:\n\n**T:** +34 93 350 55 08 <br />\n**E:** [info@lobelia.earth](mailto:info@lobelia.earth)",
-    "fuzzy": false,
-    "keyId": "cGFnZS1jb250ZW50c19gYGBDb250YWN0Rm9ybQpzZW5kVG86IGluZm9AbG9iZWxpYS5lYXJ0aApgYGAKCiMjIOKApm9yIGNvbnRhY3QgdXM6CgoqKlQ6KiogKzM0IDkzIDM1MCA1NSAwOCA8YnIgLz4KKipFOioqIFtpbmZvQGxvYmVsaWEuZWFydGhdKG1haWx0bzppbmZvQGxvYmVsaWEuZWFydGgpCg=="
+    "keyId": "c29tZUNvbnRleHRfTG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2NpbmcgZWxpdC4gUHJvaW4gc2l0IGFtZXQgcmlzdXMgZmVsaXMuIERvbmVjIHNlZCB2aXZlcnJhIHVybmEuIFByYWVzZW50IHBvcnR0aXRvciBsb3JlbSBpZCB1cm5hIGJsYW5kaXQsIG5lYyBzY2VsZXJpc3F1ZSByaXN1cyB2YXJpdXMuIE51bGxhbSBldWlzbW9kIHN1c2NpcGl0IHNjZWxlcmlzcXVlLiBNYXVyaXMgcGxhY2VyYXQgc2NlbGVyaXNxdWUgbmlzaSwgdmVsIHJ1dHJ1bSBwdXJ1cyBkYXBpYnVzIGV0LiBRdWlzcXVlIG1hdHRpcyBwdWx2aW5hciBlcm9zIGluIG1vbGVzdGllLiBTdXNwZW5kaXNzZSBlbGVpZmVuZCBwcmV0aXVtIG5pc2kgdmVsIHNhZ2l0dGlzLiBJbiBtb2xsaXMgZGlhbSBzZW0sIGVnZXQgcG9ydGEgbWFnbmEgYXVjdG9yIG5lYy4gTWFlY2VuYXMgcnV0cnVtIGV1IG1hZ25hIHNpdCBhbWV0IGZldWdpYXQuIE51bmMgbmVjIHZpdmVycmEgZHVpLiBTdXNwZW5kaXNzZSBpZCBsYWN1cyBzdXNjaXBpdCwgdm9sdXRwYXQgc2FwaWVuIGhlbmRyZXJpdCwgaW50ZXJkdW0gcmlzdXMuIE1hdXJpcyBldSBtb2xsaXMgbGFjdXMsIGFjIHBvc3VlcmUgdG9ydG9yLiBJbnRlZ2VyIHF1aXMgcHJldGl1bSBtZXR1cy4gVXQgY29uZGltZW50dW0gYXVjdG9yIGVsaXQsIGV1IGFsaXF1ZXQgdXJuYS4gQ3VyYWJpdHVyIHNpdCBhbWV0IHZ1bHB1dGF0ZSBsb3JlbSwgYSBsb2JvcnRpcyByaXN1cy4KCkFsaXF1YW0gZmluaWJ1cyBsYWNpbmlhIGlhY3VsaXMuIE51bGxhIG1hdHRpcyBsb3JlbSBuZWMgZWZmaWNpdHVyIHZhcml1cy4gTWF1cmlzIHRlbXB1cyB2ZWxpdCBpZCBhdWN0b3IgaW50ZXJkdW0uIFNlZCBmYWNpbGlzaXMsIG51bmMgaWQgdGluY2lkdW50IHNvbGxpY2l0dWRpbiwgZW5pbSBhdWd1ZSBwdWx2aW5hciBsaWd1bGEsIHZlbCBjb25zZWN0ZXR1ciBsb3JlbSB1cm5hIG5vbiB2ZWxpdC4gVmVzdGlidWx1bSBhbnRlIGlwc3VtIHByaW1pcyBpbiBmYXVjaWJ1cyBvcmNpIGx1Y3R1cyBldCB1bHRyaWNlcyBwb3N1ZXJlIGN1YmlsaWEgQ3VyYWU7IE1vcmJpIGVnZXQgYXVjdG9yIGVuaW0sIHNpdCBhbWV0IGV1aXNtb2QgdGVsbHVzLiBJbnRlZ2VyIHZpdGFlIG9kaW8gaW4gbGlndWxhIHByZXRpdW0gaW50ZXJkdW0gYWMgbmVjIGVuaW0uIFZlc3RpYnVsdW0gdGVsbHVzIG9yY2ksIGhlbmRyZXJpdCBldSB0b3J0b3IgcXVpcywgcHJldGl1bSBwaGFyZXRyYSBtYXNzYS4gSW4gcXVpcyBxdWFtIHZlbmVuYXRpcywgYXVjdG9yIGVyb3MgbmVjLCBjb252YWxsaXMgZmVsaXMuIERvbmVjIG1hdHRpcyBvcmNpIGFsaXF1YW0gZWxpdCBwbGFjZXJhdCwgYWMgZmluaWJ1cyB0dXJwaXMgaW50ZXJkdW0uIFByb2luIGxvcmVtIHF1YW0sIGRpZ25pc3NpbSB2ZWwgcXVhbSBhYywgbW9sbGlzIGltcGVyZGlldCBpcHN1bS4gRXRpYW0gaWFjdWxpcyBlbGVtZW50dW0gbGVvLiBOdWxsYSBldSBsZWN0dXMgbmVjIG1ldHVzIGdyYXZpZGEgY29uZ3VlLiBQZWxsZW50ZXNxdWUgdGVtcHVzIG1hdXJpcyB2ZWwgbWF1cmlzIGxhY2luaWEsIGlhY3VsaXMgdm9sdXRwYXQgZXJvcyBzb2RhbGVzLiBDcmFzIGV1IGxlbyBsaWd1bGEuIFByb2luIHRvcnRvciBleCwgdml2ZXJyYSBlZmZpY2l0dXIgcmlzdXMgbmVjLCBhY2N1bXNhbiBzb2xsaWNpdHVkaW4gZXN0Lg=="
   },
-  "78521bd4-11f6-4df6-bd96-9daba9405b16": {
-    "id": "78521bd4-11f6-4df6-bd96-9daba9405b16",
+  "5348e6fa-4728-4219-bf34-36abf1c3ebb3": {
+    "id": "5348e6fa-4728-4219-bf34-36abf1c3ebb3",
     "isDeleted": false,
-    "lang": "es",
-    "translation": "Ayudando a UN Habitat – CRPP en el análisis del clima en las ciudades",
-    "fuzzy": false,
-    "keyId": "cHJvamVjdC10aXRsZV9TdXBwb3J0aW5nIFVOwqBIYWJpdGF0IOKAkyBDUlBQIGZvciBjbGltYXRlIGFuYWx5c2lzIGluIGNpdGllcw=="
-  },
-  "913dcc2f-3d91-4462-887f-fb456f44df7f": {
-    "id": "913dcc2f-3d91-4462-887f-fb456f44df7f",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "`` `Mensajes\n`` `",
-    "fuzzy": true,
-    "keyId": "cGFnZS1jb250ZW50c19gYGBQb3N0cwpgYGAK"
-  },
-  "f0e27523-0173-4a02-a652-77e48869e27b": {
-    "id": "f0e27523-0173-4a02-a652-77e48869e27b",
-    "isDeleted": true,
     "lang": "es",
-    "translation": "```Contents\n```\n\n```Contact\n```",
+    "translation": "Traducir automáticamente",
     "fuzzy": false,
-    "keyId": "cGFnZS1sYXlvdXRfYGBgQ29udGVudHMKYGBgCgpgYGBDb250YWN0CmBgYA=="
-  },
-  "2d96989f-a253-4d1d-9482-d307ee08bfd0": {
-    "id": "2d96989f-a253-4d1d-9482-d307ee08bfd0",
-    "isDeleted": true,
-    "lang": "es",
-    "translation": "Pensamientos, noticias, cositas de nuestro equipo.",
-    "fuzzy": true,
-    "keyId": "cGFnZS10aXRsZV9UaG91Z2h0cywgbmV3cywgdGlkYml0cyBmcm9tIG91ciB0ZWFt"
+    "keyId": "dG9vbHRpcF9BdXRvdHJhbnNsYXRl"
   }
 }

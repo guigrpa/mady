@@ -1,1 +1,0 @@
-function anonymous(){return{dGVhbU1lbWJlci1yb2xlX09wZXJhdGlvbnMgYW5kIFN0cmF0ZWd5IERpcmVjdG9y:function(n){return"Directora de Operaciones y Estrategia"}}}module.exports=anonymous(),module.exports.dGVhbU1lbWJlci1iaW9fRGVlcGx5IGVuZ2FnZWQu=function(){return"Comprometida al 100%."};

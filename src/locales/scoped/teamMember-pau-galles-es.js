@@ -1,1 +1,0 @@
-function anonymous(){return{dGVhbU1lbWJlci1yb2xlX1ImRCBHZW9sb2dpY2FsIEVuZ2luZWVy:function(n){return"Ingeniero Geológico en I + D"}}}module.exports=anonymous(),module.exports["dGVhbU1lbWJlci1iaW9fRnJvbGljcyBpbiBhbGdvcml0aG1zLg=="]=function(){return"Baraja algoritmos."};
