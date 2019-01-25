@@ -1,0 +1,1 @@
+function anonymous(){return{"dGVhbU1lbWJlci1yb2xlX1RlY2ggTGVhZA==":function(n){return"Cap Tècnic"}}}module.exports=anonymous(),module.exports.dGVhbU1lbWJlci1iaW9fTWFrZXIu=function(){return"Fa coses."};

@@ -14,6 +14,7 @@ import {
 import type { ViewerT, KeyT } from '../../common/types';
 import { cookieGet, cookieSet } from '../gral/storage';
 import type { KeyFilter } from '../gral/types';
+import { UNSCOPED } from '../gral/constants';
 import { simplifyStringWithCache } from './helpers';
 import {
   styleKeyCol,
@@ -46,6 +47,7 @@ type Props = {
   selectedKeyId: ?string,
   changeSelectedKey: (keyId: ?string) => void,
   filter: KeyFilter,
+  scope: ?string,
   // Relay
   viewer: ViewerT,
 };
@@ -67,6 +69,7 @@ const fragment = graphql`
           unusedSince
           context # for sorting
           text # for sorting
+          scope # for filtering
           translations(first: 100000)
             @connection(key: "Translator_viewer_translations") {
             edges {
@@ -175,6 +178,14 @@ class Translator extends React.Component {
     let keys = this.props.viewer.keys.edges
       .map(o => o.node)
       .filter(o => !o.isDeleted);
+    keys = this.applyFilter(keys);
+    keys = this.applyScope(keys);
+    keys = keys.sort(keyComparator);
+    return keys;
+  }
+
+  applyFilter(keys0: Array<Object>) {
+    let keys = keys0;
     const { filter } = this.props;
     const { langs } = this.state;
     if (filter === 'UNUSED') keys = keys.filter(o => !!o.unusedSince);
@@ -214,7 +225,16 @@ class Translator extends React.Component {
         }
       }
     }
-    keys = keys.sort(keyComparator);
+    return keys;
+  }
+
+  applyScope(keys0: Array<Object>) {
+    let keys = keys0;
+    const { scope } = this.props;
+    if (!scope) return keys;
+    keys = keys.filter(
+      o => (scope !== UNSCOPED ? o.scope === scope : o.scope == null)
+    );
     return keys;
   }
 

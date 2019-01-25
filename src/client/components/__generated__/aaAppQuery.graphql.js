@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash b4de7a7bc03f1ca2f509d8ee8666d98b
+ * @relayHash 8d9bbf40f351ceb80534fd7f86198f45
  */
 
 /* eslint-disable */
@@ -13,6 +13,13 @@ export type aaAppQueryResponse = {|
   +viewer: ?{|
     +id: string;
     +config: {| |};
+    +keys: ?{|
+      +edges: ?$ReadOnlyArray<?{|
+        +node: ?{|
+          +scope: ?string;
+        |};
+      |}>;
+    |};
   |};
 |};
 */
@@ -26,6 +33,20 @@ query aaAppQuery {
     config {
       ...aeSettings_config
       id
+    }
+    keys(first: 100000) {
+      edges {
+        node {
+          scope
+          id
+          __typename
+        }
+        cursor
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
     }
   }
 }
@@ -48,6 +69,7 @@ fragment adTranslator_viewer on Viewer {
         unusedSince
         context
         text
+        scope
         translations(first: 100000) {
           edges {
             node {
@@ -178,6 +200,85 @@ const batch /*: ConcreteBatch*/ = {
               }
             ],
             "storageKey": null
+          },
+          {
+            "kind": "LinkedField",
+            "alias": "keys",
+            "args": null,
+            "concreteType": "KeyConnection",
+            "name": "__App_viewer_keys_connection",
+            "plural": false,
+            "selections": [
+              {
+                "kind": "LinkedField",
+                "alias": null,
+                "args": null,
+                "concreteType": "KeyEdge",
+                "name": "edges",
+                "plural": true,
+                "selections": [
+                  {
+                    "kind": "LinkedField",
+                    "alias": null,
+                    "args": null,
+                    "concreteType": "Key",
+                    "name": "node",
+                    "plural": false,
+                    "selections": [
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "args": null,
+                        "name": "scope",
+                        "storageKey": null
+                      },
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "args": null,
+                        "name": "__typename",
+                        "storageKey": null
+                      }
+                    ],
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "cursor",
+                    "storageKey": null
+                  }
+                ],
+                "storageKey": null
+              },
+              {
+                "kind": "LinkedField",
+                "alias": null,
+                "args": null,
+                "concreteType": "PageInfo",
+                "name": "pageInfo",
+                "plural": false,
+                "selections": [
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "endCursor",
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "hasNextPage",
+                    "storageKey": null
+                  }
+                ],
+                "storageKey": null
+              }
+            ],
+            "storageKey": null
           }
         ],
         "storageKey": null
@@ -187,7 +288,19 @@ const batch /*: ConcreteBatch*/ = {
   },
   "id": null,
   "kind": "Batch",
-  "metadata": {},
+  "metadata": {
+    "connection": [
+      {
+        "count": null,
+        "cursor": null,
+        "direction": "forward",
+        "path": [
+          "viewer",
+          "keys"
+        ]
+      }
+    ]
+  },
   "name": "aaAppQuery",
   "query": {
     "argumentDefinitions": [],
@@ -427,6 +540,13 @@ const batch /*: ConcreteBatch*/ = {
                         "storageKey": null
                       },
                       {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "args": null,
+                        "name": "scope",
+                        "storageKey": null
+                      },
+                      {
                         "kind": "LinkedField",
                         "alias": null,
                         "args": [
@@ -642,13 +762,29 @@ const batch /*: ConcreteBatch*/ = {
             "name": "keys",
             "key": "Translator_viewer_keys",
             "filters": null
+          },
+          {
+            "kind": "LinkedHandle",
+            "alias": null,
+            "args": [
+              {
+                "kind": "Literal",
+                "name": "first",
+                "value": 100000,
+                "type": "Int"
+              }
+            ],
+            "handle": "connection",
+            "name": "keys",
+            "key": "App_viewer_keys",
+            "filters": null
           }
         ],
         "storageKey": null
       }
     ]
   },
-  "text": "query aaAppQuery {\n  viewer {\n    id\n    ...adTranslator_viewer\n    config {\n      ...aeSettings_config\n      id\n    }\n  }\n}\n\nfragment adTranslator_viewer on Viewer {\n  id\n  config {\n    langs\n    id\n  }\n  stats {\n    ...ecTranslatorHeader_stats\n    id\n  }\n  keys(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        unusedSince\n        context\n        text\n        translations(first: 100000) {\n          edges {\n            node {\n              isDeleted\n              lang\n              fuzzy\n              id\n              __typename\n            }\n            cursor\n          }\n          pageInfo {\n            endCursor\n            hasNextPage\n          }\n        }\n        ...edTranslatorRow_theKey\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n\nfragment aeSettings_config on Config {\n  langs\n  srcPaths\n  srcExtensions\n  msgFunctionNames\n  msgRegexps\n  fMinify\n  fJsOutput\n  fJsonOutput\n  fReactIntlOutput\n}\n\nfragment ecTranslatorHeader_stats on Stats {\n  numTotalKeys\n  numUsedKeys\n  numTranslations {\n    lang\n    value\n  }\n}\n\nfragment edTranslatorRow_theKey on Key {\n  id\n  context\n  text\n  unusedSince\n  ...eeTranslation_theKey\n  translations(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        lang\n        ...eeTranslation_translation\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n\nfragment eeTranslation_theKey on Key {\n  id\n  text\n  isMarkdown\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  isDeleted\n  lang\n  translation\n  fuzzy\n}\n"
+  "text": "query aaAppQuery {\n  viewer {\n    id\n    ...adTranslator_viewer\n    config {\n      ...aeSettings_config\n      id\n    }\n    keys(first: 100000) {\n      edges {\n        node {\n          scope\n          id\n          __typename\n        }\n        cursor\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n      }\n    }\n  }\n}\n\nfragment adTranslator_viewer on Viewer {\n  id\n  config {\n    langs\n    id\n  }\n  stats {\n    ...ecTranslatorHeader_stats\n    id\n  }\n  keys(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        unusedSince\n        context\n        text\n        scope\n        translations(first: 100000) {\n          edges {\n            node {\n              isDeleted\n              lang\n              fuzzy\n              id\n              __typename\n            }\n            cursor\n          }\n          pageInfo {\n            endCursor\n            hasNextPage\n          }\n        }\n        ...edTranslatorRow_theKey\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n\nfragment aeSettings_config on Config {\n  langs\n  srcPaths\n  srcExtensions\n  msgFunctionNames\n  msgRegexps\n  fMinify\n  fJsOutput\n  fJsonOutput\n  fReactIntlOutput\n}\n\nfragment ecTranslatorHeader_stats on Stats {\n  numTotalKeys\n  numUsedKeys\n  numTranslations {\n    lang\n    value\n  }\n}\n\nfragment edTranslatorRow_theKey on Key {\n  id\n  context\n  text\n  unusedSince\n  ...eeTranslation_theKey\n  translations(first: 100000) {\n    edges {\n      node {\n        id\n        isDeleted\n        lang\n        ...eeTranslation_translation\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n\nfragment eeTranslation_theKey on Key {\n  id\n  text\n  isMarkdown\n}\n\nfragment eeTranslation_translation on Translation {\n  id\n  isDeleted\n  lang\n  translation\n  fuzzy\n}\n"
 };
 
 module.exports = batch;

@@ -1,3 +1,5 @@
+* **Client**: Add filtering by scopes!
+
 ## 3.1.2 (2019-1-25)
 
 * **Client**: bugfix: delete translation if text is cleared.

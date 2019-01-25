@@ -34,6 +34,7 @@ const query = graphql`
         unusedSince
         description
         sources
+        scope
       }
     }
   }
@@ -81,7 +82,13 @@ class Details extends React.PureComponent {
         </LargeMessage>
       );
     }
-    const { description, sources, firstUsed, unusedSince } = this.state.key;
+    const {
+      description,
+      sources,
+      firstUsed,
+      unusedSince,
+      scope,
+    } = this.state.key;
     const since = this.renderDate(firstUsed);
     const until = unusedSince ? (
       <span>
@@ -101,6 +108,12 @@ class Details extends React.PureComponent {
     return (
       <div>
         {description && <div>{description}</div>}
+        {scope && (
+          <div>
+            {_t('msgDetailsView_Scope')}:{' '}
+            <span style={style.detailValue}>{scope}</span>
+          </div>
+        )}
         {_t('msgDetailsView_Used since')} {since}
         {until}
         {elSources}
@@ -111,7 +124,7 @@ class Details extends React.PureComponent {
   renderDate(d: string) {
     const { _now } = this.props;
     return (
-      <span title={moment(d).format('LLLL')} style={style.date}>
+      <span title={moment(d).format('LLLL')} style={style.detailValue}>
         {_now ? moment(d).from(_now) : moment(d).fromNow()}
       </span>
     );
@@ -132,7 +145,7 @@ const style = {
     textAlign: 'center',
     marginBottom: 10,
   },
-  date: {
+  detailValue: {
     fontWeight: 'bold',
     color: '#444',
   },

@@ -1,405 +1,1638 @@
 {
-  "47362ba9-6518-4f87-823d-8f4d42560892": {
-    "id": "47362ba9-6518-4f87-823d-8f4d42560892",
-    "lang": "ca",
-    "translation": "Convertir traduccions a fitxers JavaScript",
-    "keyId": "dG9vbHRpcF9Db252ZXJ0IHRyYW5zbGF0aW9ucyB0byBKYXZhU2NyaXB0IGZpbGVz"
-  },
-  "ede1b358-92a9-47cc-be40-022bad306252": {
-    "id": "ede1b358-92a9-47cc-be40-022bad306252",
-    "lang": "ca",
-    "translation": "Ajustos",
-    "keyId": "dG9vbHRpcF9TZXR0aW5ncw=="
-  },
-  "c6c83d0b-114a-4b7f-a60e-27c11ddc9bc4": {
-    "id": "c6c83d0b-114a-4b7f-a60e-27c11ddc9bc4",
-    "lang": "ca",
-    "translation": "Esborrar",
-    "keyId": "YnV0dG9uX0RlbGV0ZQ=="
-  },
-  "568e781e-9e48-4df9-9332-843182299469": {
-    "id": "568e781e-9e48-4df9-9332-843182299469",
-    "lang": "ca",
-    "translation": "Cancel·lar canvis",
-    "keyId": "YnV0dG9uX1JldmVydA=="
-  },
-  "f661d2d7-e7be-45b6-ab82-e3377c04cc23": {
-    "id": "f661d2d7-e7be-45b6-ab82-e3377c04cc23",
-    "lang": "ca",
-    "translation": "Guardar",
-    "keyId": "YnV0dG9uX1NhdmU="
-  },
-  "58d6ed4d-3302-4cf0-a8a9-40a6161c2b1e": {
-    "id": "58d6ed4d-3302-4cf0-a8a9-40a6161c2b1e",
-    "lang": "ca",
-    "translation": "Afegir columna",
-    "keyId": "dG9vbHRpcF9BZGQgY29sdW1u"
-  },
-  "5478b270-4b64-474b-acd4-00093c482dff": {
-    "id": "5478b270-4b64-474b-acd4-00093c482dff",
-    "lang": "ca",
-    "translation": "Canviar idioma",
-    "keyId": "dG9vbHRpcF9DaGFuZ2UgbGFuZ3VhZ2U="
-  },
-  "b65dd268-dfd0-4782-a714-2be834737fb3": {
-    "id": "b65dd268-dfd0-4782-a714-2be834737fb3",
-    "lang": "ca",
-    "translation": "Esborrar missatge (NO esborra cap traducció)",
-    "fuzzy": false,
-    "keyId": "dG9vbHRpcF9EZWxldGUgbWVzc2FnZSAoZG9lcyBOT1QgZGVsZXRlIGFueSB0cmFuc2xhdGlvbnMp"
-  },
-  "ca1e9119-70ec-4355-b26e-dca5dd6860bb": {
-    "id": "ca1e9119-70ec-4355-b26e-dca5dd6860bb",
-    "lang": "ca",
-    "translation": "Analitzar els fitxers de codi per actualitzar la llista de missatges",
-    "keyId": "dG9vbHRpcF9QYXJzZSBzb3VyY2UgZmlsZXMgdG8gdXBkYXRlIHRoZSBtZXNzYWdlIGxpc3Q="
-  },
-  "7cf2de63-ed0a-441d-9a21-b04534f6d80e": {
-    "id": "7cf2de63-ed0a-441d-9a21-b04534f6d80e",
-    "lang": "ca",
-    "translation": "Treure columna (NO esborra cap traducció)",
-    "keyId": "dG9vbHRpcF9SZW1vdmUgY29sdW1uIChkb2VzIE5PVCBkZWxldGUgYW55IHRyYW5zbGF0aW9ucyk="
-  },
-  "7dc783e7-41c2-4252-a513-17264fd1df10": {
-    "id": "7dc783e7-41c2-4252-a513-17264fd1df10",
-    "lang": "ca",
-    "translation": "Missatges",
-    "keyId": "Y29sdW1uVGl0bGVfTWVzc2FnZXM="
-  },
-  "1f94ee41-08c0-41d8-ad6d-c3cbd1a92b94": {
-    "id": "1f94ee41-08c0-41d8-ad6d-c3cbd1a92b94",
-    "lang": "ca",
-    "translation": "Detalls",
-    "keyId": "bXNnRGV0YWlsc1ZpZXdfRGV0YWlscw=="
-  },
-  "be69e318-01f4-43a8-8581-1d03c80164d6": {
-    "id": "be69e318-01f4-43a8-8581-1d03c80164d6",
-    "lang": "ca",
-    "translation": "Cap missatge seleccionat",
-    "keyId": "bXNnRGV0YWlsc1ZpZXdfTm8gbWVzc2FnZSBzZWxlY3RlZA=="
-  },
-  "733fb846-b2ab-46e3-9d5c-073e96f5f59f": {
-    "id": "733fb846-b2ab-46e3-9d5c-073e96f5f59f",
-    "lang": "ca",
-    "translation": "En ús des de",
-    "keyId": "bXNnRGV0YWlsc1ZpZXdfVXNlZCBzaW5jZQ=="
-  },
-  "14c7c94c-26c2-4b54-9e8e-b2bb6c17317f": {
-    "id": "14c7c94c-26c2-4b54-9e8e-b2bb6c17317f",
-    "lang": "ca",
-    "translation": "fins a",
-    "keyId": "bXNnRGV0YWlsc1ZpZXdfdW50aWw="
-  },
-  "2401070b-65cb-4d9b-bc09-40e70fee49af": {
-    "id": "2401070b-65cb-4d9b-bc09-40e70fee49af",
-    "lang": "ca",
-    "translation": "Cancel·lar",
-    "keyId": "YnV0dG9uX0NhbmNlbA=="
-  },
-  "8453b672-2372-4b82-b1a8-2c36d09b1b67": {
-    "id": "8453b672-2372-4b82-b1a8-2c36d09b1b67",
-    "lang": "ca",
-    "translation": "Idiomes (codis BCP47):",
-    "keyId": "c2V0dGluZ3NGb3JtX0xhbmd1YWdlcyAoQkNQNDcgY29kZXMpOg=="
-  },
-  "24d9fbfa-b97b-4ba8-9ab6-882bd5ca509f": {
-    "id": "24d9fbfa-b97b-4ba8-9ab6-882bd5ca509f",
-    "lang": "ca",
-    "translation": "Idioma de Mady:",
-    "keyId": "c2V0dGluZ3NGb3JtX01hZHkgbGFuZ3VhZ2U6"
-  },
-  "dac5114c-ff53-4ec3-874c-729f6adb75d4": {
-    "id": "dac5114c-ff53-4ec3-874c-729f6adb75d4",
-    "lang": "ca",
-    "translation": "Minificar el JavaScript de sortida",
-    "keyId": "c2V0dGluZ3NGb3JtX01pbmlmeSBvdXRwdXQgSmF2YVNjcmlwdA=="
-  },
-  "97325cc5-0b0d-4a71-b058-ef65d5a68b8e": {
-    "id": "97325cc5-0b0d-4a71-b058-ef65d5a68b8e",
-    "lang": "ca",
-    "translation": "Extensions de fitxer a buscar:",
-    "keyId": "c2V0dGluZ3NGb3JtX1NvdXJjZSBleHRlbnNpb25zOg=="
-  },
-  "3f8c5121-e4bf-42a0-9216-398f9af8365c": {
-    "id": "3f8c5121-e4bf-42a0-9216-398f9af8365c",
-    "lang": "ca",
-    "translation": "Carpetes a buscar:",
-    "keyId": "c2V0dGluZ3NGb3JtX1NvdXJjZSBwYXRoczo="
-  },
-  "8e1b8a8b-825e-40ad-86d8-23b70207f693": {
-    "id": "8e1b8a8b-825e-40ad-86d8-23b70207f693",
-    "lang": "ca",
-    "translation": "Total missatges",
-    "keyId": "dG9vbHRpcF9Ub3RhbCBtZXNzYWdlcw=="
-  },
-  "a58b332f-f3de-4688-b8b6-e841ecdcfa73": {
-    "id": "a58b332f-f3de-4688-b8b6-e841ecdcfa73",
-    "lang": "ca",
-    "translation": "Missatges en ús",
-    "keyId": "dG9vbHRpcF9Vc2VkIG1lc3NhZ2Vz"
-  },
-  "40202fca-c4e1-4606-9c78-3371194952c4": {
-    "id": "40202fca-c4e1-4606-9c78-3371194952c4",
-    "lang": "ca",
-    "translation": "Traduccions",
-    "keyId": "dG9vbHRpcF9UcmFuc2xhdGlvbnM="
-  },
-  "35cce019-cb28-481b-88b2-aff38f81f78a": {
-    "id": "35cce019-cb28-481b-88b2-aff38f81f78a",
-    "lang": "ca",
-    "translation": "Esborrar traducció",
-    "keyId": "dG9vbHRpcF9EZWxldGUgdHJhbnNsYXRpb24="
-  },
-  "39540d42-d93e-4d8b-a7cf-cc10bca62d0f": {
-    "id": "39540d42-d93e-4d8b-a7cf-cc10bca62d0f",
-    "lang": "ca",
-    "translation": "Fes clic a fora o prem TAB per guardar. Prem ESC per desfer.",
-    "keyId": "dHJhbnNsYXRpb25IZWxwX0NsaWNrIG91dHNpZGUgb3IgVEFCIHRvIHNhdmUuIEVTQyB0byB1bmRvLg=="
-  },
-  "199ed7b7-84e1-4709-9cd8-93a7d22d99aa": {
-    "id": "199ed7b7-84e1-4709-9cd8-93a7d22d99aa",
-    "lang": "ca",
-    "translation": "Entesos!",
-    "keyId": "aGludF9Hb3QgaXQh"
-  },
-  "4087c83b-3ab9-4e20-a700-4eab5a70158d": {
-    "id": "4087c83b-3ab9-4e20-a700-4eab5a70158d",
-    "lang": "ca",
-    "translation": "Afegir columna d'idioma",
-    "keyId": "aGludF9BZGQgbGFuZ3VhZ2UgY29sdW1u"
-  },
-  "a0876995-f4d3-4809-98dc-8e36b524c2a1": {
-    "id": "a0876995-f4d3-4809-98dc-8e36b524c2a1",
-    "lang": "ca",
-    "translation": "Configurar Mady",
-    "keyId": "aGludF9Db25maWd1cmUgTWFkeQ=="
-  },
-  "c5f69f15-5406-4623-bf99-643b95ac62ca": {
-    "id": "c5f69f15-5406-4623-bf99-643b95ac62ca",
-    "lang": "ca",
-    "translation": "Gaudeix traduint!",
-    "keyId": "aGludF9FbmpveSB0cmFuc2xhdGluZyE="
-  },
-  "4fe4e93a-9b06-48ce-b7d4-131edd1d0dcd": {
-    "id": "4fe4e93a-9b06-48ce-b7d4-131edd1d0dcd",
-    "lang": "ca",
-    "translation": "{NUM, plural, one{1 hamburguesa} other{# hamburgueses}}",
-    "keyId": "c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319"
-  },
-  "e390b021-2e70-4daa-b61c-1296992ce89f": {
-    "id": "e390b021-2e70-4daa-b61c-1296992ce89f",
-    "lang": "ca",
-    "translation": "Copiar missatge",
-    "keyId": "dG9vbHRpcF9Db3B5IG1lc3NhZ2U="
-  },
-  "ee4c914f-b3e8-4ea8-ae65-42db5841013f": {
-    "id": "ee4c914f-b3e8-4ea8-ae65-42db5841013f",
-    "lang": "ca",
-    "translation": "el nombre de claus obertes i tancades no coincideix",
-    "keyId": "dmFsaWRhdGlvbl90aGUgbnVtYmVyIG9mIGxlZnQgYW5kIHJpZ2h0IGJyYWNrZXRzIGRvZXMgbm90IG1hdGNo"
-  },
-  "e9eeaa32-7f10-4cef-bbd6-eaf0387687bb": {
-    "id": "e9eeaa32-7f10-4cef-bbd6-eaf0387687bb",
-    "lang": "ca",
-    "translation": "Error de sintaxi MessageFormat",
-    "keyId": "dmFsaWRhdGlvbl9NZXNzYWdlRm9ybWF0IHN5bnRheCBlcnJvcg=="
-  },
-  "2bb61dd0-1a76-4a1c-938a-84de51a2fbb5": {
-    "id": "2bb61dd0-1a76-4a1c-938a-84de51a2fbb5",
-    "lang": "ca",
-    "translation": "No s'han pogut guardar els canvis",
-    "keyId": "ZXJyb3JfQ2hhbmdlcyBjb3VsZCBub3QgYmUgc2F2ZWQ="
-  },
-  "d0313b5b-529d-4fac-8c4a-da98713f1075": {
-    "id": "d0313b5b-529d-4fac-8c4a-da98713f1075",
-    "lang": "ca",
-    "translation": "No s'ha pogut guardar la configuració",
-    "keyId": "ZXJyb3JfQ29uZmlndXJhdGlvbiBjb3VsZCBub3QgYmUgc2F2ZWQ="
-  },
-  "4ee32aa9-4257-435c-b983-2c10aa6f25c4": {
-    "id": "4ee32aa9-4257-435c-b983-2c10aa6f25c4",
-    "lang": "ca",
-    "translation": "El servidor està funcionant?",
-    "keyId": "ZXJyb3JfSXMgdGhlIHNlcnZlciBydW5uaW5nPw=="
-  },
-  "ae2c5503-3f04-45c2-a2ba-f1ea6958c88d": {
-    "id": "ae2c5503-3f04-45c2-a2ba-f1ea6958c88d",
-    "lang": "ca",
-    "translation": "Funcions de traducció de missatges a buscar:",
-    "keyId": "c2V0dGluZ3NGb3JtX01lc3NhZ2UgdHJhbnNsYXRpb24gZnVuY3Rpb25zIHRvIGxvb2sgZm9yOg==",
-    "fuzzy": false
-  },
-  "f8100fb6-3e76-423b-b2ab-57354fbe04da": {
-    "id": "f8100fb6-3e76-423b-b2ab-57354fbe04da",
-    "lang": "ca",
-    "translation": "Missatge amb emoji: 🎉",
-    "keyId": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppOiDwn46J"
-  },
-  "1a7ed819-4ded-4444-8192-213a0900bf84": {
-    "id": "1a7ed819-4ded-4444-8192-213a0900bf84",
-    "lang": "ca",
-    "translation": "Una eina per la internacionalització",
-    "keyId": "c29tZUNvbnRleHRfQSB0b29sIGZvciBpbnRlcm5hdGlvbmFsaXphdGlvbg=="
-  },
-  "c39c0181-810c-4727-a150-c908f8bb1375": {
-    "id": "c39c0181-810c-4727-a150-c908f8bb1375",
-    "lang": "ca",
-    "translation": "AVANÇAT: Expressions regulars addicionals per a l'extracció de missatges:",
-    "keyId": "c2V0dGluZ3NGb3JtX0FEVkFOQ0VEOiBBZGRpdGlvbmFsIHJlZ3VsYXIgZXhwcmVzc2lvbnMgZm9yIG1lc3NhZ2UgcGFyc2luZzo="
-  },
-  "0909f6a6-7147-45e4-a8a3-66a09b495139": {
-    "id": "0909f6a6-7147-45e4-a8a3-66a09b495139",
-    "lang": "ca",
-    "translation": "Assegura't que l'expressió regular té exactament un grup de captura: (.*?)",
-    "keyId": "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cDogKC4qPyk="
-  },
-  "b8ad090f-1823-40d7-893f-d7947a65118c": {
-    "id": "b8ad090f-1823-40d7-893f-d7947a65118c",
-    "lang": "ca",
-    "translation": "Fitxer JSON genèric",
-    "keyId": "c2V0dGluZ3NGb3JtX0dlbmVyaWMgSlNPTiBmaWxl"
-  },
-  "6d5904ea-4c5c-495b-91f6-42e76339f1a1": {
-    "id": "6d5904ea-4c5c-495b-91f6-42e76339f1a1",
-    "lang": "ca",
-    "translation": "Mòdul JavaScript",
-    "keyId": "c2V0dGluZ3NGb3JtX0phdmFTY3JpcHQgbW9kdWxl"
-  },
-  "eee66300-95c5-45d6-94bc-eb7cebb406c6": {
-    "id": "eee66300-95c5-45d6-94bc-eb7cebb406c6",
-    "lang": "ca",
-    "translation": "Mòdul JavaScript (necessari si fas servir la funció de traducció de Mady)",
-    "keyId": "c2V0dGluZ3NGb3JtX0phdmFTY3JpcHQgbW9kdWxlIChyZXF1aXJlZCBpZiB5b3UgdXNlIE1hZHkncyB0cmFuc2xhdGlvbiBmdW5jdGlvbik="
-  },
-  "b0f14ff3-9ee6-4e71-8457-879661b66353": {
-    "id": "b0f14ff3-9ee6-4e71-8457-879661b66353",
-    "lang": "ca",
-    "translation": "Assegura't que l'expressió regular té exactament un grup de captura, per exemple: (.*?)",
-    "keyId": "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cCwgcG9yIGVqZW1wbG86ICguKj8p"
-  },
-  "4163fb6d-6478-4380-ab69-d76878c6a987": {
-    "id": "4163fb6d-6478-4380-ab69-d76878c6a987",
-    "lang": "ca",
-    "translation": "Minificat",
-    "keyId": "c2V0dGluZ3NGb3JtX01pbmlmaWVk",
-    "fuzzy": false
-  },
-  "be607901-9c42-4a09-9731-50f502861ed2": {
-    "id": "be607901-9c42-4a09-9731-50f502861ed2",
-    "lang": "ca",
-    "translation": "Fitxer JSON per a React Intl",
-    "keyId": "c2V0dGluZ3NGb3JtX1JlYWN0IEludGwgSlNPTiBmaWxl"
-  },
-  "5f772cfe-a7cb-4c0d-90e4-8b89614adfee": {
-    "id": "5f772cfe-a7cb-4c0d-90e4-8b89614adfee",
-    "lang": "ca",
-    "translation": "Fitxers de sortida:",
-    "keyId": "c2V0dGluZ3NGb3JtX091dHB1dDo="
-  },
-  "dfba775b-96e8-4ce0-8a9c-dc6e53860c4f": {
-    "id": "dfba775b-96e8-4ce0-8a9c-dc6e53860c4f",
-    "lang": "ca",
-    "translation": "Assegura't que l'expressió regular té exactament un grup de captura, per exemple: (.*?)",
-    "keyId": "c2V0dGluZ3NGb3JtX01ha2Ugc3VyZSB5b3VyIHJlZ3VsYXIgZXhwcmVzc2lvbiBoYXMgZXhhY3RseSBvbmUgY2FwdHVyZSBncm91cCwgZm9yIGV4YW1wbGU6ICguKj8p"
-  },
-  "2d35994c-d5bb-4677-b2ef-4caad3d05b2b": {
-    "id": "2d35994c-d5bb-4677-b2ef-4caad3d05b2b",
-    "lang": "ca",
-    "translation": "Traducció dubtosa (fes clic per canviar)",
-    "keyId": "dG9vbHRpcF9EdWJpb3VzIHRyYW5zbGF0aW9uIChjbGljayB0byB0b2dnbGUp",
-    "fuzzy": true
-  },
-  "3328e3ad-cbe9-47bb-a7e7-c1f415eb05dc": {
-    "id": "3328e3ad-cbe9-47bb-a7e7-c1f415eb05dc",
+  "97b028c6-553c-4331-bc8b-48019b400416": {
+    "id": "97b028c6-553c-4331-bc8b-48019b400416",
     "isDeleted": false,
     "lang": "ca",
-    "translation": "Tots (sense filtre)",
-    "keyId": "ZmlsdGVyX0FsbCAobm8gZmlsdGVyKQ=="
+    "translation": "Oxfam",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1hY3JvbnltX094ZmFt"
   },
-  "2f21135c-7a1b-4f47-b6e6-7639eb2a2341": {
-    "id": "2f21135c-7a1b-4f47-b6e6-7639eb2a2341",
-    "isDeleted": false,
-    "lang": "ca",
-    "translation": "Tots (treure filtre)",
-    "keyId": "ZmlsdGVyX0FsbCAocmVtb3ZlIGZpbHRlcik="
-  },
-  "14a9feb4-feb6-4a12-a585-ecb1da62d317": {
-    "id": "14a9feb4-feb6-4a12-a585-ecb1da62d317",
-    "isDeleted": false,
-    "lang": "ca",
-    "translation": "Traduccions dubtoses",
-    "keyId": "ZmlsdGVyX0R1YmlvdXMgdHJhbnNsYXRpb25z"
-  },
-  "b783416c-687f-49a5-8d74-01d350cd38b5": {
-    "id": "b783416c-687f-49a5-8d74-01d350cd38b5",
-    "isDeleted": false,
-    "lang": "ca",
-    "translation": "Dubtes",
-    "keyId": "ZmlsdGVyX0R1YmlvdXM="
-  },
-  "57b7e18b-a08a-416e-8e96-79aa601845e4": {
-    "id": "57b7e18b-a08a-416e-8e96-79aa601845e4",
-    "isDeleted": false,
-    "lang": "ca",
-    "translation": "Traduccions pendents",
-    "keyId": "ZmlsdGVyX01pc3NpbmcgdHJhbnNsYXRpb25z"
-  },
-  "b3000671-4551-45f8-910a-f01f7383d158": {
-    "id": "b3000671-4551-45f8-910a-f01f7383d158",
-    "isDeleted": false,
-    "lang": "ca",
-    "translation": "Pendents",
-    "keyId": "ZmlsdGVyX01pc3Npbmc="
-  },
-  "2ad44ee4-e6f0-41be-b00d-1abc12abb674": {
-    "id": "2ad44ee4-e6f0-41be-b00d-1abc12abb674",
-    "isDeleted": false,
-    "lang": "ca",
-    "translation": "Missatges no utilitzats",
-    "keyId": "ZmlsdGVyX1VudXNlZCBtZXNzYWdlcw=="
-  },
-  "1385846c-6d34-400f-be5d-0f1e8919a1fd": {
-    "id": "1385846c-6d34-400f-be5d-0f1e8919a1fd",
-    "isDeleted": false,
-    "lang": "ca",
-    "translation": "No utilitzats",
-    "keyId": "ZmlsdGVyX1VudXNlZA=="
-  },
-  "7b126684-363e-46e4-86eb-bdc1da8d07db": {
-    "id": "7b126684-363e-46e4-86eb-bdc1da8d07db",
-    "isDeleted": false,
-    "lang": "ca",
-    "translation": "Filtrar missatges rellevants",
-    "keyId": "aGludF9GaWx0ZXIgcmVsZXZhbnQgbWVzc2FnZXM="
-  },
-  "97da1507-4ea1-4f82-9f9c-772289c277ac": {
-    "id": "97da1507-4ea1-4f82-9f9c-772289c277ac",
-    "isDeleted": false,
-    "lang": "ca",
-    "translation": "Filtre",
-    "keyId": "dG9vbHRpcF9GaWx0ZXI="
-  },
-  "4570f055-7932-46ef-8cb3-b31efcfd4c54": {
-    "id": "4570f055-7932-46ef-8cb3-b31efcfd4c54",
-    "isDeleted": false,
-    "lang": "ca",
-    "translation": "Ui, hi ha hagut un error!",
-    "keyId": "ZXJyb3JfT29wcywgYW4gZXJyb3Igb2NjdXJyZWQh"
-  },
-  "521d3ccc-6d79-472b-a9c4-3d45bbca3934": {
-    "id": "521d3ccc-6d79-472b-a9c4-3d45bbca3934",
+  "7bb50d01-dd83-48ba-b87c-ef2184ba5610": {
+    "id": "7bb50d01-dd83-48ba-b87c-ef2184ba5610",
     "isDeleted": true,
     "lang": "ca",
-    "translation": "Lorem ipsum dolor sit amet, elit consectetur adipiscing. Per tant, una gran quantitat de gats riure. Però fins que tiri olla. Present porttitor lorem blandit Identificació urna, la xocolata, ni les rialles de les varetes. Rendiment rep relé tèrmic. Però el més gran de xocolata de béns arrels o proteïna de Xile i el maquillatge. Cada lot de voleibol de cacauet a la televisió. deduïble d'estrès si el preu o els trets. El diàmetre resistents sem, la porta d'un gran autor ni la necessitat. futbol maquillatge Mecenes amb una gran quantitat de la UE. Ara no tiri de la pena. lacus Suspendisse suscipit, hendrerit volutpat sapiens, congue Aenean. Mauris eu mollis lacus, ac lectus eget lectus. temor pels preus sencers. Per a la competició autor salsa, els plàtans de futbol olla. Estic molt feliç vulputate LOREM un riure cartró.\n\nEls últims extrems de la faldilla dirigits. Nulla Mattis lorem ncaa va portar al voltant de les varetes. Mauris de vegades l'autor de les vegades, que ell desitja. Però antioxidants, ara que sollicitudin tincidunt, enim porttitor ut lígula pulvinar, urna consectetur lorem o no volen. Abans de la primera de bàsquet va fixar les seves mandíbules dolor i l'atenció clínica; Morbi eget auctor enim, sit amet elit euismod. Perquè no hi ha odi a Canberra, i els rectes de la vida i, de vegades el preu. Kibbeh Estats Units, els interessos estratègics de qualsevol temperatura, preu buirac de masses. En quis rutrum quam, nec erat auctor eros, convallis felis. Per desgràcia, alguns inversors inverteixen una gran quantitat de frustració, i a l'altre de la base de vegades. Proin quam lorem, dignissim vel quam ac, pentinat suau molt important. També apuntat element de lleó. Cap ordinador oa casa embarassada por. faldilla Sigueu mauris Mauris, dirigida membres de cap de setmana de cacauet. xarxes de lleó de futbol demà. Proin seure, es converteix en el riure de la nec tirada, accumsan sollicitudin est.",
-    "fuzzy": true,
-    "keyId": "c29tZUNvbnRleHRfTG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2NpbmcgZWxpdC4gUHJvaW4gc2l0IGFtZXQgcmlzdXMgZmVsaXMuIERvbmVjIHNlZCB2aXZlcnJhIHVybmEuIFByYWVzZW50IHBvcnR0aXRvciBsb3JlbSBpZCB1cm5hIGJsYW5kaXQsIG5lYyBzY2VsZXJpc3F1ZSByaXN1cyB2YXJpdXMuIE51bGxhbSBldWlzbW9kIHN1c2NpcGl0IHNjZWxlcmlzcXVlLiBNYXVyaXMgcGxhY2VyYXQgc2NlbGVyaXNxdWUgbmlzaSwgdmVsIHJ1dHJ1bSBwdXJ1cyBkYXBpYnVzIGV0LiBRdWlzcXVlIG1hdHRpcyBwdWx2aW5hciBlcm9zIGluIG1vbGVzdGllLiBTdXNwZW5kaXNzZSBlbGVpZmVuZCBwcmV0aXVtIG5pc2kgdmVsIHNhZ2l0dGlzLiBJbiBtb2xsaXMgZGlhbSBzZW0sIGVnZXQgcG9ydGEgbWFnbmEgYXVjdG9yIG5lYy4gTWFlY2VuYXMgcnV0cnVtIGV1IG1hZ25hIHNpdCBhbWV0IGZldWdpYXQuIE51bmMgbmVjIHZpdmVycmEgZHVpLiBTdXNwZW5kaXNzZSBpZCBsYWN1cyBzdXNjaXBpdCwgdm9sdXRwYXQgc2FwaWVuIGhlbmRyZXJpdCwgaW50ZXJkdW0gcmlzdXMuIE1hdXJpcyBldSBtb2xsaXMgbGFjdXMsIGFjIHBvc3VlcmUgdG9ydG9yLiBJbnRlZ2VyIHF1aXMgcHJldGl1bSBtZXR1cy4gVXQgY29uZGltZW50dW0gYXVjdG9yIGVsaXQsIGV1IGFsaXF1ZXQgdXJuYS4gQ3VyYWJpdHVyIHNpdCBhbWV0IHZ1bHB1dGF0ZSBsb3JlbSwgYSBsb2JvcnRpcyByaXN1cy4KCkFsaXF1YW0gZmluaWJ1cyBsYWNpbmlhIGlhY3VsaXMuIE51bGxhIG1hdHRpcyBsb3JlbSBuZWMgZWZmaWNpdHVyIHZhcml1cy4gTWF1cmlzIHRlbXB1cyB2ZWxpdCBpZCBhdWN0b3IgaW50ZXJkdW0uIFNlZCBmYWNpbGlzaXMsIG51bmMgaWQgdGluY2lkdW50IHNvbGxpY2l0dWRpbiwgZW5pbSBhdWd1ZSBwdWx2aW5hciBsaWd1bGEsIHZlbCBjb25zZWN0ZXR1ciBsb3JlbSB1cm5hIG5vbiB2ZWxpdC4gVmVzdGlidWx1bSBhbnRlIGlwc3VtIHByaW1pcyBpbiBmYXVjaWJ1cyBvcmNpIGx1Y3R1cyBldCB1bHRyaWNlcyBwb3N1ZXJlIGN1YmlsaWEgQ3VyYWU7IE1vcmJpIGVnZXQgYXVjdG9yIGVuaW0sIHNpdCBhbWV0IGV1aXNtb2QgdGVsbHVzLiBJbnRlZ2VyIHZpdGFlIG9kaW8gaW4gbGlndWxhIHByZXRpdW0gaW50ZXJkdW0gYWMgbmVjIGVuaW0uIFZlc3RpYnVsdW0gdGVsbHVzIG9yY2ksIGhlbmRyZXJpdCBldSB0b3J0b3IgcXVpcywgcHJldGl1bSBwaGFyZXRyYSBtYXNzYS4gSW4gcXVpcyBxdWFtIHZlbmVuYXRpcywgYXVjdG9yIGVyb3MgbmVjLCBjb252YWxsaXMgZmVsaXMuIERvbmVjIG1hdHRpcyBvcmNpIGFsaXF1YW0gZWxpdCBwbGFjZXJhdCwgYWMgZmluaWJ1cyB0dXJwaXMgaW50ZXJkdW0uIFByb2luIGxvcmVtIHF1YW0sIGRpZ25pc3NpbSB2ZWwgcXVhbSBhYywgbW9sbGlzIGltcGVyZGlldCBpcHN1bS4gRXRpYW0gaWFjdWxpcyBlbGVtZW50dW0gbGVvLiBOdWxsYSBldSBsZWN0dXMgbmVjIG1ldHVzIGdyYXZpZGEgY29uZ3VlLiBQZWxsZW50ZXNxdWUgdGVtcHVzIG1hdXJpcyB2ZWwgbWF1cmlzIGxhY2luaWEsIGlhY3VsaXMgdm9sdXRwYXQgZXJvcyBzb2RhbGVzLiBDcmFzIGV1IGxlbyBsaWd1bGEuIFByb2luIHRvcnRvciBleCwgdml2ZXJyYSBlZmZpY2l0dXIgcmlzdXMgbmVjLCBhY2N1bXNhbiBzb2xsaWNpdHVkaW4gZXN0Lg=="
+    "translation": "Oxfam",
+    "fuzzy": false,
+    "keyId": "Y29tcGFueS1uYW1lX094ZmFt"
   },
-  "e9451c47-7c9f-40d2-969f-40c02237498c": {
-    "id": "e9451c47-7c9f-40d2-969f-40c02237498c",
+  "a3d549ad-9f39-42d0-ab1b-b30907015219": {
+    "id": "a3d549ad-9f39-42d0-ab1b-b30907015219",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "xxx",
+    "fuzzy": true,
+    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfeHh4"
+  },
+  "ab300600-af66-41d9-8a66-8a54f1f0fd8e": {
+    "id": "ab300600-af66-41d9-8a66-8a54f1f0fd8e",
     "isDeleted": false,
     "lang": "ca",
-    "translation": "Traduir automàticament",
+    "translation": "posa't en contacte",
     "fuzzy": false,
-    "keyId": "dG9vbHRpcF9BdXRvdHJhbnNsYXRl"
+    "keyId": "Y29udGFjdF9nZXQgaW4gdG91Y2g="
+  },
+  "cc1d118e-2706-4087-a9ae-d81dd0cdc7f5": {
+    "id": "cc1d118e-2706-4087-a9ae-d81dd0cdc7f5",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "contacte",
+    "fuzzy": false,
+    "keyId": "bmF2X2NvbnRhY3Q="
+  },
+  "ec862b70-0ad6-423d-af38-2d928e710907": {
+    "id": "ec862b70-0ad6-423d-af38-2d928e710907",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Inici",
+    "fuzzy": false,
+    "keyId": "cGFnZS1uYXZpZ2F0aW9uVGl0bGVfSG9tZQ=="
+  },
+  "c3249b74-cf88-45ec-9548-c221109175d9": {
+    "id": "c3249b74-cf88-45ec-9548-c221109175d9",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "veritat",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1pc0NsaWVudF90cnVl"
+  },
+  "74fefd48-160d-488b-bc8b-f753c728c45b": {
+    "id": "74fefd48-160d-488b-bc8b-f753c728c45b",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Inici",
+    "fuzzy": false,
+    "keyId": "cGFnZS10aXRsZV9Ib21l"
+  },
+  "498a9e8f-1aa0-4662-99e9-106351c3f8ee": {
+    "id": "498a9e8f-1aa0-4662-99e9-106351c3f8ee",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "nosaltres",
+    "fuzzy": false,
+    "keyId": "bmF2X2Fib3V0"
+  },
+  "73ef81ae-8267-4899-98f1-8eb4a373bcc0": {
+    "id": "73ef81ae-8267-4899-98f1-8eb4a373bcc0",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "la nostra feina",
+    "fuzzy": false,
+    "keyId": "bmF2X291ciB3b3Jr"
+  },
+  "de9a5dec-623c-416e-a8e4-6b87bfa4bf11": {
+    "id": "de9a5dec-623c-416e-a8e4-6b87bfa4bf11",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "El navegador no admet el vídeo",
+    "fuzzy": true,
+    "keyId": "YmFubmVyX1ZpZGVvIG5vdCBzdXBwb3J0ZWQgYnkgYnJvd3Nlcg=="
+  },
+  "d55b7641-7f16-4105-ae3a-5621eba12360": {
+    "id": "d55b7641-7f16-4105-ae3a-5621eba12360",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "més informació",
+    "fuzzy": false,
+    "keyId": "YnV0dG9uX21vcmUgaW5mbw=="
+  },
+  "3d00f7d8-b60a-406e-affb-22703b5f7af9": {
+    "id": "3d00f7d8-b60a-406e-affb-22703b5f7af9",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Preguntes, comentaris?",
+    "fuzzy": false,
+    "keyId": "Y29udGFjdF9BbnkgcXVlc3Rpb25zIG9yIGNvbW1lbnRzPw=="
+  },
+  "5240ac16-e892-4ec4-b3d2-799771b619e9": {
+    "id": "5240ac16-e892-4ec4-b3d2-799771b619e9",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "solucions",
+    "fuzzy": false,
+    "keyId": "bmF2X3NvbHV0aW9ucw=="
+  },
+  "e0d5c36d-37a6-46f0-a772-1fd34876b697": {
+    "id": "e0d5c36d-37a6-46f0-a772-1fd34876b697",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "El navegador no admet el vídeo",
+    "fuzzy": true,
+    "keyId": "bWFya2Rvd25fVmlkZW8gbm90IHN1cHBvcnRlZCBieSBicm93c2Vy"
+  },
+  "794657ed-c06c-4a23-80b5-9457545cb2d0": {
+    "id": "794657ed-c06c-4a23-80b5-9457545cb2d0",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "PWC",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1hY3JvbnltX1BXQw=="
+  },
+  "02db4e20-205d-4e84-83da-b1e74c0ae7fc": {
+    "id": "02db4e20-205d-4e84-83da-b1e74c0ae7fc",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Lobelia",
+    "fuzzy": false,
+    "keyId": "cGFnZS13aW5kb3dUaXRsZV9Mb2JlbGlh"
+  },
+  "28bfe7fd-ef6b-412f-ba80-81f0370460ca": {
+    "id": "28bfe7fd-ef6b-412f-ba80-81f0370460ca",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Altres solucions",
+    "fuzzy": true,
+    "keyId": "c2VjdGlvbl9PdGhlciBzb2x1dGlvbnM="
+  },
+  "8724ab48-38bc-4dc7-8b65-86a24a2ef08c": {
+    "id": "8724ab48-38bc-4dc7-8b65-86a24a2ef08c",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "treballa amb nosaltres",
+    "fuzzy": false,
+    "keyId": "bmF2X3dvcmsgd2l0aCB1cw=="
+  },
+  "e6b6c7b0-16da-4949-8f9b-a043ac330936": {
+    "id": "e6b6c7b0-16da-4949-8f9b-a043ac330936",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "posar-se en contacte!",
+    "fuzzy": true,
+    "keyId": "Y29udGFjdF9nZXQgaW4gdG91Y2gh"
+  },
+  "2fe7e0c6-7887-49a5-9cd5-d1412b5b3678": {
+    "id": "2fe7e0c6-7887-49a5-9cd5-d1412b5b3678",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "pwc",
+    "fuzzy": false,
+    "keyId": "Y29tcGFueS1uYW1lX3B3Yw=="
+  },
+  "b4111a8b-2694-4b0f-8596-36e1df2a5824": {
+    "id": "b4111a8b-2694-4b0f-8596-36e1df2a5824",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Idoneïtat de cultius",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1zaG9ydFRpdGxlX0Nyb3Agc3VpdGFiaWxpdHk="
+  },
+  "43068e3f-ae82-4005-bce3-ad2fdb963768": {
+    "id": "43068e3f-ae82-4005-bce3-ad2fdb963768",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Analitzar i avaluar l'adequació dels cultius a Oxfam",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC10aXRsZV9BbmFseXNpbmcgYW5kIGFzc2Vzc2luZyBjcm9wIHN1aXRhYmlsaXR5IGZvciBPeGZhbQ=="
+  },
+  "556c6642-1ea9-4ae1-a69c-8587240fbfe6": {
+    "id": "556c6642-1ea9-4ae1-a69c-8587240fbfe6",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Hem desenvolupat una eina d'adequació de cultius per Oxfam. En aquesta etapa, l'eina produeix mapes que mostren el nombre de cicles de cultius factibles per a blat de moro, sorgo i perles a Sahel, Àfrica subsahariana i corredor sec per als períodes climàtics seleccionats i els escenaris d'emissió.\n\nS'espera que el canvi climàtic afecti de forma desproporcionada als petits agricultors, que ja afronten nombrosos riscos per a la producció agrícola. Els cultius respondran a canvis específics de temperatura i precipitació en els llocs on actualment es cultiven.",
+    "fuzzy": true,
+    "keyId": "cHJvamVjdC1jb250ZW50c19XZSBoYXZlIGRldmVsb3BlZCBhIGNyb3Agc3VpdGFiaWxpdHkgdG9vbCBmb3IgT3hmYW0uIEF0IHRoaXMgc3RhZ2UsIHRoZSB0b29sIHByb2R1Y2VzIG1hcHMgc2hvd2luZyB0aGUgbnVtYmVyIG9mIGZlYXNpYmxlIGNyb3AgY3ljbGVzIGZvciBtYWl6ZSwgc29yZ2h1bSBhbmQgcGVhcmwgbWlsbGV0IGluIHRoZSBTYWhlbCwgU3ViLVNhaGFyYW4gQWZyaWNhIGFuZCBEcnkgQ29ycmlkb3IgZm9yIHRoZSBzZWxlY3RlZCBjbGltZSBwZXJpb2RzIGFuZCBlbWlzc2lvbiBzY2VuYXJpb3MuCgpDbGltYXRlIGNoYW5nZSBpcyBleHBlY3RlZCB0byBkaXNwcm9wb3J0aW9uYXRlbHkgYWZmZWN0IHNtYWxsaG9sZGVyIGZhcm1lcnMsIHdobyBhbHJlYWR5IGZhY2UgbnVtZXJvdXMgcmlza3MgdG8gYWdyaWN1bHR1cmFsIHByb2R1Y3Rpb24uIENyb3BzIHdpbGwgcmVzcG9uZCB0byBzcGVjaWZpYyBjaGFuZ2VzIGluIHRlbXBlcmF0dXJlIGFuZCBwcmVjaXBpdGF0aW9uIGF0IHRoZSBsb2NhdGlvbnMgd2hlcmUgdGhleSBhcmUgY3VycmVudGx5IGdyb3duLg=="
+  },
+  "0d413649-f782-4263-b8c9-43da814e1e21": {
+    "id": "0d413649-f782-4263-b8c9-43da814e1e21",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Observar la Terra per anticipar els efectes d'un clima canviant.",
+    "fuzzy": true,
+    "keyId": "dGFnbGluZV9PYnNlcnZpbmcgdGhlIEVhcnRoIHRvIGFudGljaXBhdGUgdGhlIGVmZmVjdHMgb2YgYSBjaGFuZ2luZyBjbGltYXRlLg=="
+  },
+  "4cffbc62-0e15-4e59-bdfb-1a9cce051af3": {
+    "id": "4cffbc62-0e15-4e59-bdfb-1a9cce051af3",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "nom",
+    "fuzzy": false,
+    "keyId": "Y29udGFjdF9uYW1l"
+  },
+  "0826301e-ba77-409c-8af1-1ae56282e1af": {
+    "id": "0826301e-ba77-409c-8af1-1ae56282e1af",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "correu electrònic",
+    "fuzzy": false,
+    "keyId": "Y29udGFjdF9lbWFpbA=="
+  },
+  "cb13c03d-3f26-4782-9b7d-a2d651e27df2": {
+    "id": "cb13c03d-3f26-4782-9b7d-a2d651e27df2",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "missatge",
+    "fuzzy": false,
+    "keyId": "Y29udGFjdF9tZXNzYWdl"
+  },
+  "e2534dc4-a4e1-4fce-853c-03902003e6f1": {
+    "id": "e2534dc4-a4e1-4fce-853c-03902003e6f1",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "tema",
+    "fuzzy": false,
+    "keyId": "Y29udGFjdF9zdWJqZWN0"
+  },
+  "cd1c66cd-8865-440f-9d43-942331f9c782": {
+    "id": "cd1c66cd-8865-440f-9d43-942331f9c782",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "enviar",
+    "fuzzy": false,
+    "keyId": "YnV0dG9uX3NlbmQ="
+  },
+  "5c4f1ce1-337d-4233-a43e-43c932562242": {
+    "id": "5c4f1ce1-337d-4233-a43e-43c932562242",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "VITO",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX1ZJVE8="
+  },
+  "65feb501-0990-45a4-93eb-00457f866914": {
+    "id": "65feb501-0990-45a4-93eb-00457f866914",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Laia Romero",
+    "fuzzy": true,
+    "keyId": "dGVhbU1lbWJlci1uYW1lX0xhaWEgUm9tZXJv"
+  },
+  "cb7eaaef-84aa-4bac-b16f-8553867f3495": {
+    "id": "cb7eaaef-84aa-4bac-b16f-8553867f3495",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "EOMAP",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX0VPTUFQ"
+  },
+  "de792d97-9e04-4f04-a758-3c294f0bda23": {
+    "id": "de792d97-9e04-4f04-a758-3c294f0bda23",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Comissió Europea",
+    "fuzzy": false,
+    "keyId": "Y29tcGFueS1uYW1lX0V1cm9wZWFuIENvbW1pc3Npb24="
+  },
+  "0f8ee934-7ed4-4989-a30c-716677c5d90a": {
+    "id": "0f8ee934-7ed4-4989-a30c-716677c5d90a",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Organització Europea per a l'Explotació de Satèl·lits Meteorològics",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX0V1cm9wZWFuIE9yZ2FuaXNhdGlvbiBmb3IgdGhlIEV4cGxvaXRhdGlvbiBvZiBNZXRlb3JvbG9naWNhbCBTYXRlbGxpdGVz"
+  },
+  "171e6326-2a0a-4822-b5e6-c2c11fb7d984": {
+    "id": "171e6326-2a0a-4822-b5e6-c2c11fb7d984",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "UN Habitat",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX1VOIEhhYml0YXQ="
+  },
+  "d99f48fd-e555-48d3-a62c-e6e7dfd0ac28": {
+    "id": "d99f48fd-e555-48d3-a62c-e6e7dfd0ac28",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "![](c.jpg)",
+    "fuzzy": false,
+    "keyId": "cGFnZS1zaWRlYmFyQ29udGVudHNfIVtdKGMuanBnKQ=="
+  },
+  "b4c32f27-abc6-42d8-ae89-3a83e54d953b": {
+    "id": "b4c32f27-abc6-42d8-ae89-3a83e54d953b",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Serveis experts per afrontar el canvi climàtic mitjançant dades d'observació de la Terra",
+    "fuzzy": false,
+    "keyId": "cGFnZS10aXRsZV9FeHBlcnQgc2VydmljZXMgdG8gZmFjZSBjbGltYXRlIGNoYW5nZSB1c2luZyBFYXJ0aCBPYnNlcnZhdGlvbiBkYXRh"
+  },
+  "cd3d63ee-604e-43e1-a046-1e1924cd385f": {
+    "id": "cd3d63ee-604e-43e1-a046-1e1924cd385f",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "`` `Continguts\n`` `",
+    "fuzzy": true,
+    "keyId": "cGFnZS1sYXlvdXRfYGBgQ29udGVudHMKYGBg"
+  },
+  "1cecd4f8-f1ff-46c9-8fc4-9c4adf79b90c": {
+    "id": "1cecd4f8-f1ff-46c9-8fc4-9c4adf79b90c",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "AGRHYMET",
+    "fuzzy": false,
+    "keyId": "Y29tcGFueS1uYW1lX0FHUkhZTUVU"
+  },
+  "60016818-1e6b-410e-b55a-fd7d6822b2e2": {
+    "id": "60016818-1e6b-410e-b55a-fd7d6822b2e2",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Governs / institucions",
+    "fuzzy": false,
+    "keyId": "bWFya2V0LW5hbWVfR292ZXJubWVudHMgLyBpbnN0aXR1dGlvbnM="
+  },
+  "510351d3-30e6-403d-bde2-c69732a4b948": {
+    "id": "510351d3-30e6-403d-bde2-c69732a4b948",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "* TBW *",
+    "fuzzy": true,
+    "keyId": "bWFya2V0LXN1bW1hcnlfKlRCVyo="
+  },
+  "f7626642-7d82-472c-82c2-6586d0ab128a": {
+    "id": "f7626642-7d82-472c-82c2-6586d0ab128a",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Centre National d'Études Spatiales",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX0NlbnRyZSBOYXRpb25hbCBkJ8OJdHVkZXMgU3BhdGlhbGVz"
+  },
+  "d5ddb150-a8e5-4d92-a5f7-b53ea8337e39": {
+    "id": "d5ddb150-a8e5-4d92-a5f7-b53ea8337e39",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Com podem ajudar-te a fer front a aquest clima?",
+    "fuzzy": false,
+    "keyId": "cGFnZS10aXRsZV9Ib3cgY2FuIHdlIGhlbHAgeW91IGNvcGUgd2l0aCB0aGlzIGNsaW1hdGU/"
+  },
+  "8f086cbd-d5bb-4e69-b11d-1653bc6decde": {
+    "id": "8f086cbd-d5bb-4e69-b11d-1653bc6decde",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "! [] (pwc-extreme-event-analysis.jpg)",
+    "fuzzy": true,
+    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtdKHB3Yy1leHRyZW1lLWV2ZW50LWFuYWx5c2lzLmpwZyk="
+  },
+  "a93ce550-97df-41d8-903c-9e1b2626060f": {
+    "id": "a93ce550-97df-41d8-903c-9e1b2626060f",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "```Home\ntagline: \"**Observar la Terra** per anticipar-se als efectes d'un clima canviant.\"\nprovidersTitle: Treballem amb els principals proveïdors de dades\nmarketsTitle: Treballem amb organitzacions a tot el món afectades pel nostre clima canviant\n```\n\n```Contact\n```",
+    "fuzzy": false,
+    "keyId": "cGFnZS1sYXlvdXRfYGBgSG9tZQp0YWdsaW5lOiAiKipPYnNlcnZpbmcgdGhlIEVhcnRoKiogdG8gYW50aWNpcGF0ZSB0aGUgZWZmZWN0cyBvZiBhIGNoYW5naW5nIGNsaW1hdGUuIgpwcm92aWRlcnNUaXRsZTogV29ya2luZyB3aXRoIHRoZSBsZWFkaW5nIGRhdGEgcHJvdmlkZXJzCm1hcmtldHNUaXRsZTogV2Ugd29yayB3aXRoIG9yZ2FuaXNhdGlvbnMgYWNyb3NzIHRoZSBnbG9iZSBhZmZlY3RlZCBieSBvdXIgY2hhbmdpbmcgY2xpbWF0ZQpgYGAKCmBgYENvbnRhY3QKYGBg"
+  },
+  "dd4857e1-3382-4187-8710-a3bb20f7ed07": {
+    "id": "dd4857e1-3382-4187-8710-a3bb20f7ed07",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "`` `Formulari de contacte\nEnviar a: guillermo.grau@isardsat.cat\n`` `",
+    "fuzzy": true,
+    "keyId": "cGFnZS1jb250ZW50c19gYGBDb250YWN0Rm9ybQpzZW5kVG86IGd1aWxsZXJtby5ncmF1QGlzYXJkc2F0LmNhdApgYGA="
+  },
+  "e3c27657-9eef-475f-ae1e-820cfb7e6534": {
+    "id": "e3c27657-9eef-475f-ae1e-820cfb7e6534",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Sector privat",
+    "fuzzy": false,
+    "keyId": "bWFya2V0LW5hbWVfUHJpdmF0ZSBzZWN0b3I="
+  },
+  "802b0e37-c16f-4051-a57b-8b046270283f": {
+    "id": "802b0e37-c16f-4051-a57b-8b046270283f",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "! [tauler] (a.jpg)",
+    "fuzzy": true,
+    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtkYXNoYm9hcmRdKGEuanBnKQ=="
+  },
+  "f4594b81-1c82-475a-8d98-cf934fa5aaf2": {
+    "id": "f4594b81-1c82-475a-8d98-cf934fa5aaf2",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Agència Espacial Europea",
+    "fuzzy": false,
+    "keyId": "Y29tcGFueS1uYW1lX0V1cm9wZWFuIFNwYWNlIEFnZW5jeQ=="
+  },
+  "a6dbeefa-1ba3-4c75-b129-cde6e091b28f": {
+    "id": "a6dbeefa-1ba3-4c75-b129-cde6e091b28f",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "```Contents\nsidebar: true\n```\n\n```TeamMembers\ntitle: El nostre equip\n```\n\n```Contact\nquestion: T'agradaria treballar amb nosaltres?\nbutton: posa't en contacte\n```",
+    "fuzzy": false,
+    "keyId": "cGFnZS1sYXlvdXRfYGBgQ29udGVudHMKc2lkZWJhcjogdHJ1ZQpgYGAKCmBgYFRlYW1NZW1iZXJzCnRpdGxlOiBPdXIgdGVhbQpgYGAKCmBgYENvbnRhY3QKcXVlc3Rpb246IFdvdWxkIHlvdSBsaWtlIHRvIHdvcmsgd2l0aCB1cz8KYnV0dG9uOiBnZXQgaW4gdG91Y2gKYGBg"
+  },
+  "f0cd8cb1-a606-4bd8-ace0-167e22fe4313": {
+    "id": "f0cd8cb1-a606-4bd8-ace0-167e22fe4313",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Anàlisi d'esdeveniments extrems",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1zaG9ydFRpdGxlX0V4dHJlbWUgZXZlbnQgYW5hbHlzaXM="
+  },
+  "d5a3424b-bed7-4863-b37d-65b82e423abd": {
+    "id": "d5a3424b-bed7-4863-b37d-65b82e423abd",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Centre europeu de pronòstics del temps mitjà",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX0V1cm9wZWFuIENlbnRyZSBmb3IgTWVkaXVtLVJhbmdlIFdlYXRoZXIgRm9yZWNhc3Rz"
+  },
+  "ad22dfda-891c-42c0-853d-39e2bf5d9694": {
+    "id": "ad22dfda-891c-42c0-853d-39e2bf5d9694",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Institut meteorològic finlandès",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX0Zpbm5pc2ggTWV0ZW9yb2xvZ2ljYWwgSW5zdGl0dXRl"
+  },
+  "36ae74a7-2163-4b58-96a6-4b46df34d3d7": {
+    "id": "36ae74a7-2163-4b58-96a6-4b46df34d3d7",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Royal Netherlands Meteorological Institute",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX1JveWFsIE5ldGhlcmxhbmRzIE1ldGVvcm9sb2dpY2FsIEluc3RpdHV0ZQ=="
+  },
+  "b7a19448-143f-4ca2-b58c-b30d215e280f": {
+    "id": "b7a19448-143f-4ca2-b58c-b30d215e280f",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Institut Meteorològic i Hidrològic Suec",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX1N3ZWRpc2ggTWV0ZW9yb2xvZ2ljYWwgYW5kIEh5ZHJvbG9naWNhbCBJbnN0aXR1dGU="
+  },
+  "2cfa47da-d416-4db0-8be8-e3589ae4f301": {
+    "id": "2cfa47da-d416-4db0-8be8-e3589ae4f301",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Directora d'Operacions i Estratègia",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1yb2xlX09wZXJhdGlvbnMgYW5kIFN0cmF0ZWd5IERpcmVjdG9y"
+  },
+  "7cecf609-b85f-4089-9a7c-b038c56c4b8f": {
+    "id": "7cecf609-b85f-4089-9a7c-b038c56c4b8f",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Anàlisi d'esdeveniments extrems per PwC",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC10aXRsZV9FeHRyZW1lIGV2ZW50IGFuYWx5c2lzIGZvciBQd0M="
+  },
+  "735da7c3-b5fa-4047-853f-24ed40627b42": {
+    "id": "735da7c3-b5fa-4047-853f-24ed40627b42",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Lorem ipsum dolor sit amet, elit consectetur adipiscing. Ara molts llacs arc. Cada recorregut de DUI a l'aula. Rendiment lorem la tasca que la capa de lleó voleibol. Embarassada es va graduar de bàsquet futbol futbol, ​​una gran part de la vall alhora.\n\n## En les puntuacions clíniques, i els membres de masses necessita\n\nDiverses muntanyes clínics Penatibus Super Bowl a l'instant. Abans de la primera de bàsquet va fixar les seves mandíbules dolor i l'atenció clínica; El gluten. lobortis Fusce i un gran arc i la fletxa. No obstant això, els plàtans lletja llegeixo conveniència de la vall. El portàtil es va graduar d'escalfament, però tem la xocolata a la frontera.",
+    "fuzzy": true,
+    "keyId": "cHJvamVjdC1jb250ZW50c19Mb3JlbSBpcHN1bSBkb2xvciBzaXQgYW1ldCwgY29uc2VjdGV0dXIgYWRpcGlzY2luZyBlbGl0LiBOdW5jIHNpdCBhbWV0IGFyY3UgbGFjdXMuIFF1aXNxdWUgcHJldGl1bSB2aXRhZSBkdWkgYXQgdWx0cmljaWVzLiBEdWlzIGV1aXNtb2QgbG9yZW0gaWQgbGVvIHB1bHZpbmFyIGFjY3Vtc2FuLiBNb3JiaSBncmF2aWRhIGxlY3R1cyBhIGZlbGlzIHVsdHJpY2VzLCBzaXQgYW1ldCBjb252YWxsaXMgYW50ZSBzdXNjaXBpdC4gCgojIyBJbiBvcmNpIHR1cnBpcywgc29kYWxlcyBldCBtYXNzYSBlZ2V0CgpPcmNpIHZhcml1cyBuYXRvcXVlIHBlbmF0aWJ1cyBldCBtYWduaXMgZGlzIHBhcnR1cmllbnQgbW9udGVzLCBuYXNjZXR1ciByaWRpY3VsdXMgbXVzLiBWZXN0aWJ1bHVtIGFudGUgaXBzdW0gcHJpbWlzIGluIGZhdWNpYnVzIG9yY2kgbHVjdHVzIGV0IHVsdHJpY2VzIHBvc3VlcmUgY3ViaWxpYSBDdXJhZTsgQWxpcXVhbSBlcmF0IHZvbHV0cGF0LiBGdXNjZSBsb2JvcnRpcyBldCBtYWduYSBldCBzYWdpdHRpcy4gU2VkIGFsaXF1ZXQgdHVycGlzIHNlZCBsaWd1bGEgY29tbW9kbyBjb252YWxsaXMuIEluIHVsbGFtY29ycGVyIGZlcm1lbnR1bSBsZWN0dXMsIGF0IGZpbmlidXMgbWV0dXMgc2NlbGVyaXNxdWUgYXQu"
+  },
+  "d0643ec7-709b-4221-a2c0-626702b3fe61": {
+    "id": "d0643ec7-709b-4221-a2c0-626702b3fe61",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Identificar els indicadors d'impacte ambiental adequats per al vostre cas i realitzar els estudis necessaris, tant a nivell de seguiment com de pronòstic i planificació, basats en l'ús de la informació de l'observació de la Terra per satèl·lit, basada principalment en dades brutes molt específiques, públiques i gratuïtes adquirides per satèl·lits europeus sota el programa Copernicus.\n\nLobelia és una spin-off de isardSAT, una empresa líder que ofereix serveis i solucions en el camp de l'observació de la Terra.",
+    "fuzzy": false,
+    "keyId": "cGFnZS1jb250ZW50c19JZGVudGlmeSB0aGUgaW5kaWNhdG9ycyBvZiBlbnZpcm9ubWVudGFsIGltcGFjdCB0aGF0IGFyZSBhcHByb3ByaWF0ZSBmb3IgeW91ciBjYXNlIGFuZCBjYXJyeSBvdXQgdGhlIG5lY2Vzc2FyeSBzdHVkaWVzLCBib3RoIGF0IHRoZSBsZXZlbCBvZiBtb25pdG9yaW5nIGFuZCBmb3JlY2FzdGluZyBhbmQgcGxhbm5pbmcsIGJhc2VkIG9uIHRoZSB1c2Ugb2Ygc2F0ZWxsaXRlIEVhcnRoIE9ic2VydmF0aW9uIGluZm9ybWF0aW9uLCBsYXJnZWx5IGJhc2VkIG9uIGhpZ2hseSBzcGVjaWZpYyByYXcgZGF0YSwgcHVibGljIGFuZCBmcmVlIGFjcXVpcmVkIGJ5IEV1cm9wZWFuIHNhdGVsbGl0ZXMgdW5kZXIgdGhlIENvcGVybmljdXMgcHJvZ3JhbS4KCkxvYmVsaWEgaXMgYSBzcGluLW9mZiBvZiBpc2FyZFNBVCwgYSBsZWFkIGNvbXBhbnkgcHJvdmlkaW5nIHNlcnZpY2VzIGFuZCBzb2x1dGlvbnMgaW4gdGhlIEVhcnRoIE9ic2VydmF0aW9uIGZpZWxkLg=="
+  },
+  "1adc7b59-9c99-44b4-866c-fe251dc308c9": {
+    "id": "1adc7b59-9c99-44b4-866c-fe251dc308c9",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Hem desenvolupat una eina d'adequació de cultius per Oxfam. En aquesta etapa, l'eina produeix mapes que mostren el nombre de cicles de cultius factibles per a blat de moro, sorgo i perles a Sahel, Àfrica subsahariana i corredor sec per als períodes climàtics seleccionats i els escenaris d'emissió.\n\nS'espera que el canvi climàtic afecti de forma desproporcionada als petits agricultors, que ja afronten nombrosos riscos per a la producció agrícola. Els cultius respondran a canvis específics de temperatura i precipitació en els llocs on actualment es cultiven.\n\n## Sahel\n\nBlat de moro / sorgo / mill perla\n\n## Àfrica Sub-Sahariana\n\nBlat de moro / sorgo / mill perla / arròs / mandioca / fesols / cacauets / ñame\n\n## Corredor sec\n\nBlat de moro / sorgo / fesols / arròs",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1jb250ZW50c19XZSBoYXZlIGRldmVsb3BlZCBhIGNyb3Agc3VpdGFiaWxpdHkgdG9vbCBmb3IgT3hmYW0uIEF0IHRoaXMgc3RhZ2UsIHRoZSB0b29sIHByb2R1Y2VzIG1hcHMgc2hvd2luZyB0aGUgbnVtYmVyIG9mIGZlYXNpYmxlIGNyb3AgY3ljbGVzIGZvciBtYWl6ZSwgc29yZ2h1bSBhbmQgcGVhcmwgbWlsbGV0IGluIHRoZSBTYWhlbCwgU3ViLVNhaGFyYW4gQWZyaWNhIGFuZCBEcnkgQ29ycmlkb3IgZm9yIHRoZSBzZWxlY3RlZCBjbGltZSBwZXJpb2RzIGFuZCBlbWlzc2lvbiBzY2VuYXJpb3MuCgpDbGltYXRlIGNoYW5nZSBpcyBleHBlY3RlZCB0byBkaXNwcm9wb3J0aW9uYXRlbHkgYWZmZWN0IHNtYWxsaG9sZGVyIGZhcm1lcnMsIHdobyBhbHJlYWR5IGZhY2UgbnVtZXJvdXMgcmlza3MgdG8gYWdyaWN1bHR1cmFsIHByb2R1Y3Rpb24uIENyb3BzIHdpbGwgcmVzcG9uZCB0byBzcGVjaWZpYyBjaGFuZ2VzIGluIHRlbXBlcmF0dXJlIGFuZCBwcmVjaXBpdGF0aW9uIGF0IHRoZSBsb2NhdGlvbnMgd2hlcmUgdGhleSBhcmUgY3VycmVudGx5IGdyb3duLgoKIyMgU2FoZWwKCk1haXplIC8gc29yZ2h1bSAvIHBlYXJsIG1pbGxldAoKIyMgU3ViLVNhaGFyYW4gQWZyaWNhCgpNYWl6ZSAvIHNvcmdodW0gLyBwZWFybCBtaWxsZXQgLyByaWNlIC8gY2Fzc2F2YSAvIGJlYW5zIC8gZ3JvdW5kbnV0cyAvIHlhbQoKIyMgRHJ5IENvcnJpZG9yCgpNYWl6ZSAvIHNvcmdodW0gLyBiZWFucyAvIHJpY2U="
+  },
+  "88d29b58-69b9-42ef-9d11-57f4254371dd": {
+    "id": "88d29b58-69b9-42ef-9d11-57f4254371dd",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "! [] (pwc-extreme-event-analysis.jpg)",
+    "fuzzy": true,
+    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtdKHB3Yy1leHRyZW1lLWV2ZW50LWFuYWx5c2lzLmpwZyk="
+  },
+  "ba0d2d95-1522-407e-b65d-f9a585be2759": {
+    "id": "ba0d2d95-1522-407e-b65d-f9a585be2759",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Royal Netherlands Meteorological Institute",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX1JveWFsIE5ldGhlcmxhbmRzIE1ldGVvcm9sb2dpY2FsIEluc3RpdHV0ZQ=="
+  },
+  "68d59955-99fd-4127-9808-9f33eea47c4b": {
+    "id": "68d59955-99fd-4127-9808-9f33eea47c4b",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "* TBW *",
+    "fuzzy": true,
+    "keyId": "bWFya2V0LXN1bW1hcnlfKlRCVyo="
+  },
+  "6778a212-72ac-4112-8df3-2531000bcf18": {
+    "id": "6778a212-72ac-4112-8df3-2531000bcf18",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "`` `Continguts\n`` `",
+    "fuzzy": true,
+    "keyId": "cGFnZS1sYXlvdXRfYGBgQ29udGVudHMKYGBg"
+  },
+  "9c30b16e-85e7-478b-bd66-7926e9c242cc": {
+    "id": "9c30b16e-85e7-478b-bd66-7926e9c242cc",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Organització Europea per a l'Explotació de Satèl·lits Meteorològics",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX0V1cm9wZWFuIE9yZ2FuaXNhdGlvbiBmb3IgdGhlIEV4cGxvaXRhdGlvbiBvZiBNZXRlb3JvbG9naWNhbCBTYXRlbGxpdGVz"
+  },
+  "44e4283a-c340-47c6-b58a-58d11dfe033f": {
+    "id": "44e4283a-c340-47c6-b58a-58d11dfe033f",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Centre europeu de pronòstics del temps mitjà",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX0V1cm9wZWFuIENlbnRyZSBmb3IgTWVkaXVtLVJhbmdlIFdlYXRoZXIgRm9yZWNhc3Rz"
+  },
+  "2b48dbd0-de02-4626-8116-67486f8746e5": {
+    "id": "2b48dbd0-de02-4626-8116-67486f8746e5",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "AGRHYMET",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX0FHUkhZTUVU"
+  },
+  "5f490d88-65b3-465a-8dc6-ddc299d23f40": {
+    "id": "5f490d88-65b3-465a-8dc6-ddc299d23f40",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "VITO",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX1ZJVE8="
+  },
+  "82a0510f-1458-42e3-9029-9dad2bff75e4": {
+    "id": "82a0510f-1458-42e3-9029-9dad2bff75e4",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "UN Habitat",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX1VOIEhhYml0YXQ="
+  },
+  "58e63cf8-d0ca-4534-a359-436ee0bdcbd3": {
+    "id": "58e63cf8-d0ca-4534-a359-436ee0bdcbd3",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Institut Meteorològic i Hidrològic Suec",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX1N3ZWRpc2ggTWV0ZW9yb2xvZ2ljYWwgYW5kIEh5ZHJvbG9naWNhbCBJbnN0aXR1dGU="
+  },
+  "ec00cefb-0770-4c79-8d90-f044910cfb87": {
+    "id": "ec00cefb-0770-4c79-8d90-f044910cfb87",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Institut meteorològic finlandès",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX0Zpbm5pc2ggTWV0ZW9yb2xvZ2ljYWwgSW5zdGl0dXRl"
+  },
+  "7a5635dc-6d74-4190-9759-60495e661c8d": {
+    "id": "7a5635dc-6d74-4190-9759-60495e661c8d",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "! [tauler] (a.jpg)",
+    "fuzzy": true,
+    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtkYXNoYm9hcmRdKGEuanBnKQ=="
+  },
+  "cba7d465-069f-4ea6-937b-bb00a3369496": {
+    "id": "cba7d465-069f-4ea6-937b-bb00a3369496",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "EOMAP",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX0VPTUFQ"
+  },
+  "3c9f7dae-8c50-46e0-9da3-b270239305fd": {
+    "id": "3c9f7dae-8c50-46e0-9da3-b270239305fd",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "```ContactForm\nsendTo: guillermo.grau@isardsat.cat\n```",
+    "fuzzy": true,
+    "keyId": "cGFnZS1jb250ZW50c19gYGBDb250YWN0Rm9ybQpzZW5kVG86IGd1aWxsZXJtby5ncmF1QGlzYXJkc2F0LmNhdApgYGA="
+  },
+  "43d4d4d6-1001-4ef2-b787-21b532a62cd1": {
+    "id": "43d4d4d6-1001-4ef2-b787-21b532a62cd1",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Centre Nacional d'Estudis Espacials",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX0NlbnRyZSBOYXRpb25hbCBkJ8OJdHVkZXMgU3BhdGlhbGVz"
+  },
+  "526b66be-6aa9-4921-8464-e8665a67ae64": {
+    "id": "526b66be-6aa9-4921-8464-e8665a67ae64",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Lorem ipsum dolor sit amet, elit consectetur adipiscing. Ara molts llacs arc. Cada recorregut de DUI a l'aula. Rendiment lorem la tasca que la capa de lleó voleibol. Embarassada es va graduar de bàsquet futbol futbol, ​​una gran part de la vall alhora.\n\n## En les puntuacions clíniques, i els membres de masses necessita\n\nDiverses muntanyes clínics Penatibus Super Bowl a l'instant. Abans de la primera de bàsquet va fixar les seves mandíbules dolor i l'atenció clínica; El gluten. lobortis Fusce i un gran arc i la fletxa. No obstant això, els plàtans lletja llegeixo conveniència de la vall. El portàtil es va graduar d'escalfament, però tem la xocolata a la frontera.",
+    "fuzzy": true,
+    "keyId": "cHJvamVjdC1jb250ZW50c19Mb3JlbSBpcHN1bSBkb2xvciBzaXQgYW1ldCwgY29uc2VjdGV0dXIgYWRpcGlzY2luZyBlbGl0LiBOdW5jIHNpdCBhbWV0IGFyY3UgbGFjdXMuIFF1aXNxdWUgcHJldGl1bSB2aXRhZSBkdWkgYXQgdWx0cmljaWVzLiBEdWlzIGV1aXNtb2QgbG9yZW0gaWQgbGVvIHB1bHZpbmFyIGFjY3Vtc2FuLiBNb3JiaSBncmF2aWRhIGxlY3R1cyBhIGZlbGlzIHVsdHJpY2VzLCBzaXQgYW1ldCBjb252YWxsaXMgYW50ZSBzdXNjaXBpdC4gCgojIyBJbiBvcmNpIHR1cnBpcywgc29kYWxlcyBldCBtYXNzYSBlZ2V0CgpPcmNpIHZhcml1cyBuYXRvcXVlIHBlbmF0aWJ1cyBldCBtYWduaXMgZGlzIHBhcnR1cmllbnQgbW9udGVzLCBuYXNjZXR1ciByaWRpY3VsdXMgbXVzLiBWZXN0aWJ1bHVtIGFudGUgaXBzdW0gcHJpbWlzIGluIGZhdWNpYnVzIG9yY2kgbHVjdHVzIGV0IHVsdHJpY2VzIHBvc3VlcmUgY3ViaWxpYSBDdXJhZTsgQWxpcXVhbSBlcmF0IHZvbHV0cGF0LiBGdXNjZSBsb2JvcnRpcyBldCBtYWduYSBldCBzYWdpdHRpcy4gU2VkIGFsaXF1ZXQgdHVycGlzIHNlZCBsaWd1bGEgY29tbW9kbyBjb252YWxsaXMuIEluIHVsbGFtY29ycGVyIGZlcm1lbnR1bSBsZWN0dXMsIGF0IGZpbmlidXMgbWV0dXMgc2NlbGVyaXNxdWUgYXQu"
+  },
+  "d3672645-b125-4e4e-b92f-19b425ec17ae": {
+    "id": "d3672645-b125-4e4e-b92f-19b425ec17ae",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "! [] (c.jpg)",
+    "fuzzy": true,
+    "keyId": "cGFnZS1zaWRlYmFyQ29udGVudHNfIVtdKGMuanBnKQ=="
+  },
+  "ec2c3478-07cc-4ec3-8559-b4135242eff3": {
+    "id": "ec2c3478-07cc-4ec3-8559-b4135242eff3",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Cap Tècnic",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1yb2xlX1RlY2ggTGVhZA=="
+  },
+  "8e6e554d-8e5f-4081-8250-2e153307662c": {
+    "id": "8e6e554d-8e5f-4081-8250-2e153307662c",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Director de Desenvolupament de Negocis Internacionals",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1yb2xlX0ludGVybmF0aW9uYWwgQnVzaW5lc3MgRGV2ZWxvcG1lbnQgRGlyZWN0b3I="
+  },
+  "c43bb956-fa1d-4877-a217-8f214ca091d9": {
+    "id": "c43bb956-fa1d-4877-a217-8f214ca091d9",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Cap de Comunicacions i Disseny",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1yb2xlX0NvbW11bmljYXRpb25zIE1hbmFnZXIgJiBEZXNpZ24="
+  },
+  "17e38ee9-5f06-4550-8053-5bc113acceaa": {
+    "id": "17e38ee9-5f06-4550-8053-5bc113acceaa",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Enginyer geològic en R + D",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1yb2xlX1ImRCBHZW9sb2dpY2FsIEVuZ2luZWVy"
+  },
+  "e0a59a0b-3138-4ea4-af95-7ca626d22525": {
+    "id": "e0a59a0b-3138-4ea4-af95-7ca626d22525",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Geomatics Engineer & Land Surveyor",
+    "fuzzy": true,
+    "keyId": "dGVhbU1lbWJlci1yb2xlX0dlb21hdGljcyBFbmdpbmVlciAmIExhbmQgU3VydmV5b3I="
+  },
+  "9bb602b0-50fe-43b2-aef9-9a2113c8fef7": {
+    "id": "9bb602b0-50fe-43b2-aef9-9a2113c8fef7",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Enginyera en Geomàtica i Topografia",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1yb2xlX0dlb21hdGljcyBFbmdpbmVlciAmIExhbmQgU3VydmV5b3I="
+  },
+  "f2cc0f56-6645-40f8-b3eb-ca63395cb8c0": {
+    "id": "f2cc0f56-6645-40f8-b3eb-ca63395cb8c0",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Investigadors",
+    "fuzzy": false,
+    "keyId": "bWFya2V0LW5hbWVfUmVzZWFyY2hlcnM="
+  },
+  "2acdd1b2-030e-4f39-b2d2-9c11aa57ebc0": {
+    "id": "2acdd1b2-030e-4f39-b2d2-9c11aa57ebc0",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Analistes empresarials",
+    "fuzzy": true,
+    "keyId": "bWFya2V0LW5hbWVfQnVzaW5lc3MgYW5hbHlzdHM="
+  },
+  "aa9f5633-8405-4000-8756-095a09b9292b": {
+    "id": "aa9f5633-8405-4000-8756-095a09b9292b",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "tema",
+    "keyId": "Y29udGFjdF9zdWJqZWN0"
+  },
+  "1b0402a9-69c3-4098-9d86-4c3ec457d90c": {
+    "id": "1b0402a9-69c3-4098-9d86-4c3ec457d90c",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Lorem ipsum dolor sit amet, elit consectetur adipiscing.",
+    "fuzzy": true,
+    "keyId": "bWFya2V0LXN1bW1hcnlfTG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2NpbmcgZWxpdC4="
+  },
+  "aeedaef8-13f5-455f-b295-7aafc130b782": {
+    "id": "aeedaef8-13f5-455f-b295-7aafc130b782",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Fusce dels quatre, o la massa de corrent altern congue, pellentesque rhoncus ipsum.",
+    "fuzzy": true,
+    "keyId": "bWFya2V0LXN1bW1hcnlfRnVzY2UgZXggbWksIGNvbmd1ZSB2ZWwgbWFzc2EgYWMsIHBlbGxlbnRlc3F1ZSByaG9uY3VzIGlwc3VtLg=="
+  },
+  "f9b10783-a949-4cfc-aab7-bdc96fd42289": {
+    "id": "f9b10783-a949-4cfc-aab7-bdc96fd42289",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "`` `Formulari de contacte\nenvieu a: lala.romero@isardsat.cat\n`` `",
+    "fuzzy": true,
+    "keyId": "cGFnZS1jb250ZW50c19gYGBDb250YWN0Rm9ybQpzZW5kVG86IGxhaWEucm9tZXJvQGlzYXJkc2F0LmNhdApgYGA="
+  },
+  "00dec674-bbe0-4dcb-b0d1-80084884fb7a": {
+    "id": "00dec674-bbe0-4dcb-b0d1-80084884fb7a",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Quins seran els cultius més adequats a l'Àfrica i l'Amèrica Central?",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC10aXRsZV9XaGF0IHdpbGwgYmUgdGhlIG1vc3Qgc3VpdGFibGUgY3JvcHMgaW4gQWZyaWNhIGFuZCBDZW50cmFsIEFtZXJpY2E/"
+  },
+  "6a9db237-4ad5-4ddb-9866-dc5255752838": {
+    "id": "6a9db237-4ad5-4ddb-9866-dc5255752838",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Quins seran els cultius més adequats a Àfrica i Amèrica Central?",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1zaG9ydFRpdGxlX1doYXQgd2lsbCBiZSB0aGUgbW9zdCBzdWl0YWJsZSBjcm9wcyBpbiBBZnJpY2EgYW5kIENlbnRyYWwgQW1lcmljYT8="
+  },
+  "bf1db1a4-6ce8-4325-ae10-e3d15cfce256": {
+    "id": "bf1db1a4-6ce8-4325-ae10-e3d15cfce256",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Clínica Ullamcorper lliure gran, tincidunt regió necessita salsa. Tot i que els antioxidants, però sense gust.",
+    "fuzzy": true,
+    "keyId": "bWFya2V0LXN1bW1hcnlfRnVzY2UgdWxsYW1jb3JwZXIgbGliZXJvIG1hZ25hLCB0aW5jaWR1bnQgc3VzY2lwaXQgdGVsbHVzIGNvbmRpbWVudHVtIGVnZXQuIEV0aWFtIGZhY2lsaXNpcyBxdWFtIHNlZCBudWxsYSBmYXVjaWJ1cyBlZmZpY2l0dXIu"
+  },
+  "6eb04d59-04e1-4d7d-be9a-de43290921eb": {
+    "id": "6eb04d59-04e1-4d7d-be9a-de43290921eb",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "amanida regió de la UE. Per ara, ni la vida d'Vivamus eget purus sollicitudin lobortis sit amet.",
+    "fuzzy": true,
+    "keyId": "bWFya2V0LXN1bW1hcnlfVXQgZmV1Z2lhdCB0ZWxsdXMgc2VtLiBWaXZhbXVzIGVnZXQgbnVuYyBuZWMgcHVydXMgc29sbGljaXR1ZGluIGxvYm9ydGlzIHNpdCBhbWV0IHZpdGFlIGVuaW0u"
+  },
+  "a3b0a06d-69ee-4a22-8284-591c5510e5a4": {
+    "id": "a3b0a06d-69ee-4a22-8284-591c5510e5a4",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "La informació del satèl·lit s'està utilitzant d'una manera nova per predir condicions favorables per a ** esquadrons de llagosta del desert **. La nova tecnologia ajuda a augmentar el temps d'advertència dels brots de llagosta fins a dos mesos.\n\nMitjançant la utilització de dades de satèl·lits com la humitat del sòl (missió SMELLS) i la salinitat oceànica (missió SMOS), s'ha desenvolupat una nova eina per controlar les condicions que poden provocar l'escalfament de les llagostes, com l'alta humitat i la vegetació verda. L'esgotament es produeix quan un període de sequera és seguit per pluges abundants i creixement ràpid de la vegetació.\n\n** Lobelia opera el servei d'humitat del sòl produït per isardSAT. **\n\n## On?\n\nLa FAO ha validat l'eina a Algèria, Mali, Mauritània i el Marroc.\n\n* Durant l'últim brot a Mauritània (2016) *, l'equip va poder identificar un retard temporal d'uns 70 dies des dels signes inicials de la humitat del sòl fins a l'arribada del brot.\n\n## Per què?\n\nUn eixam que mesura un quilòmetre quadrat conté prop de 40 milions de llagostes, que mengen la mateixa quantitat d'aliment en un dia com unes 35.000 persones.\n\nMés de vuit milions de persones a Àfrica occidental es van veure afectades durant la plaga 2003-2005, en què es van eliminar els cultius de cereals i es van destruir fins al 90% de llegums i pastures. Va prendre prop de 600 milions de dòlars i 13 milions de litres de plaguicida per controlar-lo.",
+    "fuzzy": true,
+    "keyId": "cHJvamVjdC1jb250ZW50c19TYXRlbGxpdGUgaW5mb3JtYXRpb24gaXMgYmVpbmcgdXNlZCBpbiBhIG5ldyB3YXkgdG8gcHJlZGljdCBmYXZvdXJhYmxlIGNvbmRpdGlvbnMgZm9yICoqZGVzZXJ0IGxvY3VzdCBzd2FybXMqKi4gVGhlIG5ldyB0ZWNobm9sb2d5IGhlbHBzIHRvIGluY3JlYXNlIHRoZSB3YXJuaW5nIHRpbWUgZm9yIGxvY3VzdCBvdXRicmVha3MgYnkgdXAgdG8gdHdvIG1vbnRocy4KClVzaW5nIGRhdGEgZnJvbSBzYXRlbGxpdGVzIHN1Y2ggYXMgc29pbCBtb2lzdHVyZSAoU01FTExTIG1pc3Npb24pIGFuZCBvY2VhbiBzYWxpbml0eSAoU01PUyBtaXNzaW9uKSwgYSBuZXcgdG9vbCBoYXMgYmVlbiBkZXZlbG9wZWQgdG8gbW9uaXRvciB0aGUgY29uZGl0aW9ucyB0aGF0IGNhbiBsZWFkIHRvIHN3YXJtaW5nIGxvY3VzdHMsIHN1Y2ggYXMgaGlnaCBtb2lzdHVyZSBhbmQgZ3JlZW4gdmVnZXRhdGlvbi4gU3dhcm1pbmcgb2NjdXJzIHdoZW4gYSBwZXJpb2Qgb2YgZHJvdWdodCBpcyBmb2xsb3dlZCBieSBhYnVuZGFudCByYWlucyBhbmQgcmFwaWQgdmVnZXRhdGlvbiBncm93dGguCgoqKkxvYmVsaWEgb3BlcmF0ZXMgdGhlIHNvaWwgbW9pc3R1cmUgc2VydmljZSBwcm9kdWNlZCBieSBpc2FyZFNBVC4qKgoKIyMgV2hlcmU/CgpGQU8gaGFzIHZhbGlkYXRlZCB0aGUgdG9vbCBpbiBBbGdlcmlhLCBNYWxpLCBNYXVyaXRhbmlhIGFuZCBNb3JvY2NvLgoKKkR1cmluZyB0aGUgbGF0ZXN0IG91dGJyZWFrIGluIE1hdXJpdGFuaWEgKDIwMTYpKiwgdGhlIHRlYW0gd2FzIGFibGUgdG8gaWRlbnRpZnkgYSB0aW1lIGxhZyBvZiBhYm91dCA3MCBkYXlzIGZyb20gdGhlIGluaXRpYWwgc2lnbnMgb2Ygc29pbCBtb2lzdHVyZSB0byB3aGVuIHRoZSBvdXRicmVhayBldmVudHVhbGx5IG9jY3VycmVkLgoKIyMgV2h5PwoKQSBzd2FybSBtZWFzdXJpbmcgb25lIHNxdWFyZSBraWxvbWV0cmUgY29udGFpbnMgYWJvdXQgNDAgbWlsbGlvbiBsb2N1c3RzLCB3aGljaCBlYXQgdGhlIHNhbWUgYW1vdW50IG9mIGZvb2QgaW4gb25lIGRheSBhcyBhYm91dCAzNSwwMDAgcGVvcGxlLgoKTW9yZSB0aGFuIDggbWlsbGlvbiBwZW9wbGUgaW4gV2VzdCBBZnJpY2Egd2VyZSBhZmZlY3RlZCBkdXJpbmcgdGhlIDIwMDMtMjAwNSBwbGFndWUsIGluIHdoaWNoIGNlcmVhbCBjcm9wcyB3ZXJlIHdpcGVkIG91dCBhbmQgdXAgdG8gOTAlIG9mIGxlZ3VtZXMgYW5kIHBhc3R1cmUgd2VyZSBkZXN0cm95ZWQuIEl0IHRvb2sgbmVhcmx5ICQ2MDAgbWlsbGlvbiBhbmQgMTMgbWlsbGlvbiBsaXRyZXMgb2YgcGVzdGljaWRlIHRvIGJyaW5nIGl0IHVuZGVyIGNvbnRyb2wuCg=="
+  },
+  "8e2c5038-fa0d-4eb5-a9af-09bfda81dacd": {
+    "id": "8e2c5038-fa0d-4eb5-a9af-09bfda81dacd",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Construint el futur *núvol* europeu per a l'observació de la Terra",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC10aXRsZV9CdWlsZGluZyB0aGUgbmV4dCBFdXJvcGVhbiBjbG91ZCBmb3IgRWFydGggb2JzZXJ2YXRpb24="
+  },
+  "1da646e4-2a90-407e-93a0-41f7fd3c0874": {
+    "id": "1da646e4-2a90-407e-93a0-41f7fd3c0874",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "![Inundacions en Àfrica Occidental](west-african-floods-sidebar.png)",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtXZXN0IEFmcmljYW4gZmxvb2RzXSh3ZXN0LWFmcmljYW4tZmxvb2RzLXNpZGViYXIucG5nKQ=="
+  },
+  "80a3c7ec-6da1-461c-922e-73707c60f33d": {
+    "id": "80a3c7ec-6da1-461c-922e-73707c60f33d",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Avaluant l'impacte econòmic de tempestes extremes en els propers 50 anys",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1zaG9ydFRpdGxlX0V2YWx1YXRpbmcgdGhlIGVjb25vbWljIGltcGFjdCBvZiBleHRyZW1lIHN0b3JtcyBpbiB0aGUgbmV4dCA1MCB5ZWFycw=="
+  },
+  "6d97f8a8-9b2a-4ab4-911e-68d6e4645ad3": {
+    "id": "6d97f8a8-9b2a-4ab4-911e-68d6e4645ad3",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "La recerca i la innovació promouen un creixement equilibrat i equilibrat. El nostre valor afegit és la provisió de solucions basades en un enfocament científicament responsable.",
+    "fuzzy": true,
+    "keyId": "bWFya2V0LXN1bW1hcnlfUmVzZWFyY2ggYW5kIGlubm92YXRpb24gcHJvbW90ZXMgYSB3ZWxsLWJhbGFuY2VkLCBzdXN0YWluYWJsZSBncm93dGguIE91ciBhZGRlZCB2YWx1ZSBpcyB0aGUgcHJvdmlzaW9uIG9mIHNvbHV0aW9ucyBiYXNlZCBvbiBhIHNjaWVudGlmaWNhbGx5IHJlc3BvbnNpYmxlIGFwcHJvYWNoLg=="
+  },
+  "572ff168-9915-47da-b36d-8c2e4c908d04": {
+    "id": "572ff168-9915-47da-b36d-8c2e4c908d04",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Compromesa al 100%.",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1iaW9fRGVlcGx5IGVuZ2FnZWQu"
+  },
+  "94af2008-c35e-42be-b7b0-c9f9cfb88aec": {
+    "id": "94af2008-c35e-42be-b7b0-c9f9cfb88aec",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Pronosticant plagues amb dos mesos d'antelació",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC10aXRsZV9QcmVkaWN0aW5nIHBsYWd1ZSBvdXRicmVha3MgdHdvIG1vbnRocyBpbiBhZHZhbmNl"
+  },
+  "cb9df210-c931-452d-8d78-b7f82e7178cf": {
+    "id": "cb9df210-c931-452d-8d78-b7f82e7178cf",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "AirQast",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX0FpclFhc3Q="
+  },
+  "69d5b9bb-3851-4d15-b21a-39c1df36cc76": {
+    "id": "69d5b9bb-3851-4d15-b21a-39c1df36cc76",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "La història de",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1zaG9ydFRpdGxlX1RoZSBoaXN0b3J5IG9m"
+  },
+  "46a8ea11-e585-4935-bb30-4a6f8607c919": {
+    "id": "46a8ea11-e585-4935-bb30-4a6f8607c919",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Sector públic",
+    "fuzzy": false,
+    "keyId": "bWFya2V0LW5hbWVfUHVibGljIHNlY3Rvcg=="
+  },
+  "0177d6cf-6dac-4c4a-8808-19df04019267": {
+    "id": "0177d6cf-6dac-4c4a-8808-19df04019267",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "![Plataforma de qualitat de l'aire](air-quality-for-cities-sidebar-1.jpg)\n\n![Plataforma de qualitat de l'aire](air-quality-for-cities-sidebar-2.jpg)",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtBaXIgcXVhbGl0eSBwbGF0Zm9ybV0oYWlyLXF1YWxpdHktZm9yLWNpdGllcy1zaWRlYmFyLTEuanBnKQoKIVtBaXIgcXVhbGl0eSBwbGF0Zm9ybV0oYWlyLXF1YWxpdHktZm9yLWNpdGllcy1zaWRlYmFyLTIuanBnKQ=="
+  },
+  "7ccb4fcd-e5a0-448f-82d6-6c6d4c84469a": {
+    "id": "7ccb4fcd-e5a0-448f-82d6-6c6d4c84469a",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Autoritats africanes utilitzen dades satel·litals per prevenir inundacions a Àfrica occidental",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1zaG9ydFRpdGxlX0FmcmljYW4gYXV0aG9yaXRpZXMgdXNlIHNhdGVsbGl0ZSBkYXRhIHRvIHByZXZlbnQgZmxvb2RzIGluIFdlc3QgQWZyaWNh"
+  },
+  "b691c78d-a774-4f4a-9399-95f32a639f93": {
+    "id": "b691c78d-a774-4f4a-9399-95f32a639f93",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Analitzem conjunts de dades altament complexos per generar projeccions climàtiques i eines de monitorització per avaluar plans i estratègies d'adaptació.",
+    "fuzzy": true,
+    "keyId": "bWFya2V0LXN1bW1hcnlfV2UgYW5hbHlzZSBoaWdobHktY29tcGxleCBkYXRhc2V0cyB0byBnZW5lcmF0ZSBjbGltYXRlIHByb2plY3Rpb25zIGFuZCBtb25pdG9yaW5nIHRvb2xzIHRvIGFzc2VzcyBhZGFwdGF0aW9uIHBsYW5zIGFuZCBzdHJhdGVnaWVzLg=="
+  },
+  "a1c7f7f9-634b-4c22-b613-89ff4b3b6dc3": {
+    "id": "a1c7f7f9-634b-4c22-b613-89ff4b3b6dc3",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "! \"(\". Jpg \")",
+    "fuzzy": true,
+    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtdKGEuanBnKQ=="
+  },
+  "7bb8206f-682d-4724-9651-2f5f66e97431": {
+    "id": "7bb8206f-682d-4724-9651-2f5f66e97431",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Ajudant UN Habitat en l'anàlisi del clima a les ciutats",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC10aXRsZV9TdXBwb3J0aW5nIFVOwqBIYWJpdGF0IGZvciBjbGltYXRlIGFuYWx5c2lzIGluIGNpdGllcw=="
+  },
+  "29cdf2c7-2736-4e89-9fc9-85df41764156": {
+    "id": "29cdf2c7-2736-4e89-9fc9-85df41764156",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Ajuda al desenvolupament",
+    "fuzzy": false,
+    "keyId": "bWFya2V0LW5hbWVfRGV2ZWxvcG1lbnQgaW5zdGl0dXRpb25z"
+  },
+  "a31c9c1e-715e-4e6b-80a1-e24d5c3399af": {
+    "id": "a31c9c1e-715e-4e6b-80a1-e24d5c3399af",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Predient plagues amb dos mesos d'antelació",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1zaG9ydFRpdGxlX1ByZWRpY3RpbmcgcGxhZ3VlIG91dGJyZWFrcyB0d28gbW9udGhzIGluIGFkdmFuY2U="
+  },
+  "67c82c0e-4741-49b8-894b-27c70c849fa3": {
+    "id": "67c82c0e-4741-49b8-894b-27c70c849fa3",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "La història de Lobelia",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC10aXRsZV9UaGUgaGlzdG9yeSBvZiBMb2JlbGlh"
+  },
+  "dff919de-0ce3-44b2-919a-238d8c29245d": {
+    "id": "dff919de-0ce3-44b2-919a-238d8c29245d",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "! [] (about-sidebar.jpg)",
+    "fuzzy": true,
+    "keyId": "cGFnZS1zaWRlYmFyQ29udGVudHNfIVtdKGFib3V0LXNpZGViYXIuanBnKQ=="
+  },
+  "c46032d1-8e47-491e-bd73-1f92de341fab": {
+    "id": "c46032d1-8e47-491e-bd73-1f92de341fab",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Organització d'aliments i agricultura",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX0Zvb2QgYW5kIEFncmljdWx0dXJlIE9yZ2FuaXphdGlvbg=="
+  },
+  "edacca33-fa96-4d48-95cd-25eabb1acdc4": {
+    "id": "edacca33-fa96-4d48-95cd-25eabb1acdc4",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Expert en SIG",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1yb2xlX0dJUyBFeHBlcnQ="
+  },
+  "a2eade4f-a9c9-48f1-837f-1d5fa24cc8a0": {
+    "id": "a2eade4f-a9c9-48f1-837f-1d5fa24cc8a0",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Crea equip.",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1iaW9fVGVhbS1idWlsZGVyLg=="
+  },
+  "b4c0c2e5-f391-4ff3-879d-61592e54d8f7": {
+    "id": "b4c0c2e5-f391-4ff3-879d-61592e54d8f7",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Fomentant ciutats verdes amb el coneixement de la qualitat de l'aire que ofereixen els satèl·lits",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1zaG9ydFRpdGxlX0hlbHBpbmcgY2l0aWVzIHRvIHR1cm4gZ3JlZW4gd2l0aCBhaXIgcXVhbGl0eSBrbm93bGVkZ2UgZnJvbSBzYXRlbGxpdGVz"
+  },
+  "7509b1de-fa5b-4035-af60-67f55b265056": {
+    "id": "7509b1de-fa5b-4035-af60-67f55b265056",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Lobelia",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX0xvYmVsaWE="
+  },
+  "75cb6a62-7c81-4715-bd34-ea3bb8dc536d": {
+    "id": "75cb6a62-7c81-4715-bd34-ea3bb8dc536d",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Proporcionem escenaris climàtics, prediccions i eines de presa de decisions per a les autoritats públiques perquè puguin enfortir la seva planificació i catalizar accions en tota la societat.",
+    "fuzzy": true,
+    "keyId": "bWFya2V0LXN1bW1hcnlfV2UgcHJvdmlkZSBjbGltYXRpYyBzY2VuYXJpb3MsIHByZWRpY3Rpb25zIGFuZCBkZWNpc2lvbi1tYWtpbmcgdG9vbHMgdG8gcHVibGljIGF1dGhvcml0aWVzIHNvIHRoZXkgY2FuIHN0cmVuZ3RoZW4gdGhlaXIgcGxhbm5pbmcgYW5kIGNhdGFseXNlIGFjdGlvbnMgYWNyb3NzIHNvY2lldHku"
+  },
+  "91074c6d-b3ee-468b-8f86-f4a22b627adf": {
+    "id": "91074c6d-b3ee-468b-8f86-f4a22b627adf",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Cinquanta ombres de SIG.",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1iaW9fRmlmdHkgc2hhZGVzIG9mIEdJUy4="
+  },
+  "39c3cc66-eb85-40a3-8f84-0074faf358c6": {
+    "id": "39c3cc66-eb85-40a3-8f84-0074faf358c6",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "TBW\n\n`` `Botó\netiqueta: fes-ho en línia\nurl: https://wekeo.eu\n`` `",
+    "fuzzy": true,
+    "keyId": "cHJvamVjdC1jb250ZW50c19UQlcKCmBgYEJ1dHRvbgpsYWJlbDogY2hlY2sgaXQgb25saW5lCnVybDogaHR0cHM6Ly93ZWtlby5ldQpgYGA="
+  },
+  "2169734d-920f-4fb2-9729-60b030c7de0c": {
+    "id": "2169734d-920f-4fb2-9729-60b030c7de0c",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Avaluant l'impacte econòmic de tempestes extremes en els propers 50 anys",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC10aXRsZV9FdmFsdWF0aW5nIHRoZSBlY29ub21pYyBpbXBhY3Qgb2YgZXh0cmVtZSBzdG9ybXMgaW4gdGhlIG5leHQgNTAgeWVhcnM="
+  },
+  "fc1b41ca-7778-456e-9b91-4d84cb3bef2b": {
+    "id": "fc1b41ca-7778-456e-9b91-4d84cb3bef2b",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "S'engresca amb algorismes.",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1iaW9fRnJvbGljcyBpbiBhbGdvcml0aG1zLg=="
+  },
+  "99927924-6179-4dd6-9b1e-5657b02bac43": {
+    "id": "99927924-6179-4dd6-9b1e-5657b02bac43",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Construint el proper núvol europeu per a l'observació de la Terra",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1zaG9ydFRpdGxlX0J1aWxkaW5nIHRoZSBuZXh0IEV1cm9wZWFuIGNsb3VkIGZvciBFYXJ0aCBvYnNlcnZhdGlvbg=="
+  },
+  "42964cc1-5126-46de-bd2c-f0806054a4e7": {
+    "id": "42964cc1-5126-46de-bd2c-f0806054a4e7",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "![Anàlisi d'esdeveniments extrems per PwC](pwc-extreme-event-analysis-sidebar-1.jpg)\n\n![Anàlisi d'esdeveniments extrems per PwC](pwc-extreme-event-analysis-sidebar-2.jpg)",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtFeHRyZW1lIGV2ZW50IGFuYWx5c2lzIGZvciBQd0NdKHB3Yy1leHRyZW1lLWV2ZW50LWFuYWx5c2lzLXNpZGViYXItMS5qcGcpCgohW0V4dHJlbWUgZXZlbnQgYW5hbHlzaXMgZm9yIFB3Q10ocHdjLWV4dHJlbWUtZXZlbnQtYW5hbHlzaXMtc2lkZWJhci0yLmpwZyk="
+  },
+  "17e588e1-2f61-4817-b7c1-93ec79f65a9a": {
+    "id": "17e588e1-2f61-4817-b7c1-93ec79f65a9a",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Fa coses.",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1iaW9fTWFrZXMgdGhpbmdzLg=="
+  },
+  "ef62ab79-3e5a-44fb-9c80-7eec3e67adee": {
+    "id": "ef62ab79-3e5a-44fb-9c80-7eec3e67adee",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "TBW",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1jb250ZW50c19UQlc="
+  },
+  "07714876-0761-4d7c-aeec-f28ac7104c33": {
+    "id": "07714876-0761-4d7c-aeec-f28ac7104c33",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Dades satel·litals i intel·ligència artificial per fer front als reptes del clima",
+    "fuzzy": false,
+    "keyId": "cGFnZS10aXRsZV9TYXRlbGxpdGUgZGF0YSBhbmQgYXJ0aWZpY2lhbCBpbnRlbGxpZ2VuY2UgdG8gYWRkcmVzcyBjbGltYXRlIGNoYWxsZW5nZXM="
+  },
+  "bd5651b2-af73-4625-8c4a-934102f9f40a": {
+    "id": "bd5651b2-af73-4625-8c4a-934102f9f40a",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Autoritats africanes utilitzen dades satel·litals per prevenir inundacions a l'Àfrica occidental",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC10aXRsZV9BZnJpY2FuIGF1dGhvcml0aWVzIHVzZSBzYXRlbGxpdGUgZGF0YSB0byBwcmV2ZW50IGZsb29kcyBpbiBXZXN0IEFmcmljYQ=="
+  },
+  "0cfefd3a-0a6d-4b4e-8b96-889a6920d36d": {
+    "id": "0cfefd3a-0a6d-4b4e-8b96-889a6920d36d",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "```ContactForm\nsendTo: laia.romero@isardsat.cat\n```\n\n## …or contacta amb nosaltres:\n\n<div style=\"max-width: 400px; margin: 0 auto\">\n<b>T:</b> +34 93 350 55 08<br/>\n<b>E:</b> <a href=\"mailto:info@lobelia.earth\">info@lobelia.earth</a>\n</div>\n",
+    "fuzzy": false,
+    "keyId": "cGFnZS1jb250ZW50c19gYGBDb250YWN0Rm9ybQpzZW5kVG86IGxhaWEucm9tZXJvQGlzYXJkc2F0LmNhdApgYGAKCiMjIOKApm9yIGNvbnRhY3QgdXM6Cgo8ZGl2IHN0eWxlPSJtYXgtd2lkdGg6IDQwMHB4OyBtYXJnaW46IDAgYXV0byI+CjxiPlQ6PC9iPiArMzQgOTMgMzUwIDU1IDA4PGJyLz4KPGI+RTo8L2I+IDxhIGhyZWY9Im1haWx0bzppbmZvQGxvYmVsaWEuZWFydGgiPmluZm9AbG9iZWxpYS5lYXJ0aDwvYT4KPC9kaXY+Cg=="
+  },
+  "0a170c1c-babd-4469-85e0-b3b61a4e4ed4": {
+    "id": "0a170c1c-babd-4469-85e0-b3b61a4e4ed4",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "## Emissions\n\nEmissions regionals mensuals de satèl·lits a 1 km de resolució.\n\n## Previsió\n\nPrevisió horària de la qualitat de l'aire amb 3 dies d'antelació.\n\n## Eines de presa de decisions\n\nSimulant escenaris de qualitat de l'aire per avaluar l'impacte de les accions, la millor manera de fer plans.\n\n## On\n\nMaputo / Asunción / Port Vila / Dakar / Yakutsk\n\n## Context\n\nLobelia dirigeix ​​un consorci de qualitat aèria orientat comercialment, nascut d'un projecte europeu H2020, amb alguns dels actors europeus més reconeguts en la investigació sobre contaminació atmosfèrica.\n\nLa contaminació de l'aire és un problema greu que costa milers de milions d'euros cada any en pèrdua de productivitat i despeses sanitàries. A més, la contaminació de la qualitat de l'aire també té un impacte econòmic negatiu en altres activitats com el transport (p. Ex. La manca de visibilitat), el manteniment de la ciutat (per exemple, neteja d'infraestructures) o l'agricultura (per exemple, deposicions contaminants) que causen 3 milions de morts a tot el món cada any.\n\nEl projecte AirQast està construint una plataforma autosostenible que ofereix serveis de qualitat de l'aire basats en dades d'observació de la Terra.\n\n\n`` `Botó\netiqueta: fes-ho en línia\nurl: http://airqast.com\n`` `",
+    "fuzzy": true,
+    "keyId": "cHJvamVjdC1jb250ZW50c18jIyBFbWlzc2lvbnMKCk1vbnRobHkgcmVnaW9uYWwgZW1pc3Npb25zIGZyb20gc2F0ZWxsaXRlcyBhdCAxLWttIHJlc29sdXRpb24uCgojIyBGb3JlY2FzdAoKSG91cmx5IGFpciBxdWFsaXR5IGZvcmVjYXN0cyBmb3IgMyBkYXlzIGluIGFkdmFuY2UuCgojIyBEZWNpc2lvbi1tYWtpbmcgdG9vbHMKClNpbXVsYXRpbmcgYWlyIHF1YWxpdHkgc2NlbmFyaW9zIHRvIGV2YWx1YXRlIHRoZSBpbXBhY3Qgb2YgdGhlIGFjdGlvbnMsIHRoZSBiZXN0IHdheSB0byBwbGFuLW1ha2UuCgojIyBXaGVyZQoKTWFwdXRvwqAvIEFzdW5jacOzbsKgLyBQb3J0IFZpbGHCoC8gRGFrYXLCoC8gWWFrdXRzawoKIyMgQ29udGV4dAoKTG9iZWxpYSBsZWFkcyBhIGNvbW1lcmNpYWxseS1vcmllbnRlZCBhaXIgcXVhbGl0eSBjb25zb3J0aXVtLCBib3JuIGZyb20gYSBFdXJvcGVhbiBIMjAyMCBwcm9qZWN0LCB3aXRoIHNvbWUgb2YgdGhlIG1vc3QgcmVub3duZWQgRXVyb3BlYW4gYWN0b3JzIGluIGFpciBwb2xsdXRpb24gcmVzZWFyY2guCgpBaXIgcG9sbHV0aW9uIGlzIGEgc2VyaW91cyBwcm9ibGVtIHRoYXQgY29zdHMgYmlsbGlvbnMgb2YgZXVyb3MgZWFjaCB5ZWFyIGluIGxvc3QgcHJvZHVjdGl2aXR5IGFuZCBoZWFsdGggZXhwZW5zZXMuIEluIGFkZGl0aW9uLCBhaXIgcXVhbGl0eSBwb2xsdXRpb24gYWxzbyBoYXMgYSBuZWdhdGl2ZSBlY29ub21pYyBpbXBhY3Qgb24gb3RoZXIgYWN0aXZpdGllcyBzdWNoIGFzIHRyYW5zcG9ydCAoZS5nLiBsYWNrIG9mIHZpc2liaWxpdHkpLCBjaXR5IG1haW50ZW5hbmNlIChlLmcuIGluZnJhc3RydWN0dXJlIGNsZWFuaW5nKSBvciBhZ3JpY3VsdHVyZSAoZS5nLiBwb2xsdXRhbnQgZGVwb3NpdGlvbnMpIHRoYXQgY2F1c2UgMyBtaWxsaW9uIGRlYXRocyB3b3JsZHdpZGUgZWFjaCB5ZWFyLgoKVGhlIEFpclFhc3QgcHJvamVjdCBpcyBidWlsZGluZyBhIHNlbGYtc3VzdGFpbmFibGUgcGxhdGZvcm0gcHJvdmlkaW5nIGFpciBxdWFsaXR5IHNlcnZpY2VzIGJhc2VkIG9uIEVhcnRoIE9ic2VydmF0aW9uIGRhdGEuIAoKCmBgYEJ1dHRvbgpsYWJlbDogY2hlY2sgaXQgb25saW5lCnVybDogaHR0cDovL2FpcnFhc3QuY29tCmBgYA=="
+  },
+  "44fc8af3-312e-4af1-b261-31884d5ede7d": {
+    "id": "44fc8af3-312e-4af1-b261-31884d5ede7d",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Fomentant ciutats verdes amb el coneixement de la qualitat de l'aire que ofereixen els satèl·lits",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC10aXRsZV9IZWxwaW5nIGNpdGllcyB0byB0dXJuIGdyZWVuIHdpdGggYWlyIHF1YWxpdHkga25vd2xlZGdlIGZyb20gc2F0ZWxsaXRlcw=="
+  },
+  "2682f644-7396-467d-8647-014fa4301539": {
+    "id": "2682f644-7396-467d-8647-014fa4301539",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Es preocupa pels detalls.",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1iaW9fQ2FyZXMgYWJvdXQgdGhlIGRldGFpbHMu"
+  },
+  "13086119-50a5-49b1-923b-a4c2b175b1f6": {
+    "id": "13086119-50a5-49b1-923b-a4c2b175b1f6",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Expert en AI/ML",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1yb2xlX0FJL01MIEV4cGVydA=="
+  },
+  "71ed3ef0-ce01-447e-bf7c-245ca1608c1e": {
+    "id": "71ed3ef0-ce01-447e-bf7c-245ca1608c1e",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Ajudant UN Habitat en l'anàlisi del clima a les ciutats",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1zaG9ydFRpdGxlX1N1cHBvcnRpbmcgVU7CoEhhYml0YXQgZm9yIGNsaW1hdGUgYW5hbHlzaXMgaW4gY2l0aWVz"
+  },
+  "0f4af2f2-deba-4aa9-93bb-f87fa875fdf2": {
+    "id": "0f4af2f2-deba-4aa9-93bb-f87fa875fdf2",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Sempre una bona paraula.",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1iaW9fQWx3YXlzIGEgZ29vZCB3b3JkLg=="
+  },
+  "bf2c23bb-c316-4a36-9071-673023854823": {
+    "id": "bf2c23bb-c316-4a36-9071-673023854823",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Tendint ponts.",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1iaW9fUmVhY2hpbmcgb3V0Lg=="
+  },
+  "0fa26434-f4c6-4369-9ad7-3810ae713d11": {
+    "id": "0fa26434-f4c6-4369-9ad7-3810ae713d11",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Recolzem estratègies de mitigació de risc per a les empreses per anticipar els efectes del canvi climàtic en les seves inversions.",
+    "fuzzy": true,
+    "keyId": "bWFya2V0LXN1bW1hcnlfV2Ugc3VwcG9ydCByaXNrIG1pdGlnYXRpb24gc3RyYXRlZ2llcyBmb3IgY29tcGFuaWVzIHRvIGFudGljaXBhdGUgdGhlIGVmZmVjdHMgb2YgY2xpbWF0ZSBjaGFuZ2UgaW4gdGhlaXIgaW52ZXN0bWVudHMu"
+  },
+  "44e3af27-d0e4-482b-ad8a-370449037e8f": {
+    "id": "44e3af27-d0e4-482b-ad8a-370449037e8f",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Les inundacions són una preocupació creixent a l'Àfrica occidental, que es preveu augmentar amb el canvi climàtic. Hi ha una gran necessitat d'un accés fiable a les \"prediccions i alertes d'inundació operacional ** ** produïdes per un robust sistema de tecnologia d'informació i comunicació adaptat a les condicions regionals i operat per institucions de l'Àfrica occidental capacitades.\n\nLobelia i IsardSAT ofereixen ** observacions de nivell d'aigua basades en satèl · lits ** de la plana d'inundació de la conca del riu Níger que s'assemblen seqüencialment a un model hidrodinàmic produït per l'Institut Meteorològic i Hidrològic Suec (SMHI) per generar períodes de retorn de la descàrrega del riu. Aquests s'utilitzen en el sistema de previsió d'inundacions i alertes d'alerta primerenca a l'Àfrica occidental a través de la [Plataforma d'Explotació Temàtica Hidrològica (H-TEP)] (https://hydrology-tep.eo.esa.int) basada en núvol administrat per isardSAT .\n\nLes nostres dades basades en el satèl·lit sobre l'abast i els nivells d'aigua superficials s'han considerat com a complement dels mesuraments in situ. També es poden utilitzar com a proxy de streamflow, per a la calibració i la validació de models, així com per a l'assimilació de dades hidrològiques.",
+    "fuzzy": true,
+    "keyId": "cHJvamVjdC1jb250ZW50c19GbG9vZHMgYXJlIGEgcmFwaWRseSBncm93aW5nIGNvbmNlcm4gaW4gV2VzdCBBZnJpY2EsIHByb2plY3RlZCB0byBpbmNyZWFzZSB3aXRoIGNsaW1hdGUgY2hhbmdlLiBUaGVyZSBpcyBhIGdyZWF0IG5lZWQgZm9yIHJlbGlhYmxlIGFjY2VzcyB0byAqKm9wZXJhdGlvbmFsIGZsb29kIGZvcmVjYXN0cyBhbmQgYWxlcnRzKiogcHJvZHVjZWQgYnkgYSByb2J1c3QgaW5mb3JtYXRpb24gYW5kIGNvbW11bmljYXRpb24gdGVjaG5vbG9neSBzeXN0ZW0gYWRhcHRlZCB0byByZWdpb25hbCBjb25kaXRpb25zIGFuZCBvcGVyYXRlZCBieSBjYXBhYmxlIFdlc3QgQWZyaWNhbiBpbnN0aXR1dGlvbnMuCgpMb2JlbGlhIGFuZCBpc2FyZFNBVCBhcmUgcHJvdmlkaW5nICoqc2F0ZWxsaXRlLWJhc2VkIHdhdGVyIGxldmVsIG9ic2VydmF0aW9ucyoqIG9mIHRoZSBOaWdlciBSaXZlciBiYXNpbiBmbG9vZHBsYWluIHRoYXQgYXJlIHNlcXVlbnRpYWxseSBhc3NpbWlsYXRlZCBpbnRvIGEgaHlkcm9keW5hbWljIG1vZGVsIHByb2R1Y2VkIGJ5IHRoZSBTd2VkaXNoIE1ldGVvcm9sb2dpY2FsIGFuZCBIeWRyb2xvZ2ljYWwgSW5zdGl0dXRlIChTTUhJKSB0byBnZW5lcmF0ZSByaXZlciBkaXNjaGFyZ2UgcmV0dXJuIHBlcmlvZHMuIFRoZXNlIGFyZSB1c2VkIGluIFNNSEnigJlzIGZsb29kIGZvcmVjYXN0aW5nIGFuZCBlYXJseS13YXJuaW5nIGFsZXJ0IHN5c3RlbSBpbiBXZXN0IEFmcmljYSB0aHJvdWdoIHRoZSBjbG91ZC1iYXNlZCBbSHlkcm9sb2d5IFRoZW1hdGljIEV4cGxvaXRhdGlvbiBQbGF0Zm9ybSAoSC1URVApXShodHRwczovL2h5ZHJvbG9neS10ZXAuZW8uZXNhLmludCkgbWFuYWdlZCBieSBpc2FyZFNBVC4KCk91ciBzYXRlbGxpdGUtYmFzZWQgZGF0YSBvbiBzdXJmYWNlIHdhdGVyIGV4dGVudCBhbmQgbGV2ZWxzIGhhdmUgYmVlbiBjb25zaWRlcmVkIHRvICBjb21wbGVtZW50IGluLXNpdHUgbWVhc3VyZW1lbnRzLiBUaGV5IGNhbiBhbHNvIGJlIHVzZWQgYXMgYSBwcm94eSBvZiBzdHJlYW1mbG93LCBmb3IgbW9kZWwgY2FsaWJyYXRpb24gYW5kIHZhbGlkYXRpb24gYXMgd2VsbCBhcyBmb3IgaHlkcm9sb2dpYyBkYXRhIGFzc2ltaWxhdGlvbi4="
+  },
+  "4a65d202-9007-49eb-8236-969708b0dd8d": {
+    "id": "4a65d202-9007-49eb-8236-969708b0dd8d",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "![Anàlisi d'idoneïtat de cultius per Oxfam](oxfam-crop-suitability-sidebar-1.jpg)",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtDcm9wIHN1aXRhYmlsaXR5IGFuYWx5c2lzIGZvciBPeGZhbV0ob3hmYW0tY3JvcC1zdWl0YWJpbGl0eS1zaWRlYmFyLTEuanBnKQ=="
+  },
+  "ad92c791-b373-458a-91df-763bf2d00bb4": {
+    "id": "ad92c791-b373-458a-91df-763bf2d00bb4",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Gestora Científica-Tècnica",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1yb2xlX1NjaWVudGlmaWMvVGVjaG5pY2FsIE1hbmFnZXI="
+  },
+  "ee41c615-60ad-42b7-9b44-40fe95683647": {
+    "id": "ee41c615-60ad-42b7-9b44-40fe95683647",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "`` `Inici\ntagline: \"** Observació de la Terra ** per preveure els efectes del canvi climàtic\".\ntagline2: \"Dades de satèl·lit i intel·ligència artificial per a l'adaptació climàtica\".\nprovidersTitle: treballem amb els principals proveïdors de dades\nmarketsTitle: confiat per les organitzacions de tot el món afectades pel nostre canvi climàtic\n`` `\n\n`` `Contacte\n`` `",
+    "fuzzy": true,
+    "keyId": "cGFnZS1sYXlvdXRfYGBgSG9tZQp0YWdsaW5lOiAiKipFYXJ0aCBPYnNlcnZhdGlvbioqIHRvIGFudGljaXBhdGUgdGhlIGVmZmVjdHMgb2YgY2xpbWF0ZSBjaGFuZ2UuIgp0YWdsaW5lMjogIlNhdGVsbGl0ZSBkYXRhIGFuZCBhcnRpZmljaWFsIGludGVsbGlnZW5jZSBmb3IgY2xpbWF0ZSBhZGFwdGF0aW9uLiIKcHJvdmlkZXJzVGl0bGU6IFdlIHdvcmsgd2l0aCB0aGUgbGVhZGluZyBkYXRhIHByb3ZpZGVycwptYXJrZXRzVGl0bGU6IFRydXN0ZWQgYnkgb3JnYW5pc2F0aW9ucyBhY3Jvc3MgdGhlIGdsb2JlIGFmZmVjdGVkIGJ5IG91ciBjaGFuZ2luZyBjbGltYXRlCmBgYAoKYGBgQ29udGFjdApgYGA="
+  },
+  "5d8249de-6132-45fa-841e-a7c5c7524460": {
+    "id": "5d8249de-6132-45fa-841e-a7c5c7524460",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Intel·ligència humana.",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1iaW9fSHVtYW4gaW50ZWxsaWdlbmNlLg=="
+  },
+  "3f670637-1db1-4348-8449-afb5ada9a341": {
+    "id": "3f670637-1db1-4348-8449-afb5ada9a341",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "```Home\ntagline: \"**Observar la Terra** per anticipar els efectes del canvi climàtic.\"\ntagline2: \"Dades satel·litals i intel·ligència artificial per a l'adaptació climàtica.\"\nprovidersTitle: Treballem amb proveïdors de dades punters\nmarketsTitle: Amb la confiança d'organitzacions a tot el món, afectades per un clima canviant\n```\n\n```Contact\n```",
+    "keyId": "cGFnZS1sYXlvdXRfYGBgSG9tZQp0YWdsaW5lOiAiKipFYXJ0aCBPYnNlcnZhdGlvbioqIHRvIGFudGljaXBhdGUgdGhlIGVmZmVjdHMgb2YgY2xpbWF0ZSBjaGFuZ2UuIgp0YWdsaW5lMjogIlNhdGVsbGl0ZSBkYXRhIGFuZCBhcnRpZmljaWFsIGludGVsbGlnZW5jZSBmb3IgY2xpbWF0ZSBhZGFwdGF0aW9uLiIKcHJvdmlkZXJzVGl0bGU6IFdlIHdvcmsgd2l0aCB0aGUgbGVhZGluZyBkYXRhIHByb3ZpZGVycwptYXJrZXRzVGl0bGU6IFRydXN0ZWQgYnkgb3JnYW5pc2F0aW9ucyBhY3Jvc3MgdGhlIGdsb2JlIGFmZmVjdGVkIGJ5IG91ciBjaGFuZ2luZyBjbGltYXRlCmBgYAoKYGBgQ29udGFjdApgYGA="
+  },
+  "e4b10d5f-5c5a-4e3c-a745-a5d4bffbc97d": {
+    "id": "e4b10d5f-5c5a-4e3c-a745-a5d4bffbc97d",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Avaluant l'impacte econòmic de tempestes extremes en els propers 50 anys",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1zaG9ydFRpdGxlX0V2YWx1YXRpbmcgdGhlIGVjb25vbWljIGltcGFjdCBvZiBleHRyZW1lIHN0b3JtcyBpbiB0aGUgbmV4dCA1MMKgeWVhcnM="
+  },
+  "5579beb9-5fe2-41e0-9d80-acc2311c548e": {
+    "id": "5579beb9-5fe2-41e0-9d80-acc2311c548e",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Avaluant l'impacte econòmic de tempestes extremes en els propers 50 anys",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC10aXRsZV9FdmFsdWF0aW5nIHRoZSBlY29ub21pYyBpbXBhY3Qgb2YgZXh0cmVtZSBzdG9ybXMgaW4gdGhlIG5leHQgNTDCoHllYXJz"
+  },
+  "16a16b58-b64c-4256-a983-2139113d26b7": {
+    "id": "16a16b58-b64c-4256-a983-2139113d26b7",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "```Home\ntagline: \"**Observar la Terra** per anticipar els efectes del canvi climàtic.\"\nprovidersTitle: Treballem amb proveïdors de dades punters\nmarketsTitle: Amb la confiança d'organitzacions a tot el món, afectades per un clima canviant\n```\n\n```Contact\n```",
+    "fuzzy": false,
+    "keyId": "cGFnZS1sYXlvdXRfYGBgSG9tZQp0YWdsaW5lOiAiKipFYXJ0aCBPYnNlcnZhdGlvbioqIHRvIGFudGljaXBhdGUgdGhlIGVmZmVjdHMgb2YgY2xpbWF0ZSBjaGFuZ2UuIgpwcm92aWRlcnNUaXRsZTogV2Ugd29yayB3aXRoIHRoZSBsZWFkaW5nIGRhdGEgcHJvdmlkZXJzCm1hcmtldHNUaXRsZTogVHJ1c3RlZCBieSBvcmdhbmlzYXRpb25zIGFjcm9zcyB0aGUgZ2xvYmUgYWZmZWN0ZWQgYnkgb3VyIGNoYW5naW5nIGNsaW1hdGUKYGBgCgpgYGBDb250YWN0CmBgYA=="
+  },
+  "96d6ac7a-c74a-4379-a006-0b3e7287e071": {
+    "id": "96d6ac7a-c74a-4379-a006-0b3e7287e071",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Pluja d'idees.",
+    "fuzzy": true,
+    "keyId": "dGVhbU1lbWJlci1iaW9fQnJhaW5zdG9ybWluZy4="
+  },
+  "ff8eb8f7-11ba-4a03-9bbb-aaad460313c4": {
+    "id": "ff8eb8f7-11ba-4a03-9bbb-aaad460313c4",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "TBW\n\n`` `Botó\netiqueta: aprèn més\nurl: https://wekeo.eu\nnewTab: true\n`` `",
+    "fuzzy": true,
+    "keyId": "cHJvamVjdC1jb250ZW50c19UQlcKCmBgYEJ1dHRvbgpsYWJlbDogbGVhcm4gbW9yZQp1cmw6IGh0dHBzOi8vd2VrZW8uZXUKbmV3VGFiOiB0cnVlCmBgYA=="
+  },
+  "d3f19730-acf8-4b08-9d06-0f80b2bbfc03": {
+    "id": "d3f19730-acf8-4b08-9d06-0f80b2bbfc03",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Les inundacions són una preocupació creixent a l'Àfrica occidental, que es preveu augmentar amb el canvi climàtic. Hi ha una gran necessitat d'un accés fiable a les \"prediccions i alertes d'operacions operatives ** **, produïdes per un robust sistema de tecnologia de la informació i la comunicació, adaptat a les condicions regionals i operat per institucions de l'Àfrica occidental capaços.\n\nLobelia i IsardSAT ofereixen ** observacions de nivell d'aigua basades en satèl · lits ** de la plana d'inundació de la conca del riu Níger que s'assemblen seqüencialment a un model hidrodinàmic produït per l'Institut Meteorològic i Hidrològic Suec (SMHI) per generar períodes de retorn de la descàrrega del riu. Aquests s'utilitzen en el sistema de previsió d'inundacions i alertes d'alerta primerenca a l'Àfrica occidental a través de la [Plataforma d'Explotació Temàtica Hidrològica (H-TEP)] (https://hydrology-tep.eo.esa.int) basada en núvol administrat per isardSAT .\n\nLes nostres dades basades en el satèl·lit sobre l'abast i els nivells d'aigua superficials s'han considerat com a complement dels mesuraments in situ. També es poden utilitzar com a proxy de streamflow, per a la calibració i la validació de models, així com per a l'assimilació de dades hidrològiques.\n\n`` `Botó\netiqueta: aprèn més\nurl: http://fanfar.eu\nnewTab: true\n`` `",
+    "fuzzy": true,
+    "keyId": "cHJvamVjdC1jb250ZW50c19GbG9vZHMgYXJlIGEgcmFwaWRseSBncm93aW5nIGNvbmNlcm4gaW4gV2VzdCBBZnJpY2EsIHByb2plY3RlZCB0byBpbmNyZWFzZSB3aXRoIGNsaW1hdGUgY2hhbmdlLiBUaGVyZSBpcyBhIGdyZWF0IG5lZWQgZm9yIHJlbGlhYmxlIGFjY2VzcyB0byAqKm9wZXJhdGlvbmFsIGZsb29kIGZvcmVjYXN0cyBhbmQgYWxlcnRzKiosIHByb2R1Y2VkIGJ5IGEgcm9idXN0IGluZm9ybWF0aW9uIGFuZCBjb21tdW5pY2F0aW9uIHRlY2hub2xvZ3kgc3lzdGVtLCBhZGFwdGVkIHRvIHJlZ2lvbmFsIGNvbmRpdGlvbnMgYW5kIG9wZXJhdGVkIGJ5IGNhcGFibGUgV2VzdCBBZnJpY2FuIGluc3RpdHV0aW9ucy4KCkxvYmVsaWEgYW5kIGlzYXJkU0FUIGFyZSBwcm92aWRpbmcgKipzYXRlbGxpdGUtYmFzZWQgd2F0ZXIgbGV2ZWwgb2JzZXJ2YXRpb25zKiogb2YgdGhlIE5pZ2VyIFJpdmVyIGJhc2luIGZsb29kcGxhaW4gdGhhdCBhcmUgc2VxdWVudGlhbGx5IGFzc2ltaWxhdGVkIGludG8gYSBoeWRyb2R5bmFtaWMgbW9kZWwgcHJvZHVjZWQgYnkgdGhlIFN3ZWRpc2ggTWV0ZW9yb2xvZ2ljYWwgYW5kIEh5ZHJvbG9naWNhbCBJbnN0aXR1dGUgKFNNSEkpIHRvIGdlbmVyYXRlIHJpdmVyIGRpc2NoYXJnZSByZXR1cm4gcGVyaW9kcy4gVGhlc2UgYXJlIHVzZWQgaW4gU01ISeKAmXMgZmxvb2QgZm9yZWNhc3RpbmcgYW5kIGVhcmx5LXdhcm5pbmcgYWxlcnQgc3lzdGVtIGluIFdlc3QgQWZyaWNhIHRocm91Z2ggdGhlIGNsb3VkLWJhc2VkIFtIeWRyb2xvZ3kgVGhlbWF0aWMgRXhwbG9pdGF0aW9uIFBsYXRmb3JtIChILVRFUCldKGh0dHBzOi8vaHlkcm9sb2d5LXRlcC5lby5lc2EuaW50KSBtYW5hZ2VkIGJ5IGlzYXJkU0FULgoKT3VyIHNhdGVsbGl0ZS1iYXNlZCBkYXRhIG9uIHN1cmZhY2Ugd2F0ZXIgZXh0ZW50IGFuZCBsZXZlbHMgaGF2ZSBiZWVuIGNvbnNpZGVyZWQgdG8gIGNvbXBsZW1lbnQgaW4tc2l0dSBtZWFzdXJlbWVudHMuIFRoZXkgY2FuIGFsc28gYmUgdXNlZCBhcyBhIHByb3h5IG9mIHN0cmVhbWZsb3csIGZvciBtb2RlbCBjYWxpYnJhdGlvbiBhbmQgdmFsaWRhdGlvbiBhcyB3ZWxsIGFzIGZvciBoeWRyb2xvZ2ljIGRhdGEgYXNzaW1pbGF0aW9uLgoKYGBgQnV0dG9uCmxhYmVsOiBsZWFybiBtb3JlCnVybDogaHR0cDovL2ZhbmZhci5ldQpuZXdUYWI6IHRydWUKYGBg"
+  },
+  "5f4886a2-9a7f-4f44-a540-256ae6e8cd67": {
+    "id": "5f4886a2-9a7f-4f44-a540-256ae6e8cd67",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "## Emissions\n\nInventaris mensuals d'emissions regionals de satèl·lits a 1 km de resolució.\n\n## Previsió\n\nPrevisió horària de la qualitat de l'aire amb 3 dies d'antelació.\n\n## Eines de presa de decisions\n\nSimulant escenaris de qualitat de l'aire per avaluar l'impacte de les accions, la millor manera de fer plans.\n\n## On\n\nMaputo / Asunción / Port Vila / Dakar / Yakutsk\n\n## Context\n\nLobelia dirigeix ​​un consorci de qualitat aèria orientat comercialment, nascut d'un projecte europeu H2020, amb alguns dels actors europeus més reconeguts en la investigació sobre contaminació atmosfèrica.\n\nLa contaminació de l'aire és un problema greu que costa milers de milions d'euros cada any en pèrdua de productivitat i despeses sanitàries. A més, la contaminació de la qualitat de l'aire també té un impacte econòmic negatiu en altres activitats com el transport (p. Ex. La manca de visibilitat), el manteniment de la ciutat (per exemple, neteja d'infraestructures) o l'agricultura (per exemple, deposicions contaminants) que causen 3 milions de morts a tot el món cada any.\n\nEl projecte AirQast està construint una plataforma autosostenible que ofereix serveis de qualitat de l'aire basats en dades d'observació de la Terra.\n\n\n`` `Botó\netiqueta: aprèn més\nurl: http://airqast.com\nnewTab: true\n`` `",
+    "fuzzy": true,
+    "keyId": "cHJvamVjdC1jb250ZW50c18jIyBFbWlzc2lvbnMKCk1vbnRobHkgcmVnaW9uYWwgZW1pc3Npb24gaW52ZW50b3JpZXMgZnJvbSBzYXRlbGxpdGVzIGF0IDEta20gcmVzb2x1dGlvbi4KCiMjIEZvcmVjYXN0CgpIb3VybHkgYWlyIHF1YWxpdHkgZm9yZWNhc3RzIGZvciAzIGRheXMgaW4gYWR2YW5jZS4KCiMjIERlY2lzaW9uLW1ha2luZyB0b29scwoKU2ltdWxhdGluZyBhaXIgcXVhbGl0eSBzY2VuYXJpb3MgdG8gZXZhbHVhdGUgdGhlIGltcGFjdCBvZiB0aGUgYWN0aW9ucywgdGhlIGJlc3Qgd2F5IHRvIHBsYW4tbWFrZS4KCiMjIFdoZXJlCgpNYXB1dG/CoC8gQXN1bmNpw7NuwqAvIFBvcnQgVmlsYcKgLyBEYWthcsKgLyBZYWt1dHNrCgojIyBDb250ZXh0CgpMb2JlbGlhIGxlYWRzIGEgY29tbWVyY2lhbGx5LW9yaWVudGVkIGFpciBxdWFsaXR5IGNvbnNvcnRpdW0sIGJvcm4gZnJvbSBhIEV1cm9wZWFuIEgyMDIwIHByb2plY3QsIHdpdGggc29tZSBvZiB0aGUgbW9zdCByZW5vd25lZCBFdXJvcGVhbiBhY3RvcnMgaW4gYWlyIHBvbGx1dGlvbiByZXNlYXJjaC4KCkFpciBwb2xsdXRpb24gaXMgYSBzZXJpb3VzIHByb2JsZW0gdGhhdCBjb3N0cyBiaWxsaW9ucyBvZiBldXJvcyBlYWNoIHllYXIgaW4gbG9zdCBwcm9kdWN0aXZpdHkgYW5kIGhlYWx0aCBleHBlbnNlcy4gSW4gYWRkaXRpb24sIGFpciBxdWFsaXR5IHBvbGx1dGlvbiBhbHNvIGhhcyBhIG5lZ2F0aXZlIGVjb25vbWljIGltcGFjdCBvbiBvdGhlciBhY3Rpdml0aWVzIHN1Y2ggYXMgdHJhbnNwb3J0IChlLmcuIGxhY2sgb2YgdmlzaWJpbGl0eSksIGNpdHkgbWFpbnRlbmFuY2UgKGUuZy4gaW5mcmFzdHJ1Y3R1cmUgY2xlYW5pbmcpIG9yIGFncmljdWx0dXJlIChlLmcuIHBvbGx1dGFudCBkZXBvc2l0aW9ucykgdGhhdCBjYXVzZSAzIG1pbGxpb24gZGVhdGhzIHdvcmxkd2lkZSBlYWNoIHllYXIuCgpUaGUgQWlyUWFzdCBwcm9qZWN0IGlzIGJ1aWxkaW5nIGEgc2VsZi1zdXN0YWluYWJsZSBwbGF0Zm9ybSBwcm92aWRpbmcgYWlyIHF1YWxpdHkgc2VydmljZXMgYmFzZWQgb24gRWFydGggT2JzZXJ2YXRpb24gZGF0YS4gCgoKYGBgQnV0dG9uCmxhYmVsOiBsZWFybiBtb3JlCnVybDogaHR0cDovL2FpcnFhc3QuY29tCm5ld1RhYjogdHJ1ZQpgYGA="
+  },
+  "ad30a90b-9b08-435d-ba04-749594ed0ca7": {
+    "id": "ad30a90b-9b08-435d-ba04-749594ed0ca7",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "La informació del satèl·lit s'està utilitzant d'una manera nova per predir condicions favorables per a ** esquadrons de llagosta del desert **. La nova tecnologia ajuda a augmentar el temps d'advertència dels brots de llagosta fins a dos mesos.\n\nMitjançant la utilització de dades de satèl·lits com la humitat del sòl (missió SMELLS) i la salinitat oceànica (missió SMOS), s'ha desenvolupat una nova eina per controlar les condicions que poden provocar l'escalfament de les llagostes, com l'alta humitat i la vegetació verda. L'esgotament es produeix quan un període de sequera és seguit per pluges abundants i creixement ràpid de la vegetació.\n\n** Lobelia opera el servei d'humitat del sòl produït per isardSAT. **\n\n## On?\n\nLa FAO ha validat l'eina a Algèria, Mali, Mauritània i el Marroc.\n\nDurant l'últim brot a Mauritània (2016), l'equip va poder identificar un retard temporal d'uns 70 dies des dels signes inicials de la humitat del sòl fins al moment en què es va produir el brot.\n\n## Per què?\n\nUn eixam que mesura un quilòmetre quadrat conté prop de 40 milions de llagostes, que mengen la mateixa quantitat d'aliment en un dia com unes 35.000 persones.\n\nMés de vuit milions de persones a Àfrica occidental es van veure afectades durant la plaga 2003-2005, en què es van eliminar els cultius de cereals i es van destruir fins al 90% de llegums i pastures. Va prendre prop de 600 milions de dòlars i 13 milions de litres de plaguicida per controlar-lo.\n\n`` `Botó\netiqueta: aprèn més\nurl: http://smells.isardsat.com/\nnewTab: true\n`` `",
+    "fuzzy": true,
+    "keyId": "cHJvamVjdC1jb250ZW50c19TYXRlbGxpdGUgaW5mb3JtYXRpb24gaXMgYmVpbmcgdXNlZCBpbiBhIG5ldyB3YXkgdG8gcHJlZGljdCBmYXZvdXJhYmxlIGNvbmRpdGlvbnMgZm9yICoqZGVzZXJ0IGxvY3VzdCBzd2FybXMqKi4gVGhlIG5ldyB0ZWNobm9sb2d5IGhlbHBzIHRvIGluY3JlYXNlIHRoZSB3YXJuaW5nIHRpbWUgZm9yIGxvY3VzdCBvdXRicmVha3MgYnkgdXAgdG8gdHdvIG1vbnRocy4KClVzaW5nIGRhdGEgZnJvbSBzYXRlbGxpdGVzIHN1Y2ggYXMgc29pbCBtb2lzdHVyZSAoU01FTExTIG1pc3Npb24pIGFuZCBvY2VhbiBzYWxpbml0eSAoU01PUyBtaXNzaW9uKSwgYSBuZXcgdG9vbCBoYXMgYmVlbiBkZXZlbG9wZWQgdG8gbW9uaXRvciB0aGUgY29uZGl0aW9ucyB0aGF0IGNhbiBsZWFkIHRvIHN3YXJtaW5nIGxvY3VzdHMsIHN1Y2ggYXMgaGlnaCBtb2lzdHVyZSBhbmQgZ3JlZW4gdmVnZXRhdGlvbi4gU3dhcm1pbmcgb2NjdXJzIHdoZW4gYSBwZXJpb2Qgb2YgZHJvdWdodCBpcyBmb2xsb3dlZCBieSBhYnVuZGFudCByYWlucyBhbmQgcmFwaWQgdmVnZXRhdGlvbiBncm93dGguCgoqKkxvYmVsaWEgb3BlcmF0ZXMgdGhlIHNvaWwgbW9pc3R1cmUgc2VydmljZSBwcm9kdWNlZCBieSBpc2FyZFNBVC4qKgoKIyMgV2hlcmU/CgpGQU8gaGFzIHZhbGlkYXRlZCB0aGUgdG9vbCBpbiBBbGdlcmlhLCBNYWxpLCBNYXVyaXRhbmlhIGFuZCBNb3JvY2NvLgoKRHVyaW5nIHRoZSBsYXRlc3Qgb3V0YnJlYWsgaW4gTWF1cml0YW5pYSAoMjAxNiksIHRoZSB0ZWFtIHdhcyBhYmxlIHRvIGlkZW50aWZ5IGEgdGltZSBsYWcgb2YgYWJvdXQgNzAgZGF5cyBmcm9tIHRoZSBpbml0aWFsIHNpZ25zIG9mIHNvaWwgbW9pc3R1cmUgdG8gd2hlbiB0aGUgb3V0YnJlYWsgZXZlbnR1YWxseSBvY2N1cnJlZC4KCiMjIFdoeT8KCkEgc3dhcm0gbWVhc3VyaW5nIG9uZSBzcXVhcmUga2lsb21ldHJlIGNvbnRhaW5zIGFib3V0IDQwIG1pbGxpb24gbG9jdXN0cywgd2hpY2ggZWF0IHRoZSBzYW1lIGFtb3VudCBvZiBmb29kIGluIG9uZSBkYXkgYXMgYWJvdXQgMzUsMDAwIHBlb3BsZS4KCk1vcmUgdGhhbiA4IG1pbGxpb24gcGVvcGxlIGluIFdlc3QgQWZyaWNhIHdlcmUgYWZmZWN0ZWQgZHVyaW5nIHRoZSAyMDAzLTIwMDUgcGxhZ3VlLCBpbiB3aGljaCBjZXJlYWwgY3JvcHMgd2VyZSB3aXBlZCBvdXQgYW5kIHVwIHRvIDkwJSBvZiBsZWd1bWVzIGFuZCBwYXN0dXJlIHdlcmUgZGVzdHJveWVkLiBJdCB0b29rIG5lYXJseSAkNjAwIG1pbGxpb24gYW5kIDEzIG1pbGxpb24gbGl0cmVzIG9mIHBlc3RpY2lkZSB0byBicmluZyBpdCB1bmRlciBjb250cm9sLgoKYGBgQnV0dG9uCmxhYmVsOiBsZWFybiBtb3JlCnVybDogaHR0cDovL3NtZWxscy5pc2FyZHNhdC5jb20vCm5ld1RhYjogdHJ1ZQpgYGA="
+  },
+  "ce70a97b-840a-43e1-9c9a-d0821cda56a2": {
+    "id": "ce70a97b-840a-43e1-9c9a-d0821cda56a2",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "```ContactForm\nsendTo: info@lobelia.earth\n```\n\n## …or contacta amb nosaltres:\n\n<div style=\"max-width: 400px; margin: 0 auto\">\n<b>T:</b> +34 93 350 55 08<br/>\n<b>E:</b> <a href=\"mailto:info@lobelia.earth\">info@lobelia.earth</a>\n</div>\n",
+    "fuzzy": false,
+    "keyId": "cGFnZS1jb250ZW50c19gYGBDb250YWN0Rm9ybQpzZW5kVG86IGluZm9AaXNhcmRzYXQuY2F0CmBgYAoKIyMg4oCmb3IgY29udGFjdCB1czoKCjxkaXYgc3R5bGU9Im1heC13aWR0aDogNDAwcHg7IG1hcmdpbjogMCBhdXRvIj4KPGI+VDo8L2I+ICszNCA5MyAzNTAgNTUgMDg8YnIvPgo8Yj5FOjwvYj4gPGEgaHJlZj0ibWFpbHRvOmluZm9AbG9iZWxpYS5lYXJ0aCI+aW5mb0Bsb2JlbGlhLmVhcnRoPC9hPgo8L2Rpdj4K"
+  },
+  "745e3632-57ce-4e6e-aec2-84b6f6bc9900": {
+    "id": "745e3632-57ce-4e6e-aec2-84b6f6bc9900",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "La recerca i la innovació promouen un creixement equilibrat i sostenible. El nostre valor afegit és oferir solucions basades en un enfocament científicament responsable.",
+    "keyId": "bWFya2V0LXN1bW1hcnlfUmVzZWFyY2ggYW5kIGlubm92YXRpb24gcHJvbW90ZXMgYSB3ZWxsLWJhbGFuY2VkLCBzdXN0YWluYWJsZSBncm93dGguIE91ciBhZGRlZCB2YWx1ZSBpcyB0aGUgcHJvdmlzaW9uIG9mIHNvbHV0aW9ucyBiYXNlZCBvbiBhIHNjaWVudGlmaWNhbGx5IHJlc3BvbnNpYmxlIGFwcHJvYWNoLg=="
+  },
+  "1c1e946d-31b7-4442-b0c2-42901b79ee20": {
+    "id": "1c1e946d-31b7-4442-b0c2-42901b79ee20",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Analitzem conjunts de dades altament complexos i generem projeccions climàtiques i eines de monitorització que permeten avaluar plans i estratègies d'adaptació.",
+    "keyId": "bWFya2V0LXN1bW1hcnlfV2UgYW5hbHlzZSBoaWdobHktY29tcGxleCBkYXRhc2V0cyB0byBnZW5lcmF0ZSBjbGltYXRlIHByb2plY3Rpb25zIGFuZCBtb25pdG9yaW5nIHRvb2xzIHRvIGFzc2VzcyBhZGFwdGF0aW9uIHBsYW5zIGFuZCBzdHJhdGVnaWVzLg=="
+  },
+  "e2695412-9f90-4be9-b419-ab39458a0772": {
+    "id": "e2695412-9f90-4be9-b419-ab39458a0772",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Proporcionem escenaris climàtics, prediccions i eines de presa de decisions a les autoritats públiques per augmentar la seva capacitat de planificació i catalitzar accions que ens afecten a tots.",
+    "keyId": "bWFya2V0LXN1bW1hcnlfV2UgcHJvdmlkZSBjbGltYXRpYyBzY2VuYXJpb3MsIHByZWRpY3Rpb25zIGFuZCBkZWNpc2lvbi1tYWtpbmcgdG9vbHMgdG8gcHVibGljIGF1dGhvcml0aWVzIHNvIHRoZXkgY2FuIHN0cmVuZ3RoZW4gdGhlaXIgcGxhbm5pbmcgYW5kIGNhdGFseXNlIGFjdGlvbnMgYWNyb3NzIHNvY2lldHku"
+  },
+  "6008f683-6e95-4c21-8178-82099567d78c": {
+    "id": "6008f683-6e95-4c21-8178-82099567d78c",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Ajudem les empreses a establir estratègies de mitigació de risc per anticipar els efectes del canvi climàtic en les seves inversions.",
+    "keyId": "bWFya2V0LXN1bW1hcnlfV2Ugc3VwcG9ydCByaXNrIG1pdGlnYXRpb24gc3RyYXRlZ2llcyBmb3IgY29tcGFuaWVzIHRvIGFudGljaXBhdGUgdGhlIGVmZmVjdHMgb2YgY2xpbWF0ZSBjaGFuZ2UgaW4gdGhlaXIgaW52ZXN0bWVudHMu"
+  },
+  "373c432f-f431-4457-a3da-d152c4fe699d": {
+    "id": "373c432f-f431-4457-a3da-d152c4fe699d",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Les ciutats i les seves àrees metropolitanes es troben fortament influenciades pel canvi climàtic. Els ajuntaments i governs locals fan un seguiment i estudien en profunditat els impactes climàtics amb l’objectiu d’adaptar les infraestructures i minimitzar els efectes que es poden ocasionar en la qualitat de vida, sanitat, transport, gestió de l’aigua, subministrament energètic, etc.\n\nLes localitats més vulnerables són aquelles amb un disseny urbà mal planificat o una manca de recursos tals com el segellat de sòl, àrees verdes, estructures de drenatge i impermeabilitat.\n\nLobelia ofereix suport als estudis que avaluen l’adaptació d'àrees urbanes al canvi climàtic. Algunes de les ciutats són Asunción, Yakutsk, Maputo, Dakar i Port Vila.\n\nGenerem mapes millorats en resolució a escala local i corregits estadísticament respecte d'observacions (**downscaling** i **bias correction**). A partir d’aquests productes es poden derivar un seguit d’indicadors i estadístics que són extremadament útils en l’avaluació dels efectes del canvi climàtic en les ciutats estudiades.\n\n## Exemples d’indicadors\n\nNombre de nits tropicals, nits gelades, onades de calor o de fred i les seves duracions, dies secs i humits consecutius, etc.\n\n\n```Button\nlabel: explorar tendències en ciutats\nurl: https://city-climate-trends.lobelia.earth/{lang}\nlangs:\n- en\n- es\n- ca\n- fr\n- zh\n- ru\n```\n\n```Button\nlabel: explorar el clima històric (ERA5)\nurl: https://era5.lobelia.earth/{lang}\nlangs:\n- en\n- es\n- ca\n- fr\n```\n\n```Button\nlabel: Urban Resilience Hub (UN Habitat)\nurl: http://urbanresiliencehub.org/\nnewTab: true\n```",
+    "keyId": "cHJvamVjdC1jb250ZW50c19DaXRpZXMgYW5kIHVyYmFuIGFyZWFzIGFyZSBzdHJvbmdseSBpbmZsdWVuY2VkIGJ5IGNsaW1hdGUgY2hhbmdlLiBUaGUgaW1wYWN0cyBvZiB0aGVzZSBjaGFuZ2VzIGFyZSBzdHVkaWVkIGFuZCBmb2xsb3dlZCBieSBsb2NhbCBhdXRob3JpdGllcyB3aXRoIHRoZSBhaW0gdG8gYWRhcHQgdGhlaXIgaW5mcmFzdHJ1Y3R1cmUgYW5kIG1pbmltaXNlIHRoZSBlZmZlY3RzIG9uIHRoZWlyIHF1YWxpdHkgb2YgbGlmZSwgaGVhbHRoIGNhcmUsIHRyYW5zcG9ydCwgd2F0ZXIgbWFuYWdlbWVudCwgZW5lcmd5IHN1cHBseSwgZXRjLiAKClRoZSBtb3N0IHZ1bG5lcmFibGUgcmVnaW9ucyBhcmUgcG9vcmx5LWRlc2lnbmVkIHVyYmFuIGFyZWFzIGxhY2tpbmcgc29pbCBzZWFsaW5nLCBncmVlbiBhcmVhcywgaW1wZXJtZWFiaWxpdHkgYW5kIGRyYWluYWdlIHN0cnVjdHVyZXMuCgpMb2JlbGlhIHN1cHBvcnRzIGNsaW1hdGUgYWRhcHRhYmlsaXR5IGFzc2Vzc21lbnRzIGJ5IHN0dWR5aW5nIHRoZSBsb2NhbCBlZmZlY3RzIG9mIGNsaW1hdGUgY2hhbmdlIGluIHNwZWNpZmljIHVyYmFuIGFyZWFzIHN1Y2ggYXMgQXN1bmNpw7NuLCBZYWt1dHNrLCBNYXB1dG8sIERha2FyIGFuZCBQb3J0IFZpbGEuCgpUbyBkbyBzbywgd2UgKipkb3duc2NhbGUgYW5kIGJpYXMtY29ycmVjdCBjbGltYXRlIGNoYW5nZSBwcm9qZWN0aW9ucyoqIGZvciB0aGVzZSBhcmVhcy4gVGhpcyBpcyB0byBvYnRhaW4gaGlnaC1yZXNvbHV0aW9uIG1hcHMgb2YgdGhlIGZ1dHVyZSBjbGltYXRlLCBlc3BlY2lhbGx5IGFkYXB0ZWQgdG8gdGhlIGFyZWEuIFRoZSBzdGF0aXN0aWNzIGFuZCBpbmRleGVzIHdlIGRlcml2ZSBhcmUgZXh0cmVtZWx5IHVzZWZ1bCBpbmRpY2F0b3JzIHRoYXQgd2lsbCBhbGxvdyBhIGJldHRlciB1bmRlcnN0YW5kaW5nIG9mIHRoZSBjbGltYXRlIGV2b2x1dGlvbiBmb3IgdGhlIHRhcmdldGVkIGNpdGllcy4gCgojIyBFeGFtcGxlIGluZGljYXRvcnMKCk51bWJlciBvZiB0cm9waWNhbCBvciBmcm9zdCBuaWdodHMsIGhlYXQgd2F2ZXMgb3IgY29sZCB3YXZlcyBhbmQgdGhlaXIgZHVyYXRpb24sIHdldCBhbmQgZHJ5IGNvbnNlY3V0aXZlIGRheXMsIGV0Yy4KCgpgYGBCdXR0b24KbGFiZWw6IGV4cGxvcmUgY2l0eSB0cmVuZHMKdXJsOiBodHRwczovL2NpdHktY2xpbWF0ZS10cmVuZHMubG9iZWxpYS5lYXJ0aC97bGFuZ30KbGFuZ3M6Ci0gZW4KLSBlcwotIGNhCi0gZnIKLSB6aAotIHJ1CmBgYAoKYGBgQnV0dG9uCmxhYmVsOiBleHBsb3JlIHBhc3QgY2xpbWF0ZSAoRVJBNSkKdXJsOiBodHRwczovL2VyYTUubG9iZWxpYS5lYXJ0aC97bGFuZ30KbGFuZ3M6Ci0gZW4KLSBlcwotIGNhCi0gZnIKYGBgCgpgYGBCdXR0b24KbGFiZWw6IFVOIEhhYml0YXQncyBVcmJhbiBSZXNpbGllbmNlIEh1Ygp1cmw6IGh0dHA6Ly91cmJhbnJlc2lsaWVuY2VodWIub3JnLwpuZXdUYWI6IHRydWUKYGBg"
+  },
+  "1b610ca8-beb2-4f54-bbae-313ed6c7df7c": {
+    "id": "1b610ca8-beb2-4f54-bbae-313ed6c7df7c",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Els efectes del canvi climàtic en l’agricultura i la producció alimentària afectaran amb més intensitat els petits propietaris de terres, que són, precisament, els qui actualment pateixen més riscos. La resposta als canvis de temperatura i precipitació a les diverses localitats afecta de forma diferent a cadascuna de les tipologies de productes agraris.\n\nEns interessa preveure la redistribució geogràfica agrària en les pròximes dècades a causa del canvi climàtic. Un component important en aquest l’estudi avaluatiu són els càlculs dels **índexs d’idoneïtat dels  productes agraris** (*crop suitability index*).\n\nLobelia ha desenvolupat una eina de càlcul de idoneïtat de productes agraris per Oxfam. El simulador de creixement genera mapes del nombre de cicles viables per diverses varietats agràries en el Sahel, l'Àfrica subsahariana i el Corredor Sec per a uns períodes i uns escenaris d’emissions seleccionats.\n\n## Sahel\n\nBlat de moro / sorgo / mill perlat\n\n## Àfrica subsahariana\n\nBlat de moro / sorgo / mill perlat / arròs / mandioca / mongeta / cacauet / batata\n\n## Corredor Sec\n\nBlat de moro / sorgo / mongeta / arròs\n\n\n```Button\nlabel: demo online\nurl: https://crop-suitability-demo.lobelia.earth/{lang}\nlangs:\n- en\n- es\n- ca\n- fr\n```",
+    "keyId": "cHJvamVjdC1jb250ZW50c19DbGltYXRlIGNoYW5nZSBpcyBleHBlY3RlZCB0byBkaXNwcm9wb3J0aW9uYXRlbHkgYWZmZWN0IHNtYWxsaG9sZGVyIGZhcm1lcnMsIHdobyBhbHJlYWR5IGZhY2UgbnVtZXJvdXMgcmlza3MgdG8gdGhlaXIgYWdyaWN1bHR1cmFsIHByb2R1Y3Rpb24uIENyb3AgdmFyaWV0aWVzIHdpbGwgcmVzcG9uZCBkaWZmZXJlbnRseSB0byBjaGFuZ2VzIGluIHRlbXBlcmF0dXJlIGFuZCBwcmVjaXBpdGF0aW9uIGF0IHRoZSBsb2NhdGlvbnMgd2hlcmUgdGhleSBhcmUgY3VycmVudGx5IGdyb3duLiBBICoqY3JvcCBzdWl0YWJpbGl0eSBpbmRleCoqIGlzIGFuIGltcG9ydGFudCBjb21wb25lbnQgb2YgYXNzZXNzbWVudCBzdHVkaWVzLCBpbmNsdWRpbmcgY2hhbmdlcyB0byBnZW9ncmFwaGljYWwgY3JvcCBkaXN0cmlidXRpb24gdW5kZXIgY2xpbWF0ZSBjaGFuZ2UgaW4gdGhlIGNvbWluZyBkZWNhZGVzLgoKTG9iZWxpYSBoYXMgZGV2ZWxvcGVkIGEgY3JvcCBzdWl0YWJpbGl0eSB0b29sIGZvciBPeGZhbS4gVGhlIGdyb3d0aCBzaW11bGF0b3IgcHJvZHVjZXMgbWFwcyBzaG93aW5nIHRoZSBudW1iZXIgb2YgZmVhc2libGUgY3ljbGVzIGZvciBzdGFwbGUgY3JvcHMgaW4gdGhlIFNhaGVsLCBTdWItU2FoYXJhbiBBZnJpY2EgYW5kIERyeSBDb3JyaWRvciBmb3IgdGhlIHNlbGVjdGVkIGNsaW1hdGUgcGVyaW9kcyBhbmQgZW1pc3Npb24gc2NlbmFyaW9zLgoKIyMgU2FoZWwKCk1haXplIC8gc29yZ2h1bSAvIHBlYXJsIG1pbGxldAoKIyMgU3ViLVNhaGFyYW4gQWZyaWNhCgpNYWl6ZSAvIHNvcmdodW0gLyBwZWFybCBtaWxsZXQgLyByaWNlIC8gY2Fzc2F2YSAvIGJlYW5zIC8gZ3JvdW5kbnV0cyAvIHlhbQoKIyMgRHJ5IENvcnJpZG9yCgpNYWl6ZSAvIHNvcmdodW0gLyBiZWFucyAvIHJpY2UKCgpgYGBCdXR0b24KbGFiZWw6IG9ubGluZSBkZW1vCnVybDogaHR0cHM6Ly9jcm9wLXN1aXRhYmlsaXR5LWRlbW8ubG9iZWxpYS5lYXJ0aC97bGFuZ30KbGFuZ3M6Ci0gZW4KLSBlcwotIGNhCi0gZnIKYGBg"
+  },
+  "a1eee2b3-b4cd-45b8-a69b-2c1ffd2a7b43": {
+    "id": "a1eee2b3-b4cd-45b8-a69b-2c1ffd2a7b43",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": null,
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1jb250ZW50c18jIyBFbWlzc2lvbnMKCk1vbnRobHkgcmVnaW9uYWwgZW1pc3Npb24gaW52ZW50b3JpZXMgZnJvbSBzYXRlbGxpdGVzIGF0IDEta20gcmVzb2x1dGlvbi4KCiMjIEZvcmVjYXN0CgpIb3VybHkgYWlyIHF1YWxpdHkgZm9yZWNhc3RzIGZvciAzIGRheXMgaW4gYWR2YW5jZS4KCiMjIERlY2lzaW9uLW1ha2luZyB0b29scwoKU2ltdWxhdGluZyBhaXIgcXVhbGl0eSBzY2VuYXJpb3MgdG8gZXZhbHVhdGUgdGhlIGltcGFjdCBvZiB0aGUgYWN0aW9ucywgdGhlIGJlc3Qgd2F5IHRvIHBsYW4tbWFrZS4KCiMjIFdoZXJlCgpDaGluYSAvIEluZGlhIC8gRXVyb3BlCgojIyBDb250ZXh0CgpMb2JlbGlhIGxlYWRzIGEgY29tbWVyY2lhbGx5LW9yaWVudGVkIGFpciBxdWFsaXR5IGNvbnNvcnRpdW0sIGJvcm4gZnJvbSBhIEV1cm9wZWFuIEgyMDIwIHByb2plY3QsIHdpdGggc29tZSBvZiB0aGUgbW9zdCByZW5vd25lZCBFdXJvcGVhbiBhY3RvcnMgaW4gYWlyIHBvbGx1dGlvbiByZXNlYXJjaC4KCkFpciBwb2xsdXRpb24gaXMgYSBzZXJpb3VzIHByb2JsZW0gdGhhdCBjb3N0cyBiaWxsaW9ucyBvZiBldXJvcyBlYWNoIHllYXIgaW4gbG9zdCBwcm9kdWN0aXZpdHkgYW5kIGhlYWx0aCBleHBlbnNlcy4gSW4gYWRkaXRpb24sIGFpciBxdWFsaXR5IHBvbGx1dGlvbiBhbHNvIGhhcyBhIG5lZ2F0aXZlIGVjb25vbWljIGltcGFjdCBvbiBvdGhlciBhY3Rpdml0aWVzIHN1Y2ggYXMgdHJhbnNwb3J0IChlLmcuIGxhY2sgb2YgdmlzaWJpbGl0eSksIGNpdHkgbWFpbnRlbmFuY2UgKGUuZy4gaW5mcmFzdHJ1Y3R1cmUgY2xlYW5pbmcpIG9yIGFncmljdWx0dXJlIChlLmcuIHBvbGx1dGFudCBkZXBvc2l0aW9ucykgdGhhdCBjYXVzZSAzIG1pbGxpb24gZGVhdGhzIHdvcmxkd2lkZSBlYWNoIHllYXIuCgpUaGUgQWlyUWFzdCBwcm9qZWN0IGlzIGJ1aWxkaW5nIGEgc2VsZi1zdXN0YWluYWJsZSBwbGF0Zm9ybSBwcm92aWRpbmcgYWlyIHF1YWxpdHkgc2VydmljZXMgYmFzZWQgb24gRWFydGggT2JzZXJ2YXRpb24gZGF0YS4gCgoKYGBgQnV0dG9uCmxhYmVsOiBsZWFybiBtb3JlCnVybDogaHR0cDovL2FpcnFhc3QuY29tCm5ld1RhYjogdHJ1ZQpgYGA="
+  },
+  "56a54b97-f67e-4aa2-99a7-f8041b6c0b10": {
+    "id": "56a54b97-f67e-4aa2-99a7-f8041b6c0b10",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Les ciutats i les seves àrees metropolitanes es troben fortament influenciades pel canvi climàtic. Els ajuntaments i governs locals fan un seguiment i estudien en profunditat els impactes climàtics amb l’objectiu d’adaptar les infraestructures i minimitzar els efectes que es poden ocasionar en la qualitat de vida, sanitat, transport, gestió de l’aigua, subministrament energètic, etc.\n\nLes localitats més vulnerables són aquelles amb un disseny urbà mal planificat o una manca de recursos tals com el segellat de sòl, àrees verdes, estructures de drenatge i impermeabilitat.\n\nLobelia ofereix suport als estudis que avaluen l’adaptació d'àrees urbanes al canvi climàtic. Algunes de les ciutats són Asunción, Yakutsk, Maputo, Dakar i Port Vila.\n\nGenerem mapes millorats en resolució a escala local i corregits estadísticament respecte d'observacions (**downscaling** i **bias correction**). A partir d’aquests productes es poden derivar un seguit d’indicadors i estadístics que són extremadament útils en l’avaluació dels efectes del canvi climàtic en les ciutats estudiades.\n\n## Exemples d’indicadors\n\nNombre de nits tropicals, nits gelades, onades de calor o de fred i les seves duracions, dies secs i humits consecutius, etc.\n\n\n```Button\nlabel: provar demo\nurl: https://city-climate-trends.lobelia.earth/{lang}\nlangs:\n- en\n- es\n- ca\n- fr\n- zh\n- ru\n```\n\n```Button\nlabel: explorar el clima històric (ERA5)\nurl: https://era5.lobelia.earth/{lang}\nlangs:\n- en\n- es\n- ca\n- fr\n```\n\n```Button\nlabel: Urban Resilience Hub (UN Habitat)\nurl: http://urbanresiliencehub.org/\nnewTab: true\n```",
+    "keyId": "cHJvamVjdC1jb250ZW50c19DaXRpZXMgYW5kIHVyYmFuIGFyZWFzIGFyZSBzdHJvbmdseSBpbmZsdWVuY2VkIGJ5IGNsaW1hdGUgY2hhbmdlLiBUaGUgaW1wYWN0cyBvZiB0aGVzZSBjaGFuZ2VzIGFyZSBzdHVkaWVkIGFuZCBmb2xsb3dlZCBieSBsb2NhbCBhdXRob3JpdGllcyB3aXRoIHRoZSBhaW0gdG8gYWRhcHQgdGhlaXIgaW5mcmFzdHJ1Y3R1cmUgYW5kIG1pbmltaXNlIHRoZSBlZmZlY3RzIG9uIHRoZWlyIHF1YWxpdHkgb2YgbGlmZSwgaGVhbHRoIGNhcmUsIHRyYW5zcG9ydCwgd2F0ZXIgbWFuYWdlbWVudCwgZW5lcmd5IHN1cHBseSwgZXRjLiAKClRoZSBtb3N0IHZ1bG5lcmFibGUgcmVnaW9ucyBhcmUgcG9vcmx5LWRlc2lnbmVkIHVyYmFuIGFyZWFzIGxhY2tpbmcgc29pbCBzZWFsaW5nLCBncmVlbiBhcmVhcywgaW1wZXJtZWFiaWxpdHkgYW5kIGRyYWluYWdlIHN0cnVjdHVyZXMuCgpMb2JlbGlhIHN1cHBvcnRzIGNsaW1hdGUgYWRhcHRhYmlsaXR5IGFzc2Vzc21lbnRzIGJ5IHN0dWR5aW5nIHRoZSBsb2NhbCBlZmZlY3RzIG9mIGNsaW1hdGUgY2hhbmdlIGluIHNwZWNpZmljIHVyYmFuIGFyZWFzIHN1Y2ggYXMgQXN1bmNpw7NuLCBZYWt1dHNrLCBNYXB1dG8sIERha2FyIGFuZCBQb3J0IFZpbGEuCgpUbyBkbyBzbywgd2UgKipkb3duc2NhbGUgYW5kIGJpYXMtY29ycmVjdCBjbGltYXRlIGNoYW5nZSBwcm9qZWN0aW9ucyoqIGZvciB0aGVzZSBhcmVhcy4gVGhpcyBpcyB0byBvYnRhaW4gaGlnaC1yZXNvbHV0aW9uIG1hcHMgb2YgdGhlIGZ1dHVyZSBjbGltYXRlLCBlc3BlY2lhbGx5IGFkYXB0ZWQgdG8gdGhlIGFyZWEuIFRoZSBzdGF0aXN0aWNzIGFuZCBpbmRleGVzIHdlIGRlcml2ZSBhcmUgZXh0cmVtZWx5IHVzZWZ1bCBpbmRpY2F0b3JzIHRoYXQgd2lsbCBhbGxvdyBhIGJldHRlciB1bmRlcnN0YW5kaW5nIG9mIHRoZSBjbGltYXRlIGV2b2x1dGlvbiBmb3IgdGhlIHRhcmdldGVkIGNpdGllcy4gCgojIyBFeGFtcGxlIGluZGljYXRvcnMKCk51bWJlciBvZiB0cm9waWNhbCBvciBmcm9zdCBuaWdodHMsIGhlYXQgd2F2ZXMgb3IgY29sZCB3YXZlcyBhbmQgdGhlaXIgZHVyYXRpb24sIHdldCBhbmQgZHJ5IGNvbnNlY3V0aXZlIGRheXMsIGV0Yy4KCgpgYGBCdXR0b24KbGFiZWw6IHRyeSBkZW1vCnVybDogaHR0cHM6Ly9jaXR5LWNsaW1hdGUtdHJlbmRzLmxvYmVsaWEuZWFydGgve2xhbmd9CmxhbmdzOgotIGVuCi0gZXMKLSBjYQotIGZyCi0gemgKLSBydQpgYGAKCmBgYEJ1dHRvbgpsYWJlbDogZXhwbG9yZSBwYXN0IGNsaW1hdGUgKEVSQTUpCnVybDogaHR0cHM6Ly9lcmE1LmxvYmVsaWEuZWFydGgve2xhbmd9CmxhbmdzOgotIGVuCi0gZXMKLSBjYQotIGZyCmBgYAoKYGBgQnV0dG9uCmxhYmVsOiBVTiBIYWJpdGF0J3MgVXJiYW4gUmVzaWxpZW5jZSBIdWIKdXJsOiBodHRwOi8vdXJiYW5yZXNpbGllbmNlaHViLm9yZy8KbmV3VGFiOiB0cnVlCmBgYA=="
+  },
+  "6be7115e-909a-4eb1-a7a3-9d96df71ea8f": {
+    "id": "6be7115e-909a-4eb1-a7a3-9d96df71ea8f",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Els efectes del canvi climàtic en l’agricultura i la producció alimentària afectaran amb més intensitat els petits propietaris de terres, que són, precisament, els qui actualment pateixen més riscos. La resposta als canvis de temperatura i precipitació a les diverses localitats afecta de forma diferent a cadascuna de les tipologies de productes agraris.\n\nEns interessa preveure la redistribució geogràfica agrària en les pròximes dècades a causa del canvi climàtic. Un component important en aquest l’estudi avaluatiu són els càlculs dels **índexs d’idoneïtat dels  productes agraris** (*crop suitability index*).\n\nLobelia ha desenvolupat una eina de càlcul de idoneïtat de productes agraris per Oxfam. El simulador de creixement genera mapes del nombre de cicles viables per diverses varietats agràries en el Sahel, l'Àfrica subsahariana i el Corredor Sec per a uns períodes i uns escenaris d’emissions seleccionats.\n\n## Sahel\n\nBlat de moro / sorgo / mill perlat\n\n## Àfrica subsahariana\n\nBlat de moro / sorgo / mill perlat / arròs / mandioca / mongeta / cacauet / batata\n\n## Corredor Sec\n\nBlat de moro / sorgo / mongeta / arròs\n\n\n```Button\nlabel: provar demo\nurl: https://crop-suitability-demo.lobelia.earth/{lang}\nlangs:\n- en\n- es\n- ca\n- fr\n```",
+    "keyId": "cHJvamVjdC1jb250ZW50c19DbGltYXRlIGNoYW5nZSBpcyBleHBlY3RlZCB0byBkaXNwcm9wb3J0aW9uYXRlbHkgYWZmZWN0IHNtYWxsaG9sZGVyIGZhcm1lcnMsIHdobyBhbHJlYWR5IGZhY2UgbnVtZXJvdXMgcmlza3MgdG8gdGhlaXIgYWdyaWN1bHR1cmFsIHByb2R1Y3Rpb24uIENyb3AgdmFyaWV0aWVzIHdpbGwgcmVzcG9uZCBkaWZmZXJlbnRseSB0byBjaGFuZ2VzIGluIHRlbXBlcmF0dXJlIGFuZCBwcmVjaXBpdGF0aW9uIGF0IHRoZSBsb2NhdGlvbnMgd2hlcmUgdGhleSBhcmUgY3VycmVudGx5IGdyb3duLiBBICoqY3JvcCBzdWl0YWJpbGl0eSBpbmRleCoqIGlzIGFuIGltcG9ydGFudCBjb21wb25lbnQgb2YgYXNzZXNzbWVudCBzdHVkaWVzLCBpbmNsdWRpbmcgY2hhbmdlcyB0byBnZW9ncmFwaGljYWwgY3JvcCBkaXN0cmlidXRpb24gdW5kZXIgY2xpbWF0ZSBjaGFuZ2UgaW4gdGhlIGNvbWluZyBkZWNhZGVzLgoKTG9iZWxpYSBoYXMgZGV2ZWxvcGVkIGEgY3JvcCBzdWl0YWJpbGl0eSB0b29sIGZvciBPeGZhbS4gVGhlIGdyb3d0aCBzaW11bGF0b3IgcHJvZHVjZXMgbWFwcyBzaG93aW5nIHRoZSBudW1iZXIgb2YgZmVhc2libGUgY3ljbGVzIGZvciBzdGFwbGUgY3JvcHMgaW4gdGhlIFNhaGVsLCBTdWItU2FoYXJhbiBBZnJpY2EgYW5kIERyeSBDb3JyaWRvciBmb3IgdGhlIHNlbGVjdGVkIGNsaW1hdGUgcGVyaW9kcyBhbmQgZW1pc3Npb24gc2NlbmFyaW9zLgoKIyMgU2FoZWwKCk1haXplIC8gc29yZ2h1bSAvIHBlYXJsIG1pbGxldAoKIyMgU3ViLVNhaGFyYW4gQWZyaWNhCgpNYWl6ZSAvIHNvcmdodW0gLyBwZWFybCBtaWxsZXQgLyByaWNlIC8gY2Fzc2F2YSAvIGJlYW5zIC8gZ3JvdW5kbnV0cyAvIHlhbQoKIyMgRHJ5IENvcnJpZG9yCgpNYWl6ZSAvIHNvcmdodW0gLyBiZWFucyAvIHJpY2UKCgpgYGBCdXR0b24KbGFiZWw6IHRyeSBkZW1vCnVybDogaHR0cHM6Ly9jcm9wLXN1aXRhYmlsaXR5LWRlbW8ubG9iZWxpYS5lYXJ0aC97bGFuZ30KbGFuZ3M6Ci0gZW4KLSBlcwotIGNhCi0gZnIKYGBg"
+  },
+  "d71f2d37-0655-4100-baa1-8505268a4414": {
+    "id": "d71f2d37-0655-4100-baa1-8505268a4414",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "## Emissions\n\nInventaris mensuals d’emissions regionals a través de satèl·lits amb 1 km de resolució.\n\n## Previsió\n\nPrevisions horàries de qualitat de l’aire per als següents 3 dies.\n\n## Eines per prendre decisions\n\nSimulació d’escenaris de qualitat de l’aire per avaluar l'impacte de les accions: la millor manera per fer planificacions.\n\n## A on\n\nXina / Índia / Europa\n\n## Context\n\nLobelia lidera un consorci de qualitat de l'aire amb orientació comercial, nascut d'un projecte europeu d’H2020, amb alguns dels actors europeus més reconeguts dins de la recerca de la contaminació de l'aire.\n\nLa contaminació de l'aire és un problema greu que costa milers de milions d'euros cada any en pèrdues de productivitat i despeses sanitàries. A més a més, la contaminació de l'aire també té un impacte econòmic negatiu en altres activitats com poden ser el transport (exemple: manca de visibilitat al transport aeri), el manteniment de les ciutats (ex: neteja d'infraestructures) o l’agricultura (ex: deposició de contaminants), causant 3 milions de morts a tot el món cada any.\n\nEl projecte AirQast està construint una plataforma autosostenible que proporciona serveis de qualitat de l'aire basats en dades d'Observació de la Terra.\n\n```Button\nlabel: saber-ne més\nurl: http://airqast.com\nnewTab: true\n```",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1jb250ZW50c18jIyBFbWlzc2lvbnMKCk1vbnRobHkgcmVnaW9uYWwgZW1pc3Npb24gaW52ZW50b3JpZXMgZnJvbSBzYXRlbGxpdGVzIGF0IDEta20gcmVzb2x1dGlvbi4KCiMjIEZvcmVjYXN0CgpIb3VybHkgYWlyIHF1YWxpdHkgZm9yZWNhc3RzIGZvciAzIGRheXMgaW4gYWR2YW5jZS4KCiMjIERlY2lzaW9uLW1ha2luZyB0b29scwoKU2ltdWxhdGluZyBhaXIgcXVhbGl0eSBzY2VuYXJpb3MgdG8gZXZhbHVhdGUgdGhlIGltcGFjdCBvZiB0aGUgYWN0aW9ucywgdGhlIGJlc3Qgd2F5IHRvIHBsYW4tbWFrZS4KCiMjIFdoZXJlCgpDaGluYSAvIEluZGlhIC8gRXVyb3BlCgojIyBDb250ZXh0CgpMb2JlbGlhIGxlYWRzIGEgY29tbWVyY2lhbGx5LW9yaWVudGVkIGFpciBxdWFsaXR5IGNvbnNvcnRpdW0sIGJvcm4gZnJvbSBhIEV1cm9wZWFuIEgyMDIwIHByb2plY3QsIHdpdGggc29tZSBvZiB0aGUgbW9zdCByZW5vd25lZCBFdXJvcGVhbiBhY3RvcnMgaW4gYWlyIHBvbGx1dGlvbiByZXNlYXJjaC4KCkFpciBwb2xsdXRpb24gaXMgYSBzZXJpb3VzIHByb2JsZW0gdGhhdCBjb3N0cyBiaWxsaW9ucyBvZiBldXJvcyBlYWNoIHllYXIgaW4gbG9zdCBwcm9kdWN0aXZpdHkgYW5kIGhlYWx0aCBleHBlbnNlcy4gSW4gYWRkaXRpb24sIGFpciBwb2xsdXRpb24gYWxzbyBoYXMgYSBuZWdhdGl2ZSBlY29ub21pYyBpbXBhY3Qgb24gb3RoZXIgYWN0aXZpdGllcyBzdWNoIGFzIHRyYW5zcG9ydCAoZS5nLiBsYWNrIG9mIHZpc2liaWxpdHkpLCBjaXR5IG1haW50ZW5hbmNlIChlLmcuIGluZnJhc3RydWN0dXJlIGNsZWFuaW5nKSBvciBhZ3JpY3VsdHVyZSAoZS5nLiBwb2xsdXRhbnQgZGVwb3NpdGlvbnMpIHRoYXQgY2F1c2UgMyBtaWxsaW9uIGRlYXRocyB3b3JsZHdpZGUgZWFjaCB5ZWFyLgoKVGhlIEFpclFhc3QgcHJvamVjdCBpcyBidWlsZGluZyBhIHNlbGYtc3VzdGFpbmFibGUgcGxhdGZvcm0gcHJvdmlkaW5nIGFpciBxdWFsaXR5IHNlcnZpY2VzIGJhc2VkIG9uIEVhcnRoIE9ic2VydmF0aW9uIGRhdGEuIAoKCmBgYEJ1dHRvbgpsYWJlbDogbGVhcm4gbW9yZQp1cmw6IGh0dHA6Ly9haXJxYXN0LmNvbQpuZXdUYWI6IHRydWUKYGBg"
+  },
+  "9c0aa9ea-b1c8-47df-8df7-c13ab0dcb81f": {
+    "id": "9c0aa9ea-b1c8-47df-8df7-c13ab0dcb81f",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Climatologe",
+    "fuzzy": true,
+    "keyId": "dGVhbU1lbWJlci1yb2xlX0NsaW1hdG9sb2dl"
+  },
+  "47f602f0-fca3-4201-9a51-ab6e89cfaf11": {
+    "id": "47f602f0-fca3-4201-9a51-ab6e89cfaf11",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Tecnologies espacials",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1yb2xlX1NwYWNlIHRlY2hub2xvZ2llcw=="
+  },
+  "69754baa-263b-45b6-b610-3f72459f95a0": {
+    "id": "69754baa-263b-45b6-b610-3f72459f95a0",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Hidrologia i recursos hídrics",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1yb2xlX0h5ZHJvbG9neSBhbmQgd2F0ZXIgcmVzb3VyY2Vz"
+  },
+  "e7355895-d1cf-454a-a199-d6d491ab92af": {
+    "id": "e7355895-d1cf-454a-a199-d6d491ab92af",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "```Home\ntagline: \"**Observar la Terra** per anticipar els efectes del canvi climàtic.\"\nprovidersTitle: Treballem amb els millors proveïdors de dades\nmarketsTitle: Amb la confiança d'organitzacions a tot el món, afectades per un clima canviant\n```\n\n```Contact\n```",
+    "fuzzy": false,
+    "keyId": "cGFnZS1sYXlvdXRfYGBgSG9tZQp0YWdsaW5lOiAiKipFYXJ0aCBPYnNlcnZhdGlvbioqIHRvIGFudGljaXBhdGUgdGhlIGVmZmVjdHMgb2YgY2xpbWF0ZSBjaGFuZ2UuIgpwcm92aWRlcnNUaXRsZTogV2Ugd29yayB3aXRoIGxlYWRpbmcgZGF0YSBwcm92aWRlcnMKbWFya2V0c1RpdGxlOiBUcnVzdGVkIGJ5IG9yZ2FuaXNhdGlvbnMgYWNyb3NzIHRoZSBnbG9iZSBhZmZlY3RlZCBieSBvdXIgY2hhbmdpbmcgY2xpbWF0ZQpgYGAKCmBgYENvbnRhY3QKYGBg"
+  },
+  "ad346ac6-9e21-41f1-a152-80a40b3b0444": {
+    "id": "ad346ac6-9e21-41f1-a152-80a40b3b0444",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "```Contents\nsidebar: true\n```\n\n```TeamMembers\ntitle: El nostre equip\nadvisoryGroup: false\n```\n\n```TeamMembers\ntitle: Assessors\nadvisoryGroup: true\n```\n\n```Contact\nquestion: T'agradaria treballar amb nosaltres?\nbutton: posa't en contacte\n```",
+    "fuzzy": false,
+    "keyId": "cGFnZS1sYXlvdXRfYGBgQ29udGVudHMKc2lkZWJhcjogdHJ1ZQpgYGAKCmBgYFRlYW1NZW1iZXJzCnRpdGxlOiBPdXIgdGVhbQphZHZpc29yeUdyb3VwOiBmYWxzZQpgYGAKCmBgYFRlYW1NZW1iZXJzCnRpdGxlOiBBZHZpc29ycwphZHZpc29yeUdyb3VwOiB0cnVlCmBgYAoKYGBgQ29udGFjdApxdWVzdGlvbjogV291bGQgeW91IGxpa2UgdG8gd29yayB3aXRoIHVzPwpidXR0b246IGdldCBpbiB0b3VjaApgYGA="
+  },
+  "0deae530-18eb-4548-baec-3bdf2a390d65": {
+    "id": "0deae530-18eb-4548-baec-3bdf2a390d65",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Una de les frases més freqüents de l'observació de la Terra és \"portar els algoritmes a les dades\". Tenint en compte els conjunts de dades cada vegada més grans que proporcionen els satèl·lits de Sentinel i els serveis de Copernicus, s'estan creant plataformes que ajuden als usuaris a executar les seves cadenes de processament el més a prop possible de les dades que necessiten: no cal esperar una gran descàrrega abans de començar.\n\n** Lobelia treballa amb Mercator Océan International ** ajudant als usuaris de l'Observació de la Terra a aprofitar al màxim [WEkEO] (https://wekeo.eu), la plataforma de Serveis d'accés a dades i informació (DIAS) desenvolupada per EUMETSAT, ECMWF i Mercator ella mateixa. Lobelia també participa profundament en el seguiment dels diversos serveis, a més de recollir comentaris per als pròxims llançaments de la plataforma.\n\n```Button\nlabel: saber-ne més\nurl: https://wekeo.eu\nnewTab: true\n```",
+    "fuzzy": true,
+    "keyId": "cHJvamVjdC1jb250ZW50c19PbmUgb2YgdGhlIG1vc3QgZnJlcXVlbnRseSBoZWFyZCBwaHJhc2VzIGluIEVhcnRoIE9ic2VydmF0aW9uIGlzIOKAnGJyaW5naW5nIHRoZSBhbGdvcml0aG1zIHRvIHRoZSBkYXRh4oCdLiBHaXZlbiB0aGUgaW5jcmVhc2luZ2x5IGxhcmdlIGRhdGFzZXRzIHByb3ZpZGVkIGJ5IFNlbnRpbmVsIHNhdGVsbGl0ZXMgYW5kIENvcGVybmljdXMgc2VydmljZXMsIHBsYXRmb3JtcyBhcmUgZW1lcmdpbmcgdGhhdCBkbyBqdXN0IHRoYXQ6IGhlbHBpbmcgdXNlcnMgcnVuIHRoZWlyIHByb2Nlc3NpbmcgY2hhaW5zIGFzIGNsb3NlIGFzIHBvc3NpYmxlIHRvIHRoZSBkYXRhIHRoZXkgbmVlZCDigJQgbm8gbmVlZCB0byB3YWl0IGZvciBodWdlIGRvd25sb2FkcyBiZWZvcmUgZXZlbiBzdGFydGluZy4KCioqTG9iZWxpYSB3b3JrcyB3aXRoIE1lcmNhdG9yIE9jw6lhbiBJbnRlcm5hdGlvbmFsKiogYWlkaW5nIEVhcnRoIE9ic2VydmF0aW9uIHVzZXJzIHRvIGdldCB0aGUgbW9zdCBvdXQgb2YgW1dFa0VPXShodHRwczovL3dla2VvLmV1KSwgdGhlIERhdGEgYW5kIEluZm9ybWF0aW9uIEFjY2VzcyBTZXJ2aWNlcyAoRElBUykgcGxhdGZvcm0gZGV2ZWxvcGVkIGJ5IEVVTUVUU0FULCBFQ01XRiBhbmQgTWVyY2F0b3IgaXRzZWxmLiBMb2JlbGlhIGlzIGFsc28gZGVlcGx5IGludm9sdmVkIGluIG1vbml0b3JpbmcgdGhlIHZhcmlvdXMgc2VydmljZXMsIGFzIHdlbGwgYXMgZ2F0aGVyaW5nIGZlZWRiYWNrIGZvciB0aGUgbmV4dCByZWxlYXNlcyBvZiB0aGUgcGxhdGZvcm0uCgpgYGBCdXR0b24KbGFiZWw6IGxlYXJuIG1vcmUKdXJsOiBodHRwczovL3dla2VvLmV1Cm5ld1RhYjogdHJ1ZQpgYGA="
+  },
+  "6ade6247-6479-439d-871d-74f7cc87da41": {
+    "id": "6ade6247-6479-439d-871d-74f7cc87da41",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Clima",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1yb2xlX0NsaW1hdGU="
+  },
+  "99a5a476-1c55-4d30-9ac5-a051cab6e68f": {
+    "id": "99a5a476-1c55-4d30-9ac5-a051cab6e68f",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Una de les frases més sentides al camp de l'Observació de la Terra és \"portar els algorismes a les dades\". Tenint en compte els conjunts de dades cada vegada més grans que proporcionen els satèl·lits Sentinel i els serveis Copernicus, s'estan creant plataformes que ajuden els usuaris a executar les seves cadenes de processament el més a prop possible de les dades que necessiten: no cal esperar una gran descàrrega abans de començar a treballar.\n\n**Lobelia by isardSAT treballa amb Mercator Océan International** ajudant els usuaris d'Observació de la Terra a treure el màxim profit de [WEkEO](https://wekeo.eu), la plataforma de Serveis d'Accés a Dades i Informació (DIAS, en anglès) desenvolupada per EUMETSAT, ECMWF i el mateix Mercator. Lobelia també està profundament involucrada en la monitorització dels diversos serveis, així com en la recopilació de comentaris per a properes versions de la plataforma.\n\n```Button\nlabel: saber-ne més\nurl: https://wekeo.eu\nnewTab: true\n```",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1jb250ZW50c19PbmUgb2YgdGhlIG1vc3QgZnJlcXVlbnRseSBoZWFyZCBwaHJhc2VzIGluIEVhcnRoIE9ic2VydmF0aW9uIGlzIOKAnGJyaW5naW5nIHRoZSBhbGdvcml0aG1zIHRvIHRoZSBkYXRh4oCdLiBHaXZlbiB0aGUgaW5jcmVhc2luZ2x5IGxhcmdlIGRhdGFzZXRzIHByb3ZpZGVkIGJ5IFNlbnRpbmVsIHNhdGVsbGl0ZXMgYW5kIENvcGVybmljdXMgc2VydmljZXMsIHBsYXRmb3JtcyBhcmUgZW1lcmdpbmcgdGhhdCBkbyBqdXN0IHRoYXQ6IGhlbHBpbmcgdXNlcnMgcnVuIHRoZWlyIHByb2Nlc3NpbmcgY2hhaW5zIGFzIGNsb3NlIGFzIHBvc3NpYmxlIHRvIHRoZSBkYXRhIHRoZXkgbmVlZCDigJQgbm8gbmVlZCB0byB3YWl0IGZvciBodWdlIGRvd25sb2FkcyBiZWZvcmUgZXZlbiBzdGFydGluZy4KCioqTG9iZWxpYSBieSBpc2FyZFNBVCB3b3JrcyB3aXRoIE1lcmNhdG9yIE9jw6lhbiBJbnRlcm5hdGlvbmFsKiogYWlkaW5nIEVhcnRoIE9ic2VydmF0aW9uIHVzZXJzIHRvIGdldCB0aGUgbW9zdCBvdXQgb2YgW1dFa0VPXShodHRwczovL3dla2VvLmV1KSwgdGhlIERhdGEgYW5kIEluZm9ybWF0aW9uIEFjY2VzcyBTZXJ2aWNlcyAoRElBUykgcGxhdGZvcm0gZGV2ZWxvcGVkIGJ5IEVVTUVUU0FULCBFQ01XRiBhbmQgTWVyY2F0b3IgaXRzZWxmLiBMb2JlbGlhIGlzIGFsc28gZGVlcGx5IGludm9sdmVkIGluIG1vbml0b3JpbmcgdGhlIHZhcmlvdXMgc2VydmljZXMsIGFzIHdlbGwgYXMgZ2F0aGVyaW5nIGZlZWRiYWNrIGZvciB0aGUgbmV4dCByZWxlYXNlcyBvZiB0aGUgcGxhdGZvcm0uCgpgYGBCdXR0b24KbGFiZWw6IGxlYXJuIG1vcmUKdXJsOiBodHRwczovL3dla2VvLmV1Cm5ld1RhYjogdHJ1ZQpgYGA="
+  },
+  "637372b6-ae88-453b-a58b-0ae65ad52bbb": {
+    "id": "637372b6-ae88-453b-a58b-0ae65ad52bbb",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "RAEE",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX1dFa0VP"
+  },
+  "0f46b554-45b0-4e8f-9c6e-f9f2bae41463": {
+    "id": "0f46b554-45b0-4e8f-9c6e-f9f2bae41463",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "TBW",
+    "fuzzy": true,
+    "keyId": "cGFnZS1jb250ZW50c19UQlc="
+  },
+  "c355ccc0-f53d-43fe-b698-113b84dabb32": {
+    "id": "c355ccc0-f53d-43fe-b698-113b84dabb32",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "![Anàlisi d'idoneïtat de cultiu per Oxfam](oxfam-crop-suitability-sidebar-1.jpg)\n\n![Anàlisi d'idoneïtat de cultiu per a Oxfam](oxfam-crop-suitability-sidebar-2.jpg)",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtDcm9wIHN1aXRhYmlsaXR5IGFuYWx5c2lzIGZvciBPeGZhbV0ob3hmYW0tY3JvcC1zdWl0YWJpbGl0eS1zaWRlYmFyLTEuanBnKQoKIVtDcm9wIHN1aXRhYmlsaXR5IGFuYWx5c2lzIGZvciBPeGZhbV0ob3hmYW0tY3JvcC1zdWl0YWJpbGl0eS1zaWRlYmFyLTIuanBnKQ=="
+  },
+  "f2b55e06-966f-4b1c-91d8-d62ec7aea581": {
+    "id": "f2b55e06-966f-4b1c-91d8-d62ec7aea581",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "![Anàlisi del clima a les ciutats](unhabitat-city-climate-sidebar-1.jpg)\n\n*Temperatura màxima de l'aire a Yakutsk, Rússia (promig de juliol) | 2041-2070 | RCP 4.5*\n\n\n![Anàlisi del clima a les ciutats](unhabitat-city-climate-sidebar-2.jpg)\n\n*Temperatura màxima de l'aire a Yakutsk, Rússia (promig de febrer) | 2041-2070 | RCP 4.5*",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtDbGltYXRlIGFuYWx5c2lzIGluIGNpdGllc10odW5oYWJpdGF0LWNpdHktY2xpbWF0ZS1zaWRlYmFyLTEuanBnKQoKKk1heGltdW0gYWlyIHRlbXBlcmF0dXJlIGluIFlha3V0c2ssIFJ1c3NpYSAoSnVseSBhdmVyYWdlKSB8IDIwNDEtMjA3MCB8IFJDUCA0LjUqCgoKIVtDbGltYXRlIGFuYWx5c2lzIGluIGNpdGllc10odW5oYWJpdGF0LWNpdHktY2xpbWF0ZS1zaWRlYmFyLTIuanBnKQoKKk1heGltdW0gYWlyIHRlbXBlcmF0dXJlIGluIFlha3V0c2ssIFJ1c3NpYSAoRmVicnVhcnkgYXZlcmFnZSkgfCAyMDQxLTIwNzAgfCBSQ1AgNC41Kg=="
+  },
+  "c7daff86-bd57-4473-b5c5-165fc60634da": {
+    "id": "c7daff86-bd57-4473-b5c5-165fc60634da",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Dades satel·litals i intel·ligència computacional per fer front als reptes climàtics",
+    "fuzzy": false,
+    "keyId": "cGFnZS10aXRsZV9TYXRlbGxpdGUgZGF0YSBhbmQgY29tcHV0YXRpb25hbCBpbnRlbGxpZ2VuY2UgdG8gYWRkcmVzcyBjbGltYXRlIGNoYWxsZW5nZXM="
+  },
+  "a61abda6-d03e-4010-a85a-c3c2119a39a1": {
+    "id": "a61abda6-d03e-4010-a85a-c3c2119a39a1",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Fomentant ciutats verdes amb el coneixement satel·lital de la qualitat de l'aire",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC10aXRsZV9IZWxwaW5nIGNpdGllcyB0byAqdHVybiBncmVlbiogd2l0aCBhaXIgcXVhbGl0eSBrbm93bGVkZ2UgZnJvbSBzYXRlbGxpdGVz"
+  },
+  "c8c3bd6c-56d1-4e28-adb5-5884bc6863f0": {
+    "id": "c8c3bd6c-56d1-4e28-adb5-5884bc6863f0",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "`` `Continguts\nmaxWidth: 500\n`` `",
+    "fuzzy": true,
+    "keyId": "cGFnZS1sYXlvdXRfYGBgQ29udGVudHMKbWF4V2lkdGg6IDUwMApgYGA="
+  },
+  "7c36f6e2-07c8-4ccd-858c-613a343c013b": {
+    "id": "7c36f6e2-07c8-4ccd-858c-613a343c013b",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "```ContactForm\nsendTo: info@isardsat.cat\n```\n\n## … o contacta amb nosaltres:\n\n**T:** +34 93 350 55 08 <br />\n**E:** <a href=\"mailto:info@lobelia.earth\">info@lobelia.earth</a>",
+    "fuzzy": false,
+    "keyId": "cGFnZS1jb250ZW50c19gYGBDb250YWN0Rm9ybQpzZW5kVG86IGluZm9AaXNhcmRzYXQuY2F0CmBgYAoKIyMg4oCmb3IgY29udGFjdCB1czoKCioqVDoqKiArMzQgOTMgMzUwIDU1IDA4IDxiciAvPgoqKkU6KiogPGEgaHJlZj0ibWFpbHRvOmluZm9AbG9iZWxpYS5lYXJ0aCI+aW5mb0Bsb2JlbGlhLmVhcnRoPC9hPgo="
+  },
+  "5a115324-e587-42c3-ad91-fd0e5935fc88": {
+    "id": "5a115324-e587-42c3-ad91-fd0e5935fc88",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "```ContactForm\nsendTo: info@isardsat.cat\n```\n\n## … o contacta amb nosaltres:\n\n**T:** +34 93 350 55 08 <br />\n**E:** [info@lobelia.earth](mailto:info@lobelia.earth)",
+    "fuzzy": false,
+    "keyId": "cGFnZS1jb250ZW50c19gYGBDb250YWN0Rm9ybQpzZW5kVG86IGluZm9AaXNhcmRzYXQuY2F0CmBgYAoKIyMg4oCmb3IgY29udGFjdCB1czoKCioqVDoqKiArMzQgOTMgMzUwIDU1IDA4IDxiciAvPgoqKkU6KiogW2luZm9AbG9iZWxpYS5lYXJ0aF0obWFpbHRvOmluZm9AbG9iZWxpYS5lYXJ0aCkK"
+  },
+  "9055949c-332a-47d1-bd44-accee794f44b": {
+    "id": "9055949c-332a-47d1-bd44-accee794f44b",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Servei Meteorològic de Catalunya",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX1NlcnZlaSBNZXRlb3JvbMOyZ2ljIGRlIENhdGFsdW55YQ=="
+  },
+  "04138d35-20f2-4167-a7cc-c8b899a0428f": {
+    "id": "04138d35-20f2-4167-a7cc-c8b899a0428f",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Agència Espanyola de Meteorologia",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX0FnZW5jaWEgRXNwYcOxb2xhIGRlIE1ldGVvcm9sb2fDrWE="
+  },
+  "fb34ab23-9212-47d7-9f62-c0d32bfc603d": {
+    "id": "fb34ab23-9212-47d7-9f62-c0d32bfc603d",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Fa coses.",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1iaW9fTWFrZXIu"
+  },
+  "ae10018d-929e-427c-ae9b-7a8d964c46e9": {
+    "id": "ae10018d-929e-427c-ae9b-7a8d964c46e9",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Copèrnic",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX0NvcGVybmljdXM="
+  },
+  "35fa5093-ce43-40be-8853-a0a90438891e": {
+    "id": "35fa5093-ce43-40be-8853-a0a90438891e",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Director de Desenvolupament de Negoci",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1yb2xlX0J1c2luZXNzIERldmVsb3BtZW50IERpcmVjdG9y"
+  },
+  "9b313e21-6fcd-4e0a-a5b0-5aaabb293279": {
+    "id": "9b313e21-6fcd-4e0a-a5b0-5aaabb293279",
+    "isDeleted": true,
+    "lang": "ca",
+    "translation": "Mercator Ocean International",
+    "fuzzy": true,
+    "keyId": "Y29tcGFueS1uYW1lX01lcmNhdG9yIE9jw6lhbiBJbnRlcm5hdGlvbmFs"
+  },
+  "753b8f6d-ddcd-4b96-ba70-d8cf025a954b": {
+    "id": "753b8f6d-ddcd-4b96-ba70-d8cf025a954b",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "![Bella vista de la Terra des de l'espai](lobelias-background-sidebar.jpg)",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtCZWF1dGlmdWwgdmlldyBvZiBFYXJ0aCBmcm9tIHNwYWNlXShsb2JlbGlhcy1iYWNrZ3JvdW5kLXNpZGViYXIuanBnKQ=="
+  },
+  "d891d62d-aab2-4427-9fce-ad4059b7acd6": {
+    "id": "d891d62d-aab2-4427-9fce-ad4059b7acd6",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Utilitzem dades d'Observació de la Terra i projeccions climàtiques per a l'avaluació de **vulnerabilitats, riscos i oportunitats associats als escenaris climàtics** per a cada cas particular i regió d'interès. Treballem en la monitorització, previsió i planificació, sovint a partir de dades obertes i gratuïtes adquirides pels satèl·lits europeus en el marc del programa Copernicus.",
+    "fuzzy": false,
+    "keyId": "cGFnZS1jb250ZW50c19XZSB1c2UgRWFydGggT2JzZXJ2YXRpb24gZGF0YSBhbmQgY2xpbWF0ZSBwcm9qZWN0aW9ucyBmb3IgdGhlIGFzc2Vzc21lbnQgb2YgKip2dWxuZXJhYmlsaXRpZXMsIHJpc2tzIGFuZCBvcHBvcnR1bml0aWVzIGFzc29jaWF0ZWQgdG8gY2xpbWF0ZSBzY2VuYXJpb3MqKiBmb3IgZWFjaCBwYXJ0aWN1bGFyIGNhc2UgYW5kIHJlZ2lvbiBvZiBpbnRlcmVzdC4gV2Ugd29yayBvbiBtb25pdG9yaW5nLCBmb3JlY2FzdGluZyBhbmQgcGxhbm5pbmcsIG9mdGVuIGZyb20gb3BlbiBhbmQgZnJlZSBkYXRhIGFjcXVpcmVkIGJ5IEV1cm9wZWFuIHNhdGVsbGl0ZXMgdW5kZXIgdGhlIENvcGVybmljdXMgcHJvZ3JhbW1lLg=="
+  },
+  "8bee6c96-2567-4e70-9f0d-fdd928fe518d": {
+    "id": "8bee6c96-2567-4e70-9f0d-fdd928fe518d",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Expert en IA",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1yb2xlX0FJIEV4cGVydA=="
+  },
+  "b2f9e3a2-c6e1-4252-9264-cc038a82c306": {
+    "id": "b2f9e3a2-c6e1-4252-9264-cc038a82c306",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "![Bella vista de la Terra des de l'espai](about-sidebar.jpg)",
+    "fuzzy": false,
+    "keyId": "cGFnZS1zaWRlYmFyQ29udGVudHNfIVtCZWF1dGlmdWwgdmlldyBvZiBFYXJ0aCBmcm9tIHNwYWNlXShhYm91dC1zaWRlYmFyLmpwZyk="
+  },
+  "01ca3413-6043-4000-b1ff-28cc7c7ce1e1": {
+    "id": "01ca3413-6043-4000-b1ff-28cc7c7ce1e1",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "![Brots de plagues](plague-outbreaks-sidebar-1.png)\n\n*Estimació de la humitat del sòl amb 1 km de resolució (juliol de 2017)*\n\n\n![Brots de plagues](plague-outbreaks-sidebar-2.png)\n\n*Estimació de la humitat del sòl amb 1 km de resolució (novembre de 2017)*",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtQbGFndWUgb3V0YnJlYWtzXShwbGFndWUtb3V0YnJlYWtzLXNpZGViYXItMS5wbmcpCgoqRGVjYWRhbCAxLWttIHNvaWwgbW9pc3R1cmUgZXN0aW1hdGVzIChKdWx5IDIwMTcpKgoKCiFbUGxhZ3VlIG91dGJyZWFrc10ocGxhZ3VlLW91dGJyZWFrcy1zaWRlYmFyLTIucG5nKQoKKkRlY2FkYWwgMS1rbSBzb2lsIG1vaXN0dXJlIGVzdGltYXRlcyAoTm92ZW1iZXIgMjAxNykqCg=="
+  },
+  "e62ada30-4d10-4552-bdb9-dc26950287ba": {
+    "id": "e62ada30-4d10-4552-bdb9-dc26950287ba",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "![Il·lustració WEkEO](building-wekeo-sidebar-1.png)",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1zaWRlYmFyQ29udGVudHNfIVtXRWtFTyBpbGx1c3RyYXRpb25dKGJ1aWxkaW5nLXdla2VvLXNpZGViYXItMS5wbmcp"
+  },
+  "c2149b70-95ba-45fe-8fe4-64eb6c2cb491": {
+    "id": "c2149b70-95ba-45fe-8fe4-64eb6c2cb491",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Un eixam que mesura un quilòmetre quadrat conté uns 40 milions de llagostes, que mengen aproximadament la mateixa quantitat d'aliment en un dia que 35.000 persones.\n\nMés de 8 milions de persones a l'Àfrica occidental es van veure afectades durant la plaga 2003-2005, en què es van perdre collites senceres de cereals i es va destruir fins al 90% de llegums i pastures. Van ser necessaris prop de 600 milions de dòlars i 13 milions de litres de pesticida per reprendre el control.\n\nS'estan fent servir dades satèl·lit d'una manera innovadora per predir condicions favorables per als eixams de llagosta del desert. La nova tecnologia, basada en gran mesura en **dades d'humitat del sòl d'alta resolució**, ajuda a augmentar fins a dos mesos el temps de preavís dels brots de llagosta.\n\nisardSAT i el Cirad van desenvolupar una nova eina, sota un contracte amb l'Agència Espacial Europea, per monitoritzar i pronosticar les condicions que poden conduir a plagues de llagostes, com l'alta humitat i vegetació verda. Apareixen exams quan un període de sequera és seguit per pluges abundants i un creixement ràpid de la vegetació. Els resultats es van validar a Algèria, Mali, Mauritània i el Marroc en coordinació amb les autoritats nacionals i la FAO.\n\nDurant l'últim brot a Mauritània (2016), l'equip va poder identificar un retard temporal d'uns 70 dies des dels signes inicials d'humitat del sòl fins al moment en què es va produir el brot. Aquests resultats es van obtenir utilitzant dades d'observació de la Terra del **servei operacional d'humitat del sòl amb cobertura global operat actualment per Lobelia**.\n\n\n```Button\nlabel: saber-ne més\nurl: http://smells.isardsat.com/\nnewTab: true\n```",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1jb250ZW50c19BIHN3YXJtIG1lYXN1cmluZyBvbmUgc3F1YXJlIGtpbG9tZXRyZSBjb250YWlucyBhYm91dCA0MCBtaWxsaW9uIGxvY3VzdHMsIHdoaWNoIGVhdCB0aGUgc2FtZSBhbW91bnQgb2YgZm9vZCBpbiBvbmUgZGF5IGFzIGFwcHJveGltYXRlbHkgMzUsMDAwIHBlb3BsZS4KCk1vcmUgdGhhbiA4IG1pbGxpb24gcGVvcGxlIGluIFdlc3QgQWZyaWNhIHdlcmUgYWZmZWN0ZWQgZHVyaW5nIHRoZSAyMDAzLTIwMDUgcGxhZ3VlLCBpbiB3aGljaCBjZXJlYWwgY3JvcHMgd2VyZSB3aXBlZCBvdXQgYW5kIHVwIHRvIDkwJSBvZiBsZWd1bWVzIGFuZCBwYXN0dXJlIHdlcmUgZGVzdHJveWVkLiBJdCB0b29rIG5lYXJseSAkNjAwIG1pbGxpb24gYW5kIDEzIG1pbGxpb24gbGl0cmVzIG9mIHBlc3RpY2lkZSB0byBicmluZyBpdCB1bmRlciBjb250cm9sLgoKU2F0ZWxsaXRlIGRhdGEgaXMgYmVpbmcgdXNlZCBpbiBhIG5vdmVsIHdheSB0byBwcmVkaWN0IGZhdm91cmFibGUgY29uZGl0aW9ucyBmb3IgZGVzZXJ0IGxvY3VzdCBzd2FybXMuIFRoZSBuZXcgdGVjaG5vbG9neSwgbGFyZ2VseSBiYXNlZCBvbiAqKmhpZ2gtcmVzb2x1dGlvbiBzb2lsIG1vaXN0dXJlKiogZGF0YSwgaGVscHMgdG8gaW5jcmVhc2UgdGhlIHdhcm5pbmcgdGltZSBmb3IgbG9jdXN0IG91dGJyZWFrcyBieSB1cCB0byB0d28gbW9udGhzLgoKQSBuZXcgdG9vbCB3YXMgZGV2ZWxvcGVkIGJ5IGlzYXJkU0FUIGFuZCBDaXJhZCwgdW5kZXIgYSBjb250cmFjdCB3aXRoIHRoZSBFdXJvcGVhbiBTcGFjZSBBZ2VuY3ksIHRvIG1vbml0b3IgYW5kIGZvcmVjYXN0IHRoZSBjb25kaXRpb25zIHRoYXQgY2FuIGxlYWQgdG8gbG9jdXN0IHN3YXJtcywgc3VjaCBhcyBoaWdoIG1vaXN0dXJlIGFuZCBncmVlbiB2ZWdldGF0aW9uLiBTd2FybWluZyBvY2N1cnMgd2hlbiBhIHBlcmlvZCBvZiBkcm91Z2h0IGlzIGZvbGxvd2VkIGJ5IGFidW5kYW50IHJhaW5zIGFuZCByYXBpZCB2ZWdldGF0aW9uIGdyb3d0aC4gUmVzdWx0cyB3ZXJlIHZhbGlkYXRlZCBpbiBBbGdlcmlhLCBNYWxpLCBNYXVyaXRhbmlhIGFuZCBNb3JvY2NvIGluIGNvb3JkaW5hdGlvbiB3aXRoIE5hdGlvbmFsIEF1dGhvcml0aWVzIGFuZCBGQU8uCgpEdXJpbmcgdGhlIGxhdGVzdCBvdXRicmVhayBpbiBNYXVyaXRhbmlhICgyMDE2KSwgdGhlIHRlYW0gd2FzIGFibGUgdG8gaWRlbnRpZnkgYSB0aW1lIGxhZyBvZiBhYm91dCA3MCBkYXlzIGZyb20gdGhlIGluaXRpYWwgc2lnbnMgb2Ygc29pbCBtb2lzdHVyZSB0byB3aGVuIHRoZSBvdXRicmVhayBldmVudHVhbGx5IG9jY3VycmVkLiBUaGVzZSByZXN1bHRzIHdlcmUgb2J0YWluZWQgdXNpbmcgRWFydGggb2JzZXJ2YXRpb24gZGF0YSBmcm9tIHRoZSAqKm9wZXJhdGlvbmFsIHNvaWwgbW9pc3R1cmUgc2VydmljZSB3aXRoIGdsb2JhbCBjb3ZlcmFnZSBvcGVyYXRlZCB0b2RheSBieSBMb2JlbGlhKiouCgoKYGBgQnV0dG9uCmxhYmVsOiBsZWFybiBtb3JlCnVybDogaHR0cDovL3NtZWxscy5pc2FyZHNhdC5jb20vCm5ld1RhYjogdHJ1ZQpgYGA="
+  },
+  "19ffde1e-afa9-4402-bd01-bdd1f0e6888b": {
+    "id": "19ffde1e-afa9-4402-bd01-bdd1f0e6888b",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "AirQast ofereix una cartera de productes de qualitat de l'aire derivats de dades satel·litals. Partint d'un projecte europeu H2020, AirQast inclou els actors europeus més reconeguts en la investigació sobre la contaminació de l'aire.\n\n**Lobelia opera la plataforma AirQast i ofereix serveis de qualitat de l'aire a escales urbanes.**\n\n## Emissions\n\nInventaris mensuals d'emissions regionals a partir de dades satèl·lit a 1 km de resolució.\n\n## Previsió\n\nPrevisió horària de la qualitat de l'aire per als propers 3 dies.\n\n## Eines de presa de decisions\n\nSimulacions d'escenaris per avaluar l'impacte de les mesures de qualitat de l'aire a les ciutats i regions i planificar en conseqüència.\n\n## On\n\nXina / Índia / Europa / altres regions sota demanda.\n\n## Context\n\nLa contaminació de l'aire és un problema greu que es relaciona amb 3 milions de morts a tot el món cada any. També provoca costos anuals en l'ordre de milers de milions d'euros, per exemple en pèrdues de productivitat i despeses sanitàries. Finalment, la contaminació impacta negativament en aspectes com el transport (p. ex., la manca de visibilitat als aeroports), el manteniment de la ciutat (p. ex., la neteja d'infraestructures) i l'agricultura (p. ex., deposicions de contaminants).\n\n\n```Button\nlabel: saber-ne més\nurl: http://airqast.com\nnewTab: true\n```",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1jb250ZW50c19BaXJRYXN0IG9mZmVycyBhIHBvcnRmb2xpbyBvZiBhaXIgcXVhbGl0eSBwcm9kdWN0cyBkZXJpdmVkIGZyb20gc2F0ZWxsaXRlIGRhdGEuIE9yaWdpbmF0aW5nIGZyb20gYSBFdXJvcGVhbiBIMjAyMCBwcm9qZWN0LCBBaXJRYXN0IGluY2x1ZGVzIHNvbWUgb2YgdGhlIG1vc3QgcmVub3duZWQgRXVyb3BlYW4gYWN0b3JzIGluIGFpciBwb2xsdXRpb24gcmVzZWFyY2guCgoqKkxvYmVsaWEgb3BlcmF0ZXMgdGhlIEFpclFhc3QgcGxhdGZvcm0gYW5kIHByb3ZpZGVzIGFpciBxdWFsaXR5IHNlcnZpY2VzIGF0IHVyYmFuIHNjYWxlcy4qKgoKIyMgRW1pc3Npb25zCgpNb250aGx5IHJlZ2lvbmFsIGVtaXNzaW9uIGludmVudG9yaWVzIGZyb20gc2F0ZWxsaXRlcyBhdCAxLWttIHJlc29sdXRpb24uCgojIyBGb3JlY2FzdAoKSG91cmx5IGFpciBxdWFsaXR5IGZvcmVjYXN0cyBmb3IgMyBkYXlzIGluIGFkdmFuY2UuCgojIyBEZWNpc2lvbi1tYWtpbmcgdG9vbHMKClNjZW5hcmlvIHNpbXVsYXRpb25zIHRvIGV2YWx1YXRlIHRoZSBpbXBhY3Qgb2YgYWlyIHF1YWxpdHkgbWVhc3VyZXMgaW4gY2l0aWVzL3JlZ2lvbnMgYW5kIHBsYW4gYWNjb3JkaW5nbHkuCgojIyBXaGVyZQoKQ2hpbmEgLyBJbmRpYSAvIEV1cm9wZSAvIG90aGVyIHJlZ2lvbnMgdXBvbiBkZW1hbmQuCgojIyBDb250ZXh0CgpBaXIgcG9sbHV0aW9uIGlzIGEgc2VyaW91cyBwcm9ibGVtIHRyYWNlZCB0byAzIG1pbGxpb24gZGVhdGhzIHdvcmxkd2lkZSBldmVyeSB5ZWFyLiBJdCBhbHNvIGNhdXNlcyB5ZWFybHkgY29zdHMgaW4gdGhlIG9yZGVyIG9mIGJpbGxpb25zIG9mIGV1cm9zLCBjb25zaWRlcmluZyBsb3N0IHByb2R1Y3Rpdml0eSBhbmQgaGVhbHRoIGV4cGVuc2VzLiBGaW5hbGx5LCBwb2xsdXRpb24gaW1wYWN0cyBuZWdhdGl2ZWx5IG9uIGFzcGVjdHMgc3VjaCBhcyB0cmFuc3BvcnQgKGUuZy4gbGFjayBvZiB2aXNpYmlsaXR5IGluIGFpcnBvcnRzKSwgY2l0eSBtYWludGVuYW5jZSAoZS5nLiBpbmZyYXN0cnVjdHVyZSBjbGVhbmluZykgYW5kIGFncmljdWx0dXJlIChlLmcuIHBvbGx1dGFudCBkZXBvc2l0aW9ucykuCgoKYGBgQnV0dG9uCmxhYmVsOiBsZWFybiBtb3JlCnVybDogaHR0cDovL2FpcnFhc3QuY29tCm5ld1RhYjogdHJ1ZQpgYGA="
+  },
+  "99c81283-9257-4197-8462-832a359909ce": {
+    "id": "99c81283-9257-4197-8462-832a359909ce",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Lobelia ha desenvolupat un sistema per pronosticar tendències d'esdeveniments climàtics extrems en ubicacions específiques. El sistema s'alimenta amb observacions i models climàtics, així com reanàlisis i conjunts de dades satel·litals. Les fonts de dades inclouen les principals agències meteorològiques europees, ECMWF, imatges de Sentinel i diversos proveïdors de dades locals.\n\nUtilitzem **tècniques d'intel·ligència computacional** per trobar patrons en els models climàtics que es correlacionen amb la densitat temporal d'esdeveniments extrems en el passat, segons observacions reals de les agències meteorològiques. Aquests resultats es projecten en el futur d'acord amb els models climàtics existents.\n\nEls nostres estudis han descobert que l'evolució en el temps de les probabilitats d'ocurrència difereix substancialment en funció de l'esdeveniment (per exemple, vents extraordinaris, ciclons i tempestes extremes) i la ubicació. Es requereixen estudis específics en cada context per obtenir resultats òptims per a cada categoria d'esdeveniments extrems.\n\n**Lobelia col·labora amb PwC en l'avaluació econòmica de possibles danys derivats d'esdeveniments climàtics extrems.**\n\n```Button\nlabel: solicitar una demo\nurl: mailto:info@lobelia.earth\n```",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1jb250ZW50c19Mb2JlbGlhIGhhcyBkZXZlbG9wZWQgYSBzeXN0ZW0gdG8gcHJlZGljdCB0cmVuZHMgb2YgZXh0cmVtZSBjbGltYXRlIGV2ZW50cyBhdCBzcGVjaWZpYyBsb2NhdGlvbnMuIFRoZSBzeXN0ZW0gaXMgZmVkIHdpdGggb2JzZXJ2YXRpb25zIGFuZCBjbGltYXRlIG1vZGVscywgYXMgd2VsbCBhcyByZWFuYWx5c2lzIGFuZCBzYXRlbGxpdGUgZGF0YXNldHMuIERhdGEgc291cmNlcyBpbmNsdWRlIGxlYWRpbmcgRXVyb3BlYW4gbWV0ZW9yb2xvZ2ljYWwgYWdlbmNpZXMsIEVDTVdGLCBTZW50aW5lbCBpbWFnZXJ5IGFuZCB2YXJpb3VzIGxvY2FsIGRhdGEgcHJvdmlkZXJzLgoKV2UgdXNlICoqY29tcHV0YXRpb25hbCBpbnRlbGxpZ2VuY2UgdGVjaG5pcXVlcyoqIHRvIGZpbmQgcGF0dGVybnMgaW4gdGhlIGNsaW1hdGUgbW9kZWxzIHRoYXQgY29ycmVsYXRlIHdpdGggdGhlIHRlbXBvcmFsIGRlbnNpdHkgb2YgZXh0cmVtZSBldmVudHMgaW4gdGhlIHBhc3QsIGFjY29yZGluZyB0byByZWFsIG9ic2VydmF0aW9ucyBmcm9tIG1ldGVvcm9sb2dpY2FsIGFnZW5jaWVzLiBUaGVzZSByZXN1bHRzIGFyZSB0aGVuIHByb2plY3RlZCBpbnRvIHRoZSBmdXR1cmUgYWNjb3JkaW5nIHRvIHRoZSBleGlzdGluZyBjbGltYXRlIG1vZGVscy4KCk91ciBzdHVkaWVzIGhhdmUgZm91bmQgdGhhdCB0aGUgZXZvbHV0aW9uIGluIHRpbWUgb2YgdGhlIHByb2JhYmlsaXRpZXMgb2Ygb2NjdXJyZW5jZSBkaWZmZXIgc3Vic3RhbnRpYWxseSBkZXBlbmRpbmcgb24gdGhlIGV2ZW50IChlLmcuIGV4dHJhb3JkaW5hcnkgd2luZHMsIGN5Y2xvbmVzIGFuZCBleHRyZW1lIHN0b3JtcykgYW5kIHRoZSBsb2NhdGlvbi4gU3BlY2lmaWMgc3R1ZGllcyBhcmUgcmVxdWlyZWQgaW4gZXZlcnkgY29udGV4dCB0byBvYnRhaW4gb3B0aW11bSByZXN1bHRzIGZvciBlYWNoIGV4dHJlbWUgZXZlbnQgY2F0ZWdvcnkuCgoqKkxvYmVsaWEgY29sbGFib3JhdGVzIHdpdGggUHdDIG9uIHRoZSBlY29ub21pYyBhc3Nlc3NtZW50IG9mIHBvdGVudGlhbCBkYW1hZ2VzIGRlcml2ZWQgZnJvbSBleHRyZW1lIGNsaW1hdGUgZXZlbnRzLioqIAoKYGBgQnV0dG9uCmxhYmVsOiByZXF1ZXN0IGEgZGVtbwp1cmw6IG1haWx0bzppbmZvQGxvYmVsaWEuZWFydGgKYGBg"
+  },
+  "5d933f27-9f21-4676-afd5-885ba4ccede9": {
+    "id": "5d933f27-9f21-4676-afd5-885ba4ccede9",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Una de les frases més sentides en el camp de l'Observació de la Terra és \"portar els algoritmes a les dades\". Tenint en compte els conjunts de dades cada vegada més grans que proporcionen els satèl·lits Sentinel i els serveis Copernicus, s'estan creant plataformes que ajuden els usuaris a executar les seves cadenes de processament el més a prop possible de les dades que necessiten: no cal esperar una gran descàrrega abans de començar a treballar.\n\n**Lobelia col·labora amb Mercator Océan Internacional ajudant els usuaris de l'Observació de la Terra a treure el màxim profit de [WEkEO](https://wekeo.eu)**, la plataforma de Serveis d'Accés a Dades i Informació (DIAS, en anglès) desenvolupada per EUMETSAT, ECMWF i el mateix Mercator. Lobelia està també profundament involucrada en el seguiment dels diversos serveis, a més de recollir *feedback* per a properes versions de la plataforma.\n\n```Button\nlabel: saber-ne més\nurl: https://wekeo.eu\nnewTab: true\n```",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1jb250ZW50c19PbmUgb2YgdGhlIG1vc3QgZnJlcXVlbnRseSBoZWFyZCBwaHJhc2VzIGluIEVhcnRoIE9ic2VydmF0aW9uIGlzIOKAnGJyaW5naW5nIHRoZSBhbGdvcml0aG1zIHRvIHRoZSBkYXRh4oCdLiBHaXZlbiB0aGUgaW5jcmVhc2luZ2x5IGxhcmdlIGRhdGFzZXRzIHByb3ZpZGVkIGJ5IFNlbnRpbmVsIHNhdGVsbGl0ZXMgYW5kIENvcGVybmljdXMgc2VydmljZXMsIHBsYXRmb3JtcyBhcmUgZW1lcmdpbmcgdGhhdCBkbyBqdXN0IHRoYXQ6IGhlbHBpbmcgdXNlcnMgcnVuIHRoZWlyIHByb2Nlc3NpbmcgY2hhaW5zIGFzIGNsb3NlIGFzIHBvc3NpYmxlIHRvIHRoZSBkYXRhIHRoZXkgbmVlZCDigJQgbm8gbmVlZCB0byB3YWl0IGZvciBodWdlIGRvd25sb2FkcyBiZWZvcmUgZXZlbiBzdGFydGluZy4KCioqTG9iZWxpYSBjb2xsYWJvcmF0ZXMgd2l0aCBNZXJjYXRvciBPY8OpYW4gSW50ZXJuYXRpb25hbCBhaWRpbmcgRWFydGggT2JzZXJ2YXRpb24gdXNlcnMgdG8gZ2V0IHRoZSBtb3N0IG91dCBvZiBbV0VrRU9dKGh0dHBzOi8vd2VrZW8uZXUpKiosIHRoZSBEYXRhIGFuZCBJbmZvcm1hdGlvbiBBY2Nlc3MgU2VydmljZXMgKERJQVMpIHBsYXRmb3JtIGRldmVsb3BlZCBieSBFVU1FVFNBVCwgRUNNV0YgYW5kIE1lcmNhdG9yIGl0c2VsZi4gTG9iZWxpYSBpcyBhbHNvIGRlZXBseSBpbnZvbHZlZCBpbiBtb25pdG9yaW5nIHRoZSB2YXJpb3VzIHNlcnZpY2VzLCBhcyB3ZWxsIGFzIGdhdGhlcmluZyBmZWVkYmFjayBmb3IgdGhlIG5leHQgcmVsZWFzZXMgb2YgdGhlIHBsYXRmb3JtLgoKYGBgQnV0dG9uCmxhYmVsOiBsZWFybiBtb3JlCnVybDogaHR0cHM6Ly93ZWtlby5ldQpuZXdUYWI6IHRydWUKYGBg"
+  },
+  "71613c04-800c-4528-8074-2c9411d734d3": {
+    "id": "71613c04-800c-4528-8074-2c9411d734d3",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Les inundacions són una preocupació creixent a l'Àfrica occidental, i es preveu que augmentin amb el canvi climàtic. Hi ha una gran necessitat d'un accés fiable a les previsions i avisos operacionals d'inundacions, produits per un robust sistema d'informació i comunicació, adaptat a les condicions regionals i operat per institucions competents d'Àfrica Occidental.\n\nEl projecte FANFAR, finançat per la UE, té com a objectiu construir aquest sistema. En aquest context, **Lobelia proporciona productes de nivell de l'aigua basats en dades satel·litals** a la plana d'inundació de la conca del riu Níger, que són assimilats seqüencialment en un model hidrològic de l'Institut Meteorològic i Hidrològic Suec (SMHI, en anglès) per generar els períodes de retorn de la descàrrega del riu. Aquests resultats s'utilitzen en el sistema de previsió d'inundacions i alerta primerenca de SMHI a Àfrica Occidental.\n\n**La [Plataforma d'Explotació Temàtica de Hidrologia](https://hydrology-tep.eo.esa.int) (H-TEP, en anglès), basada en el núvol, opera aquest sistema d'alerta d'inundacions.** El servei global de nivell de l'aigua de Lobelia, basat en dades satèl·lit, s'executa a la H-TEP i permet complementar xarxes de sensors *in situ*. També es pot utilitzar com a *proxy* del flux hídric, així com per a la calibració i validació de models, i per a l'assimilació de dades hidrològiques.\n\n```Button\nlabel: saber-ne més\nurl: http://fanfar.eu\nnewTab: true\n```",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1jb250ZW50c19GbG9vZHMgYXJlIGEgcmFwaWRseSBncm93aW5nIGNvbmNlcm4gaW4gV2VzdCBBZnJpY2EsIHByb2plY3RlZCB0byBpbmNyZWFzZSB3aXRoIGNsaW1hdGUgY2hhbmdlLiBUaGVyZSBpcyBhIGdyZWF0IG5lZWQgZm9yIHJlbGlhYmxlIGFjY2VzcyB0byBvcGVyYXRpb25hbCBmbG9vZCBmb3JlY2FzdHMgYW5kIGFsZXJ0cywgcHJvZHVjZWQgYnkgYSByb2J1c3QgaW5mb3JtYXRpb24gYW5kIGNvbW11bmljYXRpb24gc3lzdGVtLCBhZGFwdGVkIHRvIHJlZ2lvbmFsIGNvbmRpdGlvbnMgYW5kIG9wZXJhdGVkIGJ5IGNhcGFibGUgV2VzdCBBZnJpY2FuIGluc3RpdHV0aW9ucy4KClRoZSBFQy1mdW5kZWQgRkFORkFSIHByb2plY3QgYWltcyBhdCBidWlsZGluZyBzdWNoIGEgc3lzdGVtLiBJbiB0aGlzIGNvbnRleHQsIExvYmVsaWEncyAqKnNhdGVsbGl0ZS1iYXNlZCB3YXRlciBsZXZlbCBwcm9kdWN0cyoqIG9mIHRoZSBOaWdlciBSaXZlciBiYXNpbiBmbG9vZHBsYWluIGFyZSBzZXF1ZW50aWFsbHkgYXNzaW1pbGF0ZWQgaW50byBhIGh5ZHJvbG9naWNhbCBtb2RlbCBmcm9tIHRoZSBTd2VkaXNoIE1ldGVvcm9sb2dpY2FsIGFuZCBIeWRyb2xvZ2ljYWwgSW5zdGl0dXRlIChTTUhJKSB0byBnZW5lcmF0ZSByaXZlciBkaXNjaGFyZ2UgcmV0dXJuIHBlcmlvZHMuIFRoZXNlIHJlc3VsdHMgYXJlIHRoZW4gdXNlZCBpbiBTTUhJ4oCZcyBmbG9vZCBmb3JlY2FzdGluZyBhbmQgZWFybHktd2FybmluZyBhbGVydCBzeXN0ZW0gaW4gV2VzdCBBZnJpY2EuCgoqKlRoZSBjbG91ZC1iYXNlZCBbSHlkcm9sb2d5IFRoZW1hdGljIEV4cGxvaXRhdGlvbiBQbGF0Zm9ybSAoSC1URVApXShodHRwczovL2h5ZHJvbG9neS10ZXAuZW8uZXNhLmludCkgb3BlcmF0ZXMgdGhpcyBmbG9vZCB3YXJuaW5nIHN5c3RlbS4qKiBMb2JlbGlhJ3Mgc2F0ZWxsaXRlLWJhc2VkLCBnbG9iYWwgd2F0ZXIgbGV2ZWwgc2VydmljZSBydW5zIG9uIHRoZSBILVRFUCBhbmQgaXMgd2VsbC1zdWl0ZWQgdG8gY29tcGxlbWVudCBpbi1zaXR1IHNlbnNvciBuZXR3b3Jrcy4gSXQgY2FuIGFsc28gYmUgdXNlZCBhcyBhIHByb3h5IG9mIHN0cmVhbWZsb3csIGZvciBtb2RlbCBjYWxpYnJhdGlvbiBhbmQgdmFsaWRhdGlvbiBhcyB3ZWxsIGFzIGZvciBoeWRyb2xvZ2ljIGRhdGEgYXNzaW1pbGF0aW9uLgoKYGBgQnV0dG9uCmxhYmVsOiBsZWFybiBtb3JlCnVybDogaHR0cDovL2ZhbmZhci5ldQpuZXdUYWI6IHRydWUKYGBg"
+  },
+  "f6b25d81-41ed-496f-b166-e05b6f71c09f": {
+    "id": "f6b25d81-41ed-496f-b166-e05b6f71c09f",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "** Lobelia ** es crea per respondre a les necessitats socials de les mesures reguladores per afrontar el canvi climàtic. El protocol de Kyoto i la COP21 són només dos dels principals fòrums on es prenen decisions internacionals per treballar de manera col·laborativa i abordar els desafiaments climàtics i establir un camí cap a una nova economia. Aquesta nova economia té en compte la responsabilitat col·lectiva respecte a l'impacte del canvi climàtic sobre les operacions i les polítiques públiques del sector privat. Un exemple és la Directiva europea per a la divulgació de la informació no financera per a grans grups i el compromís de les grans empreses d'inversió amb resultats ambientalment sostenibles.\n\nAmb més de deu anys d'experiència, ** isardSAT ** és un expert líder en tecnologies de satèl·lit, disseny i implementació de missió satelital, així com en algorismes propietaris per a l'aplicació de tecnologia de satèl lit per qüestions mediambientals i ara estem orgullosos de presentar el seu nou Unitat de negoci: * Lobelia *.\n\nLobelia ha estat creada amb el clar objectiu de posar a disposició de dades satelitales, intel·ligència computacional i informació climàtica per a la creació de plans estratègics i mesures d'adaptació davant el canvi climàtic.\n\nAvui, l'equip de Lobelia està format per experts apassionats en física, ciències de la terra, disseny gràfic, visualització de dades i intel·ligència computacional. Treballem amb proveïdors de dades de confiança i tenim una xarxa creixent de col·laboradors internacionals tan compromesos com per impulsar el canvi.",
+    "fuzzy": true,
+    "keyId": "cHJvamVjdC1jb250ZW50c18qKkxvYmVsaWEqKiBpcyBjcmVhdGVkIHRvIHJlc3BvbmQgdG8gdGhlIHNvY2lldGFsIG5lZWRzIGZvciByZWd1bGF0b3J5IG1lYXN1cmVzIHRvIGNvbmZyb250IGNsaW1hdGUgY2hhbmdlLiBUaGUgS3lvdG8gcHJvdG9jb2wgYW5kIENPUDIxIGFyZSBqdXN0IHR3byBvZiB0aGUgbWFqb3IgZm9ydW1zIHdoZXJlIGRlY2lzaW9ucyBoYXZlIGJlZW4gbWFkZSBpbnRlcm5hdGlvbmFsbHkgdG8gd29yayBjb2xsYWJvcmF0aXZlbHkgYW5kIGFkZHJlc3MgY2xpbWF0ZS1iYXNlZCBjaGFsbGVuZ2VzIGFuZCBzZXQgdXAgYSBwYXRoIGZvciBhIG5ldyBlY29ub215LiBUaGlzIG5ldyBlY29ub215IHRha2VzIGludG8gYWNjb3VudCBjb2xsZWN0aXZlIHJlc3BvbnNpYmlsaXR5IHdpdGggcmVzcGVjdCB0byB0aGUgaW1wYWN0IG9mIGNsaW1hdGUgY2hhbmdlIHVwb24gcHJpdmF0ZSBzZWN0b3Igb3BlcmF0aW9ucyBhbmQgcHVibGljIHBvbGljeS4gIE9uZSBleGFtcGxlIGlzIHRoZSBFdXJvcGVhbiBEaXJlY3RpdmUgZm9yIHRoZSBkaXNjbG9zdXJlIG9mIG5vbi1maW5hbmNpYWwgaW5mb3JtYXRpb24gZm9yIGxhcmdlIGdyb3VwcyBhbmQgdGhlIGNvbW1pdG1lbnQgb2YgbWFqb3IgaW52ZXN0bWVudCBmaXJtcyB0byBlbnZpcm9ubWVudGFsbHkgc3VzdGFpbmFibGUgb3V0Y29tZXMuCgpXaXRoIG1vcmUgdGhhbiB0ZW4geWVhcnMgb2YgZXhwZXJpZW5jZSwgKippc2FyZFNBVCoqIGlzIGEgbGVhZGluZyBleHBlcnQgb24gc2F0ZWxsaXRlIHRlY2hub2xvZ2llcywgc2F0ZWxsaXRlIG1pc3Npb24gZGVzaWduIGFuZCBpbXBsZW1lbnRhdGlvbiBhcyB3ZWxsIGFzIG9uIHByb3ByaWV0YXJ5IGFsZ29yaXRobXMgZm9yIHRoZSBhcHBsaWNhdGlvbiBvZiBzYXRlbGxpdGUgdGVjaG5vbG9neSBmb3IgZW52aXJvbm1lbnRhbCBpc3N1ZXMsIGFuZCBpcyBub3cgcHJvdWQgdG8gcHJlc2VudCBpdHMgbmV3IGJ1c2luZXNzIHVuaXQ6ICpMb2JlbGlhKi4KCkxvYmVsaWEgaGFzIGJlZW4gY3JlYXRlZCB3aXRoIHRoZSBjbGVhciBvYmplY3RpdmUgb2YgcHV0dGluZyBzYXRlbGxpdGUgZGF0YSwgY29tcHV0YXRpb25hbCBpbnRlbGxpZ2VuY2UgYW5kIGNsaW1hdGUgaW5mb3JtYXRpb24gdG8gdXNlIGZvciB0aGUgY3JlYXRpb24gb2Ygc3RyYXRlZ2ljIHBsYW5zIGFuZCBhZGFwdGlvbiBtZWFzdXJlcyBpbiB0aGUgZmFjZSBvZiBjbGltYXRlIGNoYW5nZS4KClRvZGF5LCB0aGUgdGVhbSBhdCBMb2JlbGlhIGlzIGNvbXBvc2VkIG9mIHBhc3Npb25hdGUgZXhwZXJ0cyBpbiBwaHlzaWNzLCBlYXJ0aCBzY2llbmNlLCBncmFwaGljIGRlc2lnbiwgZGF0YSB2aXN1YWxpc2F0aW9uIGFuZCBjb21wdXRhdGlvbmFsIGludGVsbGlnZW5jZS4gV2Ugd29yayB3aXRoIHRydXN0ZWQgZGF0YSBwcm92aWRlcnMgYW5kIGhhdmUgYSBncm93aW5nIG5ldHdvcmsgb2YgaW50ZXJuYXRpb25hbCBjb2xsYWJvcmF0b3JzIHRoYXQgYXJlIGFzIGVuZ2FnZWQgYXMgd2UgYXJlIHRvIGRyaXZlIGZvciBjaGFuZ2Uu"
+  },
+  "dbbafc1a-3236-4da9-83e0-14f347e3ab23": {
+    "id": "dbbafc1a-3236-4da9-83e0-14f347e3ab23",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "La recerca i la innovació promouen un creixement equilibrat i sostenible. Proporcionem solucions basades en un enfocament científicament responsable.",
+    "fuzzy": false,
+    "keyId": "bWFya2V0LXN1bW1hcnlfUmVzZWFyY2ggYW5kIGlubm92YXRpb24gcHJvbW90ZXMgYSB3ZWxsLWJhbGFuY2VkLCBzdXN0YWluYWJsZSBncm93dGguIFdlIHByb3ZpZGUgc29sdXRpb25zIGJhc2VkIG9uIGEgc2NpZW50aWZpY2FsbHkgcmVzcG9uc2libGUgYXBwcm9hY2gu"
+  },
+  "44f80ae6-70e7-4fa9-acca-1a597e32a58e": {
+    "id": "44f80ae6-70e7-4fa9-acca-1a597e32a58e",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "**Lobelia** es crea per respondre a la necessitat social de mesures regulatòries per afrontar el canvi climàtic. El protocol de Kyoto i la COP21 són només dos dels principals fòrums on s'han pres decisions a nivell internacional per treballar de manera col·laborativa, abordar els desafiaments climàtics i establir un camí cap a una nova economia. Aquesta nova economia té en compte la nostra responsabilitat col·lectiva respecte a l'impacte del canvi climàtic en les operacions del sector privat i les polítiques públiques. Un exemple és la Directiva Europea per a la divulgació d'informació no financera de grans empreses i el compromís de grans grups inversors amb resultats ambientalment sostenibles.\n\n**isardSAT**, una empresa líder durant més de deu anys en tecnologies satel·litals, disseny i implementació de missions d'observació de la Terra per satèl·lit, així com en el disseny d'algorismes per a l'aplicació de tecnologies satel·litals en problemes ambientals, ara s'enorgulleix de presentar la seva nova unitat de negoci: *Lobelia*.\n\nLobelia ha estat creada amb el clar objectiu de fer servir dades satel·litals, intel·ligència computacional i informació climàtica per a la generació de plans estratègics i mesures d'adaptació davant el canvi climàtic.\n\nAvui, l'equip de Lobelia està format per experts apassionats en física, ciències de la terra, disseny gràfic, visualització de dades i intel·ligència computacional. Treballem amb proveïdors de dades de confiança i tenim una xarxa creixent de col·laboradors internacionals tan compromesos com nosaltres per impulsar el canvi.",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1jb250ZW50c18qKkxvYmVsaWEqKiBpcyBjcmVhdGVkIHRvIHJlc3BvbmQgdG8gdGhlIHNvY2lldGFsIG5lZWRzIGZvciByZWd1bGF0b3J5IG1lYXN1cmVzIHRvIGNvbmZyb250IGNsaW1hdGUgY2hhbmdlLiBUaGUgS3lvdG8gcHJvdG9jb2wgYW5kIENPUDIxIGFyZSBqdXN0IHR3byBvZiB0aGUgbWFqb3IgZm9ydW1zIHdoZXJlIGRlY2lzaW9ucyBoYXZlIGJlZW4gbWFkZSBpbnRlcm5hdGlvbmFsbHkgdG8gd29yayBjb2xsYWJvcmF0aXZlbHksIGFkZHJlc3MgY2xpbWF0ZS1iYXNlZCBjaGFsbGVuZ2VzIGFuZCBzZXQgdXAgYSBwYXRoIGZvciBhIG5ldyBlY29ub215LiBUaGlzIG5ldyBlY29ub215IHRha2VzIGludG8gYWNjb3VudCBvdXIgY29sbGVjdGl2ZSByZXNwb25zaWJpbGl0eSB3aXRoIHJlc3BlY3QgdG8gdGhlIGltcGFjdCBvZiBjbGltYXRlIGNoYW5nZSB1cG9uIHByaXZhdGUgc2VjdG9yIG9wZXJhdGlvbnMgYW5kIHB1YmxpYyBwb2xpY3kuIE9uZSBleGFtcGxlIGlzIHRoZSBFdXJvcGVhbiBEaXJlY3RpdmUgZm9yIHRoZSBkaXNjbG9zdXJlIG9mIG5vbi1maW5hbmNpYWwgaW5mb3JtYXRpb24gZm9yIGxhcmdlIGdyb3VwcyBhbmQgdGhlIGNvbW1pdG1lbnQgb2YgbWFqb3IgaW52ZXN0bWVudCBmaXJtcyB0byBlbnZpcm9ubWVudGFsbHkgc3VzdGFpbmFibGUgb3V0Y29tZXMuCgpXaXRoIG1vcmUgdGhhbiB0ZW4geWVhcnMgb2YgZXhwZXJpZW5jZSwgKippc2FyZFNBVCoqIGlzIGEgbGVhZGluZyBleHBlcnQgb24gc2F0ZWxsaXRlIHRlY2hub2xvZ2llcywgc2F0ZWxsaXRlIG1pc3Npb24gZGVzaWduIGFuZCBpbXBsZW1lbnRhdGlvbiBhcyB3ZWxsIGFzIG9uIHByb3ByaWV0YXJ5IGFsZ29yaXRobXMgZm9yIHRoZSBhcHBsaWNhdGlvbiBvZiBzYXRlbGxpdGUgdGVjaG5vbG9neSBmb3IgZW52aXJvbm1lbnRhbCBpc3N1ZXMsIGFuZCBpcyBub3cgcHJvdWQgdG8gcHJlc2VudCBpdHMgbmV3IGJ1c2luZXNzIHVuaXQ6ICpMb2JlbGlhKi4KCkxvYmVsaWEgaGFzIGJlZW4gY3JlYXRlZCB3aXRoIHRoZSBjbGVhciBvYmplY3RpdmUgb2YgcHV0dGluZyBzYXRlbGxpdGUgZGF0YSwgY29tcHV0YXRpb25hbCBpbnRlbGxpZ2VuY2UgYW5kIGNsaW1hdGUgaW5mb3JtYXRpb24gdG8gdXNlIGZvciB0aGUgY3JlYXRpb24gb2Ygc3RyYXRlZ2ljIHBsYW5zIGFuZCBhZGFwdGlvbiBtZWFzdXJlcyBpbiB0aGUgZmFjZSBvZiBjbGltYXRlIGNoYW5nZS4KClRvZGF5LCB0aGUgdGVhbSBhdCBMb2JlbGlhIGlzIGNvbXBvc2VkIG9mIHBhc3Npb25hdGUgZXhwZXJ0cyBpbiBwaHlzaWNzLCBlYXJ0aCBzY2llbmNlLCBncmFwaGljIGRlc2lnbiwgZGF0YSB2aXN1YWxpc2F0aW9uIGFuZCBjb21wdXRhdGlvbmFsIGludGVsbGlnZW5jZS4gV2Ugd29yayB3aXRoIHRydXN0ZWQgZGF0YSBwcm92aWRlcnMgYW5kIGhhdmUgYSBncm93aW5nIG5ldHdvcmsgb2YgaW50ZXJuYXRpb25hbCBjb2xsYWJvcmF0b3JzIHRoYXQgYXJlIGFzIGVuZ2FnZWQgYXMgd2UgYXJlIHRvIGRyaXZlIGZvciBjaGFuZ2Uu"
+  },
+  "79654e4e-08b2-4129-9d37-43ae0ba655b7": {
+    "id": "79654e4e-08b2-4129-9d37-43ae0ba655b7",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "S'espera que el canvi climàtic afecti de forma desproporcionada els petits agricultors, que ja afronten nombrosos riscos per a la seva producció agrícola. Les varietats de cultius respondran de manera diferent als canvis de temperatura i precipitació en els llocs on actualment es cultiven. Un **índex d'idoneïtat del cultiu** és un component important dels estudis d'avaluació, així com un estudi dels canvis en la distribució geogràfica del cultius deguts al canvi climàtic en les properes dècades.\n\n**En col·laboració amb Oxfam, Lobelia ha desenvolupat una eina d'idoneïtat de cultius per avaluar el futur dels cultius bàsics en diferents regions.**\n\n## Sahel\n\nBlat de moro / sorgo / mill perlat\n\n## Àfrica subsahariana\n\nBlat de moro / sorgo / mill perlat / arròs / mandioca / mongeta / cacauet / batata\n\n## Corredor Sec (Amèrica Central)\n\nBlat de moro / sorgo / mongeta / arròs\n\n\n```Button\nlabel: provar demo\nurl: https://crop-suitability-demo.lobelia.earth/{lang}\nlangs:\n- en\n- es\n- ca\n- fr\n```",
+    "keyId": "cHJvamVjdC1jb250ZW50c19DbGltYXRlIGNoYW5nZSBpcyBleHBlY3RlZCB0byBkaXNwcm9wb3J0aW9uYXRlbHkgYWZmZWN0IHNtYWxsaG9sZGVyIGZhcm1lcnMsIHdobyBhbHJlYWR5IGZhY2UgbnVtZXJvdXMgcmlza3MgdG8gdGhlaXIgYWdyaWN1bHR1cmFsIHByb2R1Y3Rpb24uIENyb3AgdmFyaWV0aWVzIHdpbGwgcmVzcG9uZCBkaWZmZXJlbnRseSB0byBjaGFuZ2VzIGluIHRlbXBlcmF0dXJlIGFuZCBwcmVjaXBpdGF0aW9uIGF0IHRoZSBsb2NhdGlvbnMgd2hlcmUgdGhleSBhcmUgY3VycmVudGx5IGdyb3duLiBBICoqY3JvcCBzdWl0YWJpbGl0eSBpbmRleCoqIGlzIGFuIGltcG9ydGFudCBjb21wb25lbnQgb2YgYXNzZXNzbWVudCBzdHVkaWVzLCBpbmNsdWRpbmcgY2hhbmdlcyB0byBnZW9ncmFwaGljYWwgY3JvcCBkaXN0cmlidXRpb24gdW5kZXIgY2xpbWF0ZSBjaGFuZ2UgaW4gdGhlIGNvbWluZyBkZWNhZGVzLgoKKiogSW4gY29sbGFib3JhdGlvbiB3aXRoIE94ZmFtLCBMb2JlbGlhIGhhcyBkZXZlbG9wZWQgYSBjcm9wIHN1aXRhYmlsaXR5IHRvb2wgdG8gYXNzZXNzIHRoZSBmdXR1cmUgb2Ygc3RhcGxlIGNyb3BzIGluIGRpZmZlcmVudCByZWdpb25zLioqCgojIyBTYWhlbAoKTWFpemUgLyBzb3JnaHVtIC8gcGVhcmwgbWlsbGV0CgojIyBTdWItU2FoYXJhbiBBZnJpY2EKCk1haXplIC8gc29yZ2h1bSAvIHBlYXJsIG1pbGxldCAvIHJpY2UgLyBjYXNzYXZhIC8gYmVhbnMgLyBncm91bmRudXRzIC8geWFtCgojIyBEcnkgQ29ycmlkb3IKCk1haXplIC8gc29yZ2h1bSAvIGJlYW5zIC8gcmljZQoKCmBgYEJ1dHRvbgpsYWJlbDogdHJ5IGRlbW8KdXJsOiBodHRwczovL2Nyb3Atc3VpdGFiaWxpdHktZGVtby5sb2JlbGlhLmVhcnRoL3tsYW5nfQpsYW5nczoKLSBlbgotIGVzCi0gY2EKLSBmcgpgYGA="
+  },
+  "fe52c136-86a0-433b-8192-5c3ebcfe62fc": {
+    "id": "fe52c136-86a0-433b-8192-5c3ebcfe62fc",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Les àrees urbanes estan fortament exposades als efectes del canvi climàtic. Les autoritats locals controlen aquests efectes molt de prop, per tal d'adaptar-s'hi en el moment oportú i reduir el seu impacte en la vida dels ciutadans: assistència sanitària, transport, gestió de l'aigua, subministrament d'energia, etc.\n\nEl **Programa de Perfils de Resiliència Urbana de UN Habitat (CRPP, en anglès)** proporciona als governs nacionals i locals eines per mesurar i augmentar la resiliència davant els impactes de múltiples riscos, inclosos els relacionats amb el canvi climàtic.\n\n**El motor climàtic de Lobelia està integrat al CRPP**, ajudant a analitzar les tendències climàtiques i enllaçar-se amb altres tipus de dades tal com es requereix per definir un pla d'acció adequat. La caixa d'eines de Lobelia pot ser utilitzada per ciutats de tot el món, amb usuaris actuals com Asunción, Yakutsk, Maputo, Dakar i Port Vila.\n\nLobelia utilitza tècniques de reducció d'escala i correcció de biaix (*downscaling and bias correction*) per generar dades d'alta resolució, adaptades localment, que descriuen el clima futur a les ciutats objectiu.\n\n\n```Button\nlabel: provar demo\nurl: https://city-climate-trends.lobelia.earth/{lang}\nlangs:\n- en\n- es\n- ca\n- fr\n- zh\n- ru\n```\n\n```Button\nlabel: explorar el clima passat (ERA5)\nurl: https://era5.lobelia.earth/{lang}\nlangs:\n- en\n- es\n- ca\n- fr\n```\n\n```Button\nlabel: Urban Resilience Hub (UN Habitat)\nurl: http://urbanresiliencehub.org/\nnewTab: true\n```",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC1jb250ZW50c19VcmJhbiBhcmVhcyBhcmUgc3Ryb25nbHkgZXhwb3NlZCB0byB0aGUgZWZmZWN0cyBvZiBjbGltYXRlIGNoYW5nZS4gTG9jYWwgYXV0aG9yaXRpZXMgbW9uaXRvciB0aGVzZSBlZmZlY3RzIHZlcnkgY2xvc2VseSwgc28gdGhhdCB0aGV5IGNhbiBhZGFwdCBpbiBhIHRpbWVseSBtYW5uZXIgYW5kIHJlZHVjZSB0aGVpciBpbXBhY3Qgb24gY2l0aXplbnMnIGxpdmVzOiBoZWFsdGggY2FyZSwgdHJhbnNwb3J0LCB3YXRlciBtYW5hZ2VtZW50LCBlbmVyZ3kgc3VwcGx5LCBldGMuICAKClVOIEhhYml0YXQncyAqKkNpdHkgUmVzaWxpZW5jZSBQcm9maWxpbmcgUHJvZ3JhbW1lIChDUlBQKSoqIHByb3ZpZGVzIG5hdGlvbmFsIGFuZCBsb2NhbCBnb3Zlcm5tZW50cyB3aXRoIHRvb2xzIGZvciBtZWFzdXJpbmcgYW5kIGluY3JlYXNpbmcgcmVzaWxpZW5jZSB0byBtdWx0aS1oYXphcmQgaW1wYWN0cywgaW5jbHVkaW5nIHRob3NlIGFzc29jaWF0ZWQgd2l0aCBjbGltYXRlIGNoYW5nZS4KCioqTG9iZWxpYSdzIGNsaW1hdGUgZW5naW5lIGlzIGludGVncmF0ZWQgaW4gdGhlIENSUFAqKiwgaGVscGluZyBhbmFseXNlIGNsaW1hdGUgdHJlbmRzIGFuZCBsaW5rIHRvIG90aGVyIHR5cGVzIG9mIGRhdGEgYXMgcmVxdWlyZWQgdG8gYWxsb3cgdGhlIGRlZmluaXRpb24gb2YgYSBzdWl0YWJsZSBhY3Rpb24gcGxhbi4gTG9iZWxpYSdzIHRvb2xib3ggY2FuIGJlIHVzZWQgYnkgY2l0aWVzIHdvcmxkd2lkZSwgd2l0aCBjdXJyZW50IHVzZXJzIGluY2x1ZGluZyBBc3VuY2nDs24sIFlha3V0c2ssIE1hcHV0bywgRGFrYXIgYW5kIFBvcnQgVmlsYS4KCkxvYmVsaWEgdXNlcyBkb3duc2NhbGluZyBhbmQgYmlhcyBjb3JyZWN0aW9uIHRlY2huaXF1ZXMgdG8gZ2VuZXJhdGUgaGlnaC1yZXNvbHV0aW9uLCBsb2NhbGx5LWFkYXB0ZWQgZGF0YSBkZXNjcmliaW5nIHRoZSBmdXR1cmUgY2xpbWF0ZSBpbiB0aGUgdGFyZ2V0IGNpdGllcy4gCgoKYGBgQnV0dG9uCmxhYmVsOiB0cnkgZGVtbwp1cmw6IGh0dHBzOi8vY2l0eS1jbGltYXRlLXRyZW5kcy5sb2JlbGlhLmVhcnRoL3tsYW5nfQpsYW5nczoKLSBlbgotIGVzCi0gY2EKLSBmcgotIHpoCi0gcnUKYGBgCgpgYGBCdXR0b24KbGFiZWw6IGV4cGxvcmUgcGFzdCBjbGltYXRlIChFUkE1KQp1cmw6IGh0dHBzOi8vZXJhNS5sb2JlbGlhLmVhcnRoL3tsYW5nfQpsYW5nczoKLSBlbgotIGVzCi0gY2EKLSBmcgpgYGAKCmBgYEJ1dHRvbgpsYWJlbDogVU4gSGFiaXRhdCdzIFVyYmFuIFJlc2lsaWVuY2UgSHViCnVybDogaHR0cDovL3VyYmFucmVzaWxpZW5jZWh1Yi5vcmcvCm5ld1RhYjogdHJ1ZQpgYGA="
+  },
+  "1fd2954e-449b-4b7f-9606-66ad632757ee": {
+    "id": "1fd2954e-449b-4b7f-9606-66ad632757ee",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Les àrees urbanes estan fortament exposades als efectes del canvi climàtic. Les autoritats locals controlen aquests efectes molt de prop, per tal d'adaptar-s'hi en el moment oportú i reduir el seu impacte en la vida dels ciutadans: assistència sanitària, transport, gestió de l'aigua, subministrament d'energia, etc.\n\nEl **Programa de Perfils de Resiliència Urbana de UN Habitat (CRPP, en anglès)** proporciona als governs nacionals i locals eines per mesurar i augmentar la resiliència davant els impactes de múltiples riscos, inclosos els relacionats amb el canvi climàtic.\n\n**El motor climàtic de Lobelia està integrat en el CRPP**, ajudant a analitzar les tendències climàtiques i enllaçar-se amb altres tipus de dades tal com es requereix per definir un pla d'acció adequat. La caixa d'eines de Lobelia pot ser utilitzada per ciutats de tot el món, amb usuaris actuals com Asunción, Yakutsk, Maputo, Dakar i Port Vila.\n\nLobelia utilitza tècniques de reducció d'escala i correcció de biaix (*downscaling and bias correction*) per generar dades d'alta resolució, adaptades localment, que descriuen el clima futur a les ciutats objectiu.\n\n\n```Button\nlabel: provar demo\nurl: https://city-climate-trends.lobelia.earth/{lang}\nlangs:\n- en\n- es\n- ca\n- fr\n- zh\n- ru\n```\n\n```Button\nlabel: explorar el clima passat\nurl: https://era5.lobelia.earth/{lang}\nlangs:\n- en\n- es\n- ca\n- fr\n```\n\n```Button\nlabel: Urban Resilience Hub (UN Habitat)\nurl: http://urbanresiliencehub.org/\nnewTab: true\n```",
+    "keyId": "cHJvamVjdC1jb250ZW50c19VcmJhbiBhcmVhcyBhcmUgc3Ryb25nbHkgZXhwb3NlZCB0byB0aGUgZWZmZWN0cyBvZiBjbGltYXRlIGNoYW5nZS4gTG9jYWwgYXV0aG9yaXRpZXMgbW9uaXRvciB0aGVzZSBlZmZlY3RzIHZlcnkgY2xvc2VseSwgc28gdGhhdCB0aGV5IGNhbiBhZGFwdCBpbiBhIHRpbWVseSBtYW5uZXIgYW5kIHJlZHVjZSB0aGVpciBpbXBhY3Qgb24gY2l0aXplbnMnIGxpdmVzOiBoZWFsdGggY2FyZSwgdHJhbnNwb3J0LCB3YXRlciBtYW5hZ2VtZW50LCBlbmVyZ3kgc3VwcGx5LCBldGMuICAKClVOIEhhYml0YXQncyAqKkNpdHkgUmVzaWxpZW5jZSBQcm9maWxpbmcgUHJvZ3JhbW1lIChDUlBQKSoqIHByb3ZpZGVzIG5hdGlvbmFsIGFuZCBsb2NhbCBnb3Zlcm5tZW50cyB3aXRoIHRvb2xzIGZvciBtZWFzdXJpbmcgYW5kIGluY3JlYXNpbmcgcmVzaWxpZW5jZSB0byBtdWx0aS1oYXphcmQgaW1wYWN0cywgaW5jbHVkaW5nIHRob3NlIGFzc29jaWF0ZWQgd2l0aCBjbGltYXRlIGNoYW5nZS4KCioqTG9iZWxpYSdzIGNsaW1hdGUgZW5naW5lIGlzIGludGVncmF0ZWQgaW4gdGhlIENSUFAqKiwgaGVscGluZyBhbmFseXNlIGNsaW1hdGUgdHJlbmRzIGFuZCBsaW5rIHRvIG90aGVyIHR5cGVzIG9mIGRhdGEgYXMgcmVxdWlyZWQgdG8gYWxsb3cgdGhlIGRlZmluaXRpb24gb2YgYSBzdWl0YWJsZSBhY3Rpb24gcGxhbi4gTG9iZWxpYSdzIHRvb2xib3ggY2FuIGJlIHVzZWQgYnkgY2l0aWVzIHdvcmxkd2lkZSwgd2l0aCBjdXJyZW50IHVzZXJzIGluY2x1ZGluZyBBc3VuY2nDs24sIFlha3V0c2ssIE1hcHV0bywgRGFrYXIgYW5kIFBvcnQgVmlsYS4KCkxvYmVsaWEgdXNlcyBkb3duc2NhbGluZyBhbmQgYmlhcyBjb3JyZWN0aW9uIHRlY2huaXF1ZXMgdG8gZ2VuZXJhdGUgaGlnaC1yZXNvbHV0aW9uLCBsb2NhbGx5LWFkYXB0ZWQgZGF0YSBkZXNjcmliaW5nIHRoZSBmdXR1cmUgY2xpbWF0ZSBpbiB0aGUgdGFyZ2V0IGNpdGllcy4gCgoKYGBgQnV0dG9uCmxhYmVsOiB0cnkgZGVtbwp1cmw6IGh0dHBzOi8vY2l0eS1jbGltYXRlLXRyZW5kcy5sb2JlbGlhLmVhcnRoL3tsYW5nfQpsYW5nczoKLSBlbgotIGVzCi0gY2EKLSBmcgotIHpoCi0gcnUKYGBgCgpgYGBCdXR0b24KbGFiZWw6IGV4cGxvcmUgcGFzdCBjbGltYXRlCnVybDogaHR0cHM6Ly9lcmE1LmxvYmVsaWEuZWFydGgve2xhbmd9CmxhbmdzOgotIGVuCi0gZXMKLSBjYQotIGZyCmBgYAoKYGBgQnV0dG9uCmxhYmVsOiBVTiBIYWJpdGF0J3MgVXJiYW4gUmVzaWxpZW5jZSBIdWIKdXJsOiBodHRwOi8vdXJiYW5yZXNpbGllbmNlaHViLm9yZy8KbmV3VGFiOiB0cnVlCmBgYA=="
+  },
+  "7fc81ba7-ec3b-4a0c-b20f-f3cfb61d1eed": {
+    "id": "7fc81ba7-ec3b-4a0c-b20f-f3cfb61d1eed",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Ple de recursos.",
+    "fuzzy": false,
+    "keyId": "dGVhbU1lbWJlci1iaW9fUmVzb3VyY2VmdWwu"
+  },
+  "7b723d92-0202-46d0-9315-08b69bffd1d7": {
+    "id": "7b723d92-0202-46d0-9315-08b69bffd1d7",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "```ContactForm\nsendTo: info@lobelia.earth\n```\n\n## … o contacta amb nosaltres:\n\n**T:** +34 93 350 55 08 <br />\n**E:** [info@lobelia.earth](mailto:info@lobelia.earth)",
+    "fuzzy": false,
+    "keyId": "cGFnZS1jb250ZW50c19gYGBDb250YWN0Rm9ybQpzZW5kVG86IGluZm9AbG9iZWxpYS5lYXJ0aApgYGAKCiMjIOKApm9yIGNvbnRhY3QgdXM6CgoqKlQ6KiogKzM0IDkzIDM1MCA1NSAwOCA8YnIgLz4KKipFOioqIFtpbmZvQGxvYmVsaWEuZWFydGhdKG1haWx0bzppbmZvQGxvYmVsaWEuZWFydGgpCg=="
+  },
+  "25ea3167-baf4-4ac0-be35-3f160f20ee4b": {
+    "id": "25ea3167-baf4-4ac0-be35-3f160f20ee4b",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Ajudant UN Habitat – CRPP en l'anàlisi del clima a les ciutats",
+    "fuzzy": false,
+    "keyId": "cHJvamVjdC10aXRsZV9TdXBwb3J0aW5nIFVOwqBIYWJpdGF0IOKAkyBDUlBQIGZvciBjbGltYXRlIGFuYWx5c2lzIGluIGNpdGllcw=="
   }
 }

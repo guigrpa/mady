@@ -57,6 +57,13 @@ const query = graphql`
       config {
         ...aeSettings_config
       }
+      keys(first: 100000) @connection(key: "App_viewer_keys") {
+        edges {
+          node {
+            scope # for filtering
+          }
+        }
+      }
     }
   }
 `;
@@ -71,6 +78,7 @@ class App extends React.Component {
     fSettingsShown: boolean,
     lang: string,
     filter: KeyFilter,
+    scope: ?string,
   };
 
   isSubscribed = false;
@@ -81,6 +89,7 @@ class App extends React.Component {
       fSettingsShown: false,
       lang: cookieGet('lang', { defaultValue: 'en' }),
       filter: 'ALL',
+      scope: null,
     };
   }
 
@@ -99,6 +108,8 @@ class App extends React.Component {
   // ------------------------------------------
   render() {
     const { viewer } = this.props;
+    const scopes = this.getScopes();
+    const { scope } = this.state;
     return (
       <div style={style.outer}>
         <Floats />
@@ -109,6 +120,9 @@ class App extends React.Component {
           onShowSettings={this.showSettings}
           filter={this.state.filter}
           changeFilter={this.changeFilter}
+          scopes={scopes}
+          scope={scope}
+          changeScope={this.changeScope}
         />
         <Translator
           lang={this.state.lang}
@@ -116,6 +130,7 @@ class App extends React.Component {
           selectedKeyId={this.state.selectedKeyId}
           changeSelectedKey={this.changeSelectedKey}
           filter={this.state.filter}
+          scope={scope}
         />
         {this.state.selectedKeyId && (
           <Details
@@ -144,6 +159,10 @@ class App extends React.Component {
     this.setState({ filter });
   };
 
+  changeScope = (scope: ?string) => {
+    this.setState({ scope });
+  };
+
   showSettings = () => {
     this.setState({ fSettingsShown: true });
   };
@@ -161,30 +180,42 @@ class App extends React.Component {
   };
 
   // ------------------------------------------
+  getScopes() {
+    const { edges } = this.props.viewer.keys;
+    const scopes = {};
+    for (let i = 0; i < edges.length; i++) {
+      const { scope } = edges[i].node;
+      scopes[scope] = true;
+    }
+    const scopesArr = Object.keys(scopes).sort();
+    return scopesArr;
+  }
+
   showHint(fForce: boolean = false) {
     const elements = () => {
       const out = [];
       const nodeSettings = document.getElementById('madyBtnSettings');
       if (nodeSettings) {
         const bcr = nodeSettings.getBoundingClientRect();
-        const x = window.innerWidth / 2;
+        const x = window.innerWidth - 150;
         out.push({
           type: 'LABEL',
           x,
           y: 70,
-          align: 'center',
+          align: 'right',
           children: _t('hint_Configure Mady'),
         });
         out.push({
           type: 'ARROW',
           from: { x, y: 70 },
-          to: { x: bcr.left - 5, y: (bcr.top + bcr.bottom) / 2 },
+          to: { x: (bcr.left + bcr.right) / 2, y: bcr.bottom },
+          counterclockwise: true,
         });
       }
       const nodeAddLang = document.getElementById('madyBtnAddLang');
       if (nodeAddLang) {
         const bcr = nodeAddLang.getBoundingClientRect();
-        const x = window.innerWidth - 50;
+        const x = window.innerWidth - 80;
         out.push({
           type: 'LABEL',
           x,

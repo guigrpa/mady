@@ -3,9 +3,16 @@
 /* eslint-disable react/prefer-stateless-function */
 
 import React from 'react';
-import { Icon, flexContainer, flexItem, hintShow, DropDownMenu } from 'giu';
+import {
+  LIST_SEPARATOR,
+  Icon,
+  flexContainer,
+  flexItem,
+  hintShow,
+  DropDownMenu,
+} from 'giu';
 import _t from '../../translate';
-import { COLORS } from '../gral/constants';
+import { COLORS, UNSCOPED } from '../gral/constants';
 import type { KeyFilter } from '../gral/types';
 
 // ==========================================
@@ -17,6 +24,9 @@ class Header extends React.PureComponent {
     onShowSettings: (ev?: SyntheticEvent) => void,
     filter: KeyFilter,
     changeFilter: (filter: KeyFilter) => any,
+    scopes: Array<string>,
+    scope: ?string,
+    changeScope: (scope: ?string) => any,
   };
 
   // ==========================================
@@ -24,9 +34,9 @@ class Header extends React.PureComponent {
     return (
       <div style={style.outer}>
         {this.renderFilter()}
+        {this.renderScopes()}
         <div style={style.spacer} />
         {this.renderTitle()}
-        <div style={style.spacer} />
         {this.renderHelpButton()}
       </div>
     );
@@ -43,6 +53,7 @@ class Header extends React.PureComponent {
         value: 'ALL',
         keys: 'shift+mod+a',
       },
+      LIST_SEPARATOR,
       { label: _t('filter_Unused messages'), value: 'UNUSED', keys: 'mod+u' },
       {
         label: _t('filter_Missing translations'),
@@ -60,7 +71,9 @@ class Header extends React.PureComponent {
         <DropDownMenu
           items={items}
           lang={this.props.lang}
-          onClickItem={this.onChangeFilter}
+          onClickItem={(ev: SyntheticEvent, val: any) => {
+            this.props.changeFilter(val);
+          }}
         >
           {this.renderFilterTitle()}
         </DropDownMenu>
@@ -79,6 +92,60 @@ class Header extends React.PureComponent {
         <Icon id="madyMenuFilter" icon="filter" title={_t('tooltip_Filter')} />
         {!!text && <div style={style.filterTitleText}>{text}</div>}
       </div>
+    );
+  }
+
+  renderScopes() {
+    const { scopes } = this.props;
+    if (!scopes.length) return null;
+    const { scope } = this.props;
+    const items = scopes.map(o => ({
+      // $FlowFixMe
+      label: this.renderScopeName(o),
+      value: o,
+    }));
+    const disableValue = '___DISABLE_FILTER___';
+    items.unshift(LIST_SEPARATOR);
+    items.unshift({
+      label: _t('filter_Unscoped'),
+      value: UNSCOPED,
+    });
+    items.unshift({
+      label:
+        scope != null
+          ? _t('filter_All (remove filter)')
+          : _t('filter_All (no filter)'),
+      value: disableValue,
+    });
+    return (
+      <div style={style.left}>
+        <DropDownMenu
+          items={items}
+          lang={this.props.lang}
+          onClickItem={(ev: SyntheticEvent, val: any) => {
+            this.props.changeScope(val !== disableValue ? val : null);
+          }}
+        >
+          <div style={style.filterTitle}>
+            <Icon id="madyMenuScope" icon="tags" title={_t('tooltip_Scope')} />
+            {!!scope && (
+              <div style={style.filterTitleText}>
+                {this.renderScopeName(scope)}
+              </div>
+            )}
+          </div>
+        </DropDownMenu>
+      </div>
+    );
+  }
+
+  renderScopeName(scope: string) {
+    if (scope === UNSCOPED) return _t('filter_Unscoped');
+    const [first, ...rest] = scope.split('-');
+    return (
+      <span>
+        <b>{first}</b> {rest.join('-')}
+      </span>
     );
   }
 
@@ -112,8 +179,6 @@ class Header extends React.PureComponent {
 }
 
 // ------------------------------------------
-const LEFT_RIGHT_WIDTH = 140;
-
 const style = {
   outer: flexItem(
     '0 0 2.5em',
@@ -129,8 +194,8 @@ const style = {
     fontSize: '1.3em',
     paddingBottom: 1,
   },
-  spacer: flexItem('1'),
-  icon: { marginLeft: 10 },
+  spacer: flexItem(1),
+  icon: { margin: '0 1em' },
   filterTitle: {
     paddingLeft: 10,
     paddingRight: 10,
@@ -145,9 +210,8 @@ const style = {
     fontSize: '1.3em',
     textAlign: 'right',
     marginRight: 10,
-    minWidth: LEFT_RIGHT_WIDTH,
   },
-  left: { minWidth: LEFT_RIGHT_WIDTH },
+  left: {},
 };
 
 // ==========================================

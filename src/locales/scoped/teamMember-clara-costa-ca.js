@@ -1,0 +1,1 @@
+function anonymous(){return{"dGVhbU1lbWJlci1yb2xlX0NvbW11bmljYXRpb25zIE1hbmFnZXIgJiBEZXNpZ24=":function(n){return"Cap de Comunicacions i Disseny"}}}module.exports=anonymous(),module.exports["dGVhbU1lbWJlci1iaW9fVGVhbS1idWlsZGVyLg=="]=function(){return"Crea equip."};

@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 23145775cd965de63a31f4651a934ab7
+ * @relayHash 93737e45303a3a538e82b56a0106deed
  */
 
 /* eslint-disable */
@@ -15,6 +15,7 @@ export type afDetailsQueryResponse = {|
     +unusedSince?: ?string;
     +description?: ?string;
     +sources?: $ReadOnlyArray<string>;
+    +scope?: ?string;
   |};
 |};
 */
@@ -31,6 +32,7 @@ query afDetailsQuery(
       unusedSince
       description
       sources
+      scope
     }
     id
   }
@@ -96,6 +98,13 @@ const batch /*: ConcreteBatch*/ = {
                 "alias": null,
                 "args": null,
                 "name": "sources",
+                "storageKey": null
+              },
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "args": null,
+                "name": "scope",
                 "storageKey": null
               }
             ]
@@ -183,6 +192,13 @@ const batch /*: ConcreteBatch*/ = {
                 "args": null,
                 "name": "sources",
                 "storageKey": null
+              },
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "args": null,
+                "name": "scope",
+                "storageKey": null
               }
             ]
           }
@@ -191,7 +207,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query afDetailsQuery(\n  $selectedKeyId: ID!\n) {\n  node(id: $selectedKeyId) {\n    __typename\n    ... on Key {\n      firstUsed\n      unusedSince\n      description\n      sources\n    }\n    id\n  }\n}\n"
+  "text": "query afDetailsQuery(\n  $selectedKeyId: ID!\n) {\n  node(id: $selectedKeyId) {\n    __typename\n    ... on Key {\n      firstUsed\n      unusedSince\n      description\n      sources\n      scope\n    }\n    id\n  }\n}\n"
 };
 
 module.exports = batch;

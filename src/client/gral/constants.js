@@ -57,7 +57,9 @@ const LANG_OPTIONS = [
   { value: 'ca', label: 'Català' },
 ];
 
+const UNSCOPED = '__UNSCOPED__';
+
 // ==========================================
 // Public API
 // ==========================================
-export { THEME, COLORS, LANG_OPTIONS };
+export { THEME, COLORS, LANG_OPTIONS, UNSCOPED };
