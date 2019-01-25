@@ -15,6 +15,7 @@ type Options = {|
 
 const GOOGLE_TRANSLATE_URL = 'https://translate.google.com/translate_a/single';
 
+// Split text to be translated so that Markdown code blocks are kept as is
 const translate = async (text: string, options: Options) => {
   const segments = text.split(/(\s*```[\s\S]*```\s*)/gm);
   const out = [];
@@ -26,6 +27,7 @@ const translate = async (text: string, options: Options) => {
   return out.join('');
 };
 
+// Actual translation function
 const _translate = async (
   text: string,
   { languageCodeFrom, languageCodeTo }: Options
