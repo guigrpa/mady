@@ -292,6 +292,10 @@ class Translation extends React.Component {
       const { translation } = this.props;
       if (translation && translation.isDeleted) return;
       if (translation) {
+        if (!text) {
+          this.onClickDelete();
+          return;
+        }
         mutate({
           description: 'Commit translation edit',
           environment: this.props.relay.environment,
@@ -301,6 +305,7 @@ class Translation extends React.Component {
           }),
         });
       } else {
+        if (!text) return;
         mutate({
           description: 'Commit translation creation',
           environment: this.props.relay.environment,

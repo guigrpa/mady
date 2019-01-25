@@ -1,3 +1,5 @@
+* **Client**: bugfix: delete translation if text is cleared.
+
 ## 3.1.1 (2019-1-25)
 
 * **Server**:
