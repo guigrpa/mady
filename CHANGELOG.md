@@ -1,3 +1,5 @@
+## 3.1.1 (2019-1-25)
+
 * **Server**:
     * Update auto-translate function (fix `client` query field).
 
