@@ -79,6 +79,7 @@ class App extends React.Component {
     lang: string,
     filter: KeyFilter,
     scope: ?string,
+    quickFind: ?string,
   };
 
   isSubscribed = false;
@@ -90,6 +91,7 @@ class App extends React.Component {
       lang: cookieGet('lang', { defaultValue: 'en' }),
       filter: 'ALL',
       scope: null,
+      quickFind: null,
     };
   }
 
@@ -123,6 +125,8 @@ class App extends React.Component {
           scopes={scopes}
           scope={scope}
           changeScope={this.changeScope}
+          quickFind={this.state.quickFind}
+          changeQuickFind={this.changeQuickFind}
         />
         <Translator
           lang={this.state.lang}
@@ -131,6 +135,7 @@ class App extends React.Component {
           changeSelectedKey={this.changeSelectedKey}
           filter={this.state.filter}
           scope={scope}
+          quickFind={this.state.quickFind}
         />
         {this.state.selectedKeyId && (
           <Details
@@ -161,6 +166,10 @@ class App extends React.Component {
 
   changeScope = (scope: ?string) => {
     this.setState({ scope });
+  };
+
+  changeQuickFind = (quickFind: ?string) => {
+    this.setState({ quickFind });
   };
 
   showSettings = () => {

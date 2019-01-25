@@ -10,6 +10,7 @@ import {
   flexItem,
   hintShow,
   DropDownMenu,
+  TextInput,
 } from 'giu';
 import _t from '../../translate';
 import { COLORS, UNSCOPED } from '../gral/constants';
@@ -27,6 +28,8 @@ class Header extends React.PureComponent {
     scopes: Array<string>,
     scope: ?string,
     changeScope: (scope: ?string) => any,
+    quickFind: ?string,
+    changeQuickFind: (quickFind: ?string) => any,
   };
 
   // ==========================================
@@ -35,6 +38,7 @@ class Header extends React.PureComponent {
       <div style={style.outer}>
         {this.renderFilter()}
         {this.renderScopes()}
+        {this.renderQuickFind()}
         <div style={style.spacer} />
         {this.renderTitle()}
         {this.renderHelpButton()}
@@ -67,7 +71,7 @@ class Header extends React.PureComponent {
       },
     ];
     return (
-      <div style={style.left}>
+      <div>
         <DropDownMenu
           items={items}
           lang={this.props.lang}
@@ -118,7 +122,7 @@ class Header extends React.PureComponent {
       value: disableValue,
     });
     return (
-      <div style={style.left}>
+      <div>
         <DropDownMenu
           items={items}
           lang={this.props.lang}
@@ -146,6 +150,21 @@ class Header extends React.PureComponent {
       <span>
         <b>{first}</b> {rest.join('-')}
       </span>
+    );
+  }
+
+  renderQuickFind() {
+    return (
+      <div style={style.block}>
+        <TextInput
+          value={this.props.quickFind}
+          onChange={(ev, val) => {
+            this.props.changeQuickFind(val);
+          }}
+          placeholder={_t('filter_Quick find')}
+          style={style.input}
+        />
+      </div>
     );
   }
 
@@ -186,12 +205,12 @@ const style = {
       backgroundColor: COLORS.medium,
       padding: '5px 4px',
       alignItems: 'center',
+      fontSize: '1rem',
     })
   ),
   title: {
     fontWeight: 900,
     letterSpacing: 3,
-    fontSize: '1.3em',
     paddingBottom: 1,
   },
   spacer: flexItem(1),
@@ -205,13 +224,16 @@ const style = {
     marginLeft: 5,
   },
   right: {
-    fontWeight: 900,
-    letterSpacing: 3,
-    fontSize: '1.3em',
     textAlign: 'right',
     marginRight: 10,
   },
   left: {},
+  block: {
+    margin: '0 1em',
+  },
+  input: {
+    fontSize: '0.8rem',
+  },
 };
 
 // ==========================================

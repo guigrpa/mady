@@ -1,4 +1,6 @@
-* **Client**: Add filtering by scopes!
+* **Client**:
+    * Add filtering by **scopes**!
+    * Add **quick find**!
 
 ## 3.1.2 (2019-1-25)
 

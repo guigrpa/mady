@@ -48,6 +48,7 @@ type Props = {
   changeSelectedKey: (keyId: ?string) => void,
   filter: KeyFilter,
   scope: ?string,
+  quickFind: ?string,
   // Relay
   viewer: ViewerT,
 };
@@ -180,6 +181,7 @@ class Translator extends React.Component {
       .filter(o => !o.isDeleted);
     keys = this.applyFilter(keys);
     keys = this.applyScope(keys);
+    keys = this.applyQuickFind(keys);
     keys = keys.sort(keyComparator);
     return keys;
   }
@@ -234,6 +236,18 @@ class Translator extends React.Component {
     if (!scope) return keys;
     keys = keys.filter(
       o => (scope !== UNSCOPED ? o.scope === scope : o.scope == null)
+    );
+    return keys;
+  }
+
+  applyQuickFind(keys0: Array<Object>) {
+    let keys = keys0;
+    let { quickFind } = this.props;
+    if (!quickFind) return keys;
+    quickFind = simplifyStringWithCache(quickFind);
+    keys = keys.filter(
+      // $FlowFixMe
+      o => simplifyStringWithCache(o.text).indexOf(quickFind) >= 0
     );
     return keys;
   }

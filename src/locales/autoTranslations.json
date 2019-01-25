@@ -47,5 +47,7 @@
   "es:::::Scope": "Alcance",
   "es:::::Unscoped": "Sin ámbito",
   "ca:::::Scope": "Abast",
-  "ca:::::Unscoped": "Sense escriure"
+  "ca:::::Unscoped": "Sense escriure",
+  "es:::::Quick find": "Búsqueda rápida",
+  "ca:::::Quick find": "Cerca ràpida"
 }
