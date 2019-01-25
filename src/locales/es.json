@@ -334,7 +334,7 @@
     "lang": "es",
     "translation": "Traducción dudosa (haz clic para cambiar)",
     "keyId": "dG9vbHRpcF9EdWJpb3VzIHRyYW5zbGF0aW9uIChjbGljayB0byB0b2dnbGUp",
-    "fuzzy": true
+    "fuzzy": false
   },
   "5441057a-3969-4936-a011-18e8beaf5eb1": {
     "id": "5441057a-3969-4936-a011-18e8beaf5eb1",
@@ -435,5 +435,29 @@
     "translation": "Traducir automáticamente",
     "fuzzy": false,
     "keyId": "dG9vbHRpcF9BdXRvdHJhbnNsYXRl"
+  },
+  "6d5175b2-45f9-4052-9e70-38de95dd4164": {
+    "id": "6d5175b2-45f9-4052-9e70-38de95dd4164",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Ámbito",
+    "fuzzy": false,
+    "keyId": "dG9vbHRpcF9TY29wZQ=="
+  },
+  "4a535ed3-ff58-4cf2-9060-771cff5bab49": {
+    "id": "4a535ed3-ff58-4cf2-9060-771cff5bab49",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Ámbito",
+    "fuzzy": false,
+    "keyId": "bXNnRGV0YWlsc1ZpZXdfU2NvcGU="
+  },
+  "15a24681-c366-4342-a63a-4e94ef80380e": {
+    "id": "15a24681-c366-4342-a63a-4e94ef80380e",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Sin ámbito",
+    "fuzzy": false,
+    "keyId": "ZmlsdGVyX1Vuc2NvcGVk"
   }
 }

@@ -57,5 +57,8 @@
   "tooltip_Filter": "Filtro",
   "error_Oops, an error occurred!": "¡Uy, ha ocurrido un error!",
   "translationHelp_Click outside or press TAB to save. Press ESC to undo.": "Haz clic fuera o pulsa TAB para guardar. Pulsa ESC para deshacer.",
-  "tooltip_Autotranslate": "Traducir automáticamente"
+  "tooltip_Autotranslate": "Traducir automáticamente",
+  "tooltip_Scope": "Ámbito",
+  "msgDetailsView_Scope": "Ámbito",
+  "filter_Unscoped": "Sin ámbito"
 }

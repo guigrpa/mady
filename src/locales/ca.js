@@ -91,7 +91,10 @@ return {
   "aGludF9GaWx0ZXIgcmVsZXZhbnQgbWVzc2FnZXM=": function(d) { return "Filtrar missatges rellevants"; },
   "dG9vbHRpcF9GaWx0ZXI=": function(d) { return "Filtre"; },
   ZXJyb3JfT29wcywgYW4gZXJyb3Igb2NjdXJyZWQh: function(d) { return "Ui, hi ha hagut un error!"; },
-  dG9vbHRpcF9BdXRvdHJhbnNsYXRl: function(d) { return "Traduir automàticament"; }
+  dG9vbHRpcF9BdXRvdHJhbnNsYXRl: function(d) { return "Traduir automàticament"; },
+  "dG9vbHRpcF9TY29wZQ==": function(d) { return "Àmbit"; },
+  "bXNnRGV0YWlsc1ZpZXdfU2NvcGU=": function(d) { return "Àmbit"; },
+  ZmlsdGVyX1Vuc2NvcGVk: function(d) { return "Sense àmbit"; }
 }
 }
 module.exports = anonymous();

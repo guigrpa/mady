@@ -307,7 +307,7 @@
     "lang": "ca",
     "translation": "Traducció dubtosa (fes clic per canviar)",
     "keyId": "dG9vbHRpcF9EdWJpb3VzIHRyYW5zbGF0aW9uIChjbGljayB0byB0b2dnbGUp",
-    "fuzzy": true
+    "fuzzy": false
   },
   "3328e3ad-cbe9-47bb-a7e7-c1f415eb05dc": {
     "id": "3328e3ad-cbe9-47bb-a7e7-c1f415eb05dc",
@@ -401,5 +401,29 @@
     "translation": "Traduir automàticament",
     "fuzzy": false,
     "keyId": "dG9vbHRpcF9BdXRvdHJhbnNsYXRl"
+  },
+  "850b5ab2-bbd0-4364-8cbf-35efb8b23f08": {
+    "id": "850b5ab2-bbd0-4364-8cbf-35efb8b23f08",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Àmbit",
+    "fuzzy": false,
+    "keyId": "dG9vbHRpcF9TY29wZQ=="
+  },
+  "66dd1ff5-ba8f-42a2-9575-3e636afb5e7a": {
+    "id": "66dd1ff5-ba8f-42a2-9575-3e636afb5e7a",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Àmbit",
+    "fuzzy": false,
+    "keyId": "bXNnRGV0YWlsc1ZpZXdfU2NvcGU="
+  },
+  "0a224154-3e56-4622-8b5a-eae65a628cd1": {
+    "id": "0a224154-3e56-4622-8b5a-eae65a628cd1",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Sense àmbit",
+    "fuzzy": false,
+    "keyId": "ZmlsdGVyX1Vuc2NvcGVk"
   }
 }

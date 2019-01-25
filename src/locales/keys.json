@@ -497,6 +497,7 @@
     "firstUsed": "2017-07-25T09:23:26.894Z",
     "unusedSince": null,
     "sources": [
+      "src/client/components/abHeader.js",
       "src/client/components/abHeader.js"
     ]
   },
@@ -507,6 +508,7 @@
     "firstUsed": "2017-07-25T09:23:26.894Z",
     "unusedSince": null,
     "sources": [
+      "src/client/components/abHeader.js",
       "src/client/components/abHeader.js"
     ]
   },
@@ -626,6 +628,37 @@
     "unusedSince": null,
     "sources": [
       "src/client/components/eeTranslation.js"
+    ]
+  },
+  "ZmlsdGVyX1Vuc2NvcGVk": {
+    "id": "ZmlsdGVyX1Vuc2NvcGVk",
+    "context": "filter",
+    "text": "Unscoped",
+    "firstUsed": "2019-01-25T14:36:45.722Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/abHeader.js",
+      "src/client/components/abHeader.js"
+    ]
+  },
+  "dG9vbHRpcF9TY29wZQ==": {
+    "id": "dG9vbHRpcF9TY29wZQ==",
+    "context": "tooltip",
+    "text": "Scope",
+    "firstUsed": "2019-01-25T14:36:45.722Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/abHeader.js"
+    ]
+  },
+  "bXNnRGV0YWlsc1ZpZXdfU2NvcGU=": {
+    "id": "bXNnRGV0YWlsc1ZpZXdfU2NvcGU=",
+    "context": "msgDetailsView",
+    "text": "Scope",
+    "firstUsed": "2019-01-25T14:36:45.722Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/afDetails.js"
     ]
   }
 }

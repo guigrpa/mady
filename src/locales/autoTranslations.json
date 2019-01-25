@@ -43,5 +43,9 @@
   "es:::::Dubious": "Dudoso",
   "es:::::Missing translations": "Traducciones perdidas",
   "es:::::Unused messages": "Mensajes no utilizados",
-  "es:::::Add language column": "Añadir columna de idioma"
+  "es:::::Add language column": "Añadir columna de idioma",
+  "es:::::Scope": "Alcance",
+  "es:::::Unscoped": "Sin ámbito",
+  "ca:::::Scope": "Abast",
+  "ca:::::Unscoped": "Sense escriure"
 }

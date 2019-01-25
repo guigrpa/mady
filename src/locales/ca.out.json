@@ -53,5 +53,8 @@
   "hint_Filter relevant messages": "Filtrar missatges rellevants",
   "tooltip_Filter": "Filtre",
   "error_Oops, an error occurred!": "Ui, hi ha hagut un error!",
-  "tooltip_Autotranslate": "Traduir automàticament"
+  "tooltip_Autotranslate": "Traduir automàticament",
+  "tooltip_Scope": "Àmbit",
+  "msgDetailsView_Scope": "Àmbit",
+  "filter_Unscoped": "Sense àmbit"
 }

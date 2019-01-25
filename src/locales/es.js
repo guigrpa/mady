@@ -86,7 +86,10 @@ return {
   "aGludF9GaWx0ZXIgcmVsZXZhbnQgbWVzc2FnZXM=": function(d) { return "Filtrar mensajes relevantes"; },
   "dG9vbHRpcF9GaWx0ZXI=": function(d) { return "Filtro"; },
   ZXJyb3JfT29wcywgYW4gZXJyb3Igb2NjdXJyZWQh: function(d) { return "¡Uy, ha ocurrido un error!"; },
-  dG9vbHRpcF9BdXRvdHJhbnNsYXRl: function(d) { return "Traducir automáticamente"; }
+  dG9vbHRpcF9BdXRvdHJhbnNsYXRl: function(d) { return "Traducir automáticamente"; },
+  "dG9vbHRpcF9TY29wZQ==": function(d) { return "Ámbito"; },
+  "bXNnRGV0YWlsc1ZpZXdfU2NvcGU=": function(d) { return "Ámbito"; },
+  ZmlsdGVyX1Vuc2NvcGVk: function(d) { return "Sin ámbito"; }
 }
 }
 module.exports = anonymous();
