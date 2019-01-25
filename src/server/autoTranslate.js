@@ -37,7 +37,7 @@ const _translate = async (
 
     // Build query
     const query = {
-      client: 't',
+      client: 'gtx',
       sl: languageCodeFrom || 'auto',
       tl: languageCodeTo,
       hl: languageCodeTo,
