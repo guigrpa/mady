@@ -41,10 +41,15 @@ exports[`App 01 no content 1`] = `
   />
   <div
     changeFilter={[Function]}
+    changeQuickFind={[Function]}
+    changeScope={[Function]}
     dataMockType="Header"
     filter="ALL"
     lang="en"
     onShowSettings={[Function]}
+    quickFind={null}
+    scope={null}
+    scopes={Array []}
   >
     Header
   </div>
@@ -53,6 +58,8 @@ exports[`App 01 no content 1`] = `
     dataMockType="Translator"
     filter="ALL"
     lang="en"
+    quickFind={null}
+    scope={null}
     selectedKeyId={null}
     viewer={
       Object {
@@ -162,10 +169,15 @@ exports[`App 02 shows the settings when clicked 1`] = `
   />
   <div
     changeFilter={[Function]}
+    changeQuickFind={[Function]}
+    changeScope={[Function]}
     dataMockType="Header"
     filter="ALL"
     lang="en"
     onShowSettings={[Function]}
+    quickFind={null}
+    scope={null}
+    scopes={Array []}
   >
     Header
   </div>
@@ -174,6 +186,8 @@ exports[`App 02 shows the settings when clicked 1`] = `
     dataMockType="Translator"
     filter="ALL"
     lang="en"
+    quickFind={null}
+    scope={null}
     selectedKeyId={null}
     viewer={
       Object {
@@ -306,10 +320,15 @@ exports[`App 02 shows the settings when clicked 2`] = `
   />
   <div
     changeFilter={[Function]}
+    changeQuickFind={[Function]}
+    changeScope={[Function]}
     dataMockType="Header"
     filter="ALL"
     lang="en"
     onShowSettings={[Function]}
+    quickFind={null}
+    scope={null}
+    scopes={Array []}
   >
     Header
   </div>
@@ -318,6 +337,8 @@ exports[`App 02 shows the settings when clicked 2`] = `
     dataMockType="Translator"
     filter="ALL"
     lang="en"
+    quickFind={null}
+    scope={null}
     selectedKeyId={null}
     viewer={
       Object {
@@ -427,10 +448,15 @@ exports[`App 03 changes the selected key when clicked and shows details 1`] = `
   />
   <div
     changeFilter={[Function]}
+    changeQuickFind={[Function]}
+    changeScope={[Function]}
     dataMockType="Header"
     filter="ALL"
     lang="en"
     onShowSettings={[Function]}
+    quickFind={null}
+    scope={null}
+    scopes={Array []}
   >
     Header
   </div>
@@ -439,6 +465,8 @@ exports[`App 03 changes the selected key when clicked and shows details 1`] = `
     dataMockType="Translator"
     filter="ALL"
     lang="en"
+    quickFind={null}
+    scope={null}
     selectedKeyId="SELECTED_KEY"
     viewer={
       Object {

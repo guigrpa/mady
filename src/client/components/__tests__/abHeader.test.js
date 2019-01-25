@@ -14,7 +14,7 @@ describe('Header', () => {
       .create(
         <div>
           <Floats />
-          <Header onShowSettings={() => {}} />
+          <Header onShowSettings={() => {}} scopes={[]} />
         </div>
       )
       .toJSON();
@@ -26,7 +26,7 @@ describe('Header', () => {
       <div>
         <Hints />
         <Floats />
-        <Header onShowSettings={() => {}} />
+        <Header onShowSettings={() => {}} scopes={[]} />
       </div>
     );
     let tree = component.toJSON();

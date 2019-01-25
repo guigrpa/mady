@@ -23,17 +23,12 @@ exports[`Header 01 normal 1`] = `
         "display": "flex",
         "flex": "0 0 2.5em",
         "flexDirection": "row",
+        "fontSize": "1rem",
         "padding": "5px 4px",
       }
     }
   >
-    <div
-      style={
-        Object {
-          "minWidth": 140,
-        }
-      }
-    >
+    <div>
       <span
         className="giu-select-custom"
         onClick={[Function]}
@@ -107,15 +102,41 @@ exports[`Header 01 normal 1`] = `
     <div
       style={
         Object {
-          "WebkitFlex": "1",
-          "flex": "1",
+          "margin": "0 1em",
+        }
+      }
+    >
+      <input
+        className="giu-text-input"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        placeholder="Quick find"
+        style={
+          Object {
+            "backgroundColor": "white",
+            "border": "1px solid #999999",
+            "color": "inherit",
+            "fontFamily": "inherit",
+            "fontSize": "0.8rem",
+            "fontWeight": "inherit",
+          }
+        }
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "WebkitFlex": 1,
+          "flex": 1,
         }
       }
     />
     <div
       style={
         Object {
-          "fontSize": "1.3em",
           "fontWeight": 900,
           "letterSpacing": 3,
           "paddingBottom": 1,
@@ -133,7 +154,7 @@ exports[`Header 01 normal 1`] = `
             "cursor": "pointer",
             "fontSize": undefined,
             "letterSpacing": "normal",
-            "marginLeft": 10,
+            "margin": "0 1em",
           }
         }
         title="Settings"
@@ -142,19 +163,7 @@ exports[`Header 01 normal 1`] = `
     <div
       style={
         Object {
-          "WebkitFlex": "1",
-          "flex": "1",
-        }
-      }
-    />
-    <div
-      style={
-        Object {
-          "fontSize": "1.3em",
-          "fontWeight": 900,
-          "letterSpacing": 3,
           "marginRight": 10,
-          "minWidth": 140,
           "textAlign": "right",
         }
       }
@@ -181,8 +190,8 @@ exports[`Header 01 normal 1`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
-  <div style="-webkit-flex:0 0 2.5em;align-items:center;background-color:#dcd6ff;display:flex;flex:0 0 2.5em;flex-direction:row;padding:5px 4px;">
-    <div style="min-width:140px;">
+  <div style="-webkit-flex:0 0 2.5em;align-items:center;background-color:#dcd6ff;display:flex;flex:0 0 2.5em;flex-direction:row;font-size:1rem;padding:5px 4px;">
+    <div>
       <span
         class="giu-select-custom"
         style="display:inline-block;position:relative;"
@@ -204,19 +213,27 @@ exports[`Header 01 normal 1`] = `
         </div>
       </span>
     </div>
+    <div style="margin:0 1em;">
+      <input
+        class="giu-text-input"
+        placeholder="Quick find"
+        style="background-color:white;border:1px solid #999999;color:inherit;font-family:inherit;font-size:0.8rem;font-weight:inherit;"
+        type="text"
+        value=""
+      >
+    </div>
     <div style="-webkit-flex:1;flex:1;"></div>
-    <div style="font-size:1.3em;font-weight:900;letter-spacing:3px;padding-bottom:1px;">
+    <div style="font-weight:900;letter-spacing:3px;padding-bottom:1px;">
       MADY
       <i
         class="giu-icon fa fa-cog"
         id="madyBtnSettings"
-        style="cursor:pointer;letter-spacing:normal;margin-left:10px;"
+        style="cursor:pointer;letter-spacing:normal;margin:0 1em;"
         title="Settings"
       >
       </i>
     </div>
-    <div style="-webkit-flex:1;flex:1;"></div>
-    <div style="font-size:1.3em;font-weight:900;letter-spacing:3px;margin-right:10px;min-width:140px;text-align:right;">
+    <div style="margin-right:10px;text-align:right;">
       <i
         class="giu-icon fa fa-question-circle"
         style="cursor:pointer;letter-spacing:normal;"
@@ -253,17 +270,12 @@ exports[`Header 02 shows hints when the info button is clicked 1`] = `
         "display": "flex",
         "flex": "0 0 2.5em",
         "flexDirection": "row",
+        "fontSize": "1rem",
         "padding": "5px 4px",
       }
     }
   >
-    <div
-      style={
-        Object {
-          "minWidth": 140,
-        }
-      }
-    >
+    <div>
       <span
         className="giu-select-custom"
         onClick={[Function]}
@@ -337,15 +349,41 @@ exports[`Header 02 shows hints when the info button is clicked 1`] = `
     <div
       style={
         Object {
-          "WebkitFlex": "1",
-          "flex": "1",
+          "margin": "0 1em",
+        }
+      }
+    >
+      <input
+        className="giu-text-input"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        placeholder="Quick find"
+        style={
+          Object {
+            "backgroundColor": "white",
+            "border": "1px solid #999999",
+            "color": "inherit",
+            "fontFamily": "inherit",
+            "fontSize": "0.8rem",
+            "fontWeight": "inherit",
+          }
+        }
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "WebkitFlex": 1,
+          "flex": 1,
         }
       }
     />
     <div
       style={
         Object {
-          "fontSize": "1.3em",
           "fontWeight": 900,
           "letterSpacing": 3,
           "paddingBottom": 1,
@@ -363,7 +401,7 @@ exports[`Header 02 shows hints when the info button is clicked 1`] = `
             "cursor": "pointer",
             "fontSize": undefined,
             "letterSpacing": "normal",
-            "marginLeft": 10,
+            "margin": "0 1em",
           }
         }
         title="Settings"
@@ -372,19 +410,7 @@ exports[`Header 02 shows hints when the info button is clicked 1`] = `
     <div
       style={
         Object {
-          "WebkitFlex": "1",
-          "flex": "1",
-        }
-      }
-    />
-    <div
-      style={
-        Object {
-          "fontSize": "1.3em",
-          "fontWeight": 900,
-          "letterSpacing": 3,
           "marginRight": 10,
-          "minWidth": 140,
           "textAlign": "right",
         }
       }
@@ -412,8 +438,8 @@ exports[`Header 02 shows hints when the info button is clicked 1`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
-  <div style="-webkit-flex:0 0 2.5em;align-items:center;background-color:#dcd6ff;display:flex;flex:0 0 2.5em;flex-direction:row;padding:5px 4px;">
-    <div style="min-width:140px;">
+  <div style="-webkit-flex:0 0 2.5em;align-items:center;background-color:#dcd6ff;display:flex;flex:0 0 2.5em;flex-direction:row;font-size:1rem;padding:5px 4px;">
+    <div>
       <span
         class="giu-select-custom"
         style="display:inline-block;position:relative;"
@@ -435,19 +461,27 @@ exports[`Header 02 shows hints when the info button is clicked 1`] = `
         </div>
       </span>
     </div>
+    <div style="margin:0 1em;">
+      <input
+        class="giu-text-input"
+        placeholder="Quick find"
+        style="background-color:white;border:1px solid #999999;color:inherit;font-family:inherit;font-size:0.8rem;font-weight:inherit;"
+        type="text"
+        value=""
+      >
+    </div>
     <div style="-webkit-flex:1;flex:1;"></div>
-    <div style="font-size:1.3em;font-weight:900;letter-spacing:3px;padding-bottom:1px;">
+    <div style="font-weight:900;letter-spacing:3px;padding-bottom:1px;">
       MADY
       <i
         class="giu-icon fa fa-cog"
         id="madyBtnSettings"
-        style="cursor:pointer;letter-spacing:normal;margin-left:10px;"
+        style="cursor:pointer;letter-spacing:normal;margin:0 1em;"
         title="Settings"
       >
       </i>
     </div>
-    <div style="-webkit-flex:1;flex:1;"></div>
-    <div style="font-size:1.3em;font-weight:900;letter-spacing:3px;margin-right:10px;min-width:140px;text-align:right;">
+    <div style="margin-right:10px;text-align:right;">
       <i
         class="giu-icon fa fa-question-circle"
         style="cursor:pointer;letter-spacing:normal;"
@@ -541,17 +575,12 @@ exports[`Header 02 shows hints when the info button is clicked 2`] = `
         "display": "flex",
         "flex": "0 0 2.5em",
         "flexDirection": "row",
+        "fontSize": "1rem",
         "padding": "5px 4px",
       }
     }
   >
-    <div
-      style={
-        Object {
-          "minWidth": 140,
-        }
-      }
-    >
+    <div>
       <span
         className="giu-select-custom"
         onClick={[Function]}
@@ -625,15 +654,41 @@ exports[`Header 02 shows hints when the info button is clicked 2`] = `
     <div
       style={
         Object {
-          "WebkitFlex": "1",
-          "flex": "1",
+          "margin": "0 1em",
+        }
+      }
+    >
+      <input
+        className="giu-text-input"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        placeholder="Quick find"
+        style={
+          Object {
+            "backgroundColor": "white",
+            "border": "1px solid #999999",
+            "color": "inherit",
+            "fontFamily": "inherit",
+            "fontSize": "0.8rem",
+            "fontWeight": "inherit",
+          }
+        }
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "WebkitFlex": 1,
+          "flex": 1,
         }
       }
     />
     <div
       style={
         Object {
-          "fontSize": "1.3em",
           "fontWeight": 900,
           "letterSpacing": 3,
           "paddingBottom": 1,
@@ -651,7 +706,7 @@ exports[`Header 02 shows hints when the info button is clicked 2`] = `
             "cursor": "pointer",
             "fontSize": undefined,
             "letterSpacing": "normal",
-            "marginLeft": 10,
+            "margin": "0 1em",
           }
         }
         title="Settings"
@@ -660,19 +715,7 @@ exports[`Header 02 shows hints when the info button is clicked 2`] = `
     <div
       style={
         Object {
-          "WebkitFlex": "1",
-          "flex": "1",
-        }
-      }
-    />
-    <div
-      style={
-        Object {
-          "fontSize": "1.3em",
-          "fontWeight": 900,
-          "letterSpacing": 3,
           "marginRight": 10,
-          "minWidth": 140,
           "textAlign": "right",
         }
       }
@@ -716,8 +759,8 @@ exports[`Header 02 shows hints when the info button is clicked 2`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
-  <div style="-webkit-flex:0 0 2.5em;align-items:center;background-color:#dcd6ff;display:flex;flex:0 0 2.5em;flex-direction:row;padding:5px 4px;">
-    <div style="min-width:140px;">
+  <div style="-webkit-flex:0 0 2.5em;align-items:center;background-color:#dcd6ff;display:flex;flex:0 0 2.5em;flex-direction:row;font-size:1rem;padding:5px 4px;">
+    <div>
       <span
         class="giu-select-custom"
         style="display:inline-block;position:relative;"
@@ -739,19 +782,27 @@ exports[`Header 02 shows hints when the info button is clicked 2`] = `
         </div>
       </span>
     </div>
+    <div style="margin:0 1em;">
+      <input
+        class="giu-text-input"
+        placeholder="Quick find"
+        style="background-color:white;border:1px solid #999999;color:inherit;font-family:inherit;font-size:0.8rem;font-weight:inherit;"
+        type="text"
+        value=""
+      >
+    </div>
     <div style="-webkit-flex:1;flex:1;"></div>
-    <div style="font-size:1.3em;font-weight:900;letter-spacing:3px;padding-bottom:1px;">
+    <div style="font-weight:900;letter-spacing:3px;padding-bottom:1px;">
       MADY
       <i
         class="giu-icon fa fa-cog"
         id="madyBtnSettings"
-        style="cursor:pointer;letter-spacing:normal;margin-left:10px;"
+        style="cursor:pointer;letter-spacing:normal;margin:0 1em;"
         title="Settings"
       >
       </i>
     </div>
-    <div style="-webkit-flex:1;flex:1;"></div>
-    <div style="font-size:1.3em;font-weight:900;letter-spacing:3px;margin-right:10px;min-width:140px;text-align:right;">
+    <div style="margin-right:10px;text-align:right;">
       <i
         class="giu-icon fa fa-question-circle"
         style="cursor:pointer;letter-spacing:normal;"
