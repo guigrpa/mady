@@ -69,6 +69,7 @@ type CoreKeyT = {
   isDeleted?: boolean,
   context: ?string,
   text: string,
+  seq: ?number,
   unusedSince: ?string,
   sources: Array<string>,
   isMarkdown?: boolean,
