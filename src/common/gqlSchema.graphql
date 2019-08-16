@@ -52,6 +52,7 @@ type Key implements Node {
   id: ID!
   isDeleted: Boolean
   context: String
+  seq: Int
   text: String!
   description: String
   firstUsed: String!
