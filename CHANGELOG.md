@@ -1,3 +1,5 @@
+## 3.3.1 (2019-8-16)
+
 ## 3.3.0 (2019-8-16)
 
 * **Server**: allow `getExtraMessages` to provide a numerical `seq` for message sorting.
