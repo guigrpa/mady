@@ -34,6 +34,9 @@ const keyComparator = (a: KeyT, b: KeyT) => {
   const aContext = a.context ? simplifyStringWithCache(a.context) : '';
   const bContext = b.context ? simplifyStringWithCache(b.context) : '';
   if (aContext !== bContext) return aContext < bContext ? -1 : +1;
+  const aScope = a.scope ? simplifyStringWithCache(a.scope) : '';
+  const bScope = b.scope ? simplifyStringWithCache(b.scope) : '';
+  if (aScope !== bScope) return aScope < bScope ? -1 : +1;
   const aSeq = a.seq;
   const bSeq = b.seq;
   if (aSeq != null && bSeq != null && aSeq !== bSeq) {
@@ -77,7 +80,7 @@ const fragment = graphql`
           context # for sorting
           text # for sorting
           seq # for sorting
-          scope # for filtering
+          scope # for sorting and filtering
           translations(first: 100000)
             @connection(key: "Translator_viewer_translations") {
             edges {

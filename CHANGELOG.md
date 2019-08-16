@@ -1,5 +1,8 @@
 ## 3.3.0 (2019-8-16)
 
+* **Server**: allow `getExtraMessages` to provide a numerical `seq` for message sorting.
+* **Client**: sort by `context`, `scope`, `seq` and `text`.
+
 ## 3.2.0 (2019-1-25)
 
 * **Client**:
