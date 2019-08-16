@@ -33,6 +33,7 @@
     "id": "YnV0dG9uX1NhdmU=",
     "context": "button",
     "text": "Save",
+    "seq": 1,
     "firstUsed": "2016-04-18T06:07:16.000Z",
     "unusedSince": null,
     "sources": [
@@ -143,6 +144,7 @@
     "id": "YnV0dG9uX0NhbmNlbA==",
     "context": "button",
     "text": "Cancel",
+    "seq": 2,
     "firstUsed": "2016-04-18T10:25:17.494Z",
     "unusedSince": null,
     "sources": [

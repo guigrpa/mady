@@ -31,12 +31,18 @@ const comparator = (a: string, b: string): number => {
 /* eslint-enable arrow-body-style */
 const keyComparator = (a: KeyT, b: KeyT) => {
   if (a == null || b == null) return 0;
-  const aStr = `${a.context || ''}${a.text || ''}${a.id}`;
-  const bStr = `${b.context || ''}${b.text || ''}${b.id}`;
-  return comparator(
-    simplifyStringWithCache(aStr),
-    simplifyStringWithCache(bStr)
-  );
+  const aContext = a.context ? simplifyStringWithCache(a.context) : '';
+  const bContext = b.context ? simplifyStringWithCache(b.context) : '';
+  if (aContext !== bContext) return aContext < bContext ? -1 : +1;
+  const aSeq = a.seq;
+  const bSeq = b.seq;
+  if (aSeq != null && bSeq != null && aSeq !== bSeq) {
+    return aSeq < bSeq ? -1 : +1;
+  }
+  const aText = a.text ? simplifyStringWithCache(a.text) : '';
+  const bText = b.text ? simplifyStringWithCache(b.text) : '';
+  if (aText !== bText) return aText < bText ? -1 : +1;
+  return comparator(a.id, b.id);
 };
 
 // ==========================================
@@ -70,6 +76,7 @@ const fragment = graphql`
           unusedSince
           context # for sorting
           text # for sorting
+          seq # for sorting
           scope # for filtering
           translations(first: 100000)
             @connection(key: "Translator_viewer_translations") {

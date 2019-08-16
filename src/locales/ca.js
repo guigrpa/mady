@@ -1,6 +1,6 @@
 
 function anonymous() {
-var ca = function (n, ord) {
+var ca = function(n, ord) {
   var s = String(n).split('.'), v0 = !s[1];
   if (ord) return ((n == 1
           || n == 3)) ? 'one'
@@ -15,7 +15,7 @@ var number = function (value, name, offset) {
                                     '` with non-numerical value ' + JSON.stringify(value) + '.');
   return value - offset;
 };
-var plural = function (value, offset, lcfunc, data, isOrdinal) {
+var plural = function(value, offset, lcfunc, data, isOrdinal) {
   if ({}.hasOwnProperty.call(data, value)) return data[value];
   if (offset) value -= offset;
   var key = lcfunc(value, isOrdinal);
@@ -24,7 +24,7 @@ var plural = function (value, offset, lcfunc, data, isOrdinal) {
 };
 var fmt = {
   number: function (v,lc,p
-  /*``*/) {
+  ) {
   return new Intl.NumberFormat(lc,
       p=='integer' ? {maximumFractionDigits:0}
     : p=='percent' ? {style:'percent'}

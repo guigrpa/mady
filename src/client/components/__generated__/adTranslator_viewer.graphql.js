@@ -22,6 +22,7 @@ export type adTranslator_viewer = {|
         +unusedSince: ?string;
         +context: ?string;
         +text: string;
+        +seq: ?number;
         +scope: ?string;
         +translations: ?{|
           +edges: ?$ReadOnlyArray<?{|
@@ -160,6 +161,13 @@ const fragment /*: ConcreteFragment*/ = {
                   "alias": null,
                   "args": null,
                   "name": "text",
+                  "storageKey": null
+                },
+                {
+                  "kind": "ScalarField",
+                  "alias": null,
+                  "args": null,
+                  "name": "seq",
                   "storageKey": null
                 },
                 {
