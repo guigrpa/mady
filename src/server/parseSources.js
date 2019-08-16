@@ -150,7 +150,7 @@ const addMessageToKeys = (
   keys: MapOf<InternalKeyT>,
   utf8: string,
   filePath: string,
-  extras?: { context?: ?string } = {}
+  extras?: { context?: ?string, seq?: ?number } = {}
 ): void => {
   let text = utf8;
   let { context } = extras;
@@ -224,9 +224,16 @@ const processGetExtraMessagesHook = (localeDir, keys) => {
   if (!getExtraMessages) return;
   const extraMessages = getExtraMessages();
   if (extraMessages == null) return;
-  extraMessages.forEach(({ text, context, isMarkdown, scope, filePath }) => {
-    addMessageToKeys(keys, text, filePath, { isMarkdown, scope, context });
-  });
+  extraMessages.forEach(
+    ({ text, context, seq, isMarkdown, scope, filePath }) => {
+      addMessageToKeys(keys, text, filePath, {
+        isMarkdown,
+        scope,
+        context,
+        seq,
+      });
+    }
+  );
 };
 
 // ======================================================
