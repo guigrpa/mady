@@ -19,7 +19,7 @@ module.exports['ID'] = function() {
 exports[`compileTranslations should compile a key with plural selection 1`] = `
 "
 function anonymous() {
-var es = function (n, ord) {
+var es = function(n, ord) {
   if (ord) return 'other';
   return (n == 1) ? 'one' : 'other';
 };
@@ -29,7 +29,7 @@ var number = function (value, name, offset) {
                                     '\` with non-numerical value ' + JSON.stringify(value) + '.');
   return value - offset;
 };
-var plural = function (value, offset, lcfunc, data, isOrdinal) {
+var plural = function(value, offset, lcfunc, data, isOrdinal) {
   if ({}.hasOwnProperty.call(data, value)) return data[value];
   if (offset) value -= offset;
   var key = lcfunc(value, isOrdinal);
