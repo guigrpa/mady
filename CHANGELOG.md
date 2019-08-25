@@ -1,3 +1,5 @@
+## 3.3.2 (2019-8-25)
+
 - **Client**: add visual indication that several messages belong to the same sequence.
 
 ## 3.3.1 (2019-8-16)
