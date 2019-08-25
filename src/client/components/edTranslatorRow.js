@@ -19,6 +19,7 @@ import Translation from './eeTranslation';
 type PublicProps = {|
   langs: Array<string>,
   fSelected: boolean,
+  fPendingSeq: boolean,
   changeSelectedKey: (keyId: ?string) => void,
   styleKeyCol: Object,
   styleLangCol: Object,
@@ -82,7 +83,7 @@ class TranslatorRow extends React.PureComponent {
       undefined
     );
     let cellStyle = timm.merge(
-      style.bodyCell,
+      style.bodyCell(this.props.fPendingSeq),
       this.props.styleKeyCol,
       style.keyCell
     );
@@ -94,7 +95,7 @@ class TranslatorRow extends React.PureComponent {
         className="tableBodyRow"
         id={key.id}
         onClick={this.onClickKeyRow}
-        style={style.row(fSelected)}
+        style={style.row(this.props)}
       >
         <div
           onMouseEnter={this.props.onHoverStart}
@@ -112,13 +113,16 @@ class TranslatorRow extends React.PureComponent {
   }
 
   renderTranslation = (lang: string) => {
-    const { theKey: key } = this.props;
+    const { theKey: key, fPendingSeq } = this.props;
     const edge = key.translations.edges.find(
       ({ node }) => node.lang === lang && !node.isDeleted
     );
     const translation = edge ? edge.node : null;
     const fUnused = !!key.unusedSince;
-    let cellStyle = timm.merge(style.bodyCell, this.props.styleLangCol);
+    let cellStyle = timm.merge(
+      style.bodyCell(fPendingSeq),
+      this.props.styleLangCol
+    );
     if (!edge && !fUnused) cellStyle = style.untranslated(cellStyle);
     if (this.props.fSelected) cellStyle = style.selected(cellStyle);
     return (
@@ -169,12 +173,12 @@ const style = {
         overflowY: fSelected ? undefined : 'hidden',
       })
     ),
-  bodyCell: {
+  bodyCell: fPendingSeq => ({
     position: 'relative',
     paddingTop: 1,
     paddingBottom: 1,
-    borderBottom: `1px solid ${COLORS.dark}`,
-  },
+    borderBottom: fPendingSeq ? `1px dashed white` : `1px solid ${COLORS.dark}`,
+  }),
   keyCell: {
     paddingRight: 17,
   },

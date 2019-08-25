@@ -37,6 +37,10 @@ require('./aaApp.sass');
 
 Aliquam finibus lacinia iaculis. Nulla mattis lorem nec efficitur varius. Mauris tempus velit id auctor interdum. Sed facilisis, nunc id tincidunt sollicitudin, enim augue pulvinar ligula, vel consectetur lorem urna non velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi eget auctor enim, sit amet euismod tellus. Integer vitae odio in ligula pretium interdum ac nec enim. Vestibulum tellus orci, hendrerit eu tortor quis, pretium pharetra massa. In quis quam venenatis, auctor eros nec, convallis felis. Donec mattis orci aliquam elit placerat, ac finibus turpis interdum. Proin lorem quam, dignissim vel quam ac, mollis imperdiet ipsum. Etiam iaculis elementum leo. Nulla eu lectus nec metus gravida congue. Pellentesque tempus mauris vel mauris lacinia, iaculis volutpat eros sodales. Cras eu leo ligula. Proin tortor ex, viverra efficitur risus nec, accumsan sollicitudin est.")
 */
+// Example text in a sequence
+// _t("someContext_Part 1 of the sequence")
+// _t("someContext_Part 2 of the sequence")
+// _t("someContext_Part 3 of the sequence")
 
 // ==========================================
 // Component declarations

@@ -500,6 +500,7 @@
     "firstUsed": "2017-07-25T09:23:26.894Z",
     "unusedSince": null,
     "sources": [
+      "src/client/components/abHeader.js",
       "src/client/components/abHeader.js"
     ]
   },
@@ -510,6 +511,7 @@
     "firstUsed": "2017-07-25T09:23:26.894Z",
     "unusedSince": null,
     "sources": [
+      "src/client/components/abHeader.js",
       "src/client/components/abHeader.js"
     ]
   },
@@ -638,6 +640,7 @@
     "firstUsed": "2019-01-25T14:36:45.722Z",
     "unusedSince": null,
     "sources": [
+      "src/client/components/abHeader.js",
       "src/client/components/abHeader.js"
     ]
   },
@@ -678,6 +681,51 @@
     "unusedSince": null,
     "sources": [
       "src/client/components/abHeader.js"
+    ]
+  },
+  "c29tZUNvbnRleHRfTG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2NpbmcgZWxpdC4gUHJvaW4gc2l0IGFtZXQgcmlzdXMgZmVsaXMuIERvbmVjIHNlZCB2aXZlcnJhIHVybmEuIFByYWVzZW50IHBvcnR0aXRvciBsb3JlbSBpZCB1cm5hIGJsYW5kaXQsIG5lYyBzY2VsZXJpc3F1ZSByaXN1cyB2YXJpdXMuIE51bGxhbSBldWlzbW9kIHN1c2NpcGl0IHNjZWxlcmlzcXVlLiBNYXVyaXMgcGxhY2VyYXQgc2NlbGVyaXNxdWUgbmlzaSwgdmVsIHJ1dHJ1bSBwdXJ1cyBkYXBpYnVzIGV0LiBRdWlzcXVlIG1hdHRpcyBwdWx2aW5hciBlcm9zIGluIG1vbGVzdGllLiBTdXNwZW5kaXNzZSBlbGVpZmVuZCBwcmV0aXVtIG5pc2kgdmVsIHNhZ2l0dGlzLiBJbiBtb2xsaXMgZGlhbSBzZW0sIGVnZXQgcG9ydGEgbWFnbmEgYXVjdG9yIG5lYy4gTWFlY2VuYXMgcnV0cnVtIGV1IG1hZ25hIHNpdCBhbWV0IGZldWdpYXQuIE51bmMgbmVjIHZpdmVycmEgZHVpLiBTdXNwZW5kaXNzZSBpZCBsYWN1cyBzdXNjaXBpdCwgdm9sdXRwYXQgc2FwaWVuIGhlbmRyZXJpdCwgaW50ZXJkdW0gcmlzdXMuIE1hdXJpcyBldSBtb2xsaXMgbGFjdXMsIGFjIHBvc3VlcmUgdG9ydG9yLiBJbnRlZ2VyIHF1aXMgcHJldGl1bSBtZXR1cy4gVXQgY29uZGltZW50dW0gYXVjdG9yIGVsaXQsIGV1IGFsaXF1ZXQgdXJuYS4gQ3VyYWJpdHVyIHNpdCBhbWV0IHZ1bHB1dGF0ZSBsb3JlbSwgYSBsb2JvcnRpcyByaXN1cy4KLy8gRXhhbXBsZSB0ZXh0IGluIGEgc2VxdWVuY2UKLy8gX3Qo": {
+    "id": "c29tZUNvbnRleHRfTG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2NpbmcgZWxpdC4gUHJvaW4gc2l0IGFtZXQgcmlzdXMgZmVsaXMuIERvbmVjIHNlZCB2aXZlcnJhIHVybmEuIFByYWVzZW50IHBvcnR0aXRvciBsb3JlbSBpZCB1cm5hIGJsYW5kaXQsIG5lYyBzY2VsZXJpc3F1ZSByaXN1cyB2YXJpdXMuIE51bGxhbSBldWlzbW9kIHN1c2NpcGl0IHNjZWxlcmlzcXVlLiBNYXVyaXMgcGxhY2VyYXQgc2NlbGVyaXNxdWUgbmlzaSwgdmVsIHJ1dHJ1bSBwdXJ1cyBkYXBpYnVzIGV0LiBRdWlzcXVlIG1hdHRpcyBwdWx2aW5hciBlcm9zIGluIG1vbGVzdGllLiBTdXNwZW5kaXNzZSBlbGVpZmVuZCBwcmV0aXVtIG5pc2kgdmVsIHNhZ2l0dGlzLiBJbiBtb2xsaXMgZGlhbSBzZW0sIGVnZXQgcG9ydGEgbWFnbmEgYXVjdG9yIG5lYy4gTWFlY2VuYXMgcnV0cnVtIGV1IG1hZ25hIHNpdCBhbWV0IGZldWdpYXQuIE51bmMgbmVjIHZpdmVycmEgZHVpLiBTdXNwZW5kaXNzZSBpZCBsYWN1cyBzdXNjaXBpdCwgdm9sdXRwYXQgc2FwaWVuIGhlbmRyZXJpdCwgaW50ZXJkdW0gcmlzdXMuIE1hdXJpcyBldSBtb2xsaXMgbGFjdXMsIGFjIHBvc3VlcmUgdG9ydG9yLiBJbnRlZ2VyIHF1aXMgcHJldGl1bSBtZXR1cy4gVXQgY29uZGltZW50dW0gYXVjdG9yIGVsaXQsIGV1IGFsaXF1ZXQgdXJuYS4gQ3VyYWJpdHVyIHNpdCBhbWV0IHZ1bHB1dGF0ZSBsb3JlbSwgYSBsb2JvcnRpcyByaXN1cy4KLy8gRXhhbXBsZSB0ZXh0IGluIGEgc2VxdWVuY2UKLy8gX3Qo",
+    "context": "someContext",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet risus felis. Donec sed viverra urna. Praesent porttitor lorem id urna blandit, nec scelerisque risus varius. Nullam euismod suscipit scelerisque. Mauris placerat scelerisque nisi, vel rutrum purus dapibus et. Quisque mattis pulvinar eros in molestie. Suspendisse eleifend pretium nisi vel sagittis. In mollis diam sem, eget porta magna auctor nec. Maecenas rutrum eu magna sit amet feugiat. Nunc nec viverra dui. Suspendisse id lacus suscipit, volutpat sapien hendrerit, interdum risus. Mauris eu mollis lacus, ac posuere tortor. Integer quis pretium metus. Ut condimentum auctor elit, eu aliquet urna. Curabitur sit amet vulputate lorem, a lobortis risus.\n// Example text in a sequence\n// _t(",
+    "firstUsed": "2019-08-25T10:36:14.112Z",
+    "unusedSince": "2019-08-25T10:38:16.884Z",
+    "sources": [],
+    "isDeleted": true
+  },
+  "c29tZUNvbnRleHRfUGFydCAyIG9mIHRoZSBzZXF1ZW5jZQ==": {
+    "id": "c29tZUNvbnRleHRfUGFydCAyIG9mIHRoZSBzZXF1ZW5jZQ==",
+    "scope": "example-scope",
+    "context": "someContext",
+    "seq": 1,
+    "text": "Part 2 of the sequence",
+    "firstUsed": "2019-08-25T10:36:14.112Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/aaApp.js"
+    ]
+  },
+  "c29tZUNvbnRleHRfUGFydCAzIG9mIHRoZSBzZXF1ZW5jZQ==": {
+    "id": "c29tZUNvbnRleHRfUGFydCAzIG9mIHRoZSBzZXF1ZW5jZQ==",
+    "scope": "example-scope",
+    "context": "someContext",
+    "seq": 2,
+    "text": "Part 3 of the sequence",
+    "firstUsed": "2019-08-25T10:36:14.112Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/aaApp.js"
+    ]
+  },
+  "c29tZUNvbnRleHRfUGFydCAxIG9mIHRoZSBzZXF1ZW5jZQ==": {
+    "id": "c29tZUNvbnRleHRfUGFydCAxIG9mIHRoZSBzZXF1ZW5jZQ==",
+    "scope": "example-scope",
+    "context": "someContext",
+    "seq": 0,
+    "text": "Part 1 of the sequence",
+    "firstUsed": "2019-08-25T10:38:16.884Z",
+    "unusedSince": null,
+    "sources": [
+      "src/client/components/aaApp.js"
     ]
   }
 }

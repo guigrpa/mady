@@ -143,20 +143,26 @@ class Translator extends React.Component {
     const keys = this.getKeys();
     return (
       <div className="tableBody" style={style.body} onScroll={floatReposition}>
-        {keys.map(this.renderKeyRow)}
+        {keys.map((key, idx) => this.renderKeyRow(key, keys[idx + 1]))}
         {this.renderFillerRow()}
       </div>
     );
   }
 
-  renderKeyRow = (key: KeyT) => {
+  renderKeyRow = (key: KeyT, nextKey: ?KeyT) => {
     const fSelected = this.props.selectedKeyId === key.id;
+    const fPendingSeq =
+      nextKey != null &&
+      nextKey.scope === key.scope &&
+      nextKey.context === key.context &&
+      nextKey.seq === key.seq + 1;
     return (
       <TranslatorRow
         key={key.id}
         theKey={key}
         langs={this.state.langs}
         fSelected={fSelected}
+        fPendingSeq={fPendingSeq}
         changeSelectedKey={this.props.changeSelectedKey}
         styleKeyCol={style.keyCol}
         styleLangCol={style.langCol}
