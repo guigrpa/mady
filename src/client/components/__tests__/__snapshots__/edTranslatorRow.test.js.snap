@@ -11,9 +11,7 @@ exports[`HoverableTranslatorRow 01 key without translations 1`] = `
       "display": "flex",
       "flex": "none",
       "flexDirection": "row",
-      "maxHeight": 100,
       "minHeight": 21,
-      "overflowY": "hidden",
     }
   }
 >
@@ -133,7 +131,7 @@ exports[`HoverableTranslatorRow 01 key without translations 1`] = `
 <div
   class="tableBodyRow"
   id="keyId1"
-  style="-webkit-flex:none;display:flex;flex:none;flex-direction:row;max-height:100px;min-height:21px;overflow-y:hidden;"
+  style="-webkit-flex:none;display:flex;flex:none;flex-direction:row;min-height:21px;"
 >
   <div style="-webkit-flex:1 1 0px;background-color:white;border-bottom:1px solid #c6bdff;flex:1 1 0px;margin-right:5px;padding-bottom:1px;padding-left:5px;padding-right:17px;padding-top:1px;position:relative;">
     <span style="font-weight:900;margin-right:10px;">
@@ -173,9 +171,7 @@ exports[`HoverableTranslatorRow 02 key with translations 1`] = `
       "display": "flex",
       "flex": "none",
       "flexDirection": "row",
-      "maxHeight": 100,
       "minHeight": 21,
-      "overflowY": "hidden",
     }
   }
 >
@@ -337,7 +333,7 @@ exports[`HoverableTranslatorRow 02 key with translations 1`] = `
 <div
   class="tableBodyRow"
   id="keyId2"
-  style="-webkit-flex:none;display:flex;flex:none;flex-direction:row;max-height:100px;min-height:21px;overflow-y:hidden;"
+  style="-webkit-flex:none;display:flex;flex:none;flex-direction:row;min-height:21px;"
 >
   <div style="-webkit-flex:1 1 0px;background-color:white;border-bottom:1px solid #c6bdff;flex:1 1 0px;margin-right:5px;padding-bottom:1px;padding-left:5px;padding-right:17px;padding-top:1px;position:relative;">
     <span style="font-weight:900;margin-right:10px;">

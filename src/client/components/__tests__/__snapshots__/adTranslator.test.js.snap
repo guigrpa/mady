@@ -267,6 +267,7 @@ exports[`Translator 02 selected row 1`] = `
       <div
         changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
+        fPendingSeq={false}
         fSelected={false}
         langs={
           Array [
@@ -330,6 +331,7 @@ exports[`Translator 02 selected row 1`] = `
       <div
         changeSelectedKey={[Function]}
         dataMockType="TranslatorRow"
+        fPendingSeq={false}
         fSelected={true}
         langs={
           Array [
@@ -565,6 +567,7 @@ exports[`Translator 03 default columns 1`] = `
     >
       <div
         dataMockType="TranslatorRow"
+        fPendingSeq={false}
         fSelected={false}
         langs={
           Array [
@@ -627,6 +630,7 @@ exports[`Translator 03 default columns 1`] = `
       </div>
       <div
         dataMockType="TranslatorRow"
+        fPendingSeq={false}
         fSelected={false}
         langs={
           Array [
@@ -860,6 +864,7 @@ exports[`Translator 04 fixed columns 1`] = `
     >
       <div
         dataMockType="TranslatorRow"
+        fPendingSeq={false}
         fSelected={false}
         langs={
           Array [
@@ -923,6 +928,7 @@ exports[`Translator 04 fixed columns 1`] = `
       </div>
       <div
         dataMockType="TranslatorRow"
+        fPendingSeq={false}
         fSelected={false}
         langs={
           Array [
@@ -1171,6 +1177,7 @@ exports[`Translator 05 add column (it must correspond to a new language) 1`] = `
     >
       <div
         dataMockType="TranslatorRow"
+        fPendingSeq={false}
         fSelected={false}
         langs={
           Array [
@@ -1235,6 +1242,7 @@ exports[`Translator 05 add column (it must correspond to a new language) 1`] = `
       </div>
       <div
         dataMockType="TranslatorRow"
+        fPendingSeq={false}
         fSelected={false}
         langs={
           Array [
@@ -1495,6 +1503,7 @@ exports[`Translator 06 remove column 1`] = `
     >
       <div
         dataMockType="TranslatorRow"
+        fPendingSeq={false}
         fSelected={false}
         langs={
           Array [
@@ -1557,6 +1566,7 @@ exports[`Translator 06 remove column 1`] = `
       </div>
       <div
         dataMockType="TranslatorRow"
+        fPendingSeq={false}
         fSelected={false}
         langs={
           Array [
@@ -1790,6 +1800,7 @@ exports[`Translator 07 change column language 1`] = `
     >
       <div
         dataMockType="TranslatorRow"
+        fPendingSeq={false}
         fSelected={false}
         langs={
           Array [
@@ -1853,6 +1864,7 @@ exports[`Translator 07 change column language 1`] = `
       </div>
       <div
         dataMockType="TranslatorRow"
+        fPendingSeq={false}
         fSelected={false}
         langs={
           Array [
@@ -2100,6 +2112,7 @@ exports[`Translator 07 change column language 2`] = `
     >
       <div
         dataMockType="TranslatorRow"
+        fPendingSeq={false}
         fSelected={false}
         langs={
           Array [
@@ -2163,6 +2176,7 @@ exports[`Translator 07 change column language 2`] = `
       </div>
       <div
         dataMockType="TranslatorRow"
+        fPendingSeq={false}
         fSelected={false}
         langs={
           Array [
@@ -2409,6 +2423,7 @@ exports[`Translator 07 change column language 3`] = `
     >
       <div
         dataMockType="TranslatorRow"
+        fPendingSeq={false}
         fSelected={false}
         langs={
           Array [
@@ -2471,6 +2486,7 @@ exports[`Translator 07 change column language 3`] = `
       </div>
       <div
         dataMockType="TranslatorRow"
+        fPendingSeq={false}
         fSelected={false}
         langs={
           Array [
@@ -2684,6 +2700,7 @@ exports[`Translator 10 applies UNUSED filter 1`] = `
     >
       <div
         dataMockType="TranslatorRow"
+        fPendingSeq={false}
         fSelected={false}
         langs={
           Array [
@@ -2893,6 +2910,7 @@ exports[`Translator 11 applies UNTRANSLATED filter 1`] = `
     >
       <div
         dataMockType="TranslatorRow"
+        fPendingSeq={false}
         fSelected={false}
         langs={
           Array [
@@ -3102,6 +3120,7 @@ exports[`Translator 12 applies FUZZY filter 1`] = `
     >
       <div
         dataMockType="TranslatorRow"
+        fPendingSeq={false}
         fSelected={false}
         langs={
           Array [
