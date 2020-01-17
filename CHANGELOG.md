@@ -1,3 +1,5 @@
+## 3.4.0 (2020-1-17)
+
 - **Server**:
   - Add `--no-auto-translate-new-keys` CLI option and `noAutoTranslateNewKeys` server-plugin option.
 
