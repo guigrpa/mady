@@ -49,6 +49,10 @@ program
     DEFAULT_PORT
   )
   .option('--no-watch', 'Do not watch source files')
+  .option(
+    '--no-auto-translate-new-keys',
+    'Do not automatically translate new keys'
+  )
   .option('--recompile', 'Recompile translations upon launch')
   .option('--importV0 [dir]', 'Import a "v0" (old) locale folder')
   .parse(process.argv);
@@ -63,7 +67,8 @@ db.init({
   fRecompile: cliOptions.recompile,
   localeDir: cliOptions.dir,
   otherLocaleDirs: cliOptions.otherDirs,
-  watch: cliOptions.watch,
+  watch: !!cliOptions.watch,
+  autoTranslateNewKeys: !!cliOptions.autoTranslateNewKeys,
 });
 if (cliOptions.importV0) {
   db.importV0(cliOptions.importV0);

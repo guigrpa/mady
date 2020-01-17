@@ -61,17 +61,20 @@ const delay = ms =>
 // ==============================================
 let _onChange: ?Function;
 let _watch: boolean;
+let _autoTranslateNewKeys: boolean;
 
 type Options = {
   fRecompile: boolean,
   localeDir: string,
   otherLocaleDirs?: Array<string>,
   watch?: boolean,
+  autoTranslateNewKeys?: boolean,
   onChange?: Function,
 };
 function init(options: Options) {
   _onChange = options.onChange;
   _watch = !!options.watch;
+  _autoTranslateNewKeys = !!options.autoTranslateNewKeys;
   initLocaleDir(options);
   const fMigrated = initConfig();
   initKeys();
@@ -181,22 +184,25 @@ async function updateConfig(
   updateStats();
 
   // If new langs have been added, add automatic translations
-  const langs = _config.langs;
-  let hasNewLangs = false;
-  for (let i = 0; i < langs.length; i++) {
-    const lang = langs[i];
-    if (prevLangs.indexOf(lang) < 0) {
-      hasNewLangs = true;
-      break;
+  if (_autoTranslateNewKeys) {
+    const langs = _config.langs;
+    let hasNewLangs = false;
+    for (let i = 0; i < langs.length; i++) {
+      const lang = langs[i];
+      if (prevLangs.indexOf(lang) < 0) {
+        hasNewLangs = true;
+        break;
+      }
+    }
+    if (hasNewLangs) {
+      const keyIds = Object.keys(_keys);
+      story.info('db', 'Fetching auto translations for new languages...');
+      keyIds.forEach(keyId => {
+        fetchAutomaticTranslationsForKey(keyId, { story });
+      });
     }
   }
-  if (hasNewLangs) {
-    const keyIds = Object.keys(_keys);
-    story.info('db', 'Fetching auto translations for new languages...');
-    keyIds.forEach(keyId => {
-      fetchAutomaticTranslationsForKey(keyId, { story });
-    });
-  }
+
   return updatedConfig;
 }
 
@@ -342,10 +348,12 @@ async function parseSrcFiles({ story }: { story: StoryT }) {
   publish('parsedSrcFiles');
 
   // Try to add automatic translations
-  story.info('db', 'Fetching auto translations...');
-  newKeys.forEach(keyId => {
-    fetchAutomaticTranslationsForKey(keyId, { story });
-  });
+  if (_autoTranslateNewKeys) {
+    story.info('db', 'Fetching auto translations...');
+    newKeys.forEach(keyId => {
+      fetchAutomaticTranslationsForKey(keyId, { story });
+    });
+  }
 
   return _keys;
 }
@@ -407,10 +415,12 @@ async function onSrcFileAdded(
   }
 
   // Try to add automatic translations
-  mainStory.info('db', 'Fetching auto translations...');
-  newKeyIds.forEach(keyId => {
-    fetchAutomaticTranslationsForKey(keyId, { story: mainStory });
-  });
+  if (_autoTranslateNewKeys) {
+    mainStory.info('db', 'Fetching auto translations...');
+    newKeyIds.forEach(keyId => {
+      fetchAutomaticTranslationsForKey(keyId, { story: mainStory });
+    });
+  }
 }
 
 function fetchAutomaticTranslationsForKey(
