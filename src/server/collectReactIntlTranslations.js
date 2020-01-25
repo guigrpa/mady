@@ -9,11 +9,13 @@ import type {
 } from '../common/types';
 
 export default function collectReactIntlTranslations({
+  originalLang,
   lang,
   keys,
   translations,
   story,
 }: {|
+  originalLang: string,
   lang: string,
   keys: MapOf<InternalKeyT>,
   translations: Array<InternalTranslationT>,
@@ -31,7 +33,7 @@ export default function collectReactIntlTranslations({
     const key = keys[keyId];
     const { reactIntlId } = key;
     if (!reactIntlId) return;
-    if (key.text.indexOf('{') >= 0) {
+    if (key.text.indexOf('{') >= 0 || lang === originalLang) {
       finalTranslations[reactIntlId] = key.text;
     }
   });
