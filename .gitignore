@@ -21,6 +21,7 @@ node_modules
 # ------------
 # All projects
 /lib
+/production/lib
 
 # Project-specific
 /public/assets
