@@ -31,11 +31,14 @@ const DEFAULT_CONFIG: Config = {
 };
 
 // ==============================================
-// Init
+// Declarations
 // ==============================================
-let _onChange: Function | null | undefined;
-let _watch: boolean;
+let _localeDir: string;
+let _otherLocaleDirs: string[] = [];
 let _autoTranslateNewKeys: boolean;
+let _onChange: Function | null | undefined;
+let _configPath: string;
+let _config: Config = DEFAULT_CONFIG;
 
 type Options = {
   localeDir: string;
@@ -45,71 +48,25 @@ type Options = {
   onChange?: Function;
 };
 
+// ==============================================
+// Init
+// ==============================================
 const init = (options: Options) => {
-  _onChange = options.onChange;
-  _watch = !!options.watch;
+  _localeDir = options.localeDir;
+  _otherLocaleDirs = options.otherLocaleDirs || [];
   _autoTranslateNewKeys = !!options.autoTranslateNewKeys;
-  initLocaleDir(options);
+  _onChange = options.onChange;
+  fs.ensureDirSync(_localeDir);
   initConfig();
   initKeys();
   initAutoTranslations();
   initTranslations();
-};
-
-// ==============================================
-// Locale dir
-// ==============================================
-let _localeDir: string;
-let _otherLocaleDirs: string[] = [];
-const setLocaleDir = (localeDir: string) => {
-  _localeDir = localeDir;
-};
-
-const initLocaleDir = (options: Options) => {
-  _localeDir = options.localeDir;
-  _otherLocaleDirs = options.otherLocaleDirs || [];
-  fs.ensureDirSync(_localeDir);
-};
-
-// ==============================================
-// Config
-// ==============================================
-let _configPath: string;
-let _config: Config;
-
-const setConfigPath = (configPath: string) => {
-  _configPath = configPath;
-};
-const setConfig = (config: Config) => {
-  _config = config;
-};
-
-const initConfig = () => {
-  _configPath = path.join(_localeDir, 'config.json');
-  try {
-    mainStory.info(SRC, `Reading file ${chalk.cyan.bold(_configPath)}...`);
-    fs.statSync(_configPath);
-    readConfig();
-    _config = addDefaults(_config, DEFAULT_CONFIG);
-    saveConfig();
-  } catch (err) {
-    mainStory.error(SRC, `Error reading config: ${err.message}`, {
-      attach: err,
-      attachLevel: 'trace',
-    });
-    _config = DEFAULT_CONFIG;
-    saveConfig();
-  }
-};
-
-const readConfig = () => {
-  _config = fs.readJsonSync(_configPath);
-};
-const saveConfig = () => {
-  fs.writeJsonSync(_configPath, _config, JSON_OPTIONS);
-  if (_watch) {
+  if (options.watch)
     initFileWatcher({ paths: _config.srcPaths, onEvent: onFileChange });
-  }
+};
+
+const _setLocaleDir = (localeDir: string) => {
+  _localeDir = localeDir;
 };
 
 const onFileChange = async (eventType: string, filePath0: string) => {
@@ -124,25 +81,30 @@ const onFileChange = async (eventType: string, filePath0: string) => {
   }
 };
 
+// ==============================================
+// Config
+// ==============================================
+const _setConfigPath = (configPath: string) => {
+  _configPath = configPath;
+};
+
 const getConfig = () => _config;
+const _setConfig = (config: Config) => {
+  _config = config;
+};
 
-const updateConfig = async (newAttrs: Partial<Config>) => {
-  const prevLangs = _config.langs;
-  const updatedConfig = merge(_config, newAttrs) as Config;
-  _config = updatedConfig;
-  mainStory.debug(SRC, 'New config:', { attach: updatedConfig });
-  saveConfig();
-  debouncedCompileTranslations();
-
-  // If new langs have been added, add automatic translations
-  if (_autoTranslateNewKeys) {
-    if (_config.langs.some((lang) => prevLangs.indexOf(lang) < 0)) {
-      mainStory.info(SRC, 'Fetching auto translations for new languages...');
-      Object.keys(_keys).forEach(fetchAutomaticTranslationsForKey);
-    }
+const initConfig = () => {
+  _configPath = path.join(_localeDir, 'config.json');
+  mainStory.info(SRC, `Reading file ${chalk.cyan.bold(_configPath)}...`);
+  let hasChanged = false;
+  if (fs.pathExistsSync(_configPath)) {
+    const config = fs.readJsonSync(_configPath);
+    _config = addDefaults(config, DEFAULT_CONFIG);
+    if (_config !== config) hasChanged = true;
+  } else {
+    hasChanged = true;
   }
-
-  return updatedConfig;
+  if (hasChanged) fs.writeJsonSync(_configPath, _config, JSON_OPTIONS);
 };
 
 // ==============================================
@@ -151,28 +113,23 @@ const updateConfig = async (newAttrs: Partial<Config>) => {
 let _keyPath: string;
 let _keys: Keys = {};
 
-const setKeyPath = (keyPath: string) => {
+const _setKeyPath = (keyPath: string) => {
   _keyPath = keyPath;
 };
-const setKeys = (keys: Keys) => {
+const _setKeys = (keys: Keys) => {
   _keys = keys;
 };
 
 const initKeys = () => {
   _keyPath = path.join(_localeDir, 'keys.json');
-  try {
-    fs.statSync(_keyPath);
-  } catch (err) {
+  mainStory.info(SRC, `Reading file ${chalk.cyan.bold(_keyPath)}...`);
+  if (fs.pathExistsSync(_keyPath)) {
+    _keys = fs.readJsonSync(_keyPath);
+  } else {
     saveKeys();
-  } finally {
-    mainStory.info(SRC, `Reading file ${chalk.cyan.bold(_keyPath)}...`);
-    readKeys();
   }
 };
 
-const readKeys = () => {
-  _keys = fs.readJsonSync(_keyPath);
-};
 const saveKeys = () => {
   mainStory.debug(SRC, `Writing ${chalk.cyan.bold(_keyPath)}...`);
   fs.writeJsonSync(_keyPath, _keys, JSON_OPTIONS);
@@ -719,7 +676,6 @@ const getAutoTranslation = async (text: string, lang: string) => {
 export {
   init,
   getConfig,
-  updateConfig,
   getKeys,
   getKey,
   createKey,
@@ -736,10 +692,10 @@ export {
   getAutoTranslation,
   // Only for unit tests
   DEFAULT_CONFIG as _DEFAULT_CONFIG,
-  setLocaleDir as _setLocaleDir,
-  setKeyPath as _setKeyPath,
-  setConfigPath as _setConfigPath,
-  setConfig as _setConfig,
-  setKeys as _setKeys,
+  _setLocaleDir,
+  _setKeyPath,
+  _setConfigPath,
+  _setConfig,
+  _setKeys,
   setTranslations as _setTranslations,
 };
