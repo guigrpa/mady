@@ -18,6 +18,5 @@
   ],
   "msgRegexps": [],
   "fMinify": false,
-  "fJsOutput": true,
-  "fJsonOutput": false
+  "fJsOutput": true
 }

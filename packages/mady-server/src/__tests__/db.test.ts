@@ -55,17 +55,6 @@ describe('db', () => {
     expect(db.getConfig()).toEqual(db._DEFAULT_CONFIG);
   });
 
-  it('should allow updating the config', async () => {
-    const writeJsonSync = fs.writeJsonSync as any;
-    writeJsonSync.mockClear();
-    await db.updateConfig({ fMinify: true });
-    expect(db.getConfig().fMinify).toBe(true);
-    expect(writeJsonSync.mock.calls[0][0]).toEqual(
-      path.join(BASE_PATH, 'config.json')
-    );
-    await db.updateConfig(db._DEFAULT_CONFIG);
-  });
-
   // ==========================================
   // Keys
   // ==========================================

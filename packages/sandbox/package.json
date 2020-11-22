@@ -21,7 +21,7 @@
     "url": "git+https://github.com/guigrpa/mady.git"
   },
   "scripts": {
-    "mady": "mady --no-open"
+    "dev": "mady --no-open"
   },
   "dependencies": {
     "mady-server": "*"

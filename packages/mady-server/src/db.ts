@@ -10,7 +10,6 @@ import type { Config, Key, Keys, Translation, Translations } from './types';
 import { init as initFileWatcher } from './fileWatcher';
 import { parseAll, parseOne } from './parseSources';
 import compile from './compileTranslations';
-import collectJsonTranslations from './collectJsonTranslations';
 import autoTranslate from './autoTranslate';
 
 const SRC = 'mady-db';
@@ -27,7 +26,6 @@ const DEFAULT_CONFIG: Config = {
   msgRegexps: [],
   fMinify: false,
   fJsOutput: true,
-  fJsonOutput: false,
 };
 
 // ==============================================
@@ -41,6 +39,7 @@ let _configPath: string;
 let _config: Config = DEFAULT_CONFIG;
 let _keyPath: string;
 let _keys: Keys = {};
+let _translations: Translations = {};
 
 type Options = {
   localeDir: string;
@@ -71,18 +70,6 @@ const _setLocaleDir = (localeDir: string) => {
   _localeDir = localeDir;
 };
 
-const onFileChange = async (eventType: string, filePath0: string) => {
-  const filePath = slash(filePath0);
-  if (eventType === 'unlink') {
-    onSrcFileDeleted(filePath, { save: true });
-  } else if (eventType === 'add') {
-    onSrcFileAdded(filePath, { save: true });
-  } else if (eventType === 'change') {
-    await onSrcFileDeleted(filePath, { save: false });
-    onSrcFileAdded(filePath, { save: true, forceSave: true });
-  }
-};
-
 // ==============================================
 // Config
 // ==============================================
@@ -97,7 +84,7 @@ const _setConfig = (config: Config) => {
 
 const initConfig = () => {
   _configPath = path.join(_localeDir, 'config.json');
-  mainStory.info(SRC, `Reading file ${chalk.cyan.bold(_configPath)}...`);
+  mainStory.info(SRC, `Reading file ${chalk.cyan(_configPath)}...`);
   let hasChanged = false;
   if (fs.pathExistsSync(_configPath)) {
     const config = fs.readJsonSync(_configPath);
@@ -116,15 +103,9 @@ const _setKeyPath = (keyPath: string) => {
   _keyPath = keyPath;
 };
 
-const getKeys = () => Object.values(_keys).filter((o) => !o.isDeleted);
-const getKey = (id: string) => _keys[id];
-const _setKeys = (keys: Keys) => {
-  _keys = keys;
-};
-
 const initKeys = () => {
   _keyPath = path.join(_localeDir, 'keys.json');
-  mainStory.info(SRC, `Reading file ${chalk.cyan.bold(_keyPath)}...`);
+  mainStory.info(SRC, `Reading file ${chalk.cyan(_keyPath)}...`);
   if (fs.pathExistsSync(_keyPath)) {
     _keys = fs.readJsonSync(_keyPath);
   } else {
@@ -133,9 +114,19 @@ const initKeys = () => {
 };
 
 const saveKeys = () => {
-  mainStory.debug(SRC, `Writing ${chalk.cyan.bold(_keyPath)}...`);
+  mainStory.debug(SRC, `Writing ${chalk.cyan(_keyPath)}...`);
   fs.writeJsonSync(_keyPath, _keys, JSON_OPTIONS);
 };
+
+const getKeys = () => Object.values(_keys).filter((o) => !o.isDeleted);
+const _setKeys = (keys: Keys) => {
+  _keys = keys;
+};
+
+const getKeysForScope = (scope: string | null) =>
+  Object.values(_keys).filter((o) => !o.isDeleted && o.scope == scope);
+
+const getKey = (id: string) => _keys[id];
 
 const createKey = async (newAttrs: Partial<Key>) => {
   const text = newAttrs.text as string;
@@ -156,15 +147,15 @@ const createKey = async (newAttrs: Partial<Key>) => {
 };
 
 const updateKey = async (id: string, newAttrs: Partial<Key>) => {
-  const updatedKey = merge(_keys[id], newAttrs);
-  _keys[id] = updatedKey as Key;
+  const updatedKey = merge(_keys[id], newAttrs) as Key;
+  _keys[id] = updatedKey;
   saveKeys();
   debouncedCompileTranslations();
   return updatedKey;
 };
 
 // List all scopes being used in keys
-const getScopeList = () => {
+const getScopes = () => {
   const scopes: Record<string, boolean> = {};
   Object.keys(_keys).forEach((id) => {
     const { scope } = _keys[id];
@@ -236,6 +227,20 @@ const parseSrcFiles = async () => {
   return Object.values(_keys);
 };
 
+const onFileChange = async (eventType: string, filePath0: string) => {
+  const filePath = slash(filePath0);
+  if (eventType === 'unlink') {
+    onSrcFileDeleted(filePath, { save: true });
+  } else if (eventType === 'add') {
+    onSrcFileAdded(filePath, { save: true });
+
+    // The general case (change) is equivalent to deleting the file and adding it anew
+  } else if (eventType === 'change') {
+    await onSrcFileDeleted(filePath, { save: false });
+    onSrcFileAdded(filePath, { save: true, forceSave: true });
+  }
+};
+
 const onSrcFileDeleted = async (
   filePath: string,
   { save }: { save?: boolean } = {}
@@ -294,9 +299,9 @@ const fetchAutomaticTranslationsForKey = (keyId: string) => {
   const key = _keys[keyId];
   const { text } = key;
 
-  // Abort if message has MessageFormat tags (cannot be auto-translated
-  // reliably)
+  // Abort if message has MessageFormat tags (unreliable)
   if (text.indexOf('{') >= 0) return;
+
   _config.langs.forEach(async (lang) => {
     if (lang.startsWith(_config.originalLang)) return;
     if (getKeyTranslations(keyId, lang).length) return;
@@ -310,45 +315,32 @@ const fetchAutomaticTranslationsForKey = (keyId: string) => {
 // ==============================================
 // Translations
 // ==============================================
-let _translations: Translations = {};
-
 const getLangPath = (lang: string) => path.join(_localeDir, `${lang}.json`);
 const getCompiledLangPath = (lang: string, scope: string | null): string =>
   scope != null
     ? path.join(_localeDir, 'scoped', `${scope}-${lang}.js`)
     : path.join(_localeDir, `${lang}.js`);
-const getJsonLangPath = (lang: string) =>
-  path.join(_localeDir, `${lang}.out.json`);
-const setTranslations = (translations: Translations) => {
-  _translations = translations;
-};
 
 const initTranslations = () => {
   _config.langs.forEach((lang) => {
     const langPath = getLangPath(lang);
-    try {
-      fs.statSync(langPath);
-    } catch (err) {
+    mainStory.info(SRC, `Reading file ${chalk.cyan(langPath)}...`);
+    if (fs.pathExistsSync(langPath)) {
+      const translations = fs.readJsonSync(getLangPath(lang));
+      if (translations) _translations = merge(_translations, translations);
+    } else {
       fs.writeJsonSync(langPath, {}, JSON_OPTIONS);
-    } finally {
-      mainStory.info(SRC, `Reading file ${chalk.cyan.bold(langPath)}...`);
-      readTranslations(lang);
     }
   });
 };
 
-const readTranslations = (lang: string) => {
-  const translations = fs.readJsonSync(getLangPath(lang));
-  if (translations) _translations = merge(_translations, translations);
-};
-
-const readAllTranslationsFromAnotherDir = (dir: string) => {
+const readTranslationsFromAnotherDir = (dir: string) => {
   let out = {};
   _config.langs.forEach((lang) => {
-    try {
-      out = merge(out, fs.readJsonSync(path.join(dir, `${lang}.json`)));
-    } catch (err) {
-      /* swallow: we ignore langs for which there are no translations */
+    const langPath = path.join(dir, `${lang}.json`);
+    if (fs.pathExistsSync(langPath)) {
+      mainStory.info(SRC, `Reading file ${chalk.cyan(langPath)}...`);
+      out = merge(out, fs.readJsonSync(langPath));
     }
   });
   return out;
@@ -363,37 +355,23 @@ const saveTranslations = (lang: string) => {
     }
   });
   const langPath = getLangPath(lang);
-  mainStory.debug(SRC, `Writing ${chalk.cyan.bold(langPath)}...`);
+  mainStory.debug(SRC, `Writing ${chalk.cyan(langPath)}...`);
   fs.writeJsonSync(langPath, langTranslations, JSON_OPTIONS);
 };
 
 const getTranslations = () => Object.values(_translations);
-
-const getLangTranslations = (
-  lang: string,
-  refTranslations: Translations = _translations
-) => {
-  const out: Translation[] = [];
-  Object.keys(refTranslations).forEach((translationId) => {
-    const translation = refTranslations[translationId];
-    if (!translation.isDeleted && translation.lang === lang) {
-      out.push(translation);
-    }
-  });
-  return out;
+const _setTranslations = (translations: Translations) => {
+  _translations = translations;
 };
 
-const getKeyTranslations = (keyId: string, lang?: string) => {
-  const out: Translation[] = [];
-  Object.keys(_translations).forEach((translationId) => {
-    const translation = _translations[translationId];
-    if (translation.isDeleted) return;
-    if (lang && translation.lang !== lang) return;
-    if (translation.keyId !== keyId) return;
-    out.push(translation);
-  });
-  return out;
-};
+const getLangTranslations = (lang: string, refTranslations = _translations) =>
+  Object.values(refTranslations).filter((o) => !o.isDeleted && o.lang === lang);
+
+const getKeyTranslations = (keyId: string, lang?: string) =>
+  Object.values(_translations).filter(
+    (o) =>
+      !o.isDeleted && o.keyId === keyId && (lang == null || o.lang === lang)
+  );
 
 const getTranslation = (id: string) => _translations[id];
 
@@ -416,8 +394,11 @@ const createTranslation = async (newAttrs: Partial<Translation>) => {
   return newTranslation;
 };
 
-const updateTranslation = async (id: string, newAttrs: Object) => {
-  const updatedTranslation = merge(_translations[id], newAttrs);
+const updateTranslation = async (
+  id: string,
+  newAttrs: Partial<Translation>
+) => {
+  const updatedTranslation = merge(_translations[id], newAttrs) as Translation;
   _translations[id] = updatedTranslation;
   saveTranslations(updatedTranslation.lang);
   debouncedCompileTranslations();
@@ -445,7 +426,6 @@ const compileTranslations = async () => {
   });
   loadKeys(_keys);
 
-  const { fMinify } = _config;
   try {
     // Gather all translations (incl. otherLocaleDirs)
     mainStory.debug(SRC, 'Gathering translations...');
@@ -461,7 +441,7 @@ const compileTranslations = async () => {
       });
     };
     _otherLocaleDirs.forEach((dir) => {
-      const otherTranslations = readAllTranslationsFromAnotherDir(dir);
+      const otherTranslations = readTranslationsFromAnotherDir(dir);
       loadTranslations(otherTranslations);
     });
     loadTranslations(_translations);
@@ -474,44 +454,25 @@ const compileTranslations = async () => {
 
       // Generate JS output
       if (_config.fJsOutput) {
-        const scopes = ([null] as Array<string | null>).concat(getScopeList());
+        const scopes = ([null] as Array<string | null>).concat(getScopes());
         for (let k = 0; k < scopes.length; k++) {
           const scope = scopes[k];
           const translationSubset = translations.filter(({ keyId }) => {
             const key = keys[keyId];
-            if (!key) return false;
-            if (key.scope == null) return scope == null;
-            return key.scope === scope;
+            return key && key.scope == scope;
           });
-          console.log(`${lang} - ${scope}`);
-          console.log(translationSubset.map((o) => o.translation));
-          // TODO: consider adding scoped translations with braces to the corresponding scoped js
           const compiledLangPath = getCompiledLangPath(lang, scope);
           fs.ensureDirSync(path.dirname(compiledLangPath));
           const fnTranslate = await compile({
             lang,
             keys,
             translations: translationSubset,
-            fAlwaysIncludeKeysWithBraces: scope == null,
-            fMinify,
+            scope,
+            fMinify: _config.fMinify,
           });
-          mainStory.debug(
-            SRC,
-            `Writing ${chalk.cyan.bold(compiledLangPath)}...`
-          );
+          mainStory.debug(SRC, `Writing ${chalk.cyan(compiledLangPath)}...`);
           fs.writeFileSync(compiledLangPath, fnTranslate, 'utf8');
         }
-      }
-
-      // Generate JSON outputs
-      if (_config.fJsonOutput) {
-        const jsonLangPath = getJsonLangPath(lang);
-        const jsonTranslations = collectJsonTranslations({
-          lang,
-          keys,
-          translations,
-        });
-        fs.writeJsonSync(jsonLangPath, jsonTranslations, JSON_OPTIONS);
       }
     }
     if (_onChange) _onChange();
@@ -579,10 +540,11 @@ const getAllTranslations = (langs: string[], refTranslations: Translations) => {
     // story.debug(SRC, `Parent translations for ${lang}`, { attach: parentTranslations });
     const ownTranslations = getLangTranslations(lang, refTranslations);
     // story.debug(SRC, `Own translations for ${lang}`, { attach: ownTranslations });
-    langStructure[lang].translations = childrenTranslations.concat(
-      parentTranslations,
-      ownTranslations
-    );
+    langStructure[lang].translations = [
+      ...childrenTranslations,
+      ...parentTranslations,
+      ...ownTranslations,
+    ];
   });
 
   // Replace lang structure by the translations themselves
@@ -640,10 +602,7 @@ const initAutoTranslations = () => {
   } catch (err) {
     saveAutoTranslations();
   } finally {
-    mainStory.info(
-      SRC,
-      `Reading file ${chalk.cyan.bold(_autoTranslationsPath)}...`
-    );
+    mainStory.info(SRC, `Reading file ${chalk.cyan(_autoTranslationsPath)}...`);
     readGoogleCache();
   }
 };
@@ -677,6 +636,7 @@ export {
   init,
   getConfig,
   getKeys,
+  getKeysForScope,
   getKey,
   createKey,
   updateKey,
@@ -697,5 +657,5 @@ export {
   _setConfigPath,
   _setConfig,
   _setKeys,
-  setTranslations as _setTranslations,
+  _setTranslations,
 };

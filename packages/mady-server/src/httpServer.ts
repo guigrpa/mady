@@ -5,7 +5,6 @@ import compression from 'compression';
 import bodyParser from 'body-parser';
 import {
   getConfig,
-  updateConfig,
   parseSrcFiles,
   getKeys,
   createKey,
@@ -55,7 +54,6 @@ const init = (options: Options) => {
 // ==============================================
 const addEndpoints = (app: Express) => {
   app.get('/mady-api/config', apiGetConfig);
-  app.post('/mady-api/config', apiUpdateConfig);
   app.get('/mady-api/parse', apiParse);
   app.get('/mady-api/keys', apiGetKeys);
   app.post('/mady-api/key', apiCreateKey);
@@ -71,11 +69,6 @@ const addEndpoints = (app: Express) => {
 // Config
 const apiGetConfig: express.RequestHandler = async (_req, res) => {
   res.json(getConfig());
-};
-
-const apiUpdateConfig: express.RequestHandler = async (req, res) => {
-  const config = await updateConfig(req.body);
-  res.json(config);
 };
 
 // Parse

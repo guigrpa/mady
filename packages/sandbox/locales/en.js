@@ -23,6 +23,5 @@ var plural = function (value, offset, lcfunc, data, isOrdinal) {
 module.exports = {
   c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGludGVycG9sYXRpb246IHtOVU19: function(d) { return "Message with interpolation: " + d.NUM; },
   c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319: function(d) { return plural(d.NUM, 0, en, { one: "1 hamburger", other: number(d.NUM, "NUM") + " hamburgers" }); },
-  "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGEgZml4ZWQgZXJyb3Ige01JU1NJTkdfQlJBQ0tFVH0=": function(d) { return "Message with a fixed error " + d.MISSING_BRACKET; },
-  "U2NvcGVkIG1lc3NhZ2Ugd2l0aCB7TlVNfSBpdGVtcw==": function(d) { return "Scoped message with " + d.NUM + " items"; }
+  "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGEgZml4ZWQgZXJyb3Ige01JU1NJTkdfQlJBQ0tFVH0=": function(d) { return "Message with a fixed error " + d.MISSING_BRACKET; }
 };

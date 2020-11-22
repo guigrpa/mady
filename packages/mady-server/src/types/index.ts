@@ -7,7 +7,6 @@ export type Config = {
   msgRegexps: Array<string>;
   fMinify: boolean;
   fJsOutput: boolean;
-  fJsonOutput: boolean;
 };
 
 export type Key = {
