@@ -1,8 +1,0 @@
-[ignore]
-<PROJECT_ROOT>.*/__tests__/.*
-
-[libs]
-./flow
-
-[options]
-module.name_mapper='^\(.*\)\.sass$' -> '<PROJECT_ROOT>/tools/sass.js.flow'

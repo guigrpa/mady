@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve",
+    "lib": ["ES2017", "DOM"],
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "downlevelIteration": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "lib",
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  },
+  "include": ["src/**/*"]
+}

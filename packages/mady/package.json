@@ -1,0 +1,52 @@
+{
+  "name": "mady",
+  "version": "1.4.0",
+  "description": "Easy-to-use tool to manage and translate ICU MessageFormat messages",
+  "keywords": [
+    "i18n",
+    "MessageFormat",
+    "translation",
+    "locales",
+    "translator"
+  ],
+  "author": "Guillermo Grau Panea",
+  "license": "MIT",
+  "homepage": "https://github.com/guigrpa/mady#readme",
+  "bugs": {
+    "url": "https://github.com/guigrpa/mady/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guigrpa/mady.git"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "compile": "yarn compile:clean && yarn compile:types && yarn compile:main",
+    "compileFast": "yarn compile:clean && yarn compile:main",
+    "compileWatch": "yarn compile --watch",
+    "compile:clean": "rm -rf ./lib",
+    "compile:types": "tsc --pretty || exit 0",
+    "compile:main": "babel src -d lib --extensions \".ts,.js\" --copy-files",
+    "typecheck": "tsc --pretty",
+    "test": "jest --coverage --verbose 2>&1"
+  },
+  "dependencies": {
+    "js-base64": "^3.5.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.4",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/jest": "^26.0.15",
+    "jest": "^26.4.2",
+    "prettier": "^2.1.1"
+  },
+  "jest": {
+    "testRegex": ".*__tests__/.*\\.test\\.(ts|tsx)$",
+    "roots": [
+      "<rootDir>/src/"
+    ]
+  }
+}
