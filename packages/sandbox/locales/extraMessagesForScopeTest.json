@@ -1,0 +1,16 @@
+[
+  {
+    "isMarkdown": false,
+    "scope": "scope-1",
+    "context": "someContext",
+    "text": "Scoped message",
+    "filePath": "scope-1.js"
+  },
+  {
+    "isMarkdown": false,
+    "scope": "scope-1",
+    "context": "someContext",
+    "text": "Scoped message with {NUM} items",
+    "filePath": "scope-1.js"
+  }
+]

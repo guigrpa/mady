@@ -1,0 +1,10 @@
+{
+  "es:::::Context-less message": "Mensaje sin contexto",
+  "es:::::Context-full message": "Mensaje de contexto completo",
+  "es:::::Message with context": "Mensaje con contexto",
+  "de:::::Context-less message": "Kontextlose Nachricht",
+  "de:::::Message with context": "Nachricht mit Kontext",
+  "de:::::Context-full message": "Kontextreiche Nachricht",
+  "es:::::Message with emoji 🥰": "Mensaje con emoji 🥰",
+  "es:::::Scoped message": "Mensaje con alcance"
+}

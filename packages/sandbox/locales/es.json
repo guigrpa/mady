@@ -1,0 +1,42 @@
+{
+  "7227e25d-f97b-40c8-b126-d788c4973b17": {
+    "id": "7227e25d-f97b-40c8-b126-d788c4973b17",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Mensaje sin contexto",
+    "fuzzy": true,
+    "keyId": "Q29udGV4dC1sZXNzIG1lc3NhZ2U="
+  },
+  "788527df-6372-4b40-95b6-83b95ee39062": {
+    "id": "788527df-6372-4b40-95b6-83b95ee39062",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Mensaje con contexto",
+    "fuzzy": true,
+    "keyId": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGNvbnRleHQ="
+  },
+  "b51b237b-d796-47fb-8c9a-951cee289458": {
+    "id": "b51b237b-d796-47fb-8c9a-951cee289458",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Mensaje de contexto completo",
+    "fuzzy": true,
+    "keyId": "c29tZUNvbnRleHRfQ29udGV4dC1mdWxsIG1lc3NhZ2U="
+  },
+  "76f24048-5b27-4868-bf84-18f39399dde3": {
+    "id": "76f24048-5b27-4868-bf84-18f39399dde3",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Mensaje con emoji 🥰",
+    "fuzzy": true,
+    "keyId": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppIPCfpbA="
+  },
+  "967780b0-1614-49bb-bf8c-c0323eb803de": {
+    "id": "967780b0-1614-49bb-bf8c-c0323eb803de",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Mensaje con alcance",
+    "fuzzy": true,
+    "keyId": "U2NvcGVkIG1lc3NhZ2U="
+  }
+}

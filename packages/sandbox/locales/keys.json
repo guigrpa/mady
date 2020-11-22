@@ -1,0 +1,103 @@
+{
+  "Q29udGV4dC1sZXNzIG1lc3NhZ2U=": {
+    "id": "Q29udGV4dC1sZXNzIG1lc3NhZ2U=",
+    "context": null,
+    "text": "Context-less message",
+    "firstUsed": "2020-11-03T22:39:06.309Z",
+    "unusedSince": null,
+    "sources": [
+      "src/example.js"
+    ]
+  },
+  "c29tZUNvbnRleHRfQ29udGV4dC1mdWxsIG1lc3NhZ2U=": {
+    "id": "c29tZUNvbnRleHRfQ29udGV4dC1mdWxsIG1lc3NhZ2U=",
+    "context": "someContext",
+    "text": "Context-full message",
+    "firstUsed": "2020-11-03T22:59:13.438Z",
+    "unusedSince": "2020-11-03T22:59:55.781Z",
+    "sources": [],
+    "isDeleted": true
+  },
+  "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGNvbnRleHQ=": {
+    "id": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGNvbnRleHQ=",
+    "context": "someContext",
+    "text": "Message with context",
+    "firstUsed": "2020-11-03T22:59:55.781Z",
+    "unusedSince": null,
+    "sources": [
+      "src/example.js"
+    ]
+  },
+  "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGludGVycG9sYXRpb246IHtOVU19": {
+    "id": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGludGVycG9sYXRpb246IHtOVU19",
+    "context": "someContext",
+    "text": "Message with interpolation: {NUM}",
+    "firstUsed": "2020-11-03T23:11:52.814Z",
+    "unusedSince": null,
+    "sources": [
+      "src/example.js"
+    ]
+  },
+  "c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319": {
+    "id": "c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319",
+    "context": "someContext",
+    "text": "{NUM, plural, one{1 hamburger} other{# hamburgers}}",
+    "firstUsed": "2020-11-03T23:13:25.579Z",
+    "unusedSince": null,
+    "sources": [
+      "src/example.js"
+    ]
+  },
+  "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGFuIGVycm9yIHtNSVNTSU5HX0JSQUNLRVR9": {
+    "id": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGFuIGVycm9yIHtNSVNTSU5HX0JSQUNLRVR9",
+    "context": "someContext",
+    "text": "Message with an error {MISSING_BRACKET}",
+    "firstUsed": "2020-11-04T22:17:44.469Z",
+    "unusedSince": "2020-11-04T22:35:16.180Z",
+    "sources": []
+  },
+  "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGEgZml4ZWQgZXJyb3Ige01JU1NJTkdfQlJBQ0tFVH0=": {
+    "id": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGEgZml4ZWQgZXJyb3Ige01JU1NJTkdfQlJBQ0tFVH0=",
+    "context": "someContext",
+    "text": "Message with a fixed error {MISSING_BRACKET}",
+    "firstUsed": "2020-11-04T22:35:16.180Z",
+    "unusedSince": null,
+    "sources": [
+      "src/example.js"
+    ]
+  },
+  "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppIPCfpbA=": {
+    "id": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppIPCfpbA=",
+    "context": "someContext",
+    "text": "Message with emoji 🥰",
+    "firstUsed": "2020-11-04T22:42:22.212Z",
+    "unusedSince": null,
+    "sources": [
+      "src/example.js"
+    ]
+  },
+  "U2NvcGVkIG1lc3NhZ2U=": {
+    "id": "U2NvcGVkIG1lc3NhZ2U=",
+    "isMarkdown": false,
+    "scope": "scope-1",
+    "context": "someContext",
+    "text": "Scoped message",
+    "firstUsed": "2020-11-04T22:58:16.958Z",
+    "unusedSince": null,
+    "sources": [
+      "scope-1.js"
+    ]
+  },
+  "U2NvcGVkIG1lc3NhZ2Ugd2l0aCB7TlVNfSBpdGVtcw==": {
+    "id": "U2NvcGVkIG1lc3NhZ2Ugd2l0aCB7TlVNfSBpdGVtcw==",
+    "isMarkdown": false,
+    "scope": "scope-1",
+    "context": "someContext",
+    "text": "Scoped message with {NUM} items",
+    "firstUsed": "2020-11-04T23:01:16.409Z",
+    "unusedSince": null,
+    "sources": [
+      "scope-1.js"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "srcPaths": [
+    "src"
+  ],
+  "srcExtensions": [
+    ".js",
+    ".jsx",
+    ".ts",
+    ".tsx"
+  ],
+  "langs": [
+    "en",
+    "es"
+  ],
+  "originalLang": "en",
+  "msgFunctionNames": [
+    "_t"
+  ],
+  "msgRegexps": [],
+  "fMinify": false,
+  "fJsOutput": true,
+  "fJsonOutput": false
+}

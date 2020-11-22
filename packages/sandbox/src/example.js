@@ -1,0 +1,6 @@
+// _t('Context-less message')
+// _t('someContext_Message with context')
+// _t('someContext_Message with emoji 🥰')
+// _t('someContext_Message with interpolation: {NUM}', { NUM: 3 })
+// _t('someContext_{NUM, plural, one{1 hamburger} other{# hamburgers}}', { NUM: 2 })
+// _t('someContext_Message with a fixed error {MISSING_BRACKET}')
