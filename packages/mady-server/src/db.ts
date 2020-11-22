@@ -39,6 +39,8 @@ let _autoTranslateNewKeys: boolean;
 let _onChange: Function | null | undefined;
 let _configPath: string;
 let _config: Config = DEFAULT_CONFIG;
+let _keyPath: string;
+let _keys: Keys = {};
 
 type Options = {
   localeDir: string;
@@ -110,12 +112,12 @@ const initConfig = () => {
 // ==============================================
 // Keys
 // ==============================================
-let _keyPath: string;
-let _keys: Keys = {};
-
 const _setKeyPath = (keyPath: string) => {
   _keyPath = keyPath;
 };
+
+const getKeys = () => Object.values(_keys).filter((o) => !o.isDeleted);
+const getKey = (id: string) => _keys[id];
 const _setKeys = (keys: Keys) => {
   _keys = keys;
 };
@@ -134,8 +136,6 @@ const saveKeys = () => {
   mainStory.debug(SRC, `Writing ${chalk.cyan.bold(_keyPath)}...`);
   fs.writeJsonSync(_keyPath, _keys, JSON_OPTIONS);
 };
-const getKeys = () => Object.values(_keys).filter((o) => !o.isDeleted);
-const getKey = (id: string) => _keys[id];
 
 const createKey = async (newAttrs: Partial<Key>) => {
   const text = newAttrs.text as string;
