@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compileTranslations should allow minification 1`] = `"module.exports={keyId3:function(e){return\\"Hello \\"+e.NAME+\\"!\\"},keyId4:function(e){return\\"¡Adiós, \\"+e.NAME+\\"!\\"},keyId1:function(e){return\\"¡Hola!\\"}};"`;
+
+exports[`compileTranslations should compile a key with Markdown 1`] = `
+"
+module.exports = {
+};
+module.exports['ID'] = function() {
+      return \\"# Título\\"
+    };
+"
+`;
+
+exports[`compileTranslations should compile a key with plural selection 1`] = `
+"var es = function(n, ord
+) {
+  if (ord) return 'other';
+  return (n == 1) ? 'one' : 'other';
+};
+var number = function (value, name, offset) {
+  if (!offset) return value;
+  if (isNaN(value)) throw new Error(\\"Can't apply offset:\\" + offset + ' to argument \`' + name + '\` with non-numerical value ' + JSON.stringify(value) + '.');
+  return value - offset;
+};
+var plural = function (value, offset, lcfunc, data, isOrdinal) {
+  if ({}.hasOwnProperty.call(data, value)) return data[value];
+  if (offset) value -= offset;
+  var key = lcfunc(value, isOrdinal);
+  return key in data ? data[key] : data.other;
+};
+
+module.exports = {
+  ID: function(d) { return plural(d.NUM, 0, es, { one: \\"1 hamburguesa\\", other: number(d.NUM, \\"NUM\\") + \\" hamburguesas\\" }); }
+};
+"
+`;
+
+exports[`compileTranslations should include keys with braces, even if no translation is available 1`] = `
+"
+module.exports = {
+  keyId3: function(d) { return \\"Hello \\" + d.NAME + \\"!\\"; },
+  keyId4: function(d) { return \\"¡Adiós, \\" + d.NAME + \\"!\\"; },
+  keyId1: function(d) { return \\"¡Hola!\\"; }
+};
+"
+`;
+
+exports[`compileTranslations should include translations for keys still being used 1`] = `
+"
+module.exports = {
+  keyId1: function(d) { return \\"¡Hola!\\"; }
+};
+"
+`;
