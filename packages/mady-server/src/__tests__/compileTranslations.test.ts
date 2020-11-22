@@ -54,6 +54,7 @@ describe('compileTranslations', () => {
       lang: 'es',
       keys: KEYS_WITHOUT_BRACES,
       translations: TRANSLATIONS_ARRAY,
+      scope: null,
     });
     expect(result).toMatchSnapshot();
   });
@@ -63,6 +64,7 @@ describe('compileTranslations', () => {
       lang: 'es',
       keys: KEYS_INCLUDING_SOME_WITH_BRACES,
       translations: TRANSLATIONS_ARRAY,
+      scope: null,
     });
     expect(result).toMatchSnapshot();
   });
@@ -86,6 +88,7 @@ describe('compileTranslations', () => {
             '{NUM, plural, one{1 hamburguesa} other{# hamburguesas}}',
         },
       ],
+      scope: null,
     });
     expect(result).toMatchSnapshot();
   });
@@ -109,6 +112,7 @@ describe('compileTranslations', () => {
           translation: '# Título',
         },
       ],
+      scope: null,
     });
     expect(result).toMatchSnapshot();
   });
@@ -118,6 +122,7 @@ describe('compileTranslations', () => {
       lang: 'es',
       keys: KEYS_INCLUDING_SOME_WITH_BRACES,
       translations: TRANSLATIONS_ARRAY,
+      scope: null,
       fMinify: true,
     });
     expect(result).toMatchSnapshot();
