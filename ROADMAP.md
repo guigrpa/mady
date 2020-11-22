@@ -3,12 +3,13 @@
   - [x] mady - translate function
   - [x] mady-server
   - [ ] mady-server as embeddable
+    - Make api route base configurable
+    -
   - [ ] test mady-server:
-    - scoped messages: why are those with braces not included in the scoped output?
     - why does editorial getExtraMessages() not output seq?
-  - [ ] mady-ui
+  - [ ] mady-ui, mady-ui-components
     - No Config from GUI
-    - Use giu as peer
+    - Use giu as peer (?) -- but then we
     - Main app: can receive "filter" props; then it will always show a filtered list...
     - Improve editing of long data. Include markdown preview?
     - Use Giu's DataTable
