@@ -15,6 +15,7 @@ import {
 } from './db';
 
 const SRC = 'mady-api';
+const DEFAULT_API_BASE = '/mady-api';
 
 // ==============================================
 // Main
@@ -23,6 +24,7 @@ type Options = {
   port?: number;
   expressApp?: Express;
   httpServer?: http.Server;
+  apiBase?: string;
 };
 
 const init = (options: Options) => {
@@ -38,7 +40,8 @@ const init = (options: Options) => {
   }
 
   // Add Mady endpoints
-  addEndpoints(expressApp);
+  const apiBase = options.apiBase || DEFAULT_API_BASE;
+  addEndpoints(expressApp, apiBase);
 
   // Create HTTP server if needed
   let { httpServer } = options;
@@ -52,15 +55,15 @@ const init = (options: Options) => {
 // ==============================================
 // Endpoints
 // ==============================================
-const addEndpoints = (app: Express) => {
-  app.get('/mady-api/config', apiGetConfig);
-  app.get('/mady-api/parse', apiParse);
-  app.get('/mady-api/keys', apiGetKeys);
-  app.post('/mady-api/key', apiCreateKey);
-  app.patch('/mady-api/key/:id', apiUpdateKey);
-  app.get('/mady-api/translations/:lang', apiGetTranslations);
-  app.post('/mady-api/translation', apiCreateTranslation);
-  app.patch('/mady-api/translation/:id', apiUpdateTranslation);
+const addEndpoints = (app: Express, base: string) => {
+  app.get(`${base}/config`, apiGetConfig);
+  app.get(`${base}/parse`, apiParse);
+  app.get(`${base}/keys`, apiGetKeys);
+  app.post(`${base}/key`, apiCreateKey);
+  app.patch(`${base}/key/:id`, apiUpdateKey);
+  app.get(`${base}/translations/:lang`, apiGetTranslations);
+  app.post(`${base}/translation`, apiCreateTranslation);
+  app.patch(`${base}/translation/:id`, apiUpdateTranslation);
 
   // Update translation
   // Get translations

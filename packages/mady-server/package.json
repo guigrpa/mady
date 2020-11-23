@@ -24,7 +24,6 @@
   },
   "main": "lib/serverModule.js",
   "scripts": {
-    "start": "node lib",
     "compile": "yarn compile:clean && yarn compile:types && yarn compile:main",
     "compileFast": "yarn compile:clean && yarn compile:main",
     "compileWatch": "yarn compile --watch",
