@@ -1,6 +1,7 @@
 import http from 'http';
 import { mainStory, addListener } from 'storyboard';
 import express, { Express } from 'express';
+import { set as timmSet } from 'timm';
 import compression from 'compression';
 import bodyParser from 'body-parser';
 import wsServerListener from 'storyboard-listener-ws-server';
@@ -13,6 +14,7 @@ import {
   getLangTranslations,
   createTranslation,
   updateTranslation,
+  getTUpdated,
 } from './db';
 
 const SRC = 'mady-api';
@@ -69,9 +71,11 @@ const addEndpoints = (app: Express, base: string) => {
   app.get(`${base}/translations/:lang`, apiGetTranslations);
   app.post(`${base}/translation`, apiCreateTranslation);
   app.patch(`${base}/translation/:id`, apiUpdateTranslation);
+};
 
-  // Update translation
-  // Get translations
+// Polling
+const apiGetTUpdated: express.RequestHandler = async (_req, res) => {
+  res.json({ tUpdated: getTUpdated() });
 };
 
 // Config
@@ -81,13 +85,14 @@ const apiGetConfig: express.RequestHandler = async (_req, res) => {
 
 // Parse
 const apiParse: express.RequestHandler = async (_req, res) => {
-  const keys = await parseSrcFiles();
-  res.json(keys);
+  await parseSrcFiles();
+  res.json({ tUpdated: getTUpdated() });
 };
 
 // Keys
 const apiGetKeys: express.RequestHandler = async (_req, res) => {
-  res.json(getKeys());
+  const keys = getKeys();
+  res.json({ keys, tUpdated: getTUpdated() });
 };
 
 const apiCreateKey: express.RequestHandler = async (req, res) => {
@@ -104,7 +109,8 @@ const apiUpdateKey: express.RequestHandler = async (req, res) => {
 
 // Translations
 const apiGetTranslations: express.RequestHandler = async (req, res) => {
-  res.json(getLangTranslations(req.params.lang));
+  const translations = getLangTranslations(req.params.lang);
+  res.json({ translations, tUpdated: getTUpdated() });
 };
 
 const apiCreateTranslation: express.RequestHandler = async (req, res) => {
