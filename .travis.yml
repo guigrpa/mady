@@ -1,8 +1,7 @@
 language: node_js
 node_js:
-  - "9"
-  - "8"
-  - "6"
+  - '10'
+  - '12'
 before_script:
   - export TZ=Europe/Madrid
 script: npm run travis
