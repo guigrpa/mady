@@ -40,6 +40,7 @@ let _config: Config = DEFAULT_CONFIG;
 let _keyPath: string;
 let _keys: Keys = {};
 let _translations: Translations = {};
+let _timeModified = new Date().getTime();
 
 type Options = {
   localeDir: string;
@@ -69,6 +70,8 @@ const init = (options: Options) => {
 const _setLocaleDir = (localeDir: string) => {
   _localeDir = localeDir;
 };
+
+const getTimeModified = () => _timeModified;
 
 // ==============================================
 // Config
@@ -116,6 +119,7 @@ const initKeys = () => {
 const saveKeys = () => {
   mainStory.debug(SRC, `Writing ${chalk.cyan(_keyPath)}...`);
   fs.writeJsonSync(_keyPath, _keys, JSON_OPTIONS);
+  _timeModified = new Date().getTime();
 };
 
 const getKeys = () => Object.values(_keys).filter((o) => !o.isDeleted);
@@ -357,6 +361,7 @@ const saveTranslations = (lang: string) => {
   const langPath = getLangPath(lang);
   mainStory.debug(SRC, `Writing ${chalk.cyan(langPath)}...`);
   fs.writeJsonSync(langPath, langTranslations, JSON_OPTIONS);
+  _timeModified = new Date().getTime();
 };
 
 const getTranslations = () => Object.values(_translations);
@@ -634,6 +639,7 @@ const getAutoTranslation = async (text: string, lang: string) => {
 // ==============================================
 export {
   init,
+  getTimeModified,
   getConfig,
   getKeys,
   getKeysForScope,
