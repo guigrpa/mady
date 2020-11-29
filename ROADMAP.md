@@ -1,21 +1,10 @@
 - Modules:
 
   - [x] mady - translate function
-  - [x] mady-server
-  - [ ] mady-server as embeddable
-
-    - Options:
-
-      - apiBase
-      - uiBase
-      - onChange
-      - expressApp, httpServer, otherLocaleDirs
-      - noWatch, noAutoTranslateNewKeys
-
-    - **How will we implement polling?**
-      - Sockets?
-      - Keep lastChangeDate -- poll every 2 s -- add timestamp to responses to user
-
+  - [ ] mady-server
+    - [ ] GET keys, translations: process query.scope when !== undefined
+    - [ ] Add GET keysAndTranslations with multiple langs and query.scope
+  - [x] mady-server as embeddable
   - [ ] test mady-server:
     - why does editorial getExtraMessages() not output seq?
   - [ ] mady-editor
