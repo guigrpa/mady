@@ -1,8 +1,9 @@
 import http from 'http';
-import { mainStory } from 'storyboard';
+import { mainStory, addListener } from 'storyboard';
 import express, { Express } from 'express';
 import compression from 'compression';
 import bodyParser from 'body-parser';
+import wsServerListener from 'storyboard-listener-ws-server';
 import {
   getConfig,
   parseSrcFiles,
@@ -22,13 +23,15 @@ const DEFAULT_API_BASE = '/mady-api';
 // ==============================================
 type Options = {
   port?: number;
+  // Non-standalone (Mady integrated with a user-provided server)
   expressApp?: Express;
-  httpServer?: http.Server;
   apiBase?: string;
+  uiBase?: string;
 };
 
 const init = (options: Options) => {
   mainStory.info(SRC, 'Initializing mady server...');
+  const isStandalone = options.expressApp != null;
 
   // Create Express app if needed
   let { expressApp } = options;
@@ -43,19 +46,21 @@ const init = (options: Options) => {
   const apiBase = options.apiBase || DEFAULT_API_BASE;
   addEndpoints(expressApp, apiBase);
 
+  // TODO: Serve Mady client
+
   // Create HTTP server if needed
-  let { httpServer } = options;
-  if (!httpServer) {
-    httpServer = http.createServer(expressApp);
+  if (isStandalone) {
+    const httpServer = http.createServer(expressApp);
     httpServer.listen(options.port);
+    addListener(wsServerListener, { httpServer });
   }
-  return httpServer;
 };
 
 // ==============================================
 // Endpoints
 // ==============================================
 const addEndpoints = (app: Express, base: string) => {
+  app.get(`${base}/tUpdated`, apiGetTUpdated);
   app.get(`${base}/config`, apiGetConfig);
   app.get(`${base}/parse`, apiParse);
   app.get(`${base}/keys`, apiGetKeys);

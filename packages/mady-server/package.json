@@ -22,7 +22,7 @@
   "bin": {
     "mady": "lib/index.js"
   },
-  "main": "lib/serverModule.js",
+  "main": "lib/serverPlugin.js",
   "scripts": {
     "compile": "yarn compile:clean && yarn compile:types && yarn compile:main",
     "compileFast": "yarn compile:clean && yarn compile:main",

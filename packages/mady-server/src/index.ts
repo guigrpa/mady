@@ -4,7 +4,6 @@ import path from 'path';
 import fs from 'fs-extra';
 import { mainStory, addListener } from 'storyboard';
 import consoleListener from 'storyboard-listener-console';
-import wsServerListener from 'storyboard-listener-ws-server';
 import program from 'commander';
 import opn from 'opn';
 import { init as httpInit } from './httpServer';
@@ -74,8 +73,7 @@ const run = async () => {
     await compileTranslations();
   } else {
     const { port } = cliOptions;
-    const httpServer = httpInit({ port });
-    addListener(wsServerListener, { httpServer });
+    httpInit({ port });
     if (cliOptions.open) {
       opn(`http://localhost:${port}/mady`).catch((err: Error) => {
         mainStory.error(SRC, 'Error opening the browser', { attach: err });
