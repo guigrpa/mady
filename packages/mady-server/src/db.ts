@@ -173,6 +173,15 @@ const getScopes = () => {
   return Object.keys(scopes);
 };
 
+const purgeKeys = () => {
+  const removeIds = Object.values(_keys)
+    .filter((key) => key.isDeleted)
+    .map((key) => key.id);
+  removeIds.forEach((id) => delete _keys[id]);
+  if (removeIds.length) saveKeys();
+  mainStory.info(SRC, `Purged keys: ${chalk.cyan(removeIds.length)}`);
+};
+
 // ==============================================
 // Translations
 // ==============================================
@@ -283,6 +292,25 @@ const updateTranslation = async (
   saveTranslations(updatedTranslation.lang);
   debouncedCompileTranslations();
   return updatedTranslation;
+};
+
+// Purge deleted translations + translations of missing/deleted keys
+const purgeTranslations = () => {
+  const removeIds = Object.values(_translations)
+    .filter((translation) => {
+      if (translation.isDeleted) return true;
+      const key = _keys[translation.keyId];
+      if (!key) return true;
+      if (key.isDeleted) return true;
+      return false;
+    })
+    .map((translation) => translation.id);
+  removeIds.forEach((id) => delete _translations[id]);
+  if (removeIds.length) {
+    _config.langs.forEach(saveTranslations);
+    debouncedCompileTranslations();
+  }
+  mainStory.info(SRC, `Purged translations: ${chalk.cyan(removeIds.length)}`);
 };
 
 // ==============================================
@@ -618,6 +646,14 @@ const getParentTranslations = (langStructure: LangStructure, lang: string) => {
 };
 
 // ==============================================
+// Purge
+// ==============================================
+const purge = async () => {
+  purgeKeys();
+  purgeTranslations();
+};
+
+// ==============================================
 // Public
 // ==============================================
 export {
@@ -647,6 +683,9 @@ export {
   updateTranslation,
   // --
   parseSrcFiles,
+  // --
   compileTranslations,
   debouncedCompileTranslations,
+  // --
+  purge,
 };

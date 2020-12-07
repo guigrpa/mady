@@ -14,6 +14,7 @@ import {
   createTranslation,
   updateTranslation,
   getTUpdated,
+  purge,
 } from './db';
 import { translate as autoTranslate } from './autoTranslate';
 
@@ -66,6 +67,7 @@ const addEndpoints = (app: Express, base: string) => {
   app.get(`${base}/tUpdated`, apiGetTUpdated);
   app.get(`${base}/config`, apiGetConfig);
   app.get(`${base}/parse`, apiParse);
+  app.get(`${base}/purge`, apiPurge);
   app.get(`${base}/keys`, apiGetKeys);
   app.post(`${base}/key`, apiCreateKey);
   app.patch(`${base}/key/:id`, apiUpdateKey);
@@ -88,6 +90,12 @@ const apiGetConfig: express.RequestHandler = async (_req, res) => {
 // Parse
 const apiParse: express.RequestHandler = async (_req, res) => {
   await parseSrcFiles();
+  res.json({ tUpdated: getTUpdated() });
+};
+
+// Purge
+const apiPurge: express.RequestHandler = async (_req, res) => {
+  await purge();
   res.json({ tUpdated: getTUpdated() });
 };
 
