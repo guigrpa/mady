@@ -6,7 +6,7 @@
     "firstUsed": "2020-11-03T22:39:06.309Z",
     "unusedSince": null,
     "sources": [
-      "src/example.js"
+      "sandbox/example.js"
     ]
   },
   "c29tZUNvbnRleHRfQ29udGV4dC1mdWxsIG1lc3NhZ2U=": {
@@ -25,7 +25,7 @@
     "firstUsed": "2020-11-03T22:59:55.781Z",
     "unusedSince": null,
     "sources": [
-      "src/example.js"
+      "sandbox/example.js"
     ]
   },
   "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGludGVycG9sYXRpb246IHtOVU19": {
@@ -35,7 +35,7 @@
     "firstUsed": "2020-11-03T23:11:52.814Z",
     "unusedSince": null,
     "sources": [
-      "src/example.js"
+      "sandbox/example.js"
     ]
   },
   "c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319": {
@@ -45,7 +45,7 @@
     "firstUsed": "2020-11-03T23:13:25.579Z",
     "unusedSince": null,
     "sources": [
-      "src/example.js"
+      "sandbox/example.js"
     ]
   },
   "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGFuIGVycm9yIHtNSVNTSU5HX0JSQUNLRVR9": {
@@ -63,7 +63,7 @@
     "firstUsed": "2020-11-04T22:35:16.180Z",
     "unusedSince": null,
     "sources": [
-      "src/example.js"
+      "sandbox/example.js"
     ]
   },
   "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppIPCfpbA=": {
@@ -73,7 +73,7 @@
     "firstUsed": "2020-11-04T22:42:22.212Z",
     "unusedSince": null,
     "sources": [
-      "src/example.js"
+      "sandbox/example.js"
     ]
   },
   "U2NvcGVkIG1lc3NhZ2U=": {
