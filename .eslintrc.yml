@@ -29,5 +29,11 @@ rules:
   '@typescript-eslint/no-empty-function': off
   '@typescript-eslint/explicit-module-boundary-types': off
   '@typescript-eslint/ban-ts-comment': off
-  '@typescript-eslint/ban-types': off
+  '@typescript-eslint/ban-types':
+    - 2
+    - types:
+        Function: false
+        Object: false
   import/no-extraneous-dependencies: 2 # very important!
+  react/display-name: off
+  react/prop-types: off
