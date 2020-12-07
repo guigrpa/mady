@@ -24,6 +24,7 @@
   },
   "main": "lib/serverPlugin.js",
   "scripts": {
+    "dev": "node lib --no-open",
     "compile": "yarn compile:clean && yarn compile:types && yarn compile:main",
     "compileFast": "yarn compile:clean && yarn compile:main",
     "compileWatch": "yarn compile --watch",
