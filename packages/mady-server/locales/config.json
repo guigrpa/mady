@@ -1,6 +1,6 @@
 {
   "srcPaths": [
-    "src"
+    "sandbox"
   ],
   "srcExtensions": [
     ".js",

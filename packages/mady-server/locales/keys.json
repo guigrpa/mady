@@ -4,10 +4,8 @@
     "context": null,
     "text": "Context-less message",
     "firstUsed": "2020-11-03T22:39:06.309Z",
-    "unusedSince": null,
-    "sources": [
-      "src/example.js"
-    ]
+    "unusedSince": "2020-12-07T06:54:00.930Z",
+    "sources": []
   },
   "c29tZUNvbnRleHRfQ29udGV4dC1mdWxsIG1lc3NhZ2U=": {
     "id": "c29tZUNvbnRleHRfQ29udGV4dC1mdWxsIG1lc3NhZ2U=",
@@ -23,30 +21,24 @@
     "context": "someContext",
     "text": "Message with context",
     "firstUsed": "2020-11-03T22:59:55.781Z",
-    "unusedSince": null,
-    "sources": [
-      "src/example.js"
-    ]
+    "unusedSince": "2020-12-07T06:54:00.930Z",
+    "sources": []
   },
   "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGludGVycG9sYXRpb246IHtOVU19": {
     "id": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGludGVycG9sYXRpb246IHtOVU19",
     "context": "someContext",
     "text": "Message with interpolation: {NUM}",
     "firstUsed": "2020-11-03T23:11:52.814Z",
-    "unusedSince": null,
-    "sources": [
-      "src/example.js"
-    ]
+    "unusedSince": "2020-12-07T06:54:00.930Z",
+    "sources": []
   },
   "c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319": {
     "id": "c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319",
     "context": "someContext",
     "text": "{NUM, plural, one{1 hamburger} other{# hamburgers}}",
     "firstUsed": "2020-11-03T23:13:25.579Z",
-    "unusedSince": null,
-    "sources": [
-      "src/example.js"
-    ]
+    "unusedSince": "2020-12-07T06:54:00.930Z",
+    "sources": []
   },
   "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGFuIGVycm9yIHtNSVNTSU5HX0JSQUNLRVR9": {
     "id": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGFuIGVycm9yIHtNSVNTSU5HX0JSQUNLRVR9",
@@ -61,20 +53,16 @@
     "context": "someContext",
     "text": "Message with a fixed error {MISSING_BRACKET}",
     "firstUsed": "2020-11-04T22:35:16.180Z",
-    "unusedSince": null,
-    "sources": [
-      "src/example.js"
-    ]
+    "unusedSince": "2020-12-07T06:54:00.930Z",
+    "sources": []
   },
   "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppIPCfpbA=": {
     "id": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppIPCfpbA=",
     "context": "someContext",
     "text": "Message with emoji 🥰",
     "firstUsed": "2020-11-04T22:42:22.212Z",
-    "unusedSince": null,
-    "sources": [
-      "src/example.js"
-    ]
+    "unusedSince": "2020-12-07T06:54:00.930Z",
+    "sources": []
   },
   "U2NvcGVkIG1lc3NhZ2U=": {
     "id": "U2NvcGVkIG1lc3NhZ2U=",
