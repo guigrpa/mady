@@ -67,7 +67,7 @@ describe('db', () => {
 
   it('should allow querying for all keys', () => {
     db._setKeys(INITIAL_KEYS);
-    expect(db.getKeys().length).toEqual(Object.keys(INITIAL_KEYS).length);
+    expect(db.getKeys({}).length).toEqual(Object.keys(INITIAL_KEYS).length);
   });
 
   it('should allow creating keys', async () => {
@@ -80,7 +80,7 @@ describe('db', () => {
       firstUsed: '2016-10-05T08:00:00.000Z',
     });
     expect(newKey).toMatchSnapshot();
-    expect(db.getKeys()).toMatchSnapshot();
+    expect(db.getKeys({})).toMatchSnapshot();
     expect(writeJsonSync.mock.calls[0][0]).toEqual(
       path.join(BASE_PATH, 'keys.json')
     );
@@ -93,7 +93,7 @@ describe('db', () => {
       sources: [],
     });
     expect(updatedKey).toMatchSnapshot();
-    expect(db.getKeys()).toMatchSnapshot();
+    expect(db.getKeys({})).toMatchSnapshot();
   });
 
   // ==========================================
@@ -118,10 +118,10 @@ describe('db', () => {
   it('should allow querying for all translations in a language', () => {
     db._setKeys(INITIAL_KEYS);
     db._setTranslations(INITIAL_TRANSLATIONS);
-    expect(db.getLangTranslations('es')).toEqual([
+    expect(db.getLangTranslations({ lang: 'es' })).toEqual([
       INITIAL_TRANSLATIONS.translationId1,
     ]);
-    expect(db.getLangTranslations('ca')).toEqual([
+    expect(db.getLangTranslations({ lang: 'ca' })).toEqual([
       INITIAL_TRANSLATIONS.translationId2,
     ]);
   });
