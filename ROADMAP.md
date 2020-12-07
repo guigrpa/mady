@@ -1,12 +1,8 @@
 - Modules:
 
   - [x] mady - translate function
-  - [ ] mady-server
-    - [ ] GET keys, translations: process query.scope when !== undefined
-    - [ ] Add GET keysAndTranslations with multiple langs and query.scope
+  - [x] mady-server
   - [x] mady-server as embeddable
-  - [ ] test mady-server:
-    - why does editorial getExtraMessages() not output seq?
   - [ ] mady-editor
     - No Config from GUI
     - Use giu as peer (?) -- but then we
