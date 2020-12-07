@@ -174,6 +174,118 @@ const getScopes = () => {
 };
 
 // ==============================================
+// Translations
+// ==============================================
+const getLangPath = (lang: string) => path.join(_localeDir, `${lang}.json`);
+const getCompiledLangPath = (lang: string, scope: string | null): string =>
+  scope != null
+    ? path.join(_localeDir, 'scoped', `${scope}-${lang}.js`)
+    : path.join(_localeDir, `${lang}.js`);
+
+const initTranslations = () => {
+  _config.langs.forEach((lang) => {
+    const langPath = getLangPath(lang);
+    mainStory.info(SRC, `Reading file ${chalk.cyan(langPath)}...`);
+    if (fs.pathExistsSync(langPath)) {
+      const translations = fs.readJsonSync(getLangPath(lang));
+      if (translations) _translations = merge(_translations, translations);
+    } else {
+      fs.writeJsonSync(langPath, {}, JSON_OPTIONS);
+    }
+  });
+};
+
+const readTranslationsFromAnotherDir = (dir: string) => {
+  let out = {};
+  _config.langs.forEach((lang) => {
+    const langPath = path.join(dir, `${lang}.json`);
+    if (fs.pathExistsSync(langPath)) {
+      mainStory.info(SRC, `Reading file ${chalk.cyan(langPath)}...`);
+      out = merge(out, fs.readJsonSync(langPath));
+    }
+  });
+  return out;
+};
+
+const saveTranslations = (lang: string) => {
+  const langTranslations: Translations = {};
+  Object.keys(_translations).forEach((translationId) => {
+    const translation = _translations[translationId];
+    if (translation.lang === lang) {
+      langTranslations[translation.id] = translation;
+    }
+  });
+  const langPath = getLangPath(lang);
+  mainStory.debug(SRC, `Writing ${chalk.cyan(langPath)}...`);
+  fs.writeJsonSync(langPath, langTranslations, JSON_OPTIONS);
+  _tUpdated = new Date().getTime();
+};
+
+const getTranslations = () => Object.values(_translations);
+const _setTranslations = (translations: Translations) => {
+  _translations = translations;
+};
+
+type GetTranslationsOptions = { lang: string; scope?: string | null };
+
+const getLangTranslations = (options: GetTranslationsOptions) =>
+  _getLangTranslations(options, _translations);
+
+const _getLangTranslations = (
+  { lang, scope }: GetTranslationsOptions,
+  refTranslations: Translations
+) =>
+  Object.values(refTranslations).filter((translation) => {
+    if (translation.isDeleted) return false;
+    if (translation.lang !== lang) return false;
+    if (scope !== undefined) {
+      const key = _keys[translation.keyId];
+      if (!key) return false;
+      if (key.isDeleted) return false;
+      if (key.scope != scope) return false;
+    }
+    return true;
+  });
+
+const getKeyTranslations = (keyId: string, lang?: string) =>
+  Object.values(_translations).filter(
+    (o) =>
+      !o.isDeleted && o.keyId === keyId && (lang == null || o.lang === lang)
+  );
+
+const getTranslation = (id: string) => _translations[id];
+
+const createTranslation = async (newAttrs: Partial<Translation>) => {
+  const { lang, translation, fuzzy, keyId } = newAttrs;
+  if (!lang) throw new Error('Translation language must be specified');
+  if (keyId == null) throw new Error('Translation key must be specified');
+  const id = uuidv4();
+  const newTranslation = {
+    id,
+    isDeleted: false,
+    lang,
+    translation,
+    fuzzy,
+    keyId,
+  } as Translation;
+  _translations[id] = newTranslation;
+  saveTranslations(lang);
+  debouncedCompileTranslations();
+  return newTranslation;
+};
+
+const updateTranslation = async (
+  id: string,
+  newAttrs: Partial<Translation>
+) => {
+  const updatedTranslation = merge(_translations[id], newAttrs) as Translation;
+  _translations[id] = updatedTranslation;
+  saveTranslations(updatedTranslation.lang);
+  debouncedCompileTranslations();
+  return updatedTranslation;
+};
+
+// ==============================================
 // Parsing and delta-parsing
 // ==============================================
 const parseSrcFiles = async () => {
@@ -319,118 +431,6 @@ const fetchAutomaticTranslationsForKey = (keyId: string) => {
       createTranslation({ lang, translation, fuzzy: true, keyId });
     }
   });
-};
-
-// ==============================================
-// Translations
-// ==============================================
-const getLangPath = (lang: string) => path.join(_localeDir, `${lang}.json`);
-const getCompiledLangPath = (lang: string, scope: string | null): string =>
-  scope != null
-    ? path.join(_localeDir, 'scoped', `${scope}-${lang}.js`)
-    : path.join(_localeDir, `${lang}.js`);
-
-const initTranslations = () => {
-  _config.langs.forEach((lang) => {
-    const langPath = getLangPath(lang);
-    mainStory.info(SRC, `Reading file ${chalk.cyan(langPath)}...`);
-    if (fs.pathExistsSync(langPath)) {
-      const translations = fs.readJsonSync(getLangPath(lang));
-      if (translations) _translations = merge(_translations, translations);
-    } else {
-      fs.writeJsonSync(langPath, {}, JSON_OPTIONS);
-    }
-  });
-};
-
-const readTranslationsFromAnotherDir = (dir: string) => {
-  let out = {};
-  _config.langs.forEach((lang) => {
-    const langPath = path.join(dir, `${lang}.json`);
-    if (fs.pathExistsSync(langPath)) {
-      mainStory.info(SRC, `Reading file ${chalk.cyan(langPath)}...`);
-      out = merge(out, fs.readJsonSync(langPath));
-    }
-  });
-  return out;
-};
-
-const saveTranslations = (lang: string) => {
-  const langTranslations: Translations = {};
-  Object.keys(_translations).forEach((translationId) => {
-    const translation = _translations[translationId];
-    if (translation.lang === lang) {
-      langTranslations[translation.id] = translation;
-    }
-  });
-  const langPath = getLangPath(lang);
-  mainStory.debug(SRC, `Writing ${chalk.cyan(langPath)}...`);
-  fs.writeJsonSync(langPath, langTranslations, JSON_OPTIONS);
-  _tUpdated = new Date().getTime();
-};
-
-const getTranslations = () => Object.values(_translations);
-const _setTranslations = (translations: Translations) => {
-  _translations = translations;
-};
-
-type GetTranslationsOptions = { lang: string; scope?: string | null };
-
-const getLangTranslations = (options: GetTranslationsOptions) =>
-  _getLangTranslations(options, _translations);
-
-const _getLangTranslations = (
-  { lang, scope }: GetTranslationsOptions,
-  refTranslations: Translations
-) =>
-  Object.values(refTranslations).filter((translation) => {
-    if (translation.isDeleted) return false;
-    if (translation.lang !== lang) return false;
-    if (scope !== undefined) {
-      const key = _keys[translation.keyId];
-      if (!key) return false;
-      if (key.isDeleted) return false;
-      if (key.scope != scope) return false;
-    }
-    return true;
-  });
-
-const getKeyTranslations = (keyId: string, lang?: string) =>
-  Object.values(_translations).filter(
-    (o) =>
-      !o.isDeleted && o.keyId === keyId && (lang == null || o.lang === lang)
-  );
-
-const getTranslation = (id: string) => _translations[id];
-
-const createTranslation = async (newAttrs: Partial<Translation>) => {
-  const { lang, translation, fuzzy, keyId } = newAttrs;
-  if (!lang) throw new Error('Translation language must be specified');
-  if (keyId == null) throw new Error('Translation key must be specified');
-  const id = uuidv4();
-  const newTranslation = {
-    id,
-    isDeleted: false,
-    lang,
-    translation,
-    fuzzy,
-    keyId,
-  } as Translation;
-  _translations[id] = newTranslation;
-  saveTranslations(lang);
-  debouncedCompileTranslations();
-  return newTranslation;
-};
-
-const updateTranslation = async (
-  id: string,
-  newAttrs: Partial<Translation>
-) => {
-  const updatedTranslation = merge(_translations[id], newAttrs) as Translation;
-  _translations[id] = updatedTranslation;
-  saveTranslations(updatedTranslation.lang);
-  debouncedCompileTranslations();
-  return updatedTranslation;
 };
 
 // ==============================================
@@ -621,28 +621,32 @@ const getParentTranslations = (langStructure: LangStructure, lang: string) => {
 // Public
 // ==============================================
 export {
+  DEFAULT_CONFIG as _DEFAULT_CONFIG,
+  // --
   init,
+  _setLocaleDir,
   getTUpdated,
+  // --
+  _setConfigPath,
   getConfig,
+  _setConfig,
+  // --
+  _setKeyPath,
   getKeys,
+  _setKeys,
   getKey,
   createKey,
   updateKey,
+  // --
   getTranslations,
+  _setTranslations,
   getLangTranslations,
   getKeyTranslations,
   getTranslation,
   createTranslation,
   updateTranslation,
+  // --
   parseSrcFiles,
   compileTranslations,
   debouncedCompileTranslations,
-  // Only for unit tests
-  DEFAULT_CONFIG as _DEFAULT_CONFIG,
-  _setLocaleDir,
-  _setKeyPath,
-  _setConfigPath,
-  _setConfig,
-  _setKeys,
-  _setTranslations,
 };
