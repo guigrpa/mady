@@ -1,7 +1,6 @@
 import http from 'http';
 import { mainStory, addListener } from 'storyboard';
 import express, { Express } from 'express';
-import { set as timmSet } from 'timm';
 import compression from 'compression';
 import bodyParser from 'body-parser';
 import wsServerListener from 'storyboard-listener-ws-server';
@@ -16,6 +15,7 @@ import {
   updateTranslation,
   getTUpdated,
 } from './db';
+import { translate as autoTranslate } from './autoTranslate';
 
 const SRC = 'mady-api';
 const DEFAULT_API_BASE = '/mady-api';
@@ -72,6 +72,7 @@ const addEndpoints = (app: Express, base: string) => {
   app.get(`${base}/translations/:lang`, apiGetTranslations);
   app.post(`${base}/translation`, apiCreateTranslation);
   app.patch(`${base}/translation/:id`, apiUpdateTranslation);
+  app.post(`${base}/autoTranslate`, apiAutoTranslate);
 };
 
 // Polling
@@ -129,6 +130,13 @@ const apiUpdateTranslation: express.RequestHandler = async (req, res) => {
   const translation = req.body;
   const updatedTranslation = await updateTranslation(id, translation);
   res.json(updatedTranslation);
+};
+
+// Auto-translate
+const apiAutoTranslate: express.RequestHandler = async (req, res) => {
+  const { lang, text } = req.body;
+  const translation = await autoTranslate({ text, lang });
+  res.json(translation);
 };
 
 // ==============================================
