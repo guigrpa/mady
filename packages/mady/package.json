@@ -41,7 +41,7 @@
     "@babel/preset-typescript": "^7.10.4",
     "@types/jest": "^26.0.15",
     "jest": "^26.4.2",
-    "prettier": "^2.1.1"
+    "prettier": "^2.2.1"
   },
   "jest": {
     "testRegex": ".*__tests__/.*\\.test\\.(ts|tsx)$",
