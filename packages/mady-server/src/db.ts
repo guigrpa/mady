@@ -10,11 +10,13 @@ import type { Config, Key, Keys, Translation, Translations } from './types';
 import { init as initFileWatcher } from './fileWatcher';
 import { parseAll, parseOne } from './parseSources';
 import compile from './compileTranslations';
-import autoTranslate from './autoTranslate';
+import {
+  init as initAutoTranslations,
+  translate as autoTranslate,
+} from './autoTranslate';
 
 const SRC = 'mady-db';
 const JSON_OPTIONS = { spaces: 2 };
-const DEBOUNCE_SAVE = 2000;
 const DEBOUNCE_COMPILE = 2000;
 const { UNIT_TESTING } = process.env;
 const DEFAULT_CONFIG: Config = {
@@ -61,7 +63,7 @@ const init = (options: Options) => {
   fs.ensureDirSync(_localeDir);
   initConfig();
   initKeys();
-  initAutoTranslations();
+  initAutoTranslations({ localeDir: _localeDir });
   initTranslations();
   if (options.watch)
     initFileWatcher({ paths: _config.srcPaths, onEvent: onFileChange });
@@ -312,7 +314,7 @@ const fetchAutomaticTranslationsForKey = (keyId: string) => {
   _config.langs.forEach(async (lang) => {
     if (lang.startsWith(_config.originalLang)) return;
     if (getKeyTranslations(keyId, lang).length) return;
-    const translation = await getAutoTranslation(text, lang);
+    const translation = await autoTranslate({ text, lang });
     if (translation != null) {
       createTranslation({ lang, translation, fuzzy: true, keyId });
     }
@@ -616,46 +618,6 @@ const getParentTranslations = (langStructure: LangStructure, lang: string) => {
 };
 
 // ==============================================
-// Auto translations
-// ==============================================
-let _autoTranslationsPath: string;
-let _autoTranslations: Record<string, string> = {}; // cache, saved to file
-
-const initAutoTranslations = () => {
-  _autoTranslationsPath = path.join(_localeDir, 'autoTranslations.json');
-  try {
-    fs.statSync(_autoTranslationsPath);
-  } catch (err) {
-    saveAutoTranslations();
-  } finally {
-    mainStory.info(SRC, `Reading file ${chalk.cyan(_autoTranslationsPath)}...`);
-    readGoogleCache();
-  }
-};
-
-const readGoogleCache = () => {
-  _autoTranslations = fs.readJsonSync(_autoTranslationsPath);
-};
-
-const saveAutoTranslations = () => {
-  fs.writeJsonSync(_autoTranslationsPath, _autoTranslations, JSON_OPTIONS);
-};
-const debouncedSaveAutoTranslations = UNIT_TESTING
-  ? saveAutoTranslations
-  : debounce(saveAutoTranslations, DEBOUNCE_SAVE);
-
-const getAutoTranslation = async (text: string, lang: string) => {
-  const cacheKey = `${lang}:::::${text}`;
-  let translation: string | null = _autoTranslations[cacheKey];
-  if (translation) return translation;
-  translation = await autoTranslate(text, { languageCodeTo: lang });
-  if (translation == null) return null;
-  _autoTranslations[cacheKey] = translation;
-  debouncedSaveAutoTranslations();
-  return translation;
-};
-
-// ==============================================
 // Public
 // ==============================================
 export {
@@ -675,7 +637,6 @@ export {
   parseSrcFiles,
   compileTranslations,
   debouncedCompileTranslations,
-  getAutoTranslation,
   // Only for unit tests
   DEFAULT_CONFIG as _DEFAULT_CONFIG,
   _setLocaleDir,
