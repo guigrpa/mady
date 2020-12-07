@@ -32,8 +32,9 @@ type Options = {
 };
 
 const init = (options: Options) => {
-  mainStory.info(SRC, 'Initializing mady server...');
-  const isStandalone = options.expressApp != null;
+  const isStandalone = options.expressApp == null;
+  const msg = isStandalone ? ' (stand-alone)' : '';
+  mainStory.info(SRC, `Initializing mady server${msg}...`);
 
   // Create Express app if needed
   let { expressApp } = options;
