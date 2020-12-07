@@ -24,13 +24,14 @@
   },
   "main": "lib/serverPlugin.js",
   "scripts": {
-    "dev": "node lib --no-open",
+    "dev": "yarn build:copy && node lib --no-open",
     "compile": "yarn compile:clean && yarn compile:types && yarn compile:main",
     "compileFast": "yarn compile:clean && yarn compile:main",
     "compileWatch": "yarn compile --watch",
     "compile:clean": "rm -rf ./lib",
     "compile:types": "tsc --pretty || exit 0",
     "compile:main": "babel src -d lib --extensions \".ts,.js\" --copy-files",
+    "build:copy": "rm -rf mady-client-out && cp -r ../mady-client/out mady-client-out",
     "typecheck": "tsc --pretty",
     "test": "jest --coverage --verbose 2>&1"
   },
@@ -69,7 +70,7 @@
     "@types/jest": "^26.0.15",
     "@types/lodash": "^4.14.164",
     "jest": "^26.4.2",
-    "prettier": "^2.1.1"
+    "prettier": "^2.2.1"
   },
   "jest": {
     "testRegex": ".*__tests__/.*\\.test\\.(ts|tsx)$",

@@ -1,4 +1,5 @@
 import http from 'http';
+import path from 'path';
 import { mainStory, addListener } from 'storyboard';
 import express, { Express } from 'express';
 import compression from 'compression';
@@ -21,6 +22,7 @@ import { translate as autoTranslate } from './autoTranslate';
 
 const SRC = 'mady-api';
 const DEFAULT_API_BASE = '/mady-api';
+const ASSET_PATH = path.join(__dirname, '../mady-client-out');
 
 // ==============================================
 // Main
@@ -51,7 +53,8 @@ const init = (options: Options) => {
   const apiBase = options.apiBase || DEFAULT_API_BASE;
   addEndpoints(expressApp, apiBase);
 
-  // TODO: Serve Mady client
+  // Serve Mady client
+  expressApp.use('/mady', express.static(ASSET_PATH));
 
   // Create HTTP server if needed
   if (isStandalone) {
