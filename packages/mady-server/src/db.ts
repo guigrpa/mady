@@ -122,13 +122,16 @@ const saveKeys = () => {
   _tUpdated = new Date().getTime();
 };
 
-const getKeys = () => Object.values(_keys).filter((o) => !o.isDeleted);
+const getKeys = ({ scope }: { scope?: string | null }) =>
+  Object.values(_keys).filter((key) => {
+    if (key.isDeleted) return false;
+    if (scope !== undefined && key.scope != scope) return false;
+    return true;
+  });
+
 const _setKeys = (keys: Keys) => {
   _keys = keys;
 };
-
-const getKeysForScope = (scope: string | null) =>
-  Object.values(_keys).filter((o) => !o.isDeleted && o.scope == scope);
 
 const getKey = (id: string) => _keys[id];
 
@@ -369,8 +372,26 @@ const _setTranslations = (translations: Translations) => {
   _translations = translations;
 };
 
-const getLangTranslations = (lang: string, refTranslations = _translations) =>
-  Object.values(refTranslations).filter((o) => !o.isDeleted && o.lang === lang);
+type GetTranslationsOptions = { lang: string; scope?: string | null };
+
+const getLangTranslations = (options: GetTranslationsOptions) =>
+  _getLangTranslations(options, _translations);
+
+const _getLangTranslations = (
+  { lang, scope }: GetTranslationsOptions,
+  refTranslations: Translations
+) =>
+  Object.values(refTranslations).filter((translation) => {
+    if (translation.isDeleted) return false;
+    if (translation.lang !== lang) return false;
+    if (scope !== undefined) {
+      const key = _keys[translation.keyId];
+      if (!key) return false;
+      if (key.isDeleted) return false;
+      if (key.scope != scope) return false;
+    }
+    return true;
+  });
 
 const getKeyTranslations = (keyId: string, lang?: string) =>
   Object.values(_translations).filter(
@@ -543,7 +564,7 @@ const getAllTranslations = (langs: string[], refTranslations: Translations) => {
     // story.debug(SRC, `Children translations for ${lang}`, { attach: childrenTranslations });
     const parentTranslations = getParentTranslations(langStructure, lang);
     // story.debug(SRC, `Parent translations for ${lang}`, { attach: parentTranslations });
-    const ownTranslations = getLangTranslations(lang, refTranslations);
+    const ownTranslations = _getLangTranslations({ lang }, refTranslations);
     // story.debug(SRC, `Own translations for ${lang}`, { attach: ownTranslations });
     langStructure[lang].translations = [
       ...childrenTranslations,
@@ -571,7 +592,7 @@ const getChildrenTranslations = (
   let translations = translations0;
   langStructure[lang].children.forEach((childLang) => {
     translations = translations.concat(
-      getLangTranslations(childLang, refTranslations)
+      _getLangTranslations({ lang: childLang }, refTranslations)
     );
     translations = getChildrenTranslations(
       langStructure,
@@ -642,7 +663,6 @@ export {
   getTUpdated,
   getConfig,
   getKeys,
-  getKeysForScope,
   getKey,
   createKey,
   updateKey,

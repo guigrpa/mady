@@ -91,8 +91,10 @@ const apiParse: express.RequestHandler = async (_req, res) => {
 };
 
 // Keys
-const apiGetKeys: express.RequestHandler = async (_req, res) => {
-  const keys = getKeys();
+const apiGetKeys: express.RequestHandler = async (req, res) => {
+  let scope: string | null = req.query.scope as string;
+  if (scope !== undefined && !scope) scope = null;
+  const keys = getKeys({ scope });
   res.json({ keys, tUpdated: getTUpdated() });
 };
 
@@ -110,7 +112,10 @@ const apiUpdateKey: express.RequestHandler = async (req, res) => {
 
 // Translations
 const apiGetTranslations: express.RequestHandler = async (req, res) => {
-  const translations = getLangTranslations(req.params.lang);
+  const { lang } = req.params;
+  let scope: string | null = req.query.scope as string;
+  if (scope !== undefined && !scope) scope = null;
+  const translations = getLangTranslations({ lang, scope });
   res.json({ translations, tUpdated: getTUpdated() });
 };
 
