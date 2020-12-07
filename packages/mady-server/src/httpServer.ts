@@ -13,6 +13,7 @@ import {
   getLangTranslations,
   createTranslation,
   updateTranslation,
+  getKeysWithTranslations,
   getTUpdated,
   purge,
 } from './db';
@@ -74,6 +75,7 @@ const addEndpoints = (app: Express, base: string) => {
   app.get(`${base}/translations/:lang`, apiGetTranslations);
   app.post(`${base}/translation`, apiCreateTranslation);
   app.patch(`${base}/translation/:id`, apiUpdateTranslation);
+  app.get(`${base}/keysAndTranslations/:langs`, apiGetKeysAndTranslations);
   app.post(`${base}/autoTranslate`, apiAutoTranslate);
 };
 
@@ -138,6 +140,15 @@ const apiUpdateTranslation: express.RequestHandler = async (req, res) => {
   const translation = req.body;
   const updatedTranslation = await updateTranslation(id, translation);
   res.json(updatedTranslation);
+};
+
+// Keys and translations
+const apiGetKeysAndTranslations: express.RequestHandler = async (req, res) => {
+  let scope: string | null = req.query.scope as string;
+  if (scope !== undefined && !scope) scope = null;
+  const langs = req.params.langs.split(',').map((o) => o.trim().toLowerCase());
+  const keysAndTranslations = getKeysWithTranslations({ langs, scope });
+  res.json({ keysAndTranslations, tUpdated: getTUpdated() });
 };
 
 // Auto-translate

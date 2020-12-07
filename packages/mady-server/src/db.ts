@@ -1,12 +1,19 @@
 import path from 'path';
 import fs from 'fs-extra';
 import slash from 'slash';
-import { addDefaults, merge } from 'timm';
+import { addDefaults, merge, set as timmSet, omit } from 'timm';
 import { mainStory, chalk } from 'storyboard';
 import { decode } from 'js-base64';
 import { v4 as uuidv4 } from 'uuid';
 import debounce from 'lodash/debounce';
-import type { Config, Key, Keys, Translation, Translations } from './types';
+import type {
+  Config,
+  Key,
+  Keys,
+  Translation,
+  Translations,
+  TranslationWithoutKeyId,
+} from './types';
 import { init as initFileWatcher } from './fileWatcher';
 import { parseAll, parseOne } from './parseSources';
 import compile from './compileTranslations';
@@ -130,6 +137,40 @@ const getKeys = ({ scope }: { scope?: string | null }) =>
     if (scope !== undefined && key.scope != scope) return false;
     return true;
   });
+
+const getKeysWithTranslations = ({
+  langs,
+  scope,
+}: {
+  langs: string[];
+  scope?: string | null;
+}) => {
+  const keys: Record<
+    string,
+    Key & { translations: Record<string, TranslationWithoutKeyId> }
+  > = {};
+
+  // Find suitable keys
+  Object.values(_keys).forEach((key) => {
+    if (key.isDeleted) return;
+    if (scope !== undefined && key.scope != scope) return;
+    const keyId = key.id;
+    keys[keyId] = timmSet(key, 'translations', {});
+  });
+
+  // Iterate over all translations
+  Object.values(_translations).forEach((translation) => {
+    if (translation.isDeleted) return;
+    const { keyId, lang } = translation;
+    const key = keys[keyId];
+    if (!key) return;
+    if (langs.indexOf(lang) < 0) return;
+    if (key.translations[lang]) return; // already translated
+    key.translations[lang] = omit(translation, ['keyId']);
+  });
+
+  return Object.values(keys);
+};
 
 const _setKeys = (keys: Keys) => {
   _keys = keys;
@@ -669,6 +710,7 @@ export {
   // --
   _setKeyPath,
   getKeys,
+  getKeysWithTranslations,
   _setKeys,
   getKey,
   createKey,
