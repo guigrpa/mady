@@ -153,8 +153,8 @@ const apiGetKeysAndTranslations: express.RequestHandler = async (req, res) => {
   let scope: string | null = req.query.scope as string;
   if (scope !== undefined && !scope) scope = null;
   const langs = req.params.langs.split(',').map((o) => o.trim().toLowerCase());
-  const keysAndTranslations = getKeysWithTranslations({ langs, scope });
-  res.json({ keysAndTranslations, tUpdated: getTUpdated() });
+  const keys = getKeysWithTranslations({ langs, scope });
+  res.json({ keys, tUpdated: getTUpdated() });
 };
 
 // Auto-translate
