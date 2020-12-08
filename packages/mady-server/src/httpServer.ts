@@ -4,6 +4,7 @@ import { mainStory, addListener } from 'storyboard';
 import express, { Express } from 'express';
 import compression from 'compression';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 import wsServerListener from 'storyboard-listener-ws-server';
 import {
   getConfig,
@@ -23,6 +24,7 @@ import { translate as autoTranslate } from './autoTranslate';
 const SRC = 'mady-api';
 const DEFAULT_API_BASE = '/mady-api';
 const ASSET_PATH = path.join(__dirname, '../mady-client-out');
+const CORS_OPTIONS = { origin: '*' };
 
 // ==============================================
 // Main
@@ -45,6 +47,7 @@ const init = (options: Options) => {
   if (!expressApp) {
     expressApp = express();
     expressApp.use(compression());
+    expressApp.use(cors(CORS_OPTIONS));
     expressApp.use(bodyParser.json());
     expressApp.use(bodyParser.urlencoded({ extended: false }));
   }
