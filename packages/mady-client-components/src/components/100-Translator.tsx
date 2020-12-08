@@ -1,10 +1,10 @@
 import React from 'react';
-import { Icon, notify } from 'giu';
+import { Icon, notify, notifDelete } from 'giu';
 import axios from 'axios';
 import type { Config, Key } from '../types';
 import { localGet, localSet } from '../gral/localStorage';
 
-const POLL_INTERVAL = 2e3;
+const POLL_INTERVAL = 5e3;
 const API_TIMEOUT = 20e3;
 
 // ==============================================
@@ -12,6 +12,7 @@ const API_TIMEOUT = 20e3;
 // ==============================================
 type Props = {
   scope?: string | null;
+  allowPurge?: boolean;
   apiUrl: string;
 };
 type State = {
@@ -30,19 +31,19 @@ class Translator extends React.Component<Props, State> {
     sysConfig: null,
     langs: null,
     fetching: false,
-    keys: [],
+    keys: [] as Key[],
     tUpdated: null,
   };
-  pollInterval!: NodeJS.Timeout;
+  pollInterval!: number;
   api = axios.create({ baseURL: this.props.apiUrl, timeout: API_TIMEOUT });
 
   componentDidMount() {
     this.fetchData();
-    // this.pollInterval = setInterval(this.fetchData, POLL_INTERVAL);
+    this.pollInterval = setInterval(this.fetchData, POLL_INTERVAL);
   }
 
   componentWillUnmount() {
-    // clearInterval(this.pollInterval);
+    clearInterval(this.pollInterval);
   }
 
   // ==============================================
@@ -64,7 +65,7 @@ class Translator extends React.Component<Props, State> {
   }
 
   // ==============================================
-  fetchData = async () => {
+  fetchData = async ({ force }: { force?: boolean } = {}) => {
     if (this.state.fetching) return;
 
     // Fetch sysConfig
@@ -73,6 +74,15 @@ class Translator extends React.Component<Props, State> {
       const langs = calcInitialLangs(sysConfig);
       this.setState({ sysConfig, langs });
       await delay(0); // make sure state has already been updated
+    }
+
+    // Fetch only update time, check it and bail out if
+    // there's nothing new
+    const curTUpdated = this.state.tUpdated;
+    if (!force && curTUpdated != null) {
+      const tUpdated = await this.fetchTUpdated();
+      if (tUpdated == null) return;
+      if (tUpdated <= curTUpdated) return;
     }
 
     // Fetch data
@@ -92,6 +102,24 @@ class Translator extends React.Component<Props, State> {
         msg: 'Please try again later!',
       });
       throw err;
+    }
+  };
+
+  fetchTUpdated = async () => {
+    try {
+      const res = await this.api.get('/tUpdated');
+      const { tUpdated } = res.data;
+      return tUpdated as number;
+    } catch (err) {
+      notifDelete('tUpdateError');
+      notify({
+        id: 'tUpdateError',
+        type: 'warn',
+        icon: 'wifi',
+        title: 'Having connectivity problems',
+        msg: 'Please check your network',
+      });
+      return null;
     }
   };
 
