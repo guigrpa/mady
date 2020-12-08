@@ -19,6 +19,7 @@ type State = {
   sysConfig: Config | null;
   langs: string[] | null;
   fetching: boolean;
+  parsing: boolean;
   keys: Key[];
   tUpdated: number | null;
 };
@@ -31,6 +32,7 @@ class Translator extends React.Component<Props, State> {
     sysConfig: null,
     langs: null,
     fetching: false,
+    parsing: false,
     keys: [] as Key[],
     tUpdated: null,
   };
@@ -50,11 +52,15 @@ class Translator extends React.Component<Props, State> {
   render() {
     return (
       <div className="mady-translator">
+        <div>Fetching: {String(this.state.fetching)}</div>
+        <div>Parsing: {String(this.state.parsing)}</div>
         <h3>Config</h3>
         <div>{JSON.stringify(this.state.sysConfig)}</div>
         <h3>Langs: {this.state.langs}</h3>
         <h3>tUpdated: {this.state.tUpdated}</h3>
-        <h3>Keys</h3>
+        <h3>
+          Keys <button onClick={this.onClickParse}>Parse</button>
+        </h3>
         {this.state.keys.map((o) => (
           <div
             key={o.id}
@@ -65,29 +71,52 @@ class Translator extends React.Component<Props, State> {
   }
 
   // ==============================================
+  onClickParse = async () => {
+    try {
+      this.setState({ parsing: true });
+      await this.api.get('/parse');
+      await this.fetchData();
+    } catch (err) {
+      notify({
+        type: 'error',
+        icon: 'code',
+        title: 'Parse failed',
+        msg: 'Check the console...',
+      });
+      throw err;
+    } finally {
+      this.setState({ parsing: false });
+    }
+  };
+
   fetchData = async ({ force }: { force?: boolean } = {}) => {
     if (this.state.fetching) return;
+    this.setState({ fetching: true });
 
-    // Fetch sysConfig
-    if (!this.state.sysConfig) {
-      const sysConfig = await this.fetchConfig();
-      const langs = calcInitialLangs(sysConfig);
-      this.setState({ sysConfig, langs });
-      await delay(0); // make sure state has already been updated
+    try {
+      // Fetch sysConfig
+      if (!this.state.sysConfig) {
+        const sysConfig = await this.fetchConfig();
+        const langs = calcInitialLangs(sysConfig);
+        this.setState({ sysConfig, langs });
+        await delay(0); // make sure state has already been updated
+      }
+
+      // Fetch only update time, check it and bail out if
+      // there's nothing new
+      const curTUpdated = this.state.tUpdated;
+      if (!force && curTUpdated != null) {
+        const tUpdated = await this.fetchTUpdated();
+        if (tUpdated == null) return;
+        if (tUpdated <= curTUpdated) return;
+      }
+
+      // Fetch data
+      const { keys, tUpdated } = await this.fetchTranslations();
+      this.setState({ keys, tUpdated });
+    } finally {
+      this.setState({ fetching: false });
     }
-
-    // Fetch only update time, check it and bail out if
-    // there's nothing new
-    const curTUpdated = this.state.tUpdated;
-    if (!force && curTUpdated != null) {
-      const tUpdated = await this.fetchTUpdated();
-      if (tUpdated == null) return;
-      if (tUpdated <= curTUpdated) return;
-    }
-
-    // Fetch data
-    const { keys, tUpdated } = await this.fetchTranslations();
-    this.setState({ keys, tUpdated });
   };
 
   fetchConfig = async () => {
@@ -109,6 +138,7 @@ class Translator extends React.Component<Props, State> {
     try {
       const res = await this.api.get('/tUpdated');
       const { tUpdated } = res.data;
+      notifDelete('tUpdateError');
       return tUpdated as number;
     } catch (err) {
       notifDelete('tUpdateError');
@@ -117,7 +147,7 @@ class Translator extends React.Component<Props, State> {
         type: 'warn',
         icon: 'wifi',
         title: 'Having connectivity problems',
-        msg: 'Please check your network',
+        msg: 'Please check your network!',
       });
       return null;
     }
