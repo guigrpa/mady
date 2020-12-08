@@ -4,8 +4,6 @@
   - [x] mady-server
   - [x] mady-server as embeddable
   - [ ] mady-editor
-    - No Config from GUI
-    - Use giu as peer (?) -- but then we
     - Main app: can receive "filter" props; then it will always show a filtered list...
     - Improve editing of long data. Include markdown preview?
     - Use Giu's DataTable

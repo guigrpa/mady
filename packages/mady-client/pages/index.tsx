@@ -1,9 +1,18 @@
 import React from 'react';
 import { Translator } from 'mady-client-components';
+import { Notifications } from 'giu';
 
-export default () => (
+// ==============================================
+// Component
+// ==============================================
+const App = () => (
   <>
-    <h2>Hello!!!</h2>
-    <Translator />
+    <Notifications />
+    <Translator apiUrl={process.env.NEXT_PUBLIC_MADY_BACKEND_URL || ''} />
   </>
 );
+
+// ==============================================
+// Public
+// ==============================================
+export default App;
