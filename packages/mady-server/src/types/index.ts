@@ -35,6 +35,7 @@ export type Translation = {
   translation: string;
   fuzzy?: boolean;
 };
+export type Translations = Record<string, Translation>;
+
 type Without<T, K> = Pick<T, Exclude<keyof T, K>>;
 export type TranslationWithoutKeyId = Without<Translation, 'keyId'>;
-export type Translations = Record<string, Translation>;
