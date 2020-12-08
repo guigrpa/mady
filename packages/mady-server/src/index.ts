@@ -7,7 +7,7 @@ import consoleListener from 'storyboard-listener-console';
 import program from 'commander';
 import opn from 'opn';
 import { init as httpInit } from './httpServer';
-import { init as dbInit, compileTranslations } from './db';
+import { init as dbInit, compileTranslations, purge } from './db';
 
 const pkg = fs.readJsonSync(path.join(__dirname, '..', 'package.json'));
 
@@ -50,6 +50,7 @@ program
     'Do not automatically translate new keys'
   )
   .option('--recompile', 'Recompile translations and exit')
+  .option('--purge', 'Purge deleted keys and translations and exit')
   .parse(process.argv);
 
 const cliOptions = program.opts();
@@ -66,11 +67,13 @@ const run = async () => {
   dbInit({
     localeDir: cliOptions.dir,
     otherLocaleDirs: cliOptions.otherDirs,
-    watch: !!cliOptions.watch && !cliOptions.recompile,
+    watch: !!cliOptions.watch && !cliOptions.recompile && !cliOptions.purge,
     autoTranslateNewKeys: !!cliOptions.autoTranslateNewKeys,
   });
   if (cliOptions.recompile) {
     await compileTranslations();
+  } else if (cliOptions.purge) {
+    await purge();
   } else {
     const { port } = cliOptions;
     httpInit({ port });
