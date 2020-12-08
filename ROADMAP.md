@@ -4,11 +4,12 @@
   - [x] mady-server
   - [x] mady-server as embeddable
   - [ ] mady-editor
-    - Main app: can receive "filter" props; then it will always show a filtered list...
     - Improve editing of long data. Include markdown preview?
+    - Filter by unused/untranslated/fuzzy
+    - Add scope menu (if scope is not in props)
+    - Quick find
     - Use Giu's DataTable
     - Improvement: Show error when user specifies a language that doesn't exist
-    - [ ] serve mady-ui under mady-server /mady
 
 Later still:
 
