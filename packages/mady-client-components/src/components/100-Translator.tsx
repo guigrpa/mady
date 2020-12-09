@@ -1,8 +1,10 @@
 import React from 'react';
-import { Icon, notify, notifDelete } from 'giu';
+import { LargeMessage, notify, notifDelete } from 'giu';
+import classnames from 'classnames';
 import axios from 'axios';
-import type { Config, Key } from '../types';
+import type { Config, Key, Keys } from '../types';
 import { localGet, localSet } from '../gral/localStorage';
+import TranslationTable from './110-TranslationTable';
 
 const POLL_INTERVAL = 5e3;
 const API_TIMEOUT = 20e3;
@@ -12,15 +14,16 @@ const API_TIMEOUT = 20e3;
 // ==============================================
 type Props = {
   scope?: string | null;
-  allowPurge?: boolean;
   apiUrl: string;
+  height: number /* table content height in pixels (-1 sets it to unlimited; 0 expands it to use the full viewport) */;
 };
 type State = {
   sysConfig: Config | null;
-  langs: string[] | null;
+  langs: string[];
   fetching: boolean;
   parsing: boolean;
-  keys: Key[];
+  fatalError: boolean;
+  keys: Keys;
   tUpdated: number | null;
 };
 
@@ -30,10 +33,11 @@ type State = {
 class Translator extends React.Component<Props, State> {
   state = {
     sysConfig: null,
-    langs: null,
+    langs: [],
     fetching: false,
     parsing: false,
-    keys: [] as Key[],
+    fatalError: false,
+    keys: {} as Keys,
     tUpdated: null,
   };
   pollInterval!: number;
@@ -50,23 +54,45 @@ class Translator extends React.Component<Props, State> {
 
   // ==============================================
   render() {
+    const { parsing } = this.state;
     return (
-      <div className="mady-translator">
-        <div>Fetching: {String(this.state.fetching)}</div>
-        <div>Parsing: {String(this.state.parsing)}</div>
-        <h3>Config</h3>
-        <div>{JSON.stringify(this.state.sysConfig)}</div>
-        <h3>Langs: {this.state.langs}</h3>
-        <h3>tUpdated: {this.state.tUpdated}</h3>
-        <h3>
-          Keys <button onClick={this.onClickParse}>Parse</button>
-        </h3>
-        {this.state.keys.map((o) => (
-          <div
-            key={o.id}
-          >{`${o.context} — ${o.text} --> ${o.translations.es?.translation}`}</div>
-        ))}
+      <div
+        className={classnames('mady-translator', {
+          parsing,
+          'full-height': this.props.height === 0,
+        })}
+      >
+        {this.renderHeader()}
+        {this.renderTable()}
       </div>
+    );
+  }
+
+  renderHeader() {
+    return <div className="mady-header">HEADER</div>;
+  }
+
+  renderTable() {
+    if (this.state.fatalError)
+      return (
+        <LargeMessage>
+          The translation service is currently unavailable. Please try again
+          later!
+        </LargeMessage>
+      );
+    const { tUpdated, sysConfig, langs, keys, parsing } = this.state;
+    if (tUpdated == null || sysConfig == null)
+      return <LargeMessage>Loading data…</LargeMessage>;
+    return (
+      <TranslationTable
+        sysConfig={sysConfig!}
+        langs={langs}
+        keys={keys}
+        shownKeyIds={this.getShownKeyIds()}
+        parsing={parsing}
+        onClickParse={this.onClickParse}
+        height={this.props.height}
+      />
     );
   }
 
@@ -90,7 +116,7 @@ class Translator extends React.Component<Props, State> {
   };
 
   fetchData = async ({ force }: { force?: boolean } = {}) => {
-    if (this.state.fetching) return;
+    if (this.state.fetching || this.state.fatalError) return;
     this.setState({ fetching: true });
 
     try {
@@ -130,6 +156,7 @@ class Translator extends React.Component<Props, State> {
         title: "Could not fetch Mady's config",
         msg: 'Please try again later!',
       });
+      this.setState({ fatalError: true });
       throw err;
     }
   };
@@ -160,7 +187,10 @@ class Translator extends React.Component<Props, State> {
       let url = `/keysAndTranslations/${langs}`;
       if (scope !== undefined) url += `?scope=${scope || ''}`;
       const res = await this.api.get(url);
-      return res.data as { keys: Key[]; tUpdated: number };
+      const { keys: keysArr, tUpdated } = res.data;
+      const keys: Keys = {};
+      keysArr.forEach((key: Key) => (keys[key.id] = key));
+      return { keys, tUpdated } as { keys: Keys; tUpdated: number };
     } catch (err) {
       notify({
         type: 'error',
@@ -171,6 +201,20 @@ class Translator extends React.Component<Props, State> {
       });
       throw err;
     }
+  };
+
+  // ==============================================
+  prevKeys!: Keys;
+  prevShownKeyIds!: string[];
+  getShownKeyIds = () => {
+    const { keys } = this.state;
+    if (keys != null && keys === this.prevKeys) {
+      return this.prevShownKeyIds;
+    }
+    const shownKeyIds = Object.keys(keys);
+    this.prevKeys = keys;
+    this.prevShownKeyIds = shownKeyIds;
+    return shownKeyIds;
   };
 }
 

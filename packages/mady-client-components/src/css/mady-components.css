@@ -1,5 +1,51 @@
-/* ============================================== */
-/* Translator */
-/* ============================================== */
 .mady-translator {
+  font-size: 0.8rem;
+  --color-accent-bg: rgb(240, 240, 240);
+  --color-accent-fg: black;
+  line-height: 1.2;
 }
+
+/* ============================================== */
+/* Layout */
+/* ============================================== */
+.mady-translator.full-height {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================== */
+/* Translation table */
+/* ============================================== */
+.mady-translator.full-height .mady-translation-table {
+  flex: 1 0 30px;
+  overflow: hidden;
+}
+
+.mady-translator .giu-data-table-header,
+.mady-translator .giu-data-table-row,
+.mady-translator .giu-virtual-scroller {
+  margin: 0;
+  padding: 2px 0;
+}
+
+.mady-translator .giu-data-table-row {
+  border-bottom: 1px solid transparent;
+}
+
+/* ============================================== */
+/* Header */
+/* ============================================== */
+.mady-header {
+  padding: 2px 2px;
+  font-weight: bold;
+}
+
+.mady-translator.parsing .mady-parse {
+  animation: fa-spin 2s infinite linear;
+  pointer-events: none;
+}
+
+/* ============================================== */
+/* Rows */
+/* ============================================== */

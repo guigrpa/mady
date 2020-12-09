@@ -3,14 +3,27 @@ import { Translator } from 'mady-client-components';
 import { Notifications } from 'giu';
 
 // ==============================================
+// Declarations
+// ==============================================
+type Props = unknown;
+type State = {};
+
+// ==============================================
 // Component
 // ==============================================
-const App = () => (
-  <>
-    <Notifications />
-    <Translator apiUrl={process.env.NEXT_PUBLIC_MADY_BACKEND_URL || ''} />
-  </>
-);
+class App extends React.Component<Props, State> {
+  render() {
+    return (
+      <>
+        <Notifications />
+        <Translator
+          apiUrl={process.env.NEXT_PUBLIC_MADY_BACKEND_URL || ''}
+          height={0} /* full-height */
+        />
+      </>
+    );
+  }
+}
 
 // ==============================================
 // Public
