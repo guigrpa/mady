@@ -30,6 +30,7 @@ type State = {
   keys: Keys;
   tUpdated: number | null;
   selectedKeyId: string | null;
+  filterValue: string;
 };
 
 // ==============================================
@@ -45,6 +46,7 @@ class Translator extends React.Component<Props, State> {
     keys: {} as Keys,
     tUpdated: null,
     selectedKeyId: null,
+    filterValue: '',
   };
   pollInterval!: number;
   api = axios.create({ baseURL: this.props.apiUrl, timeout: API_TIMEOUT });
@@ -68,9 +70,21 @@ class Translator extends React.Component<Props, State> {
           'full-height': this.props.height === 0,
         })}
       >
-        <Toolbar onClickParse={this.onClickParse} />
+        {this.renderToolbar()}
         {this.renderTable()}
       </div>
+    );
+  }
+
+  renderToolbar() {
+    return (
+      <Toolbar
+        filterValue={this.state.filterValue}
+        onClickParse={this.onClickParse}
+        onChangeFilterValue={(filterValue: string) => {
+          this.setState({ filterValue });
+        }}
+      />
     );
   }
 
@@ -92,6 +106,7 @@ class Translator extends React.Component<Props, State> {
         keys={this.getKeys()}
         shownKeyIds={this.getShownKeyIds()}
         selectedKeyId={this.state.selectedKeyId}
+        filterValue={this.state.filterValue}
         parsing={parsing}
         height={this.props.height}
         onAddLang={this.onAddLang}
@@ -373,7 +388,6 @@ class Translator extends React.Component<Props, State> {
   // ==============================================
   getKeys = () => {
     let { keys } = this.state;
-    // TODO: filter, etc.
     const ids = Object.keys(keys);
     if (ids.length) {
       keys = setIn(keys, [ids[0], 'isFirstKey'], true) as Keys;

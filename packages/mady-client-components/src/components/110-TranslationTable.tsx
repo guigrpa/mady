@@ -14,6 +14,7 @@ type Props = {
   keys: Keys;
   shownKeyIds: string[];
   selectedKeyId: string | null;
+  filterValue: string;
   parsing: boolean;
   height: number;
   onAddLang: (lang: string) => void;
@@ -84,6 +85,7 @@ class TranslationTable extends React.Component<Props, State> {
         className="mady"
         itemsById={this.props.keys}
         shownIds={this.props.shownKeyIds}
+        filterValue={this.props.filterValue}
         cols={this.getCols()}
         alwaysRenderIds={selectedKeyId ? [selectedKeyId] : undefined}
         headerClickForSorting={false}
@@ -161,7 +163,7 @@ class TranslationTable extends React.Component<Props, State> {
             </div>
           );
         },
-        rawValue: (o: Key) => o.translations[lang],
+        rawValue: (o: Key) => o.translations[lang]?.translation,
         render: ({
           item,
           onMayHaveChangedHeight,

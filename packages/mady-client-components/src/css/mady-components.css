@@ -43,7 +43,8 @@
   margin-bottom: 5px;
 }
 
-.mady-toolbar-button + .mady-toolbar-button {
+.mady-toolbar-button + .mady-toolbar-button,
+.mady-toolbar-button + .mady-filter-value {
   margin-left: 0.8em;
 }
 
