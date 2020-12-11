@@ -1,10 +1,10 @@
 import React from 'react';
 import { LargeMessage, notify, notifDelete } from 'giu';
-import { addLast, omit, updateIn, setIn } from 'timm';
+import { addLast, omit, updateIn, setIn, mergeIn } from 'timm';
 import { v4 as uuidv4 } from 'uuid';
 import classnames from 'classnames';
 import axios from 'axios';
-import type { Config, Key, Keys } from '../types';
+import type { Config, Key, Keys, Translation } from '../types';
 import { localGet, localSet } from '../gral/localStorage';
 import { simplifyStringWithCache } from '../gral/helpers';
 import TranslationTable from './110-TranslationTable';
@@ -178,7 +178,11 @@ class Translator extends React.Component<Props, State> {
     });
   };
 
-  onUpdateTranslation = async (keyId: string, lang: string, text: string) => {
+  onUpdateTranslation = async (
+    keyId: string,
+    lang: string,
+    updates: Partial<Translation>
+  ) => {
     const { keys } = this.state;
     const key = keys[keyId];
     if (!key)
@@ -191,16 +195,12 @@ class Translator extends React.Component<Props, State> {
     const { id } = translation;
     this.mutateData({
       optimisticState: {
-        keys: setIn(
-          keys,
-          [keyId, 'translations', lang, 'translation'],
-          text
-        ) as Keys,
+        keys: mergeIn(keys, [keyId, 'translations', lang], updates) as Keys,
       },
       description: 'Update translation',
       url: `/translation/${id}`,
       method: 'patch',
-      body: { translation: text },
+      body: updates,
       icon: 'pencil-alt',
     });
   };

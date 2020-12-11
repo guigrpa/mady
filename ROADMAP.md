@@ -4,8 +4,9 @@
   - [x] mady-server
   - [x] mady-server as embeddable
   - [ ] mady-editor
-    - Autotranslate?
     - Editable!
+      - Copy to translation
+      - Autotranslate?
     - Quick find
     - Add scope menu (if scope is not in props)
     - Details when hovering over message

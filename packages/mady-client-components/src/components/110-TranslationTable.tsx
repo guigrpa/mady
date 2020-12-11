@@ -1,6 +1,6 @@
 import React from 'react';
 import { DataTable, Icon, DropDownMenu } from 'giu';
-import type { Config, Key, Keys } from '../types';
+import type { Config, Key, Keys, Translation } from '../types';
 import ContextCell from './115-ContextCell';
 import KeyCell from './120-KeyCell';
 import TranslationCell from './130-TranslationCell';
@@ -21,7 +21,11 @@ type Props = {
   onSelectKey: (keyId: string) => void;
   onDeleteKey: (id: string) => void;
   onDeleteTranslation: (keyId: string, lang: string) => void;
-  onUpdateTranslation: (keyId: string, lang: string, text: string) => void;
+  onUpdateTranslation: (
+    keyId: string,
+    lang: string,
+    updates: Partial<Translation>
+  ) => void;
   onCreateTranslation: (keyId: string, lang: string, text: string) => void;
 };
 type State = {

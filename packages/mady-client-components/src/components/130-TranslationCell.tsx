@@ -12,7 +12,11 @@ type Props = {
   lang: string;
   onSelectKey: (keyId: string) => void;
   onDelete: (keyId: string, lang: string) => void;
-  onUpdate: (keyId: string, lang: string, text: string) => void;
+  onUpdate: (
+    keyId: string,
+    lang: string,
+    updates: Partial<Translation>
+  ) => void;
   onCreate: (keyId: string, lang: string, text: string) => void;
   onMayHaveChangedHeight: Function;
 };
@@ -73,11 +77,10 @@ class TranslationCell extends React.Component<Props, State> {
   }
 
   renderHelp() {
+    const shown = this.state.editing && !this.state.dismissedHelp;
     return (
       <div
-        className={classnames('mady-translation-help', {
-          shown: this.state.editing && !this.state.dismissedHelp,
-        })}
+        className={classnames('mady-translation-help', { shown })}
         onMouseEnter={() => this.setState({ dismissedHelp: true })}
       >
         Click outside or TAB to save. ESC to undo.
@@ -87,12 +90,32 @@ class TranslationCell extends React.Component<Props, State> {
 
   renderButtons() {
     const { myKey, lang, onDelete } = this.props;
-    if (!this.translation) return null;
+    const hasTranslation = !!this.translation;
+    const fuzzy = this.translation?.fuzzy;
     return (
       <div className="mady-translation-buttons">
-        <span className="mady-delete-translation" title="Delete translation">
-          <Icon icon="times" onClick={() => onDelete(myKey.id, lang)} />
-        </span>
+        {hasTranslation && (
+          <span
+            className="mady-translation-button on-hover mady-delete-translation"
+            title="Delete translation"
+          >
+            <Icon icon="times" onClick={() => onDelete(myKey.id, lang)} />
+          </span>
+        )}
+        {hasTranslation && (
+          <span
+            className={classnames(
+              'mady-translation-button on-hover mady-fuzzy',
+              { fuzzy }
+            )}
+            title="Dubious translation (click to toggle)"
+          >
+            <Icon
+              icon="exclamation-triangle"
+              onClick={() => this.onClickFuzzy(!fuzzy)}
+            />
+          </span>
+        )}
       </div>
     );
   }
@@ -111,7 +134,7 @@ class TranslationCell extends React.Component<Props, State> {
     if (this.translation && !text) {
       this.props.onDelete(myKey.id, lang);
     } else if (this.translation) {
-      this.props.onUpdate(myKey.id, lang, text);
+      this.props.onUpdate(myKey.id, lang, { translation: text });
     } else {
       this.props.onCreate(myKey.id, lang, text);
     }
@@ -140,6 +163,11 @@ class TranslationCell extends React.Component<Props, State> {
     ) {
       this.refTextarea.current!.blur();
     }
+  };
+
+  onClickFuzzy = (fuzzy: boolean) => {
+    const { myKey, lang } = this.props;
+    this.props.onUpdate(myKey.id, lang, { fuzzy });
   };
 }
 

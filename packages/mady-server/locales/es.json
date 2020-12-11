@@ -1397,7 +1397,8 @@
     "isDeleted": false,
     "lang": "es",
     "translation": "Mediciones reales",
-    "keyId": "Y292aWRfQWN0dWFsIG1lYXN1cmVtZW50cw=="
+    "keyId": "Y292aWRfQWN0dWFsIG1lYXN1cmVtZW50cw==",
+    "fuzzy": false
   },
   "607f86ab-8e51-4021-802e-c5d91351c269": {
     "id": "607f86ab-8e51-4021-802e-c5d91351c269",
@@ -1628,7 +1629,8 @@
     "isDeleted": false,
     "lang": "es",
     "translation": "Sobre estos datos",
-    "keyId": "Y292aWRfQWJvdXQgdGhpcyBkYXRh"
+    "keyId": "Y292aWRfQWJvdXQgdGhpcyBkYXRh",
+    "fuzzy": false
   },
   "486b07ce-b13a-47e8-9f3c-9d6996fb8663": {
     "id": "486b07ce-b13a-47e8-9f3c-9d6996fb8663",
@@ -1677,7 +1679,8 @@
     "isDeleted": false,
     "lang": "es",
     "translation": "Añade estos gráficos a tu site",
-    "keyId": "Y292aWRfQWRkIHRoZXNlIGNoYXJ0cyB0byB5b3VyIHNpdGU="
+    "keyId": "Y292aWRfQWRkIHRoZXNlIGNoYXJ0cyB0byB5b3VyIHNpdGU=",
+    "fuzzy": false
   },
   "44df2e00-9640-48cd-a3e7-948fc6cd7b43": {
     "id": "44df2e00-9640-48cd-a3e7-948fc6cd7b43",
@@ -2160,6 +2163,7 @@
     "isDeleted": false,
     "lang": "es",
     "translation": "Copernicus Marine Environment Monitoring Service",
+    "fuzzy": false,
     "keyId": "Y29tcGFueS1uYW1lX0NvcGVybmljdXMgTWFyaW5lIEVudmlyb25tZW50IE1vbml0b3JpbmcgU2VydmljZQ=="
   }
 }

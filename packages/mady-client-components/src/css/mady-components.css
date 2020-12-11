@@ -257,8 +257,22 @@
 
 .mady-translation-buttons {
   margin-left: 5px;
+}
+.mady-translation-button.on-hover {
   opacity: 0;
 }
-.mady-translation-cell:hover .mady-translation-buttons {
+.mady-translation-cell:hover .mady-translation-button.on-hover {
   opacity: 1;
+}
+
+.mady-translation-button + .mady-translation-button {
+  margin-left: 5px;
+}
+.mady-translation-button.mady-delete-translation + .mady-translation-button {
+  margin-left: 10px;
+}
+
+.mady-fuzzy.fuzzy {
+  opacity: 1 !important;
+  color: var(--color-notif-warn-bg);
 }

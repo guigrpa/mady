@@ -100,7 +100,8 @@
     "isDeleted": false,
     "lang": "ca",
     "translation": "tema",
-    "keyId": "Y29udGFjdF9zdWJqZWN0"
+    "keyId": "Y29udGFjdF9zdWJqZWN0",
+    "fuzzy": false
   },
   "edacca33-fa96-4d48-95cd-25eabb1acdc4": {
     "id": "edacca33-fa96-4d48-95cd-25eabb1acdc4",
