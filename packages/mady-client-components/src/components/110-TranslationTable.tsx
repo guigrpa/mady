@@ -17,6 +17,7 @@ type Props = {
   height: number;
   onAddLang: (lang: string) => void;
   onRemoveLang: (lang: string) => void;
+  onDeleteKey: (id: string) => void;
 };
 type State = {
   tableBodyHeight: number | null;
@@ -112,7 +113,12 @@ class TranslationTable extends React.Component<Props, State> {
           );
         },
         render: ({ item }: { item: Key }) => (
-          <KeyCell myKey={item} config={config} langs={langs} />
+          <KeyCell
+            myKey={item}
+            config={config}
+            langs={langs}
+            onDeleteKey={this.props.onDeleteKey}
+          />
         ),
       },
       ...langs.map((lang, idx) => ({

@@ -140,11 +140,21 @@
 /* Key cell */
 /* ============================================== */
 .mady-key-cell {
-  padding: 3px 0 3px 5px;
+  padding: 3px 5px 3px 5px;
   height: 100%;
+  display: flex;
+  justify-content: space-between;
   border-left-width: 4px;
   border-left-style: solid;
   background-color: transparent;
+}
+
+.mady-delete-key {
+  margin-left: 5px;
+  opacity: 0;
+}
+.mady-key-cell:hover .mady-delete-key {
+  opacity: 1;
 }
 
 .mady-key-cell.unused {

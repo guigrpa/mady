@@ -1,6 +1,6 @@
 import React from 'react';
 import { LargeMessage, notify, notifDelete } from 'giu';
-import { addLast } from 'timm';
+import { addLast, omit } from 'timm';
 import classnames from 'classnames';
 import axios from 'axios';
 import type { Config, Key, Keys } from '../types';
@@ -92,6 +92,7 @@ class Translator extends React.Component<Props, State> {
         height={this.props.height}
         onAddLang={this.onAddLang}
         onRemoveLang={this.onRemoveLang}
+        onDeleteKey={this.onDeleteKey}
       />
     );
   }
@@ -127,6 +128,26 @@ class Translator extends React.Component<Props, State> {
     this.setState({ langs });
   };
 
+  onDeleteKey = async (id: string) => {
+    if (!this.state.keys[id])
+      throw new Error(`Cannot delete key (not found): ${id}`);
+
+    // Optimistic
+    const keys = omit(this.state.keys, id);
+    this.setState({ keys });
+
+    // Send to server
+    this.mutateData({
+      optimisticState: { keys },
+      description: 'Delete message',
+      url: `/key/${id}`,
+      method: 'patch',
+      body: { isDeleted: true },
+      icon: 'times',
+    });
+  };
+
+  // ==============================================
   fetchData = async ({ force }: { force?: boolean } = {}) => {
     if (this.state.fetching || this.state.fatalError) return;
     this.setState({ fetching: true });
@@ -214,6 +235,37 @@ class Translator extends React.Component<Props, State> {
         msg: 'Please try again later!',
       });
       throw err;
+    }
+  };
+
+  // Very simple and optimistic mutator (does not handle queues, etc -- a far cry
+  // from GraphQL! But SIMPLE)
+  mutateData = async (options: {
+    optimisticState: Partial<State>;
+    description: string;
+    url: string;
+    method: string;
+    body?: any;
+    icon?: string;
+    iconFamily?: string;
+  }) => {
+    const { optimisticState, url, method } = options;
+    const originalState = this.state;
+    if (optimisticState) this.setState(optimisticState as State);
+    try {
+      const api: any = this.api;
+      ['post', 'put', 'patch'].indexOf(method) >= 0
+        ? await api[method](url, options.body)
+        : await api[method](url);
+    } catch (err) {
+      this.setState(originalState);
+      notify({
+        type: 'error',
+        icon: options.icon,
+        iconFamily: options.iconFamily,
+        title: `${options.description} failed`,
+        msg: 'Please try again later!',
+      });
     }
   };
 
