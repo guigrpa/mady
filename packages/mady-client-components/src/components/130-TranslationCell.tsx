@@ -19,6 +19,7 @@ type Props = {
   ) => void;
   onCreate: (keyId: string, lang: string, text: string) => void;
   onMayHaveChangedHeight: Function;
+  autoTranslate: (lang: string, text: string) => Promise<string | null>;
 };
 type State = {
   editing: boolean;
@@ -108,6 +109,16 @@ class TranslationCell extends React.Component<Props, State> {
         >
           <Icon icon="copy" family="far" onClick={this.onClickCopy} />
         </span>
+        <span
+          className="mady-translation-button on-hover"
+          title="Autotranslate"
+        >
+          <Icon
+            icon="google"
+            family="fab"
+            onClick={this.onClickAutoTranslate}
+          />
+        </span>
         {hasTranslation && (
           <span
             className={classnames(
@@ -173,6 +184,16 @@ class TranslationCell extends React.Component<Props, State> {
 
   onClickCopy = () => {
     const { text } = this.props.myKey;
+    this.refTextarea.current!.setValue(text);
+    setTimeout(() => {
+      this.refTextarea.current!.focus();
+    }, 0);
+  };
+
+  onClickAutoTranslate = async () => {
+    const { lang, myKey } = this.props;
+    const text = await this.props.autoTranslate(lang, myKey.text);
+    if (text == null) return;
     this.refTextarea.current!.setValue(text);
     setTimeout(() => {
       this.refTextarea.current!.focus();

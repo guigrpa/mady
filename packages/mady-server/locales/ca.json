@@ -1734,7 +1734,8 @@
     "isDeleted": false,
     "lang": "ca",
     "translation": "Animació",
-    "keyId": "Y292aWRfQW5pbWF0aW9u"
+    "keyId": "Y292aWRfQW5pbWF0aW9u",
+    "fuzzy": true
   },
   "5553b977-ab21-4973-9679-63f598ad3ae3": {
     "id": "5553b977-ab21-4973-9679-63f598ad3ae3",

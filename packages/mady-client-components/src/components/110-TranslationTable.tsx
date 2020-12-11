@@ -27,6 +27,7 @@ type Props = {
     updates: Partial<Translation>
   ) => void;
   onCreateTranslation: (keyId: string, lang: string, text: string) => void;
+  autoTranslate: (text: string) => Promise<string | null>;
 };
 type State = {
   tableBodyHeight: number | null;
@@ -176,6 +177,7 @@ class TranslationTable extends React.Component<Props, State> {
             onUpdate={this.props.onUpdateTranslation}
             onCreate={this.props.onCreateTranslation}
             onMayHaveChangedHeight={onMayHaveChangedHeight}
+            autoTranslate={this.props.autoTranslate}
           />
         ),
       })),

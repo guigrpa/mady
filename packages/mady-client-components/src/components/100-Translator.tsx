@@ -101,6 +101,7 @@ class Translator extends React.Component<Props, State> {
         onDeleteTranslation={this.onDeleteTranslation}
         onUpdateTranslation={this.onUpdateTranslation}
         onCreateTranslation={this.onCreateTranslation}
+        autoTranslate={this.autoTranslate}
       />
     );
   }
@@ -319,6 +320,22 @@ class Translator extends React.Component<Props, State> {
         msg: 'Please try again later!',
       });
       throw err;
+    }
+  };
+
+  autoTranslate = async (lang: string, text: string) => {
+    try {
+      const res = await this.api.post('/autoTranslate', { lang, text });
+      return res.data;
+    } catch (err) {
+      notify({
+        type: 'error',
+        icon: 'google',
+        iconFamily: 'fab',
+        title: 'Cannot autotranslate now',
+        msg: 'Please try again later!',
+      });
+      return null;
     }
   };
 

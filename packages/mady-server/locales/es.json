@@ -1412,14 +1412,16 @@
     "isDeleted": false,
     "lang": "es",
     "translation": "Amsterdam",
-    "keyId": "Y292aWRfQW1zdGVyZGFt"
+    "keyId": "Y292aWRfQW1zdGVyZGFt",
+    "fuzzy": true
   },
   "9918de88-6fed-4f92-8268-e06d9669520f": {
     "id": "9918de88-6fed-4f92-8268-e06d9669520f",
     "isDeleted": false,
     "lang": "es",
     "translation": "Niveles de fondo",
-    "keyId": "Y292aWRfQmFja2dyb3VuZA=="
+    "keyId": "Y292aWRfQmFja2dyb3VuZA==",
+    "fuzzy": true
   },
   "d732453f-244d-4d9f-9733-9cdcc54133ee": {
     "id": "d732453f-244d-4d9f-9733-9cdcc54133ee",
@@ -1736,7 +1738,8 @@
     "isDeleted": false,
     "lang": "es",
     "translation": "Animación",
-    "keyId": "Y292aWRfQW5pbWF0aW9u"
+    "keyId": "Y292aWRfQW5pbWF0aW9u",
+    "fuzzy": true
   },
   "acfc72a3-f08c-4944-bf38-457bdf1d11ae": {
     "id": "acfc72a3-f08c-4944-bf38-457bdf1d11ae",
@@ -2165,5 +2168,12 @@
     "translation": "Copernicus Marine Environment Monitoring Service",
     "fuzzy": false,
     "keyId": "Y29tcGFueS1uYW1lX0NvcGVybmljdXMgTWFyaW5lIEVudmlyb25tZW50IE1vbml0b3JpbmcgU2VydmljZQ=="
+  },
+  "695f6147-88e1-4510-b2b2-234ce55c3e90": {
+    "id": "695f6147-88e1-4510-b2b2-234ce55c3e90",
+    "isDeleted": true,
+    "lang": "es",
+    "translation": "Organización de Investigación Científica e Industrial del Commonwealth",
+    "keyId": "Y29tcGFueS1uYW1lX0NvbW1vbndlYWx0aCBTY2llbnRpZmljIGFuZCBJbmR1c3RyaWFsIFJlc2VhcmNoIE9yZ2FuaXNhdGlvbg=="
   }
 }
