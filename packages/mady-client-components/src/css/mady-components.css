@@ -83,6 +83,12 @@
   font-weight: 900;
 }
 
+.mady-translation-table
+  .giu-data-table-cell:not(.giu-data-table-col-__SORT_MANUALLY__)
+  + .giu-data-table-cell {
+  margin-left: 5px;
+}
+
 /* ============================================== */
 /* Table header */
 /* ============================================== */
@@ -200,25 +206,53 @@
   justify-content: space-between;
 }
 
-.mady-translation-text {
-  white-space: pre-wrap;
-  word-break: break-word;
+.mady-add-column .giu-drop-down-menu-title {
+  padding: 0;
+  background-color: inherit;
+}
+
+.giu-float-mady-add-column,
+.giu-float-error-mady-translation {
+  font-size: 0.8rem;
+  --color-accent-bg: rgb(220, 220, 220);
+  --color-accent-fg: black;
+  line-height: 1.2;
+}
+
+.giu-float-error-mady-translation .giu-error {
+  max-width: 200px;
 }
 
 .mady-remove-column {
   margin-left: 0.8em;
 }
 
-.mady-add-column .giu-drop-down-menu-title {
-  padding: 0;
-  background-color: inherit;
+.mady-translation-text {
+  position: relative;
+  flex: 1;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
-.giu-float-mady-add-column {
-  font-size: 0.8rem;
-  --color-accent-bg: rgb(220, 220, 220);
-  --color-accent-fg: black;
-  line-height: 1.2;
+.mady-translation-text .giu-textarea-field {
+  display: block;
+  padding: 0px 1px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  min-height: 17px;
+}
+
+.mady-translation-help {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  background-color: #999;
+  color: white;
+  padding: 2px 4px;
+  display: none;
+}
+.mady-translation-help.shown {
+  display: block;
 }
 
 .mady-translation-buttons {

@@ -1,7 +1,8 @@
 import React from 'react';
 import classnames from 'classnames';
-import { Icon } from 'giu';
-import type { Key } from '../types';
+import { Icon, Textarea, KEYS, cancelEvent } from 'giu';
+import MessageFormat from 'messageformat';
+import type { Key, Translation } from '../types';
 
 // ==============================================
 // Declarations
@@ -9,32 +10,156 @@ import type { Key } from '../types';
 type Props = {
   myKey: Key;
   lang: string;
+  onSelectKey: (keyId: string) => void;
   onDelete: (keyId: string, lang: string) => void;
+  onUpdate: (keyId: string, lang: string, text: string) => void;
+  onCreate: (keyId: string, lang: string, text: string) => void;
+  onMayHaveChangedHeight: Function;
+};
+type State = {
+  editing: boolean;
+  dismissedHelp: boolean;
 };
 
 // ==============================================
 // Component
 // ==============================================
-const TranslationCell = ({ myKey, lang, onDelete }: Props) => {
-  const translation = myKey.translations[lang];
-  return (
-    <div
-      className={classnames('mady-translation-cell', {
-        'mady-seq-starts': myKey.seqStarts,
-        'mady-is-first-key': myKey.isFirstKey,
-        unused: myKey.unusedSince != null,
-      })}
-    >
-      <div className="mady-translation-text">{translation?.translation}</div>
-      {translation && (
-        <div className="mady-translation-buttons">
-          <span className="mady-delete-translation" title="Delete translation">
-            <Icon icon="times" onClick={() => onDelete(myKey.id, lang)} />
-          </span>
-        </div>
-      )}
-    </div>
-  );
+class TranslationCell extends React.Component<Props, State> {
+  state: State = {
+    editing: false,
+    dismissedHelp: false,
+  };
+  translation: Translation | undefined;
+  refTextarea = React.createRef<any>();
+
+  // ==============================================
+  render() {
+    const { myKey, lang } = this.props;
+    this.translation = myKey.translations[lang];
+    return (
+      <div
+        className={classnames('mady-translation-cell', {
+          'mady-seq-starts': myKey.seqStarts,
+          'mady-is-first-key': myKey.isFirstKey,
+          unused: myKey.unusedSince != null,
+        })}
+      >
+        {this.renderTranslation()}
+        {this.renderButtons()}
+      </div>
+    );
+  }
+
+  renderTranslation() {
+    const validators = this.props.myKey.isMarkdown
+      ? undefined
+      : [validateMessageFormatSynxtax(this.props.lang)];
+    return (
+      <div className="mady-translation-text">
+        {this.renderHelp()}
+        <Textarea
+          className="mady-translation"
+          ref={this.refTextarea}
+          value={this.translation?.translation || null}
+          validators={validators}
+          onChange={this.props.onMayHaveChangedHeight}
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}
+          onKeyDown={this.onKeyDown}
+          onKeyUp={this.onKeyUp}
+        />
+      </div>
+    );
+  }
+
+  renderHelp() {
+    return (
+      <div
+        className={classnames('mady-translation-help', {
+          shown: this.state.editing && !this.state.dismissedHelp,
+        })}
+        onMouseEnter={() => this.setState({ dismissedHelp: true })}
+      >
+        Click outside or TAB to save. ESC to undo.
+      </div>
+    );
+  }
+
+  renderButtons() {
+    const { myKey, lang, onDelete } = this.props;
+    if (!this.translation) return null;
+    return (
+      <div className="mady-translation-buttons">
+        <span className="mady-delete-translation" title="Delete translation">
+          <Icon icon="times" onClick={() => onDelete(myKey.id, lang)} />
+        </span>
+      </div>
+    );
+  }
+
+  // ==============================================
+  onFocus = () => {
+    this.setState({ editing: true, dismissedHelp: false });
+    this.props.onSelectKey(this.props.myKey.id);
+  };
+
+  onBlur = async () => {
+    const { myKey, lang } = this.props;
+    this.setState({ editing: false });
+    const text = await this.refTextarea.current!.validateAndGetValue();
+    if ((this.translation?.translation || null) === text) return;
+    if (this.translation && !text) {
+      this.props.onDelete(myKey.id, lang);
+    } else if (this.translation) {
+      this.props.onUpdate(myKey.id, lang, text);
+    } else {
+      this.props.onCreate(myKey.id, lang, text);
+    }
+  };
+
+  onKeyDown = (ev: KeyboardEvent) => {
+    // RETURN + modifier key (unmodified RETURNs are accepted in the textarea): ignore (will
+    // be processed on keyup)
+    if (
+      ev.which === KEYS.enter &&
+      (ev.ctrlKey || ev.altKey || ev.metaKey || ev.shiftKey)
+    ) {
+      cancelEvent(ev);
+    }
+  };
+
+  onKeyUp = (ev: KeyboardEvent) => {
+    // ESC: revert and blur
+    if (ev.which === KEYS.esc) {
+      this.refTextarea.current!.revert();
+      this.refTextarea.current!.blur();
+      // RETURN + modifier key (unmodified RETURNs are accepted in the textarea): blur (and save)
+    } else if (
+      ev.which === KEYS.enter &&
+      (ev.ctrlKey || ev.altKey || ev.metaKey || ev.shiftKey)
+    ) {
+      this.refTextarea.current!.blur();
+    }
+  };
+}
+
+// ==============================================
+const validateMessageFormatSynxtax = (lang: string) => (val: string) => {
+  // Check open-close brackets
+  const numOpen = val.split('{').length - 1;
+  const numClose = val.split('}').length - 1;
+  if (numOpen !== numClose) {
+    return 'the number of left and right brackets does not match';
+  }
+
+  // Check MessageFormat syntax
+  const mf = new MessageFormat(lang);
+  try {
+    mf.compile(val);
+  } catch (err) {
+    return `MessageFormat syntax error: ${err.message}`;
+  }
+  return undefined;
 };
 
 // ==============================================

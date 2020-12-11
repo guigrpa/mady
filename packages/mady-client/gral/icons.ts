@@ -12,6 +12,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons/faGoogle';
 import { faCopy } from '@fortawesome/free-regular-svg-icons/faCopy';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
+import { faPencilAlt } from '@fortawesome/free-solid-svg-icons/faPencilAlt';
 import { faLanguage } from '@fortawesome/free-solid-svg-icons/faLanguage';
 
 faLibrary.add(
@@ -27,5 +28,6 @@ faLibrary.add(
   faGoogle,
   faCopy,
   faExclamationTriangle,
+  faPencilAlt,
   faLanguage
 );

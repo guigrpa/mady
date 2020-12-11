@@ -1,6 +1,7 @@
 import React from 'react';
 import { LargeMessage, notify, notifDelete } from 'giu';
 import { addLast, omit, updateIn, setIn } from 'timm';
+import { v4 as uuidv4 } from 'uuid';
 import classnames from 'classnames';
 import axios from 'axios';
 import type { Config, Key, Keys } from '../types';
@@ -28,6 +29,7 @@ type State = {
   fatalError: boolean;
   keys: Keys;
   tUpdated: number | null;
+  selectedKeyId: string | null;
 };
 
 // ==============================================
@@ -42,6 +44,7 @@ class Translator extends React.Component<Props, State> {
     fatalError: false,
     keys: {} as Keys,
     tUpdated: null,
+    selectedKeyId: null,
   };
   pollInterval!: number;
   api = axios.create({ baseURL: this.props.apiUrl, timeout: API_TIMEOUT });
@@ -88,12 +91,16 @@ class Translator extends React.Component<Props, State> {
         langs={langs}
         keys={this.getKeys()}
         shownKeyIds={this.getShownKeyIds()}
+        selectedKeyId={this.state.selectedKeyId}
         parsing={parsing}
         height={this.props.height}
         onAddLang={this.onAddLang}
         onRemoveLang={this.onRemoveLang}
+        onSelectKey={this.onSelectKey}
         onDeleteKey={this.onDeleteKey}
         onDeleteTranslation={this.onDeleteTranslation}
+        onUpdateTranslation={this.onUpdateTranslation}
+        onCreateTranslation={this.onCreateTranslation}
       />
     );
   }
@@ -127,6 +134,10 @@ class Translator extends React.Component<Props, State> {
     const langs = this.state.langs.filter((o) => o !== lang);
     localSet('langs', langs);
     this.setState({ langs });
+  };
+
+  onSelectKey = (selectedKeyId: string) => {
+    this.setState({ selectedKeyId });
   };
 
   onDeleteKey = async (id: string) => {
@@ -164,6 +175,56 @@ class Translator extends React.Component<Props, State> {
       method: 'patch',
       body: { isDeleted: true },
       icon: 'times',
+    });
+  };
+
+  onUpdateTranslation = async (keyId: string, lang: string, text: string) => {
+    const { keys } = this.state;
+    const key = keys[keyId];
+    if (!key)
+      throw new Error(`Cannot update translation (key not found): ${keyId}`);
+    const translation = key.translations[lang];
+    if (!translation)
+      throw new Error(
+        `Cannot update translation (translation for ${lang} not found): ${keyId}`
+      );
+    const { id } = translation;
+    this.mutateData({
+      optimisticState: {
+        keys: setIn(
+          keys,
+          [keyId, 'translations', lang, 'translation'],
+          text
+        ) as Keys,
+      },
+      description: 'Update translation',
+      url: `/translation/${id}`,
+      method: 'patch',
+      body: { translation: text },
+      icon: 'pencil-alt',
+    });
+  };
+
+  onCreateTranslation = async (keyId: string, lang: string, text: string) => {
+    const { keys } = this.state;
+    const key = keys[keyId];
+    if (!key)
+      throw new Error(`Cannot create translation (key not found): ${keyId}`);
+    const translation = {
+      id: uuidv4(),
+      lang,
+      translation: text,
+      keyId,
+    };
+    this.mutateData({
+      optimisticState: {
+        keys: setIn(keys, [keyId, 'translations', lang], translation) as Keys,
+      },
+      description: 'Create translation',
+      url: `/translation`,
+      method: 'post',
+      body: translation,
+      icon: 'pencil-alt',
     });
   };
 
@@ -295,7 +356,6 @@ class Translator extends React.Component<Props, State> {
   // ==============================================
   getKeys = () => {
     let { keys } = this.state;
-    if (!keys) return null;
     // TODO: filter, etc.
     const ids = Object.keys(keys);
     if (ids.length) {

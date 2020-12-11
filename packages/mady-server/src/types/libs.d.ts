@@ -4,4 +4,3 @@ declare module 'storyboard-listener-ws-server';
 declare module 'opn';
 declare module 'google-translate-token';
 declare module 'diveSync';
-declare module 'uuid';

@@ -13,12 +13,16 @@ type Props = {
   langs: string[];
   keys: Keys;
   shownKeyIds: string[];
+  selectedKeyId: string | null;
   parsing: boolean;
   height: number;
   onAddLang: (lang: string) => void;
   onRemoveLang: (lang: string) => void;
+  onSelectKey: (keyId: string) => void;
   onDeleteKey: (id: string) => void;
   onDeleteTranslation: (keyId: string, lang: string) => void;
+  onUpdateTranslation: (keyId: string, lang: string, text: string) => void;
+  onCreateTranslation: (keyId: string, lang: string, text: string) => void;
 };
 type State = {
   tableBodyHeight: number | null;
@@ -69,14 +73,14 @@ class TranslationTable extends React.Component<Props, State> {
 
   renderDataTable() {
     const height = this.props.height || this.state.tableBodyHeight || 0;
+    const { selectedKeyId } = this.props;
     return (
       <DataTable
         className="mady"
         itemsById={this.props.keys}
         shownIds={this.props.shownKeyIds}
         cols={this.getCols()}
-        // alwaysRenderIds={[] /* TODO: current selection: don't lose content */}
-        // neverFilterIds={[] /* TODO: current selection: don't lose content */}
+        alwaysRenderIds={selectedKeyId ? [selectedKeyId] : undefined}
         headerClickForSorting={false}
         allowManualSorting={false}
         allowSelect={false}
@@ -153,11 +157,21 @@ class TranslationTable extends React.Component<Props, State> {
           );
         },
         rawValue: (o: Key) => o.translations[lang],
-        render: ({ item }: { item: Key }) => (
+        render: ({
+          item,
+          onMayHaveChangedHeight,
+        }: {
+          item: Key;
+          onMayHaveChangedHeight: Function;
+        }) => (
           <TranslationCell
             myKey={item}
             lang={lang}
+            onSelectKey={this.props.onSelectKey}
             onDelete={this.props.onDeleteTranslation}
+            onUpdate={this.props.onUpdateTranslation}
+            onCreate={this.props.onCreateTranslation}
+            onMayHaveChangedHeight={onMayHaveChangedHeight}
           />
         ),
       })),

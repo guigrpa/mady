@@ -2087,7 +2087,7 @@
   },
   "93e43978-7627-4c1d-98ab-166dd753751d": {
     "id": "93e43978-7627-4c1d-98ab-166dd753751d",
-    "isDeleted": false,
+    "isDeleted": true,
     "lang": "ca",
     "translation": "Copernicus Marine Environment Monitoring Service",
     "keyId": "Y29tcGFueS1uYW1lX0NvcGVybmljdXMgTWFyaW5lIEVudmlyb25tZW50IE1vbml0b3JpbmcgU2VydmljZQ=="
@@ -2154,5 +2154,12 @@
     "lang": "ca",
     "translation": "# Dades satel·litals i intel·ligència computacional per fer front als reptes climàtics",
     "keyId": "cGFnZS1jb250ZW50c18jIFNhdGVsbGl0ZSBkYXRhIGFuZCBjb21wdXRhdGlvbmFsIGludGVsbGlnZW5jZSB0byBhZGRyZXNzIGNsaW1hdGUgY2hhbGxlbmdlcw=="
+  },
+  "324f8b9d-4640-4961-83c4-f821e7ee0f34": {
+    "id": "324f8b9d-4640-4961-83c4-f821e7ee0f34",
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Copernicus Marine Environment Monitoring Service",
+    "keyId": "Y29tcGFueS1uYW1lX0NvcGVybmljdXMgTWFyaW5lIEVudmlyb25tZW50IE1vbml0b3JpbmcgU2VydmljZQ=="
   }
 }

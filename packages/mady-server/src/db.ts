@@ -4,7 +4,6 @@ import slash from 'slash';
 import { addDefaults, merge, set as timmSet, omit } from 'timm';
 import { mainStory, chalk } from 'storyboard';
 import { decode } from 'js-base64';
-import { v4 as uuidv4 } from 'uuid';
 import debounce from 'lodash/debounce';
 import type {
   Config,
@@ -306,10 +305,9 @@ const getKeyTranslations = (keyId: string, lang?: string) =>
 const getTranslation = (id: string) => _translations[id];
 
 const createTranslation = async (newAttrs: Partial<Translation>) => {
-  const { lang, translation, fuzzy, keyId } = newAttrs;
+  const { id, lang, translation, fuzzy, keyId } = newAttrs;
   if (!lang) throw new Error('Translation language must be specified');
   if (keyId == null) throw new Error('Translation key must be specified');
-  const id = uuidv4();
   const newTranslation = {
     id,
     isDeleted: false,
@@ -318,7 +316,7 @@ const createTranslation = async (newAttrs: Partial<Translation>) => {
     fuzzy,
     keyId,
   } as Translation;
-  _translations[id] = newTranslation;
+  _translations[id!] = newTranslation;
   saveTranslations(lang);
   debouncedCompileTranslations();
   return newTranslation;
