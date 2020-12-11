@@ -27,7 +27,7 @@ type Props = {
     updates: Partial<Translation>
   ) => void;
   onCreateTranslation: (keyId: string, lang: string, text: string) => void;
-  autoTranslate: (text: string) => Promise<string | null>;
+  autoTranslate: (lang: string, text: string) => Promise<string | null>;
 };
 type State = {
   tableBodyHeight: number | null;
