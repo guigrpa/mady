@@ -9,7 +9,9 @@ export type Config = {
   originalLang: string;
 };
 
-// Modification: add translations
+// Modifications:
+// - add translations
+// - add seqStarts
 export type Key = {
   id: string;
   isDeleted?: boolean;
@@ -27,6 +29,8 @@ export type Key = {
   sources: string[];
 
   translations: Record<string, Translation>;
+  seqStarts: boolean;
+  isFirstKey?: boolean;
 };
 export type Keys = Record<string, Key>;
 

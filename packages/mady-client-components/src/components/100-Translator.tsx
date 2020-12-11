@@ -1,6 +1,6 @@
 import React from 'react';
 import { LargeMessage, notify, notifDelete } from 'giu';
-import { addLast, omit, updateIn } from 'timm';
+import { addLast, omit, updateIn, setIn } from 'timm';
 import classnames from 'classnames';
 import axios from 'axios';
 import type { Config, Key, Keys } from '../types';
@@ -79,14 +79,14 @@ class Translator extends React.Component<Props, State> {
           later!
         </LargeMessage>
       );
-    const { tUpdated, config, langs, keys, parsing } = this.state;
+    const { tUpdated, config, langs, parsing } = this.state;
     if (tUpdated == null || config == null)
       return <LargeMessage>Loading data…</LargeMessage>;
     return (
       <TranslationTable
         config={config!}
         langs={langs}
-        keys={keys}
+        keys={this.getKeys()}
         shownKeyIds={this.getShownKeyIds()}
         parsing={parsing}
         height={this.props.height}
@@ -244,7 +244,10 @@ class Translator extends React.Component<Props, State> {
       const { keys: keysArr, tUpdated } = res.data;
       keysArr.sort(keyComparator);
       const keys: Keys = {};
-      keysArr.forEach((key: Key) => (keys[key.id] = key));
+      keysArr.forEach((key: Key) => {
+        key.seqStarts = key.seq == null || key.seq === 0;
+        keys[key.id] = key;
+      });
       return { keys, tUpdated } as { keys: Keys; tUpdated: number };
     } catch (err) {
       notify({
@@ -290,6 +293,17 @@ class Translator extends React.Component<Props, State> {
   };
 
   // ==============================================
+  getKeys = () => {
+    let { keys } = this.state;
+    if (!keys) return null;
+    // TODO: filter, etc.
+    const ids = Object.keys(keys);
+    if (ids.length) {
+      keys = setIn(keys, [ids[0], 'isFirstKey'], true) as Keys;
+    }
+    return keys;
+  };
+
   prevKeys!: Keys;
   prevShownKeyIds!: string[];
   getShownKeyIds = () => {

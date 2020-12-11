@@ -16,6 +16,8 @@ const ContextCell = ({ myKey }: Props) => {
   return (
     <div
       className={classnames('mady-context-cell', {
+        'mady-seq-starts': myKey.seqStarts,
+        'mady-is-first-key': myKey.isFirstKey,
         unused: myKey.unusedSince != null,
       })}
     >

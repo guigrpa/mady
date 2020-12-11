@@ -83,10 +83,6 @@
   font-weight: 900;
 }
 
-.mady-translator .giu-data-table-row {
-  border-bottom: 1px solid transparent;
-}
-
 /* ============================================== */
 /* Table header */
 /* ============================================== */
@@ -115,6 +111,10 @@
   color: var(--color-dim-text);
 }
 
+.mady-seq-starts:not(.mady-is-first-key) {
+  border-top: 1px solid #ccc;
+}
+
 /* ============================================== */
 /* Context col */
 /* ============================================== */
@@ -131,6 +131,10 @@
   margin-right: 1em;
   white-space: pre-wrap;
   word-break: break-word;
+}
+
+.mady-context-cell:not(.mady-seq-starts) .mady-context-text {
+  display: none;
 }
 
 /* ============================================== */
