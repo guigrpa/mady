@@ -10,9 +10,6 @@ module.exports = {
   "Y292aWQxOVBhZ2Utb3RoZXJDaXRpZXNTZWN0aW9uVGl0bGVfV2hhdCBjYW4gYmUgZXhwZWN0ZWQgaW4gb3RoZXIgY2l0aWVzPw==": function(d) { return "Què podem esperar a les altres ciutats?"; },
   Y292aWQxOVBhZ2UtdGl0bGVfQ09WSUQtMTkgbG9ja2Rvd246IGFpciBwb2xsdXRpb24gaW4gY2l0aWVz: function(d) { return "COVID-19: Com afecta el confinament a la qualitat de l’aire de les grans ciutats\n"; }
 };
-module.exports['Y292aWQxOVBhZ2UtYWJzdHJhY3RfTW9zdCBvZiB0aGUgbml0cm9nZW4gZGlveGlkZSAoTk/igoIpIHdlIGJyZWF0aGUgZGFpbHkgaW4gb3VyIGNpdGllcyBpcyBnZW5lcmF0ZWQgYnkgb3Vyc2VsdmVzLiBJdCBpcyBnZW5lcmF0ZWQgaW4gY29tYnVzdGlvbiBwcm9jZXNzZXMgc3VjaCBhcyBoZWF0aW5nIGFuZCBjb29raW5nLCBidXQgbW9zdCBvZiB0aGUgTk/igoIgaW4gb3VyIHN0cmVldHMgY29tZXMgZnJvbSBtb3RvciB2ZWhpY2xlIGV4aGF1c3Qu'] = function() {
-      return "Gran part del diòxid de nitrogen (NO₂) que respirem cada dia a Barcelona el generem nosaltres mateixos. Només un 1% d’aquest gas pudent es forma naturalment; un 80% del NO₂ als nostres carrers prové dels vehicles de motor."
-    };
 module.exports['Y292aWQxOVBhZ2UtYWJzdHJhY3RfTk/igoIgaXMgbGlua2VkIHRvIGFuIGluY3JlYXNlZCBsaWtlbGlob29kIG9mIHJlc3BpcmF0b3J5IHByb2JsZW1zLiBJdCBpbmZsYW1lcyB0aGUgbGluaW5nIG9mIHRoZSBsdW5ncywgYW5kIGNhbiByZWR1Y2UgaW1tdW5pdHkgdG8gbHVuZyBpbmZlY3Rpb25zLCBwYXZpbmcgdGhlIHdheSBmb3IgY29sZHMsIGZsdSBhbmQgYnJvbmNoaXRpcy4gT24gcGVvcGxlIHdpdGggYXN0aG1hLCBpdCBjYW4gY2F1c2UgbW9yZSBmcmVxdWVudCBhbmQgaW50ZW5zZSBhdHRhY2tzLiBDaGlsZHJlbiB3aXRoIGFzdGhtYSBhbmQgb2xkZXIgcGVvcGxlIHdpdGggaGVhcnQgZGlzZWFzZSBhcmUgbW9zdCBhdCByaXNrLg=='] = function() {
       return "L’NO₂ està relacionat amb una major incidència de problemes respiratoris. Inflama el revestiment dels pulmons i pot reduir la immunitat a les infeccions pulmonars, preparant el camí per refredats, grip i bronquitis. En persones amb asma, pot causar atacs més freqüents i intensos. Nens amb asma i persones grans amb malalties del cor són els més exposats."
     };

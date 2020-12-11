@@ -10,9 +10,6 @@ module.exports = {
   "Y292aWQxOVBhZ2Utb3RoZXJDaXRpZXNTZWN0aW9uVGl0bGVfV2hhdCBjYW4gYmUgZXhwZWN0ZWQgaW4gb3RoZXIgY2l0aWVzPw==": function(d) { return "¿Qué se puede esperar en otras ciudades?"; },
   Y292aWQxOVBhZ2UtdGl0bGVfQ09WSUQtMTkgbG9ja2Rvd246IGFpciBwb2xsdXRpb24gaW4gY2l0aWVz: function(d) { return "COVID-19: Cómo afecta el confinamiento a la calidad del aire de las grandes ciudades"; }
 };
-module.exports['Y292aWQxOVBhZ2UtYWJzdHJhY3RfTW9zdCBvZiB0aGUgbml0cm9nZW4gZGlveGlkZSAoTk/igoIpIHdlIGJyZWF0aGUgZGFpbHkgaW4gb3VyIGNpdGllcyBpcyBnZW5lcmF0ZWQgYnkgb3Vyc2VsdmVzLiBJdCBpcyBnZW5lcmF0ZWQgaW4gY29tYnVzdGlvbiBwcm9jZXNzZXMgc3VjaCBhcyBoZWF0aW5nIGFuZCBjb29raW5nLCBidXQgbW9zdCBvZiB0aGUgTk/igoIgaW4gb3VyIHN0cmVldHMgY29tZXMgZnJvbSBtb3RvciB2ZWhpY2xlIGV4aGF1c3Qu'] = function() {
-      return "Gran parte del dióxido de nitrógeno (NO₂) que respiramos cada día en Barcelona lo generamos nosotros mismos. Solo el 1% de este gas de olor desagradable se forma naturalmente; un 80% del NO₂ en nuestras calles proviene de vehículos motorizados."
-    };
 module.exports['Y292aWQxOVBhZ2UtYWJzdHJhY3RfTk/igoIgaXMgbGlua2VkIHRvIGFuIGluY3JlYXNlZCBsaWtlbGlob29kIG9mIHJlc3BpcmF0b3J5IHByb2JsZW1zLiBJdCBpbmZsYW1lcyB0aGUgbGluaW5nIG9mIHRoZSBsdW5ncywgYW5kIGNhbiByZWR1Y2UgaW1tdW5pdHkgdG8gbHVuZyBpbmZlY3Rpb25zLCBwYXZpbmcgdGhlIHdheSBmb3IgY29sZHMsIGZsdSBhbmQgYnJvbmNoaXRpcy4gT24gcGVvcGxlIHdpdGggYXN0aG1hLCBpdCBjYW4gY2F1c2UgbW9yZSBmcmVxdWVudCBhbmQgaW50ZW5zZSBhdHRhY2tzLiBDaGlsZHJlbiB3aXRoIGFzdGhtYSBhbmQgb2xkZXIgcGVvcGxlIHdpdGggaGVhcnQgZGlzZWFzZSBhcmUgbW9zdCBhdCByaXNrLg=='] = function() {
       return "El NO₂ está relacionado con una mayor incidencia de problemas respiratorios. Inflama el revestimiento de los pulmones y puede reducir la inmunidad a las infecciones pulmonares. En personas con asma, puede causar ataques más frecuentes e intensos. Los niños con asma y las personas mayores con enfermedades del corazón tienen mayor riesgo."
     };
