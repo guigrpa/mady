@@ -112,9 +112,11 @@
 /* ============================================== */
 /* Table row */
 /* ============================================== */
-.mady-context-cell.unused,
-.mady-key-cell.unused,
-.mady-translation-cell.unused {
+.mady-cell {
+  padding: 3px 0;
+}
+
+.mady-cell.unused {
   color: var(--color-dim-text);
 }
 
@@ -123,14 +125,26 @@
 }
 
 /* ============================================== */
+/* Scope col */
+/* ============================================== */
+.mady-translator .giu-data-table-col-scope {
+  flex: 0 0 150px;
+}
+
+.mady-scope-cell:not(.mady-seq-starts) .mady-scope-text {
+  display: none;
+}
+
+.mady-scope-cell.unscoped {
+  font-style: italic;
+  color: var(--color-dim-text);
+}
+
+/* ============================================== */
 /* Context col */
 /* ============================================== */
 .mady-translator .giu-data-table-col-context {
   flex: 0 0 150px;
-}
-
-.mady-context-cell {
-  padding: 3px 0;
 }
 
 .mady-context-text {

@@ -28,6 +28,7 @@ type State = {
   parsing: boolean;
   fatalError: boolean;
   keys: Keys;
+  scopes: string[];
   tUpdated: number | null;
   selectedKeyId: string | null;
   filterValue: string;
@@ -44,6 +45,7 @@ class Translator extends React.Component<Props, State> {
     parsing: false,
     fatalError: false,
     keys: {} as Keys,
+    scopes: [] as string[],
     tUpdated: null,
     selectedKeyId: null,
     filterValue: '',
@@ -105,6 +107,7 @@ class Translator extends React.Component<Props, State> {
         langs={langs}
         keys={this.getKeys()}
         shownKeyIds={this.getShownKeyIds()}
+        showScopes={this.state.scopes.length > 1}
         selectedKeyId={this.state.selectedKeyId}
         filterValue={this.state.filterValue}
         parsing={parsing}
@@ -268,8 +271,8 @@ class Translator extends React.Component<Props, State> {
       }
 
       // Fetch data
-      const { keys, tUpdated } = await this.fetchTranslations();
-      this.setState({ keys, tUpdated });
+      const { keys, scopes, tUpdated } = await this.fetchTranslations();
+      this.setState({ keys, scopes, tUpdated });
     } finally {
       this.setState({ fetching: false });
     }
@@ -318,14 +321,21 @@ class Translator extends React.Component<Props, State> {
       let url = `/keysAndTranslations/${langParam}`;
       if (scope !== undefined) url += `?scope=${scope || ''}`;
       const res = await this.api.get(url);
-      const { keys: keysArr, tUpdated } = res.data;
+      const keysArr = res.data.keys as Key[];
+      const tUpdated = res.data.tUpdated as number;
+
+      // Prepare keys
       keysArr.sort(keyComparator);
       const keys: Keys = {};
-      keysArr.forEach((key: Key) => {
-        key.seqStarts = key.seq == null || key.seq === 0;
+      const scopeObj: Record<string, boolean> = {};
+      keysArr.forEach((key) => {
+        const { seq, scope } = key;
+        key.seqStarts = seq == null || seq === 0;
+        if (scope) scopeObj[scope] = true;
         keys[key.id] = key;
       });
-      return { keys, tUpdated } as { keys: Keys; tUpdated: number };
+      const scopes = Object.keys(scopeObj);
+      return { keys, scopes, tUpdated };
     } catch (err) {
       notify({
         type: 'error',
@@ -424,15 +434,17 @@ const calcInitialLangs = (config: Config) => {
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-// Sort keys by context > scope > seq > text > id
+// Sort keys by scope > context > seq > text > id
 const keyComparator = (a: Key, b: Key) => {
   if (a == null || b == null) return 0;
+  const aScope = a.scope ? simplifyStringWithCache(a.scope) : '';
+  const bScope = b.scope ? simplifyStringWithCache(b.scope) : '';
+  if (aScope && !bScope) return -1;
+  if (!aScope && bScope) return +1;
+  if (aScope !== bScope) return aScope < bScope ? -1 : +1;
   const aContext = a.context ? simplifyStringWithCache(a.context) : '';
   const bContext = b.context ? simplifyStringWithCache(b.context) : '';
   if (aContext !== bContext) return aContext < bContext ? -1 : +1;
-  const aScope = a.scope ? simplifyStringWithCache(a.scope) : '';
-  const bScope = b.scope ? simplifyStringWithCache(b.scope) : '';
-  if (aScope !== bScope) return aScope < bScope ? -1 : +1;
   const aSeq = a.seq;
   const bSeq = b.seq;
   if (aSeq != null && bSeq != null && aSeq !== bSeq) {

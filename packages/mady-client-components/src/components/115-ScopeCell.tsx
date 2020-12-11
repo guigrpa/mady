@@ -15,13 +15,14 @@ type Props = {
 const ContextCell = ({ myKey }: Props) => {
   return (
     <div
-      className={classnames('mady-context-cell', {
+      className={classnames('mady-cell mady-scope-cell', {
         'mady-seq-starts': myKey.seqStarts,
         'mady-is-first-key': myKey.isFirstKey,
         unused: myKey.unusedSince != null,
+        unscoped: !myKey.scope,
       })}
     >
-      <span className="mady-context-text">{myKey.context}</span>
+      <span className={'mady-scope-text'}>{myKey.scope || 'unscoped'}</span>
     </div>
   );
 };

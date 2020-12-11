@@ -28,7 +28,7 @@ const KeyCell = ({ myKey, config, langs: langs0, onDelete }: Props) => {
   else status = 'translated';
   return (
     <div
-      className={classnames('mady-key-cell', status, {
+      className={classnames('mady-cell mady-key-cell', status, {
         'mady-seq-starts': myKey.seqStarts,
         'mady-is-first-key': myKey.isFirstKey,
       })}

@@ -1,7 +1,8 @@
 import React from 'react';
 import { DataTable, Icon, DropDownMenu } from 'giu';
 import type { Config, Key, Keys, Translation } from '../types';
-import ContextCell from './115-ContextCell';
+import ScopeCell from './115-ScopeCell';
+import ContextCell from './116-ContextCell';
 import KeyCell from './120-KeyCell';
 import TranslationCell from './130-TranslationCell';
 
@@ -14,6 +15,7 @@ type Props = {
   keys: Keys;
   shownKeyIds: string[];
   selectedKeyId: string | null;
+  showScopes: boolean;
   filterValue: string;
   parsing: boolean;
   height: number;
@@ -103,36 +105,48 @@ class TranslationTable extends React.Component<Props, State> {
     const key = langs.join(',');
     if (key === this.prevColsKey) return this.prevCols;
     const keyArr = Object.values(keys);
+    const cols: any = [];
 
-    // Build cols
-    const cols: any = [
-      {
-        attr: 'context',
-        render: ({ item }: { item: Key }) => <ContextCell myKey={item} />,
+    // Scope col
+    if (this.props.showScopes)
+      cols.push({
+        attr: 'scope',
+        render: ({ item }: { item: Key }) => <ScopeCell myKey={item} />,
+      });
+
+    // Context col
+    cols.push({
+      attr: 'context',
+      render: ({ item }: { item: Key }) => <ContextCell myKey={item} />,
+    });
+
+    // Key col
+    cols.push({
+      attr: 'text',
+      label: () => {
+        const numKeys = keyArr.filter((o) => !o.unusedSince).length;
+        return (
+          <>
+            Messages
+            <span className="mady-stats" title="Messages in use">
+              {numKeys}
+            </span>
+          </>
+        );
       },
-      {
-        attr: 'text',
-        label: () => {
-          const numKeys = keyArr.filter((o) => !o.unusedSince).length;
-          return (
-            <>
-              Messages
-              <span className="mady-stats" title="Messages in use">
-                {numKeys}
-              </span>
-            </>
-          );
-        },
-        render: ({ item }: { item: Key }) => (
-          <KeyCell
-            myKey={item}
-            config={config}
-            langs={langs}
-            onDelete={this.props.onDeleteKey}
-          />
-        ),
-      },
-      ...langs.map((lang, idx) => ({
+      render: ({ item }: { item: Key }) => (
+        <KeyCell
+          myKey={item}
+          config={config}
+          langs={langs}
+          onDelete={this.props.onDeleteKey}
+        />
+      ),
+    });
+
+    // Lang cols
+    langs.forEach((lang, idx) =>
+      cols.push({
         attr: lang,
         label: () => {
           const numTranslations = keyArr.filter(
@@ -182,8 +196,11 @@ class TranslationTable extends React.Component<Props, State> {
             autoTranslate={this.props.autoTranslate}
           />
         ),
-      })),
-    ];
+      })
+    );
+
+    // If no langs are available, add extra col to show
+    // the add-lang button
     if (!langs.length) {
       cols.push({
         attr: '+',
