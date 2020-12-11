@@ -102,6 +102,12 @@ class TranslationCell extends React.Component<Props, State> {
             <Icon icon="times" onClick={() => onDelete(myKey.id, lang)} />
           </span>
         )}
+        <span
+          className="mady-translation-button on-hover"
+          title="Copy message to translation"
+        >
+          <Icon icon="copy" family="far" onClick={this.onClickCopy} />
+        </span>
         {hasTranslation && (
           <span
             className={classnames(
@@ -163,6 +169,14 @@ class TranslationCell extends React.Component<Props, State> {
     ) {
       this.refTextarea.current!.blur();
     }
+  };
+
+  onClickCopy = () => {
+    const { text } = this.props.myKey;
+    this.refTextarea.current!.setValue(text);
+    setTimeout(() => {
+      this.refTextarea.current!.focus();
+    }, 0);
   };
 
   onClickFuzzy = (fuzzy: boolean) => {
