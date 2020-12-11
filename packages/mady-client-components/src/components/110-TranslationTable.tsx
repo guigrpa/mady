@@ -56,7 +56,6 @@ class TranslationTable extends React.Component<Props, State> {
     if (!header) return;
     const tableBodyHeight = totalHeight - (header as any).offsetHeight;
     this.setState({ tableBodyHeight });
-    // const headerHeight =
   };
 
   // ==============================================
