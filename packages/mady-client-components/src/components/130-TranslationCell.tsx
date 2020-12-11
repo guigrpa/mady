@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import { Icon } from 'giu';
 import type { Key } from '../types';
 
 // ==============================================
@@ -8,21 +9,27 @@ import type { Key } from '../types';
 type Props = {
   myKey: Key;
   lang: string;
+  onDelete: (keyId: string, lang: string) => void;
 };
 
 // ==============================================
 // Component
 // ==============================================
-const TranslationCell = ({ myKey, lang }: Props) => {
+const TranslationCell = ({ myKey, lang, onDelete }: Props) => {
+  const translation = myKey.translations[lang];
+  if (!translation?.translation) return null;
   return (
     <div
       className={classnames('mady-translation-cell', {
         unused: myKey.unusedSince != null,
       })}
     >
-      <span className="mady-translation-text">
-        {myKey.translations[lang]?.translation}
-      </span>
+      <div className="mady-translation-text">{translation.translation}</div>
+      <div className="mady-translation-buttons">
+        <span className="mady-delete-translation" title="Delete translation">
+          <Icon icon="times" onClick={() => onDelete(myKey.id, lang)} />
+        </span>
+      </div>
     </div>
   );
 };

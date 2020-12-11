@@ -1,6 +1,6 @@
 import React from 'react';
 import { LargeMessage, notify, notifDelete } from 'giu';
-import { addLast, omit } from 'timm';
+import { addLast, omit, updateIn } from 'timm';
 import classnames from 'classnames';
 import axios from 'axios';
 import type { Config, Key, Keys } from '../types';
@@ -93,6 +93,7 @@ class Translator extends React.Component<Props, State> {
         onAddLang={this.onAddLang}
         onRemoveLang={this.onRemoveLang}
         onDeleteKey={this.onDeleteKey}
+        onDeleteTranslation={this.onDeleteTranslation}
       />
     );
   }
@@ -129,18 +130,37 @@ class Translator extends React.Component<Props, State> {
   };
 
   onDeleteKey = async (id: string) => {
-    if (!this.state.keys[id])
-      throw new Error(`Cannot delete key (not found): ${id}`);
-
-    // Optimistic
-    const keys = omit(this.state.keys, id);
-    this.setState({ keys });
-
-    // Send to server
+    const { keys } = this.state;
+    if (!keys[id]) throw new Error(`Cannot delete key (not found): ${id}`);
     this.mutateData({
-      optimisticState: { keys },
+      optimisticState: { keys: omit(keys, id) },
       description: 'Delete message',
       url: `/key/${id}`,
+      method: 'patch',
+      body: { isDeleted: true },
+      icon: 'times',
+    });
+  };
+
+  onDeleteTranslation = async (keyId: string, lang: string) => {
+    const { keys } = this.state;
+    const key = keys[keyId];
+    if (!key)
+      throw new Error(`Cannot delete translation (key not found): ${keyId}`);
+    const translation = key.translations[lang];
+    if (!translation)
+      throw new Error(
+        `Cannot delete translation (translation for ${lang} not found): ${keyId}`
+      );
+    const { id } = translation;
+    this.mutateData({
+      optimisticState: {
+        keys: updateIn(keys, [keyId, 'translations'], (o) =>
+          omit(o, lang)
+        ) as Keys,
+      },
+      description: 'Delete translation',
+      url: `/translation/${id}`,
       method: 'patch',
       body: { isDeleted: true },
       icon: 'times',
