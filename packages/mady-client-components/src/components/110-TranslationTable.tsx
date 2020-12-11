@@ -167,7 +167,7 @@ class TranslationTable extends React.Component<Props, State> {
           onMayHaveChangedHeight,
         }: {
           item: Key;
-          onMayHaveChangedHeight: Function;
+          onMayHaveChangedHeight: () => void;
         }) => (
           <TranslationCell
             myKey={item}

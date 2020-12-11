@@ -18,7 +18,7 @@ type Props = {
     updates: Partial<Translation>
   ) => void;
   onCreate: (keyId: string, lang: string, text: string) => void;
-  onMayHaveChangedHeight: Function;
+  onMayHaveChangedHeight: () => void;
   autoTranslate: (lang: string, text: string) => Promise<string | null>;
 };
 type State = {
