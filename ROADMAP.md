@@ -4,18 +4,17 @@
   - [x] mady-server
   - [x] mady-server as embeddable
   - [ ] mady-editor
-    - Left margin showing whether a key is red, green, yellow
-    - Quick find
-    - Sort!
+    - Remove key
     - Editable!
+    - Add row bottom lines
+    - Quick find
+    - Add scope menu (if scope is not in props)
+    - Details when hovering over message
     - TranslationTable:
       - Shown IDs: pass it from owner
-      - Height: pass it from owner
-      - Details when hovering over message
     - Improve editing of long data. Include markdown preview?
     - Filter by unused/untranslated/fuzzy
-    - Add scope menu (if scope is not in props)
-    - Improvement: Show error when user specifies a language that doesn't exist
+    - Allow user selection
 
 Later still:
 

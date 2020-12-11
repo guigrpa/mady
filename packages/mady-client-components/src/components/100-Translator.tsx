@@ -1,10 +1,13 @@
 import React from 'react';
 import { LargeMessage, notify, notifDelete } from 'giu';
+import { addLast } from 'timm';
 import classnames from 'classnames';
 import axios from 'axios';
 import type { Config, Key, Keys } from '../types';
 import { localGet, localSet } from '../gral/localStorage';
+import { simplifyStringWithCache } from '../gral/helpers';
 import TranslationTable from './110-TranslationTable';
+import Toolbar from './105-Toolbar';
 
 const POLL_INTERVAL = 5e3;
 const API_TIMEOUT = 20e3;
@@ -18,7 +21,7 @@ type Props = {
   height: number /* table content height in pixels (-1 sets it to unlimited; 0 expands it to use the full viewport) */;
 };
 type State = {
-  sysConfig: Config | null;
+  config: Config | null;
   langs: string[];
   fetching: boolean;
   parsing: boolean;
@@ -31,9 +34,9 @@ type State = {
 // Component
 // ==============================================
 class Translator extends React.Component<Props, State> {
-  state = {
-    sysConfig: null,
-    langs: [],
+  state: State = {
+    config: null,
+    langs: [] as string[],
     fetching: false,
     parsing: false,
     fatalError: false,
@@ -62,14 +65,10 @@ class Translator extends React.Component<Props, State> {
           'full-height': this.props.height === 0,
         })}
       >
-        {this.renderHeader()}
+        <Toolbar onClickParse={this.onClickParse} />
         {this.renderTable()}
       </div>
     );
-  }
-
-  renderHeader() {
-    return <div className="mady-header">HEADER</div>;
   }
 
   renderTable() {
@@ -80,18 +79,19 @@ class Translator extends React.Component<Props, State> {
           later!
         </LargeMessage>
       );
-    const { tUpdated, sysConfig, langs, keys, parsing } = this.state;
-    if (tUpdated == null || sysConfig == null)
+    const { tUpdated, config, langs, keys, parsing } = this.state;
+    if (tUpdated == null || config == null)
       return <LargeMessage>Loading data…</LargeMessage>;
     return (
       <TranslationTable
-        sysConfig={sysConfig!}
+        config={config!}
         langs={langs}
         keys={keys}
         shownKeyIds={this.getShownKeyIds()}
         parsing={parsing}
-        onClickParse={this.onClickParse}
         height={this.props.height}
+        onAddLang={this.onAddLang}
+        onRemoveLang={this.onRemoveLang}
       />
     );
   }
@@ -115,16 +115,28 @@ class Translator extends React.Component<Props, State> {
     }
   };
 
+  onAddLang = (lang: string) => {
+    const langs = addLast(this.state.langs, lang);
+    localSet('langs', langs);
+    this.setState({ langs }, () => this.fetchData({ force: true }));
+  };
+
+  onRemoveLang = (lang: string) => {
+    const langs = this.state.langs.filter((o) => o !== lang);
+    localSet('langs', langs);
+    this.setState({ langs });
+  };
+
   fetchData = async ({ force }: { force?: boolean } = {}) => {
     if (this.state.fetching || this.state.fatalError) return;
     this.setState({ fetching: true });
 
     try {
-      // Fetch sysConfig
-      if (!this.state.sysConfig) {
-        const sysConfig = await this.fetchConfig();
-        const langs = calcInitialLangs(sysConfig);
-        this.setState({ sysConfig, langs });
+      // Fetch config
+      if (!this.state.config) {
+        const config = await this.fetchConfig();
+        const langs = calcInitialLangs(config);
+        this.setState({ config, langs });
         await delay(0); // make sure state has already been updated
       }
 
@@ -182,12 +194,14 @@ class Translator extends React.Component<Props, State> {
 
   fetchTranslations = async () => {
     try {
-      const { langs } = this.state;
+      const { langs, config } = this.state;
       const { scope } = this.props;
-      let url = `/keysAndTranslations/${langs}`;
+      const langParam = langs.join(',') || config!.originalLang;
+      let url = `/keysAndTranslations/${langParam}`;
       if (scope !== undefined) url += `?scope=${scope || ''}`;
       const res = await this.api.get(url);
       const { keys: keysArr, tUpdated } = res.data;
+      keysArr.sort(keyComparator);
       const keys: Keys = {};
       keysArr.forEach((key: Key) => (keys[key.id] = key));
       return { keys, tUpdated } as { keys: Keys; tUpdated: number };
@@ -219,12 +233,12 @@ class Translator extends React.Component<Props, State> {
 }
 
 // ==============================================
-const calcInitialLangs = (sysConfig: Config) => {
-  const sysLangs = sysConfig.langs;
+const calcInitialLangs = (config: Config) => {
+  const sysLangs = config.langs;
   let langs = localGet('langs') as string[];
   if (langs == null) {
-    langs = sysConfig.langs.filter((o) => o !== sysConfig.originalLang);
-    if (!langs.length) langs = sysConfig.langs;
+    langs = config.langs.filter((o) => o !== config.originalLang);
+    if (!langs.length) langs = config.langs;
   }
   langs = langs.filter((o) => sysLangs.indexOf(o) >= 0);
   localSet('langs', langs);
@@ -232,6 +246,28 @@ const calcInitialLangs = (sysConfig: Config) => {
 };
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+// Sort keys by context > scope > seq > text > id
+const keyComparator = (a: Key, b: Key) => {
+  if (a == null || b == null) return 0;
+  const aContext = a.context ? simplifyStringWithCache(a.context) : '';
+  const bContext = b.context ? simplifyStringWithCache(b.context) : '';
+  if (aContext !== bContext) return aContext < bContext ? -1 : +1;
+  const aScope = a.scope ? simplifyStringWithCache(a.scope) : '';
+  const bScope = b.scope ? simplifyStringWithCache(b.scope) : '';
+  if (aScope !== bScope) return aScope < bScope ? -1 : +1;
+  const aSeq = a.seq;
+  const bSeq = b.seq;
+  if (aSeq != null && bSeq != null && aSeq !== bSeq) {
+    return aSeq < bSeq ? -1 : +1;
+  }
+  const aText = a.text ? simplifyStringWithCache(a.text) : '';
+  const bText = b.text ? simplifyStringWithCache(b.text) : '';
+  if (aText !== bText) return aText < bText ? -1 : +1;
+  return comparator(a.id, b.id);
+};
+
+const comparator = (a: string, b: string) => (a < b ? -1 : a > b ? 1 : 0);
 
 // ==============================================
 // Public

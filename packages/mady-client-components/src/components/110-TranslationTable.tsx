@@ -1,18 +1,22 @@
 import React from 'react';
-import { DataTable, Icon } from 'giu';
+import { DataTable, Icon, DropDownMenu } from 'giu';
 import type { Config, Key, Keys } from '../types';
+import ContextCell from './115-ContextCell';
+import KeyCell from './120-KeyCell';
+import TranslationCell from './130-TranslationCell';
 
 // ==============================================
 // Declarations
 // ==============================================
 type Props = {
-  sysConfig: Config;
+  config: Config;
   langs: string[];
   keys: Keys;
   shownKeyIds: string[];
   parsing: boolean;
-  onClickParse: () => void;
   height: number;
+  onAddLang: (lang: string) => void;
+  onRemoveLang: (lang: string) => void;
 };
 type State = {
   tableBodyHeight: number | null;
@@ -23,7 +27,7 @@ type State = {
 // ==============================================
 class TranslationTable extends React.Component<Props, State> {
   refOuter = React.createRef<HTMLDivElement>();
-  state = {
+  state: State = {
     tableBodyHeight: null,
   };
 
@@ -48,7 +52,7 @@ class TranslationTable extends React.Component<Props, State> {
     const totalHeight = root.offsetHeight;
     const header = root.querySelector('.giu-data-table-header');
     if (!header) return;
-    const tableBodyHeight = totalHeight - header.offsetHeight!;
+    const tableBodyHeight = totalHeight - (header as any).offsetHeight;
     this.setState({ tableBodyHeight });
     // const headerHeight =
   };
@@ -83,44 +87,87 @@ class TranslationTable extends React.Component<Props, State> {
   prevColsKey!: string;
   prevCols!: any[];
   getCols() {
-    const { langs } = this.props;
+    const { config, keys, langs } = this.props;
     const key = langs.join(',');
     if (key === this.prevColsKey) return this.prevCols;
+    const keyArr = Object.values(keys);
 
-    // Render message
+    // Build cols
     const cols: any = [
       {
+        attr: 'context',
+        render: ({ item }: { item: Key }) => <ContextCell myKey={item} />,
+      },
+      {
         attr: 'text',
-        label: (
-          <div className="mady-col-header-messages">
-            Messages&nbsp;&nbsp;
-            <Icon
-              className="mady-parse"
-              icon="sync"
-              onClick={this.props.onClickParse}
-            >
-              Parse
-            </Icon>
-          </div>
-        ),
+        label: () => {
+          const numKeys = keyArr.filter((o) => !o.unusedSince).length;
+          return (
+            <>
+              Messages
+              <span className="mady-stats" title="Messages in use">
+                {numKeys}
+              </span>
+            </>
+          );
+        },
         render: ({ item }: { item: Key }) => (
-          <div>
-            <b>{item.context}</b> {item.text}
-          </div>
+          <KeyCell myKey={item} config={config} langs={langs} />
         ),
       },
-    ];
-
-    // Render translations
-    langs.forEach((lang) => {
-      cols.push({
+      ...langs.map((lang, idx) => ({
         attr: lang,
-        label: lang,
+        label: () => {
+          const numTranslations = keyArr.filter(
+            (o) => !o.unusedSince && o.translations[lang]?.translation
+          ).length;
+          return (
+            <div className="mady-lang-header">
+              <span>
+                {lang}
+                <span className="mady-stats" title="Messages in use">
+                  {numTranslations}
+                </span>
+                <span title="Remove column">
+                  <Icon
+                    className="mady-remove-column"
+                    icon="times"
+                    onClick={() => this.props.onRemoveLang(lang)}
+                  />
+                </span>
+              </span>
+              {idx === langs.length - 1 && (
+                <AddColumn
+                  config={this.props.config}
+                  langs={langs}
+                  onAddLang={this.props.onAddLang}
+                />
+              )}
+            </div>
+          );
+        },
         rawValue: (o: Key) => o.translations[lang],
-        render: ({ item }: { item: Key }) =>
-          item.translations[lang]?.translation,
+        render: ({ item }: { item: Key }) => (
+          <TranslationCell myKey={item} lang={lang} />
+        ),
+      })),
+    ];
+    if (!langs.length) {
+      cols.push({
+        attr: '+',
+        label: () => (
+          <div className="mady-lang-header">
+            <span />
+            <AddColumn
+              config={this.props.config}
+              langs={langs}
+              onAddLang={this.props.onAddLang}
+            />
+          </div>
+        ),
+        rawValue: () => '',
       });
-    });
+    }
 
     // Memoize them
     this.prevColsKey = key;
@@ -128,6 +175,32 @@ class TranslationTable extends React.Component<Props, State> {
     return cols;
   }
 }
+
+const AddColumn = ({
+  config,
+  langs,
+  onAddLang,
+}: {
+  config: Config;
+  langs: string[];
+  onAddLang: (lang: string) => void;
+}) => {
+  const items = config.langs
+    .filter((lang) => langs.indexOf(lang) < 0)
+    .map((lang) => ({ value: lang, label: lang }));
+  if (!items.length) return null;
+  return (
+    <span title="Add column">
+      <DropDownMenu
+        className="mady-add-column"
+        items={items}
+        onClickItem={(_ev: any, lang: string) => onAddLang(lang)}
+      >
+        <Icon icon="plus" />
+      </DropDownMenu>
+    </span>
+  );
+};
 
 // ==============================================
 // Public

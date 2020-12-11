@@ -1,6 +1,6 @@
 import React from 'react';
 import { Translator } from 'mady-client-components';
-import { Notifications } from 'giu';
+import { Notifications, Floats } from 'giu';
 
 // ==============================================
 // Declarations
@@ -16,6 +16,7 @@ class App extends React.Component<Props, State> {
     return (
       <>
         <Notifications />
+        <Floats />
         <Translator
           apiUrl={process.env.NEXT_PUBLIC_MADY_BACKEND_URL || ''}
           height={0} /* full-height */
