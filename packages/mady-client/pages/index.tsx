@@ -20,6 +20,8 @@ class App extends React.Component<Props, State> {
         <Translator
           apiUrl={process.env.NEXT_PUBLIC_MADY_BACKEND_URL || ''}
           height={0} /* full-height */
+          // scope="page-about"
+          // scope={null}
         />
       </>
     );

@@ -1,3 +1,4 @@
 const STORAGE_NAMESPACE = 'mady';
+const UNSCOPED = '__UNSCOPED__';
 
-export { STORAGE_NAMESPACE };
+export { STORAGE_NAMESPACE, UNSCOPED };

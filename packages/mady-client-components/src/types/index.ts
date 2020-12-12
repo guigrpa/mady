@@ -10,7 +10,9 @@ export type Config = {
 };
 
 // Modifications:
+// - context is always defined (incl. UNSCOPED constant)
 // - add translations
+// - add isFirstKey
 // - add seqStarts
 export type Key = {
   id: string;
@@ -20,7 +22,7 @@ export type Key = {
   text: string;
   isMarkdown?: boolean;
   // Classification
-  scope?: string;
+  scope: string;
   // Message group
   seq?: number;
   // Usage
@@ -29,8 +31,8 @@ export type Key = {
   sources: string[];
 
   translations: Record<string, Translation>;
-  seqStarts: boolean;
   isFirstKey?: boolean;
+  seqStarts: boolean;
 };
 export type Keys = Record<string, Key>;
 

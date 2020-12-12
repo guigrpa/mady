@@ -15,8 +15,7 @@ type Props = {
   keys: Keys;
   shownKeyIds: string[];
   selectedKeyId: string | null;
-  showScopes: boolean;
-  filterValue: string;
+  scopes: string[];
   parsing: boolean;
   height: number;
   onAddLang: (lang: string) => void;
@@ -87,7 +86,6 @@ class TranslationTable extends React.Component<Props, State> {
         className="mady"
         itemsById={this.props.keys}
         shownIds={this.props.shownKeyIds}
-        filterValue={this.props.filterValue}
         cols={this.getCols()}
         alwaysRenderIds={selectedKeyId ? [selectedKeyId] : undefined}
         headerClickForSorting={false}
@@ -108,7 +106,7 @@ class TranslationTable extends React.Component<Props, State> {
     const cols: any = [];
 
     // Scope col
-    if (this.props.showScopes)
+    if (this.props.scopes.length > 1)
       cols.push({
         attr: 'scope',
         render: ({ item }: { item: Key }) => <ScopeCell myKey={item} />,

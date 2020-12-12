@@ -44,7 +44,7 @@
 }
 
 .mady-toolbar-button + .mady-toolbar-button,
-.mady-toolbar-button + .mady-filter-value {
+.mady-toolbar-button + .mady-quick-find {
   margin-left: 0.8em;
 }
 

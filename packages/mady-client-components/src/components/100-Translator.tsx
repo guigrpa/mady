@@ -1,11 +1,20 @@
 import React from 'react';
 import { LargeMessage, notify, notifDelete } from 'giu';
-import { addLast, omit, updateIn, setIn, mergeIn } from 'timm';
+import {
+  set as timmSet,
+  merge,
+  addLast,
+  omit,
+  updateIn,
+  setIn,
+  mergeIn,
+} from 'timm';
 import { v4 as uuidv4 } from 'uuid';
 import classnames from 'classnames';
 import axios from 'axios';
 import type { Config, Key, Keys, Translation } from '../types';
 import { localGet, localSet } from '../gral/localStorage';
+import { UNSCOPED } from '../gral/constants';
 import { simplifyStringWithCache } from '../gral/helpers';
 import TranslationTable from './110-TranslationTable';
 import Toolbar from './105-Toolbar';
@@ -28,10 +37,10 @@ type State = {
   parsing: boolean;
   fatalError: boolean;
   keys: Keys;
-  scopes: string[];
+  scope: string | null | undefined;
   tUpdated: number | null;
   selectedKeyId: string | null;
-  filterValue: string;
+  quickFind: string;
 };
 
 // ==============================================
@@ -45,13 +54,18 @@ class Translator extends React.Component<Props, State> {
     parsing: false,
     fatalError: false,
     keys: {} as Keys,
-    scopes: [] as string[],
+    scope: this.props.scope,
     tUpdated: null,
     selectedKeyId: null,
-    filterValue: '',
+    quickFind: '',
   };
   pollInterval!: number;
   api = axios.create({ baseURL: this.props.apiUrl, timeout: API_TIMEOUT });
+
+  static getDerivedStateFromProps(props: Props) {
+    const scope = props.scope === null ? UNSCOPED : props.scope;
+    return { scope };
+  }
 
   componentDidMount() {
     this.fetchData();
@@ -65,6 +79,7 @@ class Translator extends React.Component<Props, State> {
   // ==============================================
   render() {
     const { parsing } = this.state;
+    const { keys, shownScopes, allScopes } = this.processData();
     return (
       <div
         className={classnames('mady-translator', {
@@ -72,25 +87,27 @@ class Translator extends React.Component<Props, State> {
           'full-height': this.props.height === 0,
         })}
       >
-        {this.renderToolbar()}
-        {this.renderTable()}
+        {this.renderToolbar(allScopes)}
+        {this.renderTable(keys, shownScopes)}
       </div>
     );
   }
 
-  renderToolbar() {
+  renderToolbar(allScopes: string[]) {
     return (
       <Toolbar
-        filterValue={this.state.filterValue}
+        quickFind={this.state.quickFind}
+        scopes={allScopes}
+        scope={this.state.scope}
         onClickParse={this.onClickParse}
-        onChangeFilterValue={(filterValue: string) => {
-          this.setState({ filterValue });
+        onChangeQuickFind={(quickFind: string) => {
+          this.setState({ quickFind });
         }}
       />
     );
   }
 
-  renderTable() {
+  renderTable(keys: Keys, shownScopes: string[]) {
     if (this.state.fatalError)
       return (
         <LargeMessage>
@@ -101,15 +118,15 @@ class Translator extends React.Component<Props, State> {
     const { tUpdated, config, langs, parsing } = this.state;
     if (tUpdated == null || config == null)
       return <LargeMessage>Loading data…</LargeMessage>;
+    const shownKeyIds = Object.keys(keys);
     return (
       <TranslationTable
         config={config!}
         langs={langs}
-        keys={this.getKeys()}
-        shownKeyIds={this.getShownKeyIds()}
-        showScopes={this.state.scopes.length > 1}
+        keys={keys}
+        shownKeyIds={shownKeyIds}
+        scopes={shownScopes}
         selectedKeyId={this.state.selectedKeyId}
-        filterValue={this.state.filterValue}
         parsing={parsing}
         height={this.props.height}
         onAddLang={this.onAddLang}
@@ -271,8 +288,8 @@ class Translator extends React.Component<Props, State> {
       }
 
       // Fetch data
-      const { keys, scopes, tUpdated } = await this.fetchTranslations();
-      this.setState({ keys, scopes, tUpdated });
+      const { keys, tUpdated } = await this.fetchTranslations();
+      this.setState({ keys, tUpdated });
     } finally {
       this.setState({ fetching: false });
     }
@@ -327,15 +344,11 @@ class Translator extends React.Component<Props, State> {
       // Prepare keys
       keysArr.sort(keyComparator);
       const keys: Keys = {};
-      const scopeObj: Record<string, boolean> = {};
       keysArr.forEach((key) => {
-        const { seq, scope } = key;
-        key.seqStarts = seq == null || seq === 0;
-        if (scope) scopeObj[scope] = true;
+        if (key.scope == null) key.scope = UNSCOPED;
         keys[key.id] = key;
       });
-      const scopes = Object.keys(scopeObj);
-      return { keys, scopes, tUpdated };
+      return { keys, tUpdated };
     } catch (err) {
       notify({
         type: 'error',
@@ -396,26 +409,54 @@ class Translator extends React.Component<Props, State> {
   };
 
   // ==============================================
-  getKeys = () => {
-    let { keys } = this.state;
-    const ids = Object.keys(keys);
-    if (ids.length) {
-      keys = setIn(keys, [ids[0], 'isFirstKey'], true) as Keys;
+  processData = () => {
+    const targetScope = this.state.scope;
+    const quickFind = simplifyStringWithCache(this.state.quickFind);
+    const { langs } = this.state;
+    const keys0 = this.state.keys;
+    const keys: Keys = {};
+    const ids = Object.keys(keys0);
+    let prevKey = null;
+    const shownScopesObj: Record<string, boolean> = {};
+    const allScopesObj: Record<string, boolean> = {};
+    for (let i = 0; i < ids.length; i++) {
+      const id = ids[i];
+      let key = keys0[id];
+      const { scope } = key;
+      allScopesObj[scope] = true;
+      if (targetScope != null && scope !== targetScope) continue;
+      if (quickFind && !this.matchesQuickFind(key, quickFind, langs)) continue;
+      if (!prevKey) {
+        key = merge(key, { isFirstKey: true, seqStarts: true });
+      } else if (
+        !key.seq ||
+        key.scope !== prevKey.scope ||
+        key.context !== prevKey.context
+      ) {
+        key = timmSet(key, 'seqStarts', true);
+      }
+      prevKey = key;
+      shownScopesObj[scope] = true;
+      keys[id] = key;
     }
-    return keys;
+    return {
+      keys,
+      shownScopes: Object.keys(shownScopesObj),
+      allScopes: Object.keys(allScopesObj),
+    };
   };
 
-  prevKeys!: Keys;
-  prevShownKeyIds!: string[];
-  getShownKeyIds = () => {
-    const { keys } = this.state;
-    if (keys != null && keys === this.prevKeys) {
-      return this.prevShownKeyIds;
+  matchesQuickFind = (key: Key, find: string, langs: string[]) => {
+    const simplify = simplifyStringWithCache;
+    if (key.scope && simplify(key.scope).indexOf(find) >= 0) return true;
+    if (key.context && simplify(key.context).indexOf(find) >= 0) return true;
+    if (key.text && simplify(key.text).indexOf(find) >= 0) return true;
+    const { translations } = key;
+    for (let i = 0; i < langs.length; i++) {
+      const text = translations[langs[i]]?.translation;
+      if (text && simplify(text).indexOf(find) >= 0) return true;
     }
-    const shownKeyIds = Object.keys(keys);
-    this.prevKeys = keys;
-    this.prevShownKeyIds = shownKeyIds;
-    return shownKeyIds;
+    return false;
   };
 }
 
