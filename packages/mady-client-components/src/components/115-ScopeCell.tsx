@@ -20,7 +20,7 @@ const ContextCell = ({ myKey }: Props) => {
       className={classnames('mady-cell mady-scope-cell', {
         'mady-seq-starts': myKey.seqStarts,
         'mady-is-first-key': myKey.isFirstKey,
-        unused: myKey.unusedSince != null,
+        unused: myKey.isUnused,
         unscoped: scope === UNSCOPED,
       })}
     >

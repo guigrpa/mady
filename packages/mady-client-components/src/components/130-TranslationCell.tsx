@@ -46,7 +46,7 @@ class TranslationCell extends React.Component<Props, State> {
         className={classnames('mady-cell mady-translation-cell', {
           'mady-seq-starts': myKey.seqStarts,
           'mady-is-first-key': myKey.isFirstKey,
-          unused: myKey.unusedSince != null,
+          unused: myKey.isUnused,
         })}
       >
         {this.renderTranslation()}

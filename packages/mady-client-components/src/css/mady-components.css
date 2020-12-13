@@ -50,7 +50,7 @@
 .mady-toolbar-button + .mady-toolbar-button,
 .mady-toolbar-button + .mady-quick-find,
 .mady-quick-find + .mady-toolbar-button {
-  margin-left: 0.8em;
+  margin-left: 1em;
 }
 
 .mady-scope-picker-button + .mady-scope-name,

@@ -133,12 +133,7 @@ class TranslationTable extends React.Component<Props, State> {
         );
       },
       render: ({ item }: { item: Key }) => (
-        <KeyCell
-          myKey={item}
-          config={config}
-          langs={langs}
-          onDelete={this.props.onDeleteKey}
-        />
+        <KeyCell myKey={item} onDelete={this.props.onDeleteKey} />
       ),
     });
 

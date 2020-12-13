@@ -120,7 +120,8 @@ class Toolbar extends React.Component<Props, State> {
 
   renderScopeName(scope: string | undefined) {
     if (!scope) return null;
-    if (scope === UNSCOPED) return 'Unscoped';
+    if (scope === UNSCOPED)
+      return <span className="mady-scope-name">Unscoped</span>;
     const [first, ...rest] = scope.split('-');
     return (
       <span className="mady-scope-name">

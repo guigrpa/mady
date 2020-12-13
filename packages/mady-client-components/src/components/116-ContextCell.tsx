@@ -18,7 +18,7 @@ const ContextCell = ({ myKey }: Props) => {
       className={classnames('mady-cell mady-context-cell', {
         'mady-seq-starts': myKey.seqStarts,
         'mady-is-first-key': myKey.isFirstKey,
-        unused: myKey.unusedSince != null,
+        unused: myKey.isUnused,
       })}
     >
       <span className={'mady-context-text'}>{myKey.context}</span>

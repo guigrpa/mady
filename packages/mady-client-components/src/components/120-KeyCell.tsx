@@ -8,23 +8,17 @@ import type { Key, Config } from '../types';
 // ==============================================
 type Props = {
   myKey: Key;
-  config: Config;
-  langs: string[];
   onDelete: (id: string) => void;
 };
 
 // ==============================================
 // Component
 // ==============================================
-const KeyCell = ({ myKey, config, langs: langs0, onDelete }: Props) => {
-  const langs = langs0.filter((lang) => lang !== config.originalLang);
-  const translations = langs
-    .map((lang) => myKey.translations[lang])
-    .filter((o) => o != null && o.translation);
+const KeyCell = ({ myKey, onDelete }: Props) => {
   let status;
-  if (myKey.unusedSince != null) status = 'unused';
-  else if (translations.length < langs.length) status = 'untranslated';
-  else if (translations.filter((o) => o.fuzzy).length > 0) status = 'fuzzy';
+  if (myKey.isUnused) status = 'unused';
+  else if (!myKey.isTranslated) status = 'untranslated';
+  else if (myKey.isFuzzy) status = 'fuzzy';
   else status = 'translated';
   return (
     <div
