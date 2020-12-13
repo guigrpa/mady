@@ -3,6 +3,7 @@ import fs from 'fs-extra';
 import slash from 'slash';
 import { addLast, addDefaults, merge, set as timmSet, omit } from 'timm';
 import { mainStory, chalk } from 'storyboard';
+import { v4 as uuidv4 } from 'uuid';
 import { decode } from 'js-base64';
 import debounce from 'lodash/debounce';
 import type {
@@ -505,7 +506,8 @@ const fetchAutomaticTranslationsForKey = (keyId: string) => {
     if (getKeyTranslations(keyId, lang).length) return;
     const translation = await autoTranslate({ text, lang });
     if (translation != null) {
-      createTranslation({ lang, translation, fuzzy: true, keyId });
+      const id = uuidv4();
+      createTranslation({ id, lang, translation, fuzzy: true, keyId });
     }
   });
 };
