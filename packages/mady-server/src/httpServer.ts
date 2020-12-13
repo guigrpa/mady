@@ -23,7 +23,8 @@ import { translate as autoTranslate } from './autoTranslate';
 
 const SRC = 'mady-api';
 const DEFAULT_API_BASE = '/mady-api';
-const ASSET_PATH = path.join(__dirname, '../mady-client-out');
+const MADY_CLIENT_APP = path.join(__dirname, '../mady-client-out');
+const ASSET_PATH = path.join(__dirname, '../public');
 const CORS_OPTIONS = { origin: '*' };
 
 // ==============================================
@@ -57,10 +58,11 @@ const init = (options: Options) => {
   addEndpoints(expressApp, apiBase);
 
   // Serve Mady client
-  expressApp.use('/mady', express.static(ASSET_PATH));
+  expressApp.use('/mady', express.static(MADY_CLIENT_APP));
 
   // Create HTTP server if needed
   if (isStandalone) {
+    expressApp.use('/', express.static(ASSET_PATH));
     const httpServer = http.createServer(expressApp);
     httpServer.listen(options.port);
     addListener(wsServerListener, { httpServer });

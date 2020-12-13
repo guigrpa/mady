@@ -24,14 +24,14 @@
   },
   "main": "lib/serverPlugin.js",
   "scripts": {
-    "dev": "yarn build:copy && node lib --no-open",
+    "dev": "yarn copyArtefacts && node lib --no-open",
     "compile": "yarn compile:clean && yarn compile:types && yarn compile:main",
     "compileFast": "yarn compile:clean && yarn compile:main",
     "compileWatch": "yarn compile --watch",
     "compile:clean": "rm -rf ./lib",
     "compile:types": "tsc --pretty || exit 0",
     "compile:main": "babel src -d lib --extensions \".ts,.js\" --copy-files",
-    "build:copy": "rm -rf mady-client-out && cp -r ../mady-client/out mady-client-out",
+    "copyArtefacts": "rm -rf mady-client-out && cp -r ../mady-client/out mady-client-out",
     "typecheck": "tsc --pretty",
     "test": "jest --coverage --verbose 2>&1"
   },

@@ -42,7 +42,7 @@
     "compileWatch": "oao run-script compileWatch --parallel --parallel-limit 200",
     "lint": "eslint packages --ext .js,.jsx,.ts,.tsx",
     "typecheck": "oao run-script typecheck",
-    "build": "oao run-script build",
+    "build": "oao run-script build && oao run-script copyArtefacts",
     "test": "oao run-script test",
     "xxl": "xxl --src packages --exclude node_modules,/lib/,/coverage/",
     "prettier": "prettier --single-quote --trailing-comma es5 --write \"packages/**/*.[jt]s\""
