@@ -68,7 +68,7 @@ class Translator extends React.Component<Props, State> {
   // ==============================================
   render() {
     const { parsing } = this.state;
-    const { keys, shownScopes, allScopes } = this.processData();
+    const { keys, allScopes } = this.processData();
     return (
       <div
         className={classnames('mady-translator', {
@@ -77,7 +77,7 @@ class Translator extends React.Component<Props, State> {
         })}
       >
         {this.renderToolbar(allScopes)}
-        {this.renderTable(keys, shownScopes)}
+        {this.renderTable(keys, allScopes)}
       </div>
     );
   }
@@ -98,7 +98,7 @@ class Translator extends React.Component<Props, State> {
     );
   }
 
-  renderTable(keys: Keys, shownScopes: string[]) {
+  renderTable(keys: Keys, allScopes: string[]) {
     if (this.state.fatalError)
       return (
         <LargeMessage>
@@ -116,7 +116,7 @@ class Translator extends React.Component<Props, State> {
         langs={langs}
         keys={keys}
         shownKeyIds={shownKeyIds}
-        scopes={shownScopes}
+        scopes={allScopes}
         selectedKeyId={this.state.selectedKeyId}
         parsing={parsing}
         height={this.props.height}
@@ -409,7 +409,6 @@ class Translator extends React.Component<Props, State> {
     const keys: Keys = {};
     const ids = Object.keys(keys0);
     let prevKey = null;
-    const shownScopesObj: Record<string, boolean> = {};
     const allScopesObj: Record<string, boolean> = {};
     for (let i = 0; i < ids.length; i++) {
       const id = ids[i];
@@ -442,14 +441,9 @@ class Translator extends React.Component<Props, State> {
         isFuzzy,
       });
       prevKey = key;
-      shownScopesObj[scope] = true;
       keys[id] = key;
     }
-    return {
-      keys,
-      shownScopes: Object.keys(shownScopesObj),
-      allScopes: Object.keys(allScopesObj),
-    };
+    return { keys, allScopes: Object.keys(allScopesObj) };
   };
 
   matchesQuickFind = (key: Key, find: string, langs: string[]) => {
