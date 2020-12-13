@@ -36,14 +36,14 @@
     "isDeleted": false,
     "lang": "es",
     "translation": "Mensaje con alcance",
-    "fuzzy": false,
+    "fuzzy": true,
     "keyId": "U2NvcGVkIG1lc3NhZ2U="
   },
   "c9262f0b-3a4b-4d46-be3e-feea0fc6b754": {
     "id": "c9262f0b-3a4b-4d46-be3e-feea0fc6b754",
     "isDeleted": false,
     "lang": "es",
-    "translation": "Scoped message with {NUM} items",
+    "translation": "Mensaje con alcance con {NUM} ítems",
     "keyId": "U2NvcGVkIG1lc3NhZ2Ugd2l0aCB7TlVNfSBpdGVtcw=="
   },
   "60ad756a-4147-42b0-87df-d0c90eb4e2ef": {
@@ -72,7 +72,7 @@
     "isDeleted": false,
     "lang": "es",
     "translation": "Un nuevo mensaje",
-    "fuzzy": true,
+    "fuzzy": false,
     "keyId": "c29tZUNvbnRleHRfQSBuZXcgbWVzc2FnZQ=="
   },
   "fbb3e873-f483-4dde-9a80-4e9d4a4d014a": {
