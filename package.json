@@ -45,6 +45,7 @@
     "build": "oao run-script build && oao run-script copyArtefacts",
     "test": "oao run-script test",
     "xxl": "xxl --src packages --exclude node_modules,/lib/,/coverage/",
+    "travis": "yarn compile && yarn test",
     "prettier": "prettier --single-quote --trailing-comma es5 --write \"packages/**/*.[jt]s\""
   },
   "dependencies": {},
