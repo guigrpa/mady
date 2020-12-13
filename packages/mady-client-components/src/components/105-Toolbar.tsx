@@ -53,7 +53,7 @@ class Toolbar extends React.Component<Props, State> {
       { label: 'Dubious translations', value: 'FUZZY', keys: 'mod+y' },
     ];
     return (
-      <div>
+      <div className="mady-toolbar-button">
         <DropDownMenu
           className="mady-filter-picker"
           items={items}

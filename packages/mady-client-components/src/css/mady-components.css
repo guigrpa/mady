@@ -50,7 +50,12 @@
 .mady-toolbar-button + .mady-toolbar-button,
 .mady-toolbar-button + .mady-quick-find,
 .mady-quick-find + .mady-toolbar-button {
-  margin-left: 1em;
+  margin-left: 1.2em;
+}
+
+.mady-scope-picker,
+.mady-filter-picker {
+  margin: 0 -6px; /* cancel inner padding from drop-down menu title */
 }
 
 .mady-scope-picker-button + .mady-scope-name,
