@@ -24,6 +24,7 @@ module.exports = {
   c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGludGVycG9sYXRpb246IHtOVU19: function(d) { return "Message with interpolation: " + d.NUM; },
   c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319: function(d) { return plural(d.NUM, 0, ca, { one: "1 hamburger", other: number(d.NUM, "NUM") + " hamburgers" }); },
   "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGEgZml4ZWQgZXJyb3Ige01JU1NJTkdfQlJBQ0tFVH0=": function(d) { return "Message with a fixed error " + d.MISSING_BRACKET; },
+  "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppIPCfpbA=": function(d) { return "Missatge amb emoji 🥰"; },
   "Y29udGFjdF9nZXQgaW4gdG91Y2g=": function(d) { return "posa't en contacte"; },
   "Y29udGFjdF9BbnkgcXVlc3Rpb25zIG9yIGNvbW1lbnRzPw==": function(d) { return "Preguntes, comentaris?"; },
   Y29udGFjdF9uYW1l: function(d) { return "nom"; },
@@ -81,6 +82,5 @@ module.exports = {
   Y292aWRfQW5pbWF0aW9u: function(d) { return "Animació"; },
   "Y292aWRfUm9tZQ==": function(d) { return "Roma"; },
   "Y292aWRfTk/igoIgY29uY2VudHJhdGlvbnM=": function(d) { return "Concentracions de NO₂"; },
-  Y292aWRfQnVjaGFyZXN0: function(d) { return "Bucarest"; },
-  "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppIPCfpbA=": function(d) { return "Missatge amb emoji 🥰"; }
+  Y292aWRfQnVjaGFyZXN0: function(d) { return "Bucarest"; }
 };
