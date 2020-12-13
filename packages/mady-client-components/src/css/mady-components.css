@@ -4,7 +4,8 @@
 .mady-translator,
 .giu-float-mady-add-column,
 .giu-float-error-mady-translation,
-.giu-float-mady-scope-picker {
+.giu-float-mady-scope-picker,
+.giu-float-mady-filter-picker {
   font-size: 0.8rem;
   --color-dim-text: #bbbbbb;
   --color-accent-bg: rgb(220, 220, 220);
@@ -52,7 +53,8 @@
   margin-left: 0.8em;
 }
 
-.mady-scope-picker-button + .mady-scope-name {
+.mady-scope-picker-button + .mady-scope-name,
+.mady-filter-picker-button + .mady-filter-name {
   margin-left: 0.4em;
   font-weight: 400;
 }

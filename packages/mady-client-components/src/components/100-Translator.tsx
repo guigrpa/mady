@@ -37,7 +37,8 @@ type State = {
   parsing: boolean;
   fatalError: boolean;
   keys: Keys;
-  scope: string | null | undefined;
+  scope: string | undefined;
+  filter: string;
   tUpdated: number | null;
   selectedKeyId: string | null;
   quickFind: string;
@@ -54,7 +55,8 @@ class Translator extends React.Component<Props, State> {
     parsing: false,
     fatalError: false,
     keys: {} as Keys,
-    scope: this.props.scope,
+    scope: this.props.scope === null ? UNSCOPED : this.props.scope,
+    filter: 'ALL' as string,
     tUpdated: null,
     selectedKeyId: null,
     quickFind: '',
@@ -95,9 +97,11 @@ class Translator extends React.Component<Props, State> {
         scopeMenu={this.props.scope === undefined}
         scopes={allScopes}
         scope={this.state.scope}
+        filter={this.state.filter}
         onClickParse={this.onClickParse}
         onChangeQuickFind={(quickFind: string) => this.setState({ quickFind })}
-        onChangeScope={(scope) => this.setState({ scope })}
+        onChangeScope={(scope: string | undefined) => this.setState({ scope })}
+        onChangeFilter={(filter: string) => this.setState({ filter })}
       />
     );
   }
@@ -408,7 +412,7 @@ class Translator extends React.Component<Props, State> {
   processData = () => {
     const targetScope = this.state.scope;
     const quickFind = simplifyStringWithCache(this.state.quickFind);
-    const { langs } = this.state;
+    const { langs, filter } = this.state;
     const keys0 = this.state.keys;
     const keys: Keys = {};
     const ids = Object.keys(keys0);
@@ -418,19 +422,34 @@ class Translator extends React.Component<Props, State> {
     for (let i = 0; i < ids.length; i++) {
       const id = ids[i];
       let key = keys0[id];
+
+      // Apply filters: scope, quick-find, filter
       const { scope } = key;
       allScopesObj[scope] = true;
       if (targetScope != null && scope !== targetScope) continue;
       if (quickFind && !this.matchesQuickFind(key, quickFind, langs)) continue;
-      if (!prevKey) {
-        key = merge(key, { isFirstKey: true, seqStarts: true });
-      } else if (
-        !key.seq ||
-        key.scope !== prevKey.scope ||
-        key.context !== prevKey.context
-      ) {
-        key = timmSet(key, 'seqStarts', true);
-      }
+      const shownTranslations = langs
+        .map((lang) => key.translations[lang])
+        .filter((o) => o != null && o.translation);
+      const isUnused = key.unusedSince != null;
+      const isTranslated = shownTranslations.length >= langs.length;
+      const isFuzzy = shownTranslations.filter((o) => o.fuzzy).length > 0;
+      if (filter === 'UNUSED' && !isUnused) continue;
+      if (filter === 'FUZZY' && !isFuzzy) continue;
+      if (filter === 'UNTRANSLATED' && isTranslated) continue;
+
+      // Everything OK, add to list
+      key = merge(key, {
+        isFirstKey: !prevKey,
+        seqStarts:
+          !prevKey ||
+          !key.seq ||
+          key.scope !== prevKey.scope ||
+          key.context !== prevKey.context,
+        isUnused,
+        isTranslated,
+        isFuzzy,
+      });
       prevKey = key;
       shownScopesObj[scope] = true;
       keys[id] = key;

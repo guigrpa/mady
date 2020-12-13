@@ -9,10 +9,12 @@ type Props = {
   quickFind: string;
   scopeMenu: boolean;
   scopes: string[];
-  scope?: string;
+  scope: string | undefined;
+  filter: string;
   onClickParse: (ev: any) => void;
   onChangeQuickFind: (quickFind: string) => void;
-  onChangeScope: (scope: string | null) => void;
+  onChangeScope: (scope: string | undefined) => void;
+  onChangeFilter: (filter: string) => void;
 };
 type State = unknown;
 
@@ -23,6 +25,7 @@ class Toolbar extends React.Component<Props, State> {
   render() {
     return (
       <div className="mady-toolbar">
+        {this.renderFilterPicker()}
         {this.renderScopePicker()}
         {this.renderQuickFind()}
         {this.renderParse()}
@@ -34,6 +37,47 @@ class Toolbar extends React.Component<Props, State> {
         </div>
       </div>
     );
+  }
+
+  renderFilterPicker() {
+    const { filter } = this.props;
+    const items = [
+      {
+        label: filter !== 'ALL' ? 'All (remove filter)' : 'All (no filter)',
+        value: 'ALL',
+        keys: 'shift+mod+a',
+      },
+      LIST_SEPARATOR,
+      { label: 'Unused messages', value: 'UNUSED', keys: 'mod+u' },
+      { label: 'Missing translations', value: 'UNTRANSLATED', keys: 'mod+m' },
+      { label: 'Dubious translations', value: 'FUZZY', keys: 'mod+y' },
+    ];
+    return (
+      <div>
+        <DropDownMenu
+          className="mady-filter-picker"
+          items={items}
+          onClickItem={(_ev: MouseEvent, filter: any) => {
+            this.props.onChangeFilter(filter);
+          }}
+        >
+          <span className="mady-filter-picker-button">
+            <Icon id="madyMenuFilter" icon="filter" title={'Filter'} />
+          </span>
+          {this.renderFilterName()}
+        </DropDownMenu>
+      </div>
+    );
+  }
+
+  renderFilterName() {
+    const { filter } = this.props;
+    if (filter === 'ALL') return null;
+    let text = '';
+    if (filter === 'UNUSED') text = 'Unused';
+    if (filter === 'UNTRANSLATED') text = 'Missing';
+    if (filter === 'FUZZY') text = 'Dubious';
+    return <span className="mady-filter-name">{text}</span>;
   }
 
   renderScopePicker() {

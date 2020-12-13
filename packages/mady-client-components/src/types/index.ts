@@ -14,6 +14,7 @@ export type Config = {
 // - add translations
 // - add isFirstKey
 // - add seqStarts
+// - add isUnused, isTranslated, isFuzzy
 export type Key = {
   id: string;
   isDeleted?: boolean;
@@ -33,6 +34,9 @@ export type Key = {
   translations: Record<string, Translation>;
   isFirstKey?: boolean;
   seqStarts: boolean;
+  isUnused: boolean;
+  isTranslated: boolean;
+  isFuzzy: boolean;
 };
 export type Keys = Record<string, Key>;
 

@@ -7,7 +7,6 @@
     - Modify giu to allow class name per row
     - Apply trait colour to whole row on hover, based on row classname
     - Details when hovering over message
-    - Filter by unused/untranslated/fuzzy
     - Allow user selection
 
 Later still:
