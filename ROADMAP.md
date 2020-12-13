@@ -1,0 +1,1 @@
+- When config changes, reload

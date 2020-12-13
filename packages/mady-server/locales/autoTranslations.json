@@ -1,16 +1,7 @@
 {
-  "es:::::Context-less message": "Mensaje sin contexto",
-  "es:::::Context-full message": "Mensaje de contexto completo",
-  "es:::::Message with context": "Mensaje con contexto",
-  "de:::::Context-less message": "Kontextlose Nachricht",
-  "de:::::Message with context": "Nachricht mit Kontext",
-  "de:::::Context-full message": "Kontextreiche Nachricht",
-  "es:::::Message with emoji 🥰": "Mensaje con emoji 🥰",
   "es:::::Scoped message": "Mensaje con alcance",
-  "ar:::::Hello!": "مرحبا!",
-  "es:::::Commonwealth Scientific and Industrial Research Organisation": "Organización de Investigación Científica e Industrial del Commonwealth",
-  "ca:::::Commonwealth Scientific and Industrial Research Organisation": "Organització de la investigació científica i industrial de la Mancomunitat",
-  "ca:::::Message with context": "Missatge amb context",
-  "ca:::::Context-less message": "Missatge sense context",
+  "es:::::Message with context": "Mensaje con contexto",
+  "es:::::Context-less message": "Mensaje sin contexto",
+  "es:::::Message with emoji 🥰": "Mensaje con emoji 🥰",
   "ca:::::Message with emoji 🥰": "Missatge amb emoji 🥰"
 }

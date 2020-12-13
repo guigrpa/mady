@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs-extra';
 import slash from 'slash';
-import { addDefaults, merge, set as timmSet, omit } from 'timm';
+import { addLast, addDefaults, merge, set as timmSet, omit } from 'timm';
 import { mainStory, chalk } from 'storyboard';
 import { decode } from 'js-base64';
 import debounce from 'lodash/debounce';
@@ -71,8 +71,14 @@ const init = (options: Options) => {
   initKeys();
   initAutoTranslations({ localeDir: _localeDir });
   initTranslations();
-  if (options.watch)
-    initFileWatcher({ paths: _config.srcPaths, onEvent: onFileChange });
+  if (options.watch) {
+    initFileWatcher({
+      paths: addLast(_config.srcPaths, _configPath),
+      onEvent: onFileChange,
+    });
+  } else {
+    initFileWatcher({ paths: [_configPath], onEvent: onFileChange });
+  }
 };
 
 const _setLocaleDir = (localeDir: string) => {
@@ -416,6 +422,10 @@ const parseSrcFiles = async () => {
 };
 
 const onFileChange = async (eventType: string, filePath0: string) => {
+  if (filePath0 === _configPath) {
+    initConfig();
+    return;
+  }
   const filePath = slash(filePath0);
   if (eventType === 'unlink') {
     onSrcFileDeleted(filePath, { save: true });

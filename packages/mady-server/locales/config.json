@@ -1,5 +1,6 @@
 {
   "srcPaths": [
+    "src",
     "sandbox"
   ],
   "srcExtensions": [
