@@ -7,7 +7,7 @@ import { UNSCOPED } from '../gral/constants';
 // ==============================================
 type Props = {
   quickFind: string;
-  scopeMenu: boolean;
+  showScopeMenu: boolean;
   scopes: string[];
   scope: string | undefined;
   filter: string;
@@ -81,12 +81,12 @@ class Toolbar extends React.Component<Props, State> {
   }
 
   renderScopePicker() {
-    if (!this.props.scopeMenu) return null;
+    if (!this.props.showScopeMenu) return null;
     const { scopes, scope } = this.props;
     if (scopes.length < 2) return null;
     const options: Array<{
       label: any;
-      value: string | null | undefined;
+      value: string | null;
     }> = [];
     options.push({
       label: scope ? 'All (remove filter)' : 'All (no filter)',
@@ -106,7 +106,7 @@ class Toolbar extends React.Component<Props, State> {
           className="mady-scope-picker"
           items={options}
           onClickItem={(_ev: MouseEvent, scope: string | null) => {
-            this.props.onChangeScope(scope);
+            this.props.onChangeScope(scope || undefined);
           }}
         >
           <span className="mady-scope-picker-button">
@@ -118,7 +118,7 @@ class Toolbar extends React.Component<Props, State> {
     );
   }
 
-  renderScopeName(scope?: string) {
+  renderScopeName(scope: string | undefined) {
     if (!scope) return null;
     if (scope === UNSCOPED) return 'Unscoped';
     const [first, ...rest] = scope.split('-');
