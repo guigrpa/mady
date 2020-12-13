@@ -1,14 +1,6 @@
 import React from 'react';
 import { LargeMessage, notify, notifDelete } from 'giu';
-import {
-  set as timmSet,
-  merge,
-  addLast,
-  omit,
-  updateIn,
-  setIn,
-  mergeIn,
-} from 'timm';
+import { merge, addLast, omit, updateIn, setIn, mergeIn } from 'timm';
 import { v4 as uuidv4 } from 'uuid';
 import classnames from 'classnames';
 import axios from 'axios';
@@ -94,7 +86,7 @@ class Translator extends React.Component<Props, State> {
     return (
       <Toolbar
         quickFind={this.state.quickFind}
-        scopeMenu={this.props.scope === undefined}
+        showScopeMenu={this.props.scope === undefined}
         scopes={allScopes}
         scope={this.state.scope}
         filter={this.state.filter}
