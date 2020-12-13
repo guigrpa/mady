@@ -1,7 +1,10 @@
 /* ============================================== */
 /* General */
 /* ============================================== */
-.mady-translator {
+.mady-translator,
+.giu-float-mady-add-column,
+.giu-float-error-mady-translation,
+.giu-float-mady-scope-picker {
   font-size: 0.8rem;
   --color-dim-text: #bbbbbb;
   --color-accent-bg: rgb(220, 220, 220);
@@ -44,8 +47,14 @@
 }
 
 .mady-toolbar-button + .mady-toolbar-button,
-.mady-toolbar-button + .mady-quick-find {
+.mady-toolbar-button + .mady-quick-find,
+.mady-quick-find + .mady-toolbar-button {
   margin-left: 0.8em;
+}
+
+.mady-scope-picker-button + .mady-scope-name {
+  margin-left: 0.4em;
+  font-weight: 400;
 }
 
 .mady-translator.parsing .mady-parse {
@@ -224,14 +233,6 @@
 .mady-add-column .giu-drop-down-menu-title {
   padding: 0;
   background-color: inherit;
-}
-
-.giu-float-mady-add-column,
-.giu-float-error-mady-translation {
-  font-size: 0.8rem;
-  --color-accent-bg: rgb(220, 220, 220);
-  --color-accent-fg: black;
-  line-height: 1.2;
 }
 
 .giu-float-error-mady-translation .giu-error {

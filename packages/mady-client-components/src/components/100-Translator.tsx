@@ -62,11 +62,6 @@ class Translator extends React.Component<Props, State> {
   pollInterval!: number;
   api = axios.create({ baseURL: this.props.apiUrl, timeout: API_TIMEOUT });
 
-  static getDerivedStateFromProps(props: Props) {
-    const scope = props.scope === null ? UNSCOPED : props.scope;
-    return { scope };
-  }
-
   componentDidMount() {
     this.fetchData();
     this.pollInterval = setInterval(this.fetchData, POLL_INTERVAL);
@@ -97,12 +92,12 @@ class Translator extends React.Component<Props, State> {
     return (
       <Toolbar
         quickFind={this.state.quickFind}
+        scopeMenu={this.props.scope === undefined}
         scopes={allScopes}
         scope={this.state.scope}
         onClickParse={this.onClickParse}
-        onChangeQuickFind={(quickFind: string) => {
-          this.setState({ quickFind });
-        }}
+        onChangeQuickFind={(quickFind: string) => this.setState({ quickFind })}
+        onChangeScope={(scope) => this.setState({ scope })}
       />
     );
   }
@@ -267,11 +262,11 @@ class Translator extends React.Component<Props, State> {
   // ==============================================
   fetchData = async ({ force }: { force?: boolean } = {}) => {
     if (this.state.fetching || this.state.fatalError) return;
-    this.setState({ fetching: true });
 
     try {
       // Fetch config
       if (!this.state.config) {
+        this.setState({ fetching: true });
         const config = await this.fetchConfig();
         const langs = calcInitialLangs(config);
         this.setState({ config, langs });
@@ -288,10 +283,11 @@ class Translator extends React.Component<Props, State> {
       }
 
       // Fetch data
+      if (!this.state.fetching) this.setState({ fetching: true });
       const { keys, tUpdated } = await this.fetchTranslations();
       this.setState({ keys, tUpdated });
     } finally {
-      this.setState({ fetching: false });
+      if (this.state.fetching) this.setState({ fetching: false });
     }
   };
 

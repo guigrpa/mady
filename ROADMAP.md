@@ -4,9 +4,9 @@
   - [x] mady-server
   - [x] mady-server as embeddable
   - [ ] mady-editor
-    - Add scope menu (if scope is not in props)
+    - Modify giu to allow class name per row
+    - Apply trait colour to whole row on hover, based on row classname
     - Details when hovering over message
-    - Improve editing of long data. Include markdown preview?
     - Filter by unused/untranslated/fuzzy
     - Allow user selection
 
