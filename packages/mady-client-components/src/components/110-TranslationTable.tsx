@@ -92,9 +92,20 @@ class TranslationTable extends React.Component<Props, State> {
         allowManualSorting={false}
         allowSelect={false}
         height={height}
+        getRowClassNames={this.getRowClassNames}
       />
     );
   }
+
+  getRowClassNames = ({ item }: { item: Key }) => {
+    const out = [];
+    if (item.isUnused) out.push('mady-row-unused');
+    if (item.isTranslated) out.push('mady-row-translated');
+    else out.push('mady-row-untranslated');
+    if (item.isFuzzy) out.push('mady-row-fuzzy');
+    if (item.seqStarts) out.push('mady-row-seq-starts');
+    return out;
+  };
 
   prevColsKey!: string;
   prevCols!: any[];

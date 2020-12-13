@@ -42,13 +42,7 @@ class TranslationCell extends React.Component<Props, State> {
     const { myKey, lang } = this.props;
     this.translation = myKey.translations[lang];
     return (
-      <div
-        className={classnames('mady-cell mady-translation-cell', {
-          'mady-seq-starts': myKey.seqStarts,
-          'mady-is-first-key': myKey.isFirstKey,
-          unused: myKey.isUnused,
-        })}
-      >
+      <div className="mady-cell mady-translation-cell">
         {this.renderTranslation()}
         {this.renderButtons()}
       </div>

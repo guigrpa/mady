@@ -432,7 +432,6 @@ class Translator extends React.Component<Props, State> {
 
       // Everything OK, add to list
       key = merge(key, {
-        isFirstKey: !prevKey,
         seqStarts:
           !prevKey ||
           !key.seq ||

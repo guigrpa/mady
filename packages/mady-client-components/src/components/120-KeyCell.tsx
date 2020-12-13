@@ -1,5 +1,4 @@
 import React from 'react';
-import classnames from 'classnames';
 import moment from 'moment';
 import { Icon } from 'giu';
 import type { Key } from '../types';
@@ -36,13 +35,7 @@ const KeyCell = ({ myKey, onDelete }: Props) => {
     sources.forEach((src) => tooltip.push(`- ${src}`));
   }
   return (
-    <div
-      className={classnames('mady-cell mady-key-cell', status, {
-        'mady-seq-starts': myKey.seqStarts,
-        'mady-is-first-key': myKey.isFirstKey,
-      })}
-      title={tooltip.join('\n')}
-    >
+    <div className="mady-cell mady-key-cell" title={tooltip.join('\n')}>
       <div className="mady-key-text">{myKey.text}</div>
       <div className="mady-key-buttons">
         <span title="Delete message (does NOT delete any translations)">

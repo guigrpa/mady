@@ -12,7 +12,6 @@ export type Config = {
 // Modifications:
 // - context is always defined (incl. UNSCOPED constant)
 // - add translations
-// - add isFirstKey
 // - add seqStarts
 // - add isUnused, isTranslated, isFuzzy
 export type Key = {
@@ -32,7 +31,6 @@ export type Key = {
   sources: string[];
 
   translations: Record<string, Translation>;
-  isFirstKey?: boolean;
   seqStarts: boolean;
   isUnused: boolean;
   isTranslated: boolean;

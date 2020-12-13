@@ -4970,10 +4970,10 @@ github-from-package@0.0.0:
   resolved "https://registry.yarnpkg.com/github-from-package/-/github-from-package-0.0.0.tgz#97fb5d96bfde8973313f20e8288ef9a167fa64ce"
   integrity sha1-l/tdlr/eiXMxPyDoKI75oWf6ZM4=
 
-giu@^0.19.8:
-  version "0.19.8"
-  resolved "https://registry.yarnpkg.com/giu/-/giu-0.19.8.tgz#518b5292952cc9627e3cfabd78855dead3f5d7ef"
-  integrity sha512-MtM6F9BqnVFlnbfpXaZiHP0k+VA9pq0sZ7jg4gm2D5WUXaYARwjXNt9F/mU3tZ7BcqsG13LpZgEDdB+u0zrb/g==
+giu@^0.20.0:
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/giu/-/giu-0.20.0.tgz#2fd177f62d5624eaca91b7dfa91ac1dd545cf4bc"
+  integrity sha512-latwi3DEKUIeMOShd2AS3+gplwk3/n9kge4yJLT8JKGZfD0PHLkBLP782lMZzTjFVK6iJ4KdpcdVsBF8mJm+oQ==
   dependencies:
     "@fortawesome/fontawesome-svg-core" "^1.2.21"
     "@fortawesome/react-fontawesome" "^0.1.4"

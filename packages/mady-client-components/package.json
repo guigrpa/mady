@@ -52,7 +52,7 @@
     "typescript": "^4.0.2"
   },
   "peerDependencies": {
-    "giu": "^0.19.8",
+    "giu": "^0.20.0",
     "react": "^16.8.6"
   }
 }
