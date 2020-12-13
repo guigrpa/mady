@@ -66,5 +66,85 @@
     "lang": "es",
     "translation": "{NUM, plural, one {1 hamburguesa} other {# hamburguesas}}",
     "keyId": "c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319"
+  },
+  "d58f9a83-167c-47d0-938b-41e100f6f3bd": {
+    "id": "d58f9a83-167c-47d0-938b-41e100f6f3bd",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Un nuevo mensaje",
+    "fuzzy": true,
+    "keyId": "c29tZUNvbnRleHRfQSBuZXcgbWVzc2FnZQ=="
+  },
+  "fbb3e873-f483-4dde-9a80-4e9d4a4d014a": {
+    "id": "fbb3e873-f483-4dde-9a80-4e9d4a4d014a",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Este es el segundo párrafo.",
+    "fuzzy": false,
+    "keyId": "VGhpcyBpcyB0aGUgc2Vjb25kIHBhcmFncmFwaC4="
+  },
+  "6cefb4a4-16bd-4764-aa03-7b6b93e4e713": {
+    "id": "6cefb4a4-16bd-4764-aa03-7b6b93e4e713",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Este es el primer párrafo.",
+    "fuzzy": false,
+    "keyId": "VGhpcyBpcyB0aGUgZmlyc3QgcGFyYWdyYXBoLg=="
+  },
+  "9862fe32-8ca5-47b9-a88e-13a3422b8125": {
+    "id": "9862fe32-8ca5-47b9-a88e-13a3422b8125",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Este es el tercer párrafo.",
+    "fuzzy": false,
+    "keyId": "VGhpcyBpcyB0aGUgdGhpcmQgcGFyYWdyYXBoLg=="
+  },
+  "e6f6c567-4316-4e07-8cb0-c266c08e4946": {
+    "id": "e6f6c567-4316-4e07-8cb0-c266c08e4946",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Este es el segundo párrafo.",
+    "fuzzy": false,
+    "keyId": "VGhpcyBpcyB0aGUgMm5kIHBhcmFncmFwaC4="
+  },
+  "954b4150-040f-4972-9341-8db77d19b720": {
+    "id": "954b4150-040f-4972-9341-8db77d19b720",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Este es el tercer párrafo.",
+    "fuzzy": false,
+    "keyId": "VGhpcyBpcyB0aGUgM3JkIHBhcmFncmFwaC4="
+  },
+  "7afc0d9a-1278-481d-a798-b4fb83d77351": {
+    "id": "7afc0d9a-1278-481d-a798-b4fb83d77351",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Este es el primer párrafo.",
+    "fuzzy": false,
+    "keyId": "VGhpcyBpcyB0aGUgMXN0IHBhcmFncmFwaC4="
+  },
+  "dbf5b95b-dfa1-40af-a903-3c4b28ea4ea9": {
+    "id": "dbf5b95b-dfa1-40af-a903-3c4b28ea4ea9",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Uno.",
+    "fuzzy": false,
+    "keyId": "T25lLg=="
+  },
+  "44e31fac-2c6c-46ae-8087-51d2299ad977": {
+    "id": "44e31fac-2c6c-46ae-8087-51d2299ad977",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Dos.",
+    "fuzzy": false,
+    "keyId": "VHdvLg=="
+  },
+  "1bb1d891-6e55-45bf-ab79-42aeb45d2454": {
+    "id": "1bb1d891-6e55-45bf-ab79-42aeb45d2454",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Tres.",
+    "fuzzy": false,
+    "keyId": "VGhyZWUu"
   }
 }

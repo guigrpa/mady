@@ -82,5 +82,129 @@
     "sources": [
       "sandbox/example.js"
     ]
+  },
+  "c29tZUNvbnRleHRfQSBuZXcgbWVzc2FnZQ==": {
+    "id": "c29tZUNvbnRleHRfQSBuZXcgbWVzc2FnZQ==",
+    "context": "someContext",
+    "text": "A new message",
+    "firstUsed": "2020-12-13T22:00:07.597Z",
+    "unusedSince": null,
+    "sources": [
+      "sandbox/example.js"
+    ]
+  },
+  "VGhpcyBpcyB0aGUgZmlyc3QgcGFyYWdyYXBoLg==": {
+    "id": "VGhpcyBpcyB0aGUgZmlyc3QgcGFyYWdyYXBoLg==",
+    "isMarkdown": true,
+    "scope": "page-about",
+    "context": "page-content",
+    "seq": 0,
+    "text": "This is the first paragraph.",
+    "firstUsed": "2020-12-13T22:03:04.684Z",
+    "unusedSince": "2020-12-13T22:06:11.950Z",
+    "sources": [],
+    "isDeleted": true
+  },
+  "VGhpcyBpcyB0aGUgc2Vjb25kIHBhcmFncmFwaC4=": {
+    "id": "VGhpcyBpcyB0aGUgc2Vjb25kIHBhcmFncmFwaC4=",
+    "isMarkdown": true,
+    "scope": "page-about",
+    "context": "page-content",
+    "seq": 1,
+    "text": "This is the second paragraph.",
+    "firstUsed": "2020-12-13T22:03:04.684Z",
+    "unusedSince": "2020-12-13T22:06:11.950Z",
+    "sources": [],
+    "isDeleted": true
+  },
+  "VGhpcyBpcyB0aGUgdGhpcmQgcGFyYWdyYXBoLg==": {
+    "id": "VGhpcyBpcyB0aGUgdGhpcmQgcGFyYWdyYXBoLg==",
+    "isMarkdown": true,
+    "scope": "page-about",
+    "context": "page-content",
+    "seq": 2,
+    "text": "This is the third paragraph.",
+    "firstUsed": "2020-12-13T22:03:04.684Z",
+    "unusedSince": "2020-12-13T22:06:17.441Z",
+    "sources": [],
+    "isDeleted": true
+  },
+  "VGhpcyBpcyB0aGUgMXN0IHBhcmFncmFwaC4=": {
+    "id": "VGhpcyBpcyB0aGUgMXN0IHBhcmFncmFwaC4=",
+    "isMarkdown": true,
+    "scope": "page-about",
+    "context": "page-content",
+    "seq": 0,
+    "text": "This is the 1st paragraph.",
+    "firstUsed": "2020-12-13T22:04:59.178Z",
+    "unusedSince": null,
+    "sources": [
+      "data.json"
+    ]
+  },
+  "VGhpcyBpcyB0aGUgMm5kIHBhcmFncmFwaC4=": {
+    "id": "VGhpcyBpcyB0aGUgMm5kIHBhcmFncmFwaC4=",
+    "isMarkdown": true,
+    "scope": "page-about",
+    "context": "page-content",
+    "seq": 1,
+    "text": "This is the 2nd paragraph.",
+    "firstUsed": "2020-12-13T22:04:59.178Z",
+    "unusedSince": null,
+    "sources": [
+      "data.json"
+    ]
+  },
+  "VGhpcyBpcyB0aGUgM3JkIHBhcmFncmFwaC4=": {
+    "id": "VGhpcyBpcyB0aGUgM3JkIHBhcmFncmFwaC4=",
+    "isMarkdown": true,
+    "scope": "page-about",
+    "context": "page-content",
+    "seq": 2,
+    "text": "This is the 3rd paragraph.",
+    "firstUsed": "2020-12-13T22:04:59.178Z",
+    "unusedSince": null,
+    "sources": [
+      "data.json"
+    ]
+  },
+  "T25lLg==": {
+    "id": "T25lLg==",
+    "isMarkdown": true,
+    "scope": "page-info",
+    "context": "page-content",
+    "seq": 0,
+    "text": "One.",
+    "firstUsed": "2020-12-13T22:07:16.639Z",
+    "unusedSince": null,
+    "sources": [
+      "data.json"
+    ]
+  },
+  "VHdvLg==": {
+    "id": "VHdvLg==",
+    "isMarkdown": true,
+    "scope": "page-info",
+    "context": "page-content",
+    "seq": 1,
+    "text": "Two.",
+    "firstUsed": "2020-12-13T22:07:16.639Z",
+    "unusedSince": null,
+    "sources": [
+      "data.json"
+    ]
+  },
+  "VGhyZWUu": {
+    "id": "VGhyZWUu",
+    "isMarkdown": true,
+    "scope": "page-info",
+    "context": "page-content",
+    "seq": 2,
+    "text": "Three.",
+    "firstUsed": "2020-12-13T22:07:16.639Z",
+    "unusedSince": null,
+    "sources": [
+      "data.json"
+    ]
   }
 }

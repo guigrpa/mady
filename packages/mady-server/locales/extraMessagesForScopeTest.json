@@ -12,5 +12,53 @@
     "context": "someContext",
     "text": "Scoped message with {NUM} items",
     "filePath": "scope-1.js"
+  },
+  {
+    "isMarkdown": true,
+    "scope": "page-about",
+    "context": "page-content",
+    "seq": 0,
+    "text": "This is the 1st paragraph.",
+    "filePath": "data.json"
+  },
+  {
+    "isMarkdown": true,
+    "scope": "page-about",
+    "context": "page-content",
+    "seq": 1,
+    "text": "This is the 2nd paragraph.",
+    "filePath": "data.json"
+  },
+  {
+    "isMarkdown": true,
+    "scope": "page-about",
+    "context": "page-content",
+    "seq": 2,
+    "text": "This is the 3rd paragraph.",
+    "filePath": "data.json"
+  },
+  {
+    "isMarkdown": true,
+    "scope": "page-info",
+    "context": "page-content",
+    "seq": 0,
+    "text": "One.",
+    "filePath": "data.json"
+  },
+  {
+    "isMarkdown": true,
+    "scope": "page-info",
+    "context": "page-content",
+    "seq": 1,
+    "text": "Two.",
+    "filePath": "data.json"
+  },
+  {
+    "isMarkdown": true,
+    "scope": "page-info",
+    "context": "page-content",
+    "seq": 2,
+    "text": "Three.",
+    "filePath": "data.json"
   }
 ]

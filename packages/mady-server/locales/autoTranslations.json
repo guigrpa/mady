@@ -5,5 +5,15 @@
   "es:::::Message with emoji 🥰": "Mensaje con emoji 🥰",
   "ca:::::Message with emoji 🥰": "Missatge amb emoji 🥰",
   "es:::::Message with interpolation: {NUM}": "Mensaje con interpolación: {NUM}",
-  "es:::::{NUM, plural, one{1 hamburger} other{# hamburgers}}": "{NUM, plural, una {1 hamburguesa} otra {# hamburguesas}}"
+  "es:::::{NUM, plural, one{1 hamburger} other{# hamburgers}}": "{NUM, plural, una {1 hamburguesa} otra {# hamburguesas}}",
+  "es:::::A new message": "Un nuevo mensaje",
+  "es:::::This is the second paragraph.": "Éste es el segundo párrafo.",
+  "es:::::This is the first paragraph.": "Este es el primer párrafo.",
+  "es:::::This is the third paragraph.": "Este es el tercer párrafo.",
+  "es:::::This is the 2nd paragraph.": "Este es el segundo párrafo.",
+  "es:::::This is the 3rd paragraph.": "Este es el tercer párrafo.",
+  "es:::::This is the 1st paragraph.": "Este es el primer párrafo.",
+  "es:::::One.": "Uno.",
+  "es:::::Two.": "Dos.",
+  "es:::::Three.": "Tres."
 }
