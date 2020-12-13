@@ -9,7 +9,7 @@
   },
   "788527df-6372-4b40-95b6-83b95ee39062": {
     "id": "788527df-6372-4b40-95b6-83b95ee39062",
-    "isDeleted": false,
+    "isDeleted": true,
     "lang": "es",
     "translation": "Mensaje con contexto",
     "fuzzy": false,

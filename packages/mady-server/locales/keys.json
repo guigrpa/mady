@@ -88,10 +88,8 @@
     "context": "someContext",
     "text": "A new message",
     "firstUsed": "2020-12-13T22:00:07.597Z",
-    "unusedSince": null,
-    "sources": [
-      "sandbox/example.js"
-    ]
+    "unusedSince": "2020-12-13T22:11:23.237Z",
+    "sources": []
   },
   "VGhpcyBpcyB0aGUgZmlyc3QgcGFyYWdyYXBoLg==": {
     "id": "VGhpcyBpcyB0aGUgZmlyc3QgcGFyYWdyYXBoLg==",
