@@ -3,5 +3,7 @@
   "es:::::Message with context": "Mensaje con contexto",
   "es:::::Context-less message": "Mensaje sin contexto",
   "es:::::Message with emoji 🥰": "Mensaje con emoji 🥰",
-  "ca:::::Message with emoji 🥰": "Missatge amb emoji 🥰"
+  "ca:::::Message with emoji 🥰": "Missatge amb emoji 🥰",
+  "es:::::Message with interpolation: {NUM}": "Mensaje con interpolación: {NUM}",
+  "es:::::{NUM, plural, one{1 hamburger} other{# hamburgers}}": "{NUM, plural, una {1 hamburguesa} otra {# hamburguesas}}"
 }

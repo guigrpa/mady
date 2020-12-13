@@ -1,9 +1,70 @@
 {
-  "undefined": {
+  "7227e25d-f97b-40c8-b126-d788c4973b17": {
+    "id": "7227e25d-f97b-40c8-b126-d788c4973b17",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Mensaje sin contexto",
+    "fuzzy": false,
+    "keyId": "Q29udGV4dC1sZXNzIG1lc3NhZ2U="
+  },
+  "788527df-6372-4b40-95b6-83b95ee39062": {
+    "id": "788527df-6372-4b40-95b6-83b95ee39062",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Mensaje con contexto",
+    "fuzzy": false,
+    "keyId": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGNvbnRleHQ="
+  },
+  "b51b237b-d796-47fb-8c9a-951cee289458": {
+    "id": "b51b237b-d796-47fb-8c9a-951cee289458",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Mensaje de contexto completo",
+    "fuzzy": true,
+    "keyId": "c29tZUNvbnRleHRfQ29udGV4dC1mdWxsIG1lc3NhZ2U="
+  },
+  "76f24048-5b27-4868-bf84-18f39399dde3": {
+    "id": "76f24048-5b27-4868-bf84-18f39399dde3",
     "isDeleted": false,
     "lang": "es",
     "translation": "Mensaje con emoji 🥰",
-    "fuzzy": true,
+    "fuzzy": false,
     "keyId": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppIPCfpbA="
+  },
+  "967780b0-1614-49bb-bf8c-c0323eb803de": {
+    "id": "967780b0-1614-49bb-bf8c-c0323eb803de",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Mensaje con alcance",
+    "fuzzy": false,
+    "keyId": "U2NvcGVkIG1lc3NhZ2U="
+  },
+  "c9262f0b-3a4b-4d46-be3e-feea0fc6b754": {
+    "id": "c9262f0b-3a4b-4d46-be3e-feea0fc6b754",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Scoped message with {NUM} items",
+    "keyId": "U2NvcGVkIG1lc3NhZ2Ugd2l0aCB7TlVNfSBpdGVtcw=="
+  },
+  "60ad756a-4147-42b0-87df-d0c90eb4e2ef": {
+    "id": "60ad756a-4147-42b0-87df-d0c90eb4e2ef",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Mensaje con un error fijo {MISSING_BRACKET}",
+    "keyId": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGEgZml4ZWQgZXJyb3Ige01JU1NJTkdfQlJBQ0tFVH0="
+  },
+  "3ab70a23-f559-4db6-b0c4-c4874ed5140a": {
+    "id": "3ab70a23-f559-4db6-b0c4-c4874ed5140a",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "Mensaje con interpolación: {NUM}",
+    "keyId": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGludGVycG9sYXRpb246IHtOVU19"
+  },
+  "45d596c1-75db-4ca6-aac3-66986a202c3c": {
+    "id": "45d596c1-75db-4ca6-aac3-66986a202c3c",
+    "isDeleted": false,
+    "lang": "es",
+    "translation": "{NUM, plural, one {1 hamburguesa} other {# hamburguesas}}",
+    "keyId": "c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319"
   }
 }
