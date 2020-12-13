@@ -1,1 +1,1 @@
-- When config changes, reload
+When a new lang is added, auto-translate
