@@ -2163,5 +2163,12 @@
     "lang": "ca",
     "translation": "Copernicus Marine Environment Monitoring Service",
     "keyId": "Y29tcGFueS1uYW1lX0NvcGVybmljdXMgTWFyaW5lIEVudmlyb25tZW50IE1vbml0b3JpbmcgU2VydmljZQ=="
+  },
+  "undefined": {
+    "isDeleted": false,
+    "lang": "ca",
+    "translation": "Missatge amb emoji 🥰",
+    "fuzzy": true,
+    "keyId": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppIPCfpbA="
   }
 }

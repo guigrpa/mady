@@ -9,5 +9,8 @@
   "es:::::Scoped message": "Mensaje con alcance",
   "ar:::::Hello!": "مرحبا!",
   "es:::::Commonwealth Scientific and Industrial Research Organisation": "Organización de Investigación Científica e Industrial del Commonwealth",
-  "ca:::::Commonwealth Scientific and Industrial Research Organisation": "Organització de la investigació científica i industrial de la Mancomunitat"
+  "ca:::::Commonwealth Scientific and Industrial Research Organisation": "Organització de la investigació científica i industrial de la Mancomunitat",
+  "ca:::::Message with context": "Missatge amb context",
+  "ca:::::Context-less message": "Missatge sense context",
+  "ca:::::Message with emoji 🥰": "Missatge amb emoji 🥰"
 }

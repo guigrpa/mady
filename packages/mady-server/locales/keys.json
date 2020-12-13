@@ -7815,5 +7815,65 @@
     "sources": [
       "page-tas-anomalies-california"
     ]
+  },
+  "Q29udGV4dC1sZXNzIG1lc3NhZ2U=": {
+    "id": "Q29udGV4dC1sZXNzIG1lc3NhZ2U=",
+    "context": null,
+    "text": "Context-less message",
+    "firstUsed": "2020-12-13T18:20:31.729Z",
+    "unusedSince": null,
+    "sources": [
+      "sandbox/example.js"
+    ]
+  },
+  "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGNvbnRleHQ=": {
+    "id": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGNvbnRleHQ=",
+    "context": "someContext",
+    "text": "Message with context",
+    "firstUsed": "2020-12-13T18:20:31.729Z",
+    "unusedSince": null,
+    "sources": [
+      "sandbox/example.js"
+    ]
+  },
+  "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppIPCfpbA=": {
+    "id": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGVtb2ppIPCfpbA=",
+    "context": "someContext",
+    "text": "Message with emoji 🥰",
+    "firstUsed": "2020-12-13T18:20:31.729Z",
+    "unusedSince": null,
+    "sources": [
+      "sandbox/example.js"
+    ]
+  },
+  "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGludGVycG9sYXRpb246IHtOVU19": {
+    "id": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGludGVycG9sYXRpb246IHtOVU19",
+    "context": "someContext",
+    "text": "Message with interpolation: {NUM}",
+    "firstUsed": "2020-12-13T18:20:31.729Z",
+    "unusedSince": null,
+    "sources": [
+      "sandbox/example.js"
+    ]
+  },
+  "c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319": {
+    "id": "c29tZUNvbnRleHRfe05VTSwgcGx1cmFsLCBvbmV7MSBoYW1idXJnZXJ9IG90aGVyeyMgaGFtYnVyZ2Vyc319",
+    "context": "someContext",
+    "text": "{NUM, plural, one{1 hamburger} other{# hamburgers}}",
+    "firstUsed": "2020-12-13T18:20:31.729Z",
+    "unusedSince": null,
+    "sources": [
+      "sandbox/example.js"
+    ]
+  },
+  "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGEgZml4ZWQgZXJyb3Ige01JU1NJTkdfQlJBQ0tFVH0=": {
+    "id": "c29tZUNvbnRleHRfTWVzc2FnZSB3aXRoIGEgZml4ZWQgZXJyb3Ige01JU1NJTkdfQlJBQ0tFVH0=",
+    "context": "someContext",
+    "text": "Message with a fixed error {MISSING_BRACKET}",
+    "firstUsed": "2020-12-13T18:20:31.729Z",
+    "unusedSince": null,
+    "sources": [
+      "sandbox/example.js"
+    ]
   }
 }
