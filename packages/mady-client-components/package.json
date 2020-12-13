@@ -34,6 +34,7 @@
     "classnames": "^2.2.6",
     "lodash": "^4.17.20",
     "messageformat": "^2.3.0",
+    "moment": "^2.29.1",
     "timm": "^1.7.1",
     "uuid": "^8.3.1"
   },

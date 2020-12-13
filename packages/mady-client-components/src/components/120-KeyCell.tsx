@@ -1,7 +1,8 @@
 import React from 'react';
 import classnames from 'classnames';
+import moment from 'moment';
 import { Icon } from 'giu';
-import type { Key, Config } from '../types';
+import type { Key } from '../types';
 
 // ==============================================
 // Declarations
@@ -20,12 +21,27 @@ const KeyCell = ({ myKey, onDelete }: Props) => {
   else if (!myKey.isTranslated) status = 'untranslated';
   else if (myKey.isFuzzy) status = 'fuzzy';
   else status = 'translated';
+
+  // Tooltip
+  const tooltip: string[] = [];
+  const { firstUsed, unusedSince, sources } = myKey;
+  let mom = moment(firstUsed);
+  tooltip.push(`First used: ${mom.fromNow()} (${mom.format('LL')})`);
+  if (unusedSince) {
+    mom = moment(unusedSince);
+    tooltip.push(`Last used: ${mom.fromNow()} (${mom.format('LL')})`);
+  }
+  if (sources) {
+    tooltip.push('Used in:');
+    sources.forEach((src) => tooltip.push(`- ${src}`));
+  }
   return (
     <div
       className={classnames('mady-cell mady-key-cell', status, {
         'mady-seq-starts': myKey.seqStarts,
         'mady-is-first-key': myKey.isFirstKey,
       })}
+      title={tooltip.join('\n')}
     >
       <div className="mady-key-text">{myKey.text}</div>
       <div className="mady-key-buttons">
