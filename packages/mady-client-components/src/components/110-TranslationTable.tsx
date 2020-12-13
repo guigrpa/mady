@@ -110,7 +110,7 @@ class TranslationTable extends React.Component<Props, State> {
   prevColsKey!: string;
   prevCols!: any[];
   getCols() {
-    const { config, keys, langs } = this.props;
+    const { keys, langs } = this.props;
     const key = langs.join(',');
     if (key === this.prevColsKey) return this.prevCols;
     const keyArr = Object.values(keys);

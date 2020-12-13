@@ -31,7 +31,11 @@ class Toolbar extends React.Component<Props, State> {
         {this.renderParse()}
         <div className="mady-sep" />
         <div className="mady-toolbar-title">
-          <a href="https://github.com/guigrpa/mady" target="_blank">
+          <a
+            href="https://github.com/guigrpa/mady"
+            target="_blank"
+            rel="noreferrer"
+          >
             MADY
           </a>
         </div>

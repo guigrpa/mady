@@ -6,7 +6,7 @@ import { Notifications, Floats } from 'giu';
 // Declarations
 // ==============================================
 type Props = unknown;
-type State = {};
+type State = unknown;
 
 // ==============================================
 // Component

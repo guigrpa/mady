@@ -15,13 +15,6 @@ type Props = {
 // Component
 // ==============================================
 const KeyCell = ({ myKey, onDelete }: Props) => {
-  let status;
-  if (myKey.isUnused) status = 'unused';
-  else if (!myKey.isTranslated) status = 'untranslated';
-  else if (myKey.isFuzzy) status = 'fuzzy';
-  else status = 'translated';
-
-  // Tooltip
   const tooltip: string[] = [];
   const { firstUsed, unusedSince, sources } = myKey;
   let mom = moment(firstUsed);
