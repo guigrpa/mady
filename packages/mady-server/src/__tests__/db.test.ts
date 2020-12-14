@@ -139,12 +139,11 @@ describe('db', () => {
     db._setKeys(INITIAL_KEYS);
     db._setTranslations({});
     const newTranslation = await db.createTranslation({
+      id: 'deterministicId',
       keyId: 'someContext_someText',
       lang: 'es',
       translation: 'algúnTexto',
     });
-    expect(newTranslation.id).toBeTruthy();
-    newTranslation.id = 'deterministicId';
     expect(newTranslation).toMatchSnapshot();
     expect(db.getTranslations()).toMatchSnapshot();
     expect(writeJsonSync.mock.calls[0][0]).toEqual(
