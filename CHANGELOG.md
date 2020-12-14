@@ -1,3 +1,5 @@
+## 4.0.0 (2020-12-14)
+
 - **Server**:
   - Remove unused `uiBase` config option.
   - **Bugfix**: handle directory access errors while source parsing.

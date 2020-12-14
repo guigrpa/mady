@@ -1,6 +1,6 @@
 {
   "name": "mady-client",
-  "version": "4.0.0-rc.0",
+  "version": "4.0.0",
   "description": "Easy-to-use tool to manage and translate ICU MessageFormat messages",
   "keywords": [
     "i18n",
@@ -34,7 +34,7 @@
     "classnames": "^2.2.6",
     "giu": "^0.20.1",
     "lodash": "^4.17.20",
-    "mady-client-components": "^4.0.0-rc.0",
+    "mady-client-components": "^4.0.0",
     "moment": "^2.24.0",
     "next": "^10.0.3",
     "react": "^16.13.0",
