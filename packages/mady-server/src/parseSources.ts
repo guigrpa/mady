@@ -35,7 +35,15 @@ const parseAll = ({
     },
   };
   srcPaths.forEach((srcPath) =>
-    diveSync(srcPath, diveOptions, (_err: Error, filePath: string) => {
+    diveSync(srcPath, diveOptions, (err: Error, filePath: string) => {
+      if (err) {
+        mainStory.info(
+          SRC,
+          `Could not read dir ${chalk.cyan.bold(srcPath)}...`,
+          { attach: err }
+        );
+        return;
+      }
       parseFile(filePath, keys, regexps);
     })
   );
