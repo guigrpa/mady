@@ -35,7 +35,6 @@ type Options = {
   // Non-standalone (Mady integrated with a user-provided server)
   expressApp?: Express;
   apiBase?: string;
-  uiBase?: string;
 };
 
 const init = (options: Options) => {

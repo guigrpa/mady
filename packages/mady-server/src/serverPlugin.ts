@@ -5,7 +5,6 @@ import { init as httpInit } from './httpServer';
 type Options = {
   expressApp: Express;
   apiBase?: string;
-  uiBase?: string;
   localeDir?: string;
   otherLocaleDirs?: Array<string>;
   noWatch?: boolean;
@@ -20,7 +19,6 @@ const init = async (options: Options) => {
   const {
     expressApp,
     apiBase,
-    uiBase,
     otherLocaleDirs,
     onChange,
     noWatch,
@@ -34,7 +32,7 @@ const init = async (options: Options) => {
     autoTranslateNewKeys: !noAutoTranslateNewKeys,
     onChange,
   });
-  httpInit({ expressApp, apiBase, uiBase });
+  httpInit({ expressApp, apiBase });
   return db;
 };
 
