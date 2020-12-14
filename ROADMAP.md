@@ -1,3 +1,2 @@
+- Autotranslate: implement rate-limited queue
 - When a new lang is added, auto-translate
-- Update docs & changelog
-- Do not raise error when one of the source directories does not exist

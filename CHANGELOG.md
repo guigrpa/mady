@@ -1,4 +1,39 @@
+- **Server**:
+  - Remove unused `uiBase` config option.
+  - **Bugfix**: handle directory access errors while source parsing.
+- **Client**:
+  - Fix translation column header tooltip.
+
 ## 4.0.0-rc.0 (2020-12-13)
+
+Reimplemented the whole thing from scratch, with the following goals in mind:
+
+- Ballast dropping. Several technologies have been dropped since they are not needed for a small application like this (GraphQL, Relay, WebSockets). Some features have also been dropped since we really do not have the bandwidth to maintain them and were not being used (React Intl). Others were really unnecessary, e.g. the capability to edit the configuration from the UI -- this can be done directly by editing the config file.
+
+- Performance improvements. The client slowed to a crawl when the number of messages to be translated was above 500-600, due to inefficient React components. Mady v4 uses Giu's DataTable component, which renders only the rows being displayed. The result is a whopping 15x decrease in load time for 650 messages and 2 translation languages.
+
+- Flexibility. The new decomposition in 4 packages (`mady`, `mady-server`, `mady-client` and `mady-client-components`) makes it possible to:
+
+  - Configure `mady` as production dependency, and `mady-server` as development dependency, cleaning up your dependency tree.
+  - Embed Mady's client in another tool (using `mady-client-components`)
+  - Include Mady's API endpoints in another API (using `mady-server`'s Express-compatible `serverPlugin`).
+
+**Migration guide:**
+
+- Runtime library (`mady` package): fully backwards-compatible. Basic usage remains the same, with the only exception being loading the `_t` helper from the `mady` library:
+
+```js
+// Before
+const _t = require('mady');
+
+// After
+const _t = require('mady').default;
+
+// If you already imported mady this way, you need to do nothing:
+import _t from 'mady';
+```
+
+- Translations tool (`mady-server` package): 99% backwards-compatible. You just need to add `mady-server` to your `devDependencies`. The executable is the same (`mady`), so your npm scripts should run just fine.
 
 ## 3.4.0 (2020-1-17)
 

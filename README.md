@@ -1,10 +1,12 @@
 # Mady [![npm version](https://img.shields.io/npm/v/mady.svg)](https://www.npmjs.com/package/mady)
 
+**Mady v4 is a total rewrite of the venerable translation tool, dropping a lot of ballast, enabling new use cases and providing a huge performance boost. If you need features that have been removed (notably React Intl support), you can find v3's docs [here](https://github.com/guigrpa/mady/tree/4e4d670bbd853a00d0981f537a898f55680ee30d). Otherwise, moving to v4 should be very straightforward -- see more details in the [migration guide](./CHANGELOG.md).**
+
 An easy-to-use tool to manage and translate ICU MessageFormat messages.
 
-![Mady UI](https://raw.githubusercontent.com/guigrpa/mady/master/docs/01-ui.png)
+![Mady UI](https://raw.githubusercontent.com/guigrpa/mady/master/docs/01-ui-v2.png)
 
-_Yes, it's Mady's view of herself!_ :open_mouth: For more details on the MessageFormat syntax (_hamburger_ examples above), see the [MessageFormat guide](https://messageformat.github.io/guide/):
+Although not depicted above, MessageFormat messages are supported. Please refer to [this guide](https://messageformat.github.io/guide/) for more details on the syntax, but here is an example:
 
 ```js
 console.log(
@@ -21,47 +23,27 @@ console.log(
 // 2 hamburguesas
 ```
 
-Remember: this is not only for translation! Even if you only use English, you may need MessageFormat for gender, pluralisation and even regionalisation (_regionalization_).
+MessageFormat is not only for translation! Even if you only use English, you may need MessageFormat for gender, pluralisation and even regionalisation (_regionalization_).
 
 ## Why?
 
 - **Easy-to-use tool for parsing source files, editing translations, comparing languages side-by-side, filtering missing/dubious/unused translations, and compiling to (optionally minified) JavaScript modules**.
 - A **translation function** to run the compiled language modules.
-- **[React Intl](https://github.com/yahoo/react-intl) interoperability**, both for message extraction and translation injection.
 - **Multi-user support**: multiple users can work simultaneously, with changes pushed in real time to all of them.
 - **Automatic translations**: Mady suggests automatic translations as soon as new messages or languages are added to its database.
-- **Ultra-fast parsing**: Mady watches your application folders and parses files as they are added, changed or deleted, then pushes all changes to the connected users. No more waiting for the parsing spinner to stop!
+- **Ultra-fast parsing**: Mady watches your application folders and parses files as they are added, changed or deleted, then pushes all changes to the connected users.
 - **MessageFormat messages**: while it does not solve all the problems in the huge field of i18n, MessageFormat is a much more powerful tool than the conventional gettext (IMHO).
 - **Full UNICODE support**: messages and translations can include any UNICODE character. In other words, you can now translate 👍 (en) as 👏 (es-ES) and then 💃 (es-ES-andalusia)!
 - **BCP47 support and locale inheritance**: fetch missing translations from parent/child languages or dialects, and even sibling languages (other regions) as a last resort.
 - **Dubious translations**: flag some translations to revisit them later on.
+- **Modular architecture**, allowing advanced users to embed Mady as a translation tool in broader-scope tools (CMS, anyone?).
+- **TypeScript support**.
 
 ## Installation
 
 ```
 $ npm install --save mady
-```
-
-If you use [React Intl](https://github.com/yahoo/react-intl), make sure you also install the following packages so that Mady can parse your React Intl components:
-
-```
-$ npm install --save-dev babel-plugin-react-intl babel-core
-```
-
-Then add the following line to your `package.json` file:
-
-```json
-"scripts": {
-    "translate": "mady"
-}
-```
-
-or, if you want to store your locales in a specific folder (default: `<project root>/locales`):
-
-```json
-"scripts": {
-    "translate": "mady --dir path/to/locales"
-}
+$ npm install --save-dev mady-server
 ```
 
 ## Usage
@@ -70,24 +52,30 @@ There are two main parts in Mady: the web-based translation app and the translat
 
 ### The translation app
 
-Access the translation app by running `npm run translate`. Mady will automatically launch in your default browser (default URL: http://localhost:8080). From the web application, you can:
+Access the translation app by running `npx mady` (run `npx mady --help` for more options, including changing the source paths). Mady will automatically launch in your default browser (default URL: http://localhost:8080). From the web application, you can:
 
 - Update the message database with new messages extracted from your source files
-- Configure your languages, source paths, file extensions, etc.
+- Translate your messages to the different supported languages
 - Mark translations as dubious
-- Translate your keys to the different supported languages
 - Apply filters: untranslated or unused messages, dubious translations, etc.
-- [Automatically] export translations to JS files and other formats, for use by the [translation function](#the-translation-function), React Intl and other integrations
+- [Automatically] export translations to JS files with optional minification, for use by the [translation function](#the-translation-function) and other integrations
 
 Messages in your source files might have the form: `_t('someContext_Once upon a time...')` (single or double quotes are supported), where `_t()` is the default name for the translation function (see below), `someContext` is some hint for the translator and `Once upon a time...` is your untranslated [MessageFormat](#messageformat) message.
 
-Mady can also extract messages from React Intl components out of the box. Or you can specify your own regex patterns in the UI.
+Mady's configuration specifies key aspects such as the translation languages. Here is the default configuration (you'll find it under <project>/locales/config.json):
 
-Configuration looks like this:
-
-![Mady config](https://raw.githubusercontent.com/guigrpa/mady/master/docs/02-config.png)
-
-You can see the UI in English, Spanish and Catalan at the moment. Mady _eats her own dog food_.
+```json
+{
+  "srcPaths": ["src"],
+  "srcExtensions": [".js", ".jsx", ".ts", ".tsx"],
+  "langs": ["en"],
+  "originalLang": "en",
+  "msgFunctionNames": ["_t"],
+  "msgRegexps": [],
+  "fMinify": false,
+  "fJsOutput": true
+}
+```
 
 ### The translation function
 
@@ -133,13 +121,13 @@ const lang = _t.setLocales('fr');
 
 ## BCP47 and translation fallbacks
 
-Mady "fills in the gaps" when **building** translation modules (`{lang.js}`) and React Intl message bundles (`{lang}.reactIntl.json`). In other words, when you don't provide a translation for message X for a particular language (e.g. `es-ES`), it will look for suitable fallback translations in related languages:
+Mady "fills in the gaps" when **building** translation modules (`{lang.js}`). In other words, when you don't provide a translation for message X for a particular language (e.g. `es-ES`), it will look for suitable fallback translations in related languages:
 
 - Parent languages (e.g. `es`)
 - Sibling languages (e.g. `es-MX`)
 - Children languages (e.g. `es-ES-andalusia`)
 
-If you use Mady's translation function and it cannot find a suitable translation, it will just take the message key (e.g. `someContext_Untranslated message`), remove the context prefix and use it as a last-resort fallback.
+If you use Mady's translation function and it cannot find a suitable translation, it will just take the message key (e.g. `someContext_Untranslated message`), remove the context prefix (`someContext_`) and use it as a last-resort fallback.
 
 ## The locales folder
 
@@ -156,10 +144,6 @@ Mady uses the [messageformat.js](https://github.com/SlexAxton/messageformat.js) 
 
 Some examples of MessageFormat messages are given above ([more here](https://messageformat.github.io/guide/)), but this does not even scratch the surface of what is enabled by this standard.
 
-## Internals
-
-Mady is built with [React](https://facebook.github.io/react/) and [Relay](https://facebook.github.io/relay/), and is fully server-side-rendered. It was built as a proof-of-concept for the latest web technologies.
-
 ## [Changelog](https://github.com/guigrpa/mady/blob/master/CHANGELOG.md)
 
 ## Why _Mady_?
@@ -168,7 +152,7 @@ This library is named after my cousin, a brilliant person with an extraordinary 
 
 ## License (MIT)
 
-Copyright (c) [Guillermo Grau Panea](https://github.com/guigrpa) 2016
+Copyright (c) [Guillermo Grau Panea](https://github.com/guigrpa) 2016-2020
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
