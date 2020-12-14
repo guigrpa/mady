@@ -156,7 +156,10 @@ class TranslationTable extends React.Component<Props, State> {
             <div className="mady-lang-header">
               <span>
                 {lang}
-                <span className="mady-stats" title="Messages in use">
+                <span
+                  className="mady-stats"
+                  title="Translations for messages in use"
+                >
                   {numTranslations}
                 </span>
                 <span title="Remove column">
