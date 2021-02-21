@@ -229,6 +229,15 @@ const purgeKeys = () => {
   mainStory.info(SRC, `Purged keys: ${chalk.cyan(removeIds.length)}`);
 };
 
+const deleteUnusedKeys = () => {
+  const removeIds = Object.values(_keys)
+    .filter((key) => key.unusedSince != null)
+    .map((key) => key.id);
+  removeIds.forEach((id) => delete _keys[id]);
+  if (removeIds.length) saveKeys();
+  mainStory.info(SRC, `Deleted unused keys: ${chalk.cyan(removeIds.length)}`);
+};
+
 // ==============================================
 // Translations
 // ==============================================
@@ -725,6 +734,7 @@ export {
   getKey,
   createKey,
   updateKey,
+  deleteUnusedKeys,
   // --
   getTranslations,
   _setTranslations,

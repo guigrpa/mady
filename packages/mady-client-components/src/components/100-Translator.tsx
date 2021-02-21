@@ -91,6 +91,7 @@ class Translator extends React.Component<Props, State> {
         scope={this.state.scope}
         filter={this.state.filter}
         onClickParse={this.onClickParse}
+        onClickDeleteUnused={this.onClickDeleteUnused}
         onChangeQuickFind={(quickFind: string) => this.setState({ quickFind })}
         onChangeScope={(scope: string | undefined) => this.setState({ scope })}
         onChangeFilter={(filter: string) => this.setState({ filter })}
@@ -148,6 +149,21 @@ class Translator extends React.Component<Props, State> {
       throw err;
     } finally {
       this.setState({ parsing: false });
+    }
+  };
+
+  onClickDeleteUnused = async () => {
+    try {
+      await this.api.get('/deleteUnused');
+      await this.fetchData();
+    } catch (err) {
+      notify({
+        type: 'error',
+        icon: 'code',
+        title: 'Delete unused failed',
+        msg: 'Check the console...',
+      });
+      throw err;
     }
   };
 

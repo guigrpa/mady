@@ -9,6 +9,7 @@ import wsServerListener from 'storyboard-listener-ws-server';
 import {
   getConfig,
   parseSrcFiles,
+  deleteUnusedKeys,
   getKeys,
   createKey,
   updateKey,
@@ -75,6 +76,7 @@ const addEndpoints = (app: Express, base: string) => {
   app.get(`${base}/tUpdated`, apiGetTUpdated);
   app.get(`${base}/config`, apiGetConfig);
   app.get(`${base}/parse`, apiParse);
+  app.get(`${base}/deleteUnused`, apiDeleteUnused);
   app.get(`${base}/purge`, apiPurge);
   app.get(`${base}/keys`, apiGetKeys);
   app.post(`${base}/key`, apiCreateKey);
@@ -99,6 +101,12 @@ const apiGetConfig: express.RequestHandler = async (_req, res) => {
 // Parse
 const apiParse: express.RequestHandler = async (_req, res) => {
   await parseSrcFiles();
+  res.json({ tUpdated: getTUpdated() });
+};
+
+// Delete unused
+const apiDeleteUnused: express.RequestHandler = async (_req, res) => {
+  await deleteUnusedKeys();
   res.json({ tUpdated: getTUpdated() });
 };
 

@@ -12,6 +12,7 @@ type Props = {
   scope: string | undefined;
   filter: string;
   onClickParse: (ev: any) => void;
+  onClickDeleteUnused: (ev: any) => void;
   onChangeQuickFind: (quickFind: string) => void;
   onChangeScope: (scope: string | undefined) => void;
   onChangeFilter: (filter: string) => void;
@@ -29,6 +30,7 @@ class Toolbar extends React.Component<Props, State> {
         {this.renderScopePicker()}
         {this.renderQuickFind()}
         {this.renderParse()}
+        {this.renderDeleteUnused()}
         <div className="mady-sep" />
         <div className="mady-toolbar-title">
           <a
@@ -156,6 +158,14 @@ class Toolbar extends React.Component<Props, State> {
           icon="sync"
           onClick={this.props.onClickParse}
         />
+      </div>
+    );
+  }
+
+  renderDeleteUnused() {
+    return (
+      <div className="mady-toolbar-button" title="Delete unused messages">
+        <Icon icon="broom" onClick={this.props.onClickDeleteUnused} />
       </div>
     );
   }

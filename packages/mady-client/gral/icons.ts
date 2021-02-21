@@ -13,6 +13,7 @@ import { faGoogle } from '@fortawesome/free-brands-svg-icons/faGoogle';
 import { faCopy } from '@fortawesome/free-regular-svg-icons/faCopy';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons/faPencilAlt';
+import { faBroom } from '@fortawesome/free-solid-svg-icons/faBroom';
 import { faLanguage } from '@fortawesome/free-solid-svg-icons/faLanguage';
 
 faLibrary.add(
@@ -29,5 +30,6 @@ faLibrary.add(
   faCopy,
   faExclamationTriangle,
   faPencilAlt,
+  faBroom,
   faLanguage
 );
