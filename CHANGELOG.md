@@ -1,3 +1,5 @@
+## 4.1.0 (2021-2-21)
+
 - **Server + client**:
   - Add delete-unused-messages feature.
 
