@@ -36,7 +36,7 @@
     "lodash": "^4.17.21",
     "mady-client-components": "^4.1.0",
     "moment": "^2.24.0",
-    "next": "^10.0.3",
+    "next": "^11.1.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "timm": "^1.7.1"
