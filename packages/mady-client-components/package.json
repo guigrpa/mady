@@ -30,7 +30,7 @@
     "typecheck": "tsc --pretty"
   },
   "dependencies": {
-    "axios": "^0.21.0",
+    "axios": "^0.21.2",
     "classnames": "^2.2.6",
     "lodash": "^4.17.21",
     "messageformat": "^2.3.0",
